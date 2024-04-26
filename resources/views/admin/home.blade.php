@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Master Home</div>
+                <div class="card-header">Admin Home</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -23,7 +23,7 @@
                 </div>
 
                 <div class="card-body">
-                  Welcome to master dashboard
+                  Welcome to admin dashboard
                 </div>
             </div>
         </div>

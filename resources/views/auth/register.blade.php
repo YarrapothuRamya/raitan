@@ -39,6 +39,24 @@
                             </div>
                         </div>
 
+                      <div class="row mb-3">
+                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Role') }}</label>
+
+                            <div class="col-md-6">
+                                <select class="form-control select2 {{ $errors->has('role_id') ? 'is-invalid' : '' }}" name="role_id" id="role_id">
+                                    <option value="">Select Role</option>
+                                    @foreach($roles as $key => $value)
+                                        <option value="{{ $value->role_id }}" {{ old('role_id') == $value ? 'selected' : '' }}>{{ $value->name }}</option>
+                                    @endforeach
+                                </select>
+                                @if($errors->has('role_id'))
+                                    <div class="invalid-feedback">
+                                        {{ $errors->first('role_id') }}
+                                    </div>
+                                @endif
+                            </div>
+                        </div>
+
                         <div class="row mb-3">
                             <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
 
