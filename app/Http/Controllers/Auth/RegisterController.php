@@ -76,7 +76,7 @@ class RegisterController extends Controller
 
     public function showRegistrationForm()
     {
-        $roles=Roles::select('name','role_id')->whereNotIn('role_id', [1,2,3])->get();
+        $roles=Roles::select('name','role_id')->whereNotIn('role_id', [1,2,3])->where('status',1)->get();
         return view('auth.register',compact('roles'));
     }
 }

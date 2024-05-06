@@ -66,6 +66,14 @@
                         </div>
                     </form>
                 </div>
+                <div class="card-body text-center">
+                    <span>Not registered yet? Please <a
+                                            href="{{ route('register') }}"
+                                            class="rounded-md text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
+                                        >
+                                            Register
+                                        </a></span>
+                </div>
             </div>
         </div>
     </div>

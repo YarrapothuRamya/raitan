@@ -24,6 +24,9 @@
 
                 <div class="card-body">
                   Welcome to master dashboard
+
+                  <br><br>
+                  <a href="{{ url('roles-home') }}" style="text-decoration: none; color: blue;">Roles</a>
                 </div>
             </div>
         </div>

@@ -88,6 +88,14 @@
                         </div>
                     </form>
                 </div>
+                <div class="card-body text-center">
+                    <span>Already registered? Please <a
+                                        href="{{ route('login') }}"
+                                        class="rounded-md text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
+                                    >
+                                        Log in
+                                    </a></span>
+                </div>
             </div>
         </div>
     </div>
