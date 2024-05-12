@@ -34,25 +34,31 @@
                                 <th>S No</th>
                                 <th>Role Name</th>
                                 <th>Role Id</th>
+                                <th>Parent Name</th>
                                 <th>Status</th>
                                 <th>Actions</th>
                             </tr>
                         </thead>
                         <tbody>
                             <?php $i = 0; ?>
-                            @foreach($roles as $role)
+                            @foreach($roles_with_parent as $role)
                             <tr>
                                 <td><?php echo ++$i; ?></td>
-                                <td>{{ $role->name }}</td>
-                                <td>{{ $role->role_id }}</td>
+                                <td>{{ $role['name'] }}</td>
+                                <td>{{ $role['role_id'] }}</td>
+                                <td>@if(!empty($role['parent_name']->name))
+                                    {{ $role['parent_name']->name }}
+                                    @else
+                                    @endif
+                                </td>
                                 <td>
-                                    @if($role->status == 1)
+                                    @if($role['status'] == 1)
                                         Active
-                                    @elseif($role->status == 0)
+                                    @elseif($role['status'] == 0)
                                         Inactive
                                     @endif
                                 </td>
-                                <td><button type="button" class="btn btn-primary roleedit"  data-toggle="modal" data-target="#roleModal" data-id="{{ $role->id }}" data-name="{{ $role->name }}" data-status="{{ $role->status }}"  >Edit</button></td>
+                                <td><button type="button" class="btn btn-primary roleedit"  data-toggle="modal" data-target="#roleModal" data-id="{{ $role['id'] }}" data-name="{{ $role['name'] }}" data-status="{{ $role['status'] }}" data-parent-id="{{ $role['parent_id'] }}" >Edit</button></td>
                             </tr>
                             @endforeach
                         </tbody>
@@ -91,6 +97,25 @@
                             <strong>{{ $message }}</strong>
                         </span>
                     @enderror
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label for="status" class="col-md-4 col-form-label text-md-end">{{ __('Edit Parent') }}</label>
+
+                <div class="col-md-6">
+                    <select class="form-control select2 {{ $errors->has('status') ? 'is-invalid' : '' }}" name="parent_id" id="parent_id">
+                        <option value="">Select Parent Name</option>
+                        @foreach($roles as $role)
+                        <option value="{{ $role->id }}">{{ $role->name }}</option>
+                        @endforeach
+                        
+                    </select>
+                    @if($errors->has('parent_id'))
+                        <div class="invalid-feedback">
+                            {{ $errors->first('parent_id') }}
+                        </div>
+                    @endif
                 </div>
             </div>
 
@@ -161,6 +186,25 @@
             </div>
 
             <div class="row mb-3">
+                <label for="status" class="col-md-4 col-form-label text-md-end">{{ __('Add Parent') }}</label>
+
+                <div class="col-md-6">
+                    <select class="form-control select2 {{ $errors->has('status') ? 'is-invalid' : '' }}" name="add_parent_id" id="add_parent_id">
+                        <option value="">Select Parent Name</option>
+                        @foreach($roles as $role)
+                        <option value="{{ $role->id }}">{{ $role->name }}</option>
+                        @endforeach
+                        
+                    </select>
+                    @if($errors->has('parent_id'))
+                        <div class="invalid-feedback">
+                            {{ $errors->first('parent_id') }}
+                        </div>
+                    @endif
+                </div>
+            </div>
+
+            <div class="row mb-3">
                 <label for="status" class="col-md-4 col-form-label text-md-end">{{ __('Status') }}</label>
 
                 <div class="col-md-6">
@@ -202,6 +246,7 @@
     function updateRole(){
         var id = $("#id").val();
         var name = $("#name").val();
+        var parent_id = $("#parent_id").val();
         var status = $("#status").val();
         //alert(name);
         $.ajax({
@@ -211,6 +256,7 @@
             data: {
                 id : id,
                 name: name,
+                parent_id: parent_id,
                 status: status,
             },
             headers: { 'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content') },
@@ -255,6 +301,7 @@
     function addRole(){
         //var id = $("#id").val();
         var name = $("#addname").val();
+        var add_parent_id = $("#add_parent_id").val();
         var status = $("#addstatus").val();
         $('#show_message').empty();
         //alert(name);
@@ -265,6 +312,7 @@
             data: {
                 //id : id,
                 name: name,
+                add_parent_id: add_parent_id,
                 status: status,
             },
             headers: { 'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content') },
@@ -314,6 +362,9 @@
         //myModal.show(modalToggle);
         $("#id").val($(this).data('id'));
         $("#name").val($(this).data('name'));
+        $('select[name^="parent_id"] option:selected').attr("selected",null);
+        $('select[name^="parent_id"] option[value="'+ $(this).data('parent-id') +'"]').attr("selected","selected");
+
         $('select[name^="status"] option:selected').attr("selected",null);
         $('select[name^="status"] option[value="'+ $(this).data('status') +'"]').attr("selected","selected");
         $('#roleModal').modal('show');

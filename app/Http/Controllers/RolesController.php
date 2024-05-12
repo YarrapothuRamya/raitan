@@ -14,7 +14,20 @@ class RolesController extends Controller
         if($role == 1){
             //$roles=Roles::select('name','role_id')->whereNotIn('role_id', [1,2,3])->get();
             $roles=Roles::select('*')->get();
-            return view('roles.home', compact('roles'));
+            $roles_with_parent = array();
+            foreach ($roles as $key => $value) {
+                //echo $key . " " . $value->id . "<br>";
+                $roles_with_parent[] = [
+                    "id" => $value->id,
+                    "name" => $value->name,
+                    "role_id" => $value->role_id,
+                    "parent_id" => $value->parent_id,
+                    "parent_name" => Roles::select('name')->where('id', $value->parent_id)->first(),
+                    "status" => $value->status,
+                ];
+            }
+            //dd("Hello");
+            return view('roles.home', compact('roles', 'roles_with_parent'));
         }else{
             return redirect()->back()->with('error','You have no access to this page');
         }
@@ -35,6 +48,7 @@ class RolesController extends Controller
             $role = Roles::find($request['id']);
             //dd($role);
             $role->name = $request['name'];
+            $role->parent_id = $request['parent_id'];
             $role->status = $request['status'];
              
             if($role->save()){
@@ -60,7 +74,7 @@ class RolesController extends Controller
             //dd("Hello");
             //dd($request['name']);
             $validated = $request->validate([
-                'name' => 'required|unique|max:255',
+                'name' => 'required|unique:roles|max:255',
                 'status' => 'required',
             ]);
 
@@ -68,6 +82,7 @@ class RolesController extends Controller
             //dd($role);
             $role = new Roles;
             $role->name = $request['name'];
+            $role->parent_id = $request['add_parent_id'];
             $role->role_id = $maxrole+1;
             $role->status = $request['status'];
              
