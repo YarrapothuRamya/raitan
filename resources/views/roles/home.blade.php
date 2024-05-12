@@ -68,7 +68,7 @@
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="roleModalLongTitle">Modal title</h5>
+        <h5 class="modal-title" id="roleModalLongTitle">Edit Role</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -134,7 +134,7 @@
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="roleModalLongTitle">Modal title</h5>
+        <h5 class="modal-title" id="roleModalLongTitle">Add Role</h5>
         <button type="button" class="closeadd" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>

@@ -8,6 +8,8 @@ use App\Models\Roles;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use App\Mail\RegistrationMail;
+use Illuminate\Support\Facades\Mail;
 
 class RegisterController extends Controller
 {
@@ -66,17 +68,45 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         //dd($data['role_id']);
-        return User::create([
+        /*return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
             'role' => $data['role_id'],
+        ]);*/
+        $pass_code = random_int(100000, 999999);
+        $id = User::insertGetId([
+            'name' => $data['name'],
+            'email' => $data['email'],
+            'pass_code' => $pass_code,
+            'password' => Hash::make($data['password']),
+            'role' => $data['role_id'],
         ]);
+
+        $confirmation_link = env('APP_URL').'/verify-email/'.$pass_code.'/'.$id;
+
+        Mail::to("balajivallabhapuram07@gmail.com")->send(new RegistrationMail(['confirmation_link' => $confirmation_link, 'pass_code' => $pass_code, 'id' => $id]));
+        return view('auth.registerthankyou',compact('pass_code', 'id'));
+
     }
 
     public function showRegistrationForm()
     {
         $roles=Roles::select('name','role_id')->whereNotIn('role_id', [1,2,3])->where('status',1)->get();
         return view('auth.register',compact('roles'));
+    }
+
+    public function verifyEmail(Request $request)
+    {
+        $pass_code = $request['pass_code'];
+        $user = Users::find($request($id));
+
+        if($pass_code == $user->pass_code){
+            return redirect('/home')->with('status', 'Successfully registered.');
+        }else{
+            return redirect('/home')->with('error', 'Something went wrong. Please try again.');
+        }
+
+        
     }
 }
