@@ -105,7 +105,7 @@
 
                 <div class="col-md-6">
                     <select class="form-control select2 {{ $errors->has('status') ? 'is-invalid' : '' }}" name="parent_id" id="parent_id">
-                        <option value="">Select Parent Name</option>
+                        <option value="0">Select Parent Name</option>
                         @foreach($roles as $role)
                         <option value="{{ $role->id }}">{{ $role->name }}</option>
                         @endforeach
@@ -190,7 +190,7 @@
 
                 <div class="col-md-6">
                     <select class="form-control select2 {{ $errors->has('status') ? 'is-invalid' : '' }}" name="add_parent_id" id="add_parent_id">
-                        <option value="">Select Parent Name</option>
+                        <option value="0">Select Parent Name</option>
                         @foreach($roles as $role)
                         <option value="{{ $role->id }}">{{ $role->name }}</option>
                         @endforeach
