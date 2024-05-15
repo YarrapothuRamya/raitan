@@ -22,6 +22,9 @@ Route::group(['middleware' => ['auth', 'role']], function () {
 Route::group(['middleware' => ['auth']], function () {
    Route::get('password', [App\Http\Controllers\Auth\ChangePasswordController::class, 'index'])->name('password');
    Route::post('change-password', [App\Http\Controllers\Auth\ChangePasswordController::class, 'changePassword'])->name('change.password');
+
+   Route::get('machines', [App\Http\Controllers\MachineImplementorsController::class, 'indexmachine'])->name('machines');
+   Route::post('machine-add', [App\Http\Controllers\MachineImplementorsController::class, 'machineAdd'])->name('machine.add');
 });
 
 Route::get('verify-email/{{pass_code}}/{{id}}', [App\Http\Controllers\Auth\RegisterController::class, 'verifyEmail'])->name('verify.email');
@@ -30,3 +33,4 @@ Route::get('roles-home', [App\Http\Controllers\RolesController::class, 'index'])
 Route::post('role-update', [App\Http\Controllers\RolesController::class, 'roleUpdate'])->name('role.update');
 Route::post('role-add', [App\Http\Controllers\RolesController::class, 'roleAdd'])->name('role.add');
 Route::get('tractors-home', [App\Http\Controllers\TractorsController::class, 'index'])->name('tractors.home');
+
