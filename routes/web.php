@@ -29,3 +29,4 @@ Route::get('verify-email/{{pass_code}}/{{id}}', [App\Http\Controllers\Auth\Regis
 Route::get('roles-home', [App\Http\Controllers\RolesController::class, 'index'])->name('roles.home');
 Route::post('role-update', [App\Http\Controllers\RolesController::class, 'roleUpdate'])->name('role.update');
 Route::post('role-add', [App\Http\Controllers\RolesController::class, 'roleAdd'])->name('role.add');
+Route::get('tractors-home', [App\Http\Controllers\TractorsController::class, 'index'])->name('tractors.home');
