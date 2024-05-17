@@ -25,7 +25,7 @@ class MachineImplementorsController extends Controller
         
     }
 
-    public function roleUpdate(Request $request)
+    public function machineUpdate(Request $request)
     {
         $role = \Auth::user()->role;
         if($role == 1){
@@ -33,17 +33,36 @@ class MachineImplementorsController extends Controller
             //dd("Hello");
             //dd($request['name']);
             $validated = $request->validate([
-                'name' => 'required|max:255|unique:roles,name,'.$request['id'],
+                'name' => 'required|unique:machines,name,'.$request['id'],
+                //'image' => 'required',
+                'horse_power' => 'required',
                 'status' => 'required',
             ]);
-            $role = Roles::find($request['id']);
+            $machine = Machines::find($request['id']);
             //dd($role);
-            $role->name = $request['name'];
-            $role->parent_id = $request['parent_id'];
-            $role->status = $request['status'];
+            //$role->name = $request['name'];
+            //$role->parent_id = $request['parent_id'];
+            //$role->status = $request['status'];
+            $machine->name = $request['name'];
+            //$machine->image = $request['addimage'];
+            //if ($request->hasFile('photo')) {
+                $image = $request->file('image');
+                if ($request->file('image') != '' || $request->file('image') != NULL) {
+                    $file_path = public_path('machine_images').'/'.$machine->image;
+                    if (file_exists($file_path)) {
+                        unlink($file_path);
+                    } 
+                }
+                $fileName = rand() . "." . $request->file('image')->getClientOriginalExtension();
+                $request->file('image')->move(public_path('machine_images'), $fileName);
+                //$user->update(['photo' => $fileName]);
+            //}
+            $machine->image = $fileName;
+            $machine->horse_power = $request['horse_power'];
+            $machine->status = $request['status'];
              
-            if($role->save()){
-                return response()->json(['status' => 200, 'success' => 'Role successfully updated']);
+            if($machine->save()){
+                return response()->json(['status' => 200, 'success' => 'Machine successfully updated']);
                 return redirect()->back()->with('status','Role successfully updated');
             }else{
                 return response()->json(['status' => 400, 'error' => 'Something went wrong please try again.']);
@@ -59,8 +78,8 @@ class MachineImplementorsController extends Controller
 
     public function machineAdd(Request $request)
     {
-        $role = \Auth::user()->role;
-        if($role == 1){
+        //$role = \Auth::user()->role;
+        //if($role == 1){
             //$roles=Roles::select('name','role_id')->whereNotIn('role_id', [1,2,3])->get();
             //dd("Hello");
             //dd($request['name']);
@@ -73,7 +92,9 @@ class MachineImplementorsController extends Controller
 
             //$maxrole = Roles::max('role_id');
             //dd($role);
+            $role = \Auth::user()->role;
             $machine = new Machines;
+            $machine->user_id = $role;
             $machine->name = $request['name'];
             //$machine->image = $request['addimage'];
             //if ($request->hasFile('photo')) {
@@ -95,9 +116,9 @@ class MachineImplementorsController extends Controller
             }
             //return redirect()->back()->with('name','You have no access to this page');
             //return view('machines.home', compact('machines'));
-        }else{
-            return redirect()->back()->with('error','You have no access to this page');
-        }
+        //}else{
+            //return redirect()->back()->with('error','You have no access to this page');
+        //}
         
     }
 }

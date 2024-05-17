@@ -27,6 +27,8 @@
 
                   <br><br>
                   <a href="{{ url('roles-home') }}" style="text-decoration: none; color: blue;">Roles</a>
+                  <br>
+                  <a href="{{ url('machines') }}" style="text-decoration: none; color: blue;">Machines</a>
                 </div>
             </div>
         </div>

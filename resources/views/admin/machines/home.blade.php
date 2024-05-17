@@ -45,7 +45,7 @@
                     @endif
 
                     
-                    <table>
+                    <table width="100%">
                         <thead>
                             <tr>
                                 <th>S No</th>
@@ -71,7 +71,7 @@
                                         Inactive
                                     @endif
                                 </td>
-                                <td></td>
+                                <td><button type="button" class="btn btn-primary machineedit"  data-toggle="modal" data-target="#machineModal" data-id="{{ $machine['id'] }}" data-name="{{ $machine['name'] }}" data-horse-power="{{ $machine['horse_power'] }}" data-status="{{ $machine['status'] }}" data-image="{{ asset('machine_images').'/'.$machine['image'] }}" >Edit</button></td>
                             </tr>
                             @endforeach
                         </tbody>
@@ -84,6 +84,104 @@
         </div>
     </div>
 </div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="machineModal" tabindex="-1" role="dialog" aria-labelledby="machineModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="machineModalLongTitle">Edit Machine</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form action="{{ route('role.update') }}" method="post">
+            @csrf
+            <div class="show_message1" id="show_message1">
+
+            </div>
+            <input id="id" type="hidden" class="form-control @error('name') is-invalid @enderror" name="id" value="">
+            <div class="row mb-3">
+                <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Name') }}</label>
+
+                <div class="col-md-6">
+                    <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="">
+
+                    @error('name')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Image') }}</label>
+
+                <div class="col-md-6">
+                    <input id="image" type="file" onchange="preview()" class="form-control @error('name') is-invalid @enderror" name="image" value="">
+                    <img id="frame" src="" width="100px" />
+
+                    @error('name')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Horse Power') }}</label>
+
+                <div class="col-md-6">
+                    <input id="horse_power" type="text" class="form-control @error('name') is-invalid @enderror" name="horse_power" value="">
+                    
+                    @error('name')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label for="status" class="col-md-4 col-form-label text-md-end">{{ __('Status') }}</label>
+
+                <div class="col-md-6">
+                    <select class="form-control select2 {{ $errors->has('status') ? 'is-invalid' : '' }}" name="status" id="status">
+                        <option value="">Select Role</option>
+                        <option value="1">Active</option>
+                        <option value="0">Inactive</option>
+                    </select>
+                    @if($errors->has('status'))
+                        <div class="invalid-feedback">
+                            {{ $errors->first('role_id') }}
+                        </div>
+                    @endif
+                </div>
+            </div>
+
+            <!--<div class="row mb-0">
+                <div class="col-md-6 offset-md-4">
+                    <button type="submit" class="btn btn-primary">
+                        {{ __('Update') }}
+                    </button>
+                </div>
+            </div>-->
+        
+      
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary closebutton" data-dismiss="modal">Close</button>
+            <button type="button" onclick="updateMachine();" class="btn btn-primary">Update</button>
+          </div>
+      </div>
+        </form>
+    </div>
+  </div>
+</div>
+
 
 <div class="modal fade" id="machineaddModal" tabindex="-1" role="dialog" aria-labelledby="roleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
@@ -181,6 +279,80 @@
 <!-- jQuery library -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script type="text/javascript">
+    function updateMachine(){
+        var id = $("#id").val();
+        var name = $("#name").val();
+        var image = $('#image')[0].files[0];
+        var horsepower = $("#horse_power").val();
+        var status = $("#status").val();
+        $('#show_message').empty();
+        //alert(name);
+        var formData = new FormData();
+        
+        formData.append("id", $('#id').val());
+        formData.append("name", $('#name').val());
+        formData.append("image", $('#image')[0].files[0]);
+        formData.append("horse_power", $("#horse_power").val());
+        formData.append("status", $("#status").val());
+        //var formData = $(this).serialize();
+        $.ajax({
+            url: '{{ route("machine.update") }}',
+            type: 'post',
+            headers: { 'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content') },
+            contentType: false,
+            processData: false,
+            
+            /*data: {
+                //id : id,
+                name: addname,
+                addimage: addimage,
+                addhorsepower: addhorsepower,
+                status: status,
+            },*/
+            data: formData,
+            dataType: 'json',
+
+            
+
+            success: function(response) {
+                $('#show_message').empty();
+                console.log(response);
+                if(response.status == 200){
+                    $('#roleModal').modal('hide');
+                    alert(response.success);
+                    location.reload()
+                }
+                if(response.status == 400){
+                    alert(response.error);
+                }
+            },
+            error: function (err) {
+                $('#show_message').empty();
+                //console.log(data);
+                if (err.status == 422 || err.status == 500) { // when status code is 422, it's a validation issue
+                    console.log(err.responseJSON);
+                    //alert(err.responseJSON.message);
+                    if(err.responseJSON.message == 'Validation rule unique requires at least 1 parameters.'){
+                        $('#show_message').html('<span style="color: red;">Role name must be unique.</span>');
+                    }else{
+                        $('#show_message').html('<span style="color: red;">'+err.responseJSON.message+'</span>');
+                    }
+                    
+                    
+                    // you can loop through the errors object and show it to the user
+                    /*console.warn(err.responseJSON.errors);
+                    // display errors on each form field
+                    $.each(err.responseJSON.errors, function (i, error) {
+                        alert(i + " " + error);
+                        var el = $(document).find('[name="'+i+'"]');
+                        el.after($('<span style="color: red;">'+error[0]+'</span>'));
+                    });*/
+                }
+            },
+        });
+    }
+
+
     function addMachine(){
         //var id = $("#id").val();
         var addname = $("#addname").val();
@@ -252,6 +424,32 @@
             },
         });
     }
+
+    function preview() {
+        frame.src=URL.createObjectURL(event.target.files[0]);
+    }
+
+    $(document).on('click', '.machineedit', function() {
+        //alert($(this).data('name'));
+        var modalToggle = document.getElementById($(this).id); // relatedTarget
+        //var myModal = document.getElementById($('#roleModal'))
+        //myModal.show(modalToggle);
+        $("#id").val($(this).data('id'));
+        $("#name").val($(this).data('name'));
+        frame.src = $(this).data('image');
+        $("#horse_power").val($(this).data('horse-power'));
+        $('select[name^="status"] option:selected').attr("selected",null);
+        $('select[name^="status"] option[value="'+ $(this).data('status') +'"]').attr("selected","selected");
+        $('#machineModal').modal('show');
+    });
+
+    $(document).on('click', '.close', function() {
+        $('#machineModal').modal('hide');
+    });
+    $(document).on('click', '.closebutton', function() {
+        $('#machineModal').modal('hide');
+    });
+
     $(document).on('click', '.machineadd', function() {
         //alert($(this).data('name'));
         /*var modalToggle = document.getElementById($(this).id); // relatedTarget
