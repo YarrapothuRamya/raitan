@@ -51,13 +51,15 @@ class MachineImplementorsController extends Controller
                     $file_path = public_path('machine_images').'/'.$machine->image;
                     if (file_exists($file_path)) {
                         unlink($file_path);
-                    } 
+                    }
+                    $fileName = rand() . "." . $request->file('image')->getClientOriginalExtension();
+                    $request->file('image')->move(public_path('machine_images'), $fileName);
+                    $machine->image = $fileName;
                 }
-                $fileName = rand() . "." . $request->file('image')->getClientOriginalExtension();
-                $request->file('image')->move(public_path('machine_images'), $fileName);
+                
                 //$user->update(['photo' => $fileName]);
             //}
-            $machine->image = $fileName;
+            
             $machine->horse_power = $request['horse_power'];
             $machine->status = $request['status'];
              
