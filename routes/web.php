@@ -26,6 +26,10 @@ Route::group(['middleware' => ['auth']], function () {
    Route::get('machines', [App\Http\Controllers\MachineImplementorsController::class, 'indexmachine'])->name('machines');
    Route::post('machine-add', [App\Http\Controllers\MachineImplementorsController::class, 'machineAdd'])->name('machine.add');
    Route::post('machine-update', [App\Http\Controllers\MachineImplementorsController::class, 'machineUpdate'])->name('machine.update');
+
+   Route::get('implementors', [App\Http\Controllers\MachineImplementorsController::class, 'indeximplementors'])->name('implementors');
+   Route::post('implementor-add', [App\Http\Controllers\MachineImplementorsController::class, 'implementorAdd'])->name('implementor.add');
+   Route::post('implementor-update', [App\Http\Controllers\MachineImplementorsController::class, 'implementorUpdate'])->name('implementor.update');
 });
 
 Route::get('verify-email/{{pass_code}}/{{id}}', [App\Http\Controllers\Auth\RegisterController::class, 'verifyEmail'])->name('verify.email');

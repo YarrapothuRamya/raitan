@@ -7,8 +7,8 @@
             <div class="card">
                 <div class="card-header">
                     <div class="row">
-                        <div class="col-md-6 text-md-start">Roles</div>
-                        <div class="col-md-6 text-md-end"><button type="button" class="btn btn-primary roleadd"  data-toggle="modal" data-target="#roleModal">Add Role</button></div>
+                        <div class="col-md-6 text-md-start">Add/Edit Implementors</div>
+                        <div class="col-md-6 text-md-end"><button type="button" class="btn btn-primary implementorsadd"  data-toggle="modal" data-target="#roleModal">Add Machinary</button></div>
                     </div>
                 </div>
 
@@ -28,59 +28,78 @@
                 </div>
 
                 <div class="card-body">
-                    <table style="width: 100%;">
+                     @if($errors->any())
+                    {!! implode('', $errors->all('<div style="color:red">:message</div>')) !!}
+                    @endif
+                    @if(Session::get('error') && Session::get('error') != null)
+                    <div style="color:red">{{ Session::get('error') }}</div>
+                    @php
+                    Session::put('error', null)
+                    @endphp
+                    @endif
+                    @if(Session::get('success') && Session::get('success') != null)
+                    <div style="color:green">{{ Session::get('success') }}</div>
+                    @php
+                    Session::put('success', null)
+                    @endphp
+                    @endif
+
+                    
+                    <table width="100%">
                         <thead>
                             <tr>
                                 <th>S No</th>
-                                <th>Role Name</th>
-                                <th>Role Id</th>
-                                <th>Parent Name</th>
+                                <th>Name</th>
+                                <th>Machine Type</th>
+                                <th>Image</th>
+                                <!--<th>Horse power</th>-->
                                 <th>Status</th>
-                                <th>Actions</th>
+                                <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <?php $i = 0; ?>
-                            @foreach($roles_with_parent as $role)
+                            <?php $i = 0 ?>
+                            @foreach($implementors as $implementor)
                             <tr>
                                 <td><?php echo ++$i; ?></td>
-                                <td>{{ $role['name'] }}</td>
-                                <td>{{ $role['role_id'] }}</td>
-                                <td>@if(!empty($role['parent_name']->name))
-                                    {{ $role['parent_name']->name }}
-                                    @else
-                                    @endif
-                                </td>
+                                <td>{{ $implementor->name }}</td>
+                                <td>{{ $implementor->machine_name }}</td>
+                                <td><img src='{{ asset("implementor_images")."/".$implementor->image }}' width="100px" /></td>
+                                <!--<td>{{ $implementor->horse_power }}</td>-->
                                 <td>
-                                    @if($role['status'] == 1)
+                                    @if($implementor->status == 1)
                                         Active
-                                    @elseif($role['status'] == 0)
+                                    @elseif($implementor->status == 0)
                                         Inactive
                                     @endif
                                 </td>
-                                <td><button type="button" class="btn btn-primary roleedit"  data-toggle="modal" data-target="#roleModal" data-id="{{ $role['id'] }}" data-name="{{ $role['name'] }}" data-status="{{ $role['status'] }}" data-parent-id="{{ $role['parent_id'] }}" >Edit</button></td>
+                                <td><button type="button" class="btn btn-primary implementorsedit"  data-toggle="modal" data-target="#implementorModal" data-id="{{ $implementor['id'] }}" data-name="{{ $implementor['name'] }}" data-machine-id="{{ $implementor['machine_id'] }}" data-status="{{ $implementor['status'] }}" data-image="{{ asset('implementor_images').'/'.$implementor['image'] }}" >Edit</button></td>
                             </tr>
                             @endforeach
                         </tbody>
                     </table>
+                    
+
+                    
                 </div>
             </div>
         </div>
     </div>
 </div>
 
+
 <!-- Modal -->
-<div class="modal fade" id="roleModal" tabindex="-1" role="dialog" aria-labelledby="roleModalCenterTitle" aria-hidden="true">
+<div class="modal fade" id="implementorsModal" tabindex="-1" role="dialog" aria-labelledby="machineModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="roleModalLongTitle">Edit Role</h5>
+        <h5 class="modal-title" id="machineModalLongTitle">Edit Machine</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        <form action="{{ route('role.update') }}" method="post">
+        <form action="{{ route('implementor.update') }}" method="post">
             @csrf
             <div class="show_message1" id="show_message1">
 
@@ -101,13 +120,13 @@
             </div>
 
             <div class="row mb-3">
-                <label for="status" class="col-md-4 col-form-label text-md-end">{{ __('Edit Parent') }}</label>
+                <label for="status" class="col-md-4 col-form-label text-md-end">{{ __('Machine Type') }}</label>
 
                 <div class="col-md-6">
-                    <select class="form-control select2 {{ $errors->has('status') ? 'is-invalid' : '' }}" name="parent_id" id="parent_id">
+                    <select class="form-control select2 {{ $errors->has('status') ? 'is-invalid' : '' }}" name="machine_id" id="machine_id">
                         <option value="0">Select Parent Name</option>
-                        @foreach($roles as $role)
-                        <option value="{{ $role->id }}">{{ $role->name }}</option>
+                        @foreach($machines as $machine)
+                        <option value="{{ $machine->id }}">{{ $machine->name }}</option>
                         @endforeach
                         
                     </select>
@@ -116,6 +135,21 @@
                             {{ $errors->first('parent_id') }}
                         </div>
                     @endif
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Image') }}</label>
+
+                <div class="col-md-6">
+                    <input id="image" type="file" onchange="preview()" class="form-control @error('name') is-invalid @enderror" name="image" value="">
+                    <img id="frame" src="" width="100px" />
+
+                    @error('name')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
                 </div>
             </div>
 
@@ -147,7 +181,7 @@
       
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary closebutton" data-dismiss="modal">Close</button>
-            <button type="button" onclick="updateRole();" class="btn btn-primary">Update</button>
+            <button type="button" onclick="updateMachine();" class="btn btn-primary">Update</button>
           </div>
       </div>
         </form>
@@ -155,17 +189,18 @@
   </div>
 </div>
 
-<div class="modal fade" id="roleaddModal" tabindex="-1" role="dialog" aria-labelledby="roleModalCenterTitle" aria-hidden="true">
+
+<div class="modal fade" id="implementorsaddModal" tabindex="-1" role="dialog" aria-labelledby="roleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="roleModalLongTitle">Add Role</h5>
+        <h5 class="modal-title" id="roleModalLongTitle">Add Implementor</h5>
         <button type="button" class="closeadd" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        <form action="{{ route('role.update') }}" method="post">
+        <form action="{{ route('implementor.add') }}" method="post" enctype="multipart/form-data">
             @csrf
             <div class="show_message" id="show_message">
 
@@ -186,16 +221,30 @@
             </div>
 
             <div class="row mb-3">
-                <label for="status" class="col-md-4 col-form-label text-md-end">{{ __('Add Parent') }}</label>
+                <label for="status" class="col-md-4 col-form-label text-md-end">{{ __('Machine Type') }}</label>
 
                 <div class="col-md-6">
-                    <select class="form-control select2 {{ $errors->has('status') ? 'is-invalid' : '' }}" name="add_parent_id" id="add_parent_id">
+                    <select class="form-control select2 {{ $errors->has('status') ? 'is-invalid' : '' }}" name="add_machine_id" id="add_machine_id">
                         <option value="0">Select Parent Name</option>
-                        @foreach($roles as $role)
-                        <option value="{{ $role->id }}">{{ $role->name }}</option>
+                        @foreach($machines as $machine)
+                        <option value="{{ $machine->id }}">{{ $machine->name }}</option>
                         @endforeach
                         
                     </select>
+                    @if($errors->has('parent_id'))
+                        <div class="invalid-feedback">
+                            {{ $errors->first('parent_id') }}
+                        </div>
+                    @endif
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label for="status" class="col-md-4 col-form-label text-md-end">{{ __('Image') }}</label>
+
+                <div class="col-md-6">
+                    <input id="addimage" type="file" class="form-control @error('addimage') is-invalid @enderror" name="addimage" value="">
+
                     @if($errors->has('parent_id'))
                         <div class="invalid-feedback">
                             {{ $errors->first('parent_id') }}
@@ -232,90 +281,52 @@
       
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary closeaddbutton" data-dismiss="modal">Close</button>
-            <button type="button" onclick="addRole();" class="btn btn-primary">Add</button>
+            <button type="button" onclick="addMachine();" class="btn btn-primary">Add</button>
           </div>
       </div>
         </form>
     </div>
   </div>
 </div>
-
 <!-- jQuery library -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script type="text/javascript">
-    function updateRole(){
+    function updateMachine(){
         var id = $("#id").val();
         var name = $("#name").val();
-        var parent_id = $("#parent_id").val();
+        var machine_id = $("#machine_id").val();
+        var image = $('#image')[0].files[0];
+        //var horsepower = $("#horse_power").val();
         var status = $("#status").val();
-        //alert(name);
-        $.ajax({
-            url: '{{ route("role.update") }}',
-            type: 'post',
-            dataType: 'json',
-            data: {
-                id : id,
-                name: name,
-                parent_id: parent_id,
-                status: status,
-            },
-            headers: { 'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content') },
-
-            success: function(response) {
-                console.log(response);
-                if(response.status == 200){
-                    $('#roleModal').modal('hide');
-                    alert(response.success);
-                    location.reload()
-                }
-                if(response.status == 400){
-                    alert(response.error);
-                }
-            },
-            error: function (err) {
-                $('#show_message').empty();
-                //console.log(data);
-                if (err.status == 422 || err.status == 500) { // when status code is 422, it's a validation issue
-                    console.log(err.responseJSON);
-                    //alert(err.responseJSON.message);
-                    if(err.responseJSON.message == 'Validation rule unique requires at least 1 parameters.'){
-                        $('#show_message1').html('<span style="color: red;">Role name must be unique.</span>');
-                    }else{
-                        $('#show_message1').html('<span style="color: red;">'+err.responseJSON.message+'</span>');
-                    }
-                    
-                    
-                    // you can loop through the errors object and show it to the user
-                    /*console.warn(err.responseJSON.errors);
-                    // display errors on each form field
-                    $.each(err.responseJSON.errors, function (i, error) {
-                        alert(i + " " + error);
-                        var el = $(document).find('[name="'+i+'"]');
-                        el.after($('<span style="color: red;">'+error[0]+'</span>'));
-                    });*/
-                }
-            }
-        });
-    }
-
-    function addRole(){
-        //var id = $("#id").val();
-        var name = $("#addname").val();
-        var add_parent_id = $("#add_parent_id").val();
-        var status = $("#addstatus").val();
         $('#show_message').empty();
         //alert(name);
+        var formData = new FormData();
+        
+        formData.append("id", $('#id').val());
+        formData.append("name", $('#name').val());
+        formData.append("machine_id", $("#machine_id").val());
+        formData.append("image", $('#image')[0].files[0]);
+        //formData.append("horse_power", $("#horse_power").val());
+        formData.append("status", $("#status").val());
+        //var formData = $(this).serialize();
         $.ajax({
-            url: '{{ route("role.add") }}',
+            url: '{{ route("implementor.update") }}',
             type: 'post',
-            dataType: 'json',
-            data: {
-                //id : id,
-                name: name,
-                add_parent_id: add_parent_id,
-                status: status,
-            },
             headers: { 'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content') },
+            contentType: false,
+            processData: false,
+            
+            /*data: {
+                //id : id,
+                name: addname,
+                addimage: addimage,
+                addhorsepower: addhorsepower,
+                status: status,
+            },*/
+            data: formData,
+            dataType: 'json',
+
+            
 
             success: function(response) {
                 $('#show_message').empty();
@@ -355,29 +366,111 @@
         });
     }
 
-    $(document).on('click', '.roleedit', function() {
+
+    function addMachine(){
+        //var id = $("#id").val();
+        var addname = $("#addname").val();
+        var add_machine_id = $("#add_machine_id").val();
+        var addimage = $('#addimage')[0].files[0];
+        //var addhorsepower = $("#addhorsepower").val();
+        var status = $("#addstatus").val();
+        $('#show_message').empty();
+        //alert(name);
+        var formData = new FormData();
+        
+        formData.append("name", $('#addname').val());
+        formData.append("add_machine_id", $("#add_machine_id").val());
+        formData.append("addimage", $('#addimage')[0].files[0]);
+        //formData.append("addhorsepower", $("#addhorsepower").val());
+        formData.append("addstatus", $("#addstatus").val());
+        //var formData = $(this).serialize();
+        $.ajax({
+            url: '{{ route("implementor.add") }}',
+            type: 'post',
+            headers: { 'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content') },
+            contentType: false,
+            processData: false,
+            
+            /*data: {
+                //id : id,
+                name: addname,
+                addimage: addimage,
+                addhorsepower: addhorsepower,
+                status: status,
+            },*/
+            data: formData,
+            dataType: 'json',
+
+            
+
+            success: function(response) {
+                $('#show_message').empty();
+                console.log(response);
+                if(response.status == 200){
+                    $('#roleModal').modal('hide');
+                    alert(response.success);
+                    location.reload()
+                }
+                if(response.status == 400){
+                    alert(response.error);
+                }
+            },
+            error: function (err) {
+                $('#show_message').empty();
+                //console.log(data);
+                if (err.status == 422 || err.status == 500) { // when status code is 422, it's a validation issue
+                    console.log(err.responseJSON);
+                    //alert(err.responseJSON.message);
+                    if(err.responseJSON.message == 'Validation rule unique requires at least 1 parameters.'){
+                        $('#show_message').html('<span style="color: red;">Role name must be unique.</span>');
+                    }else{
+                        $('#show_message').html('<span style="color: red;">'+err.responseJSON.message+'</span>');
+                    }
+                    
+                    
+                    // you can loop through the errors object and show it to the user
+                    /*console.warn(err.responseJSON.errors);
+                    // display errors on each form field
+                    $.each(err.responseJSON.errors, function (i, error) {
+                        alert(i + " " + error);
+                        var el = $(document).find('[name="'+i+'"]');
+                        el.after($('<span style="color: red;">'+error[0]+'</span>'));
+                    });*/
+                }
+            },
+        });
+    }
+
+    function preview() {
+        frame.src=URL.createObjectURL(event.target.files[0]);
+    }
+
+    $(document).on('click', '.implementorsedit', function() {
         //alert($(this).data('name'));
         var modalToggle = document.getElementById($(this).id); // relatedTarget
         //var myModal = document.getElementById($('#roleModal'))
         //myModal.show(modalToggle);
         $("#id").val($(this).data('id'));
         $("#name").val($(this).data('name'));
-        $('select[name^="parent_id"] option:selected').attr("selected",null);
-        $('select[name^="parent_id"] option[value="'+ $(this).data('parent-id') +'"]').attr("selected","selected");
+        frame.src = $(this).data('image');
+        //$("#horse_power").val($(this).data('horse-power'));
+        
+        $('select[name^="machine_id"] option:selected').attr("selected",null);
+        $('select[name^="machine_id"] option[value="'+ $(this).data('machine-id') +'"]').attr("selected","selected");
 
         $('select[name^="status"] option:selected').attr("selected",null);
         $('select[name^="status"] option[value="'+ $(this).data('status') +'"]').attr("selected","selected");
-        $('#roleModal').modal('show');
+        $('#implementorsModal').modal('show');
     });
 
     $(document).on('click', '.close', function() {
-        $('#roleModal').modal('hide');
+        $('#implementorsModal').modal('hide');
     });
     $(document).on('click', '.closebutton', function() {
-        $('#roleModal').modal('hide');
+        $('#implementorsModal').modal('hide');
     });
 
-    $(document).on('click', '.roleadd', function() {
+    $(document).on('click', '.implementorsadd', function() {
         //alert($(this).data('name'));
         /*var modalToggle = document.getElementById($(this).id); // relatedTarget
         //var myModal = document.getElementById($('#roleModal'))
@@ -386,14 +479,13 @@
         $("#name").val($(this).data('name'));
         $('select[name^="status"] option:selected').attr("selected",null);
         $('select[name^="status"] option[value="'+ $(this).data('status') +'"]').attr("selected","selected");*/
-        $('#roleaddModal').modal('show');
+        $('#implementorsaddModal').modal('show');
     });
-
     $(document).on('click', '.closeadd', function() {
-        $('#roleaddModal').modal('hide');
+        $('#implementorsaddModal').modal('hide');
     });
     $(document).on('click', '.closeaddbutton', function() {
-        $('#roleaddModal').modal('hide');
+        $('#implementorsaddModal').modal('hide');
     });
 </script>
 @endsection
