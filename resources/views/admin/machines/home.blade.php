@@ -151,7 +151,24 @@
 
                 <div class="col-md-6">
                     <select class="form-control select2 {{ $errors->has('status') ? 'is-invalid' : '' }}" name="status" id="status">
-                        <option value="">Select Role</option>
+                        <option value="">Select Status</option>
+                        <option value="1">Active</option>
+                        <option value="0">Inactive</option>
+                    </select>
+                    @if($errors->has('status'))
+                        <div class="invalid-feedback">
+                            {{ $errors->first('role_id') }}
+                        </div>
+                    @endif
+                </div>
+            </div>
+
+            <div class="row mb-3 d-none">
+                <label for="status" class="col-md-4 col-form-label text-md-end">{{ __('Status') }}</label>
+
+                <div class="col-md-6">
+                    <select class="form-control select2 {{ $errors->has('status') ? 'is-invalid' : '' }}" name="status1" id="status1">
+                        <option value="">Select Status</option>
                         <option value="1">Active</option>
                         <option value="0">Inactive</option>
                     </select>
@@ -246,7 +263,7 @@
 
                 <div class="col-md-6">
                     <select class="form-control select2 {{ $errors->has('status') ? 'is-invalid' : '' }}" name="addstatus" id="addstatus">
-                        <option value="">Select Role</option>
+                        <option value="">Select Status</option>
                         <option value="1">Active</option>
                         <option value="0">Inactive</option>
                     </select>
@@ -285,8 +302,24 @@
         var image = $('#image')[0].files[0];
         var horsepower = $("#horse_power").val();
         var status = $("#status").val();
+        const status1 = $("#status1").val();
         $('#show_message').empty();
         //alert(name);
+        if(status == status1){
+
+        }else{
+            var status_val;
+            if(status == 1){
+                status_val = 'Active';
+            }else if(status == 0){
+                status_val = 'InActive';
+            }
+            if(confirm('Implementors related to this machine will also get '+ status_val +'. Do you want to continue?')){
+                
+            } else {
+                return false;
+            }
+        }
         var formData = new FormData();
         
         formData.append("id", $('#id').val());
@@ -294,6 +327,7 @@
         formData.append("image", $('#image')[0].files[0]);
         formData.append("horse_power", $("#horse_power").val());
         formData.append("status", $("#status").val());
+        formData.append("status1", $("#status1").val());
         //var formData = $(this).serialize();
         $.ajax({
             url: '{{ route("machine.update") }}',
@@ -440,6 +474,8 @@
         $("#horse_power").val($(this).data('horse-power'));
         $('select[name^="status"] option:selected').attr("selected",null);
         $('select[name^="status"] option[value="'+ $(this).data('status') +'"]').attr("selected","selected");
+        $('select[name^="status1"] option:selected').attr("selected",null);
+        $('select[name^="status1"] option[value="'+ $(this).data('status') +'"]').attr("selected","selected");
         $('#machineModal').modal('show');
     });
 

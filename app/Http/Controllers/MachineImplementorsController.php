@@ -80,6 +80,9 @@ class MachineImplementorsController extends Controller
             $machine->status = $request['status'];
              
             if($machine->save()){
+                if($request['status'] != $request['status1']){
+                    Implementors::where('machine_id', '=', $request['id'])->update(['status' => $request['status']]);
+                }
                 return response()->json(['status' => 200, 'success' => 'Machine successfully updated']);
                 return redirect()->back()->with('status','Role successfully updated');
             }else{
