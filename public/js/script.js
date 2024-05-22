@@ -167,6 +167,11 @@
         });
       });
 
+        $('.clickable').on('click', function () {
+            const tractorBlock = $(this).closest('.tractor-block');
+            tractorBlock.toggleClass('expanded');
+        });
+
       // Filter items on button click
       $('.filter-button').click(function () {
         var filterValue = $(this).attr('data-filter');

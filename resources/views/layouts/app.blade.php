@@ -149,7 +149,7 @@
                       <div role="button" tabindex="0" aria-label="Login/Sign Up" class="headnav_item_anchor bluefill_animate"
                         fdprocessedid="yopgan">
                         <div class="headnav_item_text font14 fw500 colorFFF">
-                            <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+                            <nav class="navbar navbar-expand-md navbar-light shadow-sm">
                                 <div class="container">
                                     <!--<a class="navbar-brand" href="{{ url('/') }}">
                                         {{ config('app.name', 'Laravel') }}
@@ -170,13 +170,13 @@
                                             @guest
                                                 @if (Route::has('login'))
                                                     <li class="nav-item">
-                                                        <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                                        <a class="headnav_item_text font14 fw500 colorFFF nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                                                     </li>
                                                 @endif
 
                                                 @if (Route::has('register'))
                                                     <li class="nav-item">
-                                                        <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                                        <a class="headnav_item_text font14 fw500 colorFFF nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                                                     </li>
                                                 @endif
                                             @else
