@@ -1,14 +1,18 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Models\Roles;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+/*Route::get('/', function () {
+    $roles=Roles::select('*')->get();
+    return view('welcome', compact('roles'));
+});*/
+Route::get('/', [App\Http\Controllers\HomeController::class, 'indexroot'])->name('indexroot');
+Auth::routes(['verify' => true]);
 
-Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('register-thankyou', [App\Http\Controllers\Auth\RegisterController::class, 'registerthankyou'])->name('register.thankyou');
 Route::group(['middleware' => ['auth', 'role']], function () {
    Route::get('master-home', [App\Http\Controllers\HomeController::class, 'masterHome'])->name('master.home');
    Route::get('admin-home', [App\Http\Controllers\HomeController::class, 'adminHome'])->name('admin.home');
@@ -32,7 +36,7 @@ Route::group(['middleware' => ['auth']], function () {
    Route::post('implementor-update', [App\Http\Controllers\MachineImplementorsController::class, 'implementorUpdate'])->name('implementor.update');
 });
 
-Route::get('verify-email/{{pass_code}}/{{id}}', [App\Http\Controllers\Auth\RegisterController::class, 'verifyEmail'])->name('verify.email');
+Route::get('verify-email/{pass_code}/{id}', [App\Http\Controllers\Auth\RegisterController::class, 'verifyEmail'])->name('verify.email');
 
 Route::get('roles-home', [App\Http\Controllers\RolesController::class, 'index'])->name('roles.home');
 Route::post('role-update', [App\Http\Controllers\RolesController::class, 'roleUpdate'])->name('role.update');
