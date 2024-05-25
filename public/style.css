@@ -1584,7 +1584,7 @@ body, button, input, select, textarea{
   -ms-flex-pack: justify;
   justify-content: space-between;
   width: 100%;
-  padding: 100px 45px 30px;
+  padding: 50px 45px 30px;
   position: relative;
   margin-bottom: 30px;
 }
@@ -2586,4 +2586,13 @@ a, img {
     -moz-transform: translate3d(112px, 0, 0px);
     transform: translate3d(112px,0,0px);
 }
+}
+
+
+.expanded .extra-details {
+    display: block;
+}
+
+.clickable {
+    cursor: pointer;
 }
