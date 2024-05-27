@@ -37,6 +37,11 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 
+    public function username()
+    {
+        return 'mobile';
+    }
+
     public function redirectTo() {
         $role = \Auth::user()->role; 
         switch ($role) {

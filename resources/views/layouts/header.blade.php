@@ -208,6 +208,8 @@
                                           <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                               {{ Auth::user()->name }}
                                           </a>
+                                          <a class="headnav_item_text font14 fw500 colorFFF d-none" id="header_login">Log in</a>
+                                          <a class="headnav_item_text font14 fw500 colorFFF d-none" id="header_register">/ Register</a>
 
                                           <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                               <a class="dropdown-item" href="{{ route('password') }}"
@@ -259,6 +261,9 @@
       <div class="bg-gray-50 rounded-b-xl px-6 pt-3 pb-8 text-black">
         <p class="py-2 font-light mb-2 text-sm">Enter your mobile number to continue</p>
         <form action="" method="post">
+          <div class="show_message1" id="show_message1">
+
+          </div>
           <div class="my-2">
             <div class="relative mb-2">
               <input  name="lmobile" id="lmobile"
@@ -280,7 +285,7 @@
             </div>
             <div class="relative">
 
-              <input name="lpassword"
+              <input type="password" name="lpassword" id="lpassword"
                 class="common-input input-focus text-sm py-3 rounded-xl" placeholder="Enter Your Password"
                 style="padding-left: 46.8px;">
               <!-- <div class="absolute left-0 top-0 bottom-0 bg-gray-50 text-black smooth-animate rounded-lg rounded-r-none p-2 flex items-center border border-r-0 justify-center"
@@ -426,6 +431,11 @@ c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
+  
+<!-- Latest compiled JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.min.js" integrity="sha512-WW8/jxkELe2CAiE4LvQfwm1rajOS8PHasCCx+knHG0gBHt8EXxS6T6tJRTGuDQVnluuAvMxWF4j8SNFDKceLFg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js" integrity="sha512-2rNj2KJ+D8s1ceNasTIex6z4HWyOnEYLVC3FigGOmyQCZc2eBXKgOxQmo3oKLHyfcj53uz4QMsRCWNbLd32Q1g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
 
   document.addEventListener("DOMContentLoaded", function () {
@@ -485,44 +495,87 @@ Array.from(registersection.children).forEach(child => {
 </script>
 <script type="text/javascript">
 $(document).ready(function(){
-$('.register_button').click(function(){
+  $('.register_button').click(function(){
 
-    var name = $('#rname').val();
-    var mobile = $('#rmobile').val();
-    var password = $('#password').val();
-    var password_confirmation = $('#password_confirmation').val();
-    $('#show_message').empty();
-    //alert(name + " " + mobile);
-    $.ajax
-    ({ 
-        url: '{{ route("register") }}',
-        headers: { 'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content') },
-        data: {
-            "name": name,
-            "mobile": mobile,
-            "password": password,
-            "password_confirmation": password_confirmation,
-            "status": 1,
-        },
-        type: 'post',
-        dataType: 'json',
-        success: function(result)
-        {
-            console.log(result);
-            if(result.status == "success"){
-              $('#show_message').html('<span style="color: green;">'+ result.message +'</span>');
-            }
-        },
-        error: function(res)
-        {
-            console.log(res);
-            if(res.responseJSON.message == 'Validation rule unique requires at least 1 parameters.'){
-                $('#show_message').html('<span style="color: red;">Phone Number must be unique.</span>');
-            }else{
-                $('#show_message').html('<span style="color: red;">'+res.responseJSON.message+'</span>');
-            }
-        },
-    });
-});
+      var name = $('#rname').val();
+      var mobile = $('#rmobile').val();
+      var password = $('#password').val();
+      var password_confirmation = $('#password_confirmation').val();
+      $('#show_message').empty();
+      //alert(name + " " + mobile);
+      $.ajax
+      ({ 
+          url: '{{ route("register") }}',
+          headers: { 'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content') },
+          data: {
+              "name": name,
+              "mobile": mobile,
+              "password": password,
+              "password_confirmation": password_confirmation,
+              "status": 1,
+          },
+          type: 'post',
+          dataType: 'json',
+          success: function(result)
+          {
+              console.log(result);
+              if(result.status == "success"){
+                $('#show_message').html('<span style="color: green;">'+ result.message +'</span>');
+              }
+          },
+          error: function(res)
+          {
+              console.log(res);
+              if(res.responseJSON.message == 'Validation rule unique requires at least 1 parameters.'){
+                  $('#show_message').html('<span style="color: red;">Phone Number must be unique.</span>');
+              }else{
+                  $('#show_message').html('<span style="color: red;">'+res.responseJSON.message+'</span>');
+              }
+          },
+      });
+  });
+
+    $('#login_button').click(function(){
+
+      //var name = $('#rname').val();
+      var mobile = $('#lmobile').val();
+      var password = $('#lpassword').val();
+      //var password_confirmation = $('#password_confirmation').val();
+      $('#show_message1').empty();
+      //alert(name + " " + mobile);
+      $.ajax
+      ({ 
+          url: '{{ route("login") }}',
+          headers: { 'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content') },
+          data: {
+              //"name": name,
+              "mobile": mobile,
+              "password": password,
+              //"password_confirmation": password_confirmation,
+              //"status": 1,
+          },
+          type: 'post',
+          dataType: 'json',
+          success: function(result)
+          {
+              console.log(result);
+              /*if(result.status == "success"){
+                $('#show_message1').html('<span style="color: green;">'+ result.message +'</span>');
+              }*/
+              setTimeout(function() {
+                 window.location.reload();
+              }, 1000);
+          },
+          error: function(res)
+          {
+              console.log(res);
+              if(res.responseJSON.message == 'Validation rule unique requires at least 1 parameters.'){
+                  $('#show_message1').html('<span style="color: red;">Phone Number must be unique.</span>');
+              }else{
+                  $('#show_message1').html('<span style="color: red;">'+res.responseJSON.message+'</span>');
+              }
+          },
+      });
+  });
 })
 </script>
