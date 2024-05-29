@@ -34,6 +34,12 @@ class RolesController extends Controller
         
     }
 
+    public function registerthankyou()
+    {
+        //dd("Hello");
+        return view('register.registerthankyou');
+    }
+
     public function roleUpdate(Request $request)
     {
         $role = \Auth::user()->role;

@@ -10,6 +10,9 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use App\Mail\RegistrationMail;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Http\Request;
+use Illuminate\Auth\Events\Registered;
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 class RegisterController extends Controller
 {
@@ -31,7 +34,15 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    //protected $redirectTo = '/home';
+
+    protected function redirectTo()
+    {
+        //if (\Auth::user()->role == 1) {
+        //    return '/master-admin';
+        //}
+        return '/register-thankyou';
+    }
 
     /**
      * Create a new controller instance.
@@ -53,7 +64,8 @@ class RegisterController extends Controller
     {
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'mobile' => ['required', 'digits:10', 'unique:users'],
+            //'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
             'role_id' => ['required'],
         ]);
@@ -68,12 +80,14 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         //dd($data['role_id']);
-        /*return User::create([
+        return User::create([
             'name' => $data['name'],
-            'email' => $data['email'],
+            'mobile' => $data['mobile'],
+            //'email' => $data['email'],
             'password' => Hash::make($data['password']),
             'role' => $data['role_id'],
-        ]);*/
+            'status' => $data['status'],
+        ]);
         $pass_code = random_int(100000, 999999);
         $id = User::insertGetId([
             'name' => $data['name'],
@@ -90,19 +104,42 @@ class RegisterController extends Controller
 
     }
 
+    public function register(Request $request)
+    {
+        $this->validator($request->all())->validate();
+
+        event(new Registered($user = $this->create($request->all())));
+
+        //$this->guard()->login($user);
+
+        return $this->registered($request, $user)
+                        ?: redirect($this->redirectPath());
+    }
+
     public function showRegistrationForm()
     {
         $roles=Roles::select('name','role_id')->whereNotIn('role_id', [1,2,3])->where('status',1)->get();
         return view('auth.register',compact('roles'));
     }
 
+    public function registerthankyou()
+    {
+        return response()->json(['status' => 'success', 'message' => 'Successfully Registered']);
+        return view('auth.registerthankyou');
+    }
+
     public function verifyEmail(Request $request)
     {
         $pass_code = $request['pass_code'];
-        $user = Users::find($request($id));
-
+        $user = User::find($request['id']);
+        //dd($pass_code . " " . $user->pass_code);
         if($pass_code == $user->pass_code){
-            return redirect('/home')->with('status', 'Successfully registered.');
+            if($user->email_verified_at == null){
+                User::where('id', '=', $request['id'])->update(['email_verified_at' => Carbon::now()]);
+                return redirect('/home')->with('status', 'Successfully registered.');
+            }
+            return redirect('/home')->with('status', 'You are already  registered.');
+            
         }else{
             return redirect('/home')->with('error', 'Something went wrong. Please try again.');
         }

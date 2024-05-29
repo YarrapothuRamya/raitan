@@ -37,34 +37,51 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 
+    public function username()
+    {
+        return 'mobile';
+    }
+
     public function redirectTo() {
         $role = \Auth::user()->role; 
         switch ($role) {
-            case '1':
+            /*case '1':
+                //return redirect()->intended('/master-home');
                 return '/master-home';
                 break;
             case '2':
+                //return redirect()->intended('/admin-home');
                 return '/admin-home';
                 break;
             case '3':
+                //return redirect()->intended('/staff-home');
                 return '/staff-home';
                 break;
             case '4':
+                //return redirect()->intended('/sales-home');
+                return '/customercare-home';
+                break;*/
+            case '5':
+                //return redirect()->intended('/agents-home');
                 return '/sales-home';
                 break;
-            case '5':
+            case '6':
+                //return redirect()->intended('/sellers-home');
                 return '/agents-home';
                 break;
-            case '6':
-                return '/sellers-home';
-                break;
             case '7':
+                //return redirect()->intended('/customers-home');
+                return '/sellers-home';
+                break; 
+            case '8':
+                //return redirect()->intended('/customers-home');
                 return '/customers-home';
                 break; 
 
             default:
+                return redirect()->intended('/admin_login');
                 return '/login'; 
             break;
-      }
+        }
     }
 }
