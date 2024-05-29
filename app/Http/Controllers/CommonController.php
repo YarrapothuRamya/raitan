@@ -10,4 +10,9 @@ class CommonController extends Controller
     {
         return view('welcome');
     }
+
+    public function pagenotfound()
+    {
+        return view('pages.pagenotfound');
+    }
 }
