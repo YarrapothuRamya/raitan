@@ -1,9 +1,6 @@
-<<<<<<< HEAD
-
-=======
 @extends('layouts.app')
 @section('content')
->>>>>>> 40ce2425464ef1426d5fea245c41d68db5ad0994
+
   <section class=" home_appextra ">
     <h2 class=" home_input_title font26 fw700 color111 mb-15"><span class="">Search Nearby <!-- --> </span><span
         class=" content__list__count pl-8" style="transform: translate3d(0px, 0px, 0px);"><span class=""><span
