@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <section class=" home_appextra " aria-describedby="Cars list Page" style="padding-top: 0px;">
   <!-- <div class="">
       <div class=" fixed left-0 right-0 bg-gray-50 z-10 shadow-md">
@@ -94,67 +95,122 @@
 
 
           </div> -->
-          <div class="relative w-full">
-            <div class="w-full flex flex-col col-span-2 space-y-4 lg:mt-0 mt-8 h-screen overflow-y-auto pb-5">
-              <div class=" border border-pear/30 shadow-md shadow-pear/30 rounded-lg lg:p-4 p-2">
-                <div class="flex justify-between clickable">
-                  <div class="flex space-x-3">
-                    <div>
-                      <div class="w-40 h-28">
-                        <div class="w-full h-full">
-                          <img src="images/tractors/jcb1.png" alt="..." class="w-40 h-28" width="160" height="112">
-                        </div>
-                      </div>
-                    </div>
-                    <div>
-                      <h2 class="text-lg font-medium">Earth Movers</h2>
 
-                    </div>
+          <div>
+            <p class="text-sm tracking-[0.1px] mb-3 mt-3 md:mt-0">Other Services</p>
+            <div
+              class="w-full p-4 bg-neutral-10 dark:bg-neutral-900 rounded-2xl border border-gray-200 dark:border-gray-700 shadow-t-md border">
+              <!-- Lists -->
+              <div
+                class="w-full md:w-[360px] flex flex-col py-2 rounded-xl overflow-hidden bg-neutral-10 dark:bg-neutral-900 max-h-60 overflow-y-auto">
+                <!-- lists & image -->
+                <div
+                  class="min-h-[3.5rem] flex flex-row items-center gap-4 py-2 pl-4 pr-6 cursor-pointer border border-pear/30 shadow-md shadow-pear/30 rounded-lg lg:p-4 p-2">
+                  <div
+                    class="w-14 h-14 flex items-center justify-center title-md font-bold bg-primary-600 text-white dark:bg-primary-200 dark:text-neutral-900">
+                    <img src="images/tractors/jcb1.png" alt="media 2" class="w-14 h-14">
                   </div>
-
-                </div>
-
-              </div>
-              <div class=" border border-pear/30 shadow-md shadow-pear/30 rounded-lg lg:p-4 p-2">
-                <div class="flex justify-between clickable">
-                  <div class="flex space-x-3">
-                    <div>
-                      <div class="w-40 h-28">
-                        <div class="w-full h-full">
-                          <img src="images/man_power/farming_women.jpg" alt="..." class="w-40 h-28" width="160"
-                            height="112">
-                        </div>
-                      </div>
-                    </div>
-                    <div>
-                      <h2 class="text-lg font-medium">Workers</h2>
-
-                    </div>
+                  <div class="flex flex-col flex-grow">
+                    <p class="tracking-[.03125em]">Earth Movers</p>
+                    <span class="text-sm tracking-[0.25px]">Supporting line text</span>
                   </div>
-
+                  <span class="text-[11px] leading-4 tracking-[.045em] font-medium"></span>
                 </div>
-
-              </div>
-
-              <div class=" border border-pear/30 shadow-md shadow-pear/30 rounded-lg lg:p-4 p-2">
-                <div class="flex justify-between clickable">
-                  <div class="flex space-x-3">
-                    <div>
-                      <div class="w-40 h-28">
-                        <div class="w-full h-full">
-                          <img src="images/harvestor1.png" alt="..." class="w-40 h-28" width="160" height="112">
-                        </div>
-                      </div>
-                    </div>
-                    <div>
-                      <h2 class="text-lg font-medium">Harvestor</h2>
-
-                    </div>
+                <!-- lists & image -->
+                <div
+                  class="min-h-[3.5rem] flex flex-row items-center gap-4 py-2 pl-4 pr-6 cursor-pointer border border-pear/30 shadow-md shadow-pear/30 rounded-lg lg:p-4 p-2">
+                  <div
+                    class="w-14 h-14 flex items-center justify-center title-md font-bold bg-primary-600 text-white dark:bg-primary-200 dark:text-neutral-900">
+                    <img src="images/farmer1.png" alt="media 2" class="w-14 h-14">
                   </div>
-
+                  <div class="flex flex-col flex-grow">
+                    <p class="tracking-[.03125em]">Workers</p>
+                    <span class="text-sm tracking-[0.25px]">Supporting line text</span>
+                  </div>
+                  <span class="text-[11px] leading-4 tracking-[.045em] font-medium"></span>
                 </div>
-
+                <!-- lists & image -->
+                <div
+                  class="min-h-[3.5rem] flex flex-row items-center gap-4 py-2 pl-4 pr-6 cursor-pointer border border-pear/30 shadow-md shadow-pear/30 rounded-lg lg:p-4 p-2">
+                  <div
+                    class="w-14 h-14 flex items-center justify-center title-md font-bold bg-primary-600 text-white dark:bg-primary-200 dark:text-neutral-900">
+                    <img src="images/harvestor1.png" alt="media 2" class="w-14 h-14">
+                  </div>
+                  <div class="flex flex-col flex-grow">
+                    <p class="tracking-[.03125em]">Harvestor</p>
+                    <span class="text-sm tracking-[0.25px]">Supporting line text</span>
+                  </div>
+                  <span class="text-[11px] leading-4 tracking-[.045em] font-medium"></span>
+                </div>
+                <!-- lists & image -->
+                <div
+                  class="min-h-[3.5rem] flex flex-row items-center gap-4 py-2 pl-4 pr-6 cursor-pointer border border-pear/30 shadow-md shadow-pear/30 rounded-lg lg:p-4 p-2">
+                  <div
+                    class="w-14 h-14 flex items-center justify-center title-md font-bold bg-primary-600 text-white dark:bg-primary-200 dark:text-neutral-900">
+                    <img src="images/dronesprayer.png" alt="media 2" class="w-14 h-14">
+                  </div>
+                  <div class="flex flex-col flex-grow">
+                    <p class="tracking-[.03125em]">Drones</p>
+                    <span class="text-sm tracking-[0.25px]">Supporting line text</span>
+                  </div>
+                  <span class="text-[11px] leading-4 tracking-[.045em] font-medium"></span>
+                </div>
+                <!-- lists & image -->
+                <div
+                  class="min-h-[3.5rem] flex flex-row items-center gap-4 py-2 pl-4 pr-6 cursor-pointer border border-pear/30 shadow-md shadow-pear/30 rounded-lg lg:p-4 p-2">
+                  <div
+                    class="w-14 h-14 flex items-center justify-center title-md font-bold bg-primary-600 text-white dark:bg-primary-200 dark:text-neutral-900">
+                    <img src="images/machine/paddytransplanter.jpeg" alt="media 2" class="w-14 h-14">
+                  </div>
+                  <div class="flex flex-col flex-grow">
+                    <p class="tracking-[.03125em]">Paddy Transplantor</p>
+                    <span class="text-sm tracking-[0.25px]">Supporting line text</span>
+                  </div>
+                  <span class="text-[11px] leading-4 tracking-[.045em] font-medium"></span>
+                </div>
+                <!-- lists & image -->
+                <div
+                  class="min-h-[3.5rem] flex flex-row items-center gap-4 py-2 pl-4 pr-6 cursor-pointer border border-pear/30 shadow-md shadow-pear/30 rounded-lg lg:p-4 p-2">
+                  <div
+                    class="w-14 h-14 flex items-center justify-center title-md font-bold bg-primary-600 text-white dark:bg-primary-200 dark:text-neutral-900">
+                    <img src="images/mechanic.png" alt="media 2" class="w-14 h-14">
+                  </div>
+                  <div class="flex flex-col flex-grow">
+                    <p class="tracking-[.03125em]">Mechanics</p>
+                    <span class="text-sm tracking-[0.25px]">Supporting line text</span>
+                  </div>
+                  <span class="text-[11px] leading-4 tracking-[.045em] font-medium"></span>
+                </div>
+                <!-- lists & image -->
+                <div
+                  class="min-h-[3.5rem] flex flex-row items-center gap-4 py-2 pl-4 pr-6 cursor-pointer border border-pear/30 shadow-md shadow-pear/30 rounded-lg lg:p-4 p-2">
+                  <div
+                    class="w-14 h-14 flex items-center justify-center title-md font-bold bg-primary-600 text-white dark:bg-primary-200 dark:text-neutral-900">
+                    <img src="images/man_power/farming_women.jpg" alt="media 2" class="w-14 h-14">
+                  </div>
+                  <div class="flex flex-col flex-grow">
+                    <p class="tracking-[.03125em]">Farming Labour</p>
+                    <span class="text-sm tracking-[0.25px]">Supporting line text</span>
+                  </div>
+                  <span class="text-[11px] leading-4 tracking-[.045em] font-medium"></span>
+                </div>
+                <!-- lists & image -->
+                <div
+                  class="min-h-[3.5rem] flex flex-row items-center gap-4 py-2 pl-4 pr-6 cursor-pointer border border-pear/30 shadow-md shadow-pear/30 rounded-lg lg:p-4 p-2">
+                  <div
+                    class="w-14 h-14 flex items-center justify-center title-md font-bold bg-primary-600 text-white dark:bg-primary-200 dark:text-neutral-900">
+                    <img src="images/man_power/chilli_picker.jpg" alt="media 2" class="w-14 h-14">
+                  </div>
+                  <div class="flex flex-col flex-grow">
+                    <p class="tracking-[.03125em]">Cotton?Chilli Picker</p>
+                    <span class="text-sm tracking-[0.25px]">Supporting line text</span>
+                  </div>
+                  <span class="text-[11px] leading-4 tracking-[.045em] font-medium"></span>
+                </div>
               </div>
+
+              <!-- Lists -->
+
             </div>
           </div>
         </div>
@@ -192,6 +248,7 @@
           </div>
         </div>
         <div class="w-full flex flex-col col-span-2 space-y-4 lg:mt-0 mt-8 h-screen overflow-y-auto pb-5">
+
           <div class="tractor-block border border-pear/30 shadow-md shadow-pear/30 rounded-lg lg:p-4 p-2">
             <div class="flex justify-between clickable">
               <div class="flex space-x-3">
@@ -204,8 +261,47 @@
                 </div>
                 <div>
                   <h2 class="text-lg font-medium">Mahindra OJA 3140 Tractor</h2>
-                  <div class="flex mt-1 text-sm items-center flex-wrap text-gray-500">
-                    <span class="text-sm">Manual, Desiel</span>
+                  <div class="flex mt-1 text-sm items-center flex-wrap text-gray-500 mb-1">
+
+                    <div class="flex mt-2 mb-1"><svg stroke="currentColor" fill="currentColor" stroke-width="0"
+                        viewBox="0 0 512 512" class="mt-1 mr-1 text-pistachio min-w-[24px]" height="24" width="24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"
+                          d="M256 48c-79.5 0-144 61.39-144 137 0 87 96 224.87 131.25 272.49a15.77 15.77 0 0025.5 0C304 409.89 400 272.07 400 185c0-75.61-64.5-137-144-137z">
+                        </path>
+                        <circle cx="256" cy="192" r="48" fill="none" stroke-linecap="round" stroke-linejoin="round"
+                          stroke-width="32"></circle>
+                      </svg>
+                      <div class="text-sm"><span class="block"> Bachupally, K V Rangareddy District</span><span
+                          class="block text-xs">Hyderabad - 500090</span></div>
+                    </div>
+                  </div>
+                  <div class="flex items-center">
+                    <svg class="w-4 h-4 text-yellow-300 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                      fill="currentColor" viewBox="0 0 22 20">
+                      <path
+                        d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                    </svg>
+                    <svg class="w-4 h-4 text-yellow-300 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                      fill="currentColor" viewBox="0 0 22 20">
+                      <path
+                        d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                    </svg>
+                    <svg class="w-4 h-4 text-yellow-300 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                      fill="currentColor" viewBox="0 0 22 20">
+                      <path
+                        d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                    </svg>
+                    <svg class="w-4 h-4 text-yellow-300 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                      fill="currentColor" viewBox="0 0 22 20">
+                      <path
+                        d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                    </svg>
+                    <svg class="w-4 h-4 ms-1 text-gray-300 dark:text-gray-500" aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                      <path
+                        d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                    </svg>
                   </div>
                 </div>
               </div>
@@ -223,8 +319,9 @@
                   <span class="text-xs block text-gray-600">for 135 kms without fuel</span>
                 </div>
                 <div class="flex justify-center">
+                
                   <button id="book-now-btn"
-                    class="action-btn py-1.5 font-light text-sm w-full px-4 inline-block mt-2 rounded-lg text-center shadow-md">Book
+                    class="action-btn py-1.5 font-light text-sm w-full px-4 inline-block mt-2 rounded-lg text-center shadow-md">Call
                     now</button>
                 </div>
               </div>
@@ -314,8 +411,48 @@
                 </div>
                 <div>
                   <h2 class="text-lg font-medium">Soli Yanmar</h2>
-                  <div class="flex mt-1 text-sm items-center flex-wrap text-gray-500"><span class="text-sm">
-                      Manual, Desiel</span></div>
+                  <div class="flex mt-1 text-sm items-center flex-wrap text-gray-500 mb-1">
+
+                    <div class="flex mt-2 mb-1"><svg stroke="currentColor" fill="currentColor" stroke-width="0"
+                        viewBox="0 0 512 512" class="mt-1 mr-1 text-pistachio min-w-[24px]" height="24" width="24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"
+                          d="M256 48c-79.5 0-144 61.39-144 137 0 87 96 224.87 131.25 272.49a15.77 15.77 0 0025.5 0C304 409.89 400 272.07 400 185c0-75.61-64.5-137-144-137z">
+                        </path>
+                        <circle cx="256" cy="192" r="48" fill="none" stroke-linecap="round" stroke-linejoin="round"
+                          stroke-width="32"></circle>
+                      </svg>
+                      <div class="text-sm"><span class="block"> Bachupally, K V Rangareddy District</span><span
+                          class="block text-xs">Hyderabad - 500090</span></div>
+                    </div>
+                  </div>
+                  <div class="flex items-center">
+                    <svg class="w-4 h-4 text-yellow-300 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                      fill="currentColor" viewBox="0 0 22 20">
+                      <path
+                        d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                    </svg>
+                    <svg class="w-4 h-4 text-yellow-300 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                      fill="currentColor" viewBox="0 0 22 20">
+                      <path
+                        d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                    </svg>
+                    <svg class="w-4 h-4 text-yellow-300 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                      fill="currentColor" viewBox="0 0 22 20">
+                      <path
+                        d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                    </svg>
+                    <svg class="w-4 h-4 text-yellow-300 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                      fill="currentColor" viewBox="0 0 22 20">
+                      <path
+                        d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                    </svg>
+                    <svg class="w-4 h-4 ms-1 text-gray-300 dark:text-gray-500" aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                      <path
+                        d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                    </svg>
+                  </div>
                 </div>
               </div>
               <div class="ml-4 flex flex-col items-stretch justify-between">
@@ -330,7 +467,7 @@
                     fuel</span>
                 </div>
                 <div class="flex justify-center"><button id="book-now-btn"
-                    class="action-btn py-1.5 font-light text-sm w-full px-4 inline-block mt-2 rounded-lg text-center shadow-md">Book
+                    class="action-btn py-1.5 font-light text-sm w-full px-4 inline-block mt-2 rounded-lg text-center shadow-md">Call
                     now</button></div>
               </div>
             </div>
@@ -346,8 +483,48 @@
                 </div>
                 <div>
                   <h2 class="text-lg font-medium">Mahindra Oja 2121</h2>
-                  <div class="flex mt-1 text-sm items-center flex-wrap text-gray-500"><span class="text-sm">
-                      Automatic, Desiel</span></div>
+                  <div class="flex mt-1 text-sm items-center flex-wrap text-gray-500 mb-1">
+
+                    <div class="flex mt-2 mb-1"><svg stroke="currentColor" fill="currentColor" stroke-width="0"
+                        viewBox="0 0 512 512" class="mt-1 mr-1 text-pistachio min-w-[24px]" height="24" width="24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"
+                          d="M256 48c-79.5 0-144 61.39-144 137 0 87 96 224.87 131.25 272.49a15.77 15.77 0 0025.5 0C304 409.89 400 272.07 400 185c0-75.61-64.5-137-144-137z">
+                        </path>
+                        <circle cx="256" cy="192" r="48" fill="none" stroke-linecap="round" stroke-linejoin="round"
+                          stroke-width="32"></circle>
+                      </svg>
+                      <div class="text-sm"><span class="block"> Bachupally, K V Rangareddy District</span><span
+                          class="block text-xs">Hyderabad - 500090</span></div>
+                    </div>
+                  </div>
+                  <div class="flex items-center">
+                    <svg class="w-4 h-4 text-yellow-300 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                      fill="currentColor" viewBox="0 0 22 20">
+                      <path
+                        d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                    </svg>
+                    <svg class="w-4 h-4 text-yellow-300 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                      fill="currentColor" viewBox="0 0 22 20">
+                      <path
+                        d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                    </svg>
+                    <svg class="w-4 h-4 text-yellow-300 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                      fill="currentColor" viewBox="0 0 22 20">
+                      <path
+                        d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                    </svg>
+                    <svg class="w-4 h-4 text-yellow-300 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                      fill="currentColor" viewBox="0 0 22 20">
+                      <path
+                        d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                    </svg>
+                    <svg class="w-4 h-4 ms-1 text-gray-300 dark:text-gray-500" aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                      <path
+                        d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                    </svg>
+                  </div>
                 </div>
               </div>
               <div class="ml-4 flex flex-col items-stretch justify-between">
@@ -362,7 +539,7 @@
                     fuel</span>
                 </div>
                 <div class="flex justify-center"><button id="book-now-btn"
-                    class="action-btn py-1.5 font-light text-sm w-full px-4 inline-block mt-2 rounded-lg text-center shadow-md">Book
+                    class="action-btn py-1.5 font-light text-sm w-full px-4 inline-block mt-2 rounded-lg text-center shadow-md">Call
                     now</button></div>
               </div>
             </div>
@@ -378,8 +555,48 @@
                 </div>
                 <div>
                   <h2 class="text-lg font-medium">Mahindra OJA 3140 Tractor</h2>
-                  <div class="flex mt-1 text-sm items-center flex-wrap text-gray-500"><span class="text-sm">
-                      Manual, Desiel</span></div>
+                  <div class="flex mt-1 text-sm items-center flex-wrap text-gray-500 mb-1">
+
+                    <div class="flex mt-2 mb-1"><svg stroke="currentColor" fill="currentColor" stroke-width="0"
+                        viewBox="0 0 512 512" class="mt-1 mr-1 text-pistachio min-w-[24px]" height="24" width="24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"
+                          d="M256 48c-79.5 0-144 61.39-144 137 0 87 96 224.87 131.25 272.49a15.77 15.77 0 0025.5 0C304 409.89 400 272.07 400 185c0-75.61-64.5-137-144-137z">
+                        </path>
+                        <circle cx="256" cy="192" r="48" fill="none" stroke-linecap="round" stroke-linejoin="round"
+                          stroke-width="32"></circle>
+                      </svg>
+                      <div class="text-sm"><span class="block"> Bachupally, K V Rangareddy District</span><span
+                          class="block text-xs">Hyderabad - 500090</span></div>
+                    </div>
+                  </div>
+                  <div class="flex items-center">
+                    <svg class="w-4 h-4 text-yellow-300 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                      fill="currentColor" viewBox="0 0 22 20">
+                      <path
+                        d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                    </svg>
+                    <svg class="w-4 h-4 text-yellow-300 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                      fill="currentColor" viewBox="0 0 22 20">
+                      <path
+                        d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                    </svg>
+                    <svg class="w-4 h-4 text-yellow-300 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                      fill="currentColor" viewBox="0 0 22 20">
+                      <path
+                        d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                    </svg>
+                    <svg class="w-4 h-4 text-yellow-300 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                      fill="currentColor" viewBox="0 0 22 20">
+                      <path
+                        d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                    </svg>
+                    <svg class="w-4 h-4 ms-1 text-gray-300 dark:text-gray-500" aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                      <path
+                        d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                    </svg>
+                  </div>
                 </div>
               </div>
               <div class="ml-4 flex flex-col items-stretch justify-between">
@@ -394,7 +611,7 @@
                     fuel</span>
                 </div>
                 <div class="flex justify-center"><button id="book-now-btn"
-                    class="action-btn py-1.5 font-light text-sm w-full px-4 inline-block mt-2 rounded-lg text-center shadow-md">Book
+                    class="action-btn py-1.5 font-light text-sm w-full px-4 inline-block mt-2 rounded-lg text-center shadow-md">Call
                     now</button></div>
               </div>
             </div>
@@ -410,8 +627,48 @@
                 </div>
                 <div>
                   <h2 class="text-lg font-medium">Sonalika</h2>
-                  <div class="flex mt-1 text-sm items-center flex-wrap text-gray-500"><span class="text-sm">
-                      Manual, Desiel</span></div>
+                  <div class="flex mt-1 text-sm items-center flex-wrap text-gray-500 mb-1">
+
+                    <div class="flex mt-2 mb-1"><svg stroke="currentColor" fill="currentColor" stroke-width="0"
+                        viewBox="0 0 512 512" class="mt-1 mr-1 text-pistachio min-w-[24px]" height="24" width="24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"
+                          d="M256 48c-79.5 0-144 61.39-144 137 0 87 96 224.87 131.25 272.49a15.77 15.77 0 0025.5 0C304 409.89 400 272.07 400 185c0-75.61-64.5-137-144-137z">
+                        </path>
+                        <circle cx="256" cy="192" r="48" fill="none" stroke-linecap="round" stroke-linejoin="round"
+                          stroke-width="32"></circle>
+                      </svg>
+                      <div class="text-sm"><span class="block"> Bachupally, K V Rangareddy District</span><span
+                          class="block text-xs">Hyderabad - 500090</span></div>
+                    </div>
+                  </div>
+                  <div class="flex items-center">
+                    <svg class="w-4 h-4 text-yellow-300 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                      fill="currentColor" viewBox="0 0 22 20">
+                      <path
+                        d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                    </svg>
+                    <svg class="w-4 h-4 text-yellow-300 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                      fill="currentColor" viewBox="0 0 22 20">
+                      <path
+                        d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                    </svg>
+                    <svg class="w-4 h-4 text-yellow-300 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                      fill="currentColor" viewBox="0 0 22 20">
+                      <path
+                        d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                    </svg>
+                    <svg class="w-4 h-4 text-yellow-300 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                      fill="currentColor" viewBox="0 0 22 20">
+                      <path
+                        d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                    </svg>
+                    <svg class="w-4 h-4 ms-1 text-gray-300 dark:text-gray-500" aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                      <path
+                        d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                    </svg>
+                  </div>
                 </div>
               </div>
               <div class="ml-4 flex flex-col items-stretch justify-between">
@@ -426,7 +683,7 @@
                     fuel</span>
                 </div>
                 <div class="flex justify-center"><button id="book-now-btn"
-                    class="action-btn py-1.5 font-light text-sm w-full px-4 inline-block mt-2 rounded-lg text-center shadow-md">Book
+                    class="action-btn py-1.5 font-light text-sm w-full px-4 inline-block mt-2 rounded-lg text-center shadow-md">Call
                     now</button></div>
               </div>
             </div>
@@ -442,8 +699,48 @@
                 </div>
                 <div>
                   <h2 class="text-lg font-medium">Mahindra OJA 3140 Tractor</h2>
-                  <div class="flex mt-1 text-sm items-center flex-wrap text-gray-500"><span class="text-sm">
-                      Automatic, Desiel</span></div>
+                  <div class="flex mt-1 text-sm items-center flex-wrap text-gray-500 mb-1">
+
+                    <div class="flex mt-2 mb-1"><svg stroke="currentColor" fill="currentColor" stroke-width="0"
+                        viewBox="0 0 512 512" class="mt-1 mr-1 text-pistachio min-w-[24px]" height="24" width="24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"
+                          d="M256 48c-79.5 0-144 61.39-144 137 0 87 96 224.87 131.25 272.49a15.77 15.77 0 0025.5 0C304 409.89 400 272.07 400 185c0-75.61-64.5-137-144-137z">
+                        </path>
+                        <circle cx="256" cy="192" r="48" fill="none" stroke-linecap="round" stroke-linejoin="round"
+                          stroke-width="32"></circle>
+                      </svg>
+                      <div class="text-sm"><span class="block"> Bachupally, K V Rangareddy District</span><span
+                          class="block text-xs">Hyderabad - 500090</span></div>
+                    </div>
+                  </div>
+                  <div class="flex items-center">
+                    <svg class="w-4 h-4 text-yellow-300 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                      fill="currentColor" viewBox="0 0 22 20">
+                      <path
+                        d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                    </svg>
+                    <svg class="w-4 h-4 text-yellow-300 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                      fill="currentColor" viewBox="0 0 22 20">
+                      <path
+                        d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                    </svg>
+                    <svg class="w-4 h-4 text-yellow-300 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                      fill="currentColor" viewBox="0 0 22 20">
+                      <path
+                        d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                    </svg>
+                    <svg class="w-4 h-4 text-yellow-300 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                      fill="currentColor" viewBox="0 0 22 20">
+                      <path
+                        d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                    </svg>
+                    <svg class="w-4 h-4 ms-1 text-gray-300 dark:text-gray-500" aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                      <path
+                        d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                    </svg>
+                  </div>
                 </div>
               </div>
               <div class="ml-4 flex flex-col items-stretch justify-between">
@@ -458,7 +755,7 @@
                     fuel</span>
                 </div>
                 <div class="flex justify-center"><button id="book-now-btn"
-                    class="action-btn py-1.5 font-light text-sm w-full px-4 inline-block mt-2 rounded-lg text-center shadow-md">Book
+                    class="action-btn py-1.5 font-light text-sm w-full px-4 inline-block mt-2 rounded-lg text-center shadow-md">Call
                     now</button></div>
               </div>
             </div>
@@ -474,8 +771,48 @@
                 </div>
                 <div>
                   <h2 class="text-lg font-medium">Mahindra YUVRAJ</h2>
-                  <div class="flex mt-1 text-sm items-center flex-wrap text-gray-500"><span class="text-sm">
-                      Manual Desiel</span></div>
+                  <div class="flex mt-1 text-sm items-center flex-wrap text-gray-500 mb-1">
+
+                    <div class="flex mt-2 mb-1"><svg stroke="currentColor" fill="currentColor" stroke-width="0"
+                        viewBox="0 0 512 512" class="mt-1 mr-1 text-pistachio min-w-[24px]" height="24" width="24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"
+                          d="M256 48c-79.5 0-144 61.39-144 137 0 87 96 224.87 131.25 272.49a15.77 15.77 0 0025.5 0C304 409.89 400 272.07 400 185c0-75.61-64.5-137-144-137z">
+                        </path>
+                        <circle cx="256" cy="192" r="48" fill="none" stroke-linecap="round" stroke-linejoin="round"
+                          stroke-width="32"></circle>
+                      </svg>
+                      <div class="text-sm"><span class="block"> Bachupally, K V Rangareddy District</span><span
+                          class="block text-xs">Hyderabad - 500090</span></div>
+                    </div>
+                  </div>
+                  <div class="flex items-center">
+                    <svg class="w-4 h-4 text-yellow-300 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                      fill="currentColor" viewBox="0 0 22 20">
+                      <path
+                        d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                    </svg>
+                    <svg class="w-4 h-4 text-yellow-300 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                      fill="currentColor" viewBox="0 0 22 20">
+                      <path
+                        d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                    </svg>
+                    <svg class="w-4 h-4 text-yellow-300 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                      fill="currentColor" viewBox="0 0 22 20">
+                      <path
+                        d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                    </svg>
+                    <svg class="w-4 h-4 text-yellow-300 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                      fill="currentColor" viewBox="0 0 22 20">
+                      <path
+                        d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                    </svg>
+                    <svg class="w-4 h-4 ms-1 text-gray-300 dark:text-gray-500" aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                      <path
+                        d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                    </svg>
+                  </div>
                 </div>
               </div>
               <div class="ml-4 flex flex-col items-stretch justify-between">
@@ -490,7 +827,7 @@
                     fuel</span>
                 </div>
                 <div class="flex justify-center"><button disabled="" id="book-now-btn"
-                    class="action-btn py-1.5 font-light text-sm w-full px-4 inline-block mt-2 rounded-lg text-center shadow-md">Book
+                    class="action-btn py-1.5 font-light text-sm w-full px-4 inline-block mt-2 rounded-lg text-center shadow-md">Call
                     now</button></div>
               </div>
             </div>

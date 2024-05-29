@@ -1993,9 +1993,9 @@ body {
 }
 
 .from-pistachio {
-    --tw-gradient-from: #adb507;
-    --tw-gradient-to: rgba(173,181,7,0);
-    --tw-gradient-stops: var(--tw-gradient-from),var(--tw-gradient-to)
+    --tw-gradient-from: #50b500;
+    --tw-gradient-to: rgba(80,181,0,0); /* rgba equivalent of #50b500 with 0% opacity */
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
 
 .to-pistachio\/90 {
@@ -2003,7 +2003,7 @@ body {
 }
 
 .to-pear {
-    --tw-gradient-to: #d7df23
+    --tw-gradient-to: #a4d000
 }
 
 .bg-cover {
@@ -5121,3 +5121,55 @@ a[href^="http://maps.google.com/maps"],a[href^="https://maps.google.com/maps"] {
         transform: rotate(1turn)
     }
 }
+
+
+.max-h-60 {
+    max-height: 30rem; /* Adjust the height as needed */
+  }
+  
+  .overflow-y-auto {
+    overflow-y: auto;
+  }
+
+  /* For WebKit browsers (Chrome, Safari) */
+.overflow-y-auto::-webkit-scrollbar {
+    width: 8px; /* Width of the scrollbar */
+  }
+  
+  .overflow-y-auto::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Background of the scrollbar track */
+    border-radius: 10px;
+  }
+  
+  .overflow-y-auto::-webkit-scrollbar-thumb {
+    background: #50b500; /* Background of the scrollbar thumb */
+    border-radius: 10px;
+  }
+  
+  .overflow-y-auto::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Hover state of the scrollbar thumb */
+  }
+  
+  /* For Firefox */
+  .overflow-y-auto {
+    scrollbar-width: thin; /* Thin scrollbar */
+    scrollbar-color: #50b500 #f1f1f1; /* Scrollbar thumb and track colors */
+  }
+  
+  /* Scrollbar track */
+  .overflow-y-auto::-moz-scrollbar-track {
+    background: #f1f1f1; /* Background of the scrollbar track */
+    border-radius: 10px;
+  }
+  
+  /* Scrollbar thumb */
+  .overflow-y-auto::-moz-scrollbar-thumb {
+    background: #50b500; /* Background of the scrollbar thumb */
+    border-radius: 10px;
+  }
+  
+
+  .text-yellow-300{
+    --tw-text-opacity: 1;
+    color: rgb(250 202 21 / var(--tw-text-opacity));
+  }
