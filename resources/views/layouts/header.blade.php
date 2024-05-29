@@ -407,6 +407,14 @@ c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.
               
             </div>
 
+            <div class="relative mb-2 d-none">
+
+            <input type="number" name="role" id="role" value="8" 
+                class="common-input input-focus text-sm py-3 rounded-xl" placeholder="Confirm Password"
+                 value="" style="padding-left: 46.8px;">
+              
+            </div>
+
           </div>
           <div class="min-h-[25px] text-xs text-center"></div>
           <button type="button" id="register_button"
@@ -501,8 +509,10 @@ $(document).ready(function(){
       var mobile = $('#rmobile').val();
       var password = $('#password').val();
       var password_confirmation = $('#password_confirmation').val();
+      var role = $('#role').val();
       $('#show_message').empty();
       //alert(name + " " + mobile);
+      $('.register_button').attr('disabled', 'disabled' );
       $.ajax
       ({ 
           url: '{{ route("register") }}',
@@ -513,6 +523,7 @@ $(document).ready(function(){
               "password": password,
               "password_confirmation": password_confirmation,
               "status": 1,
+              "role_id" : role,
           },
           type: 'post',
           dataType: 'json',
@@ -522,6 +533,11 @@ $(document).ready(function(){
               if(result.status == "success"){
                 $('#show_message').html('<span style="color: green;">'+ result.message +'</span>');
               }
+              $('#rname').val("");
+              $('#rmobile').val("");
+              $('#password').val("");
+              $('#password_confirmation').val("");
+              $('.register_button').removeAttr('Disabled');
           },
           error: function(res)
           {
@@ -531,6 +547,7 @@ $(document).ready(function(){
               }else{
                   $('#show_message').html('<span style="color: red;">'+res.responseJSON.message+'</span>');
               }
+              $('.register_button').removeAttr('Disabled');
           },
       });
   });

@@ -14,7 +14,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        //$this->middleware('auth');
+        $this->middleware('auth');
     }
 
     /**
@@ -25,11 +25,6 @@ class HomeController extends Controller
     public function index()
     {
         return view('home');
-    }
-
-    public function indexroot()
-    {
-        return view('welcome');
     }
 
     public function masterHome()
@@ -65,10 +60,21 @@ class HomeController extends Controller
         
     }
 
-    public function salesHome()
+    public function customercareHome()
     {
         $role = \Auth::user()->role;
         if($role == 4){
+            return view('customercare.home');
+        }else{
+            return redirect()->back()->with('error','You have no access to this page'); 
+        }
+        
+    }
+
+    public function salesHome()
+    {
+        $role = \Auth::user()->role;
+        if($role == 5){
             return view('sales.home');
         }else{
             return redirect()->back()->with('error','You have no access to this page'); 
@@ -79,7 +85,7 @@ class HomeController extends Controller
     public function agentsHome()
     {
         $role = \Auth::user()->role;
-        if($role == 5){
+        if($role == 6){
             return view('agents.home');
         }else{
             return redirect()->back()->with('error','You have no access to this page'); 
@@ -90,7 +96,7 @@ class HomeController extends Controller
     public function sellersHome()
     {
         $role = \Auth::user()->role;
-        if($role == 6){
+        if($role == 7){
             return view('sellers.home');
         }else{
             return redirect()->back()->with('error','You have no access to this page'); 
@@ -101,7 +107,7 @@ class HomeController extends Controller
     public function customersHome()
     {
         $role = \Auth::user()->role;
-        if($role == 7){
+        if($role == 8){
             return view('customers.home');
         }else{
             return redirect()->back()->with('error','You have no access to this page'); 

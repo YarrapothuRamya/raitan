@@ -67,7 +67,7 @@ class RegisterController extends Controller
             'mobile' => ['required', 'digits:10', 'unique:users'],
             //'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
-            //'role_id' => ['required'],
+            'role_id' => ['required'],
         ]);
     }
 
@@ -85,7 +85,7 @@ class RegisterController extends Controller
             'mobile' => $data['mobile'],
             //'email' => $data['email'],
             'password' => Hash::make($data['password']),
-            //'role' => $data['role_id'],
+            'role' => $data['role_id'],
             'status' => $data['status'],
         ]);
         $pass_code = random_int(100000, 999999);

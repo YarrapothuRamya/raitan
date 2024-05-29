@@ -7,16 +7,28 @@ use App\Models\Roles;
     $roles=Roles::select('*')->get();
     return view('welcome', compact('roles'));
 });*/
-Route::get('/', [App\Http\Controllers\HomeController::class, 'indexroot'])->name('indexroot');
+
+Route::group(['middleware' => ['auth', 'admin']], function () {
+   Route::get('/admin_register', [App\Http\Controllers\Auth\AdminController::class, 'showRegistrationForm']);
+   Route::post('/admin_register', [App\Http\Controllers\Auth\AdminController::class, 'register'])->name('admin_register');
+
+
+});
+Route::get('/admin_login', [App\Http\Controllers\Auth\AdminController::class, 'showLoginForm']);
+Route::post('/admin_login', [App\Http\Controllers\Auth\AdminController::class, 'login'])->name('admin_login');
+
+Route::get('/', [App\Http\Controllers\CommonController::class, 'indexroot'])->name('indexroot');
 Auth::routes(['verify' => true]);
 
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('register-thankyou', [App\Http\Controllers\Auth\RegisterController::class, 'registerthankyou'])->name('register.thankyou');
+
 Route::group(['middleware' => ['auth', 'role']], function () {
    Route::get('master-home', [App\Http\Controllers\HomeController::class, 'masterHome'])->name('master.home');
    Route::get('admin-home', [App\Http\Controllers\HomeController::class, 'adminHome'])->name('admin.home');
    Route::get('staff-home', [App\Http\Controllers\HomeController::class, 'staffHome'])->name('staff.home');
+   Route::get('customercare-home', [App\Http\Controllers\HomeController::class, 'customercareHome'])->name('customercare.home');
    Route::get('sales-home', [App\Http\Controllers\HomeController::class, 'salesHome'])->name('sales.home');
    Route::get('agents-home', [App\Http\Controllers\HomeController::class, 'agentsHome'])->name('agents.home');
    Route::get('sellers-home', [App\Http\Controllers\HomeController::class, 'sellersHome'])->name('sellers.home');
