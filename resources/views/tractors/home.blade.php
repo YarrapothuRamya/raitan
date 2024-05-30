@@ -248,8 +248,8 @@
           </div>
         </div>
         <div class="w-full flex flex-col col-span-2 space-y-4 lg:mt-0 mt-8 h-screen overflow-y-auto pb-5">
-
-          <div class="tractor-block border border-pear/30 shadow-md shadow-pear/30 rounded-lg lg:p-4 p-2">
+<a href="{{ route('productdetails.home') }}">
+<div class="tractor-block border border-pear/30 shadow-md shadow-pear/30 rounded-lg lg:p-4 p-2">
             <div class="flex justify-between clickable">
               <div class="flex space-x-3">
                 <div>
@@ -326,80 +326,10 @@
                 </div>
               </div>
             </div>
-            <div class="extra-details hidden mt-4">
-              <p class=" color007">30HP Tractor Implementors</p>
-              <div class=" border border-pear/30 shadow-md shadow-pear/30 rounded-lg lg:p-4 p-2">
-                <div class="flex justify-between">
-                  <div class="flex space-x-3">
-                    <div>
-                      <div class="w-40 h-28">
-                        <div class="w-full h-full"><img src="images/implementors/disc-harrow.jpg" alt="..."
-                            class="w-40 h-28" width="160" height="112"></div>
-                      </div>
-                    </div>
-                    <div>
-                      <h2 class="text-lg font-medium">Disc Harrow</h2>
-                      <div class="flex mt-1 text-sm items-center flex-wrap text-gray-500"><span class="text-sm">
-                        </span></div>
-                    </div>
-                  </div>
-                  <div class="ml-4 flex flex-col items-stretch justify-between">
-
-                    <div class="flex justify-center"><button id="book-now-btn"
-                        class="action-btn py-1.5 font-light text-sm w-full px-4 inline-block mt-2 rounded-lg text-center shadow-md">Add</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class=" border border-pear/30 shadow-md shadow-pear/30 rounded-lg lg:p-4 p-2">
-                <div class="flex justify-between">
-                  <div class="flex space-x-3">
-                    <div>
-                      <div class="w-40 h-28">
-                        <div class="w-full h-full"><img src="images/implementors/boom-sprayer.png" alt="..."
-                            class="w-40 h-28" width="160" height="112"></div>
-                      </div>
-                    </div>
-                    <div>
-                      <h2 class="text-lg font-medium">Boom Sprayer</h2>
-                      <div class="flex mt-1 text-sm items-center flex-wrap text-gray-500"><span class="text-sm">
-                        </span></div>
-                    </div>
-                  </div>
-                  <div class="ml-4 flex flex-col items-stretch justify-between">
-
-                    <div class="flex justify-center"><button id="book-now-btn"
-                        class="action-btn py-1.5 font-light text-sm w-full px-4 inline-block mt-2 rounded-lg text-center shadow-md">Add</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class=" border border-pear/30 shadow-md shadow-pear/30 rounded-lg lg:p-4 p-2">
-                <div class="flex justify-between">
-                  <div class="flex space-x-3">
-                    <div>
-                      <div class="w-40 h-28">
-                        <div class="w-full h-full"><img src="images/implementors/cultivator.jpg" alt="..."
-                            class="w-40 h-28" width="160" height="112"></div>
-                      </div>
-                    </div>
-                    <div>
-                      <h2 class="text-lg font-medium">Cultivator</h2>
-                      <div class="flex mt-1 text-sm items-center flex-wrap text-gray-500"><span class="text-sm">
-                        </span></div>
-                    </div>
-                  </div>
-                  <div class="ml-4 flex flex-col items-stretch justify-between">
-
-                    <div class="flex justify-center"><button id="book-now-btn"
-                        class="action-btn py-1.5 font-light text-sm w-full px-4 inline-block mt-2 rounded-lg text-center shadow-md">Add</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+           
           </div>
+</a>
+         
           <div class=" border border-pear/30 shadow-md shadow-pear/30 rounded-lg lg:p-4 p-2">
             <div class="flex justify-between">
               <div class="flex space-x-3">

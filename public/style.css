@@ -1584,7 +1584,7 @@ body, button, input, select, textarea{
   -ms-flex-pack: justify;
   justify-content: space-between;
   width: 100%;
-  padding: 50px 45px 30px;
+  padding: 80px 45px 30px;
   position: relative;
   margin-bottom: 30px;
 }

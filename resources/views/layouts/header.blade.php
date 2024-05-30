@@ -76,7 +76,7 @@
     <div class="header_left">
       <div class="header_left_inner"><a role="link" class="animate__animated header_jdlogo " href="/"><img
             src="images/raitanlogo.png" alt="Raitan Logo"
-            aria-label="Raitan" title="Raitan" height="90" width="102" class=""></a></div>
+            aria-label="Raitan" title="Raitan" height="70" width="90" class=""></a></div>
     </div>
     <div class="header_center">
       <div class="header_input_group home_input_group ">

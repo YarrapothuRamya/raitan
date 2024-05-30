@@ -11,6 +11,11 @@ class CommonController extends Controller
         return view('welcome');
     }
 
+    public function productdetails()
+    {
+        return view('productdetails.home');
+    }
+
     public function pagenotfound()
     {
         return view('pages.pagenotfound');
