@@ -145,8 +145,9 @@
               <div class="headnav_item_text pl-5 font14 fw400 color111">Implementors
                 </div>
             </a></li>
-          <li role="menuitem" tabindex="0" id="header_advertise" class="headnav_item headnav_advertise"><a
-              href=""
+          <li role="menuitem" tabindex="0" id="header_advertise" class="headnav_item headnav_advertise">
+            <a
+            href="{{ route('service.home') }}"
               class="headnav_item_anchor whitefill_animate">
               <div class="nav_advertise_icon jdicon"></div>
               <div class="headnav_item_text pl-5 font14 fw400 color111">Services
@@ -171,41 +172,23 @@
             <div role="button" tabindex="0" aria-label="Login/Sign Up" class="headnav_item_anchor bluefill_animate"
               fdprocessedid="yopgan">
               <div class="">
-                  <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-                      <div class="container">
-                          <!--<a class="navbar-brand" href="{{ url('/') }}">
-                              {{ config('app.name', 'Laravel') }}
-                          </a>-->
-                          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                              <span class="navbar-toggler-icon"></span>
-                          </button>
-
-                          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                              <!-- Left Side Of Navbar -->
-                              <ul class="navbar-nav me-auto">
-
-                              </ul>
-
-                              <!-- Right Side Of Navbar -->
-                              <ul class="navbar-nav ms-auto">
-                                  <!-- Authentication Links -->
-                                  @guest
+              @guest
                                       @if (Route::has('login'))
-                                          <li class="nav-item">
+                                          
                                               <a class="headnav_item_text font14 fw500 colorFFF" id="header_login">Log in</a>
 
-                                          </li>
+                                         
                                       @endif
 
                                       @if (Route::has('register'))
-                                          <li class="nav-item">
+                                          
                                               <a class="headnav_item_text font14 fw500 colorFFF" id="header_register">/ Register</a>
-                                          </li>
+                                         
                                       @endif
                                   @else
                                       
-                                      <li class="nav-item dropdown">
-                                          <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                     
+                                          <a id="navbarDropdown" class="headnav_item_text font14 fw500 colorFFF nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                               {{ Auth::user()->name }}
                                           </a>
                                           <a class="headnav_item_text font14 fw500 colorFFF d-none" id="header_login">Log in</a>
@@ -226,12 +209,8 @@
                                                   @csrf
                                               </form>
                                           </div>
-                                      </li>
+                                     
                                   @endguest
-                              </ul>
-                          </div>
-                      </div>
-                  </nav>
                   
               </div>
             </div>

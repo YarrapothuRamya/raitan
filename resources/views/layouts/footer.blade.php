@@ -50,10 +50,10 @@
               </li>
               
               <li class="menu-item">
-                <a href="#" class="nav-link">Services</a>
+                <a href="{{ route('service.home') }}" class="nav-link">Services</a>
               </li>
               <li class="menu-item">
-                <a href="#" class="nav-link">Conatct Us</a>
+                <a href="{{ route('contactus.home') }}" class="nav-link">Conatct Us</a>
               </li>
             </ul>
           </div>

@@ -56,4 +56,6 @@ Route::post('role-add', [App\Http\Controllers\RolesController::class, 'roleAdd']
 Route::get('tractors-home', [App\Http\Controllers\TractorsController::class, 'index'])->name('tractors.home');
 Route::get('page-not-found', [App\Http\Controllers\CommonController::class, 'pagenotfound'])->name('pagenotfound.home');
 Route::get('product-details', [App\Http\Controllers\CommonController::class, 'productdetails'])->name('productdetails.home');
+Route::get('services', [App\Http\Controllers\CommonController::class, 'services'])->name('service.home');
+Route::get('contactus', [App\Http\Controllers\CommonController::class, 'contactus'])->name('contactus.home');
 

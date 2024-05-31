@@ -45,15 +45,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Chilanka&family=Montserrat:wght@300;400;500&display=swap"
       rel="stylesheet">
-    <style>
-        #footer {
-          background-image: url('images/Banners/banner3.jpg');
-          background-size: cover;
-          background-position: center;
-          background-repeat: no-repeat;
-        }
-        
-    </style>
+    
     
 </head>
 <body>

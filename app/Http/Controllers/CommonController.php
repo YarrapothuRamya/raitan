@@ -16,6 +16,18 @@ class CommonController extends Controller
         return view('productdetails.home');
     }
 
+
+    public function services()
+    {
+        return view('services.service');
+    }
+
+    public function contactus()
+    {
+        return view('contactus.contactus');
+    }
+
+
     public function pagenotfound()
     {
         return view('pages.pagenotfound');
