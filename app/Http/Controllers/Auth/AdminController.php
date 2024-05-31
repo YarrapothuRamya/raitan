@@ -35,12 +35,13 @@ class AdminController extends Controller
         User::create([
             'name' => $request->name,
             'mobile' => $request->mobile,
+            'email' => $request->email,
             'password' => Hash::make($request->password),
             'status' => $request->status,
             'role' => intval($request->role_id),
         ]);
  
-        return redirect('/admin_register')->with('success', 'Registration successful! Please log in.');
+        return redirect('/admin_register')->with('success', 'Registered successfully!');
     }
 
     public function showLoginForm()
@@ -96,13 +97,13 @@ class AdminController extends Controller
                     break; */
 
                 default:
-                    return redirect()->intended('/admin_login');
+                    return redirect()->intended('/raitan_signin');
                     return '/login'; 
                 break;
             }
             return redirect()->intended('/');
         }
      
-        return redirect('/admin_login')->with('error', 'Invalid credentials. Please try again.');
+        return redirect('/raitan_signin')->with('error', 'Invalid credentials. Please try again.');
     }
 }

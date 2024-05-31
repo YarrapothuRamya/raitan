@@ -8,7 +8,7 @@
                 <div class="card-header">{{ __('Login') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('admin_login') }}">
+                    <form method="POST" action="{{ route('raitan_signin') }}">
                         @csrf
 
                         <div class="row mb-3">

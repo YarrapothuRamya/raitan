@@ -14,8 +14,8 @@ Route::group(['middleware' => ['auth', 'admin']], function () {
 
 
 });
-Route::get('/admin_login', [App\Http\Controllers\Auth\AdminController::class, 'showLoginForm']);
-Route::post('/admin_login', [App\Http\Controllers\Auth\AdminController::class, 'login'])->name('admin_login');
+Route::get('/raitan_signin', [App\Http\Controllers\Auth\AdminController::class, 'showLoginForm']);
+Route::post('/raitan_signin', [App\Http\Controllers\Auth\AdminController::class, 'login'])->name('raitan_signin');
 
 Route::get('/', [App\Http\Controllers\CommonController::class, 'indexroot'])->name('indexroot');
 Auth::routes(['verify' => true]);

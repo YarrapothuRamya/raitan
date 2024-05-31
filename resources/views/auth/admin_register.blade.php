@@ -56,6 +56,20 @@
                         </div>
 
                         <div class="row mb-3">
+                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}"  autocomplete="email">
+
+                                @error('email')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
                             <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Role') }}</label>
 
                             <div class="col-md-6">
@@ -122,7 +136,7 @@
                 </div>
                 <!--<div class="card-body text-center">
                     <span>Already registered? Please <a
-                                        href="{{ route('admin_login') }}"
+                                        href="{{ route('raitan_signin') }}"
                                         class="rounded-md text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
                                     >
                                         Log in

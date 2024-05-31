@@ -1,7 +1,8 @@
 @extends('layouts.app')
-<script src="https://cdn.tailwindcss.com"></script>
+
 
 @section('content')
+<script src="https://cdn.tailwindcss.com"></script>
 
 <nav class="bg-grey-light w-full rounded-md" style="margin-top: 5rem; margin-left: 5rem; position: absolute;">
   <ol class="list-reset flex">
