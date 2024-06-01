@@ -14,6 +14,11 @@ Route::group(['middleware' => ['auth', 'admin']], function () {
 
 
 });
+
+Route::get('/admin_services', [App\Http\Controllers\CommonController::class, 'admin_services'])->name('admin_services');
+Route::post('/admin_services', [App\Http\Controllers\CommonController::class, 'serviceAdd'])->name('service.add');
+Route::post('/admin_services_update', [App\Http\Controllers\CommonController::class, 'serviceUpdate'])->name('service.update');
+
 Route::get('/raitan_signin', [App\Http\Controllers\Auth\AdminController::class, 'showLoginForm']);
 Route::post('/raitan_signin', [App\Http\Controllers\Auth\AdminController::class, 'login'])->name('raitan_signin');
 
