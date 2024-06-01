@@ -282,6 +282,7 @@
             </div>
           </div>
           <div class="min-h-[25px] text-xs text-center"></div>
+          Not Registered Yet? <a href="#" onclick="register_popup();" style="text-decoration: none; color: blue">Register</a>
           <button type="button" id="login_button"
             class="action-btn w-full py-2 rounded-xl mt-2 flex items-center justify-center space-x-2">
             <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em"
@@ -407,7 +408,7 @@ c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.
             <span>Register</span>
           </button>
         </form>
-        
+        Already Registered!Please <a href="#" onclick="signin_popup();" style="text-decoration: none; color: blue">Login</a>
         
         
         
@@ -424,6 +425,16 @@ c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.min.js" integrity="sha512-WW8/jxkELe2CAiE4LvQfwm1rajOS8PHasCCx+knHG0gBHt8EXxS6T6tJRTGuDQVnluuAvMxWF4j8SNFDKceLFg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js" integrity="sha512-2rNj2KJ+D8s1ceNasTIex6z4HWyOnEYLVC3FigGOmyQCZc2eBXKgOxQmo3oKLHyfcj53uz4QMsRCWNbLd32Q1g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
+
+  function register_popup(){
+    $("#user-register").css('display', 'block');
+    $("#login-signup").css('display', 'none');
+  }
+
+  function signin_popup(){
+    $("#login-signup").css('display', 'block');
+    $("#user-register").css('display', 'none');
+  }
 
   document.addEventListener("DOMContentLoaded", function () {
 

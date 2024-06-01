@@ -9,7 +9,8 @@ class CommonController extends Controller
 {
     public function indexroot()
     {
-        return view('welcome');
+        $services = Services::select('*')->where('status', '=', 1)->get();
+        return view('welcome', compact('services'));
     }
 
     public function productdetails()
