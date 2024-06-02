@@ -195,6 +195,12 @@
                                           <a class="headnav_item_text font14 fw500 colorFFF d-none" id="header_register">/ Register</a>
 
                                           <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                              @if ( Auth::user()->role == 8)
+                                                <a class="dropdown-item" href="{{ route('user_dashboard') }}"
+                                                 >
+                                                  {{ __('Dashboard') }}
+                                                </a>
+                                              @endif
                                               <a class="dropdown-item" href="{{ route('password') }}"
                                                  >
                                                   {{ __('Change Password') }}

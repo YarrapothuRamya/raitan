@@ -33,6 +33,8 @@
                   <a href="{{ url('implementors') }}" style="text-decoration: none; color: blue;">Implementors</a>
                   <br>
                   <a href="{{ url('admin_register') }}" style="text-decoration: none; color: blue;">Register Admin/Staff/Customer Care</a>
+                  <br>
+                  <a href="{{ url('approve_permissions') }}" style="text-decoration: none; color: blue;">Approve Permissions</a>
                 </div>
             </div>
         </div>
