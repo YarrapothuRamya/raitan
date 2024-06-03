@@ -4,17 +4,184 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Services;
+use App\Models\Roles;
+use App\Models\Request_role;
 
 class CommonController extends Controller
 {
     public function indexroot()
     {
-        return view('welcome');
+        $services = Services::select('*')->where('status', '=', 1)->get();
+        return view('welcome', compact('services'));
     }
 
     public function productdetails()
     {
         return view('productdetails.home');
+    }
+
+    public function user_dashboard()
+    {
+        $user_id = \Auth::user()->id;
+        //$roles = Roles::select("roles.id as role_master_id","roles.name as role_master_name","roles.role_id as role_master_role_id","roles.status as role_master_status","request_roles.user_id as request_roles_user_id","request_roles.role_id as request_roles_role_id","request_roles.role_permission_status as request_roles_permission_status")->leftJoin("request_roles", "request_roles.role_id", "=","roles.role_id")->whereNotIn('roles.role_id', [1,2,3,4])->where('roles.status', 1)->where('request_roles.user_id', $user_id)->orderBy("roles.role_id")->get();
+        //dd($roles);
+        $user_id = \Auth::user()->id;
+        $roles = Roles::select("*")->whereNotIn('roles.role_id', [1,2,3,4])->where('roles.status', 1)->orderBy("roles.role_id")->get();
+        $request_roles = Request_role::select("*")->where("user_id", $user_id)->get();
+
+
+        $data = array();
+        foreach ($roles as $key => $value) {
+            //foreach ($request_roles as $key1 => $value1) {
+                //if($value->role_id == $value1->role_id){
+                    //print($value->role_id . " " . $value1->role_id);
+                    //print("<br>");
+                    $data[] = $value->role_id;//[
+                        //"role_master_id" => $value->id,
+                    //];
+                //}
+            //}
+        }
+
+        $data2 = array();
+        $request_roles_count = Request_role::select("*")->whereIn('role_id', $data)->where("user_id", $user_id)->get()->count();
+        if($request_roles_count > 0){
+            foreach ($data as $value3) {
+                $request_roles_count_with_user = Request_role::select("*")->where('role_id', $value3)->where("user_id", $user_id)->get()->count();
+                $request_roles_count_with_user_string = Request_role::select("*")->where('role_id', $value3)->where("user_id", $user_id)->get();
+
+                //dd($request_roles_count_with_user_string[0]);
+                if($request_roles_count_with_user > 0){
+
+                    $role_name = Roles::where('role_id', $request_roles_count_with_user_string[0]->role_id)->get();
+                    $data2[] = [
+                        "role_master_name" => $role_name[0]->name,
+                        "role_master_role_id" => $request_roles_count_with_user_string[0]->role_id,
+                        "request_roles_permission_status" => $request_roles_count_with_user_string[0]->role_permission_status,
+                    ];
+                }else{
+                    $role_name = Roles::where('role_id', $value3)->get();
+                    $data2[] = [
+                        "role_master_name" => $role_name[0]->name,
+                        "role_master_role_id" => $value3,
+                        "request_roles_permission_status" => 0,
+                    ];
+                }
+            }
+        }else{
+            $roles = Roles::select("*")->whereNotIn('roles.role_id', [1,2,3,4])->where('roles.status', 1)->orderBy("roles.role_id")->get();
+            foreach ($roles as $key => $value) {
+                $data2[] = [
+                        "role_master_name" => $value->name,
+                        "role_master_role_id" => $value->role_id,
+                        "request_roles_permission_status" => 0,
+                    ];
+            }
+        }
+        //dd("End");
+
+        $roles = json_decode(json_encode((object) $data2), FALSE);//$data2;
+
+
+        return view('user.dashboard', compact('roles'));
+    }
+
+    public function add_role_request(Request $request)
+    {
+        //$role = \Auth::user()->role;
+        //if($role == 1){
+            //$roles=Roles::select('name','role_id')->whereNotIn('role_id', [1,2,3])->get();
+            //dd("Hello");
+            //dd($request['name']);
+            $validated = $request->validate([
+                //'role_id' => 'required',
+                'role_master_role_id' => 'required',
+                'role_id_permission_status' => 'required',
+            ]);
+
+            $user_id = \Auth::user()->id;
+            $request_roles_count = Request_role::where('user_id', '=', $user_id)->
+                                           where('role_id', '=', $request['role_master_role_id'])->get()->count();
+            
+            if($request_roles_count > 0){
+                $request_roles = Request_role::where('user_id', '=', $user_id)->
+                                           where('role_id', '=', $request['role_master_role_id'])->first();
+            }else{
+                $request_roles = new Request_role;
+            }
+            
+            $request_roles->user_id = $user_id;
+            $request_roles->role_id = $request['role_master_role_id'];
+            $request_roles->role_permission_status = $request['role_id_permission_status'];
+            if($request_roles->save()){
+                $data = [
+                  'success' => true,
+                  'message'=> 'Permission successfully requested.'
+                ] ;
+                return response()->json($data);
+
+                return redirect()->back()->with('status', 'Permission successfully requested.');
+                return redirect()->back()->with('status','machine successfully updated');
+            }else{
+                $data = [
+                  'error' => true,
+                  'message'=> 'Something went wrong please try again.'
+                ] ;
+                return response()->json($data);
+                return response()->json(['status' => 400, 'error' => 'Something went wrong please try again.']);
+                return redirect()->back()->with('error','Something went wrong please try again.');
+            }
+            //return redirect()->back()->with('name','You have no access to this page');
+            //return view('machines.home', compact('machines'));
+        //}else{
+            //return redirect()->back()->with('error','You have no access to this page');
+        //}
+        
+    }
+
+    public function cancel_role_request_user(Request $request)
+    {
+        //$role = \Auth::user()->role;
+        //if($role == 1){
+            //$roles=Roles::select('name','role_id')->whereNotIn('role_id', [1,2,3])->get();
+            //dd("Hello");
+            //dd($request['name']);
+            $validated = $request->validate([
+                //'role_id' => 'required',
+                'role_master_role_id' => 'required',
+                'role_id_permission_status' => 'required',
+            ]);
+
+            $user_id = \Auth::user()->id;
+            $request_roles = Request_role::where('user_id', '=', $user_id)->
+                                           where('role_id', '=', $request['role_master_role_id'])->first();
+            $request_roles->user_id = $user_id;
+            $request_roles->role_id = $request['role_master_role_id'];
+            $request_roles->role_permission_status = $request['role_id_permission_status'];
+            if($request_roles->save()){
+                $data = [
+                  'success' => true,
+                  'message'=> 'Request successfully cancelled.'
+                ] ;
+                return response()->json($data);
+
+                return redirect()->back()->with('status', 'Permission successfully requested.');
+                return redirect()->back()->with('status','machine successfully updated');
+            }else{
+                $data = [
+                  'error' => true,
+                  'message'=> 'Something went wrong please try again.'
+                ] ;
+                return response()->json($data);
+                return response()->json(['status' => 400, 'error' => 'Something went wrong please try again.']);
+                return redirect()->back()->with('error','Something went wrong please try again.');
+            }
+            //return redirect()->back()->with('name','You have no access to this page');
+            //return view('machines.home', compact('machines'));
+        //}else{
+            //return redirect()->back()->with('error','You have no access to this page');
+        //}
+        
     }
 
 

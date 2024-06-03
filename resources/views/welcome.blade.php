@@ -184,7 +184,29 @@
                     style="position:absolute;top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width:0;height:0;"
                     loading="lazy" /></noscript></span></div>
             <div class="font14 color111 fw400">30-50HP</div>
-          </a>--><a href="{{ route('tractors.home') }}" class="home_hotkeybox_li imageZoom text_center " title="Machines">
+          </a>-->
+          @foreach($services as $service)
+          <a href="<?php echo env('APP_URL'). '/' . $service->route; ?>" class="home_hotkeybox_li imageZoom text_center " title="{{ $service->service_name }}">
+            <div class="home_hotkeyimg mb-10" style="background-image:url();"><span
+                style="box-sizing:border-box;display:inline-block;overflow:hidden;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;position:relative;max-width:100%"><span
+                  style="box-sizing:border-box;display:block;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;max-width:100%"><img
+                    style="display:block;max-width:100%;width:200px;height:auto;background:none;opacity:1;border:0;margin:0;padding:0"
+                    alt="" aria-hidden="true"
+                    src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%2745%27%20height=%2745%27/%3e"></span><img
+                  alt="{{ $service->service_name }}" title="{{ $service->service_name }}"
+                  src="{{ asset('service_images').'/'.$service->image }}?w=96&amp;q=75" decoding="async" data-nimg="intrinsic"
+                  style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 200px; height: auto;"
+                  srcset="{{ asset('service_images').'/'.$service->image }}?w=48&amp;q=75 1x, images/tractors/tractor65.png?w=96&amp;q=75 2x"><noscript><img
+                    alt="Beauty Spa in Hyderabad" title="Beauty Spa in Hyderabad"
+                    srcSet="{{ asset('service_images').'/'.$service->image }}?w=48&amp;q=75 1x, images/tractors/tractor65.png?w=96&amp;q=75 2x"
+                    src="{{ asset('service_images').'/'.$service->image }}?w=96&amp;q=75" decoding="async" data-nimg="intrinsic"
+                    style="position:absolute;top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width: 200px; height: auto;"
+                    loading="lazy" /></noscript></span></div>
+            <div class="font14 color111 fw400">{{ $service->service_name }}</div>
+          </a>
+          @endforeach
+
+          <a href="{{ route('tractors.home') }}" class="home_hotkeybox_li imageZoom text_center " title="Machines">
             <div class="home_hotkeyimg mb-10" style="background-image:url();"><span
                 style="box-sizing:border-box;display:inline-block;overflow:hidden;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;position:relative;max-width:100%"><span
                   style="box-sizing:border-box;display:block;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;max-width:100%"><img

@@ -11,7 +11,9 @@ use App\Models\Roles;
 Route::group(['middleware' => ['auth', 'admin']], function () {
    Route::get('/admin_register', [App\Http\Controllers\Auth\AdminController::class, 'showRegistrationForm']);
    Route::post('/admin_register', [App\Http\Controllers\Auth\AdminController::class, 'register'])->name('admin_register');
-
+   Route::get('/approve_permissions', [App\Http\Controllers\Auth\AdminController::class, 'approve_permissions'])->name('approve_permissions');
+   Route::post('/reject_permissions', [App\Http\Controllers\Auth\AdminController::class, 'reject_permissions_users'])->name('reject_permissions_users');
+   Route::post('/approve_permissions', [App\Http\Controllers\Auth\AdminController::class, 'approve_permissions_users'])->name('approve_permissions_users');
 
 });
 
@@ -66,3 +68,6 @@ Route::get('contactus', [App\Http\Controllers\CommonController::class, 'contactu
 Route::get('faq', [App\Http\Controllers\CommonController::class, 'faqs'])->name('faq.home');
 Route::get('aboutus', [App\Http\Controllers\CommonController::class, 'aboutus'])->name('aboutus.home');
 
+Route::get('/user_dashboard', [App\Http\Controllers\CommonController::class, 'user_dashboard'])->name('user_dashboard');
+Route::post('/add_role_request', [App\Http\Controllers\CommonController::class, 'add_role_request'])->name('add_role_request');
+Route::post('/cancel_role_request_user', [App\Http\Controllers\CommonController::class, 'cancel_role_request_user'])->name('cancel_role_request_user');
