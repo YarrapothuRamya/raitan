@@ -105,7 +105,7 @@ CSS STRUCTURE:
 
 /* Theme Colors */
 :root {
-  --accent-color: #DEAD6F;
+  --accent-color: #50b500;
   --dark-color: #222222;
   --light-dark-color: #727272;
   --light-color: #fff;
@@ -546,8 +546,8 @@ iconify-icon.social-icon {
 
 li.social:hover iconify-icon.social-icon {
   color: #FFF;
-  border: 1px solid #DEAD6F;
-  background: #DEAD6F;
+  border: 1px solid #50b500;
+  background: #50b500;
 }
 
 iconify-icon.send-icon {
@@ -556,8 +556,8 @@ iconify-icon.send-icon {
   padding: 0.75rem;
   border-radius: 4.375rem;
   color: #FFF;
-  border: 1px solid #DEAD6F;
-  background: #DEAD6F;
+  border: 1px solid #50b500;
+  background: #50b500;
 }
 
 

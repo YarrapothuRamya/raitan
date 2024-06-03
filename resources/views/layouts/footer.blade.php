@@ -46,7 +46,7 @@
                 <a href="#" class="nav-link">Home</a>
               </li>
               <li class="menu-item">
-                <a href="#" class="nav-link">About us</a>
+                <a href="{{ route('aboutus.home') }}" class="nav-link">About us</a>
               </li>
               
               <li class="menu-item">
@@ -63,20 +63,10 @@
             <h3>Help Center</h5>
               <ul class="menu-list list-unstyled">
                 <li class="menu-item">
-                  <a href="#" class="nav-link">FAQs</a>
+                  <a href="{{ route('faq.home') }}" class="nav-link">FAQs</a>
                 </li>
-                <li class="menu-item">
-                  <a href="#" class="nav-link">Payment</a>
-                </li>
-                <li class="menu-item">
-                  <a href="#" class="nav-link">Returns & Refunds</a>
-                </li>
-                <li class="menu-item">
-                  <a href="#" class="nav-link">Checkout</a>
-                </li>
-                <li class="menu-item">
-                  <a href="#" class="nav-link">Delivery Information</a>
-                </li>
+                
+               
               </ul>
           </div>
         </div>

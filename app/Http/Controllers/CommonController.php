@@ -146,4 +146,13 @@ class CommonController extends Controller
     {
         return view('pages.pagenotfound');
     }
+
+    public function faqs()
+    {
+        return view('pages.faq');
+    }
+    public function aboutus()
+    {
+        return view('pages.aboutus');
+    }
 }

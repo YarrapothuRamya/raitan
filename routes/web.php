@@ -63,4 +63,6 @@ Route::get('page-not-found', [App\Http\Controllers\CommonController::class, 'pag
 Route::get('product-details', [App\Http\Controllers\CommonController::class, 'productdetails'])->name('productdetails.home');
 Route::get('services', [App\Http\Controllers\CommonController::class, 'services'])->name('service.home');
 Route::get('contactus', [App\Http\Controllers\CommonController::class, 'contactus'])->name('contactus.home');
+Route::get('faq', [App\Http\Controllers\CommonController::class, 'faqs'])->name('faq.home');
+Route::get('aboutus', [App\Http\Controllers\CommonController::class, 'aboutus'])->name('aboutus.home');
 

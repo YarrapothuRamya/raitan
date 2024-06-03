@@ -104,10 +104,7 @@
                 <div class="input_search_result input_search_recent"></div>
               </div>
             </div>
-            <div class="voice_btnbox">
-              <div class="mic_icon jdicon" role="button" aria-label="Search by voice" title="Search by voice"
-                tabindex="0" fdprocessedid="zum9gl"></div>
-            </div>
+           
             <div class="search_btnbox">
               <div class="search_button" role="button" aria-label="search" tabindex="0" fdprocessedid="bjper">
                 <div id="srchbtn" class="jdicon search_white_icon"></div>
@@ -137,12 +134,12 @@
           </li> -->
           <li role="menuitem" tabindex="0" class="headnav_item headnav_hiring"><a
               href="" class="headnav_item_anchor whitefill_animate ">
-              <div class="headnav_item_text pl-5 font14 fw400 color111">Farm Machinery
+              <div class="headnav_item_text  font14 fw400 color111">Farm Machinery
               </div>
             </a></li>
           <li role="menuitem" tabindex="0" class="headnav_item headnav_investor"><a
               href="" class="headnav_item_anchor whitefill_animate ">
-              <div class="headnav_item_text pl-5 font14 fw400 color111">Implementors
+              <div class="headnav_item_text  font14 fw400 color111">Implementors
                 </div>
             </a></li>
           <li role="menuitem" tabindex="0" id="header_advertise" class="headnav_item headnav_advertise">
@@ -150,14 +147,14 @@
             href="{{ route('service.home') }}"
               class="headnav_item_anchor whitefill_animate">
               <div class="nav_advertise_icon jdicon"></div>
-              <div class="headnav_item_text pl-5 font14 fw400 color111">Services
+              <div class="headnav_item_text pl-2 font14 fw400 color111">Services
               </div>
             </a></li>
           <li role="menuitem" tabindex="0" id="header_freelisting" class="headnav_item headnav_addbusiness"><a
               href=""
               class="headnav_item_anchor whitefill_animate">
               <div class="nav_listing_icon jdicon"></div>
-              <div class="headnav_item_text pl-5 font14 fw400 color111">Free Listing
+              <div class="headnav_item_text pl-2 font14 fw400 color111">Free Listing
               </div>
               <div class="headnav_tag font8 fw700 colorFFF text_uppercase mr-4">
                 Business</div>
