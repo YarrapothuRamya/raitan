@@ -420,6 +420,140 @@ c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.
   </div>
 </div>
 
+<header class="hdrWrp">
+        <div class="header dtable">
+            <div class="hdrMnuWprleft" style="width: 45px;"><span class="hdrLogoIcn"></span></div>
+            <div class="hdrMnuWprright">
+                <div class="hdrloginwrpr"><button class="hdrloginwrpr__btn"><span
+                            class="hdrloginwrpr__btntext font12 fw600">Sign In</span></button></div>
+                <div class="iconbox hdrNtfyIcn "></div>
+                <div class="loginusrwpr"><span class="loginusrimg"
+                        style="background-image: url(&quot;https://akam.cdn.jdmagicbox.com/images/icontent/newwap/newprot_w/user_profile.svg&quot;); background-color: rgb(255, 255, 255);"></span>
+                </div>
+            </div>
+        </div>
+        <div class="hdrSearchMain">
+            <div class="hdrSrchWp hdranimated">
+                <div><input type="text" placeholder="Search for Machines and Implementors" autocorrect="off" autocomplete="off"
+                        autocapitalize="off" aria-label="search"></div><span class="hdrsearchIcon"></span><span
+                    class="hdrSrchIcn"></span>
+            </div>
+        </div>
+        <div class="hdrskl"></div>
+    </header>
+
+
+    <div class="wrapper" id="appWrapper">
+        <div>
+            <div id="shell">
+                <div style="display: none;">
+                    <div match="[object Object]" location="[object Object]" history="[object Object]"
+                        initialroute="[object Object]" pagename="SideMenuAsync" route="[object Object]"
+                        style="padding-top: 125px;">
+                        <div class="loaderwrapper">
+                            <div class="spinner"><svg class="ldrbxshdw" version="1" width="48" height="48"
+                                    viewBox="0 0 28 28">
+                                    <g class="qp-circular-loader">
+                                        <path class="qp-circular-loader-path" fill="none"
+                                            d="M14 1.5A12.5 12.5 0 1 1 1.5 14"></path>
+                                    </g>
+                                </svg></div>
+                        </div>
+                    </div>
+                </div>
+                <div data-component="SideMenuAsync" data-shellvisibilitystatus="false"
+                    style="display: block; width: 100vw;">
+                    <div>
+                        <div class="menuwrpr">
+                            <div class="prflsctn animated fadeInUpmovie"><span class="closesidemenu"></span>
+                                <div class="prfltbl "><span class="prfltd"><span class="font17 nm">Sign
+                                            in</span></span><span class="prfltd lasttd"><span
+                                            class="prflpic_sidemenu"><span
+                                                style="background-image: url(&quot;https://akam.cdn.jdmagicbox.com/images/icontent/newwap/prot/profiledefault.png&quot;);"></span></span></span>
+                                </div>
+                                <div class="menusideslider">
+                                    <ul class="menublock font13">
+                                        <li><span>Saved</span></li>
+                                        <li><span>Favorites</span></li>
+                                        <li><span>Interests</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="navlist animated fadeInUpmovie">
+                                <ul class="animated fadeInUpmovie">
+                                    <li class="font14 fullsideli"><span class="jdsidemenu languageicon"></span><span
+                                            class="tdspan">English</span><span class="tdspan lastspace font11">Change
+                                            Language</span></li>
+                                    <li class="font14"><span class="jdsidemenu help"></span><span
+                                            class="tdspan">Customer Service</span><span class="tdspan dn"><span
+                                                class="arrowrgt "></span></span></li>
+                                    <li class="font14"><span class="jdsidemenu jdlistyourbusiness"></span><span
+                                            class="tdspan">List your Business<span class="tdsplistfre"><img
+                                                    src="https://akam.cdn.jdmagicbox.com/images/icons/gif/freeanimation2x"
+                                                    width="50px" alt=""></span></span><span class="tdspan dn"><span
+                                                class="arrowrgt "></span></span></li>
+                                    <li class="font14"><span class="jdsidemenu jdadvertise"></span><span
+                                            class="tdspan">Advertise</span><span class="tdspan dn"><span
+                                                class="arrowrgt "></span></span></li>
+                                    <li class="font14"><span class="jdsidemenu jdmytransactions"></span><span
+                                            class="tdspan">My Transactions</span><span class="tdspan dn"><span
+                                                class="arrowrgt "></span></span></li>
+                                    <li class="font14"><span class="jdsidemenu jdmanagequotes"></span><span
+                                            class="tdspan">Manage Quotes</span><span class="tdspan dn"><span
+                                                class="arrowrgt "></span></span></li>
+                                    <li class="font14"><span class="jdsidemenu jdhiringicon"></span><span
+                                            class="tdspan">We are hiring</span><span class="tdspan dn"><span
+                                                class="arrowrgt "></span></span></li>
+                                    <li class="font14"><span class="jdsidemenu sidemenuseting"></span><span
+                                            class="tdspan">Settings</span><span class="tdspan dn"><span
+                                                class="arrowrgt "></span></span></li>
+                                    <li class="font14"><span class="jdsidemenu jdprivacysettings"></span><span
+                                            class="tdspan">Privacy Policy</span><span class="tdspan dn"><span
+                                                class="arrowrgt "></span></span></li>
+                                    <li class="font14"><span class="jdsidemenu jdinvestorrelation"></span><span
+                                            class="tdspan">Investor Relations</span><span class="tdspan dn"><span
+                                                class="arrowrgt "></span></span></li>
+                                    <li class="font14"><span class="jdsidemenu jdnewprodicon"></span><span
+                                            class="tdspan">What's New</span><span class="tdspan dn"><span
+                                                class="arrowrgt "></span></span></li>
+                                    <li class="font14"><span class="jdsidemenu jdmore"></span><span
+                                            class="tdspan">Others</span><span class="tdspan dn"><span
+                                                class="arrowrgt "></span></span></li>
+                                    <li class="font14"><span class="jdsidemenu jdlogout"></span><span
+                                            class="tdspan">Login</span><span class="tdspan dn"><span
+                                                class="arrowrgt "></span></span></li>
+                                </ul>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="overlay" class="mask" style="display: none;">
+        <div class="offline_background">
+            <div class="offline_msg">You are offline .</div>
+        </div>
+    </div>
+    <div id="_map" style="position: fixed; top: 0px; left: 0px; height: 100%; width: 100%; visibility: hidden;">
+    </div>
+
+    <div>
+        <footer id="footerBottom" class="nwefooter " style="z-index: 7;">
+            <ul class="nweftrwpr">
+                <li class="actv"><span class="nweftrcom nwehome"></span><span class="fw500 nwetxt">Home</span></li>
+                <li class=""><span class="nweftrcom nwelead"><span class="footer_item leads_cntr">17</span></span><span
+                        class="fw500 nwetxt">Leads</span></li>
+                <li class=""><span class="nweftrcom nweb2b"></span><span class="fw500 nwetxt">B2B</span></li>
+                <li class=""><span class="nweftrcom nwepay"></span><span class="fw500 nwetxt">Pay</span></li>
+                <li class=""><span class="nweftrcom nwenews"><span class="footer_item news_cntr">1</span></span><span
+                        class="fw500 nwetxt">News</span></li>
+                <li class=""><span class="nweftrcom nwemore"></span><span class="fw500 nwetxt">More</span></li>
+            </ul>
+        </footer>
+    </div>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
   
@@ -589,3 +723,40 @@ $(document).ready(function(){
   });
 })
 </script>
+<script>
+
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const loginButton = document.querySelector('.hdrloginwrpr__btn');
+            const headersection = document.querySelector('.hdrWrp');
+            const menuWrapper = document.querySelector('.menuwrpr');
+            const closeButton = document.querySelector('.closesidemenu');
+
+
+            loginButton.addEventListener('click', function () {
+
+                menuWrapper.style.display = (menuWrapper.style.display === 'block') ? 'none' : 'block';
+                headersection.style.display = (headersection.style.display === 'none') ? 'block' : 'none';
+
+                menuWrapper.classList.toggle('animated');
+
+                menuWrapper.classList.toggle('fadeInUpmovie');
+
+
+                Array.from(menuWrapper.children).forEach(child => {
+                    child.classList.toggle('fadeInUpmovie');
+                });
+            });
+
+
+            closeButton.addEventListener('click', function () {
+
+                menuWrapper.style.display = (menuWrapper.style.display === 'none') ? 'block' : 'none';
+                headersection.style.display = (headersection.style.display === 'block') ? 'none' : 'block';
+
+
+                
+            });
+        });
+
+    </script>
