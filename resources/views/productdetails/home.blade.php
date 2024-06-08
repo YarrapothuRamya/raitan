@@ -41,8 +41,18 @@
                             <div class="w-full h-full"><img src="images/tractors/tractor1.jpg" alt="..."
                                     class="w-40 h-28" width="160" height="112"></div>
                         </div>
+                        <div class="p-11">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+</svg>
+
+                        </div>
+                        <div class="w-40 h-28">
+                            <div class="w-full h-full"><img src="/images/implementors/cultivator.jpg" alt="..."
+                                    class="w-40 h-28" width="160" height="112"></div>
+                        </div>
                         <div class="ml-10">
-                            <h2 class="text-lg font-medium">Mahindra OJA 3140 Tractor</h2>
+                            <h2 class="text-lg font-medium">Mahindra OJA 3140 Tractor With Cultivator</h2>
                             <div class="flex mt-1 text-sm items-center flex-wrap text-gray-500"><span
                                     class="text-sm">Manual, Desiel</span></div>
                             <div class="flex items-center">
@@ -236,24 +246,59 @@
                                     href="/fuel-policy/">Fuel Policy</a><a rel="noreferrer" class="growing-link w-fit"
                                     target="_blank" href="/cancellation-terms/">Cancellation Policy</a></div>
                         </div>
+                        <div class="relative max-w-md mx-auto md:max-w-2xl mt-6 min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded-xl mt-16">
+    <div class="px-6">
+        <div class="flex flex-wrap justify-center">
+            <div class="w-full flex justify-center">
+                <div class="relative">
+                    <img src="https://github.com/creativetimofficial/soft-ui-dashboard-tailwind/blob/main/build/assets/img/team-2.jpg?raw=true" class="shadow-xl rounded-full align-middle border-none absolute -m-16 -ml-20 lg:-ml-16 max-w-[150px]"/>
+                </div>
+            </div>
+            <div class="w-full text-center mt-20">
+                <div class="flex justify-center lg:pt-4 pt-8 pb-0">
+                    <div class="p-3 text-center">
+                        <span class="text-xl font-bold block uppercase tracking-wide text-slate-700">3,360</span>
+                        <span class="text-sm text-slate-400">Deals</span>
+                    </div>
+                    <div class="p-3 text-center">
+                        <span class="text-xl font-bold block uppercase tracking-wide text-slate-700">2,454</span>
+                        <span class="text-sm text-slate-400">Services</span>
+                    </div>
+
+                    <div class="p-3 text-center">
+                        <span class="text-xl font-bold block uppercase tracking-wide text-slate-700">9AM - 6PM</span>
+                        <span class="text-sm text-slate-400">Timmings</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-2">
+            <h3 class="text-2xl text-slate-700 font-bold leading-normal mb-1">Krishna</h3>
+            <div class="text-xs mt-0 mb-2 text-slate-400 font-bold uppercase">
+                <i class="fas fa-map-marker-alt mr-2 text-slate-400 opacity-75"></i>Bachupally, Hyderabad
+            </div>
+        </div>
+        <div class="mt-6 py-6 border-t border-slate-200 text-center">
+            <div class="flex flex-wrap justify-center">
+                <div class="w-full px-4">
+                    <p class="font-light leading-relaxed text-slate-600 mb-4">Urna id volutpat lacus laoreet non curabitur gravida arcu. Lorem ipsum dolor sit amet consectetur adipiscing elit duis tristique.  Ante in niis aenean et tortor at risus viverra.</p>
+                    <a href="javascript:;" class="font-normal text-slate-700 hover:text-slate-400">Follow Account</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div><div class="mb-30"><div><div class="flex_spacebetween mb-15 font15 fw600 pd15 color36">News near you<i class="next-arrow"></i></div><div class="pd15 home_cur_list"><a href="#" title="City of Joy to City of Dreams: 5 Best Bengali Restaurants Explore" aria-label="City of Joy to City of Dreams: 5 Best Bengali Restaurants Explore"><div class="home_cur_listli"><div class="home_cur_img"><img src="" alt="" title=""></div><div class="home_cur_txtotr"><div class="font11 home_cur_txt1">Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.</div><div class="font11 mt-15 home_cur_txt2">Explore</div></div></div></a><a href="#" title="Let Your Creativity Shine at These Interesting Art Cafes in Delhi Explore" aria-label="Let Your Creativity Shine at These Interesting Art Cafes in Delhi Explore"><div class="home_cur_listli"><div class="home_cur_img"><img src="" alt="" title=""></div><div class="home_cur_txtotr"><div class="font11 home_cur_txt1">Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.</div><div class="font11 mt-15 home_cur_txt2">Explore</div></div></div></a><a href="#" title="Get a Makeover at any of these Celebrity Frequented Beauty Parlours Explore" aria-label="Get a Makeover at any of these Celebrity Frequented Beauty Parlours Explore"><div class="home_cur_listli"><div class="home_cur_img"><img src="" alt="" title=""></div><div class="home_cur_txtotr"><div class="font11 home_cur_txt1">Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.</div><div class="font11 mt-15 home_cur_txt2">Explore</div></div></div></a><a href="#" title="Amp Up Your Engagement Ceremony with These 11 Precious and Semi Precious Jewellery Brands in India Explore" aria-label="Amp Up Your Engagement Ceremony with These 11 Precious and Semi Precious Jewellery Brands in India Explore"><div class="home_cur_listli"><div class="home_cur_img"><img src="" alt="" title=""></div><div class="home_cur_txtotr"><div class="font11 home_cur_txt1">Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.</div><div class="font11 mt-15 home_cur_txt2">Explore</div></div></div></a><a href="#" title="Nurturing Tech Enthusiasts: Exploring Best Institutes for BCA Explore" aria-label="Nurturing Tech Enthusiasts: Exploring Best Institutes for BCA Explore"><div class="home_cur_listli"><div class="home_cur_img"><img src="" alt="" title=""></div><div class="home_cur_txtotr"><div class="font11 home_cur_txt1">Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups. </div><div class="font11 mt-15 home_cur_txt2">Explore</div></div></div></a><a href="#" title="Engineer's Day: Celebrating the Innovations and Creativity of the Universal Problem Solvers Explore" aria-label="Engineer's Day: Celebrating the Innovations and Creativity of the Universal Problem Solvers Explore"><div class="home_cur_listli"><div class="home_cur_img"><img src="" alt="" title=""></div><div class="home_cur_txtotr"><div class="font11 home_cur_txt1">Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.</div><div class="font11 mt-15 home_cur_txt2">Explore</div></div></div></a><a href="#" title="Comprehensive Guide to the Best Cancer Centres Explore" aria-label="Comprehensive Guide to the Best Cancer Centres Explore"><div class="home_cur_listli"><div class="home_cur_img"><img src="" alt="" title=""></div><div class="home_cur_txtotr"><div class="font11 home_cur_txt1">Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.</div><div class="font11 mt-15 home_cur_txt2">Explore</div></div></div></a><a href="#" title="Leading the Fight: Top Cancer Hospitals in India Pioneering Advanced Care Explore" aria-label="Leading the Fight: Top Cancer Hospitals in India Pioneering Advanced Care Explore"><div class="home_cur_listli"><div class="home_cur_img"><img src="" alt="" title=""></div><div class="home_cur_txtotr"><div class="font11 home_cur_txt1">Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.</div><div class="font11 mt-15 home_cur_txt2">Explore</div></div></div></a><a href="#" title="Calling All Bibliophiles to Curl Up with a Book at These 12 Cosy Book Cafes Explore" aria-label="Calling All Bibliophiles to Curl Up with a Book at These 12 Cosy Book Cafes Explore"><div class="home_cur_listli"><div class="home_cur_img"><img src="" alt="" title=""></div><div class="home_cur_txtotr"><div class="font11 home_cur_txt1">Calling All Bibliophiles to Curl Up with a Book at These 12 Cosy Book Cafes</div><div class="font11 mt-15 home_cur_txt2">Explore</div></div></div></a><a href="#" title="National Reading Day 2024: Top Bookstores in India to Explore the World of Rabindranath Tagore Explore" aria-label="National Reading Day 2024: Top Bookstores in India to Explore the World of Rabindranath Tagore Explore"><div class="home_cur_listli"><div class="home_cur_img"><img src="" alt="" title=""></div><div class="home_cur_txtotr"><div class="font11 home_cur_txt1">Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.</div><div class="font11 mt-15 home_cur_txt2">Explore</div></div></div></a></div></div></div></div>
                     </div>
                 </div>
                 <div
                     class="shadow-t-lg sm:rounded-xl rounded-t-3xl pb-4 pt-2 sm:px-6 lg:px-2 px-2 sm:mt-4 sm:sticky fixed bottom-0 left-0 right-0 bg-white">
-                    <div class="min-h-[25px] text-sm text-center"></div>
+                    
                     <div class="flex sm:flex-row flex-col sm:px-6 px-2 sm:justify-between sm:items-center">
                         <div class="sm:block flex space-x-2 justify-between items-center">
-                            <!-- <div>
-                                <div class="flex space-x-2">
-                                    <div class=" flex font-medium text-lg items-center"><svg stroke="currentColor"
-                                            fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em"
-                                            width="1em" xmlns="http://www.w3.org/2000/svg">
-                                            <path
-                                                d="M17 6V4H6v2h3.5c1.302 0 2.401.838 2.815 2H6v2h6.315A2.994 2.994 0 0 1 9.5 12H6v2.414L11.586 20h2.828l-6-6H9.5a5.007 5.007 0 0 0 4.898-4H17V8h-2.602a4.933 4.933 0 0 0-.924-2H17z">
-                                            </path>
-                                        </svg><span>6,228</span></div>
-                                </div><span class="text-xs text-gray-500">for 80 kms without fuel</span>
-                            </div> -->
+                            
                         </div>
                         <div class="sm:mt-0">
                             <!-- <div>

@@ -36,7 +36,7 @@
                     draggable="false" title="Machines" src="images/Banners/banner5.jpg"
                     data-src="images/Banners/banner5.jpg" class="home_banner_li_image" alt="Machines"></span></li>
               <li tabindex="0" class="slide "><span class="slide_anchor" title="" draggable="false"><img
-                    draggable="false" title="" src="images/Banners/banner5.jpg" data-src="images/Banners/banner5.jpg"
+                    draggable="false" title="" src="images/Banners/banner1.jpg" data-src="images/Banners/banner5.jpg"
                     class="home_banner_li_image" alt=""></span></li>
 
             </ul>
@@ -338,35 +338,7 @@
         </a>
       </div>
 
-      <div class="mobile-view-section">
-        <div>
-          <div class="flex_spacebetween mb-15 font15 fw600 pd15 color36">Tractor Implementors<i class="next-arrow"></i>
-          </div>
-          <div class="list-image-wrapper flex_spacebetween mb-20">
-            <div class="listwpr"><a href="#" class="list-image" title="Disco Harrow" aria-label="Disco Harrow" rel=""
-                style="padding-top: 140.541%; display: inline-flex;"><img src="images/implementors/disc-harrow.jpg"
-                  data-src="images/implementors/disc-harrow.jpg" class="imgratio lazify laizfy--handled" alt=""><span
-                  class="font11 fw800 categorytabs_text">Disco Harrow</span></a></div>
-            <div class="listwpr"><a href="#" class="list-image" title="Cultivator" aria-label="Cultivator" rel=""
-                style="padding-top: 140.541%; display: inline-flex;"><img
-                  src="images/implementors/cultivator.jpg?w=256&q=75 1x, images/implementors/cultivator.jpg"
-                  data-src="images/implementors/cultivator.jpg?w=256&q=75 1x, images/implementors/cultivator.jpg"
-                  class="imgratio lazify laizfy--handled" alt=""><span
-                  class="font11 fw800 categorytabs_text">Cultivator</span></a></div>
-            <div class="listwpr"><a href="#" class="list-image" title="PEST CONTROL" aria-label="PEST CONTROL" rel=""
-                style="padding-top: 140.541%; display: inline-flex;"><img
-                  src="images/implementors/boom-sprayer.png?w=256&q=75 1x, images/implementors/boom-sprayer.png"
-                  data-src="images/implementors/boom-sprayer.png?w=256&q=75 1x, images/implementors/boom-sprayer.png"
-                  class="imgratio lazify laizfy--handled" alt=""><span class="font11 fw800 categorytabs_text">Boom
-                  Sprayer</span></a></div>
-            <div class="listwpr"><a href="#" class="list-image" title="Implementors" aria-label="Implementors" rel=""
-                style="padding-top: 140.541%; display: inline-flex;"><img
-                  src="images/implementors/implementor-banner.jpg" data-src="images/implementors/implementor-banner.jpg"
-                  class="imgratio lazify laizfy--handled" alt=""><span class="font11 fw800 categorytabs_text">More
-                  Implementors</span></a></div>
-          </div>
-        </div>
-      </div>
+     
 
       <div class="home_rowbox home_row_3 home_card_hotkey mb-50" data-tracker-id="cat">
         <div class="cardhotkey__wrap p-30 pt-15 pb-15 pointer"><a href="#" class="cat_Wedding Requisites"
@@ -830,7 +802,7 @@
 </section>
 
 
-<section id="latest-blog" class="my-5">
+<section id="latest-blog" class="my-5" style="display:none">
   <div class="container py-5 my-5">
     <div class="row mt-5">
       <div class="section-header d-md-flex justify-content-between align-items-center mb-3">

@@ -764,7 +764,7 @@ Single Product section style start
   -moz-box-direction: normal;
   -ms-flex-flow: row wrap;
   flex-flow: row wrap;
-  height: 80px;
+  height: 85px;
   overflow: hidden;
 }
 

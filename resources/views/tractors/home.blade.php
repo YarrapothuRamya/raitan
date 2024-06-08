@@ -23,197 +23,7 @@
 
   <div class="section-container">
     <div class="lg:flex lg:space-x-6">
-      <div class="lg:min-w-[384px] lg:mt-0 mt-6">
-        <div class="lg:fixed lg:w-96 bg-white rounded-lg z-10">
-          <!-- <div class="border border-pear/30 shadow-md shadow-pear/30 rounded-lg p-3">
-            <div>
-              <div class="flex justify-between items-center">
-                <h4 class="font-medium"></h4>
-              </div>
-              <div class="flex mt-2"><svg stroke="currentColor" fill="currentColor" stroke-width="0"
-                  viewBox="0 0 512 512" class="mt-1 mr-1 text-pistachio min-w-[24px]" height="24" width="24"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"
-                    d="M256 48c-79.5 0-144 61.39-144 137 0 87 96 224.87 131.25 272.49a15.77 15.77 0 0025.5 0C304 409.89 400 272.07 400 185c0-75.61-64.5-137-144-137z">
-                  </path>
-                  <circle cx="256" cy="192" r="48" fill="none" stroke-linecap="round" stroke-linejoin="round"
-                    stroke-width="32"></circle>
-                </svg>
-                <div class="text-sm"><span class="block"> Hyderabad, Hyderabad</span><span class="block text-xs">Mon, 6
-                    May '24, 03:30 AM</span></div>
-              </div>
-            </div>
-            <hr class="my-3 bg-pistachio">
-            <div>
-              <div class="flex justify-between items-center">
-                <h4 class="font-medium"></h4>
-              </div>
-              <div class="flex mt-2"><svg stroke="currentColor" fill="currentColor" stroke-width="0"
-                  viewBox="0 0 512 512" class="mt-1 mr-1 text-red-500 min-w-[24px]" height="24" width="24"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"
-                    d="M256 48c-79.5 0-144 61.39-144 137 0 87 96 224.87 131.25 272.49a15.77 15.77 0 0025.5 0C304 409.89 400 272.07 400 185c0-75.61-64.5-137-144-137z">
-                  </path>
-                  <circle cx="256" cy="192" r="48" fill="none" stroke-linecap="round" stroke-linejoin="round"
-                    stroke-width="32"></circle>
-                </svg>
-                <div class="text-sm"><span class="block">Hyderabad, Hyderabad</span><span class="block text-xs">Tue, 7
-                    May '24, 06:30 AM</span></div>
-              </div>
-            </div>
-          </div> -->
-          <!-- <div class=" mt-6 rounded-lg py-4 text-center  shadow-md ">
-            <h5></h5>
-            <p class="text-pistachio mt-2 font-medium"></p>
-
-
-
-
-
-
-
-
-
-          </div> -->
-
-          <div>
-            <p class="text-sm tracking-[0.1px] mb-3 mt-1 md:mt-0"></p>
-            <div
-              class="w-full p-4 bg-neutral-10 dark:bg-neutral-900 rounded-2xl border border-gray-200 dark:border-gray-700 shadow-t-md border">
-              <!-- Lists -->
-              <div
-                class="w-full md:w-[360px] flex flex-col py-2 rounded-xl overflow-hidden bg-neutral-10 dark:bg-neutral-900 max-h-60 overflow-y-auto">
-                
-                @foreach($services as $service)
-                <!-- lists & image -->
-                <a href="<?php echo env('APP_URL'). '/' .$service->route; ?>">
-                <div
-                  class="min-h-[3.5rem] flex flex-row items-center gap-4 py-2 pl-4 pr-6 cursor-pointer border border-pear/30 shadow-md shadow-pear/30 rounded-lg lg:p-4 p-2">
-                  <div
-                    class="w-14 h-14 flex items-center justify-center title-md font-bold bg-primary-600 text-white dark:bg-primary-200 dark:text-neutral-900">
-                    <img src="{{ asset('service_images').'/'.$service->image }}" alt="media 2" class="w-14 h-14">
-                  </div>
-                  <div class="flex flex-col flex-grow">
-                    <p class="tracking-[.03125em]">{{ $service->service_name }}</p>
-                    <span class="text-sm tracking-[0.25px]">{{ $service->description }}</span>
-                  </div>
-                  <span class="text-[11px] leading-4 tracking-[.045em] font-medium"></span>
-                </div></a>
-                @endforeach
-
-
-                <!-- lists & image -->
-                <div
-                  class="min-h-[3.5rem] flex flex-row items-center gap-4 py-2 pl-4 pr-6 cursor-pointer border border-pear/30 shadow-md shadow-pear/30 rounded-lg lg:p-4 p-2">
-                  <div
-                    class="w-14 h-14 flex items-center justify-center title-md font-bold bg-primary-600 text-white dark:bg-primary-200 dark:text-neutral-900">
-                    <img src="images/tractors/jcb1.png" alt="media 2" class="w-14 h-14">
-                  </div>
-                  <div class="flex flex-col flex-grow">
-                    <p class="tracking-[.03125em]">Earth Movers</p>
-                    <span class="text-sm tracking-[0.25px]">Supporting line text</span>
-                  </div>
-                  <span class="text-[11px] leading-4 tracking-[.045em] font-medium"></span>
-                </div>
-                <!-- lists & image -->
-                <div
-                  class="min-h-[3.5rem] flex flex-row items-center gap-4 py-2 pl-4 pr-6 cursor-pointer border border-pear/30 shadow-md shadow-pear/30 rounded-lg lg:p-4 p-2">
-                  <div
-                    class="w-14 h-14 flex items-center justify-center title-md font-bold bg-primary-600 text-white dark:bg-primary-200 dark:text-neutral-900">
-                    <img src="images/farmer1.png" alt="media 2" class="w-14 h-14">
-                  </div>
-                  <div class="flex flex-col flex-grow">
-                    <p class="tracking-[.03125em]">Workers</p>
-                    <span class="text-sm tracking-[0.25px]">Supporting line text</span>
-                  </div>
-                  <span class="text-[11px] leading-4 tracking-[.045em] font-medium"></span>
-                </div>
-                <!-- lists & image -->
-                <div
-                  class="min-h-[3.5rem] flex flex-row items-center gap-4 py-2 pl-4 pr-6 cursor-pointer border border-pear/30 shadow-md shadow-pear/30 rounded-lg lg:p-4 p-2">
-                  <div
-                    class="w-14 h-14 flex items-center justify-center title-md font-bold bg-primary-600 text-white dark:bg-primary-200 dark:text-neutral-900">
-                    <img src="images/harvestor1.png" alt="media 2" class="w-14 h-14">
-                  </div>
-                  <div class="flex flex-col flex-grow">
-                    <p class="tracking-[.03125em]">Harvestor</p>
-                    <span class="text-sm tracking-[0.25px]">Supporting line text</span>
-                  </div>
-                  <span class="text-[11px] leading-4 tracking-[.045em] font-medium"></span>
-                </div>
-                <!-- lists & image -->
-                <div
-                  class="min-h-[3.5rem] flex flex-row items-center gap-4 py-2 pl-4 pr-6 cursor-pointer border border-pear/30 shadow-md shadow-pear/30 rounded-lg lg:p-4 p-2">
-                  <div
-                    class="w-14 h-14 flex items-center justify-center title-md font-bold bg-primary-600 text-white dark:bg-primary-200 dark:text-neutral-900">
-                    <img src="images/dronesprayer.png" alt="media 2" class="w-14 h-14">
-                  </div>
-                  <div class="flex flex-col flex-grow">
-                    <p class="tracking-[.03125em]">Drones</p>
-                    <span class="text-sm tracking-[0.25px]">Supporting line text</span>
-                  </div>
-                  <span class="text-[11px] leading-4 tracking-[.045em] font-medium"></span>
-                </div>
-                <!-- lists & image -->
-                <div
-                  class="min-h-[3.5rem] flex flex-row items-center gap-4 py-2 pl-4 pr-6 cursor-pointer border border-pear/30 shadow-md shadow-pear/30 rounded-lg lg:p-4 p-2">
-                  <div
-                    class="w-14 h-14 flex items-center justify-center title-md font-bold bg-primary-600 text-white dark:bg-primary-200 dark:text-neutral-900">
-                    <img src="images/machine/paddytransplanter.jpeg" alt="media 2" class="w-14 h-14">
-                  </div>
-                  <div class="flex flex-col flex-grow">
-                    <p class="tracking-[.03125em]">Paddy Transplantor</p>
-                    <span class="text-sm tracking-[0.25px]">Supporting line text</span>
-                  </div>
-                  <span class="text-[11px] leading-4 tracking-[.045em] font-medium"></span>
-                </div>
-                <!-- lists & image -->
-                <div
-                  class="min-h-[3.5rem] flex flex-row items-center gap-4 py-2 pl-4 pr-6 cursor-pointer border border-pear/30 shadow-md shadow-pear/30 rounded-lg lg:p-4 p-2">
-                  <div
-                    class="w-14 h-14 flex items-center justify-center title-md font-bold bg-primary-600 text-white dark:bg-primary-200 dark:text-neutral-900">
-                    <img src="images/mechanic.png" alt="media 2" class="w-14 h-14">
-                  </div>
-                  <div class="flex flex-col flex-grow">
-                    <p class="tracking-[.03125em]">Mechanics</p>
-                    <span class="text-sm tracking-[0.25px]">Supporting line text</span>
-                  </div>
-                  <span class="text-[11px] leading-4 tracking-[.045em] font-medium"></span>
-                </div>
-                <!-- lists & image -->
-                <div
-                  class="min-h-[3.5rem] flex flex-row items-center gap-4 py-2 pl-4 pr-6 cursor-pointer border border-pear/30 shadow-md shadow-pear/30 rounded-lg lg:p-4 p-2">
-                  <div
-                    class="w-14 h-14 flex items-center justify-center title-md font-bold bg-primary-600 text-white dark:bg-primary-200 dark:text-neutral-900">
-                    <img src="images/man_power/farming_women.jpg" alt="media 2" class="w-14 h-14">
-                  </div>
-                  <div class="flex flex-col flex-grow">
-                    <p class="tracking-[.03125em]">Farming Labour</p>
-                    <span class="text-sm tracking-[0.25px]">Supporting line text</span>
-                  </div>
-                  <span class="text-[11px] leading-4 tracking-[.045em] font-medium"></span>
-                </div>
-                <!-- lists & image -->
-                <div
-                  class="min-h-[3.5rem] flex flex-row items-center gap-4 py-2 pl-4 pr-6 cursor-pointer border border-pear/30 shadow-md shadow-pear/30 rounded-lg lg:p-4 p-2">
-                  <div
-                    class="w-14 h-14 flex items-center justify-center title-md font-bold bg-primary-600 text-white dark:bg-primary-200 dark:text-neutral-900">
-                    <img src="images/man_power/chilli_picker.jpg" alt="media 2" class="w-14 h-14">
-                  </div>
-                  <div class="flex flex-col flex-grow">
-                    <p class="tracking-[.03125em]">Cotton?Chilli Picker</p>
-                    <span class="text-sm tracking-[0.25px]">Supporting line text</span>
-                  </div>
-                  <span class="text-[11px] leading-4 tracking-[.045em] font-medium"></span>
-                </div>
-              </div>
-
-              <!-- Lists -->
-
-            </div>
-          </div>
-        </div>
-      </div>
+     
 
       <div class="relative w-full">
 
@@ -770,6 +580,142 @@
           </a>
         </div>
       </div>
+      <div>
+            <p class="text-sm tracking-[0.1px] mb-3 mt-1 md:mt-0"></p>
+            <div
+              class="w-full p-4 bg-neutral-10 dark:bg-neutral-900 rounded-2xl border border-gray-200 dark:border-gray-700 shadow-t-md border">
+              <!-- Lists -->
+              <div
+                class="w-full md:w-[360px] flex flex-col py-2 rounded-xl overflow-hidden bg-neutral-10 dark:bg-neutral-900 max-h-60 overflow-y-auto">
+                
+                @foreach($services as $service)
+                <!-- lists & image -->
+                <a href="<?php echo env('APP_URL'). '/' .$service->route; ?>">
+                <div
+                  class="min-h-[3.5rem] flex flex-row items-center gap-4 py-2 pl-4 pr-6 cursor-pointer border border-pear/30 shadow-md shadow-pear/30 rounded-lg lg:p-4 p-2">
+                  <div
+                    class="w-14 h-14 flex items-center justify-center title-md font-bold bg-primary-600 text-white dark:bg-primary-200 dark:text-neutral-900">
+                    <img src="{{ asset('service_images').'/'.$service->image }}" alt="media 2" class="w-14 h-14">
+                  </div>
+                  <div class="flex flex-col flex-grow">
+                    <p class="tracking-[.03125em]">{{ $service->service_name }}</p>
+                    <span class="text-sm tracking-[0.25px]">{{ $service->description }}</span>
+                  </div>
+                  <span class="text-[11px] leading-4 tracking-[.045em] font-medium"></span>
+                </div></a>
+                @endforeach
+
+
+                <!-- lists & image -->
+                <div
+                  class="min-h-[3.5rem] flex flex-row items-center gap-4 py-2 pl-4 pr-6 cursor-pointer border border-pear/30 shadow-md shadow-pear/30 rounded-lg lg:p-4 p-2">
+                  <div
+                    class="w-14 h-14 flex items-center justify-center title-md font-bold bg-primary-600 text-white dark:bg-primary-200 dark:text-neutral-900">
+                    <img src="images/tractors/jcb1.png" alt="media 2" class="w-14 h-14">
+                  </div>
+                  <div class="flex flex-col flex-grow">
+                    <p class="tracking-[.03125em]">Earth Movers</p>
+                    <span class="text-sm tracking-[0.25px]">Supporting line text</span>
+                  </div>
+                  <span class="text-[11px] leading-4 tracking-[.045em] font-medium"></span>
+                </div>
+                <!-- lists & image -->
+                <div
+                  class="min-h-[3.5rem] flex flex-row items-center gap-4 py-2 pl-4 pr-6 cursor-pointer border border-pear/30 shadow-md shadow-pear/30 rounded-lg lg:p-4 p-2">
+                  <div
+                    class="w-14 h-14 flex items-center justify-center title-md font-bold bg-primary-600 text-white dark:bg-primary-200 dark:text-neutral-900">
+                    <img src="images/farmer1.png" alt="media 2" class="w-14 h-14">
+                  </div>
+                  <div class="flex flex-col flex-grow">
+                    <p class="tracking-[.03125em]">Workers</p>
+                    <span class="text-sm tracking-[0.25px]">Supporting line text</span>
+                  </div>
+                  <span class="text-[11px] leading-4 tracking-[.045em] font-medium"></span>
+                </div>
+                <!-- lists & image -->
+                <div
+                  class="min-h-[3.5rem] flex flex-row items-center gap-4 py-2 pl-4 pr-6 cursor-pointer border border-pear/30 shadow-md shadow-pear/30 rounded-lg lg:p-4 p-2">
+                  <div
+                    class="w-14 h-14 flex items-center justify-center title-md font-bold bg-primary-600 text-white dark:bg-primary-200 dark:text-neutral-900">
+                    <img src="images/harvestor1.png" alt="media 2" class="w-14 h-14">
+                  </div>
+                  <div class="flex flex-col flex-grow">
+                    <p class="tracking-[.03125em]">Harvestor</p>
+                    <span class="text-sm tracking-[0.25px]">Supporting line text</span>
+                  </div>
+                  <span class="text-[11px] leading-4 tracking-[.045em] font-medium"></span>
+                </div>
+                <!-- lists & image -->
+                <div
+                  class="min-h-[3.5rem] flex flex-row items-center gap-4 py-2 pl-4 pr-6 cursor-pointer border border-pear/30 shadow-md shadow-pear/30 rounded-lg lg:p-4 p-2">
+                  <div
+                    class="w-14 h-14 flex items-center justify-center title-md font-bold bg-primary-600 text-white dark:bg-primary-200 dark:text-neutral-900">
+                    <img src="images/dronesprayer.png" alt="media 2" class="w-14 h-14">
+                  </div>
+                  <div class="flex flex-col flex-grow">
+                    <p class="tracking-[.03125em]">Drones</p>
+                    <span class="text-sm tracking-[0.25px]">Supporting line text</span>
+                  </div>
+                  <span class="text-[11px] leading-4 tracking-[.045em] font-medium"></span>
+                </div>
+                <!-- lists & image -->
+                <div
+                  class="min-h-[3.5rem] flex flex-row items-center gap-4 py-2 pl-4 pr-6 cursor-pointer border border-pear/30 shadow-md shadow-pear/30 rounded-lg lg:p-4 p-2">
+                  <div
+                    class="w-14 h-14 flex items-center justify-center title-md font-bold bg-primary-600 text-white dark:bg-primary-200 dark:text-neutral-900">
+                    <img src="images/machine/paddytransplanter.jpeg" alt="media 2" class="w-14 h-14">
+                  </div>
+                  <div class="flex flex-col flex-grow">
+                    <p class="tracking-[.03125em]">Paddy Transplantor</p>
+                    <span class="text-sm tracking-[0.25px]">Supporting line text</span>
+                  </div>
+                  <span class="text-[11px] leading-4 tracking-[.045em] font-medium"></span>
+                </div>
+                <!-- lists & image -->
+                <div
+                  class="min-h-[3.5rem] flex flex-row items-center gap-4 py-2 pl-4 pr-6 cursor-pointer border border-pear/30 shadow-md shadow-pear/30 rounded-lg lg:p-4 p-2">
+                  <div
+                    class="w-14 h-14 flex items-center justify-center title-md font-bold bg-primary-600 text-white dark:bg-primary-200 dark:text-neutral-900">
+                    <img src="images/mechanic.png" alt="media 2" class="w-14 h-14">
+                  </div>
+                  <div class="flex flex-col flex-grow">
+                    <p class="tracking-[.03125em]">Mechanics</p>
+                    <span class="text-sm tracking-[0.25px]">Supporting line text</span>
+                  </div>
+                  <span class="text-[11px] leading-4 tracking-[.045em] font-medium"></span>
+                </div>
+                <!-- lists & image -->
+                <div
+                  class="min-h-[3.5rem] flex flex-row items-center gap-4 py-2 pl-4 pr-6 cursor-pointer border border-pear/30 shadow-md shadow-pear/30 rounded-lg lg:p-4 p-2">
+                  <div
+                    class="w-14 h-14 flex items-center justify-center title-md font-bold bg-primary-600 text-white dark:bg-primary-200 dark:text-neutral-900">
+                    <img src="images/man_power/farming_women.jpg" alt="media 2" class="w-14 h-14">
+                  </div>
+                  <div class="flex flex-col flex-grow">
+                    <p class="tracking-[.03125em]">Farming Labour</p>
+                    <span class="text-sm tracking-[0.25px]">Supporting line text</span>
+                  </div>
+                  <span class="text-[11px] leading-4 tracking-[.045em] font-medium"></span>
+                </div>
+                <!-- lists & image -->
+                <div
+                  class="min-h-[3.5rem] flex flex-row items-center gap-4 py-2 pl-4 pr-6 cursor-pointer border border-pear/30 shadow-md shadow-pear/30 rounded-lg lg:p-4 p-2">
+                  <div
+                    class="w-14 h-14 flex items-center justify-center title-md font-bold bg-primary-600 text-white dark:bg-primary-200 dark:text-neutral-900">
+                    <img src="images/man_power/chilli_picker.jpg" alt="media 2" class="w-14 h-14">
+                  </div>
+                  <div class="flex flex-col flex-grow">
+                    <p class="tracking-[.03125em]">Cotton?Chilli Picker</p>
+                    <span class="text-sm tracking-[0.25px]">Supporting line text</span>
+                  </div>
+                  <span class="text-[11px] leading-4 tracking-[.045em] font-medium"></span>
+                </div>
+              </div>
+
+              <!-- Lists -->
+
+            </div>
+          </div>
     </div>
   </div>
 </section>
