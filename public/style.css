@@ -379,7 +379,17 @@ iconify-icon.category-icon {
   transition: all 0.3s ease-in;
 
 }
-
+a.headnav_item_text{
+  color: #50b500;
+  background-color: #fff;
+}
+.headnav_item_anchor.user-name:hover{
+  background-color: #50b500;
+}
+a.headnav_item_text:hover{
+  color: #fff;
+  background-color: #50b500;
+}
 a.categories-item:hover iconify-icon.category-icon {
   color: #DEAD6F;
 }
@@ -1463,7 +1473,7 @@ body, button, input, select, textarea{
 .home_hotkeybox {
   display: inline-grid;
   padding: 0px 45px;
-  grid-template-columns: repeat(auto-fit, minmax(75px, 1fr));
+  grid-template-columns: repeat(8, minmax(75px, 1fr));
   width: 100%;
   grid-gap: 30px 56px;
 }
@@ -1550,13 +1560,13 @@ body, button, input, select, textarea{
 
 @media (min-width: 1367px){
   .home_hotkeybox {
-    grid-gap: 30px 135.5px;
+    grid-gap: 30px 0px;
 }
 }
 
 @media(min-width: 1025px)and (max-width:1280px) {
   .home_hotkeybox {
-      grid-gap:30px 47px
+      grid-gap:30px 0px
   }
 }
 
@@ -2817,6 +2827,10 @@ a, img {
 
 .jddtl_slider {
   display: none;
+}
+
+.home_hotkeybox{
+  grid-template-columns: repeat(auto-fit, minmax(75px, 1fr));
 }
 
 main{

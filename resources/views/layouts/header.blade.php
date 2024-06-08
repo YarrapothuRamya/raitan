@@ -166,7 +166,7 @@
             </div>
           </li>
           <li role="menuitem" tabindex="0" id="header_login1" class="headnav_item headnav_user">
-            <div role="button" tabindex="0" aria-label="Login/Sign Up" class="headnav_item_anchor bluefill_animate"
+            <div role="button" tabindex="0" aria-label="Login/Sign Up" class="headnav_item_anchor user-name "
               fdprocessedid="yopgan">
               <div class="">
               @guest
@@ -498,27 +498,14 @@ c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.
                                     <li class="font14"><span class="jdsidemenu jdmytransactions"></span><span
                                             class="tdspan">My Transactions</span><span class="tdspan dn"><span
                                                 class="arrowrgt "></span></span></li>
-                                    <li class="font14"><span class="jdsidemenu jdmanagequotes"></span><span
-                                            class="tdspan">Manage Quotes</span><span class="tdspan dn"><span
-                                                class="arrowrgt "></span></span></li>
-                                    <li class="font14"><span class="jdsidemenu jdhiringicon"></span><span
-                                            class="tdspan">We are hiring</span><span class="tdspan dn"><span
-                                                class="arrowrgt "></span></span></li>
-                                    <li class="font14"><span class="jdsidemenu sidemenuseting"></span><span
-                                            class="tdspan">Settings</span><span class="tdspan dn"><span
-                                                class="arrowrgt "></span></span></li>
+                                    
+                                    
                                     <li class="font14"><span class="jdsidemenu jdprivacysettings"></span><span
                                             class="tdspan">Privacy Policy</span><span class="tdspan dn"><span
                                                 class="arrowrgt "></span></span></li>
-                                    <li class="font14"><span class="jdsidemenu jdinvestorrelation"></span><span
-                                            class="tdspan">Investor Relations</span><span class="tdspan dn"><span
-                                                class="arrowrgt "></span></span></li>
-                                    <li class="font14"><span class="jdsidemenu jdnewprodicon"></span><span
-                                            class="tdspan">What's New</span><span class="tdspan dn"><span
-                                                class="arrowrgt "></span></span></li>
-                                    <li class="font14"><span class="jdsidemenu jdmore"></span><span
-                                            class="tdspan">Others</span><span class="tdspan dn"><span
-                                                class="arrowrgt "></span></span></li>
+                                    
+                                    
+                                    
                                     <li class="font14"><span class="jdsidemenu jdlogout"></span><span
                                             class="tdspan">Login</span><span class="tdspan dn"><span
                                                 class="arrowrgt "></span></span></li>

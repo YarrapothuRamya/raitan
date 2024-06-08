@@ -516,7 +516,7 @@
         </div>
       </div>
 
-      <div class="mobile-view-section">
+      <div class="mobile-view-section" style="display:none">
         <div>
           <div class="mb-30">
             <div>
