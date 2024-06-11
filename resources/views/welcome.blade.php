@@ -207,8 +207,11 @@
             title="Tractor Implementors">
             <h2 class="cardhotkey__title fw500 font18 color111">Tractor Implementors</h2>
           </a>
-          <div class="cardhotkey__content"><a class="cardhotkey__imgBlock text_center mt-10" title="Disc Harrow"
+          <div class="cardhotkey__content">
+
+            <!--<a class="cardhotkey__imgBlock text_center mt-10" title="Disc Harrow"
               href="#">
+              
               <div class="cardhotkey_img_outer imageZoom"><span
                   style="box-sizing:border-box;display:inline-block;overflow:hidden;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;position:relative;max-width:100%"><span
                     style="box-sizing:border-box;display:block;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;max-width:100%"><img
@@ -224,25 +227,29 @@
                       src="images/implementors/disc-harrow.jpg?w=640&amp;q=75" decoding="async" data-nimg="intrinsic"
                       style="position:absolute;top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width:0;height:0;min-width:100%;max-width:100%;min-height:100%;max-height:100%"
                       loading="lazy" /></noscript></span></div>
-              <figcaption class="color111 font14 pt-10">Disc Harrow<!-- --> </figcaption>
-            </a><a class="cardhotkey__imgBlock text_center mt-10" title="Cultivator" href="#">
+              <figcaption class="color111 font14 pt-10">Disc Harrow<!-- -- </figcaption>
+            </a>-->
+            @foreach($tractor_implementors as $tractor_implementor)
+            <a class="cardhotkey__imgBlock text_center mt-10" title="{{ $tractor_implementor->name }}" href="#">
               <div class="cardhotkey_img_outer imageZoom"><span
                   style="box-sizing:border-box;display:inline-block;overflow:hidden;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;position:relative;max-width:100%"><span
                     style="box-sizing:border-box;display:block;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;max-width:100%"><img
                       style="display:block;max-width:100%;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0"
                       alt="" aria-hidden="true"
                       src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%27200%27%20height=%27200%27/%3e"></span><img
-                    alt="Cultivator" title="Cultivator" src="images/implementors/cultivator.jpg?w=640&amp;q=75"
+                    alt="{{ $tractor_implementor->name }}" title="{{ $tractor_implementor->name }}" src="{{ asset('implementor_images') . '/' . $tractor_implementor->image }}?w=640&amp;q=75"
                     decoding="async" data-nimg="intrinsic"
                     style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
-                    srcset="images/implementors/cultivator.jpg?w=256&amp;q=75 1x, images/implementors/cultivator.jpg?w=640&amp;q=75 2x"><noscript><img
+                    srcset="{{ asset('implementor_images') . '/' . $tractor_implementor->image }}?w=256&amp;q=75 1x, {{ asset('implementor_images') . '/' . $tractor_implementor->image }}?w=640&amp;q=75 2x"><noscript><img
                       alt="Cultivator" title="Cultivator"
-                      srcSet="images/implementors/cultivator.jpg?w=256&amp;q=75 1x, images/implementors/cultivator.jpg?w=640&amp;q=75 2x"
-                      src="images/implementors/cultivator.jpg?w=640&amp;q=75" decoding="async" data-nimg="intrinsic"
+                      srcSet="{{ asset('implementor_images') . '/' . $tractor_implementor->image }}?w=256&amp;q=75 1x, {{ asset('implementor_images') . '/' . $tractor_implementor->image }}?w=640&amp;q=75 2x"
+                      src="{{ asset('implementor_images') . '/' . $tractor_implementor->image }}?w=640&amp;q=75" decoding="async" data-nimg="intrinsic"
                       style="position:absolute;top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width:0;height:0;min-width:100%;max-width:100%;min-height:100%;max-height:100%"
                       loading="lazy" /></noscript></span></div>
-              <figcaption class="color111 font14 pt-10">Cultivator <!-- --> </figcaption>
-            </a><a class="cardhotkey__imgBlock text_center mt-10" title="Caterers in Hyderabad" href="#">
+              <figcaption class="color111 font14 pt-10">{{ $tractor_implementor->name }}</figcaption>
+            </a>
+            @endforeach
+            <!--<a class="cardhotkey__imgBlock text_center mt-10" title="Caterers in Hyderabad" href="#">
               <div class="cardhotkey_img_outer imageZoom"><span
                   style="box-sizing:border-box;display:inline-block;overflow:hidden;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;position:relative;max-width:100%"><span
                     style="box-sizing:border-box;display:block;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;max-width:100%"><img
@@ -258,14 +265,16 @@
                       src="images/implementors/boom-sprayer.png?w=640&amp;q=75" decoding="async" data-nimg="intrinsic"
                       style="position:absolute;top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width:0;height:0;min-width:100%;max-width:100%;min-height:100%;max-height:100%"
                       loading="lazy" /></noscript></span></div>
-              <figcaption class="color111 font14 pt-10">Boom-Sprayer<!-- --> </figcaption>
-            </a></div>
+              <figcaption class="color111 font14 pt-10">Boom-Sprayer<!-- -- </figcaption>
+            </a>--></div>
         </div>
         <div class="cardhotkey__wrap p-30 pt-15 pb-15 pointer"><a href="" class="cat_Beauty &amp; Spa"
             title="Man Power Services">
             <h2 class="cardhotkey__title fw500 font18 color111">Man Power Services</h2>
           </a>
-          <div class="cardhotkey__content"><a class="cardhotkey__imgBlock text_center mt-10" title="Farming Women"
+          <div class="cardhotkey__content">
+            @foreach($agriculture_labour as $al)
+            <a class="cardhotkey__imgBlock text_center mt-10" title="{{ $al->name }}"
               href="#">
               <div class="cardhotkey_img_outer imageZoom"><span
                   style="box-sizing:border-box;display:inline-block;overflow:hidden;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;position:relative;max-width:100%"><span
@@ -273,17 +282,19 @@
                       style="display:block;max-width:100%;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0"
                       alt="" aria-hidden="true"
                       src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%27200%27%20height=%27200%27/%3e"></span><img
-                    alt="Farming Women" title="Farming Women" src="images/man_power/farming_women.jpg?w=640&amp;q=75"
+                    alt="{{ $al->name }}" title="{{ $al->name }}" src="{{ asset('agriculture_labour_images') . '/' . $al->image }}?w=640&amp;q=75"
                     decoding="async" data-nimg="intrinsic"
                     style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
-                    srcset="images/man_power/farming_women.jpg?w=256&amp;q=75 1x, images/man_power/farming_women.jpg?w=640&amp;q=75 2x"><noscript><img
-                      alt="Farming Women" title="Farming Women"
-                      srcSet="images/man_power/farming_women.jpg?w=256&amp;q=75 1x, images/man_power/farming_women.jpg?w=640&amp;q=75 2x"
-                      src="images/man_power/farming_women.jpg?w=640&amp;q=75" decoding="async" data-nimg="intrinsic"
+                    srcset="{{ asset('agriculture_labour_images') . '/' . $al->image }}?w=256&amp;q=75 1x, images/man_power/farming_women.jpg?w=640&amp;q=75 2x"><noscript><img
+                      alt="{{ $al->name }}" title="{{ $al->name }}"
+                      srcSet="{{ asset('agriculture_labour_images') . '/' . $al->image }}?w=256&amp;q=75 1x, {{ asset('agriculture_labour_images') . '/' . $al->image }}?w=640&amp;q=75 2x"
+                      src="{{ asset('agriculture_labour_images') . '/' . $al->image }}?w=640&amp;q=75" decoding="async" data-nimg="intrinsic"
                       style="position:absolute;top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width:0;height:0;min-width:100%;max-width:100%;min-height:100%;max-height:100%"
                       loading="lazy" /></noscript></span></div>
-              <figcaption class="color111 font14 pt-10">Farming Labour<!-- --> </figcaption>
-            </a><a class="cardhotkey__imgBlock text_center mt-10" title="Chilli Picker" href="#">
+              <figcaption class="color111 font14 pt-10">{{ $al->name }}</figcaption>
+            </a>
+            @endforeach
+            <!--<a class="cardhotkey__imgBlock text_center mt-10" title="Chilli Picker" href="#">
               <div class="cardhotkey_img_outer imageZoom"><span
                   style="box-sizing:border-box;display:inline-block;overflow:hidden;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;position:relative;max-width:100%"><span
                     style="box-sizing:border-box;display:block;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;max-width:100%"><img
@@ -299,7 +310,7 @@
                       src="images/man_power/chilli_picker.jpg?w=640&amp;q=75" decoding="async" data-nimg="intrinsic"
                       style="position:absolute;top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width:0;height:0;min-width:100%;max-width:100%;min-height:100%;max-height:100%"
                       loading="lazy" /></noscript></span></div>
-              <figcaption class="color111 font14 pt-10">Cotton/ chilli picker<!-- --> </figcaption>
+              <figcaption class="color111 font14 pt-10">Cotton/ chilli picker<!-- -- </figcaption>
             </a><a class="cardhotkey__imgBlock text_center mt-10" title="Sack pickers" href="#">
               <div class="cardhotkey_img_outer imageZoom"><span
                   style="box-sizing:border-box;display:inline-block;overflow:hidden;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;position:relative;max-width:100%"><span
@@ -316,34 +327,39 @@
                       src="images/man_power/sack_picker.jpg?w=640&amp;q=75" decoding="async" data-nimg="intrinsic"
                       style="position:absolute;top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width:0;height:0;min-width:100%;max-width:100%;min-height:100%;max-height:100%"
                       loading="lazy" /></noscript></span></div>
-              <figcaption class="color111 font14 pt-10">Sack Picker<!-- --> </figcaption>
-            </a></div>
+              <figcaption class="color111 font14 pt-10">Sack Picker<!-- -- </figcaption>
+            </a>--></div>
         </div>
         <div class="cardhotkey__wrap p-30 pt-15 pb-15 pointer"><a href="#" class="cat_Repairs &amp; Services"
             title="Repairs &amp; Services in Hyderabad">
             <h2 class="cardhotkey__title fw500 font18 color111">Repairs &amp; Services</h2>
           </a>
-          <div class="cardhotkey__content"><a class="cardhotkey__imgBlock text_center mt-10"
-              title="Pump Set Mechanic (Electric)" href="#">
+          <div class="cardhotkey__content">
+
+            @foreach($repairsandservices as $repairandservice)
+            <a class="cardhotkey__imgBlock text_center mt-10"
+              title="{{ $repairandservice->name }}" href="#">
               <div class="cardhotkey_img_outer imageZoom"><span
                   style="box-sizing:border-box;display:inline-block;overflow:hidden;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;position:relative;max-width:100%"><span
                     style="box-sizing:border-box;display:block;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;max-width:100%"><img
                       style="display:block;max-width:100%;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0"
                       alt="" aria-hidden="true"
                       src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%27200%27%20height=%27200%27/%3e"></span><img
-                    alt="Pump Set Mechanic (Electric)" title="Pump Set Mechanic (Electric)"
-                    src="images/mechanics/pump_repairing_service.png?w=640&amp;q=75" decoding="async"
+                    alt="{{ $repairandservice->name }}" title="{{ $repairandservice->name }}"
+                    src="{{ asset('repairsandservices_images') . '/' . $repairandservice->image }}?w=640&amp;q=75" decoding="async"
                     data-nimg="intrinsic"
                     style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
-                    srcset="images/mechanics/pump_repairing_service.png?w=256&amp;q=75 1x, images/mechanics/pump_repairing_service.png?w=640&amp;q=75 2x"><noscript><img
-                      alt="Pump Set Mechanic (Electric)" title="Pump Set Mechanic (Electric)"
-                      srcSet="images/mechanics/pump_repairing_service.png?w=256&amp;q=75 1x, images/mechanics/pump_repairing_service.png?w=640&amp;q=75 2x"
-                      src="images/mechanics/pump_repairing_service.png?w=640&amp;q=75" decoding="async"
+                    srcset="{{ asset('repairsandservices_images') . '/' . $repairandservice->image }}?w=256&amp;q=75 1x, {{ asset('repairsandservices_images') . '/' . $repairandservice->image }}?w=640&amp;q=75 2x"><noscript><img
+                      alt="{{ $repairandservice->name }}" title="{{ $repairandservice->name }}"
+                      srcSet="{{ asset('repairsandservices_images') . '/' . $repairandservice->image }}?w=256&amp;q=75 1x, {{ asset('repairsandservices_images') . '/' . $repairandservice->image }}?w=640&amp;q=75 2x"
+                      src="{{ asset('repairsandservices_images') . '/' . $repairandservice->image }}?w=640&amp;q=75" decoding="async"
                       data-nimg="intrinsic"
                       style="position:absolute;top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width:0;height:0;min-width:100%;max-width:100%;min-height:100%;max-height:100%"
                       loading="lazy" /></noscript></span></div>
-              <figcaption class="color111 font14 pt-10">Pump Set Mechanic (Electric)</figcaption>
-            </a><a class="cardhotkey__imgBlock text_center mt-10" title="Pump Set mechanic (Diesel engine)" href="#">
+              <figcaption class="color111 font14 pt-10">{{ $repairandservice->name }}</figcaption>
+            </a>
+            @endforeach
+            <!--<a class="cardhotkey__imgBlock text_center mt-10" title="Pump Set mechanic (Diesel engine)" href="#">
               <div class="cardhotkey_img_outer imageZoom"><span
                   style="box-sizing:border-box;display:inline-block;overflow:hidden;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;position:relative;max-width:100%"><span
                     style="box-sizing:border-box;display:block;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;max-width:100%"><img
@@ -361,7 +377,7 @@
                       data-nimg="intrinsic"
                       style="position:absolute;top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width:0;height:0;min-width:100%;max-width:100%;min-height:100%;max-height:100%"
                       loading="lazy" /></noscript></span></div>
-              <figcaption class="color111 font14 pt-10">Pump Set mechanic <br>(Diesel engine)<!-- --> </figcaption>
+              <figcaption class="color111 font14 pt-10">Pump Set mechanic <br>(Diesel engine)<!-- -- </figcaption>
             </a><a class="cardhotkey__imgBlock text_center mt-10" title="Solar pump set mechanic" href="#">
               <div class="cardhotkey_img_outer imageZoom"><span
                   style="box-sizing:border-box;display:inline-block;overflow:hidden;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;position:relative;max-width:100%"><span
@@ -378,30 +394,34 @@
                       src="images/mechanics/solar_pump.png?w=640&amp;q=75" decoding="async" data-nimg="intrinsic"
                       style="position:absolute;top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width:0;height:0;min-width:100%;max-width:100%;min-height:100%;max-height:100%"
                       loading="lazy" /></noscript></span></div>
-              <figcaption class="color111 font14 pt-10">Solar pump set mechanic <!-- --> </figcaption>
-            </a></div>
+              <figcaption class="color111 font14 pt-10">Solar pump set mechanic <!-- -- </figcaption>
+            </a>--></div>
         </div>
         <div class="cardhotkey__wrap p-30 pt-15 pb-15 pointer"><a href="#" class="cat_Daily Needs" title="Sprayers">
             <h2 class="cardhotkey__title fw500 font18 color111">Sprayers</h2>
           </a>
-          <div class="cardhotkey__content"><a class="cardhotkey__imgBlock text_center mt-10" href="#" title="sprayer">
+          <div class="cardhotkey__content">
+            @foreach($sprayers as $sprayer)
+            <a class="cardhotkey__imgBlock text_center mt-10" href="#" title="{{ $sprayer->name }}">
               <div class="cardhotkey_img_outer imageZoom"><span
                   style="box-sizing:border-box;display:inline-block;overflow:hidden;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;position:relative;max-width:100%"><span
                     style="box-sizing:border-box;display:block;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;max-width:100%"><img
                       style="display:block;max-width:100%;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0"
                       alt="" aria-hidden="true"
                       src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%27200%27%20height=%27200%27/%3e"></span><img
-                    alt="category_images" title="sprayer" src="images/man_power/sprayer.jpg?w=640&amp;q=75"
+                    alt="{{ $sprayer->name }}" title="{{ $sprayer->name }}" src="{{ asset('sprayers_images') . '/' . $sprayer->image }}?w=640&amp;q=75"
                     decoding="async" data-nimg="intrinsic"
                     style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
-                    srcset="images/man_power/sprayer.jpg?w=256&amp;q=75 1x, images/man_power/sprayer.jpg?w=640&amp;q=75 2x"><noscript><img
-                      alt="category_images" title="sprayer"
-                      srcSet="images/man_power/sprayer.jpg?w=256&amp;q=75 1x, images/man_power/sprayer.jpg?w=640&amp;q=75 2x"
-                      src="images/man_power/sprayer.jpg?w=640&amp;q=75" decoding="async" data-nimg="intrinsic"
+                    srcset="{{ asset('sprayers_images') . '/' . $sprayer->image }}?w=256&amp;q=75 1x, {{ asset('sprayers_images') . '/' . $sprayer->image }}?w=640&amp;q=75 2x"><noscript><img
+                      alt="{{ $sprayer->name }}" title="{{ $sprayer->name }}"
+                      srcSet="{{ asset('sprayers_images') . '/' . $sprayer->image }}?w=256&amp;q=75 1x, {{ asset('sprayers_images') . '/' . $sprayer->image }}?w=640&amp;q=75 2x"
+                      src="{{ asset('sprayers_images') . '/' . $sprayer->image }}?w=640&amp;q=75" decoding="async" data-nimg="intrinsic"
                       style="position:absolute;top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width:0;height:0;min-width:100%;max-width:100%;min-height:100%;max-height:100%"
                       loading="lazy" /></noscript></span></div>
-              <figcaption class="color111 font14 pt-10">Sprayer<!-- --> </figcaption>
-            </a><a class="cardhotkey__imgBlock text_center mt-10" title="Battery Sprayer" href="#">
+              <figcaption class="color111 font14 pt-10">{{ $sprayer->name }}</figcaption>
+            </a>
+            @endforeach
+            <!--<a class="cardhotkey__imgBlock text_center mt-10" title="Battery Sprayer" href="#">
               <div class="cardhotkey_img_outer imageZoom"><span
                   style="box-sizing:border-box;display:inline-block;overflow:hidden;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;position:relative;max-width:100%"><span
                     style="box-sizing:border-box;display:block;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;max-width:100%"><img
@@ -417,7 +437,7 @@
                       src="images/man_power/battery_sprayer.jpg?w=640&amp;q=75" decoding="async" data-nimg="intrinsic"
                       style="position:absolute;top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width:0;height:0;min-width:100%;max-width:100%;min-height:100%;max-height:100%"
                       loading="lazy" /></noscript></span></div>
-              <figcaption class="color111 font14 pt-10">Battery Sprayer<!-- --> </figcaption>
+              <figcaption class="color111 font14 pt-10">Battery Sprayer<!-- -- </figcaption>
             </a><a class="cardhotkey__imgBlock text_center mt-10" title="Fuel Sparyer" href="#">
               <div class="cardhotkey_img_outer imageZoom"><span
                   style="box-sizing:border-box;display:inline-block;overflow:hidden;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;position:relative;max-width:100%"><span
@@ -434,8 +454,8 @@
                       src="images/man_power/fuel_sprayer.jpg?w=640&amp;q=75" decoding="async" data-nimg="intrinsic"
                       style="position:absolute;top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width:0;height:0;min-width:100%;max-width:100%;min-height:100%;max-height:100%"
                       loading="lazy" /></noscript></span></div>
-              <figcaption class="color111 font14 pt-10">Fuel Sparyer<!-- --> </figcaption>
-            </a></div>
+              <figcaption class="color111 font14 pt-10">Fuel Sparyer<!-- -- </figcaption>
+            </a>--></div>
         </div>
       </div>
 

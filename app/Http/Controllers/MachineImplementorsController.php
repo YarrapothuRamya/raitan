@@ -129,8 +129,8 @@ class MachineImplementorsController extends Controller
             $machine->status = $request['addstatus'];
             //dd("Hello");
             if($machine->save()){
-                return response()->json(['status' => 200, 'success' => 'machine successfully created']);
-                return redirect()->back()->with('status','machine successfully updated');
+                return response()->json(['status' => 200, 'success' => 'Machine successfully created']);
+                return redirect()->back()->with('status','Machine successfully created');
             }else{
                 return response()->json(['status' => 400, 'error' => 'Something went wrong please try again.']);
                 return redirect()->back()->with('error','Something went wrong please try again.');
@@ -184,7 +184,7 @@ class MachineImplementorsController extends Controller
             $implementor->status = $request['status'];
              
             if($implementor->save()){
-                return response()->json(['status' => 200, 'success' => 'implementor successfully updated']);
+                return response()->json(['status' => 200, 'success' => 'Implementor successfully updated']);
                 return redirect()->back()->with('status','Role successfully updated');
             }else{
                 return response()->json(['status' => 400, 'error' => 'Something went wrong please try again.']);
@@ -231,7 +231,7 @@ class MachineImplementorsController extends Controller
             $implementor->status = $request['addstatus'];
             //dd("Hello");
             if($implementor->save()){
-                return response()->json(['status' => 200, 'success' => 'implementor successfully created']);
+                return response()->json(['status' => 200, 'success' => 'Implementor successfully created']);
                 return redirect()->back()->with('status','implementor successfully updated');
             }else{
                 return response()->json(['status' => 400, 'error' => 'Something went wrong please try again.']);

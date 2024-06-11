@@ -5,6 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Services;
 use App\Models\Roles;
+use App\Models\Implementors;
+use App\Models\Agriculture_Labour;
+use App\Models\RepairsAndServices;
+use App\Models\Sprayers;
 use App\Models\Request_role;
 
 class CommonController extends Controller
@@ -12,7 +16,11 @@ class CommonController extends Controller
     public function indexroot()
     {
         $services = Services::select('*')->where('status', '=', 1)->get();
-        return view('welcome', compact('services'));
+        $tractor_implementors = Implementors::select("*")->where("status", 1)->whereIn("id", [1,2,3])->get();
+        $agriculture_labour = Agriculture_Labour::select("*")->where("status", 1)->whereIn("id", [1,2,3])->get();
+        $repairsandservices = RepairsAndServices::select("*")->where("status", 1)->whereIn("id", [1,2,3])->get();
+        $sprayers = Sprayers::select("*")->where("status", 1)->whereIn("id", [1,2,3])->get();
+        return view('welcome', compact('services', 'tractor_implementors', 'agriculture_labour', 'repairsandservices', 'sprayers'));
     }
 
     public function productdetails()
