@@ -379,19 +379,9 @@ iconify-icon.category-icon {
   transition: all 0.3s ease-in;
 
 }
-a.headnav_item_text{
-  color: #50b500;
-  background-color: #fff;
-}
-.headnav_item_anchor.user-name:hover{
-  background-color: #50b500;
-}
-a.headnav_item_text:hover{
-  color: #fff;
-  background-color: #50b500;
-}
+
 a.categories-item:hover iconify-icon.category-icon {
-  color: #DEAD6F;
+  color: #50b500;
 }
 
 
@@ -1469,6 +1459,22 @@ body, button, input, select, textarea{
   -o-transition: .8s;
   transition: .8s;
 }
+
+.greenfill_animate {
+  background-color: #50b500;
+  border: 1px solid #50b500;
+  -webkit-transition: .8s;
+  -moz-transition: .8s;
+  -o-transition: .8s;
+  transition: .8s;
+}
+
+.greenfill_animate:hover {
+  background-color: #78e200; /* Change background color on hover */
+  border-color: #78e200; /* Change border color on hover */
+  color: #fff;
+}
+
 
 .home_hotkeybox {
   display: inline-grid;

@@ -166,7 +166,7 @@
             </div>
           </li>
           <li role="menuitem" tabindex="0" id="header_login1" class="headnav_item headnav_user">
-            <div role="button" tabindex="0" aria-label="Login/Sign Up" class="headnav_item_anchor user-name "
+            <div role="button" tabindex="0" aria-label="Login/Sign Up" class="headnav_item_anchor  greenfill_animate"
               fdprocessedid="yopgan">
               <div class="">
               @guest
@@ -185,7 +185,7 @@
                                   @else
                                       
                                      
-                                          <a id="navbarDropdown" class="headnav_item_text font14 fw500 colorFFF nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                          <a id="navbarDropdown" class="headnav_item_text font14 fw500 colorFFF  dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                               {{ Auth::user()->name }}
                                           </a>
                                           <a class="headnav_item_text font14 fw500 colorFFF d-none" id="header_login">Log in</a>

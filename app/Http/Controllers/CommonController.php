@@ -322,4 +322,10 @@ class CommonController extends Controller
     {
         return view('pages.aboutus');
     }
+
+
+    public function sellerdetails()
+    {
+        return view('pages.sellerdetails');
+    }
 }

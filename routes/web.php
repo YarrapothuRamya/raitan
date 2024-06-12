@@ -71,3 +71,5 @@ Route::get('aboutus', [App\Http\Controllers\CommonController::class, 'aboutus'])
 Route::get('/user_dashboard', [App\Http\Controllers\CommonController::class, 'user_dashboard'])->name('user_dashboard');
 Route::post('/add_role_request', [App\Http\Controllers\CommonController::class, 'add_role_request'])->name('add_role_request');
 Route::post('/cancel_role_request_user', [App\Http\Controllers\CommonController::class, 'cancel_role_request_user'])->name('cancel_role_request_user');
+
+Route::get('seller-details', [App\Http\Controllers\CommonController::class, 'sellerdetails'])->name('sellerdetails.home');
