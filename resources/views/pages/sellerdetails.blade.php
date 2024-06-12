@@ -1,18 +1,18 @@
 <script src="https://cdn.tailwindcss.com"></script>
 <nav class="sticky top-0 z-50 border-t border-b border-gray-300 bg-white">
   <div class="mx-auto max-w-7xl px-2 sm:px-4 lg:px-8">
-    <div class="relative flex h-16 items-center justify-between">
+    <div class="relative flex h-18 items-center justify-between">
       <div class="flex items-center px-2 lg:px-0">
         <div class="flex-shrink-0">
-          <img class="h-8 w-auto" src="https://cdn.pixabay.com/animation/2022/09/13/17/55/17-55-41-668_512.gif" alt="Your Company">
+          <img class="" src="images/raitanlogo.png" alt="Raitan" height="70" width="90">
         </div>
         <div class="hidden lg:ml-6 lg:block">
           <div class="flex space-x-4">
             <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-            <a href="#" class="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white hover:text-gray-900 hover:bg-green-500">Dashboard</a>
-            <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-red-600 hover:text-white">Team</a>
-            <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-red-600 hover:text-white">Projects</a>
-            <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-red-600 hover:text-white">Calendar</a>
+            <a href="#" class="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white hover:bg-[#50b500] hover:text-white">Dashboard</a>
+            <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-gray-900 hover:bg-[#50b500] hover:text-white">Products</a>
+            <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-gray-900 hover:bg-[#50b500] hover:text-white">Steps</a>
+            <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-gray-900 hover:bg-[#50b500] hover:text-white">Terms/Policy</a>
           </div>
         </div>
       </div>
@@ -25,7 +25,7 @@
                 <path fill-rule="evenodd" d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z" clip-rule="evenodd" />
               </svg>
             </div>
-            <input id="search" name="search" class="block w-full rounded-md border-0 bg-gray-900 py-1.5 pl-10 pr-3 text-gray-300 placeholder:text-gray-400 focus:bg-white focus:text-gray-900 focus:ring-0 sm:text-sm sm:leading-6" placeholder="Search" type="search">
+            <input id="search" name="search" class="block w-full rounded-md border-1 border-solid border-sky-500  py-1.5 pl-10 pr-3 text-gray-300 placeholder:text-gray-400 focus:bg-white focus:text-gray-900 focus:ring-0 sm:text-sm sm:leading-6" placeholder="Search" type="search">
           </div>
         </div>
       </div>
@@ -54,7 +54,7 @@
       </div>
       <div class="hidden lg:ml-4 lg:block">
         <div class="flex items-center">
-          <button type="button" class="relative flex-shrink-0 rounded-full bg-gray-800 p-1 text-gray-400 hover:text-red-500 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 focus:ring-offset-green-500">
+          <button type="button" class="relative flex-shrink-0 rounded-full  p-1 text-gray-400 hover:bg-[#50b500] hover:text-white focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 focus:ring-offset-green-500">
             <span class="absolute -inset-1.5"></span>
             <span class="sr-only">View notifications</span>
             <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
@@ -129,7 +129,7 @@
   </div>
 </nav>
 
-<form class="px-4">
+<form class="px-20">
   <div class="space-y-12">
     <div class="border-b border-gray-900/10 pb-12">
       <h2 class="text-base font-semibold leading-7 text-gray-900">Profile</h2>
@@ -140,7 +140,7 @@
           <label for="username" class="block text-sm font-medium leading-6 text-gray-900">Username</label>
           <div class="mt-2">
             <div class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
-              <span class="flex select-none items-center pl-3 text-gray-500 sm:text-sm">workcation.com/</span>
+              <span class="flex select-none items-center pl-3 text-gray-500 sm:text-sm">raitan.com/</span>
               <input type="text" name="username" id="username" autocomplete="username" class="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6" placeholder="janesmith">
             </div>
           </div>
@@ -316,3 +316,213 @@
     <button type="submit" class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Save</button>
   </div>
 </form>
+
+<!-- component -->
+<!-- This is an example component -->
+<div class="max-w-2xl mx-auto">
+    <div class="flex flex-col">
+        <div class="overflow-x-auto shadow-md sm:rounded-lg">
+            <div class="inline-block min-w-full align-middle">
+                <div class="overflow-hidden">
+                    <table class="min-w-full divide-y divide-gray-200 table-fixed bg-white">
+                        <thead class="bg-gray-100">
+                            <tr>
+                                <th scope="col" class="p-4">
+                                    <div class="flex items-center">
+                                        <input id="checkbox-all" type="checkbox" class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 focus:ring-2">
+                                        <label for="checkbox-all" class="sr-only">checkbox</label>
+                                    </div>
+                                </th>
+                                <th scope="col" class="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-700 uppercase">
+                                    Product Name
+                                </th>
+                                <th scope="col" class="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-700 uppercase">
+                                    Category
+                                </th>
+                                <th scope="col" class="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-700 uppercase">
+                                    Price
+                                </th>
+                                <th scope="col" class="p-4">
+                                    <span class="sr-only">Edit</span>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody class="bg-white divide-y divide-gray-200">
+                            <tr class="hover:bg-gray-100">
+                                <td class="p-4 w-4">
+                                    <div class="flex items-center">
+                                        <input id="checkbox-table-1" type="checkbox" class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 focus:ring-2">
+                                        <label for="checkbox-table-1" class="sr-only">checkbox</label>
+                                    </div>
+                                </td>
+                                <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">Apple Imac 27"</td>
+                                <td class="py-4 px-6 text-sm font-medium text-gray-500 whitespace-nowrap">Desktop PC</td>
+                                <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">$1999</td>
+                                <td class="py-4 px-6 text-sm font-medium text-right whitespace-nowrap">
+                                    <a href="#" class="text-blue-600 hover:underline">Edit</a>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-gray-100">
+                                <td class="p-4 w-4">
+                                    <div class="flex items-center">
+                                        <input id="checkbox-table-2" type="checkbox" class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 focus:ring-2">
+                                        <label for="checkbox-table-2" class="sr-only">checkbox</label>
+                                    </div>
+                                </td>
+                                <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">Apple MacBook Pro 17"</td>
+                                <td class="py-4 px-6 text-sm font-medium text-gray-500 whitespace-nowrap">Laptop</td>
+                                <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">$2999</td>
+                                <td class="py-4 px-6 text-sm font-medium text-right whitespace-nowrap">
+                                    <a href="#" class="text-blue-600 hover:underline">Edit</a>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-gray-100">
+                                <td class="p-4 w-4">
+                                    <div class="flex items-center">
+                                        <input id="checkbox-table-3" type="checkbox" class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 focus:ring-2">
+                                        <label for="checkbox-table-3" class="sr-only">checkbox</label>
+                                    </div>
+                                </td>
+                                <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">iPhone 13 Pro</td>
+                                <td class="py-4 px-6 text-sm font-medium text-gray-500 whitespace-nowrap">Phone</td>
+                                <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">$999</td>
+                                <td class="py-4 px-6 text-sm font-medium text-right whitespace-nowrap">
+                                    <a href="#" class="text-blue-600 hover:underline">Edit</a>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-gray-100">
+                                <td class="p-4 w-4">
+                                    <div class="flex items-center">
+                                        <input id="checkbox-table-4" type="checkbox" class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 focus:ring-2">
+                                        <label for="checkbox-table-4" class="sr-only">checkbox</label>
+                                    </div>
+                                </td>
+                                <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">Apple Magic Mouse 2</td>
+                                <td class="py-4 px-6 text-sm font-medium text-gray-500 whitespace-nowrap">Accessories</td>
+                                <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">$99</td>
+                                <td class="py-4 px-6 text-sm font-medium text-right whitespace-nowrap">
+                                    <a href="#" class="text-blue-600 hover:underline">Edit</a>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-gray-100">
+                                <td class="p-4 w-4">
+                                    <div class="flex items-center">
+                                        <input id="checkbox-table-5" type="checkbox" class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 focus:ring-2">
+                                        <label for="checkbox-table-5" class="sr-only">checkbox</label>
+                                    </div>
+                                </td>
+                                <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">Apple Watch Series 7</td>
+                                <td class="py-4 px-6 text-sm font-medium text-gray-500 whitespace-nowrap">Accessories</td>
+                                <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">$599</td>
+                                <td class="py-4 px-6 text-sm font-medium text-right whitespace-nowrap">
+                                    <a href="#" class="text-blue-600 hover:underline">Edit</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- component -->
+<body class="antialiased bg-gradient-to-br from-green-100 to-white">
+    <div class="container px-6 mx-auto">
+      <div
+        class="flex flex-col text-center md:text-left md:flex-row h-screen justify-evenly md:items-center"
+      >
+        <div class="flex flex-col w-full">
+          <div>
+            <svg
+              class="w-20 h-20 mx-auto md:float-left fill-stroke text-gray-800"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"
+              ></path>
+            </svg>
+          </div>
+          <h1 class="text-5xl text-gray-800 font-bold">Client Area</h1>
+          <p class="w-5/12 mx-auto md:mx-0 text-gray-500">
+            Control and monitorize your website data from dashboard.
+          </p>
+        </div>
+        <div class="w-full md:w-full lg:w-9/12 mx-auto md:mx-0">
+          <div class="bg-white p-10 flex flex-col w-full shadow-xl rounded-xl">
+            <h2 class="text-2xl font-bold text-gray-800 text-left mb-5">
+              Sigin
+            </h2>
+            <form action="" class="w-full">
+              <div id="input" class="flex flex-col w-full my-5">
+                <label for="username" class="text-gray-500 mb-2"
+                  >Username</label
+                >
+                <input
+                  type="text"
+                  id="username"
+                  placeholder="Please insert your username"
+                  class="appearance-none border-2 border-gray-100 rounded-lg px-4 py-3 placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-green-600 focus:shadow-lg"
+                />
+              </div>
+              <div id="input" class="flex flex-col w-full my-5">
+                <label for="password" class="text-gray-500 mb-2"
+                  >Password</label
+                >
+                <input
+                  type="password"
+                  id="password"
+                  placeholder="Please insert your password"
+                  class="appearance-none border-2 border-gray-100 rounded-lg px-4 py-3 placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-green-600 focus:shadow-lg"
+                />
+              </div>
+              <div id="button" class="flex flex-col w-full my-5">
+                <button
+                  type="button"
+                  class="w-full py-4 bg-green-600 rounded-lg text-green-100"
+                >
+                  <div class="flex flex-row items-center justify-center">
+                    <div class="mr-2">
+                      <svg
+                        class="w-6 h-6"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"
+                        ></path>
+                      </svg>
+                    </div>
+                    <div class="font-bold">Sigin</div>
+                  </div>
+                </button>
+                <div class="flex justify-evenly mt-5">
+                  <a
+                    href="#"
+                    class="w-full text-center font-medium text-gray-500"
+                    >Recover password!</a
+                  >
+                  <a
+                    href="#"
+                    class="w-full text-center font-medium text-gray-500"
+                    >Singup!</a
+                  >
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>

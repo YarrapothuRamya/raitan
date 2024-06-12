@@ -50,7 +50,7 @@
             </div> -->
           </div>
         </div>
-        <div class="w-full flex flex-col col-span-2 space-y-4 lg:mt-0 mt-8 h-screen overflow-y-auto pb-5">
+        <div class="w-full flex flex-col col-span-2 space-y-4 lg:mt-0 mt-8 overflow-y-auto pb-5">
           <a href="{{ route('productdetails.home') }}" class="tractor-card" data-hp="30">
             <div class="tractor-block border border-pear/30 shadow-md shadow-pear/30 rounded-lg lg:p-4 p-2">
               <div class="flex justify-between clickable">
