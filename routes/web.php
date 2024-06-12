@@ -53,6 +53,18 @@ Route::group(['middleware' => ['auth']], function () {
    Route::get('implementors', [App\Http\Controllers\MachineImplementorsController::class, 'indeximplementors'])->name('implementors');
    Route::post('implementor-add', [App\Http\Controllers\MachineImplementorsController::class, 'implementorAdd'])->name('implementor.add');
    Route::post('implementor-update', [App\Http\Controllers\MachineImplementorsController::class, 'implementorUpdate'])->name('implementor.update');
+
+   Route::get('agriculture_labour', [App\Http\Controllers\AgricultureLabourController::class, 'index'])->name('agriculture_labour');
+   Route::post('agriculturelabour-add', [App\Http\Controllers\AgricultureLabourController::class, 'agriculturelabourAdd'])->name('agriculturelabour.add');
+   Route::post('agriculturelabour-update', [App\Http\Controllers\AgricultureLabourController::class, 'agriculturelabourUpdate'])->name('agriculturelabour.update');
+
+   Route::get('repairsandservices', [App\Http\Controllers\RepairAndServicesController::class, 'index'])->name('repairsandservices');
+   Route::post('repairsandservices-add', [App\Http\Controllers\RepairAndServicesController::class, 'repairsandservicesAdd'])->name('repairsandservices.add');
+   Route::post('repairsandservices-update', [App\Http\Controllers\RepairAndServicesController::class, 'repairsandservicesUpdate'])->name('repairsandservices.update');
+
+   Route::get('sprayers', [App\Http\Controllers\SprayersController::class, 'index'])->name('sprayers');
+   Route::post('sprayers-add', [App\Http\Controllers\SprayersController::class, 'sprayersAdd'])->name('sprayers.add');
+   Route::post('sprayers-update', [App\Http\Controllers\SprayersController::class, 'sprayersUpdate'])->name('sprayers.update');
 });
 
 Route::get('verify-email/{pass_code}/{id}', [App\Http\Controllers\Auth\RegisterController::class, 'verifyEmail'])->name('verify.email');
