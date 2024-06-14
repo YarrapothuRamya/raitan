@@ -2129,6 +2129,78 @@ body, button, input, select, textarea{
   animation-name: activeFromRight;
 }
 
+@-webkit-keyframes inactiveFromRight {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: -100%;
+  }
+}
+
+@-moz-keyframes inactiveFromRight {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: -100%;
+  }
+}
+
+@-o-keyframes inactiveFromRight {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: -100%;
+  }
+}
+
+@keyframes inactiveFromRight {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: -100%;
+  }
+}
+
+@-webkit-keyframes activeFromRight {
+  0% {
+    left: 100%;
+  }
+  100% {
+    left: 0;
+  }
+}
+
+@-moz-keyframes activeFromRight {
+  0% {
+    left: 100%;
+  }
+  100% {
+    left: 0;
+  }
+}
+
+@-o-keyframes activeFromRight {
+  0% {
+    left: 100%;
+  }
+  100% {
+    left: 0;
+  }
+}
+
+@keyframes activeFromRight {
+  0% {
+    left: 100%;
+  }
+  100% {
+    left: 0;
+  }
+}
+
 .home_banner_swiper .slide_pagination_bullets {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -5130,3 +5202,9 @@ footer:after {
   }
 }
 
+
+
+.footer-border {
+  border-top: solid 1px #eee; /* Change the color and width as needed */
+  
+}

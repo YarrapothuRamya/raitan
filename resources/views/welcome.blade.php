@@ -36,7 +36,7 @@
                     draggable="false" title="Machines" src="images/Banners/banner5.jpg"
                     data-src="images/Banners/banner5.jpg" class="home_banner_li_image" alt="Machines"></span></li>
               <li tabindex="0" class="slide "><span class="slide_anchor" title="" draggable="false"><img
-                    draggable="false" title="" src="images/Banners/banner1.jpg" data-src="images/Banners/banner5.jpg"
+                    draggable="false" title="" src="images/Footer-cover.png" data-src="images/Footer-cover.png"
                     class="home_banner_li_image" alt=""></span></li>
 
             </ul>
@@ -785,45 +785,45 @@
 </script>
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-    const slides = document.querySelectorAll('.slide');
-    const bullets = document.querySelectorAll('.slide_pagination_bullet');
-    let currentIndex = 0;
+  const slides = document.querySelectorAll('.slide');
+  const bullets = document.querySelectorAll('.slide_pagination_bullet');
+  let currentIndex = 0;
 
-    const goToSlide = (index) => {
-      slides[currentIndex].classList.remove('active-slide');
-      bullets[currentIndex].classList.remove('active');
-      slides[index].classList.add('active-slide');
-      bullets[index].classList.add('active');
-      currentIndex = index;
-    };
+  const goToSlide = (index) => {
+    slides[currentIndex].classList.remove('active-slide');
+    bullets[currentIndex].classList.remove('active');
+    slides[index].classList.add('active-slide');
+    bullets[index].classList.add('active');
+    currentIndex = index;
+  };
 
-    const nextSlide = () => {
-      let nextIndex = currentIndex + 1;
-      if (nextIndex >= slides.length) {
-        nextIndex = 0;
-      }
-      goToSlide(nextIndex);
-    };
+  const nextSlide = () => {
+    let nextIndex = currentIndex + 1;
+    if (nextIndex >= slides.length) {
+      nextIndex = 0;
+    }
+    goToSlide(nextIndex);
+  };
 
-    const prevSlide = () => {
-      let prevIndex = currentIndex - 1;
-      if (prevIndex < 0) {
-        prevIndex = slides.length - 1;
-      }
-      goToSlide(prevIndex);
-    };
+  const prevSlide = () => {
+    let prevIndex = currentIndex - 1;
+    if (prevIndex < 0) {
+      prevIndex = slides.length - 1;
+    }
+    goToSlide(prevIndex);
+  };
 
-    document.getElementById('next').addEventListener('click', nextSlide);
-    document.getElementById('previous').addEventListener('click', prevSlide);
+  document.getElementById('next').addEventListener('click', nextSlide);
+  document.getElementById('previous').addEventListener('click', prevSlide);
 
-    bullets.forEach((bullet, index) => {
-      bullet.addEventListener('click', () => {
-        goToSlide(index);
-      });
+  bullets.forEach((bullet, index) => {
+    bullet.addEventListener('click', () => {
+      goToSlide(index);
     });
-
-    setInterval(nextSlide, 3000); // Change slide every 3 seconds
   });
+
+  setInterval(nextSlide, 3000); // Change slide every 3 seconds
+});
 
 </script>
 @endsection

@@ -1,11 +1,11 @@
-<footer id="footer" class="my-5">
-    <div class="container py-5 my-5">
+<footer id="footer" class=" footer-border">
+    <div class="container py-5 ">
       <div class="row">
 
         <div class="col-md-3">
           <div class="footer-menu">
             <img src="images/raitanlogo.png" alt="Justdial Logo" aria-label="Justdial" title="Justdial" height="90" width="102" class="">
-            <p class="blog-paragraph fs-6 mt-3">Subscribe to our newsletter to get updates about our grand offers.</p>
+            
             <div class="social-links mt-3">
               <ul class="d-flex list-unstyled gap-2">
                 <li class="social">
@@ -69,7 +69,7 @@
         <div class="col-md-3">
           <div>
             <h3>Our Newsletter</h3>
-            <p class="blog-paragraph fs-6">Subscribe to our newsletter to get updates about our grand offers.</p>
+            <p class="blog-paragraph fs-6 pt-1">Subscribe to our newsletter to get updates about our grand offers.</p>
             <div class="search-bar border rounded-pill border-dark-subtle px-2 mt-3">
               <form class="text-center d-flex align-items-center" action="" method="">
                 <input type="text" class="form-control border-0 bg-transparent" placeholder="Enter your email here" />
@@ -80,12 +80,6 @@
         </div>
 
       </div>
-    </div>
-  </footer>
-
-  <div id="footer-bottom">
-    <div class="container">
-      <hr class="m-0">
       <div class="row ">
         <div class="col-md-6 copyright">
           <p class="secondary-font">© 2023 Raitan. All rights reserved.</p>
@@ -95,6 +89,13 @@
           <p class="secondary-font"> </p>
         </div>
       </div>
+    </div>
+  </footer>
+
+  <div id="footer-bottom">
+    <div class="container">
+      <hr class="m-0">
+      
     </div>
   </div>
 
