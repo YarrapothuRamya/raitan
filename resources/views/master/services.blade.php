@@ -1,7 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<div class="container mt-20">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -323,6 +325,145 @@
     </div>
   </div>
 </div>
+
+
+<section class="container px-4 mx-auto bg-white"> <!-- Added bg-white for the section -->
+    <div class="flex flex-col">
+        <div class="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+            <div class="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
+                <div class="overflow-hidden border border-gray-200 md:rounded-lg">
+                    <table class="min-w-full divide-y divide-gray-200">
+                        <thead class="bg-gray-50">
+                        <tr>
+                                <th scope="col" class="py-3.5 px-4 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                                    <div class="flex items-center gap-x-3">
+                                        <input type="checkbox" class="text-blue-500 border-gray-300 rounded dark:bg-gray-900 dark:ring-offset-gray-900 dark:border-gray-700">
+                                        <button class="flex items-center gap-x-2">
+                                            <span>S No</span>
+
+                                            <svg class="h-3" viewBox="0 0 10 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M2.13347 0.0999756H2.98516L5.01902 4.79058H3.86226L3.45549 3.79907H1.63772L1.24366 4.79058H0.0996094L2.13347 0.0999756ZM2.54025 1.46012L1.96822 2.92196H3.11227L2.54025 1.46012Z" fill="currentColor" stroke="currentColor" stroke-width="0.1" />
+                                                <path d="M0.722656 9.60832L3.09974 6.78633H0.811638V5.87109H4.35819V6.78633L2.01925 9.60832H4.43446V10.5617H0.722656V9.60832Z" fill="currentColor" stroke="currentColor" stroke-width="0.1" />
+                                                <path d="M8.45558 7.25664V7.40664H8.60558H9.66065C9.72481 7.40664 9.74667 7.42274 9.75141 7.42691C9.75148 7.42808 9.75146 7.42993 9.75116 7.43262C9.75001 7.44265 9.74458 7.46304 9.72525 7.49314C9.72522 7.4932 9.72518 7.49326 9.72514 7.49332L7.86959 10.3529L7.86924 10.3534C7.83227 10.4109 7.79863 10.418 7.78568 10.418C7.77272 10.418 7.73908 10.4109 7.70211 10.3534L7.70177 10.3529L5.84621 7.49332C5.84617 7.49325 5.84612 7.49318 5.84608 7.49311C5.82677 7.46302 5.82135 7.44264 5.8202 7.43262C5.81989 7.42993 5.81987 7.42808 5.81994 7.42691C5.82469 7.42274 5.84655 7.40664 5.91071 7.40664H6.96578H7.11578V7.25664V0.633865C7.11578 0.42434 7.29014 0.249976 7.49967 0.249976H8.07169C8.28121 0.249976 8.45558 0.42434 8.45558 0.633865V7.25664Z" fill="currentColor" stroke="currentColor" stroke-width="0.3" />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </th>
+
+                                <th scope="col" class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                                    Name
+                                </th>
+
+                               
+                                <th scope="col" class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                                    Image
+                                </th>
+
+                                <th scope="col" class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                                Description
+                                </th>
+
+                                <th scope="col" class="relative py-3.5 px-4">
+                                    <span class="sr-only">Actions</span>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody id="table-body" class="bg-white divide-y divide-gray-200">
+                            <!-- Table Rows (Paginated content will be inserted here by JavaScript) -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="flex items-center justify-between mt-6">
+        <button id="prev-btn" class="flex items-center px-5 py-2 text-sm text-gray-700 capitalize transition-colors duration-200 bg-white border rounded-md gap-x-2 hover:bg-gray-100">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 rtl:-scale-x-100">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 15.75L3 12m0 0l3.75-3.75M3 12h18" />
+            </svg>
+            <span>previous</span>
+        </button>
+
+        <div id="pagination" class="items-center hidden md:flex gap-x-3">
+            <!-- Pagination numbers will be inserted here by JavaScript -->
+        </div>
+
+        <button id="next-btn" class="flex items-center px-5 py-2 text-sm text-gray-700 capitalize transition-colors duration-200 bg-white border rounded-md gap-x-2 hover:bg-gray-100">
+            <span>Next</span>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 rtl:-scale-x-100">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
+            </svg>
+        </button>
+    </div>
+</section>
+
+
+<div id="modal" class="fixed inset-0 z-50 hidden overflow-y-auto" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="flex items-center justify-center min-h-screen px-4 text-center">
+        <div class="fixed inset-0 transition-opacity bg-gray-500 bg-opacity-75"></div>
+        <span class="hidden sm:inline-block sm:align-middle sm:h-screen">&#8203;</span>
+        <div class="inline-block overflow-hidden transition-all transform bg-white rounded-lg text-left align-bottom shadow-xl sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
+            <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+                <div class="sm:flex sm:items-start">
+                    <!-- <div class="flex items-center justify-center w-12 h-12 mx-auto bg-red-100 rounded-full sm:mx-0 sm:h-10 sm:w-10">
+                        <svg class="w-6 h-6 text-red-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </div> -->
+                    <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
+                        <h3 id="modal-title" class="text-lg font-medium leading-6 text-gray-900">Edit Service</h3>
+                        <div class="mt-2">
+                            <p class="text-sm text-gray-500">Are you sure you want to remove this invoice? This action cannot be undone.</p>
+                        </div>
+                        <form id="remove-form" class="mt-4 space-y-4">
+                            <div>
+                                <label for="file-upload" class="block text-sm font-medium text-gray-700">Upload Image</label>
+                                <input id="file-upload" type="file" class="common-input input-focus text-sm py-3 rounded-xl px-2" />
+                            </div>
+                            <div>
+                                
+                                <input id="name" type="text" placeholder="Name" class="common-input input-focus text-sm py-3 rounded-xl px-2" />
+                            </div>
+                            <div>
+                                
+                                <textarea id="description" placeholder="Description" class="common-input input-focus text-sm py-3 rounded-xl px-2" rows="3"></textarea>
+                            </div>
+                            <div>
+                                
+                                <select id="route" class="common-input input-focus text-sm py-3 rounded-xl px-2">
+                                    <option value="">Select a route</option>
+                                    <option value="/route1">Route 1</option>
+                                    <option value="/route2">Route 2</option>
+                                    <option value="/route3">Route 3</option>
+                                </select>
+                            </div>
+                            <div>
+                                
+                                <select id="status" class="common-input input-focus text-sm py-3 rounded-xl px-2">
+                                    <option value="">Select status</option>
+                                    <option value="pending">Active</option>
+                                    <option value="rejected">Deactivate</option>
+                                </select>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse">
+                <button id="confirm-remove" type="button" class="inline-flex justify-center w-full rounded-md border border-transparent shadow-sm px-4 py-2 bg-green-600 text-base font-medium text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:ml-3 sm:w-auto sm:text-sm">
+                    Ok
+                </button>
+                <button id="cancel-remove" type="button" class="inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:w-auto sm:text-sm">
+                    Cancel
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
 <!-- jQuery library -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script type="text/javascript">
@@ -539,6 +680,140 @@
     });
     $(document).on('click', '.closeaddbutton', function() {
         $('#serviceaddModal').modal('hide');
+    });
+</script>
+
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+    const tableBody = document.getElementById('table-body');
+    const pagination = document.getElementById('pagination');
+    const prevBtn = document.getElementById('prev-btn');
+    const nextBtn = document.getElementById('next-btn');
+
+    let currentPage = 1;
+    const rowsPerPage = 5;
+    const totalRows = 14; // Assume 14 rows for this example
+    const totalPages = Math.ceil(totalRows / rowsPerPage);
+
+    const data = [
+        { sno: '1', name: 'Machines', image: 'service_images/1649174894.png', description: 'Machines are efficient', imageEmail: 'authurmelo@example.com', img: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80' },
+        { sno: '2', name: 'Implementors', image: 'service_images/1286028071.jpg', description: 'Implementors are efficient', imageEmail: 'andi@example.com', img: 'https://images.unsplash.com/photo-1531590878845-12627191e687?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80' },
+        { sno: '3', name: 'Earth Movers', image: 'service_images/660615102.png', description: 'Earth Movers are efficient', imageEmail: 'kate@example.com', img: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=761&q=80' },
+        { sno: '4', name: 'Agriculture Labor', image: 'service_images/1692977740.png', description: 'Agriculture Labor are efficient', imageEmail: 'candice@example.com', img: 'https://images.unsplash.com/photo-1506863530036-1efeddceb993?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1344&q=80' },
+        { sno: '5', name: 'Harvestors', image: 'service_images/1239528894.png', description: 'Harvestors are efficient', imageEmail: 'orlando@example.com', img: 'https://images.unsplash.com/photo-1528892952291-009c663ce843?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=644&q=80' },
+        // ... Add remaining rows as needed
+    ];
+
+    function renderTable() {
+        tableBody.innerHTML = '';
+        const start = (currentPage - 1) * rowsPerPage;
+        const end = start + rowsPerPage;
+        const rows = data.slice(start, end);
+        
+        rows.forEach(row => {
+            const tableRow = `
+                <tr>
+                    <td class="px-4 py-4 text-sm font-medium text-gray-700 whitespace-nowrap">
+                        <div class="inline-flex items-center gap-x-3">
+                            <input type="checkbox" class="text-blue-500 border-gray-300 rounded">
+                            <span>${row.sno}</span>
+                        </div>
+                    </td>
+                    <td class="px-4 py-4 text-sm text-gray-500 whitespace-nowrap">${row.name}</td>
+                    
+                    <td class="px-4 py-4 text-sm text-gray-500 whitespace-nowrap">
+                        <div class="flex items-center gap-x-2">
+                            
+                            <div>
+                            <img src=${row.image} width="100px">
+                                
+                            </div>
+                        </div>
+                    </td>
+                    <td class="px-4 py-4 text-sm text-gray-500 whitespace-nowrap">${row.description}</td>
+                    <td class="px-4 py-4 text-sm whitespace-nowrap">
+                        <div class="flex items-center gap-x-6">
+                            <button class="text-gray-500 transition-colors duration-200 hover:text-blue-500 focus:outline-none">
+                                Activate
+                            </button>
+                            <button class="remove-btn text-red-500 transition-colors duration-200 hover:text-red-700 focus:outline-none">
+                                Edit
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            `;
+            tableBody.insertAdjacentHTML('beforeend', tableRow);
+        });
+    }
+
+    function renderPagination() {
+        pagination.innerHTML = '';
+        for (let i = 1; i <= totalPages; i++) {
+            const pageBtn = `<button class="px-2 py-1 text-sm ${i === currentPage ? 'bg-blue-500 text-white' : 'bg-white text-gray-700'} border rounded-md hover:bg-gray-100">${i}</button>`;
+            pagination.insertAdjacentHTML('beforeend', pageBtn);
+        }
+
+        const pageButtons = pagination.querySelectorAll('button');
+        pageButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                currentPage = parseInt(button.getAttribute('data-page'));
+                updatePagination();
+            });
+        });
+    }
+
+    function updatePagination() {
+        renderTable();
+        renderPagination();
+        prevBtn.disabled = currentPage === 1;
+        nextBtn.disabled = currentPage === totalPages;
+    }
+
+    prevBtn.addEventListener('click', () => {
+        if (currentPage > 1) {
+            currentPage--;
+            updatePagination();
+        }
+    });
+
+    nextBtn.addEventListener('click', () => {
+        if (currentPage < totalPages) {
+            currentPage++;
+            updatePagination();
+        }
+    });
+
+    updatePagination();
+});
+
+
+</script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const removeButtons = document.querySelectorAll('.remove-btn');
+        const modal = document.getElementById('modal');
+        const cancelBtn = document.getElementById('cancel-remove');
+        const confirmRemoveBtn = document.getElementById('confirm-remove');
+        
+        removeButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                modal.classList.remove('hidden');
+            });
+        });
+        
+        cancelBtn.addEventListener('click', () => {
+            modal.classList.add('hidden');
+        });
+        
+        confirmRemoveBtn.addEventListener('click', () => {
+            // Implement the remove action here
+            modal.classList.add('hidden');
+            alert('Invoice removed successfully');
+        });
     });
 </script>
 @endsection

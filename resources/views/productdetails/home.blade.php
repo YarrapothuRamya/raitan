@@ -77,7 +77,21 @@
                                         d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
                                 </svg>
                             </div>
+                            <div class="flex mt-2"><svg stroke="currentColor" fill="currentColor" stroke-width="0"
+                                        viewBox="0 0 512 512" class="mt-1 mr-1 text-pistachio" height="24" width="24"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path fill="none" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="32"
+                                            d="M256 48c-79.5 0-144 61.39-144 137 0 87 96 224.87 131.25 272.49a15.77 15.77 0 0025.5 0C304 409.89 400 272.07 400 185c0-75.61-64.5-137-144-137z">
+                                        </path>
+                                        <circle cx="256" cy="192" r="48" fill="none" stroke-linecap="round"
+                                            stroke-linejoin="round" stroke-width="32"></circle>
+                                    </svg>
+                                    <div class="text-sm"><span class="block">Bachupally, K V Rangareddy District
+                                        </span><span class="block">Hyderabad - 500090</span></div>
+                                </div>
                         </div>
+                        
                         
 
                     </div>
@@ -149,7 +163,7 @@
                             </div>
                         </div>
 
-                        <div class="flex mt-6">
+                        <!-- <div class="flex mt-6">
                             <div class="w-full border-l border-y py-2 px-4 rounded-l-lg">
                                 <div class="flex justify-between items-center">
                                     <h4 class="font-medium">Location</h4><a
@@ -171,7 +185,11 @@
                             </div>
                             <div class="border my-2"></div>
 
-                        </div>
+                        </div> -->
+
+
+
+                        
                         <!-- <div class="border rounded-lg mt-6 px-4 py-2 animate-fade-in">
                                 <h4 class="font-medium mb-2">Price Details</h4>
                                 <div class="px-3">
