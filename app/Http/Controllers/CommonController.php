@@ -34,7 +34,7 @@ class CommonController extends Controller
         //$roles = Roles::select("roles.id as role_master_id","roles.name as role_master_name","roles.role_id as role_master_role_id","roles.status as role_master_status","request_roles.user_id as request_roles_user_id","request_roles.role_id as request_roles_role_id","request_roles.role_permission_status as request_roles_permission_status")->leftJoin("request_roles", "request_roles.role_id", "=","roles.role_id")->whereNotIn('roles.role_id', [1,2,3,4])->where('roles.status', 1)->where('request_roles.user_id', $user_id)->orderBy("roles.role_id")->get();
         //dd($roles);
         $user_id = \Auth::user()->id;
-        $roles = Roles::select("*")->whereNotIn('roles.role_id', [1,2,3,4])->where('roles.status', 1)->orderBy("roles.role_id")->get();
+        $roles = Roles::select("*")->whereNotIn('roles.role_id', [1,2,3,4,8])->where('roles.status', 1)->orderBy("roles.role_id")->get();
         $request_roles = Request_role::select("*")->where("user_id", $user_id)->get();
 
 
@@ -77,7 +77,7 @@ class CommonController extends Controller
                 }
             }
         }else{
-            $roles = Roles::select("*")->whereNotIn('roles.role_id', [1,2,3,4])->where('roles.status', 1)->orderBy("roles.role_id")->get();
+            $roles = Roles::select("*")->whereNotIn('roles.role_id', [1,2,3,4,8])->where('roles.status', 1)->orderBy("roles.role_id")->get();
             foreach ($roles as $key => $value) {
                 $data2[] = [
                         "role_master_name" => $value->name,
@@ -101,11 +101,29 @@ class CommonController extends Controller
             //$roles=Roles::select('name','role_id')->whereNotIn('role_id', [1,2,3])->get();
             //dd("Hello");
             //dd($request['name']);
-            $validated = $request->validate([
-                //'role_id' => 'required',
-                'role_master_role_id' => 'required',
-                'role_id_permission_status' => 'required',
-            ]);
+            if ($request->role_master_role_id == 5) {
+                $validated = $request->validate([
+                    'role_master_role_id' => 'required',
+                    'role_id_permission_status' => 'required',
+                    'aadhar' => 'required',
+                    'pan' => 'required',
+                ]);
+            }elseif ($request->role_master_role_id == 6) {
+                $validated = $request->validate([
+                    'role_master_role_id' => 'required',
+                    'role_id_permission_status' => 'required',
+                    'aadhar' => 'required',
+                    'pan' => 'required',
+                ]);
+            }elseif ($request->role_master_role_id == 7){
+                $validated = $request->validate([
+                    'role_master_role_id' => 'required',
+                    'role_id_permission_status' => 'required',
+                    'aadhar' => 'required',
+                    //'pan' => 'required',
+                ]);
+            }
+            
 
             $user_id = \Auth::user()->id;
             $request_roles_count = Request_role::where('user_id', '=', $user_id)->
@@ -121,23 +139,43 @@ class CommonController extends Controller
             $request_roles->user_id = $user_id;
             $request_roles->role_id = $request['role_master_role_id'];
             $request_roles->role_permission_status = $request['role_id_permission_status'];
+            
+            
+
+            $aadhar = $request->file('aadhar');
+            $fileName = rand() . "." . $request->file('aadhar')->getClientOriginalExtension();
+            $request->file('aadhar')->move(public_path('aadhar_files'), $fileName);
+                
+            //}
+            $request_roles->aadhar = $fileName;
+
+            if($request['role_master_role_id'] == 5 || $request['role_master_role_id'] == 6){
+                $filename = "";
+                $pan = $request->file('pan');
+                $fileName = rand() . "." . $request->file('pan')->getClientOriginalExtension();
+                $request->file('pan')->move(public_path('pan_files'), $fileName);
+                    
+                //}
+                $request_roles->pan = $fileName;
+            }else{
+                $request_roles->pan = "";
+            }
+            
+
+            $request_roles->GST = $request['gst'];
+
             if($request_roles->save()){
                 $data = [
                   'success' => true,
                   'message'=> 'Permission successfully requested.'
                 ] ;
                 return response()->json($data);
-
-                return redirect()->back()->with('status', 'Permission successfully requested.');
-                return redirect()->back()->with('status','machine successfully updated');
             }else{
                 $data = [
                   'error' => true,
                   'message'=> 'Something went wrong please try again.'
                 ] ;
                 return response()->json($data);
-                return response()->json(['status' => 400, 'error' => 'Something went wrong please try again.']);
-                return redirect()->back()->with('error','Something went wrong please try again.');
             }
             //return redirect()->back()->with('name','You have no access to this page');
             //return view('machines.home', compact('machines'));

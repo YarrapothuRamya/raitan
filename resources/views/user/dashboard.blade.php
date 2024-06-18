@@ -36,7 +36,16 @@
                     </div>
                     @foreach($roles as $role)
                         @if($role->request_roles_permission_status == null || $role->request_roles_permission_status == 0)
-                            <a href="#" class="addrequest" data-role="{{ $role->role_master_name }}" data-role-master-role-id="{{ $role->role_master_role_id }}" data-role-id-permission-status="3" style="text-decoration: none; color: blue;">Request for {{ $role->role_master_name }} membership</a><br>
+                            @if($role->role_master_role_id == 5)
+                                <a href="#" class="addsalesrequest" data-role="{{ $role->role_master_name }}" data-role-master-role-id="{{ $role->role_master_role_id }}" data-role-id-permission-status="3" style="text-decoration: none; color: blue;">Request for {{ $role->role_master_name }} membership</a>
+                                <br>
+                            @elseif($role->role_master_role_id == 6)
+                                <a href="#" class="addagentsrequest" data-role="{{ $role->role_master_name }}" data-role-master-role-id="{{ $role->role_master_role_id }}" data-role-id-permission-status="3" style="text-decoration: none; color: blue;">Request for {{ $role->role_master_name }} membership</a>
+                                <br>
+                            @elseif($role->role_master_role_id == 7)
+                                <a href="#" class="addsellerrequest" data-role="{{ $role->role_master_name }}" data-role-master-role-id="{{ $role->role_master_role_id }}" data-role-id-permission-status="3" style="text-decoration: none; color: blue;">Request for {{ $role->role_master_name }} membership</a>
+                                <br>
+                            @endif
                         @elseif($role->request_roles_permission_status == 3)
                             <a href="#" class="requestedrequest" data-role="{{ $role->role_master_name }}" data-role-master-role-id="{{ $role->role_master_role_id }}" data-role-id-permission-status="0" style="text-decoration: none; color: blue;">Requested for {{ $role->role_master_name }} membership, cancel the request</a><br>
                         @endif
@@ -47,25 +56,100 @@
     </div>
 </div>
 
+<!-- Modal -->
+<div class="modal fade" id="salesrequestModal" tabindex="-1" role="dialog" aria-labelledby="salesrequestModalCenterTitle" aria-hidden="true" style="z-index: 9999;">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="salesrequestModalLongTitle">Sales Request</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form action="" method="post" enctype="multipart/form-data">
+            @csrf
+            <div class="show_message1" id="show_message1">
+
+            </div>
+            <input id="role_id" type="hidden" name="role_id" value="">
+            <input id="role_permission_status" type="hidden" name="role_permission_status" value="">
+            <div class="row mb-3">
+                <label for="aadhar" class="col-md-4 col-form-label text-md-end">{{ __('Aadhar card') }}(pdf)</label>
+
+                <div class="col-md-6">
+                    <input id="aadhar" type="file" class="form-control" name="aadhar" value="">
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label for="pan" class="col-md-4 col-form-label text-md-end">{{ __('Pan card') }}(pdf)</label>
+
+                <div class="col-md-6">
+                    <input id="pan" type="file" class="form-control" name="pan" value="">
+                </div>
+            </div>
+
+            <!--<div class="row mb-0">
+                <div class="col-md-6 offset-md-4">
+                    <button type="submit" class="btn btn-primary">
+                        {{ __('Update') }}
+                    </button>
+                </div>
+            </div>-->
+        
+      
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary closebutton" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary addsalesrequestj">Place Request</button>
+          </div>
+      </div>
+        </form>
+    </div>
+  </div>
+</div>
+
 <!-- jQuery library -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script type="text/javascript">
+$(document).on('click', '.addsalesrequest', function() {
+    $("#role_id").val($(this).data('role-master-role-id'));
+    $("#role_permission_status").val($(this).data('role-id-permission-status'));
+    $('#salesrequestModal').modal('show');
+});
+$(document).on('click', '.close', function() {
+    $('#salesrequestModal').modal('hide');
+});
+$(document).on('click', '.closebutton', function() {
+    $('#salesrequestModal').modal('hide');
+});
 $(document).ready(function(){
-  $('.addrequest').click(function(){
+  
+  $('.addsalesrequestj').click(function(){
 
-      var role_master_role_id = $(this).data('role-master-role-id');
-      var role_id_permission_status = $(this).data('role-id-permission-status');
+      var role_master_role_id = $("#role_id").val();
+      var role_id_permission_status = $("#role_permission_status").val();
+      //alert(role_master_role_id + " " + role_id_permission_status);
+      //return false;
       $('#show_messages').empty();
       //alert(name + " " + mobile);
-      $('.addrequest').attr('disabled', 'disabled' );
+      $('.addsalesrequestj').attr('disabled', 'disabled' );
+
+      var formData = new FormData();
+      
+      formData.append("role_master_role_id", $("#role_id").val());
+      formData.append("role_id_permission_status", $("#role_permission_status").val());
+      formData.append("aadhar", $('#aadhar')[0].files[0]);
+      formData.append("pan", $('#pan')[0].files[0]);
+
+
       $.ajax
       ({ 
           url: '{{ route("add_role_request") }}',
           headers: { 'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content') },
-          data: {
-              "role_master_role_id": role_master_role_id,
-              "role_id_permission_status": role_id_permission_status,
-          },
+          contentType: false,
+          processData: false,
+          data: formData,
           type: 'post',
           dataType: 'json',
           success: function(result)
@@ -78,7 +162,7 @@ $(document).ready(function(){
                 $('#show_messages').html('<span style="color: green;">'+ result.message +'</span>');
               }
               
-              $('.addrequest').removeAttr('Disabled');
+              $('.addsalesrequestj').removeAttr('Disabled');
               setTimeout(function() {
                  window.location.reload();
               }, 1000);
@@ -91,13 +175,15 @@ $(document).ready(function(){
                 $('#show_messages').html('<span style="color: red;">'+ res.message +'</span>');
               }
               
-              $('.addrequest').removeAttr('Disabled');
+              $('.addsalesrequestj').removeAttr('Disabled');
               setTimeout(function() {
                  window.location.reload();
               }, 2000);
           },
       });
   });
+
+
 
     $('.requestedrequest').click(function(){
 
