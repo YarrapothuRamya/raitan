@@ -24,6 +24,9 @@ Route::post('/admin_services_update', [App\Http\Controllers\CommonController::cl
 Route::get('/raitan_signin', [App\Http\Controllers\Auth\AdminController::class, 'showLoginForm']);
 Route::post('/raitan_signin', [App\Http\Controllers\Auth\AdminController::class, 'login'])->name('raitan_signin');
 
+Route::post('/user_register', [App\Http\Controllers\Auth\UserController::class, 'userregister'])->name('user_register');
+Route::post('/user_login', [App\Http\Controllers\Auth\UserController::class, 'userlogin'])->name('user_login');
+
 Route::get('/', [App\Http\Controllers\CommonController::class, 'indexroot'])->name('indexroot');
 Auth::routes(['verify' => true]);
 

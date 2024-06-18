@@ -10,7 +10,14 @@
                 <div class="card-body">
                     <form method="POST" action="{{ route('raitan_signin') }}">
                         @csrf
-
+                        @if(count($errors) > 0)
+                         @foreach( $errors->all() as $message )
+                          <div class="alert alert-danger display-hide">
+                           <button class="close" data-close="alert"></button>
+                           <span>{{ $message }}</span>
+                          </div>
+                         @endforeach
+                        @endif
                         <div class="row mb-3">
                             <label for="mobile" class="col-md-4 col-form-label text-md-end">{{ __('Mobile') }}</label>
 
@@ -19,7 +26,7 @@
 
                                 @error('mobile')
                                     <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
+                                        <strong>{{-- $message --}}</strong>
                                     </span>
                                 @enderror
                             </div>
@@ -33,7 +40,26 @@
 
                                 @error('password')
                                     <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
+                                        <strong>{{-- $message --}}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <label for="Role" class="col-md-4 col-form-label text-md-end">{{ __('Role') }}</label>
+
+                            <div class="col-md-6">
+                                <select class="form-control select2 @error('role') is-invalid @enderror" name="role" id="role">
+                                    <option value="">Select Role</option>
+                                    <option value="1">Master</option>
+                                    <option value="2">Admin</option>
+                                    <option value="3">Staff</option>
+                                    <option value="4">Customer Care</option>
+                                </select>
+                                @error('role')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{-- $message --}}</strong>
                                     </span>
                                 @enderror
                             </div>
@@ -67,12 +93,12 @@
                     </form>
                 </div>
                 <div class="card-body text-center">
-                    <span>Not registered yet? Please <a
+                    <!--<span>Not registered yet? Please <a
                                             href="{{ route('admin_register') }}"
                                             class="rounded-md text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
                                         >
                                             Register
-                                        </a></span>
+                                        </a></span>-->
                 </div>
             </div>
         </div>

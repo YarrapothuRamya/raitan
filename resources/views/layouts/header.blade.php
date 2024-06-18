@@ -629,7 +629,7 @@ $(document).ready(function(){
       $('.register_button').attr('disabled', 'disabled' );
       $.ajax
       ({ 
-          url: '{{ route("register") }}',
+          url: '{{ route("user_register") }}',
           headers: { 'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content') },
           data: {
               "name": name,
@@ -644,8 +644,12 @@ $(document).ready(function(){
           success: function(result)
           {
               console.log(result);
+              //alert("Success");
               if(result.status == "success"){
                 $('#show_message').html('<span style="color: green;">'+ result.message +'</span>');
+              }else if(result.status == "error"){
+                //alert("result.message" + result.message);
+                $('#show_message').html('<span style="color: red;">'+ result.message +'</span>');
               }
               $('#rname').val("");
               $('#rmobile').val("");
@@ -656,7 +660,10 @@ $(document).ready(function(){
           error: function(res)
           {
               console.log(res);
-              if(res.responseJSON.message == 'Validation rule unique requires at least 1 parameters.'){
+              //alert("Error");
+              if(res.status == "error"){
+                $('#show_message').html('<span style="color: red;">'+ result.message +'</span>');
+              }else if(res.responseJSON.message == 'Validation rule unique requires at least 1 parameters.'){
                   $('#show_message').html('<span style="color: red;">Phone Number must be unique.</span>');
               }else{
                   $('#show_message').html('<span style="color: red;">'+res.responseJSON.message+'</span>');
@@ -676,12 +683,13 @@ $(document).ready(function(){
       //alert(name + " " + mobile);
       $.ajax
       ({ 
-          url: '{{ route("login") }}',
+          url: '{{ route("user_login") }}',
           headers: { 'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content') },
           data: {
               //"name": name,
               "mobile": mobile,
               "password": password,
+              "role": 8,
               //"password_confirmation": password_confirmation,
               //"status": 1,
           },
@@ -690,12 +698,14 @@ $(document).ready(function(){
           success: function(result)
           {
               console.log(result);
-              /*if(result.status == "success"){
-                $('#show_message1').html('<span style="color: green;">'+ result.message +'</span>');
-              }*/
-              setTimeout(function() {
-                 window.location.reload();
-              }, 1000);
+              if(result.status == "error"){
+                $('#show_message1').html('<span style="color: red;">'+ result.message +'</span>');
+              }else{
+                setTimeout(function() {
+                   window.location.reload();
+                }, 1000);
+              }
+              
           },
           error: function(res)
           {

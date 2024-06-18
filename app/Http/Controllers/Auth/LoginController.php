@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Auth;
+use Illuminate\Http\Request;
 
 class LoginController extends Controller
 {
@@ -40,6 +42,26 @@ class LoginController extends Controller
     public function username()
     {
         return 'mobile';
+    }
+
+    protected function credentials(Request $request)
+    {
+        $credentials = $request->only($this->username(), 'password', 'role');
+        //$credentials['role'] = $request->role;
+
+        return $credentials;
+    }
+
+    public function logout()
+    {
+        $role = Auth::user()->role;
+        Auth::logout();
+        if($role == 1 || $role == 2 || $role == 3 || $role == 4){
+            return redirect('raitan_signin');
+        }else{
+            return redirect('/');
+        }
+        
     }
 
     public function redirectTo() {

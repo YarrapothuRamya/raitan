@@ -3,12 +3,14 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use App\Models\Roles;
 use App\Models\Request_role;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
+use App\Models\Admin_Login_Logs;
+use App\Models\Admin_Register_Logs;
 
 class AdminController extends Controller
 {
@@ -20,29 +22,71 @@ class AdminController extends Controller
  
     public function register(Request $request)
     {
-        $request->validate([
-            'name' => 'required',
-            'mobile' => 'required|digits:10|unique:users',
-            'role_id' => 'required',
-            'password' => 'required|confirmed|min:6',
-        ],
-            [
-                'role_id.required' => "The role is required."
-            ]
-        );
+        try {
+            $request->validate([
+                'name' => 'required',
+                'mobile' => 'required|digits:10|unique:users',
+                'role_id' => 'required',
+                'password' => 'required|confirmed|min:6',
+            ],
+                [
+                    'role_id.required' => "The role is required."
+                ]
+            );
 
-        //dd($request->role_id);
- 
-        User::create([
-            'name' => $request->name,
-            'mobile' => $request->mobile,
-            'email' => $request->email,
-            'password' => Hash::make($request->password),
-            'status' => $request->status,
-            'role' => intval($request->role_id),
-        ]);
- 
-        return redirect('/admin_register')->with('success', 'Registered successfully!');
+            //dd($request->role_id);
+     
+            User::create([
+                'name' => $request->name,
+                'mobile' => $request->mobile,
+                'email' => $request->email,
+                'password' => Hash::make($request->password),
+                'status' => $request->status,
+                'role' => intval($request->role_id),
+            ]);
+
+            $curTime = new \DateTime();
+            $currentDatetime = $curTime->format("Y-m-d H:i:s");
+
+            Admin_Register_Logs::create([
+                'phone' => $request->mobile,
+                'description' => 'Registered Successfully',
+                'status' => 'registered',
+                'audit_time' => $currentDatetime,
+            ]);
+     
+            return redirect('/admin_register')->with('success', 'Registered successfully!');
+        } catch (\Exception $e) {
+            $user = User::where("mobile", $request->mobile)->get();
+            $user_count = $user->count();
+            if($user_count > 0){
+                $curTime = new \DateTime();
+                $currentDatetime = $curTime->format("Y-m-d H:i:s");
+
+                Admin_Register_Logs::create([
+                    'phone' => $request->mobile,
+                    'description' => 'Already Registered',
+                    'status' => 'already registered',
+                    'audit_time' => $currentDatetime,
+                ]);
+         
+                return redirect('/admin_register')->with('error', 'Account already Registered with this number!');
+                
+            }
+
+
+            $curTime = new \DateTime();
+            $currentDatetime = $curTime->format("Y-m-d H:i:s");
+
+            Admin_Register_Logs::create([
+                'phone' => $request->mobile,
+                'description' => $e->getMessage(),
+                'status' => 'error',
+                'audit_time' => $currentDatetime,
+            ]);
+            return redirect('/admin_register')->with('error', $e->getMessage());
+        }
+        
     }
 
     public function showLoginForm()
@@ -156,59 +200,131 @@ class AdminController extends Controller
      
     public function login(Request $request)
     {
-        $request->validate([
-            //'name' => 'required',
-            'mobile' => 'required|digits:10',
-            'password' => 'required|min:6',
-        ]);
+        try {
+            $request->validate([
+                //'name' => 'required',
+                'mobile' => 'required|digits:10',
+                'password' => 'required|min:6',
+                'role' => 'required',
+            ]);
 
-        $credentials = $request->only('mobile', 'password');
-     
-        if (Auth::attempt($credentials)) {
-            $role = \Auth::user()->role;
-            //dd($role);
-            switch ($role) {
-                case '1':
-                    return redirect()->intended('/master-home');
-                    return '/master-home';
-                    break;
-                case '2':
-                    return redirect()->intended('/admin-home');
-                    return '/admin-home';
-                    break;
-                case '3':
-                    return redirect()->intended('/staff-home');
-                    return '/staff-home';
-                    break;
-                case '4':
-                    return redirect()->intended('/customercare-home');
-                    return '/customercare-home';
-                    break;
-                /*case '5':
-                    return redirect()->intended('/sales-home');
-                    return '/sales-home';
-                    break;
-                case '6':
-                    return redirect()->intended('/agents-home');
-                    return '/agents-home';
-                    break;
-                case '7':
-                    return redirect()->intended('/sellers-home');
-                    return '/sellers-home';
-                    break; 
-                case '8':
-                    return redirect()->intended('/customers-home');
-                    return '/customers-home';
-                    break; */
+            $credentials = $request->only('mobile', 'password', 'role');
+         
+            if (Auth::attempt($credentials)) {
+                $role = \Auth::user()->role;
+                //dd($role);
+                $curTime = new \DateTime();
+                $currentDatetime = $curTime->format("Y-m-d H:i:s");
+                Admin_Login_Logs::create([
+                    'user_id' => Auth::user()->id,
+                    'phone' => $request->mobile,
+                    'description' => 'Successfully logged in',
+                    'status' => 'Logged in',
+                    'audit_time' => $currentDatetime,
+                ]);
+                switch ($role) {
+                    case '1':
+                        return redirect()->intended('/master-home');
+                        return '/master-home';
+                        break;
+                    case '2':
+                        return redirect()->intended('/admin-home');
+                        return '/admin-home';
+                        break;
+                    case '3':
+                        return redirect()->intended('/staff-home');
+                        return '/staff-home';
+                        break;
+                    case '4':
+                        return redirect()->intended('/customercare-home');
+                        return '/customercare-home';
+                        break;
+                    /*case '5':
+                        return redirect()->intended('/sales-home');
+                        return '/sales-home';
+                        break;
+                    case '6':
+                        return redirect()->intended('/agents-home');
+                        return '/agents-home';
+                        break;
+                    case '7':
+                        return redirect()->intended('/sellers-home');
+                        return '/sellers-home';
+                        break; 
+                    case '8':
+                        return redirect()->intended('/customers-home');
+                        return '/customers-home';
+                        break; */
 
-                default:
-                    return redirect()->intended('/raitan_signin');
-                    return '/login'; 
-                break;
+                    default:
+                        return redirect()->intended('/raitan_signin');
+                        return '/login'; 
+                    break;
+                }
+                return redirect()->intended('/');
+            }else{
+                $curTime = new \DateTime();
+                $currentDatetime = $curTime->format("Y-m-d H:i:s");
+                $user = User::where("mobile", $request->mobile)->get();
+                $user_count = $user->count();
+                if($user_count > 0){
+                    $user = User::where("mobile", $request->mobile)->first();
+                    Admin_Login_Logs::create([
+                        'user_id' => $user->id,
+                        'phone' => $request->mobile,
+                        'description' => 'Invalid Credentials',
+                        'status' => 'error',
+                        'audit_time' => $currentDatetime,
+                    ]);
+                    $errors = ['Invalid credentials'];
+                    return redirect()->back()->withErrors($errors);
+                }else{
+                    Admin_Login_Logs::create([
+                        'user_id' => 0,
+                        'phone' => $request->mobile,
+                        'description' => 'No record found',
+                        'status' => 'error',
+                        'audit_time' => $currentDatetime,
+                    ]);
+                    $errors = ['No records found with this number, please contact your master.'];
+                    return redirect()->back()->withErrors($errors);
+                }
+
+                $errors = ['Invalid credentials'];
+                return redirect()->back()->withErrors($errors);
             }
-            return redirect()->intended('/');
+         
+            return redirect('/raitan_signin')->with('error', 'Invalid credentials. Please try again.');
+        } catch (\Exception $e) {
+            $curTime = new \DateTime();
+            $currentDatetime = $curTime->format("Y-m-d H:i:s");
+            $user = User::where("mobile", $request->mobile)->get();
+            $user_count = $user->count();
+            if($user_count > 0){
+                $user = User::where("mobile", $request->mobile)->first();
+                Admin_Login_Logs::create([
+                    'user_id' => $user->id,
+                    'phone' => $request->mobile,
+                    'description' => $e->getMessage(),
+                    'status' => 'error',
+                    'audit_time' => $currentDatetime,
+                ]);
+                $errors = [$e->getMessage()];
+                return redirect()->back()->withErrors($errors);
+            }else{
+                Admin_Login_Logs::create([
+                    'user_id' => 0,
+                    'phone' => $request->mobile,
+                    'description' => 'No record found',
+                    'status' => 'error',
+                    'audit_time' => $currentDatetime,
+                ]);
+                $errors = ['No records found with this number, please contact your master.'];
+                return redirect()->back()->withErrors($errors);
+            }
         }
-     
-        return redirect('/raitan_signin')->with('error', 'Invalid credentials. Please try again.');
+        
     }
+
+    
 }
