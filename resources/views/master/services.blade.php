@@ -327,15 +327,15 @@
 </div>
 
 
-<section class="container px-4 mx-auto bg-white"> <!-- Added bg-white for the section -->
+<section class="container px-40 mx-auto bg-white"> <!-- Added bg-white for the section -->
     <div class="flex flex-col">
         <div class="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
             <div class="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
                 <div class="overflow-hidden border border-gray-200 md:rounded-lg">
                     <table class="min-w-full divide-y divide-gray-200">
-                        <thead class="bg-gray-50">
+                        <thead class=" text-gray-700 uppercase bg-gray-50 dark:text-gray-400">
                         <tr>
-                                <th scope="col" class="py-3.5 px-4 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                                <th scope="col" class="py-3.5 px-4 text-sm font-normal text-left rtl:text-right text-gray-700 uppercase font-semibold">
                                     <div class="flex items-center gap-x-3">
                                         <input type="checkbox" class="text-blue-500 border-gray-300 rounded dark:bg-gray-900 dark:ring-offset-gray-900 dark:border-gray-700">
                                         <button class="flex items-center gap-x-2">
@@ -350,21 +350,21 @@
                                     </div>
                                 </th>
 
-                                <th scope="col" class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                                <th scope="col" class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-700 uppercase font-semibold">
                                     Name
                                 </th>
 
                                
-                                <th scope="col" class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                                <th scope="col" class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-700 uppercase font-semibold">
                                     Image
                                 </th>
 
-                                <th scope="col" class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                                <th scope="col" class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-700 uppercase font-semibold">
                                 Description
                                 </th>
 
-                                <th scope="col" class="relative py-3.5 px-4">
-                                    <span class="sr-only">Actions</span>
+                                <th scope="col" class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-700 uppercase font-semibold">
+                                    Actions
                                 </th>
                             </tr>
                         </thead>
@@ -405,7 +405,7 @@
         <span class="hidden sm:inline-block sm:align-middle sm:h-screen">&#8203;</span>
         <div class="inline-block overflow-hidden transition-all transform bg-white rounded-lg text-left align-bottom shadow-xl sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
             <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
-                <div class="sm:flex sm:items-start">
+                
                     <!-- <div class="flex items-center justify-center w-12 h-12 mx-auto bg-red-100 rounded-full sm:mx-0 sm:h-10 sm:w-10">
                         <svg class="w-6 h-6 text-red-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
@@ -413,9 +413,7 @@
                     </div> -->
                     <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
                         <h3 id="modal-title" class="text-lg font-medium leading-6 text-gray-900">Edit Service</h3>
-                        <div class="mt-2">
-                            <p class="text-sm text-gray-500">Are you sure you want to remove this invoice? This action cannot be undone.</p>
-                        </div>
+                        
                         <form id="remove-form" class="mt-4 space-y-4">
                             <div>
                                 <label for="file-upload" class="block text-sm font-medium text-gray-700">Upload Image</label>
@@ -448,7 +446,7 @@
                             </div>
                         </form>
                     </div>
-                </div>
+                
             </div>
             <div class="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse">
                 <button id="confirm-remove" type="button" class="inline-flex justify-center w-full rounded-md border border-transparent shadow-sm px-4 py-2 bg-green-600 text-base font-medium text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:ml-3 sm:w-auto sm:text-sm">
@@ -812,7 +810,7 @@
         confirmRemoveBtn.addEventListener('click', () => {
             // Implement the remove action here
             modal.classList.add('hidden');
-            alert('Invoice removed successfully');
+            
         });
     });
 </script>
