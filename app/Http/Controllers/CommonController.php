@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Models\Services;
 use App\Models\Roles;
 use App\Models\Implementors;
@@ -10,6 +11,7 @@ use App\Models\Agriculture_Labour;
 use App\Models\RepairsAndServices;
 use App\Models\Sprayers;
 use App\Models\Request_role;
+use App\Models\User_Login_Logs;
 
 class CommonController extends Controller
 {
@@ -96,92 +98,187 @@ class CommonController extends Controller
 
     public function add_role_request(Request $request)
     {
-        //$role = \Auth::user()->role;
-        //if($role == 1){
-            //$roles=Roles::select('name','role_id')->whereNotIn('role_id', [1,2,3])->get();
-            //dd("Hello");
-            //dd($request['name']);
-            if ($request->role_master_role_id == 5) {
-                $validated = $request->validate([
-                    'role_master_role_id' => 'required',
-                    'role_id_permission_status' => 'required',
-                    'aadhar' => 'required',
-                    'pan' => 'required',
-                ]);
-            }elseif ($request->role_master_role_id == 6) {
-                $validated = $request->validate([
-                    'role_master_role_id' => 'required',
-                    'role_id_permission_status' => 'required',
-                    'aadhar' => 'required',
-                    'pan' => 'required',
-                ]);
-            }elseif ($request->role_master_role_id == 7){
-                $validated = $request->validate([
-                    'role_master_role_id' => 'required',
-                    'role_id_permission_status' => 'required',
-                    'aadhar' => 'required',
-                    //'pan' => 'required',
-                ]);
-            }
-            
-
-            $user_id = \Auth::user()->id;
-            $request_roles_count = Request_role::where('user_id', '=', $user_id)->
-                                           where('role_id', '=', $request['role_master_role_id'])->get()->count();
-            
-            if($request_roles_count > 0){
-                $request_roles = Request_role::where('user_id', '=', $user_id)->
-                                           where('role_id', '=', $request['role_master_role_id'])->first();
-            }else{
-                $request_roles = new Request_role;
-            }
-            
-            $request_roles->user_id = $user_id;
-            $request_roles->role_id = $request['role_master_role_id'];
-            $request_roles->role_permission_status = $request['role_id_permission_status'];
-            
-            
-
-            $aadhar = $request->file('aadhar');
-            $fileName = rand() . "." . $request->file('aadhar')->getClientOriginalExtension();
-            $request->file('aadhar')->move(public_path('aadhar_files'), $fileName);
+        try {
+            //$role = \Auth::user()->role;
+            //if($role == 1){
+                //$roles=Roles::select('name','role_id')->whereNotIn('role_id', [1,2,3])->get();
+                //dd("Hello");
+                //dd($request['name']);
+                //dd($request->role_master_role_id);
+                if ($request->role_master_role_id == 5) {
+                    //dd("5");
+                    $validated = $request->validate([
+                        'role_master_role_id' => 'required',
+                        'role_id_permission_status' => 'required',
+                        'aadhar' => 'required|mimes:pdf',
+                        //'pan' => 'required|mimes:pdf',
+                    ]);
+                    //dd("5");
+                }elseif ($request->role_master_role_id == 6) {
+                    $validated = $request->validate([
+                        'role_master_role_id' => 'required',
+                        'role_id_permission_status' => 'required',
+                        'aadhar' => 'required|mimes:pdf',
+                        'pan' => 'required|mimes:pdf',
+                    ]);
+                }elseif ($request->role_master_role_id == 7){
+                    $validated = $request->validate([
+                        'role_master_role_id' => 'required',
+                        'role_id_permission_status' => 'required',
+                        'aadhar' => 'required|mimes:pdf',
+                        'pan' => 'required|mimes:pdf',
+                    ]);
+                }
                 
-            //}
-            $request_roles->aadhar = $fileName;
 
-            if($request['role_master_role_id'] == 5 || $request['role_master_role_id'] == 6){
-                $filename = "";
-                $pan = $request->file('pan');
-                $fileName = rand() . "." . $request->file('pan')->getClientOriginalExtension();
-                $request->file('pan')->move(public_path('pan_files'), $fileName);
+                $user_id = \Auth::user()->id;
+                $request_roles_count = Request_role::where('user_id', '=', $user_id)->
+                                               where('role_id', '=', $request['role_master_role_id'])->get()->count();
+                
+                if($request_roles_count > 0){
+                    $request_roles = Request_role::where('user_id', '=', $user_id)->
+                                               where('role_id', '=', $request['role_master_role_id'])->first();
+                }else{
+                    $request_roles = new Request_role;
+                }
+                
+                $request_roles->user_id = $user_id;
+                $request_roles->role_id = $request['role_master_role_id'];
+                $request_roles->role_permission_status = $request['role_id_permission_status'];
+                
+                
+
+                $aadhar = $request->file('aadhar');
+                $fileName = rand() . "." . $request->file('aadhar')->getClientOriginalExtension();
+                $request->file('aadhar')->move(public_path('aadhar_files'), $fileName);
                     
                 //}
-                $request_roles->pan = $fileName;
-            }else{
-                $request_roles->pan = "";
-            }
-            
+                $request_roles->aadhar = $fileName;
 
-            $request_roles->GST = $request['gst'];
+                if($request['role_master_role_id'] == 6 || $request['role_master_role_id'] == 7){
+                    $filename = "";
+                    $pan = $request->file('pan');
+                    $fileName = rand() . "." . $request->file('pan')->getClientOriginalExtension();
+                    $request->file('pan')->move(public_path('pan_files'), $fileName);
+                        
+                    //}
+                    $request_roles->pan = $fileName;
+                }else{
+                    $request_roles->pan = "";
+                }
+                
 
-            if($request_roles->save()){
-                $data = [
-                  'success' => true,
-                  'message'=> 'Permission successfully requested.'
-                ] ;
-                return response()->json($data);
-            }else{
-                $data = [
-                  'error' => true,
-                  'message'=> 'Something went wrong please try again.'
-                ] ;
-                return response()->json($data);
+                $request_roles->GST = $request['gst'];
+
+                if($request_roles->save()){
+                    $curTime = new \DateTime();
+                    $currentDatetime = $curTime->format("Y-m-d H:i:s");
+                    if ($request->role_master_role_id == 5) {
+                        User_Login_Logs::create([
+                            'user_id' => Auth::user()->id,
+                            'phone' => Auth::user()->mobile,
+                            'description' => 'Successfully requested permission for sales',
+                            'status' => 'Sales Permission Request Successful',
+                            'audit_time' => $currentDatetime,
+                        ]);
+                    }elseif ($request->role_master_role_id == 6) {
+                        User_Login_Logs::create([
+                            'user_id' => Auth::user()->id,
+                            'phone' => Auth::user()->mobile,
+                            'description' => 'Successfully requested permission for agents',
+                            'status' => 'Agents Permission Request Successful',
+                            'audit_time' => $currentDatetime,
+                        ]);
+                    }elseif ($request->role_master_role_id == 7){
+                        User_Login_Logs::create([
+                            'user_id' => Auth::user()->id,
+                            'phone' => Auth::user()->mobile,
+                            'description' => 'Successfully requested permission for Sellers',
+                            'status' => 'Sellers Permission Request Successful',
+                            'audit_time' => $currentDatetime,
+                        ]);
+                    }
+
+
+                    $data = [
+                      'success' => true,
+                      'message'=> 'Permission successfully requested.'
+                    ] ;
+                    return response()->json($data);
+                }else{
+                    $curTime = new \DateTime();
+                    $currentDatetime = $curTime->format("Y-m-d H:i:s");
+                    if ($request->role_master_role_id == 5) {
+                        User_Login_Logs::create([
+                            'user_id' => Auth::user()->id,
+                            'phone' => Auth::user()->mobile,
+                            'description' => 'Something went wrong please try again.',
+                            'status' => 'Sales Permission Request Error',
+                            'audit_time' => $currentDatetime,
+                        ]);
+                    }elseif ($request->role_master_role_id == 6) {
+                        User_Login_Logs::create([
+                            'user_id' => Auth::user()->id,
+                            'phone' => Auth::user()->mobile,
+                            'description' => 'Something went wrong please try again.',
+                            'status' => 'Agents Permission Request Error',
+                            'audit_time' => $currentDatetime,
+                        ]);
+                    }elseif ($request->role_master_role_id == 7){
+                        User_Login_Logs::create([
+                            'user_id' => Auth::user()->id,
+                            'phone' => Auth::user()->mobile,
+                            'description' => 'Something went wrong please try again.',
+                            'status' => 'Sellers Permission Request Error',
+                            'audit_time' => $currentDatetime,
+                        ]);
+                    }
+                    $data = [
+                      'error' => true,
+                      'message'=> 'Something went wrong please try again.'
+                    ] ;
+                    return response()->json($data);
+                }
+                //return redirect()->back()->with('name','You have no access to this page');
+                //return view('machines.home', compact('machines'));
+            //}else{
+                //return redirect()->back()->with('error','You have no access to this page');
+            //}
+        } catch (\Exception $e) {
+            $curTime = new \DateTime();
+            $currentDatetime = $curTime->format("Y-m-d H:i:s");
+            if ($request->role_master_role_id == 5) {
+                User_Login_Logs::create([
+                    'user_id' => Auth::user()->id,
+                    'phone' => Auth::user()->mobile,
+                    'description' => $e->getMessage(),
+                    'status' => 'Sales Permission Request Error',
+                    'audit_time' => $currentDatetime,
+                ]);
+            }elseif ($request->role_master_role_id == 6) {
+                User_Login_Logs::create([
+                    'user_id' => Auth::user()->id,
+                    'phone' => Auth::user()->mobile,
+                    'description' => $e->getMessage(),
+                    'status' => 'Agents Permission Request Error',
+                    'audit_time' => $currentDatetime,
+                ]);
+            }elseif ($request->role_master_role_id == 7){
+                User_Login_Logs::create([
+                    'user_id' => Auth::user()->id,
+                    'phone' => Auth::user()->mobile,
+                    'description' => $e->getMessage(),
+                    'status' => 'Sellers Permission Request Error',
+                    'audit_time' => $currentDatetime,
+                ]);
             }
-            //return redirect()->back()->with('name','You have no access to this page');
-            //return view('machines.home', compact('machines'));
-        //}else{
-            //return redirect()->back()->with('error','You have no access to this page');
-        //}
+            $data = [
+              'error' => true,
+              'message'=> $e->getMessage(),
+            ] ;
+            return response()->json($data);
+        }
+        
         
     }
 
