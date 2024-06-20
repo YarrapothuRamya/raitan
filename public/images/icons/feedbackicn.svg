@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36">
+    <defs>
+        <style>
+            .cls-1{fill:#fff;stroke:#d8e1e8}.cls-2{fill:rgba(229,192,163,0)}.cls-3{fill:#3c3c3c}.cls-4{stroke:none}.cls-5{fill:none}
+        </style>
+    </defs>
+    <g id="feedback-icn" transform="translate(-30 -468)">
+        <g id="Ellipse_50" class="cls-1" data-name="Ellipse 50" transform="translate(30 468)">
+            <circle cx="18" cy="18" r="18" class="cls-4"/>
+            <circle cx="18" cy="18" r="17.5" class="cls-5"/>
+        </g>
+        <g id="feedback-icn-2" data-name="feedback-icn" transform="translate(38 476)">
+            <path id="Rectangle_6_copy_4" d="M0 0h20v20H0z" class="cls-2" data-name="Rectangle 6 copy 4"/>
+            <path id="_-e-inbox-icn" d="M2.165 12.772A2.138 2.138 0 0 1 0 10.668V2.1A2.138 2.138 0 0 1 2.165 0h12.9A2.178 2.178 0 0 1 16.6.622a2.057 2.057 0 0 1 .628 1.485v8.561a2.138 2.138 0 0 1-2.165 2.1zM1.109 2.107v8.561a1.042 1.042 0 0 0 1.056 1.026h12.9a1.044 1.044 0 0 0 1.056-.976V2.107a1.043 1.043 0 0 0-1.057-1.026H2.165a1.042 1.042 0 0 0-1.056 1.026zm13.219 8.767L10.134 7 9 7.994a.586.586 0 0 1-.738 0l-1.107-.96-4.223 3.837a.585.585 0 0 1-.783-.027.534.534 0 0 1 .024-.763l4.145-3.769L2.157 2.7a.532.532 0 0 1-.186-.373.526.526 0 0 1 .141-.389.567.567 0 0 1 .788-.045l4.567 3.973a.729.729 0 0 1 .081.068l.022.023 1.052.913L14.33 1.9a.57.57 0 0 1 .784.04.533.533 0 0 1-.04.762L10.96 6.281l4.132 3.81a.53.53 0 0 1 .02.763.567.567 0 0 1-.784.02z" class="cls-3" data-name="-e-inbox-icn" transform="translate(1.666 3.896)"/>
+        </g>
+    </g>
+</svg>

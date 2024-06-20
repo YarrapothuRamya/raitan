@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="mytransactions-icn" width="36" height="36" viewBox="0 0 36 36">
+    <defs>
+        <style>
+            .cls-1{fill:#fff;stroke:#d8e1e8}.cls-2{fill:rgba(229,192,163,0)}.cls-3{fill:#3c3c3c}.cls-4{stroke:none}.cls-5{fill:none}
+        </style>
+    </defs>
+    <g id="Ellipse_50" class="cls-1" data-name="Ellipse 50">
+        <circle cx="18" cy="18" r="18" class="cls-4"/>
+        <circle cx="18" cy="18" r="17.5" class="cls-5"/>
+    </g>
+    <g id="mytransactions-icn-2" data-name="mytransactions-icn" transform="translate(-785 -537)">
+        <path id="Rectangle_6_copy_3" d="M0 0h20v20H0z" class="cls-2" data-name="Rectangle 6 copy 3" transform="translate(793 545)"/>
+        <path id="_-e-mytransactions-icn" d="M0 16.127V3.332h3.315V0h6.119v3.332h3.33v12.8zm1.113-1.1h10.542V4.467H9.434v2.2h1.126v1.115H2.208V6.668h1.107v-2.2h-2.2zm3.331-8.359h3.893V1.135H4.444zM8.879 12.8v-1.116h1.683V12.8zm-3.317 0v-1.116h1.65V12.8zm-3.35 0v-1.116H3.9V12.8zm6.667-2.222V9.462h1.683v1.111zm-3.317 0V9.462h1.65v1.111zm-3.35 0V9.462H3.9v1.111zm2.794-4.999V4.467h2.756v1.112zm0-2.233V2.234h2.756v1.112z" class="cls-3" data-name="-e-mytransactions-icn" transform="translate(796.894 547.205)"/>
+    </g>
+</svg>

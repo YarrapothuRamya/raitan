@@ -1,3 +1,15 @@
+<style>
+  #footer {
+  position: relative; /* or absolute, depending on your layout */
+  z-index: 20; /* Adjust this value based on your needs */
+  background-color: #fff;
+}
+
+#footer-bottom {
+  position: relative; /* or absolute, depending on your layout */
+  z-index: 20; /* Make sure this is less than the z-index of #footer if necessary */
+}
+</style>
 <footer id="footer" class=" footer-border">
     <div class="container py-5 ">
       <div class="row">

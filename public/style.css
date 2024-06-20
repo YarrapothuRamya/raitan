@@ -1376,7 +1376,7 @@ body, button, input, select, textarea{
   padding: 0 5px;
 }
 .nav_notify_icon {
-  background-image: url(https://akam.cdn.jdmagicbox.com/images/icontent/newwap/web2022/notify_icon.svg);
+  background-image: url(images/icons/notify_icon.svg);
   width: 20px;
   height: 30px;
   -webkit-background-size: 25px;
@@ -1980,7 +1980,7 @@ body, button, input, select, textarea{
     transition: all .35s ease-out;
 }
 .home_appextra .getapp_icon {
-  background-image: url(https://akam.cdn.jdmagicbox.com/images/icontent/newwap/web2022/getapp_jd.gif);
+  background-image: url();
   width: 27px;
   height: 56px;
   position: absolute;
@@ -2255,12 +2255,12 @@ body, button, input, select, textarea{
   z-index: 2;
 }
 .home_banner_swiper .swiper-button-next {
-  background-image: url(https://akam.cdn.jdmagicbox.com/images/icontent/newwap/web2022/swiper_next.svg);
+  background-image: url();
   width: 26px;
   height: 26px;
 }
 .home_banner_swiper .swiper-button-prev {
-  background-image: url(https://akam.cdn.jdmagicbox.com/images/icontent/newwap/web2022/swiper_prev.svg);
+  background-image: url();
   width: 26px;
   height: 26px;
 }
@@ -2351,7 +2351,7 @@ body, button, input, select, textarea{
   font-weight: 500;
   width: 8px;
   height: 14px;
-  background: url(https://akam.cdn.jdmagicbox.com/images/icontent/newwap/web2022/web_whiteright_arrow.svg) no-repeat;
+  background: url(images/icons/web_whiteright_arrow.svg) no-repeat;
   margin: 0 2px 0 2px;
   -webkit-background-size: 100%;
   -moz-background-size: 100%;
@@ -2392,7 +2392,7 @@ body, button, input, select, textarea{
   font-weight: 500;
   width: 8px;
   height: 14px;
-  background: url(https://akam.cdn.jdmagicbox.com/images/icontent/newwap/web2022/web_whiteright_arrow.svg) no-repeat;
+  background: url(images/icons/web_whiteright_arrow.svg) no-repeat;
   margin: 0 2px 0 2px;
   -webkit-background-size: 100%;
   -moz-background-size: 100%;
@@ -2435,7 +2435,7 @@ body, button, input, select, textarea{
 }
 
 .hotkey_more_icon {
-  background-image: url(https://akam.cdn.jdmagicbox.com/images/icontent/newwap/web2022/hk_showmore.svg);
+  background-image: url(images/icons/hk_showmore.svg);
   width: 75px;
   height: 75px;
   -webkit-background-size: 40px;
@@ -2885,10 +2885,32 @@ a, img {
 .clickable {
     cursor: pointer;
 }
+.hdrWrp{
+  display: none;
+}
 
+#appWrapper{
+  display: none;
+}
+
+.hotkeyele-wrap{
+  display: none;
+}
 
 @media (min-width:320px) and (max-width:641px) { 
   /* smartphones, iPhone, portrait 480x320 phones */ 
+
+  .hdrWrp{
+    display: block;
+  }
+  
+  #appWrapper{
+    display: block;
+  }
+  
+  .hotkeyele-wrap{
+    display: block;
+  }
 .jdheader{
   display: none;
 }
@@ -3072,7 +3094,7 @@ main{
 }
 
 .hdrNtfyIcn {
-  background: url(https://akam.cdn.jdmagicbox.com/images/icontent/newwap/newprot_w/notification_hdr.svg) no-repeat;
+  background: url(images/icons/notification_hdr.svg) no-repeat;
 }
 
 .iconbox {
@@ -3140,7 +3162,7 @@ main{
   left: -3px;
   top: -3px;
   content: "";
-  background-image: url(https://akam.cdn.jdmagicbox.com/images/icontent/newwap/web2022/searchbar_border4.gif);
+  background-image: url(images/icons/searchbar_border4.gif);
   background-size: 100% 100%;
   background-repeat: no-repeat;
 }
@@ -3184,7 +3206,7 @@ main{
   width: 20px;
   height: 20px;
   display: inline-block;
-  background: url(https://akam.cdn.jdmagicbox.com/images/icontent/newwap/newprot_w/search2_hrd.svg) no-repeat;
+  background: url(images/icons/search2_hrd.svg) no-repeat;
   position: absolute;
   left: 12px;
   top: 50%;
@@ -3308,7 +3330,7 @@ main{
 }
 
 .arrowrgt {
-  background: url("https://akam.cdn.jdmagicbox.com/images/icontent/newwap/prot/details_arrow.svg") no-repeat;
+  background: url("images/icons/details_arrow.svg") no-repeat;
   width: 15px;
   height: 15px;
   background-size: 100% auto;
@@ -3320,7 +3342,7 @@ main{
   width: 17px;
   height: 17px;
   display: inline-block;
-  background: url(https://akam.cdn.jdmagicbox.com/images/icontent/newwap/newprot_w/settings.svg) no-repeat
+  background: url(images/icons/settings.svg) no-repeat
 }
 
 .prfltd .sclvwprfltext {
@@ -3341,19 +3363,19 @@ main{
 }
 
 .mailicon {
-  background-image: url("https://akam.cdn.jdmagicbox.com/images/icontent/newwap/newprot_w/feedbackicn.svg")
+  background-image: url("images/icons/feedbackicn.svg")
 }
 
 .businessIcon {
-  background-image: url("https://akam.cdn.jdmagicbox.com/images/icontent/newwap/newprot_w/mybusiness-icon-round.svg")
+  background-image: url("images/icons/mybusiness-icon-round.svg")
 }
 
 .sidemenusendfeedbackicn {
-  background-image: url("https://akam.cdn.jdmagicbox.com/images/icontent/newwap/newprot_w/sendfeedbackicn.svg")
+  background-image: url("images/icons/sendfeedbackicn.svg")
 }
 
 .notiicon {
-  background: url("https://akam.cdn.jdmagicbox.com/images/icontent/newwap/prot/notification.svg") no-repeat;
+  background: url("images/icons/notification.svg") no-repeat;
   width: 22px;
   height: 22px;
   background-size: 100% auto;
@@ -3454,11 +3476,11 @@ main{
 }
 
 .jdmytransactions {
-  background-image: url(https://akam.cdn.jdmagicbox.com/images/icontent/newwap/newprot_w/mytransactions-icn.svg)
+  background-image: url(images/icons/mytransactions-icn.svg)
 }
 
 .jdeditprofile {
-  background-image: url(https://akam.cdn.jdmagicbox.com/images/icontent/newwap/newprot_w/edit-profile.svg)
+  background-image: url(images/icons/edit-profile.svg)
 }
 
 .jdpayicon {
