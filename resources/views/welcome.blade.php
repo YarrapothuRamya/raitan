@@ -285,7 +285,7 @@
                     alt="{{ $al->name }}" title="{{ $al->name }}" src="{{ asset('agriculture_labour_images') . '/' . $al->image }}?w=640&amp;q=75"
                     decoding="async" data-nimg="intrinsic"
                     style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
-                    srcset="{{ asset('agriculture_labour_images') . '/' . $al->image }}?w=256&amp;q=75 1x, images/man_power/farming_women.jpg?w=640&amp;q=75 2x"><noscript><img
+                    srcset="{{ asset('agriculture_labour_images') . '/' . $al->image }}?w=256&amp;q=75 1x, {{ asset('agriculture_labour_images') . '/' . $al->image }}?w=640&amp;q=75 2x"><noscript><img
                       alt="{{ $al->name }}" title="{{ $al->name }}"
                       srcSet="{{ asset('agriculture_labour_images') . '/' . $al->image }}?w=256&amp;q=75 1x, {{ asset('agriculture_labour_images') . '/' . $al->image }}?w=640&amp;q=75 2x"
                       src="{{ asset('agriculture_labour_images') . '/' . $al->image }}?w=640&amp;q=75" decoding="async" data-nimg="intrinsic"
