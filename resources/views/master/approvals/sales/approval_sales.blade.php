@@ -50,27 +50,37 @@
                     @endphp
                     @endif
 
-                    <a href="{{ route('approve_permissions_sales') }}" style="text-decoration: none; color: blue;">Sales</a><br>
-                    <a href="{{ route('approve_permissions_agents') }}" style="text-decoration: none; color: blue;">Agents</a><br>
-                    <a href="{{ route('approve_permissions_sellers') }}" style="text-decoration: none; color: blue;">Sellers</a><br>
-                    <!--<table width="100%">
+                    
+                    <table width="100%">
                         <thead>
                             <tr>
                                 <th>S No</th>
                                 <th>Name</th>
                                 <th>Role</th>
-                                <!--<th>Horse power</th>--
+                                <!--<th>Horse power</th>-->
+                                <th>Aadhar</th>
+                                <!--<th>PAN</th>-->
                                 <th>Permission Status</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
                             <?php $i = 0 ?>
-                            @foreach($request_roles as $request_role)
+                            @foreach($request_roles_sales as $request_role)
                             <tr>
                                 <td><?php echo ++$i; ?></td>
                                 <td>{{ $request_role->user_name }}</td>
                                 <td>{{ $request_role->role_name }}</td>
+                                <td>
+                                    @if($request_role->aadhar != null || $request_role->aadhar != "")
+                                        <a href="{{ env('APP_URL').'/aadhar_files/'.$request_role->aadhar }}" style="text-decoration: none; color: blue;" download>Download</a>
+                                    @endif
+                                </td>
+                                <!--<td>
+                                    @if($request_role->pan != null || $request_role->pan != "")
+                                        <a href="{{ env('APP_URL').'/pan_files/'.$request_role->pan }}" style="text-decoration: none; color: blue;" download>Download</a>
+                                    @endif
+                                </td>-->
                                 <td>
                                     @if($request_role->role_permission_status == 3)
                                         Requested
@@ -94,7 +104,7 @@
                             </tr>
                             @endforeach
                         </tbody>
-                    </table>-->
+                    </table>
                     
 
                     
@@ -120,7 +130,7 @@ $(document).ready(function(){
       $('.addrequest').attr('disabled', 'disabled' );
       $.ajax
       ({ 
-          url: '{{ route("approve_permissions_users") }}',
+          url: '{{ route("approve_permissions_users_sales") }}',
           headers: { 'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content') },
           data: {
               "user_id": user_id,
@@ -172,7 +182,7 @@ $(document).ready(function(){
       $('.requestedrequest').attr('disabled', 'disabled' );
       $.ajax
       ({ 
-          url: '{{ route("reject_permissions_users") }}',
+          url: '{{ route("reject_permissions_users_sales") }}',
           headers: { 'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content') },
           data: {
               "user_id": user_id,

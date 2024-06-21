@@ -94,110 +94,6 @@ class AdminController extends Controller
         return view('auth.admin_login');
     }
 
-    public function approve_permissions()
-    {
-        //$user_id = \Auth::user()->id;
-        //$roles = Roles::select("roles.id as role_master_id","roles.name as role_master_name","roles.role_id as role_master_role_id","roles.status as role_master_status","request_roles.user_id as request_roles_user_id","request_roles.role_id as request_roles_role_id","request_roles.role_permission_status as request_roles_permission_status")->leftJoin("request_roles", "request_roles.role_id", "=","roles.role_id")->whereNotIn('roles.role_id', [1,2,3,4])->where('roles.status', 1)->where('request_roles.user_id', $user_id)->orderBy("roles.role_id")->get();
-        //dd($roles);
-        //$user_id = \Auth::user()->id;
-        
-        $request_roles = Request_role::select("users.id as user_id", "users.name as user_name", "roles.role_id as role_id", "roles.name as role_name", "request_roles.role_permission_status as role_permission_status")->leftJoin("roles", "roles.role_id", "request_roles.role_id")->leftJoin("users", "users.id", "request_roles.user_id")->get();
-
-        //dd($request_roles);
-
-        return view('master.approvals', compact('request_roles'));
-    }
-
-    public function reject_permissions_users(Request $request)
-    {
-        //$role = \Auth::user()->role;
-        //if($role == 1){
-            //$roles=Roles::select('name','role_id')->whereNotIn('role_id', [1,2,3])->get();
-            //dd("Hello");
-            //dd($request['name']);
-            $validated = $request->validate([
-                'user_id' => 'required',
-                'role_id' => 'required',
-                'role_permission_status' => 'required',
-            ]);
-
-            //$user_id = \Auth::user()->id;
-            $request_roles = Request_role::where('user_id', '=', $request['user_id'])->
-                                           where('role_id', '=', $request['role_id'])->first();
-            //$request_roles->user_id = $user_id;
-            //$request_roles->role_id = $request['role_master_role_id'];
-            $request_roles->role_permission_status = $request['role_permission_status'];
-            if($request_roles->save()){
-                $data = [
-                  'success' => true,
-                  'message'=> 'Request successfully cancelled.'
-                ] ;
-                return response()->json($data);
-
-                return redirect()->back()->with('status', 'Permission successfully requested.');
-                return redirect()->back()->with('status','machine successfully updated');
-            }else{
-                $data = [
-                  'error' => true,
-                  'message'=> 'Something went wrong please try again.'
-                ] ;
-                return response()->json($data);
-                return response()->json(['status' => 400, 'error' => 'Something went wrong please try again.']);
-                return redirect()->back()->with('error','Something went wrong please try again.');
-            }
-            //return redirect()->back()->with('name','You have no access to this page');
-            //return view('machines.home', compact('machines'));
-        //}else{
-            //return redirect()->back()->with('error','You have no access to this page');
-        //}
-        
-    }
-
-    public function approve_permissions_users(Request $request)
-    {
-        //$role = \Auth::user()->role;
-        //if($role == 1){
-            //$roles=Roles::select('name','role_id')->whereNotIn('role_id', [1,2,3])->get();
-            //dd("Hello");
-            //dd($request['name']);
-            $validated = $request->validate([
-                'user_id' => 'required',
-                'role_id' => 'required',
-                'role_permission_status' => 'required',
-            ]);
-
-            //$user_id = \Auth::user()->id;
-            $request_roles = Request_role::where('user_id', '=', $request['user_id'])->
-                                           where('role_id', '=', $request['role_id'])->first();
-            //$request_roles->user_id = $user_id;
-            //$request_roles->role_id = $request['role_master_role_id'];
-            $request_roles->role_permission_status = $request['role_permission_status'];
-            if($request_roles->save()){
-                $data = [
-                  'success' => true,
-                  'message'=> 'Request successfully approved.'
-                ] ;
-                return response()->json($data);
-
-                return redirect()->back()->with('status', 'Permission successfully requested.');
-                return redirect()->back()->with('status','machine successfully updated');
-            }else{
-                $data = [
-                  'error' => true,
-                  'message'=> 'Something went wrong please try again.'
-                ] ;
-                return response()->json($data);
-                return response()->json(['status' => 400, 'error' => 'Something went wrong please try again.']);
-                return redirect()->back()->with('error','Something went wrong please try again.');
-            }
-            //return redirect()->back()->with('name','You have no access to this page');
-            //return view('machines.home', compact('machines'));
-        //}else{
-            //return redirect()->back()->with('error','You have no access to this page');
-        //}
-        
-    }
-     
     public function login(Request $request)
     {
         try {
@@ -326,5 +222,419 @@ class AdminController extends Controller
         
     }
 
-    
+    public function approve_permissions()
+    {
+        //$user_id = \Auth::user()->id;
+        //$roles = Roles::select("roles.id as role_master_id","roles.name as role_master_name","roles.role_id as role_master_role_id","roles.status as role_master_status","request_roles.user_id as request_roles_user_id","request_roles.role_id as request_roles_role_id","request_roles.role_permission_status as request_roles_permission_status")->leftJoin("request_roles", "request_roles.role_id", "=","roles.role_id")->whereNotIn('roles.role_id', [1,2,3,4])->where('roles.status', 1)->where('request_roles.user_id', $user_id)->orderBy("roles.role_id")->get();
+        //dd($roles);
+        //$user_id = \Auth::user()->id;
+        
+        $request_roles = Request_role::select("users.id as user_id", "users.name as user_name", "roles.role_id as role_id", "roles.name as role_name", "request_roles.role_permission_status as role_permission_status")->leftJoin("roles", "roles.role_id", "request_roles.role_id")->leftJoin("users", "users.id", "request_roles.user_id")->get();
+
+        //dd($request_roles);
+
+        return view('master.approvals', compact('request_roles'));
+    }
+
+    public function reject_permissions_users(Request $request)
+    {
+        //$role = \Auth::user()->role;
+        //if($role == 1){
+            //$roles=Roles::select('name','role_id')->whereNotIn('role_id', [1,2,3])->get();
+            //dd("Hello");
+            //dd($request['name']);
+            $validated = $request->validate([
+                'user_id' => 'required',
+                'role_id' => 'required',
+                'role_permission_status' => 'required',
+            ]);
+
+            //$user_id = \Auth::user()->id;
+            $request_roles = Request_role::where('user_id', '=', $request['user_id'])->
+                                           where('role_id', '=', $request['role_id'])->first();
+            //$request_roles->user_id = $user_id;
+            //$request_roles->role_id = $request['role_master_role_id'];
+            $request_roles->role_permission_status = $request['role_permission_status'];
+            if($request_roles->save()){
+                $data = [
+                  'success' => true,
+                  'message'=> 'Request successfully cancelled.'
+                ] ;
+                return response()->json($data);
+
+                return redirect()->back()->with('status', 'Permission successfully requested.');
+                return redirect()->back()->with('status','machine successfully updated');
+            }else{
+                $data = [
+                  'error' => true,
+                  'message'=> 'Something went wrong please try again.'
+                ] ;
+                return response()->json($data);
+                return response()->json(['status' => 400, 'error' => 'Something went wrong please try again.']);
+                return redirect()->back()->with('error','Something went wrong please try again.');
+            }
+            //return redirect()->back()->with('name','You have no access to this page');
+            //return view('machines.home', compact('machines'));
+        //}else{
+            //return redirect()->back()->with('error','You have no access to this page');
+        //}
+        
+    }
+
+    public function approve_permissions_users(Request $request)
+    {
+        //$role = \Auth::user()->role;
+        //if($role == 1){
+            //$roles=Roles::select('name','role_id')->whereNotIn('role_id', [1,2,3])->get();
+            //dd("Hello");
+            //dd($request['name']);
+            $validated = $request->validate([
+                'user_id' => 'required',
+                'role_id' => 'required',
+                'role_permission_status' => 'required',
+            ]);
+
+            //$user_id = \Auth::user()->id;
+            $request_roles = Request_role::where('user_id', '=', $request['user_id'])->
+                                           where('role_id', '=', $request['role_id'])->first();
+            //$request_roles->user_id = $user_id;
+            //$request_roles->role_id = $request['role_master_role_id'];
+            $request_roles->role_permission_status = $request['role_permission_status'];
+            if($request_roles->save()){
+                $data = [
+                  'success' => true,
+                  'message'=> 'Request successfully approved.'
+                ] ;
+                return response()->json($data);
+
+                return redirect()->back()->with('status', 'Permission successfully requested.');
+                return redirect()->back()->with('status','machine successfully updated');
+            }else{
+                $data = [
+                  'error' => true,
+                  'message'=> 'Something went wrong please try again.'
+                ] ;
+                return response()->json($data);
+                return response()->json(['status' => 400, 'error' => 'Something went wrong please try again.']);
+                return redirect()->back()->with('error','Something went wrong please try again.');
+            }
+            //return redirect()->back()->with('name','You have no access to this page');
+            //return view('machines.home', compact('machines'));
+        //}else{
+            //return redirect()->back()->with('error','You have no access to this page');
+        //}
+        
+    }
+
+    public function approve_permissions_sales()
+    {
+        //$user_id = \Auth::user()->id;
+        //$roles = Roles::select("roles.id as role_master_id","roles.name as role_master_name","roles.role_id as role_master_role_id","roles.status as role_master_status","request_roles.user_id as request_roles_user_id","request_roles.role_id as request_roles_role_id","request_roles.role_permission_status as request_roles_permission_status")->leftJoin("request_roles", "request_roles.role_id", "=","roles.role_id")->whereNotIn('roles.role_id', [1,2,3,4])->where('roles.status', 1)->where('request_roles.user_id', $user_id)->orderBy("roles.role_id")->get();
+        //dd($roles);
+        //$user_id = \Auth::user()->id;
+        
+        $request_roles_sales = Request_role::select("users.id as user_id", "users.name as user_name", "roles.role_id as role_id", "roles.name as role_name", "request_roles.role_permission_status as role_permission_status", "request_roles.aadhar", "request_roles.pan")->leftJoin("roles", "roles.role_id", "request_roles.role_id")->leftJoin("users", "users.id", "request_roles.user_id")->where("request_roles.role_id", 5)->get();
+
+        //dd($request_roles_sales);
+
+        return view('master.approvals.sales.approval_sales', compact('request_roles_sales'));
+    }
+
+    public function reject_permissions_users_sales(Request $request)
+    {
+        //$role = \Auth::user()->role;
+        //if($role == 1){
+            //$roles=Roles::select('name','role_id')->whereNotIn('role_id', [1,2,3])->get();
+            //dd("Hello");
+            //dd($request['name']);
+            $validated = $request->validate([
+                'user_id' => 'required',
+                'role_id' => 'required',
+                'role_permission_status' => 'required',
+            ]);
+
+            //$user_id = \Auth::user()->id;
+            $request_roles = Request_role::where('user_id', '=', $request['user_id'])->
+                                           where('role_id', '=', $request['role_id'])->first();
+            //$request_roles->user_id = $user_id;
+            //$request_roles->role_id = $request['role_master_role_id'];
+            $request_roles->role_permission_status = $request['role_permission_status'];
+            if($request_roles->save()){
+                $data = [
+                  'success' => true,
+                  'message'=> 'Request successfully cancelled.'
+                ] ;
+                return response()->json($data);
+
+                return redirect()->back()->with('status', 'Permission successfully requested.');
+                return redirect()->back()->with('status','machine successfully updated');
+            }else{
+                $data = [
+                  'error' => true,
+                  'message'=> 'Something went wrong please try again.'
+                ] ;
+                return response()->json($data);
+                return response()->json(['status' => 400, 'error' => 'Something went wrong please try again.']);
+                return redirect()->back()->with('error','Something went wrong please try again.');
+            }
+            //return redirect()->back()->with('name','You have no access to this page');
+            //return view('machines.home', compact('machines'));
+        //}else{
+            //return redirect()->back()->with('error','You have no access to this page');
+        //}
+        
+    }
+
+    public function approve_permissions_users_sales(Request $request)
+    {
+        //$role = \Auth::user()->role;
+        //if($role == 1){
+            //$roles=Roles::select('name','role_id')->whereNotIn('role_id', [1,2,3])->get();
+            //dd("Hello");
+            //dd($request['name']);
+            $validated = $request->validate([
+                'user_id' => 'required',
+                'role_id' => 'required',
+                'role_permission_status' => 'required',
+            ]);
+
+            //$user_id = \Auth::user()->id;
+            $request_roles = Request_role::where('user_id', '=', $request['user_id'])->
+                                           where('role_id', '=', $request['role_id'])->first();
+            //$request_roles->user_id = $user_id;
+            //$request_roles->role_id = $request['role_master_role_id'];
+            $request_roles->role_permission_status = $request['role_permission_status'];
+            if($request_roles->save()){
+                $data = [
+                  'success' => true,
+                  'message'=> 'Request successfully approved.'
+                ] ;
+                return response()->json($data);
+
+                return redirect()->back()->with('status', 'Permission successfully requested.');
+                return redirect()->back()->with('status','machine successfully updated');
+            }else{
+                $data = [
+                  'error' => true,
+                  'message'=> 'Something went wrong please try again.'
+                ] ;
+                return response()->json($data);
+                return response()->json(['status' => 400, 'error' => 'Something went wrong please try again.']);
+                return redirect()->back()->with('error','Something went wrong please try again.');
+            }
+            //return redirect()->back()->with('name','You have no access to this page');
+            //return view('machines.home', compact('machines'));
+        //}else{
+            //return redirect()->back()->with('error','You have no access to this page');
+        //}
+        
+    }
+
+    public function approve_permissions_agents()
+    {
+        //$user_id = \Auth::user()->id;
+        //$roles = Roles::select("roles.id as role_master_id","roles.name as role_master_name","roles.role_id as role_master_role_id","roles.status as role_master_status","request_roles.user_id as request_roles_user_id","request_roles.role_id as request_roles_role_id","request_roles.role_permission_status as request_roles_permission_status")->leftJoin("request_roles", "request_roles.role_id", "=","roles.role_id")->whereNotIn('roles.role_id', [1,2,3,4])->where('roles.status', 1)->where('request_roles.user_id', $user_id)->orderBy("roles.role_id")->get();
+        //dd($roles);
+        //$user_id = \Auth::user()->id;
+        
+        $request_roles_agents = Request_role::select("users.id as user_id", "users.name as user_name", "roles.role_id as role_id", "roles.name as role_name", "request_roles.role_permission_status as role_permission_status", "request_roles.aadhar", "request_roles.pan", "request_roles.gst")->leftJoin("roles", "roles.role_id", "request_roles.role_id")->leftJoin("users", "users.id", "request_roles.user_id")->where("request_roles.role_id", 6)->get();
+
+        //dd($request_roles_agents);
+
+        return view('master.approvals.agents.approval_agents', compact('request_roles_agents'));
+    }
+
+    public function reject_permissions_users_agents(Request $request)
+    {
+        //$role = \Auth::user()->role;
+        //if($role == 1){
+            //$roles=Roles::select('name','role_id')->whereNotIn('role_id', [1,2,3])->get();
+            //dd("Hello");
+            //dd($request['name']);
+            $validated = $request->validate([
+                'user_id' => 'required',
+                'role_id' => 'required',
+                'role_permission_status' => 'required',
+            ]);
+
+            //$user_id = \Auth::user()->id;
+            $request_roles = Request_role::where('user_id', '=', $request['user_id'])->
+                                           where('role_id', '=', $request['role_id'])->first();
+            //$request_roles->user_id = $user_id;
+            //$request_roles->role_id = $request['role_master_role_id'];
+            $request_roles->role_permission_status = $request['role_permission_status'];
+            if($request_roles->save()){
+                $data = [
+                  'success' => true,
+                  'message'=> 'Request successfully cancelled.'
+                ] ;
+                return response()->json($data);
+
+                return redirect()->back()->with('status', 'Permission successfully requested.');
+                return redirect()->back()->with('status','machine successfully updated');
+            }else{
+                $data = [
+                  'error' => true,
+                  'message'=> 'Something went wrong please try again.'
+                ] ;
+                return response()->json($data);
+                return response()->json(['status' => 400, 'error' => 'Something went wrong please try again.']);
+                return redirect()->back()->with('error','Something went wrong please try again.');
+            }
+            //return redirect()->back()->with('name','You have no access to this page');
+            //return view('machines.home', compact('machines'));
+        //}else{
+            //return redirect()->back()->with('error','You have no access to this page');
+        //}
+        
+    }
+
+    public function approve_permissions_users_agents(Request $request)
+    {
+        //$role = \Auth::user()->role;
+        //if($role == 1){
+            //$roles=Roles::select('name','role_id')->whereNotIn('role_id', [1,2,3])->get();
+            //dd("Hello");
+            //dd($request['name']);
+            $validated = $request->validate([
+                'user_id' => 'required',
+                'role_id' => 'required',
+                'role_permission_status' => 'required',
+            ]);
+
+            //$user_id = \Auth::user()->id;
+            $request_roles = Request_role::where('user_id', '=', $request['user_id'])->
+                                           where('role_id', '=', $request['role_id'])->first();
+            //$request_roles->user_id = $user_id;
+            //$request_roles->role_id = $request['role_master_role_id'];
+            $request_roles->role_permission_status = $request['role_permission_status'];
+            if($request_roles->save()){
+                $data = [
+                  'success' => true,
+                  'message'=> 'Request successfully approved.'
+                ] ;
+                return response()->json($data);
+
+                return redirect()->back()->with('status', 'Permission successfully requested.');
+                return redirect()->back()->with('status','machine successfully updated');
+            }else{
+                $data = [
+                  'error' => true,
+                  'message'=> 'Something went wrong please try again.'
+                ] ;
+                return response()->json($data);
+                return response()->json(['status' => 400, 'error' => 'Something went wrong please try again.']);
+                return redirect()->back()->with('error','Something went wrong please try again.');
+            }
+            //return redirect()->back()->with('name','You have no access to this page');
+            //return view('machines.home', compact('machines'));
+        //}else{
+            //return redirect()->back()->with('error','You have no access to this page');
+        //}
+        
+    }
+
+    public function approve_permissions_sellers()
+    {
+        //$user_id = \Auth::user()->id;
+        //$roles = Roles::select("roles.id as role_master_id","roles.name as role_master_name","roles.role_id as role_master_role_id","roles.status as role_master_status","request_roles.user_id as request_roles_user_id","request_roles.role_id as request_roles_role_id","request_roles.role_permission_status as request_roles_permission_status")->leftJoin("request_roles", "request_roles.role_id", "=","roles.role_id")->whereNotIn('roles.role_id', [1,2,3,4])->where('roles.status', 1)->where('request_roles.user_id', $user_id)->orderBy("roles.role_id")->get();
+        //dd($roles);
+        //$user_id = \Auth::user()->id;
+        
+        $request_roles_sellers = Request_role::select("users.id as user_id", "users.name as user_name", "roles.role_id as role_id", "roles.name as role_name", "request_roles.role_permission_status as role_permission_status", "request_roles.aadhar", "request_roles.pan")->leftJoin("roles", "roles.role_id", "request_roles.role_id")->leftJoin("users", "users.id", "request_roles.user_id")->where("request_roles.role_id", 7)->get();
+
+        //dd($request_roles_sellers);
+
+        return view('master.approvals.sellers.approval_sellers', compact('request_roles_sellers'));
+    }
+
+    public function reject_permissions_users_sellers(Request $request)
+    {
+        //$role = \Auth::user()->role;
+        //if($role == 1){
+            //$roles=Roles::select('name','role_id')->whereNotIn('role_id', [1,2,3])->get();
+            //dd("Hello");
+            //dd($request['name']);
+            $validated = $request->validate([
+                'user_id' => 'required',
+                'role_id' => 'required',
+                'role_permission_status' => 'required',
+            ]);
+
+            //$user_id = \Auth::user()->id;
+            $request_roles = Request_role::where('user_id', '=', $request['user_id'])->
+                                           where('role_id', '=', $request['role_id'])->first();
+            //$request_roles->user_id = $user_id;
+            //$request_roles->role_id = $request['role_master_role_id'];
+            $request_roles->role_permission_status = $request['role_permission_status'];
+            if($request_roles->save()){
+                $data = [
+                  'success' => true,
+                  'message'=> 'Request successfully cancelled.'
+                ] ;
+                return response()->json($data);
+
+                return redirect()->back()->with('status', 'Permission successfully requested.');
+                return redirect()->back()->with('status','machine successfully updated');
+            }else{
+                $data = [
+                  'error' => true,
+                  'message'=> 'Something went wrong please try again.'
+                ] ;
+                return response()->json($data);
+                return response()->json(['status' => 400, 'error' => 'Something went wrong please try again.']);
+                return redirect()->back()->with('error','Something went wrong please try again.');
+            }
+            //return redirect()->back()->with('name','You have no access to this page');
+            //return view('machines.home', compact('machines'));
+        //}else{
+            //return redirect()->back()->with('error','You have no access to this page');
+        //}
+        
+    }
+
+    public function approve_permissions_users_sellers(Request $request)
+    {
+        //$role = \Auth::user()->role;
+        //if($role == 1){
+            //$roles=Roles::select('name','role_id')->whereNotIn('role_id', [1,2,3])->get();
+            //dd("Hello");
+            //dd($request['name']);
+            $validated = $request->validate([
+                'user_id' => 'required',
+                'role_id' => 'required',
+                'role_permission_status' => 'required',
+            ]);
+
+            //$user_id = \Auth::user()->id;
+            $request_roles = Request_role::where('user_id', '=', $request['user_id'])->
+                                           where('role_id', '=', $request['role_id'])->first();
+            //$request_roles->user_id = $user_id;
+            //$request_roles->role_id = $request['role_master_role_id'];
+            $request_roles->role_permission_status = $request['role_permission_status'];
+            if($request_roles->save()){
+                $data = [
+                  'success' => true,
+                  'message'=> 'Request successfully approved.'
+                ] ;
+                return response()->json($data);
+
+                return redirect()->back()->with('status', 'Permission successfully requested.');
+                return redirect()->back()->with('status','machine successfully updated');
+            }else{
+                $data = [
+                  'error' => true,
+                  'message'=> 'Something went wrong please try again.'
+                ] ;
+                return response()->json($data);
+                return response()->json(['status' => 400, 'error' => 'Something went wrong please try again.']);
+                return redirect()->back()->with('error','Something went wrong please try again.');
+            }
+            //return redirect()->back()->with('name','You have no access to this page');
+            //return view('machines.home', compact('machines'));
+        //}else{
+            //return redirect()->back()->with('error','You have no access to this page');
+        //}
+        
+    }
 }

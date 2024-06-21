@@ -480,7 +480,56 @@ $(document).ready(function(){
       });
   });
 
+  $('.requestedrequest').click(function(){
 
+      //var name = $('#rname').val();
+      var role_master_role_id = $(this).data('role-master-role-id');
+      var role_id_permission_status = $(this).data('role-id-permission-status');
+      //var password_confirmation = $('#password_confirmation').val();
+      $('#show_messages1').empty();
+      //alert(name + " " + mobile);
+      $('.requestedrequest').attr('disabled', 'disabled' );
+      $.ajax
+      ({ 
+          url: '{{ route("cancel_role_request_user") }}',
+          headers: { 'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content') },
+          data: {
+              "role_master_role_id": role_master_role_id,
+              "role_id_permission_status": role_id_permission_status,
+          },
+          type: 'post',
+          dataType: 'json',
+          success: function(result)
+          {
+              console.log(result);
+              if(result.success){
+                $('#show_messages1').html('<span style="color: red;">'+ result.message +'</span>');
+              }
+              $('.requestedrequest').removeAttr('Disabled');
+              setTimeout(function() {
+                 window.location.reload();
+              }, 1000);
+          },
+          error: function(res)
+          {
+              console.log(res);
+              if(res.responseJSON.message == 'Validation rule unique requires at least 1 parameters.'){
+                  $('#show_messages1').html('<span style="color: red;">Phone Number must be unique.</span>');
+              }else{
+                  $('#show_messages1').html('<span style="color: red;">'+res.responseJSON.message+'</span>');
+              }
+              console.log(res);
+              if(res.error){
+                $('#show_messages1').html('<span style="color: red;">'+ res.message +'</span>');
+              }
+              
+              $('.requestedrequest').removeAttr('Disabled');
+              setTimeout(function() {
+                 window.location.reload();
+              }, 2000);
+          },
+      });
+    });
 
    
 })

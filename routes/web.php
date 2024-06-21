@@ -11,10 +11,23 @@ use App\Models\Roles;
 Route::group(['middleware' => ['auth', 'admin']], function () {
    Route::get('/admin_register', [App\Http\Controllers\Auth\AdminController::class, 'showRegistrationForm']);
    Route::post('/admin_register', [App\Http\Controllers\Auth\AdminController::class, 'register'])->name('admin_register');
+   
    Route::get('/approve_permissions', [App\Http\Controllers\Auth\AdminController::class, 'approve_permissions'])->name('approve_permissions');
    Route::post('/reject_permissions', [App\Http\Controllers\Auth\AdminController::class, 'reject_permissions_users'])->name('reject_permissions_users');
    Route::post('/approve_permissions', [App\Http\Controllers\Auth\AdminController::class, 'approve_permissions_users'])->name('approve_permissions_users');
 
+
+   Route::get('/approve_permissions_sales', [App\Http\Controllers\Auth\AdminController::class, 'approve_permissions_sales'])->name('approve_permissions_sales');
+   Route::post('/reject_permissions_sales', [App\Http\Controllers\Auth\AdminController::class, 'reject_permissions_users_sales'])->name('reject_permissions_users_sales');
+   Route::post('/approve_permissions_sales', [App\Http\Controllers\Auth\AdminController::class, 'approve_permissions_users_sales'])->name('approve_permissions_users_sales');
+
+   Route::get('/approve_permissions_agents', [App\Http\Controllers\Auth\AdminController::class, 'approve_permissions_agents'])->name('approve_permissions_agents');
+   Route::post('/reject_permissions_agents', [App\Http\Controllers\Auth\AdminController::class, 'reject_permissions_users_agents'])->name('reject_permissions_users_agents');
+   Route::post('/approve_permissions_agents', [App\Http\Controllers\Auth\AdminController::class, 'approve_permissions_users_agents'])->name('approve_permissions_users_agents');
+
+   Route::get('/approve_permissions_sellers', [App\Http\Controllers\Auth\AdminController::class, 'approve_permissions_sellers'])->name('approve_permissions_sellers');
+   Route::post('/reject_permissions_sellers', [App\Http\Controllers\Auth\AdminController::class, 'reject_permissions_users_sellers'])->name('reject_permissions_users_sellers');
+   Route::post('/approve_permissions_sellers', [App\Http\Controllers\Auth\AdminController::class, 'approve_permissions_users_sellers'])->name('approve_permissions_users_sellers');
 });
 
 Route::get('/admin_services', [App\Http\Controllers\CommonController::class, 'admin_services'])->name('admin_services');
