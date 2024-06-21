@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36">
+    <g style="opacity:.98">
+        <g data-name="Ellipse 13" style="stroke:#d8e1e8;fill:none">
+            <circle cx="18" cy="18" r="18" style="stroke:none"/>
+            <circle cx="18" cy="18" r="17.5" style="fill:none"/>
+        </g>
+        <g data-name="Group 13378">
+            <path data-name="Rectangle 6 copy 9" style="fill:none" d="M0 0h20v20H0z" transform="translate(8 8)"/>
+            <g data-name="Group 13379">
+                <path data-name="Path 5212" d="M13.423 15.613H1.561A1.546 1.546 0 0 1 0 14.052V6.561A1.546 1.546 0 0 1 1.561 5h11.862a1.546 1.546 0 0 1 1.561 1.561v7.492a1.546 1.546 0 0 1-1.561 1.56zM1.561 5.624a.96.96 0 0 0-.936.936v7.492a.96.96 0 0 0 .936.936h11.862a.96.96 0 0 0 .936-.936V6.561a.96.96 0 0 0-.936-.936z" transform="translate(11.017 8.873)" style="fill:#424242;stroke:#454545;stroke-width:.2px"/>
+            </g>
+            <g data-name="Group 13380">
+                <path data-name="Path 5213" d="M12.682 4.5a.3.3 0 0 1-.312-.312V2.936a.3.3 0 0 0-.312-.312H8.936a.3.3 0 0 0-.312.312v1.249a.312.312 0 0 1-.624 0V2.936A.96.96 0 0 1 8.936 2h3.122a.96.96 0 0 1 .936.936v1.249a.3.3 0 0 1-.312.315z" transform="translate(8.011 10)" style="fill:#424242;stroke:#454545;stroke-width:.2px"/>
+            </g>
+            <g data-name="Group 13381">
+                <path data-name="Path 5214" d="M7.482 12.107h-.125L.177 9.61a.381.381 0 0 1-.187-.437.381.381 0 0 1 .437-.187l7.055 2.5 7.055-2.5a.3.3 0 1 1 .187.562l-7.18 2.5c0 .062 0 .062-.062.062z" transform="translate(11.027 7.385)" style="fill:#424242;stroke:#454545;stroke-width:.2px"/>
+            </g>
+        </g>
+    </g>
+</svg>

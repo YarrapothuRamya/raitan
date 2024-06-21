@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26">
+    <path data-name="Rectangle 7138" style="opacity:.435;fill:none" d="M0 0h26v26H0z"/>
+    <g data-name="home-active">
+        <g style="stroke-linecap:round;fill:none">
+            <path d="M17.908 22.916H5.017a2.151 2.151 0 0 1-2.148-2.148v-8.355H1.2A1.2 1.2 0 0 1 0 11.219a1.21 1.21 0 0 1 .353-.85L10.967.2a.716.716 0 0 1 .991 0l10.6 10.16a1.223 1.223 0 0 1 .364.861 1.2 1.2 0 0 1-1.193 1.194h-1.673v8.355a2.15 2.15 0 0 1-2.148 2.146z" style="stroke:none" transform="translate(1.383 1.156)"/>
+            <path d="M17.908 20.916a.15.15 0 0 0 .148-.148V10.413h1.668l-8.262-7.92-8.26 7.92h1.666v10.355c0 .08.068.148.149.148h12.89m0 2H5.018a2.15 2.15 0 0 1-2.149-2.148v-8.355h-1.67a1.195 1.195 0 0 1-.84-2.044L10.966.2a.716.716 0 0 1 .99 0l10.6 10.159a1.195 1.195 0 0 1-.83 2.055h-1.671v8.355a2.15 2.15 0 0 1-2.148 2.148z" style="fill:#0076d7;stroke:none" transform="translate(1.383 1.156)"/>
+        </g>
+        <path data-name="Line 304" transform="translate(12.845 16.259)" style="stroke:#0076d7;stroke-width:2px;stroke-linecap:round;fill:none" d="M0 0v6.25"/>
+    </g>
+</svg>

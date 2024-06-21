@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36">
+    <defs>
+        <style>
+            .cls-1{fill:#fff;stroke:#d8e1e8}.cls-2{fill:#a5a5a5;opacity:0}.cls-3,.cls-4,.cls-6{fill:none}.cls-3,.cls-4{stroke:#3c3c3c;stroke-linecap:round;stroke-linejoin:round;stroke-width:.75px}.cls-3{fill-rule:evenodd}.cls-5{stroke:none}
+        </style>
+    </defs>
+    <g id="upi-icn" transform="translate(-30 -468)">
+        <g id="Ellipse_50" class="cls-1" data-name="Ellipse 50" transform="translate(30 468)">
+            <circle cx="18" cy="18" r="18" class="cls-5"/>
+            <circle cx="18" cy="18" r="17.5" class="cls-6"/>
+        </g>
+        <g id="upi-icn-2" data-name="upi-icn" transform="translate(38 476)">
+            <path id="Rectangle_6061" d="M0 0h20v20H0z" class="cls-2" data-name="Rectangle 6061"/>
+            <g id="Group_6417" data-name="Group 6417" transform="translate(3.889 1.667)">
+                <path id="XMLID_4_" d="M4.827.7l4.189 8.333L.2 17.367z" class="cls-3" transform="translate(-.2 -.7)"/>
+                <path id="Path_1921" d="M208.919 489.141l1.119-4.11 4.094 8.333s-8.616 8.374-8.6 8.325 1.111-4.175 1.111-4.175" class="cls-4" data-name="Path 1921" transform="translate(-201.989 -485.024)"/>
+            </g>
+        </g>
+    </g>
+</svg>

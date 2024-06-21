@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36">
+    <defs>
+        <style>
+            .cls-1{fill:#fff;stroke:#d8e1e8}.cls-2{fill:#a5a5a5;opacity:0}.cls-3,.cls-4{fill:#3c3c3c}.cls-4{stroke:#3c3c3c;stroke-width:.3px;font-size:4px;font-family:NirmalaUI,Nirmala UI}.cls-5{stroke:none}.cls-6{fill:none}
+        </style>
+    </defs>
+    <g id="Language-icn" transform="translate(-30 -468)">
+        <g id="Ellipse_50" class="cls-1" data-name="Ellipse 50" transform="translate(30 468)">
+            <circle cx="18" cy="18" r="18" class="cls-5"/>
+            <circle cx="18" cy="18" r="17.5" class="cls-6"/>
+        </g>
+        <g id="translate-icn" transform="translate(38 476)">
+            <path id="Rectangle_6061" d="M0 0h20v20H0z" class="cls-2" data-name="Rectangle 6061"/>
+            <path id="Path_1919" d="M317.638 301.46c-.048-.162-.248-.237-.452-.237a.438.438 0 0 0-.447.237l-1.04 3.388a.317.317 0 0 0-.011.054c0 .172.253.291.442.291.118 0 .21-.038.237-.14l.2-.716h1.233l.2.716c.027.1.118.14.237.14.189 0 .442-.124.442-.291a.237.237 0 0 0-.011-.054zm-.921 2.327l.468-1.653.469 1.653zm0 0" class="cls-3" data-name="Path 1919" transform="translate(-303.688 -289.223)"/>
+            <path id="Path_1920" d="M15.838 7.241h-5.329V4.965l1.732-1.237a.52.52 0 0 0 0-.846L10.488 1.63A1.915 1.915 0 0 0 8.6 0H1.912A1.915 1.915 0 0 0 0 1.912V8.6a1.915 1.915 0 0 0 1.913 1.912h5.328v2.276l-1.732 1.234a.52.52 0 0 0 0 .846l1.753 1.252a1.915 1.915 0 0 0 1.892 1.63h6.684a1.915 1.915 0 0 0 1.912-1.913V9.153a1.915 1.915 0 0 0-1.912-1.913zM1.912 9.469A.873.873 0 0 1 1.04 8.6V1.912a.873.873 0 0 1 .873-.872H8.6a.873.873 0 0 1 .872.872.52.52 0 0 0 .218.423l1.357.969-1.357.969a.52.52 0 0 0-.218.423v2.545h-.318a1.915 1.915 0 0 0-1.913 1.912v.316zm14.8 6.368a.873.873 0 0 1-.872.873H9.154a.873.873 0 0 1-.872-.873.52.52 0 0 0-.218-.423l-1.357-.969 1.357-.969a.52.52 0 0 0 .218-.423v-3.9a.873.873 0 0 1 .872-.873h6.684a.873.873 0 0 1 .872.873zm0 0" class="cls-3" data-name="Path 1920" transform="translate(1.125 1.625)"/>
+            <text id="अ" class="cls-4" transform="translate(7.5 8.5)">
+                <tspan x="-3.281" y="0">अ</tspan>
+            </text>
+        </g>
+    </g>
+</svg>

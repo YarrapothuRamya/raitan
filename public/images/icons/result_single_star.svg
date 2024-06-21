@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10">
+    <defs>
+        <clipPath id="37dsa59h9a">
+            <path transform="translate(0 -.384)" style="isolation:isolate;fill:none" d="M0 0h10v10H0z"/>
+        </clipPath>
+    </defs>
+    <g data-name="RatingStar" transform="translate(0 .384)" style="clip-path:url(#37dsa59h9a);isolation:isolate">
+        <path data-name="RatingStar" style="isolation:isolate;fill:none" d="M0 0h10v9.232H0z"/>
+        <g style="isolation:isolate">
+            <path d="m5 7.065 3.083 2.167L6.916 5.7 10 3.613H6.249L5 0 3.749 3.613H0L3.083 5.7 1.916 9.232z" style="fill:#fff;isolation:isolate" transform="translate(-.004 -.001)" data-name="Group 144796"/>
+        </g>
+    </g>
+</svg>

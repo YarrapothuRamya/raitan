@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+    <defs>
+        <style>
+            .cls-1{fill:#1274c0}.cls-2{fill:#fff}
+        </style>
+    </defs>
+    <g id="chkbox-selct-icn" transform="translate(-20 -117)">
+        <circle id="Ellipse_1" cx="10" cy="10" r="10" class="cls-1" data-name="Ellipse 1" transform="translate(20 117)"/>
+        <path id="checked-icn" d="M27.1 752.916a.463.463 0 0 1-.6.055l-2.825-2.08a.4.4 0 0 1-.081-.557l.362-.479a.41.41 0 0 1 .565-.083l1.812 1.324a.464.464 0 0 0 .6-.057l4.051-4.328a.4.4 0 0 1 .567-.021l.449.41a.4.4 0 0 1 .021.566z" class="cls-2" transform="translate(2.481 -622.583)"/>
+    </g>
+</svg>

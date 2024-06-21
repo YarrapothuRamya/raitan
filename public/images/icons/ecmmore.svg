@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26">
+    <defs>
+        <style>
+            .cls-2{fill:none;stroke:#414e5a;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.7px}
+        </style>
+    </defs>
+    <g id="more" transform="translate(9397 9016)">
+        <path id="Rectangle_84" data-name="Rectangle 84" transform="translate(-9397 -9016)" style="fill:none" d="M0 0h26v26H0z"/>
+        <g id="Group_41766" data-name="Group 41766" transform="translate(-9392.357 -9008.029)">
+            <path id="Line_741" data-name="Line 741" class="cls-2" d="M0 0h17.125"/>
+            <path id="Line_742" data-name="Line 742" class="cls-2" transform="translate(0 5.181)" d="M0 0h14.393"/>
+            <path id="Line_743" data-name="Line 743" class="cls-2" transform="translate(0 10.361)" d="M0 0h17.125"/>
+        </g>
+    </g>
+</svg>

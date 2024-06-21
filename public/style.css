@@ -920,7 +920,7 @@ Single Product section style start
 }
 
 .header .input_location_box:before {
-  background-image: url(https://akam.cdn.jdmagicbox.com/images/icontent/newwap/web2022/location_icon.svg);
+  background-image: url(images/icons/location_icon.svg);
   width: 37px;
   height: 100%;
   position: absolute;
@@ -1089,7 +1089,7 @@ body, button, input, select, textarea{
 }
 
 .mic_icon {
-  background-image: url(https://akam.cdn.jdmagicbox.com/images/icontent/newwap/web2022/jdvoice_mic.gif);
+  background-image: url(images/icons/jdvoice_mic.gif);
 }
 .jdicon {
   background-repeat: no-repeat;
@@ -1330,13 +1330,13 @@ body, button, input, select, textarea{
 }
 
 .nav_advertise_icon {
-  background-image: url(https://akam.cdn.jdmagicbox.com/images/icontent/newwap/web2022/nav_advertise_icon.svg);
+  background-image: url(images/icons/nav_advertise_icon.svg);
   width: 20px;
   height: 30px;
 }
 
 .nav_listing_icon {
-  background-image: url(https://akam.cdn.jdmagicbox.com/images/icontent/newwap/web2022/nav_listing_icon.svg);
+  background-image: url(images/icons/nav_listing_icon.svg);
   width: 20px;
   height: 30px;
 }
@@ -2933,8 +2933,15 @@ a, img {
   grid-template-columns: repeat(auto-fit, minmax(75px, 1fr));
 }
 
-main{
+/* main{
   padding-left: 25px;
+} */
+
+.home_hotkeyimg{
+  margin-bottom: 5px;
+}
+.cardhotkey_img_outer{
+  height: 100px;
 }
 .home_rowbox.home_row_1{
   display: none;
@@ -3484,60 +3491,60 @@ main{
 }
 
 .jdpayicon {
-  background-image: url(https://akam.cdn.jdmagicbox.com/images/icontent/newwap/newprot_w/upiicn.svg)
+  background-image: url(images/icons/upiicn.svg)
 }
 
 .jdlistyourbusiness {
-  background-image: url("https://akam.cdn.jdmagicbox.com/images/icontent/newwap/newprot_w/circle-loop-3times.gif");
+  background-image: url("images/icons/circle-loop-3times.gif");
   background-size: contain
 }
 
 .jdmanagequotes {
-  background-image: url("https://akam.cdn.jdmagicbox.com/images/icontent/newwap/newprot_w/managequotesicn.svg")
+  background-image: url("images/icons/managequotesicn.svg")
 }
 
 .jdlogistic {
-  background-image: url("https://akam.cdn.jdmagicbox.com/images/icontent/newwap/newprot_w/logisticsicn.svg")
+  background-image: url("images/icons/logisticsicn.svg")
 }
 
 .jdadvertise {
-  background-image: url("https://akam.cdn.jdmagicbox.com/images/icontent/newwap/newprot_w/advertiseicn.svg")
+  background-image: url("images/icons/advertiseicn.svg")
 }
 
 .jdnewsfont {
-  background-image: url("https://akam.cdn.jdmagicbox.com/images/icontent/newwap/newprot_w/news-font-icon.svg")
+  background-image: url("images/icons/news-font-icon.svg")
 }
 
 .jdhelplineicon {
-  background-image: url("https://akam.cdn.jdmagicbox.com/images/icontent/newwap/newprot_w/covid.svg")
+  background-image: url("images/icons/covid.svg")
 }
 
 .help {
-  background-image: url("https://akam.cdn.jdmagicbox.com/images/icontent/newwap/newprot_w/helpicn.svg")
+  background-image: url("images/icons/helpicn.svg")
 }
 
 .fav {
-  background-image: url("https://akam.cdn.jdmagicbox.com/images/icontent/newwap/newprot_w/favourite_jio.svg")
+  background-image: url("images/icons/favourite_jio.svg")
 }
 
 .jdaboutus {
-  background-image: url("https://akam.cdn.jdmagicbox.com/images/icontent/newwap/newprot_w/aboutusicn.svg")
+  background-image: url("images/icons/aboutusicn.svg")
 }
 
 .jdmore {
-  background-image: url("https://akam.cdn.jdmagicbox.com/images/icontent/newwap/newprot_w/othersicn.svg")
+  background-image: url("images/icons/othersicn.svg")
 }
 
 .jdscltrms {
-  background-image: url("https://akam.cdn.jdmagicbox.com/images/icontent/newwap/newprot_w/socialtermsicn.svg")
+  background-image: url("images/icons/socialtermsicn.svg")
 }
 
 .jdlogout {
-  background-image: url("https://akam.cdn.jdmagicbox.com/images/icontent/newwap/newprot_w/logouticn1.svg")
+  background-image: url("images/icons/logouticn1.svg")
 }
 
 .account {
-  background: url("https://akam.cdn.jdmagicbox.com/images/icontent/newwap/prot/account.svg") no-repeat;
+  background: url("images/icons/account.svg") no-repeat;
   width: 25px;
   height: 25px;
   background-size: 100% auto;
@@ -3546,27 +3553,27 @@ main{
 }
 
 .languageicon {
-  background-image: url("https://akam.cdn.jdmagicbox.com/images/icontent/newwap/newprot_w/Languageicn.svg")
+  background-image: url("images/icons/Languageicn.svg")
 }
 
 .jdprivacysettings {
-  background-image: url("https://akam.cdn.jdmagicbox.com/images/icontent/newwap/newprot_w/privacyicn.svg")
+  background-image: url("images/icons/privacyicn.svg")
 }
 
 .jdinvestorrelation {
-  background-image: url("https://akam.cdn.jdmagicbox.com/images/icontent/newwap/newprot_w/investors_relation.svg")
+  background-image: url("images/icons/investors_relation.svg")
 }
 
 .jdnewprodicon {
-  background-image: url("https://akam.cdn.jdmagicbox.com/images/icontent/newwap/newprot_w/newproductsicn.svg")
+  background-image: url("images/icons/newproductsicn.svg")
 }
 
 .jdhiringicon {
-  background-image: url("https://akam.cdn.jdmagicbox.com/images/icontent/newwap/newprot_w/we-are-hiring.svg")
+  background-image: url("images/icons/we-are-hiring.svg")
 }
 
 .jdtalkaboutus {
-  background: url("https://akam.cdn.jdmagicbox.com/images/icontent/newwap/prot/jdtalkaboutus.svg") no-repeat;
+  background: url("images/icons/jdtalkaboutus.svg") no-repeat;
   width: 35px;
   height: 35px;
   background-size: 100% auto;
@@ -3576,7 +3583,7 @@ main{
 }
 
 .closesidemenu {
-  background: url("https://akam.cdn.jdmagicbox.com/images/icontent/newwap/newprot_w/closeicn.svg")no-repeat;
+  background: url("images/icons/closeicn.svg")no-repeat;
   height: 25px;
   width: 25px;
   display: inline-block;
@@ -3870,7 +3877,7 @@ h3 {
 }
 
 .sclnewsslctd {
-  background: url("https://akam.cdn.jdmagicbox.com/images/icontent/newwap/prot_072018/bluetick-icn.svg")no-repeat;
+  background: url("images/icons/bluetick-icn.svg")no-repeat;
   height: 11px;
   width: 14px;
   background-size: contain;
@@ -3937,7 +3944,7 @@ h3 {
 }
 
 .rdoslct label .langslctrdounchk {
-  background: url("//akam.cdn.jdmagicbox.com/images/icontent/newwap/newprot_w/uncheck.svg")no-repeat;
+  background: url("images/icons/uncheck.svg")no-repeat;
   width: 23px;
   height: 23px;
   background-size: 100% auto;
@@ -3945,7 +3952,7 @@ h3 {
 }
 
 .rdoslct label input[type=radio]:checked+.langslctrdounchk {
-  background: url("//akam.cdn.jdmagicbox.com/images/icontent/newwap/newprot_w/check.svg")no-repeat;
+  background: url("images/icons/check.svg")no-repeat;
   width: 23px;
   height: 23px;
   background-size: 100% auto;
@@ -3998,15 +4005,15 @@ footer {
 }
 
 .nweftrwpr li.actv .nwehome {
-  background-image: url(https://akam.cdn.jdmagicbox.com/images/icontent/newwap/newprot_w/ehomeactive.svg);
+  background-image: url(images/icons/ehomeactive.svg);
 }
 
 .nweftrwpr li .nwehome {
-  background-image: url(https://akam.cdn.jdmagicbox.com/images/icontent/newwap/newprot_w/ecomhome.svg);
+  background-image: url(images/icons/ecomhome.svg);
 }
 
 .nweftrwpr li.actv .nwelead, .nweftrwpr li .nwelead {
-  background-image: url(https://akam.cdn.jdmagicbox.com/images/icons/iphone/leadswbg.png);
+  background-image: url(images/icons/leadswbg.webp);
 }
 
 
@@ -4057,19 +4064,19 @@ footer {
 }
 
 .nweftrwpr li .nweb2b {
-  background-image: url(https://akam.cdn.jdmagicbox.com/images/icontent/newwap/newprot_w/b2b-icn.svg);
+  background-image: url(images/icons/b2b-icn.svg);
 }
 
 .nweftrwpr li .nwepay {
-  background-image: url(https://akam.cdn.jdmagicbox.com/images/icontent/newwap/newprot_w/jdpay-icn.svg);
+  background-image: url(images/icons/jdpay-icn.svg);
 }
 
 .nweftrwpr li .nwenews {
-  background-image: url(https://akam.cdn.jdmagicbox.com/images/icontent/newwap/newprot_w/news-default.png);
+  background-image: url(images/icons/news-default.webp);
 }
 
 .nweftrwpr li .nwemore {
-  background-image: url(https://akam.cdn.jdmagicbox.com/images/icontent/newwap/newprot_w/ecmmore.svg);
+  background-image: url(images/icons/ecmmore.svg);
 }
 
 footer:after {
@@ -4232,7 +4239,7 @@ footer:after {
 }
 
 .viewall_arrow {
-  background: url("https://akam.cdn.jdmagicbox.com/images/icontent/newwap/newprot_w/backarrow_new2.svg") no-repeat;
+  background: url("images/icons/backarrow_new2.svg") no-repeat;
   display: inline-block;
   height: 16px;
   width: 16px;
@@ -4502,7 +4509,7 @@ footer:after {
 .next-arrow {
   -webkit-tap-highlight-color: transparent;
   cursor: pointer;
-  background-image: url(https://akam.cdn.jdmagicbox.com/images/icontent/newwap/newprot_w/right-arrow-21.svg);
+  background-image: url(images/icons/right-arrow-21.svg);
   background-repeat: no-repeat;
   height: 18px;
   width: 18px;
@@ -4611,7 +4618,7 @@ footer:after {
 }
 
 .carousel_rightarrow_small {
-  background-image: url(https://akam.cdn.jdmagicbox.com/images/icontent/newwap/newprot_w/carousel_rightarrow_small.svg);
+  background-image: url(images/icons/carousel_rightarrow_small.svg);
   background-repeat: no-repeat;
   width: 9px;
   height: 8px;
@@ -4747,7 +4754,7 @@ footer:after {
 .ratingcount:after {
   position: absolute;
   content: "";
-  background: url(https://akam.cdn.jdmagicbox.com/images/icontent/newwap/newprot_w/dtlrecntratd.svg);
+  background: url(images/icons/dtlrecntratd.svg);
   height: 12px;
   width: 12px;
   display: inline-block;
@@ -4766,7 +4773,7 @@ footer:after {
 }
 
 .trendicon {
-  background: url(https://akam.cdn.jdmagicbox.com/images/icontent/newwap/newprot_w/trend_icon.svg);
+  background: url(images/icons/trend_icon.svg);
   height: 12px;
   width: 20px;
   display: inline-block;
@@ -4961,7 +4968,7 @@ footer:after {
   display: inline-block;
   width: 8px;
   height: 12px;
-  background: url(//akam.cdn.jdmagicbox.com/images/icontent/newwap/newprot_w/jd_business_arrow.svg) no-repeat;
+  background: url(images/icons/jd_business_arrow.svg) no-repeat;
   position: absolute;
   top: 5px;
   right: -8px
@@ -5128,7 +5135,7 @@ footer:after {
 }
 
 .newStaric {
-  background: url(https://akam.cdn.jdmagicbox.com/images/icontent/newwap/newprot_w/result_single_star.svg);
+  background: url(images/icons/result_single_star.svg);
   height: 12px;
   width: 12px;
   display: inline-block;

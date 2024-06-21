@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="36" height="36" viewBox="0 0 36 36">
+  <defs>
+    <clipPath id="clip-icon">
+      <rect width="36" height="36"/>
+    </clipPath>
+  </defs>
+  <g id="icon" clip-path="url(#clip-icon)">
+    <rect width="36" height="36" fill="#fff"/>
+    <g id="Ellipse_8" data-name="Ellipse 8" fill="#fff" stroke="#d8e1e8" stroke-width="1">
+      <circle cx="18" cy="18" r="18" stroke="none"/>
+      <circle cx="18" cy="18" r="17.5" fill="none"/>
+    </g>
+    <g id="creative-idea" transform="translate(11.503 9)">
+      <path id="Path_7487" data-name="Path 7487" d="M8.352,12.959h-4.6a.527.527,0,0,1-.527-.527A4.436,4.436,0,0,0,2.007,9.39a5.56,5.56,0,0,1,.1-7.722A5.5,5.5,0,0,1,6.039,0H6.05A5.562,5.562,0,0,1,11.6,5.571,5.558,5.558,0,0,1,10.08,9.4a4.39,4.39,0,0,0-1.2,3.028.527.527,0,0,1-.527.527ZM4.25,11.9h3.6A5.435,5.435,0,0,1,9.314,8.679a4.53,4.53,0,0,0-.093-6.312A4.46,4.46,0,0,0,6.05,1.055H6.041A4.449,4.449,0,0,0,2.86,2.407a4.506,4.506,0,0,0-.084,6.261A5.5,5.5,0,0,1,4.25,11.9Zm0,0" transform="translate(0 0)" fill="#414e5a"/>
+      <path id="Path_7488" data-name="Path 7488" d="M84.926,387.465H80.46a.527.527,0,1,1,0-1.055h4.466a.527.527,0,1,1,0,1.055Zm0,0" transform="translate(-76.643 -372.825)" fill="#414e5a"/>
+      <path id="Path_7489" data-name="Path 7489" d="M84.926,435.258H80.46a.527.527,0,0,1,0-1.055h4.466a.527.527,0,0,1,0,1.055Zm0,0" transform="translate(-76.643 -418.938)" fill="#414e5a"/>
+      <path id="Path_7490" data-name="Path 7490" d="M106.654,483.055h-2.822a.527.527,0,0,1,0-1.055h2.822a.527.527,0,1,1,0,1.055Zm0,0" transform="translate(-99.193 -465.055)" fill="#414e5a"/>
+    </g>
+  </g>
+</svg>

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<nav class="bg-grey-light w-full rounded-md" style="margin-top: 5rem; margin-left: 5rem;">
+<nav class="bg-grey-light w-full rounded-md" style="margin-top: 5rem; padding-left: 5rem;">
   <ol class="list-reset flex">
     <li>
       <a

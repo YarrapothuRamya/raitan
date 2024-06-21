@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="prefix__news-font" width="36" height="36" viewBox="0 0 36 36">
+    <defs>
+        <style>
+            .prefix__cls-2{fill:none}.prefix__cls-4{fill:#3c3c3c}.prefix__cls-5{stroke:none}
+        </style>
+    </defs>
+    <g id="prefix__Group_6746" data-name="Group 6746">
+        <g id="prefix__Ellipse_50" data-name="Ellipse 50" style="stroke:#d8e1e8;fill:#fff">
+            <circle cx="18" cy="18" r="18" class="prefix__cls-5"/>
+            <circle cx="18" cy="18" r="17.5" class="prefix__cls-2"/>
+        </g>
+    </g>
+    <g id="prefix__news-icn" transform="translate(-101 -448)">
+        <path id="prefix__Rectangle_5250" d="M0 0H20V20H0z" class="prefix__cls-2" data-name="Rectangle 5250" transform="translate(109 456)"/>
+        <g id="prefix__Group_9164" data-name="Group 9164" transform="translate(110.667 457.667)">
+            <g id="prefix__Rectangle_7536" data-name="Rectangle 7536" style="stroke:#3c3c3c;fill:#fff">
+                <rect width="16.667" height="16.667" class="prefix__cls-5" rx="2"/>
+                <rect width="15.667" height="15.667" x=".5" y=".5" class="prefix__cls-2" rx="1.5"/>
+            </g>
+            <g id="prefix__Group_9164-2" data-name="Group 9164" transform="translate(3.431 5.392)">
+                <circle id="prefix__Ellipse_292" cx=".65" cy=".65" r=".65" class="prefix__cls-4" data-name="Ellipse 292" transform="translate(0 -.059)"/>
+                <circle id="prefix__Ellipse_293" cx=".65" cy=".65" r=".65" class="prefix__cls-4" data-name="Ellipse 293" transform="translate(0 3.941)"/>
+                <rect id="prefix__Rectangle_7537" width="6.373" height="1.2" class="prefix__cls-4" data-name="Rectangle 7537" rx=".6" transform="translate(2.941 -.059)"/>
+                <rect id="prefix__Rectangle_7538" width="6.373" height="1.2" class="prefix__cls-4" data-name="Rectangle 7538" rx=".6" transform="translate(2.941 3.941)"/>
+            </g>
+        </g>
+    </g>
+</svg>

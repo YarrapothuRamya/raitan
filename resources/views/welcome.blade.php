@@ -62,7 +62,7 @@
           <div class="home_banner_explore" style="background-color: rgb(15, 125, 216);">
             <div class="home_banner_exploretxt" style="color: white;">Explore</div>
             <div class="home_banner_explorearw"
-              style="color: rgb(255, 255, 255); background-image: url(&quot;https://akam.cdn.jdmagicbox.com/images/icontent/newwap/web2022/web_whiteright_arrow.svg&quot;);">
+              style="color: rgb(255, 255, 255); background-image: url(&quot;images/icons/web_whiteright_arrow.svg&quot;);">
             </div>
           </div><span
             style="box-sizing:border-box;display:block;overflow:hidden;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;position:absolute;top:0;left:0;bottom:0;right:0">
@@ -75,7 +75,7 @@
           <div class="home_banner_explore" style="background-color: rgb(38, 84, 161);">
             <div class="home_banner_exploretxt" style="color: white;">Explore</div>
             <div class="home_banner_explorearw"
-              style="color: rgb(255, 255, 255); background-image: url(&quot;https://akam.cdn.jdmagicbox.com/images/icontent/newwap/web2022/web_whiteright_arrow.svg&quot;);">
+              style="color: rgb(255, 255, 255); background-image: url(&quot;images/icons/web_whiteright_arrow.svg&quot;);">
             </div>
           </div><span
             style="box-sizing:border-box;display:block;overflow:hidden;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;position:absolute;top:0;left:0;bottom:0;right:0">
@@ -88,7 +88,7 @@
           <div class="home_banner_explore" style="background-color: rgb(103, 105, 208);">
             <div class="home_banner_exploretxt" style="color: white;">Explore</div>
             <div class="home_banner_explorearw"
-              style="color: rgb(255, 255, 255); background-image: url(&quot;https://akam.cdn.jdmagicbox.com/images/icontent/newwap/web2022/web_whiteright_arrow.svg&quot;);">
+              style="color: rgb(255, 255, 255); background-image: url(&quot;images/icons/web_whiteright_arrow.svg&quot;);">
             </div>
           </div><span
             style="box-sizing:border-box;display:block;overflow:hidden;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;position:absolute;top:0;left:0;bottom:0;right:0">
@@ -104,7 +104,7 @@
           <div class="home_banner_explore" style="background-color: rgb(0, 172, 125);">
             <div class="home_banner_exploretxt" style="color: white;">Explore</div>
             <div class="home_banner_explorearw"
-              style="color: rgb(255, 255, 255); background-image: url(&quot;https://akam.cdn.jdmagicbox.com/images/icontent/newwap/web2022/web_whiteright_arrow.svg&quot;);">
+              style="color: rgb(255, 255, 255); background-image: url(&quot;images/icons/web_whiteright_arrow.svg&quot;);">
             </div>
           </div><span
             style="box-sizing:border-box;display:block;overflow:hidden;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;position:absolute;top:0;left:0;bottom:0;right:0">
@@ -186,9 +186,9 @@
           src="{{ asset('service_images') . '/' . $service->image }}?w=96&amp;q=75" decoding="async"
           data-nimg="intrinsic"
           style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 200px; height: auto;"
-          srcset="{{ asset('service_images') . '/' . $service->image }}?w=48&amp;q=75 1x, images/tractors/tractor65.png?w=96&amp;q=75 2x"><noscript><img
-          alt="Beauty Spa in Hyderabad" title="Beauty Spa in Hyderabad"
-          srcSet="{{ asset('service_images') . '/' . $service->image }}?w=48&amp;q=75 1x, images/tractors/tractor65.png?w=96&amp;q=75 2x"
+          srcset="{{ asset('service_images') . '/' . $service->image }}?w=48&amp;q=75 1x, {{ asset('service_images') . '/' . $service->image }}?w=96&amp;q=75 2x"><noscript><img
+          alt="Implementors and Machines" title="Implementors and Machines"
+          srcSet="{{ asset('service_images') . '/' . $service->image }}?w=48&amp;q=75 1x, {{ asset('service_images') . '/' . $service->image }}?w=96&amp;q=75 2x"
           src="{{ asset('service_images') . '/' . $service->image }}?w=96&amp;q=75" decoding="async"
           data-nimg="intrinsic"
           style="position:absolute;top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width: 200px; height: auto;"

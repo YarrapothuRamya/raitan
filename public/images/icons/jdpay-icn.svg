@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+    <path data-name="Rectangle 37357" style="fill:none;opacity:.435" d="M0 0h24v24H0z"/>
+    <path data-name="Subtraction 16" d="M1.1 7a.9.9 0 0 1-.9-.9v-5a.9.9 0 0 1 .9-.9h5a.9.9 0 1 1 0 1.8H2v4.1a.9.9 0 0 1-.9.9z" transform="translate(2.9 2.9)" style="fill:#333"/>
+    <path data-name="Subtraction 17" d="M5.1 6a.9.9 0 0 1-.9-.9V2H1.1a.9.9 0 1 1 0-1.8h4a.9.9 0 0 1 .9.9v4a.9.9 0 0 1-.9.9z" transform="translate(14.9 2.9)" style="fill:#333"/>
+    <path data-name="Subtraction 20" d="M5.1 6h-4a.9.9 0 0 1-.9-.9v-4a.9.9 0 1 1 1.8 0v3.1h3.1a.9.9 0 0 1 0 1.8z" transform="translate(2.9 14.9)" style="fill:#333"/>
+    <path data-name="Subtraction 19" d="M5.1 6h-4a.9.9 0 0 1 0-1.8h3.1V1.1a.9.9 0 0 1 1.8 0v4a.9.9 0 0 1-.9.9z" transform="translate(14.9 14.9)" style="fill:#333"/>
+    <path data-name="Subtraction 18" d="M21.1 2h-20a.9.9 0 1 1 0-1.8h20a.9.9 0 0 1 0 1.8z" transform="translate(.9 10.9)" style="fill:#333"/>
+</svg>
