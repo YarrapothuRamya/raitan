@@ -11,6 +11,7 @@ use App\Models\Roles;
 use App\Models\Request_role;
 use App\Models\Admin_Login_Logs;
 use App\Models\Admin_Register_Logs;
+use App\Models\Common_logs;
 
 class AdminController extends Controller
 {
@@ -342,91 +343,169 @@ class AdminController extends Controller
 
     public function reject_permissions_users_sales(Request $request)
     {
-        //$role = \Auth::user()->role;
-        //if($role == 1){
-            //$roles=Roles::select('name','role_id')->whereNotIn('role_id', [1,2,3])->get();
-            //dd("Hello");
-            //dd($request['name']);
-            $validated = $request->validate([
-                'user_id' => 'required',
-                'role_id' => 'required',
-                'role_permission_status' => 'required',
+        try {
+            //$role = \Auth::user()->role;
+            //if($role == 1){
+                //$roles=Roles::select('name','role_id')->whereNotIn('role_id', [1,2,3])->get();
+                //dd("Hello");
+                //dd($request['name']);
+                $validated = $request->validate([
+                    'user_id' => 'required',
+                    'role_id' => 'required',
+                    'role_permission_status' => 'required',
+                ]);
+
+                //$user_id = \Auth::user()->id;
+                $request_roles = Request_role::where('user_id', '=', $request['user_id'])->
+                                               where('role_id', '=', $request['role_id'])->first();
+                //$request_roles->user_id = $user_id;
+                //$request_roles->role_id = $request['role_master_role_id'];
+                $request_roles->role_permission_status = $request['role_permission_status'];
+                if($request_roles->save()){
+                    $curTime = new \DateTime();
+                    $currentDatetime = $curTime->format("Y-m-d H:i:s");
+                    Common_logs::create([
+                        'admin_id' => Auth::user()->id,
+                        'user_id' => $request['user_id'],
+                        'admin_phone' => Auth::user()->mobile,
+                        'description' => 'Rejected permission for Sales Successful',
+                        'status' => 'Rejected permission for Sales',
+                        'audit_time' => $currentDatetime,
+                    ]);
+                    $data = [
+                      'success' => true,
+                      'message'=> 'Request successfully cancelled.'
+                    ] ;
+                    return response()->json($data);
+
+                    return redirect()->back()->with('status', 'Permission successfully requested.');
+                    return redirect()->back()->with('status','machine successfully updated');
+                }else{
+                    $curTime = new \DateTime();
+                    $currentDatetime = $curTime->format("Y-m-d H:i:s");
+                    Common_logs::create([
+                        'admin_id' => Auth::user()->id,
+                        'user_id' => $request['user_id'],
+                        'admin_phone' => Auth::user()->mobile,
+                        'description' => 'Something went wrong please try again.',
+                        'status' => 'Error Rejecting permission for Sales',
+                        'audit_time' => $currentDatetime,
+                    ]);
+                    $data = [
+                      'error' => true,
+                      'message'=> 'Something went wrong please try again.'
+                    ] ;
+                    return response()->json($data);
+                    return response()->json(['status' => 400, 'error' => 'Something went wrong please try again.']);
+                    return redirect()->back()->with('error','Something went wrong please try again.');
+                }
+                //return redirect()->back()->with('name','You have no access to this page');
+                //return view('machines.home', compact('machines'));
+            //}else{
+                //return redirect()->back()->with('error','You have no access to this page');
+            //}
+        } catch (\Exception $e) {
+            $curTime = new \DateTime();
+            $currentDatetime = $curTime->format("Y-m-d H:i:s");
+            Common_logs::create([
+                'admin_id' => Auth::user()->id,
+                'user_id' => $request['user_id'],
+                'admin_phone' => Auth::user()->mobile,
+                'description' => $e->getMessage(),
+                'status' => 'Error Rejecting permission for Sales',
+                'audit_time' => $currentDatetime,
             ]);
-
-            //$user_id = \Auth::user()->id;
-            $request_roles = Request_role::where('user_id', '=', $request['user_id'])->
-                                           where('role_id', '=', $request['role_id'])->first();
-            //$request_roles->user_id = $user_id;
-            //$request_roles->role_id = $request['role_master_role_id'];
-            $request_roles->role_permission_status = $request['role_permission_status'];
-            if($request_roles->save()){
-                $data = [
-                  'success' => true,
-                  'message'=> 'Request successfully cancelled.'
-                ] ;
-                return response()->json($data);
-
-                return redirect()->back()->with('status', 'Permission successfully requested.');
-                return redirect()->back()->with('status','machine successfully updated');
-            }else{
-                $data = [
-                  'error' => true,
-                  'message'=> 'Something went wrong please try again.'
-                ] ;
-                return response()->json($data);
-                return response()->json(['status' => 400, 'error' => 'Something went wrong please try again.']);
-                return redirect()->back()->with('error','Something went wrong please try again.');
-            }
-            //return redirect()->back()->with('name','You have no access to this page');
-            //return view('machines.home', compact('machines'));
-        //}else{
-            //return redirect()->back()->with('error','You have no access to this page');
-        //}
+            $data = [
+              'error' => true,
+              'message'=> $e->getMessage(),
+            ] ;
+            return response()->json($data);
+        }
+        
         
     }
 
     public function approve_permissions_users_sales(Request $request)
     {
-        //$role = \Auth::user()->role;
-        //if($role == 1){
-            //$roles=Roles::select('name','role_id')->whereNotIn('role_id', [1,2,3])->get();
-            //dd("Hello");
-            //dd($request['name']);
-            $validated = $request->validate([
-                'user_id' => 'required',
-                'role_id' => 'required',
-                'role_permission_status' => 'required',
+        try {
+            //$role = \Auth::user()->role;
+            //if($role == 1){
+                //$roles=Roles::select('name','role_id')->whereNotIn('role_id', [1,2,3])->get();
+                //dd("Hello");
+                //dd($request['name']);
+                $validated = $request->validate([
+                    'user_id' => 'required',
+                    'role_id' => 'required',
+                    'role_permission_status' => 'required',
+                ]);
+
+                //$user_id = \Auth::user()->id;
+                $request_roles = Request_role::where('user_id', '=', $request['user_id'])->
+                                               where('role_id', '=', $request['role_id'])->first();
+                //$request_roles->user_id = $user_id;
+                //$request_roles->role_id = $request['role_master_role_id'];
+                $request_roles->role_permission_status = $request['role_permission_status'];
+                if($request_roles->save()){
+                    $curTime = new \DateTime();
+                    $currentDatetime = $curTime->format("Y-m-d H:i:s");
+                    Common_logs::create([
+                        'admin_id' => Auth::user()->id,
+                        'user_id' => $request['user_id'],
+                        'admin_phone' => Auth::user()->mobile,
+                        'description' => 'Approved permission for Sales Successful.',
+                        'status' => 'Approved permission for Sales',
+                        'audit_time' => $currentDatetime,
+                    ]);
+                    $data = [
+                      'success' => true,
+                      'message'=> 'Request successfully approved.'
+                    ] ;
+                    return response()->json($data);
+
+                    return redirect()->back()->with('status', 'Permission successfully requested.');
+                    return redirect()->back()->with('status','machine successfully updated');
+                }else{
+                    $curTime = new \DateTime();
+                    $currentDatetime = $curTime->format("Y-m-d H:i:s");
+                    Common_logs::create([
+                        'admin_id' => Auth::user()->id,
+                        'user_id' => $request['user_id'],
+                        'admin_phone' => Auth::user()->mobile,
+                        'description' => 'Error Approving permission for Sales',
+                        'status' => 'Error Approving permission for Sales',
+                        'audit_time' => $currentDatetime,
+                    ]);
+                    $data = [
+                      'error' => true,
+                      'message'=> 'Something went wrong please try again.'
+                    ] ;
+                    return response()->json($data);
+                    return response()->json(['status' => 400, 'error' => 'Something went wrong please try again.']);
+                    return redirect()->back()->with('error','Something went wrong please try again.');
+                }
+                //return redirect()->back()->with('name','You have no access to this page');
+                //return view('machines.home', compact('machines'));
+            //}else{
+                //return redirect()->back()->with('error','You have no access to this page');
+            //}
+        } catch (\Exception $e) {
+            $curTime = new \DateTime();
+            $currentDatetime = $curTime->format("Y-m-d H:i:s");
+            Common_logs::create([
+                'admin_id' => Auth::user()->id,
+                'user_id' => $request['user_id'],
+                'admin_phone' => Auth::user()->mobile,
+                'description' => $e->getMessage(),
+                'status' => 'Error Approving permission for Sales',
+                'audit_time' => $currentDatetime,
             ]);
-
-            //$user_id = \Auth::user()->id;
-            $request_roles = Request_role::where('user_id', '=', $request['user_id'])->
-                                           where('role_id', '=', $request['role_id'])->first();
-            //$request_roles->user_id = $user_id;
-            //$request_roles->role_id = $request['role_master_role_id'];
-            $request_roles->role_permission_status = $request['role_permission_status'];
-            if($request_roles->save()){
-                $data = [
-                  'success' => true,
-                  'message'=> 'Request successfully approved.'
-                ] ;
-                return response()->json($data);
-
-                return redirect()->back()->with('status', 'Permission successfully requested.');
-                return redirect()->back()->with('status','machine successfully updated');
-            }else{
-                $data = [
-                  'error' => true,
-                  'message'=> 'Something went wrong please try again.'
-                ] ;
-                return response()->json($data);
-                return response()->json(['status' => 400, 'error' => 'Something went wrong please try again.']);
-                return redirect()->back()->with('error','Something went wrong please try again.');
-            }
-            //return redirect()->back()->with('name','You have no access to this page');
-            //return view('machines.home', compact('machines'));
-        //}else{
-            //return redirect()->back()->with('error','You have no access to this page');
-        //}
+            $data = [
+              'error' => true,
+              'message'=> $e->getMessage(),
+            ] ;
+            return response()->json($data);
+        }
+        
         
     }
 
@@ -446,91 +525,168 @@ class AdminController extends Controller
 
     public function reject_permissions_users_agents(Request $request)
     {
-        //$role = \Auth::user()->role;
-        //if($role == 1){
-            //$roles=Roles::select('name','role_id')->whereNotIn('role_id', [1,2,3])->get();
-            //dd("Hello");
-            //dd($request['name']);
-            $validated = $request->validate([
-                'user_id' => 'required',
-                'role_id' => 'required',
-                'role_permission_status' => 'required',
+        try {
+            //$role = \Auth::user()->role;
+            //if($role == 1){
+                //$roles=Roles::select('name','role_id')->whereNotIn('role_id', [1,2,3])->get();
+                //dd("Hello");
+                //dd($request['name']);
+                $validated = $request->validate([
+                    'user_id' => 'required',
+                    'role_id' => 'required',
+                    'role_permission_status' => 'required',
+                ]);
+
+                //$user_id = \Auth::user()->id;
+                $request_roles = Request_role::where('user_id', '=', $request['user_id'])->
+                                               where('role_id', '=', $request['role_id'])->first();
+                //$request_roles->user_id = $user_id;
+                //$request_roles->role_id = $request['role_master_role_id'];
+                $request_roles->role_permission_status = $request['role_permission_status'];
+                if($request_roles->save()){
+                    $curTime = new \DateTime();
+                    $currentDatetime = $curTime->format("Y-m-d H:i:s");
+                    Common_logs::create([
+                        'admin_id' => Auth::user()->id,
+                        'user_id' => $request['user_id'],
+                        'admin_phone' => Auth::user()->mobile,
+                        'description' => 'Rejected permission for Agents Successful',
+                        'status' => 'Rejected permission for Agents',
+                        'audit_time' => $currentDatetime,
+                    ]);
+                    $data = [
+                      'success' => true,
+                      'message'=> 'Request successfully cancelled.'
+                    ] ;
+                    return response()->json($data);
+
+                    return redirect()->back()->with('status', 'Permission successfully requested.');
+                    return redirect()->back()->with('status','machine successfully updated');
+                }else{
+                    $curTime = new \DateTime();
+                    $currentDatetime = $curTime->format("Y-m-d H:i:s");
+                    Common_logs::create([
+                        'admin_id' => Auth::user()->id,
+                        'user_id' => $request['user_id'],
+                        'admin_phone' => Auth::user()->mobile,
+                        'description' => 'Something went wrong please try again.',
+                        'status' => 'Error Rejecting permission for Agents',
+                        'audit_time' => $currentDatetime,
+                    ]);
+                    $data = [
+                      'error' => true,
+                      'message'=> 'Something went wrong please try again.'
+                    ] ;
+                    return response()->json($data);
+                    return response()->json(['status' => 400, 'error' => 'Something went wrong please try again.']);
+                    return redirect()->back()->with('error','Something went wrong please try again.');
+                }
+                //return redirect()->back()->with('name','You have no access to this page');
+                //return view('machines.home', compact('machines'));
+            //}else{
+                //return redirect()->back()->with('error','You have no access to this page');
+            //}
+        } catch (\Exception $e) {
+            $curTime = new \DateTime();
+            $currentDatetime = $curTime->format("Y-m-d H:i:s");
+            Common_logs::create([
+                'admin_id' => Auth::user()->id,
+                'user_id' => $request['user_id'],
+                'admin_phone' => Auth::user()->mobile,
+                'description' => $e->getMessage(),
+                'status' => 'Error Rejecting permission for Agents',
+                'audit_time' => $currentDatetime,
             ]);
-
-            //$user_id = \Auth::user()->id;
-            $request_roles = Request_role::where('user_id', '=', $request['user_id'])->
-                                           where('role_id', '=', $request['role_id'])->first();
-            //$request_roles->user_id = $user_id;
-            //$request_roles->role_id = $request['role_master_role_id'];
-            $request_roles->role_permission_status = $request['role_permission_status'];
-            if($request_roles->save()){
-                $data = [
-                  'success' => true,
-                  'message'=> 'Request successfully cancelled.'
-                ] ;
-                return response()->json($data);
-
-                return redirect()->back()->with('status', 'Permission successfully requested.');
-                return redirect()->back()->with('status','machine successfully updated');
-            }else{
-                $data = [
-                  'error' => true,
-                  'message'=> 'Something went wrong please try again.'
-                ] ;
-                return response()->json($data);
-                return response()->json(['status' => 400, 'error' => 'Something went wrong please try again.']);
-                return redirect()->back()->with('error','Something went wrong please try again.');
-            }
-            //return redirect()->back()->with('name','You have no access to this page');
-            //return view('machines.home', compact('machines'));
-        //}else{
-            //return redirect()->back()->with('error','You have no access to this page');
-        //}
+            $data = [
+              'error' => true,
+              'message'=> $e->getMessage(),
+            ] ;
+            return response()->json($data);
+        }
         
     }
 
     public function approve_permissions_users_agents(Request $request)
     {
-        //$role = \Auth::user()->role;
-        //if($role == 1){
-            //$roles=Roles::select('name','role_id')->whereNotIn('role_id', [1,2,3])->get();
-            //dd("Hello");
-            //dd($request['name']);
-            $validated = $request->validate([
-                'user_id' => 'required',
-                'role_id' => 'required',
-                'role_permission_status' => 'required',
+        
+        try {
+            //$role = \Auth::user()->role;
+            //if($role == 1){
+                //$roles=Roles::select('name','role_id')->whereNotIn('role_id', [1,2,3])->get();
+                //dd("Hello");
+                //dd($request['name']);
+                $validated = $request->validate([
+                    'user_id' => 'required',
+                    'role_id' => 'required',
+                    'role_permission_status' => 'required',
+                ]);
+
+                //$user_id = \Auth::user()->id;
+                $request_roles = Request_role::where('user_id', '=', $request['user_id'])->
+                                               where('role_id', '=', $request['role_id'])->first();
+                //$request_roles->user_id = $user_id;
+                //$request_roles->role_id = $request['role_master_role_id'];
+                $request_roles->role_permission_status = $request['role_permission_status'];
+                if($request_roles->save()){
+                    $curTime = new \DateTime();
+                    $currentDatetime = $curTime->format("Y-m-d H:i:s");
+                    Common_logs::create([
+                        'admin_id' => Auth::user()->id,
+                        'user_id' => $request['user_id'],
+                        'admin_phone' => Auth::user()->mobile,
+                        'description' => 'Approved permission for Agents Successful.',
+                        'status' => 'Approved permission for Agents',
+                        'audit_time' => $currentDatetime,
+                    ]);
+                    $data = [
+                      'success' => true,
+                      'message'=> 'Request successfully approved.'
+                    ] ;
+                    return response()->json($data);
+
+                    return redirect()->back()->with('status', 'Permission successfully requested.');
+                    return redirect()->back()->with('status','machine successfully updated');
+                }else{
+                    $curTime = new \DateTime();
+                    $currentDatetime = $curTime->format("Y-m-d H:i:s");
+                    Common_logs::create([
+                        'admin_id' => Auth::user()->id,
+                        'user_id' => $request['user_id'],
+                        'admin_phone' => Auth::user()->mobile,
+                        'description' => 'Something went wrong please try again.',
+                        'status' => 'Error Approving permission for Agents',
+                        'audit_time' => $currentDatetime,
+                    ]);
+                    $data = [
+                      'error' => true,
+                      'message'=> 'Something went wrong please try again.'
+                    ] ;
+                    return response()->json($data);
+                    return response()->json(['status' => 400, 'error' => 'Something went wrong please try again.']);
+                    return redirect()->back()->with('error','Something went wrong please try again.');
+                }
+                //return redirect()->back()->with('name','You have no access to this page');
+                //return view('machines.home', compact('machines'));
+            //}else{
+                //return redirect()->back()->with('error','You have no access to this page');
+            //}
+        } catch (\Exception $e) {
+            $curTime = new \DateTime();
+            $currentDatetime = $curTime->format("Y-m-d H:i:s");
+            Common_logs::create([
+                'admin_id' => Auth::user()->id,
+                'user_id' => $request['user_id'],
+                'admin_phone' => Auth::user()->mobile,
+                'description' => $e->getMessage(),
+                'status' => 'Error Approving permission for Agents',
+                'audit_time' => $currentDatetime,
             ]);
-
-            //$user_id = \Auth::user()->id;
-            $request_roles = Request_role::where('user_id', '=', $request['user_id'])->
-                                           where('role_id', '=', $request['role_id'])->first();
-            //$request_roles->user_id = $user_id;
-            //$request_roles->role_id = $request['role_master_role_id'];
-            $request_roles->role_permission_status = $request['role_permission_status'];
-            if($request_roles->save()){
-                $data = [
-                  'success' => true,
-                  'message'=> 'Request successfully approved.'
-                ] ;
-                return response()->json($data);
-
-                return redirect()->back()->with('status', 'Permission successfully requested.');
-                return redirect()->back()->with('status','machine successfully updated');
-            }else{
-                $data = [
-                  'error' => true,
-                  'message'=> 'Something went wrong please try again.'
-                ] ;
-                return response()->json($data);
-                return response()->json(['status' => 400, 'error' => 'Something went wrong please try again.']);
-                return redirect()->back()->with('error','Something went wrong please try again.');
-            }
-            //return redirect()->back()->with('name','You have no access to this page');
-            //return view('machines.home', compact('machines'));
-        //}else{
-            //return redirect()->back()->with('error','You have no access to this page');
-        //}
+            $data = [
+              'error' => true,
+              'message'=> $e->getMessage(),
+            ] ;
+            return response()->json($data);
+        }
         
     }
 
@@ -550,91 +706,166 @@ class AdminController extends Controller
 
     public function reject_permissions_users_sellers(Request $request)
     {
-        //$role = \Auth::user()->role;
-        //if($role == 1){
-            //$roles=Roles::select('name','role_id')->whereNotIn('role_id', [1,2,3])->get();
-            //dd("Hello");
-            //dd($request['name']);
-            $validated = $request->validate([
-                'user_id' => 'required',
-                'role_id' => 'required',
-                'role_permission_status' => 'required',
+        try {
+            //$role = \Auth::user()->role;
+            //if($role == 1){
+                //$roles=Roles::select('name','role_id')->whereNotIn('role_id', [1,2,3])->get();
+                //dd("Hello");
+                //dd($request['name']);
+                $validated = $request->validate([
+                    'user_id' => 'required',
+                    'role_id' => 'required',
+                    'role_permission_status' => 'required',
+                ]);
+
+                //$user_id = \Auth::user()->id;
+                $request_roles = Request_role::where('user_id', '=', $request['user_id'])->
+                                               where('role_id', '=', $request['role_id'])->first();
+                //$request_roles->user_id = $user_id;
+                //$request_roles->role_id = $request['role_master_role_id'];
+                $request_roles->role_permission_status = $request['role_permission_status'];
+                if($request_roles->save()){
+                    $curTime = new \DateTime();
+                    $currentDatetime = $curTime->format("Y-m-d H:i:s");
+                    Common_logs::create([
+                        'admin_id' => Auth::user()->id,
+                        'user_id' => $request['user_id'],
+                        'admin_phone' => Auth::user()->mobile,
+                        'description' => 'Rejected permission for Sellers Successful',
+                        'status' => 'Rejected permission for Sellers',
+                        'audit_time' => $currentDatetime,
+                    ]);
+                    $data = [
+                      'success' => true,
+                      'message'=> 'Request successfully cancelled.'
+                    ] ;
+                    return response()->json($data);
+
+                    return redirect()->back()->with('status', 'Permission successfully requested.');
+                    return redirect()->back()->with('status','machine successfully updated');
+                }else{
+                    $curTime = new \DateTime();
+                    $currentDatetime = $curTime->format("Y-m-d H:i:s");
+                    Common_logs::create([
+                        'admin_id' => Auth::user()->id,
+                        'user_id' => $request['user_id'],
+                        'admin_phone' => Auth::user()->mobile,
+                        'description' => 'Something went wrong please try again.',
+                        'status' => 'Error Rejecting permission for Sellers',
+                        'audit_time' => $currentDatetime,
+                    ]);
+                    $data = [
+                      'error' => true,
+                      'message'=> 'Something went wrong please try again.'
+                    ] ;
+                    return response()->json($data);
+                    return response()->json(['status' => 400, 'error' => 'Something went wrong please try again.']);
+                    return redirect()->back()->with('error','Something went wrong please try again.');
+                }
+                //return redirect()->back()->with('name','You have no access to this page');
+                //return view('machines.home', compact('machines'));
+            //}else{
+                //return redirect()->back()->with('error','You have no access to this page');
+            //}
+        } catch (\Exception $e) {
+            $curTime = new \DateTime();
+            $currentDatetime = $curTime->format("Y-m-d H:i:s");
+            Common_logs::create([
+                'admin_id' => Auth::user()->id,
+                'user_id' => $request['user_id'],
+                'admin_phone' => Auth::user()->mobile,
+                'description' => $e->getMessage(),
+                'status' => 'Error Rejecting permission for Sellers',
+                'audit_time' => $currentDatetime,
             ]);
-
-            //$user_id = \Auth::user()->id;
-            $request_roles = Request_role::where('user_id', '=', $request['user_id'])->
-                                           where('role_id', '=', $request['role_id'])->first();
-            //$request_roles->user_id = $user_id;
-            //$request_roles->role_id = $request['role_master_role_id'];
-            $request_roles->role_permission_status = $request['role_permission_status'];
-            if($request_roles->save()){
-                $data = [
-                  'success' => true,
-                  'message'=> 'Request successfully cancelled.'
-                ] ;
-                return response()->json($data);
-
-                return redirect()->back()->with('status', 'Permission successfully requested.');
-                return redirect()->back()->with('status','machine successfully updated');
-            }else{
-                $data = [
-                  'error' => true,
-                  'message'=> 'Something went wrong please try again.'
-                ] ;
-                return response()->json($data);
-                return response()->json(['status' => 400, 'error' => 'Something went wrong please try again.']);
-                return redirect()->back()->with('error','Something went wrong please try again.');
-            }
-            //return redirect()->back()->with('name','You have no access to this page');
-            //return view('machines.home', compact('machines'));
-        //}else{
-            //return redirect()->back()->with('error','You have no access to this page');
-        //}
+            $data = [
+              'error' => true,
+              'message'=> $e->getMessage(),
+            ] ;
+            return response()->json($data);
+        }
         
     }
 
     public function approve_permissions_users_sellers(Request $request)
     {
-        //$role = \Auth::user()->role;
-        //if($role == 1){
-            //$roles=Roles::select('name','role_id')->whereNotIn('role_id', [1,2,3])->get();
-            //dd("Hello");
-            //dd($request['name']);
-            $validated = $request->validate([
-                'user_id' => 'required',
-                'role_id' => 'required',
-                'role_permission_status' => 'required',
+        try {
+            //$role = \Auth::user()->role;
+            //if($role == 1){
+                //$roles=Roles::select('name','role_id')->whereNotIn('role_id', [1,2,3])->get();
+                //dd("Hello");
+                //dd($request['name']);
+                $validated = $request->validate([
+                    'user_id' => 'required',
+                    'role_id' => 'required',
+                    'role_permission_status' => 'required',
+                ]);
+
+                //$user_id = \Auth::user()->id;
+                $request_roles = Request_role::where('user_id', '=', $request['user_id'])->
+                                               where('role_id', '=', $request['role_id'])->first();
+                //$request_roles->user_id = $user_id;
+                //$request_roles->role_id = $request['role_master_role_id'];
+                $request_roles->role_permission_status = $request['role_permission_status'];
+                if($request_roles->save()){
+                    $curTime = new \DateTime();
+                    $currentDatetime = $curTime->format("Y-m-d H:i:s");
+                    Common_logs::create([
+                        'admin_id' => Auth::user()->id,
+                        'user_id' => $request['user_id'],
+                        'admin_phone' => Auth::user()->mobile,
+                        'description' => 'Approved permission for Sellers Successful.',
+                        'status' => 'Approved permission for Sellers',
+                        'audit_time' => $currentDatetime,
+                    ]);
+                    $data = [
+                      'success' => true,
+                      'message'=> 'Request successfully approved.'
+                    ] ;
+                    return response()->json($data);
+
+                    return redirect()->back()->with('status', 'Permission successfully requested.');
+                    return redirect()->back()->with('status','machine successfully updated');
+                }else{
+                    $curTime = new \DateTime();
+                    $currentDatetime = $curTime->format("Y-m-d H:i:s");
+                    Common_logs::create([
+                        'admin_id' => Auth::user()->id,
+                        'user_id' => $request['user_id'],
+                        'admin_phone' => Auth::user()->mobile,
+                        'description' => 'Something went wrong please try again.',
+                        'status' => 'Error Approving permission for Sellers',
+                        'audit_time' => $currentDatetime,
+                    ]);
+                    $data = [
+                      'error' => true,
+                      'message'=> 'Something went wrong please try again.'
+                    ] ;
+                    return response()->json($data);
+                    return response()->json(['status' => 400, 'error' => 'Something went wrong please try again.']);
+                    return redirect()->back()->with('error','Something went wrong please try again.');
+                }
+                //return redirect()->back()->with('name','You have no access to this page');
+                //return view('machines.home', compact('machines'));
+            //}else{
+                //return redirect()->back()->with('error','You have no access to this page');
+            //}
+        } catch (\Exception $e) {
+            $curTime = new \DateTime();
+            $currentDatetime = $curTime->format("Y-m-d H:i:s");
+            Common_logs::create([
+                'admin_id' => Auth::user()->id,
+                'user_id' => $request['user_id'],
+                'admin_phone' => Auth::user()->mobile,
+                'description' => $e->getMessage(),
+                'status' => 'Error Approving permission for Sellers',
+                'audit_time' => $currentDatetime,
             ]);
-
-            //$user_id = \Auth::user()->id;
-            $request_roles = Request_role::where('user_id', '=', $request['user_id'])->
-                                           where('role_id', '=', $request['role_id'])->first();
-            //$request_roles->user_id = $user_id;
-            //$request_roles->role_id = $request['role_master_role_id'];
-            $request_roles->role_permission_status = $request['role_permission_status'];
-            if($request_roles->save()){
-                $data = [
-                  'success' => true,
-                  'message'=> 'Request successfully approved.'
-                ] ;
-                return response()->json($data);
-
-                return redirect()->back()->with('status', 'Permission successfully requested.');
-                return redirect()->back()->with('status','machine successfully updated');
-            }else{
-                $data = [
-                  'error' => true,
-                  'message'=> 'Something went wrong please try again.'
-                ] ;
-                return response()->json($data);
-                return response()->json(['status' => 400, 'error' => 'Something went wrong please try again.']);
-                return redirect()->back()->with('error','Something went wrong please try again.');
-            }
-            //return redirect()->back()->with('name','You have no access to this page');
-            //return view('machines.home', compact('machines'));
-        //}else{
-            //return redirect()->back()->with('error','You have no access to this page');
-        //}
+            $data = [
+              'error' => true,
+              'message'=> $e->getMessage(),
+            ] ;
+        }
         
     }
 }

@@ -147,12 +147,13 @@ $(document).ready(function(){
               if(result.success){
                 //alert(result.success + " " + result.message);
                 $('#show_messages').html('<span style="color: green;">'+ result.message +'</span>');
+                setTimeout(function() {
+                     window.location.reload();
+                  }, 1000);
               }
               
               $('.addrequest').removeAttr('Disabled');
-              setTimeout(function() {
-                 window.location.reload();
-              }, 1000);
+              
           },
           error: function(res)
           {
@@ -163,9 +164,9 @@ $(document).ready(function(){
               }
               
               $('.addrequest').removeAttr('Disabled');
-              setTimeout(function() {
+              /*setTimeout(function() {
                  window.location.reload();
-              }, 2000);
+              }, 2000);*/
           },
       });
   });
@@ -196,11 +197,12 @@ $(document).ready(function(){
               console.log(result);
               if(result.success){
                 $('#show_messages1').html('<span style="color: red;">'+ result.message +'</span>');
-              }
-              $('.requestedrequest').removeAttr('Disabled');
-              setTimeout(function() {
+                setTimeout(function() {
                  window.location.reload();
               }, 1000);
+              }
+              $('.requestedrequest').removeAttr('Disabled');
+              
           },
           error: function(res)
           {
