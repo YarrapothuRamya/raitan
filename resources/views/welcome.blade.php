@@ -30,25 +30,42 @@
           <div class="slide_show" id="slideshow">
             <ul class="slide_list animate-forward" id="slides">
               <li tabindex="0" class="slide "><span class="slide_anchor" title="" draggable="false"><img
+                    draggable="false" title="" src="images/Banners/Tractor implementors1.jpg" data-src="images/Banners/Tractor implementors1.jpg"
+                    class="home_banner_li_image" alt=""></span></li>
+              <li tabindex="0" class="slide "><span class="slide_anchor" title="" draggable="false"><img
+                    draggable="false" title="" src="images/Banners/Tractor implementors2.jpg" data-src="images/Banners/Tractor implementors2.jpg"
+                    class="home_banner_li_image" alt=""></span></li>
+              <li tabindex="0" class="slide "><span class="slide_anchor" title="" draggable="false"><img
+                    draggable="false" title="" src="images/Banners/Tractor implementors3.jpg" data-src="images/Banners/Tractor implementors3.jpg"
+                    class="home_banner_li_image" alt=""></span></li>
+              <li tabindex="0" class="slide "><span class="slide_anchor" title="" draggable="false"><img
+                    draggable="false" title="" src="images/Banners/Tractor implementors4.jpg" data-src="images/Banners/Tractor implementors4.jpg"
+                    class="home_banner_li_image" alt=""></span></li>
+              <li tabindex="0" class="slide "><span class="slide_anchor" title="" draggable="false"><img
                     draggable="false" title="Implementors" src="images/Banners/banner1.jpg"
                     data-src="images/Banners/banner1.jpg" class="home_banner_li_image" alt="Implementors"></span></li>
               <li tabindex="0" class="slide "><span class="slide_anchor" title="" draggable="false"><img
                     draggable="false" title="Machines" src="images/Banners/banner5.jpg"
                     data-src="images/Banners/banner5.jpg" class="home_banner_li_image" alt="Machines"></span></li>
-              <li tabindex="0" class="slide "><span class="slide_anchor" title="" draggable="false"><img
-                    draggable="false" title="" src="images/Footer-cover.png" data-src="images/Footer-cover.png"
-                    class="home_banner_li_image" alt=""></span></li>
 
             </ul>
-            <div class="slide_pagination_bullets" aria-label="slider"><span class="slide_pagination_bullet "
-                role="banner" aria-label="Banner_ipl"></span><span class="slide_pagination_bullet " role="banner"
-                aria-label="Banner_Ramdan"></span><span class="slide_pagination_bullet " role="banner"
-                aria-label="Hotels"></span><span class="slide_pagination_bullet " role="banner"
-                aria-label="Packers Movers"></span><span class="slide_pagination_bullet " role="banner"
-                aria-label="Interior Designer"></span><span class="slide_pagination_bullet active" role="banner"
-                aria-label="CCTV"></span><span class="slide_pagination_bullet " role="banner"
-                aria-label="Bills"></span><span class="slide_pagination_bullet " role="banner"
-                aria-label="Flight"></span></div>
+            <div class="slide_pagination_bullets" aria-label="slider">
+                <span class="slide_pagination_bullet "
+                role="banner" aria-label="Banner_ipl"></span>
+                <span class="slide_pagination_bullet " role="banner"
+                aria-label="Banner_Ramdan"></span>
+                <span class="slide_pagination_bullet " role="banner"
+                aria-label="Hotels"></span>
+                <span class="slide_pagination_bullet " role="banner"
+                aria-label="Packers Movers"></span>
+                <span class="slide_pagination_bullet " role="banner"
+                aria-label="Interior Designer"></span>
+                <span class="slide_pagination_bullet active" role="banner"
+                aria-label="CCTV"></span>
+                <!--<span class="slide_pagination_bullet " role="banner"
+                aria-label="Bills"></span>
+                <span class="slide_pagination_bullet " role="banner"
+                aria-label="Flight"></span>--></div>
             <div class="slide_control control"><button class="swiper-button swiper-button-prev" id="previous"
                 aria-label="swiperprevious"></button><button class="swiper-button swiper-button-next" id="next"
                 aria-label="swipernext"></button>
