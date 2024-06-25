@@ -111,23 +111,34 @@ class CommonController extends Controller
                     $validated = $request->validate([
                         'role_master_role_id' => 'required',
                         'role_id_permission_status' => 'required',
-                        'aadhar' => 'required|mimes:pdf',
-                        //'pan' => 'required|mimes:pdf',
+                        'aadhar' => 'required|mimes:jpg,jpeg,png,bmp,tiff',
+                        //'pan' => 'required|mimes:jpg,jpeg,png,bmp,tiff',
+                    ],$messages = [
+                        'mimes' => 'Please insert image only',
+                        //'max'   => 'Image should be less than 4 MB'
                     ]);
                     //dd("5");
                 }elseif ($request->role_master_role_id == 6) {
                     $validated = $request->validate([
                         'role_master_role_id' => 'required',
                         'role_id_permission_status' => 'required',
-                        'aadhar' => 'required|mimes:pdf',
-                        'pan' => 'required|mimes:pdf',
+                        'aadhar' => 'required|mimes:jpg,jpeg,png,bmp,tiff',
+                        'pan' => 'required|mimes:jpg,jpeg,png,bmp,tiff',
+                    ],$messages = [
+                        'aadhar.mimes' => 'Please insert Aadhar image only',
+                        'pan.mimes' => 'Please insert PAN image only',
+                        //'max'   => 'Image should be less than 4 MB'
                     ]);
                 }elseif ($request->role_master_role_id == 7){
                     $validated = $request->validate([
                         'role_master_role_id' => 'required',
                         'role_id_permission_status' => 'required',
-                        'aadhar' => 'required|mimes:pdf',
-                        'pan' => 'required|mimes:pdf',
+                        'aadhar' => 'required|mimes:jpg,jpeg,png,bmp,tiff',
+                        'pan' => 'required|mimes:jpg,jpeg,png,bmp,tiff',
+                    ],$messages = [
+                        'aadhar.mimes' => 'Please insert Aadhar image only',
+                        'pan.mimes' => 'Please insert PAN image only',
+                        //'max'   => 'Image should be less than 4 MB'
                     ]);
                 }
                 

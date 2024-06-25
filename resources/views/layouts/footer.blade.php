@@ -41,6 +41,11 @@
                     <iconify-icon class="social-icon" icon="ri:youtube-fill"></iconify-icon>
                   </a>
                 </li>
+                <li class="social">
+                  <a href="#">
+                    <iconify-icon class="social-icon" icon="ri:linkedin-fill"></iconify-icon>
+                  </a>
+                </li>
 
               </ul>
             </div>
@@ -51,7 +56,7 @@
             <h3>Quick Links</h3>
             <ul class="menu-list list-unstyled">
               <li class="menu-item">
-                <a href="#" class="nav-link">Home</a>
+                <a href="{{ route('indexroot') }}" class="nav-link">Home</a>
               </li>
               <li class="menu-item">
                 <a href="{{ route('aboutus.home') }}" class="nav-link">About us</a>

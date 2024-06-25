@@ -249,7 +249,7 @@
           <div class="my-2">
             <div class="relative mb-2">
               <input  name="lmobile" id="lmobile"
-                class="common-input input-focus text-sm py-3 rounded-xl" placeholder="Enter Your Mobile Number"
+                class="common-input input-focus text-sm py-3 rounded-xl" placeholder="Enter Your Mobile Number*"
                  value="" style="padding-left: 46.8px;">
 
               <!-- <div class="absolute left-0 top-0 bottom-0 bg-gray-50 text-black smooth-animate rounded-lg rounded-r-none p-2 flex items-center border border-r-0 justify-center"
@@ -268,7 +268,7 @@
             <div class="relative">
 
               <input type="password" name="lpassword" id="lpassword"
-                class="common-input input-focus text-sm py-3 rounded-xl" placeholder="Enter Your Password"
+                class="common-input input-focus text-sm py-3 rounded-xl" placeholder="Enter Your Password*"
                 style="padding-left: 46.8px;">
               <!-- <div class="absolute left-0 top-0 bottom-0 bg-gray-50 text-black smooth-animate rounded-lg rounded-r-none p-2 flex items-center border border-r-0 justify-center"
                             tabindex="-1">
@@ -361,7 +361,7 @@ c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.
           <div class="my-2">
             <div class="relative mb-2">
             <input  name="rname"
-                class="common-input input-focus text-sm py-3 rounded-xl" placeholder="Enter Your Name"
+                class="common-input input-focus text-sm py-3 rounded-xl" placeholder="Enter Your Name*"
                  value="" id="rname" style="padding-left: 46.8px;">
                  
 
@@ -370,7 +370,7 @@ c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.
             <div class="relative mb-2">
 
             <input type="tel" name="rmobile" id="rmobile"
-                class="common-input input-focus text-sm py-3 rounded-xl" placeholder="Enter Your Mobile Number"
+                class="common-input input-focus text-sm py-3 rounded-xl" placeholder="Enter Your Mobile Number*"
                  value="" style="padding-left: 46.8px;">
               
             </div>
@@ -378,14 +378,14 @@ c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.
             <div class="relative mb-2">
 
             <input  type="password" name="password" id="password" 
-                class="common-input input-focus text-sm py-3 rounded-xl" placeholder="Enter Your Password"
+                class="common-input input-focus text-sm py-3 rounded-xl" placeholder="Enter Your Password*"
                  value="" style="padding-left: 46.8px;">
               
             </div>
             <div class="relative mb-2">
 
             <input type="password" name="password_confirmation" id="password_confirmation" 
-                class="common-input input-focus text-sm py-3 rounded-xl" placeholder="Confirm Password"
+                class="common-input input-focus text-sm py-3 rounded-xl" placeholder="Confirm Password*"
                  value="" style="padding-left: 46.8px;">
               
             </div>

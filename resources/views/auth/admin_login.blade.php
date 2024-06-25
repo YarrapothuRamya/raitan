@@ -19,7 +19,7 @@
                          @endforeach
                         @endif
                         <div class="row mb-3">
-                            <label for="mobile" class="col-md-4 col-form-label text-md-end">{{ __('Mobile') }}</label>
+                            <label for="mobile" class="col-md-4 col-form-label text-md-end">{{ __('Mobile') }}*</label>
 
                             <div class="col-md-6">
                                 <input id="mobile" type="tel" class="form-control @error('mobile') is-invalid @enderror" name="mobile" value="{{ old('mobile') }}" required autocomplete="mobile" autofocus>
@@ -33,7 +33,7 @@
                         </div>
 
                         <div class="row mb-3">
-                            <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
+                            <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}*</label>
 
                             <div class="col-md-6">
                                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
@@ -47,7 +47,7 @@
                         </div>
 
                         <div class="row mb-3">
-                            <label for="Role" class="col-md-4 col-form-label text-md-end">{{ __('Role') }}</label>
+                            <label for="Role" class="col-md-4 col-form-label text-md-end">{{ __('Role') }}*</label>
 
                             <div class="col-md-6">
                                 <select class="form-control select2 @error('role') is-invalid @enderror" name="role" id="role">

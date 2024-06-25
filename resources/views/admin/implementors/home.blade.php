@@ -89,7 +89,7 @@
 
 
 <!-- Modal -->
-<div class="modal fade" id="implementorsModal" tabindex="-1" role="dialog" aria-labelledby="machineModalCenterTitle" aria-hidden="true">
+<div class="modal fade" id="implementorsModal" tabindex="-1" role="dialog" aria-labelledby="machineModalCenterTitle" aria-hidden="true" style="z-index: 9999;">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -106,7 +106,7 @@
             </div>
             <input id="id" type="hidden" class="form-control @error('name') is-invalid @enderror" name="id" value="">
             <div class="row mb-3">
-                <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Name') }}</label>
+                <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Name') }}*</label>
 
                 <div class="col-md-6">
                     <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="">
@@ -120,7 +120,7 @@
             </div>
 
             <div class="row mb-3">
-                <label for="status" class="col-md-4 col-form-label text-md-end">{{ __('Machine Type') }}</label>
+                <label for="status" class="col-md-4 col-form-label text-md-end">{{ __('Machine Type') }}*</label>
 
                 <div class="col-md-6">
                     <select class="form-control select2 {{ $errors->has('status') ? 'is-invalid' : '' }}" name="machine_id" id="machine_id">
@@ -154,7 +154,7 @@
             </div>
 
             <div class="row mb-3">
-                <label for="status" class="col-md-4 col-form-label text-md-end">{{ __('Status') }}</label>
+                <label for="status" class="col-md-4 col-form-label text-md-end">{{ __('Status') }}*</label>
 
                 <div class="col-md-6">
                     <select class="form-control select2 {{ $errors->has('status') ? 'is-invalid' : '' }}" name="status" id="status">
@@ -190,7 +190,7 @@
 </div>
 
 
-<div class="modal fade" id="implementorsaddModal" tabindex="-1" role="dialog" aria-labelledby="roleModalCenterTitle" aria-hidden="true">
+<div class="modal fade" id="implementorsaddModal" tabindex="-1" role="dialog" aria-labelledby="roleModalCenterTitle" aria-hidden="true" style="z-index: 9999;">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -207,7 +207,7 @@
             </div>
             <!--<input id="id" type="hidden" class="form-control @error('name') is-invalid @enderror" name="id" value="">-->
             <div class="row mb-3">
-                <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Name') }}</label>
+                <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Name') }}*</label>
 
                 <div class="col-md-6">
                     <input id="addname" type="text" class="form-control @error('name') is-invalid @enderror" name="addname" value="">
@@ -221,7 +221,7 @@
             </div>
 
             <div class="row mb-3">
-                <label for="status" class="col-md-4 col-form-label text-md-end">{{ __('Machine Type') }}</label>
+                <label for="status" class="col-md-4 col-form-label text-md-end">{{ __('Machine Type') }}*</label>
 
                 <div class="col-md-6">
                     <select class="form-control select2 {{ $errors->has('status') ? 'is-invalid' : '' }}" name="add_machine_id" id="add_machine_id">
@@ -240,7 +240,7 @@
             </div>
 
             <div class="row mb-3">
-                <label for="status" class="col-md-4 col-form-label text-md-end">{{ __('Image') }}</label>
+                <label for="status" class="col-md-4 col-form-label text-md-end">{{ __('Image') }}*</label>
 
                 <div class="col-md-6">
                     <input id="addimage" type="file" class="form-control @error('addimage') is-invalid @enderror" name="addimage" value="">
@@ -254,7 +254,7 @@
             </div>
 
             <div class="row mb-3">
-                <label for="status" class="col-md-4 col-form-label text-md-end">{{ __('Status') }}</label>
+                <label for="status" class="col-md-4 col-form-label text-md-end">{{ __('Status') }}*</label>
 
                 <div class="col-md-6">
                     <select class="form-control select2 {{ $errors->has('status') ? 'is-invalid' : '' }}" name="addstatus" id="addstatus">

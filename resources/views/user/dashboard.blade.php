@@ -47,9 +47,11 @@
                                 <br>
                             @endif
                         @elseif($role->request_roles_permission_status == 3)
-                            <a href="#" class="requestedrequest" data-role="{{ $role->role_master_name }}" data-role-master-role-id="{{ $role->role_master_role_id }}" data-role-id-permission-status="0" style="text-decoration: none; color: blue;">Requested for {{ $role->role_master_name }} membership, cancel the request</a><br>
+                            <!--<a href="#" class="requestedrequest" data-role="{{ $role->role_master_name }}" data-role-master-role-id="{{ $role->role_master_role_id }}" data-role-id-permission-status="0" style="text-decoration: none; color: blue;">Requested for {{ $role->role_master_name }} membership, cancel the request</a><br>-->
+                            <a href="#" class="" data-role="{{ $role->role_master_name }}" data-role-master-role-id="{{ $role->role_master_role_id }}" data-role-id-permission-status="0" style="text-decoration: none; color: blue;">Requested for {{ $role->role_master_name }} membership</a><br>
                         @elseif($role->request_roles_permission_status == 1)
-                            <a href="#" class="requestedrequest" data-role="{{ $role->role_master_name }}" data-role-master-role-id="{{ $role->role_master_role_id }}" data-role-id-permission-status="0" style="text-decoration: none; color: blue;">Request approved for {{ $role->role_master_name }} membership, cancel the request</a><br>
+                            <!--<a href="#" class="requestedrequest" data-role="{{ $role->role_master_name }}" data-role-master-role-id="{{ $role->role_master_role_id }}" data-role-id-permission-status="0" style="text-decoration: none; color: blue;">Request approved for {{ $role->role_master_name }} membership, cancel the request</a><br>-->
+                            <a href="#" class="" data-role="{{ $role->role_master_name }}" data-role-master-role-id="{{ $role->role_master_role_id }}" data-role-id-permission-status="0" style="text-decoration: none; color: blue;">Request approved for {{ $role->role_master_name }} membership</a><br>
                         @elseif($role->request_roles_permission_status == 2)
                             @if($role->role_master_role_id == 5)
                                 <a href="#" class="addsalesrequest" data-role="{{ $role->role_master_name }}" data-role-master-role-id="{{ $role->role_master_role_id }}" data-role-id-permission-status="3" style="text-decoration: none; color: blue;">Request for {{ $role->role_master_name }} membership cancelled, re-request.</a>
@@ -88,7 +90,7 @@
             <input id="role_id" type="hidden" name="role_id" value="">
             <input id="role_permission_status" type="hidden" name="role_permission_status" value="">
             <div class="row mb-3">
-                <label for="aadhar" class="col-md-4 col-form-label text-md-end">{{ __('Aadhar card') }}(pdf)</label>
+                <label for="aadhar" class="col-md-4 col-form-label text-md-end">{{ __('Aadhar card') }}(image)*</label>
 
                 <div class="col-md-6">
                     <input id="aadhar" type="file" class="form-control" name="aadhar" value="">
@@ -141,7 +143,7 @@
             <input id="agent_role_id" type="hidden" name="agent_role_id" value="">
             <input id="agent_role_permission_status" type="hidden" name="agent_role_permission_status" value="">
             <div class="row mb-3">
-                <label for="aadhar" class="col-md-4 col-form-label text-md-end">{{ __('Aadhar card') }}(pdf)</label>
+                <label for="aadhar" class="col-md-4 col-form-label text-md-end">{{ __('Aadhar card') }}(image)*</label>
 
                 <div class="col-md-6">
                     <input id="agent_aadhar" type="file" class="form-control" name="agent_aadhar" value="">
@@ -149,7 +151,7 @@
             </div>
 
             <div class="row mb-3">
-                <label for="pan" class="col-md-4 col-form-label text-md-end">{{ __('Pan card') }}(pdf)</label>
+                <label for="pan" class="col-md-4 col-form-label text-md-end">{{ __('Pan card') }}(image)*</label>
 
                 <div class="col-md-6">
                     <input id="agent_pan" type="file" class="form-control" name="agent_pan" value="">
@@ -157,7 +159,7 @@
             </div>
 
             <div class="row mb-3">
-                <label for="pan" class="col-md-4 col-form-label text-md-end">{{ __('GST No') }}(pdf)</label>
+                <label for="pan" class="col-md-4 col-form-label text-md-end">{{ __('GST No') }}</label>
 
                 <div class="col-md-6">
                     <input id="agent_gst" type="text" class="form-control" name="agent_gst" value="">
@@ -202,7 +204,7 @@
             <input id="seller_role_id" type="hidden" name="seller_role_id" value="">
             <input id="seller_role_permission_status" type="hidden" name="seller_role_permission_status" value="">
             <div class="row mb-3">
-                <label for="aadhar" class="col-md-4 col-form-label text-md-end">{{ __('Aadhar card') }}(pdf)</label>
+                <label for="aadhar" class="col-md-4 col-form-label text-md-end">{{ __('Aadhar card') }}(image)*</label>
 
                 <div class="col-md-6">
                     <input id="seller_aadhar" type="file" class="form-control" name="seller_aadhar" value="">
@@ -210,7 +212,7 @@
             </div>
 
             <div class="row mb-3">
-                <label for="pan" class="col-md-4 col-form-label text-md-end">{{ __('Pan card') }}(pdf)</label>
+                <label for="pan" class="col-md-4 col-form-label text-md-end">{{ __('Pan card') }}(image)*</label>
 
                 <div class="col-md-6">
                     <input id="seller_pan" type="file" class="form-control" name="seller_pan" value="">
