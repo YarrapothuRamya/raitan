@@ -14,5 +14,6 @@ class Admin_Register_Logs extends Model
         'description',
         'status',
         'audit_time',
+        'ipaddress',
     ];
 }

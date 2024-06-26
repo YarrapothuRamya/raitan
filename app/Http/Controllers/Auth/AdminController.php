@@ -48,18 +48,20 @@ class AdminController extends Controller
 
             $curTime = new \DateTime();
             $currentDatetime = $curTime->format("Y-m-d H:i:s");
-
+            $clientIP = \Request::ip();
             Admin_Register_Logs::create([
                 'phone' => $request->mobile,
                 'description' => 'Registered Successfully',
                 'status' => 'registered',
                 'audit_time' => $currentDatetime,
+                'ipaddress' => $clientIP,
             ]);
      
             return redirect('/admin_register')->with('success', 'Registered successfully!');
         } catch (\Exception $e) {
             $user = User::where("mobile", $request->mobile)->get();
             $user_count = $user->count();
+            $clientIP = \Request::ip();
             if($user_count > 0){
                 $curTime = new \DateTime();
                 $currentDatetime = $curTime->format("Y-m-d H:i:s");
@@ -69,6 +71,7 @@ class AdminController extends Controller
                     'description' => 'Already Registered',
                     'status' => 'already registered',
                     'audit_time' => $currentDatetime,
+                    'ipaddress' => $clientIP,
                 ]);
          
                 return redirect('/admin_register')->with('error', 'Account already Registered with this number!');
@@ -84,6 +87,7 @@ class AdminController extends Controller
                 'description' => $e->getMessage(),
                 'status' => 'error',
                 'audit_time' => $currentDatetime,
+                'ipaddress' => $clientIP,
             ]);
             return redirect('/admin_register')->with('error', $e->getMessage());
         }
@@ -112,12 +116,15 @@ class AdminController extends Controller
                 //dd($role);
                 $curTime = new \DateTime();
                 $currentDatetime = $curTime->format("Y-m-d H:i:s");
+                $clientIP = \Request::ip();
                 Admin_Login_Logs::create([
                     'user_id' => Auth::user()->id,
+                    'user_created_at' => Auth::user()->created_at,
                     'phone' => $request->mobile,
                     'description' => 'Successfully logged in',
                     'status' => 'Logged in',
                     'audit_time' => $currentDatetime,
+                    'ipaddress' => $clientIP,
                 ]);
                 switch ($role) {
                     case '1':
@@ -164,6 +171,7 @@ class AdminController extends Controller
                 $currentDatetime = $curTime->format("Y-m-d H:i:s");
                 $user = User::where("mobile", $request->mobile)->get();
                 $user_count = $user->count();
+                $clientIP = \Request::ip();
                 if($user_count > 0){
                     $user = User::where("mobile", $request->mobile)->first();
                     Admin_Login_Logs::create([
@@ -172,6 +180,7 @@ class AdminController extends Controller
                         'description' => 'Invalid Credentials',
                         'status' => 'error',
                         'audit_time' => $currentDatetime,
+                        'ipaddress' => $clientIP,
                     ]);
                     $errors = ['Invalid credentials'];
                     return redirect()->back()->withErrors($errors);
@@ -182,6 +191,7 @@ class AdminController extends Controller
                         'description' => 'No record found',
                         'status' => 'error',
                         'audit_time' => $currentDatetime,
+                        'ipaddress' => $clientIP,
                     ]);
                     $errors = ['No records found with this number, please contact your master.'];
                     return redirect()->back()->withErrors($errors);
@@ -197,6 +207,7 @@ class AdminController extends Controller
             $currentDatetime = $curTime->format("Y-m-d H:i:s");
             $user = User::where("mobile", $request->mobile)->get();
             $user_count = $user->count();
+            $clientIP = \Request::ip();
             if($user_count > 0){
                 $user = User::where("mobile", $request->mobile)->first();
                 Admin_Login_Logs::create([
@@ -205,6 +216,7 @@ class AdminController extends Controller
                     'description' => $e->getMessage(),
                     'status' => 'error',
                     'audit_time' => $currentDatetime,
+                    'ipaddress' => $clientIP,
                 ]);
                 $errors = [$e->getMessage()];
                 return redirect()->back()->withErrors($errors);
@@ -215,6 +227,7 @@ class AdminController extends Controller
                     'description' => 'No record found',
                     'status' => 'error',
                     'audit_time' => $currentDatetime,
+                    'ipaddress' => $clientIP,
                 ]);
                 $errors = ['No records found with this number, please contact your master.'];
                 return redirect()->back()->withErrors($errors);
@@ -364,6 +377,7 @@ class AdminController extends Controller
                 if($request_roles->save()){
                     $curTime = new \DateTime();
                     $currentDatetime = $curTime->format("Y-m-d H:i:s");
+                    $clientIP = \Request::ip();
                     Common_logs::create([
                         'admin_id' => Auth::user()->id,
                         'user_id' => $request['user_id'],
@@ -371,6 +385,7 @@ class AdminController extends Controller
                         'description' => 'Rejected permission for Sales Successful',
                         'status' => 'Rejected permission for Sales',
                         'audit_time' => $currentDatetime,
+                        'ipaddress' => $clientIP,
                     ]);
                     $data = [
                       'success' => true,
@@ -383,6 +398,7 @@ class AdminController extends Controller
                 }else{
                     $curTime = new \DateTime();
                     $currentDatetime = $curTime->format("Y-m-d H:i:s");
+                    $clientIP = \Request::ip();
                     Common_logs::create([
                         'admin_id' => Auth::user()->id,
                         'user_id' => $request['user_id'],
@@ -390,6 +406,7 @@ class AdminController extends Controller
                         'description' => 'Something went wrong please try again.',
                         'status' => 'Error Rejecting permission for Sales',
                         'audit_time' => $currentDatetime,
+                        'ipaddress' => $clientIP,
                     ]);
                     $data = [
                       'error' => true,
@@ -407,6 +424,7 @@ class AdminController extends Controller
         } catch (\Exception $e) {
             $curTime = new \DateTime();
             $currentDatetime = $curTime->format("Y-m-d H:i:s");
+            $clientIP = \Request::ip();
             Common_logs::create([
                 'admin_id' => Auth::user()->id,
                 'user_id' => $request['user_id'],
@@ -414,6 +432,7 @@ class AdminController extends Controller
                 'description' => $e->getMessage(),
                 'status' => 'Error Rejecting permission for Sales',
                 'audit_time' => $currentDatetime,
+                'ipaddress' => $clientIP,
             ]);
             $data = [
               'error' => true,
@@ -448,6 +467,7 @@ class AdminController extends Controller
                 if($request_roles->save()){
                     $curTime = new \DateTime();
                     $currentDatetime = $curTime->format("Y-m-d H:i:s");
+                    $clientIP = \Request::ip();
                     Common_logs::create([
                         'admin_id' => Auth::user()->id,
                         'user_id' => $request['user_id'],
@@ -455,6 +475,7 @@ class AdminController extends Controller
                         'description' => 'Approved permission for Sales Successful.',
                         'status' => 'Approved permission for Sales',
                         'audit_time' => $currentDatetime,
+                        'ipaddress' => $clientIP,
                     ]);
                     $data = [
                       'success' => true,
@@ -467,6 +488,7 @@ class AdminController extends Controller
                 }else{
                     $curTime = new \DateTime();
                     $currentDatetime = $curTime->format("Y-m-d H:i:s");
+                    $clientIP = \Request::ip();
                     Common_logs::create([
                         'admin_id' => Auth::user()->id,
                         'user_id' => $request['user_id'],
@@ -474,6 +496,7 @@ class AdminController extends Controller
                         'description' => 'Error Approving permission for Sales',
                         'status' => 'Error Approving permission for Sales',
                         'audit_time' => $currentDatetime,
+                        'ipaddress' => $clientIP,
                     ]);
                     $data = [
                       'error' => true,
@@ -491,6 +514,7 @@ class AdminController extends Controller
         } catch (\Exception $e) {
             $curTime = new \DateTime();
             $currentDatetime = $curTime->format("Y-m-d H:i:s");
+            $clientIP = \Request::ip();
             Common_logs::create([
                 'admin_id' => Auth::user()->id,
                 'user_id' => $request['user_id'],
@@ -498,6 +522,7 @@ class AdminController extends Controller
                 'description' => $e->getMessage(),
                 'status' => 'Error Approving permission for Sales',
                 'audit_time' => $currentDatetime,
+                'ipaddress' => $clientIP,
             ]);
             $data = [
               'error' => true,
@@ -546,6 +571,7 @@ class AdminController extends Controller
                 if($request_roles->save()){
                     $curTime = new \DateTime();
                     $currentDatetime = $curTime->format("Y-m-d H:i:s");
+                    $clientIP = \Request::ip();
                     Common_logs::create([
                         'admin_id' => Auth::user()->id,
                         'user_id' => $request['user_id'],
@@ -553,6 +579,7 @@ class AdminController extends Controller
                         'description' => 'Rejected permission for Agents Successful',
                         'status' => 'Rejected permission for Agents',
                         'audit_time' => $currentDatetime,
+                        'ipaddress' => $clientIP,
                     ]);
                     $data = [
                       'success' => true,
@@ -565,6 +592,7 @@ class AdminController extends Controller
                 }else{
                     $curTime = new \DateTime();
                     $currentDatetime = $curTime->format("Y-m-d H:i:s");
+                    $clientIP = \Request::ip();
                     Common_logs::create([
                         'admin_id' => Auth::user()->id,
                         'user_id' => $request['user_id'],
@@ -572,6 +600,7 @@ class AdminController extends Controller
                         'description' => 'Something went wrong please try again.',
                         'status' => 'Error Rejecting permission for Agents',
                         'audit_time' => $currentDatetime,
+                        'ipaddress' => $clientIP,
                     ]);
                     $data = [
                       'error' => true,
@@ -589,6 +618,7 @@ class AdminController extends Controller
         } catch (\Exception $e) {
             $curTime = new \DateTime();
             $currentDatetime = $curTime->format("Y-m-d H:i:s");
+            $clientIP = \Request::ip();
             Common_logs::create([
                 'admin_id' => Auth::user()->id,
                 'user_id' => $request['user_id'],
@@ -596,6 +626,7 @@ class AdminController extends Controller
                 'description' => $e->getMessage(),
                 'status' => 'Error Rejecting permission for Agents',
                 'audit_time' => $currentDatetime,
+                'ipaddress' => $clientIP,
             ]);
             $data = [
               'error' => true,
@@ -630,6 +661,7 @@ class AdminController extends Controller
                 if($request_roles->save()){
                     $curTime = new \DateTime();
                     $currentDatetime = $curTime->format("Y-m-d H:i:s");
+                    $clientIP = \Request::ip();
                     Common_logs::create([
                         'admin_id' => Auth::user()->id,
                         'user_id' => $request['user_id'],
@@ -637,6 +669,7 @@ class AdminController extends Controller
                         'description' => 'Approved permission for Agents Successful.',
                         'status' => 'Approved permission for Agents',
                         'audit_time' => $currentDatetime,
+                        'ipaddress' => $clientIP,
                     ]);
                     $data = [
                       'success' => true,
@@ -649,6 +682,7 @@ class AdminController extends Controller
                 }else{
                     $curTime = new \DateTime();
                     $currentDatetime = $curTime->format("Y-m-d H:i:s");
+                    $clientIP = \Request::ip();
                     Common_logs::create([
                         'admin_id' => Auth::user()->id,
                         'user_id' => $request['user_id'],
@@ -656,6 +690,7 @@ class AdminController extends Controller
                         'description' => 'Something went wrong please try again.',
                         'status' => 'Error Approving permission for Agents',
                         'audit_time' => $currentDatetime,
+                        'ipaddress' => $clientIP,
                     ]);
                     $data = [
                       'error' => true,
@@ -673,6 +708,7 @@ class AdminController extends Controller
         } catch (\Exception $e) {
             $curTime = new \DateTime();
             $currentDatetime = $curTime->format("Y-m-d H:i:s");
+            $clientIP = \Request::ip();
             Common_logs::create([
                 'admin_id' => Auth::user()->id,
                 'user_id' => $request['user_id'],
@@ -680,6 +716,7 @@ class AdminController extends Controller
                 'description' => $e->getMessage(),
                 'status' => 'Error Approving permission for Agents',
                 'audit_time' => $currentDatetime,
+                'ipaddress' => $clientIP,
             ]);
             $data = [
               'error' => true,
@@ -727,6 +764,7 @@ class AdminController extends Controller
                 if($request_roles->save()){
                     $curTime = new \DateTime();
                     $currentDatetime = $curTime->format("Y-m-d H:i:s");
+                    $clientIP = \Request::ip();
                     Common_logs::create([
                         'admin_id' => Auth::user()->id,
                         'user_id' => $request['user_id'],
@@ -734,6 +772,7 @@ class AdminController extends Controller
                         'description' => 'Rejected permission for Sellers Successful',
                         'status' => 'Rejected permission for Sellers',
                         'audit_time' => $currentDatetime,
+                        'ipaddress' => $clientIP,
                     ]);
                     $data = [
                       'success' => true,
@@ -746,6 +785,7 @@ class AdminController extends Controller
                 }else{
                     $curTime = new \DateTime();
                     $currentDatetime = $curTime->format("Y-m-d H:i:s");
+                    $clientIP = \Request::ip();
                     Common_logs::create([
                         'admin_id' => Auth::user()->id,
                         'user_id' => $request['user_id'],
@@ -753,6 +793,7 @@ class AdminController extends Controller
                         'description' => 'Something went wrong please try again.',
                         'status' => 'Error Rejecting permission for Sellers',
                         'audit_time' => $currentDatetime,
+                        'ipaddress' => $clientIP,
                     ]);
                     $data = [
                       'error' => true,
@@ -770,6 +811,7 @@ class AdminController extends Controller
         } catch (\Exception $e) {
             $curTime = new \DateTime();
             $currentDatetime = $curTime->format("Y-m-d H:i:s");
+            $clientIP = \Request::ip();
             Common_logs::create([
                 'admin_id' => Auth::user()->id,
                 'user_id' => $request['user_id'],
@@ -777,6 +819,7 @@ class AdminController extends Controller
                 'description' => $e->getMessage(),
                 'status' => 'Error Rejecting permission for Sellers',
                 'audit_time' => $currentDatetime,
+                'ipaddress' => $clientIP,
             ]);
             $data = [
               'error' => true,
@@ -810,6 +853,7 @@ class AdminController extends Controller
                 if($request_roles->save()){
                     $curTime = new \DateTime();
                     $currentDatetime = $curTime->format("Y-m-d H:i:s");
+                    $clientIP = \Request::ip();
                     Common_logs::create([
                         'admin_id' => Auth::user()->id,
                         'user_id' => $request['user_id'],
@@ -817,6 +861,7 @@ class AdminController extends Controller
                         'description' => 'Approved permission for Sellers Successful.',
                         'status' => 'Approved permission for Sellers',
                         'audit_time' => $currentDatetime,
+                        'ipaddress' => $clientIP,
                     ]);
                     $data = [
                       'success' => true,
@@ -829,6 +874,7 @@ class AdminController extends Controller
                 }else{
                     $curTime = new \DateTime();
                     $currentDatetime = $curTime->format("Y-m-d H:i:s");
+                    $clientIP = \Request::ip();
                     Common_logs::create([
                         'admin_id' => Auth::user()->id,
                         'user_id' => $request['user_id'],
@@ -836,6 +882,7 @@ class AdminController extends Controller
                         'description' => 'Something went wrong please try again.',
                         'status' => 'Error Approving permission for Sellers',
                         'audit_time' => $currentDatetime,
+                        'ipaddress' => $clientIP,
                     ]);
                     $data = [
                       'error' => true,
@@ -853,6 +900,7 @@ class AdminController extends Controller
         } catch (\Exception $e) {
             $curTime = new \DateTime();
             $currentDatetime = $curTime->format("Y-m-d H:i:s");
+            $clientIP = \Request::ip();
             Common_logs::create([
                 'admin_id' => Auth::user()->id,
                 'user_id' => $request['user_id'],
@@ -860,6 +908,7 @@ class AdminController extends Controller
                 'description' => $e->getMessage(),
                 'status' => 'Error Approving permission for Sellers',
                 'audit_time' => $currentDatetime,
+                'ipaddress' => $clientIP,
             ]);
             $data = [
               'error' => true,

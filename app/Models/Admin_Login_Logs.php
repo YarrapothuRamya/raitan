@@ -11,9 +11,11 @@ class Admin_Login_Logs extends Model
 
     protected $fillable = [
         'user_id',
+        'user_created_at',
         'phone',
         'description',
         'status',
         'audit_time',
+        'ipaddress',
     ];
 }

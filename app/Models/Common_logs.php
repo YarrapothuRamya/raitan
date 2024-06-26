@@ -17,5 +17,6 @@ class Common_logs extends Model
         'description',
         'status',
         'audit_time',
+        'ipaddress',
     ];
 }

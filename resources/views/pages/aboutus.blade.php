@@ -17,8 +17,112 @@
                   Any Questions? Look Here
                </h2> -->
                <p class="text-base text-body-color dark:text-dark-6">
-               Raitan is India's No. 1 Local Search engine that provides local search related services to users across India through multiple platforms such as website, mobile website, Apps (Android, iOS), over the telephone (voice, pan India number 8888888888) and text (SMS). Justdial has also initiated ‘Search Plus’ services for its users. These services aim at making several day-to-day tasks conveniently actionable and accessible to users through one App. By doing so, it has transitioned from being purely a provider of local search and related information to being an enabler of such transactions. Justdial has also launched JD Omni, an end-to-end business management solution for SMEs, through which it intends to transition thousands of SMEs to efficiently run their business online and have adequate online presence via their own website and mobile site. Apart from this, it also launched JD Pay, a unique solution for quick digital payments for its users and vendors, and JD Social, its official social sharing platform to provide curated content on latest happenings to users. The organisation also aims to make communication between users and businesses seamless through its Real Time Chat Messenger.
+               Welcome to RAITHAN, your trusted partner in transforming the farming experience. Our mission is to empower farmers with immediate access to essential services, ensuring they can optimize their operations and achieve greater productivity.
+               </p><br>
+
+               <p class="text-base text-body-color dark:text-dark-6">
+               It is nonprofit entity, registered under section 8 company to serve the farmers across the world.
+               </p><br>
+            </div>
+            <div class="mx-auto mb-[60px]  text-center lg:mb-20">
+               <span class="block mb-2 text-lg font-semibold text-primary">
+               WHO WE ARE
+               </span>
+               
+        
+               <!-- <h2 class="text-dark dark:text-white mb-4 text-3xl font-bold sm:text-[40px]/[48px]">
+                  Any Questions? Look Here
+               </h2> -->
+               <p class="text-base text-body-color dark:text-dark-6">
+               At RAITHAN, we understand the unique challenges faced by farmers today. From the unpredictability of weather to the labour-intensive nature of farming, we know that having the right resources at the right time can make all the difference. That’s why we’ve created a GIG platform that connects farmers with the tools and labour they need, precisely when they need them.</p><br>
+
+               
+            </div>
+            <div class="mx-auto mb-[60px]  text-center lg:mb-20">
+               <span class="block mb-2 text-lg font-semibold text-primary">
+               WHAT WE OFFER
+               </span>
+               
+        
+               <!-- <h2 class="text-dark dark:text-white mb-4 text-3xl font-bold sm:text-[40px]/[48px]">
+                  Any Questions? Look Here
+               </h2> -->
+               <p class="text-base text-body-color dark:text-dark-6">
+               Instant Access to Services: Our platform provides farmers with quick and easy access to a variety of services, including:
+               </p><br>
+
+               <p class="text-base text-body-color dark:text-dark-6">
+               <ul style="list-style-type: circle;">
+                  <li>Tractors and Implements: Rent high-quality tractors and implement with just a few clicks. Whether you need a plow, harrow, seeder, or any other equipment, we’ve got you covered.</li>
+                  <li>Agricultural Labor: Find skilled labor for planting, harvesting, and other farm tasks. Our network of workers is ready to assist you with all your farming needs.</li>
+                  <li>Harvesters: Highly technology enabled harvesters to prevent unnecessary waste.</li>
+                  <li>Technology enabled tools: Such as Drones as sprayers, Agri-waste binders, fruit cutters with cutting edge technologies</li>
+                  <li>Servicemen: For electric pump sets, Diesel pump sets, Solar Pump Sets, Tractors</li>
+               </ul><br>
                </p>
+            </div>
+            <div class="mx-auto mb-[60px]  text-center lg:mb-20">
+               <span class="block mb-2 text-lg font-semibold text-primary">
+               OUR VISION
+               </span>
+               
+        
+               <!-- <h2 class="text-dark dark:text-white mb-4 text-3xl font-bold sm:text-[40px]/[48px]">
+                  Any Questions? Look Here
+               </h2> -->
+               <p class="text-base text-body-color dark:text-dark-6">
+               We envision a world where every farmer, regardless of location, has access to the resources they need to thrive. By leveraging technology and fostering a community of skilled workers, we aim to eliminate barriers and create a more efficient and productive agricultural sector.
+               </p><br>
+
+               
+            </div>
+            <div class="mx-auto mb-[60px]  text-center lg:mb-20">
+               <span class="block mb-2 text-lg font-semibold text-primary">
+               OUR MISSION
+               </span>
+               
+        
+               <!-- <h2 class="text-dark dark:text-white mb-4 text-3xl font-bold sm:text-[40px]/[48px]">
+                  Any Questions? Look Here
+               </h2> -->
+               <p class="text-base text-body-color dark:text-dark-6">
+               Our mission is to revolutionize farming by providing instant, reliable, and affordable services through a user-friendly GIG platform. We strive to support farmers in maximizing their yields, reducing downtime, and enhancing overall farm management.
+               </p><br>
+
+               
+            </div>
+            <div class="mx-auto mb-[60px]  text-center lg:mb-20">
+               <span class="block mb-2 text-lg font-semibold text-primary">
+               WHY CHOOSE RAITAN?
+               </span>
+               
+        
+               <!-- <h2 class="text-dark dark:text-white mb-4 text-3xl font-bold sm:text-[40px]/[48px]">
+                  Any Questions? Look Here
+               </h2> -->
+               <p class="text-base text-body-color dark:text-dark-6">
+               Efficiency: Save time and resources by accessing services instantly.<BR>
+               Quality: Benefit from reliable equipment and skilled labour.<BR>
+               Flexibility: Choose services based on your specific needs and schedule.<BR>
+               Support: Our dedicated customer support team is always here to help you.
+               </p><br>
+
+               
+            </div>
+            <div class="mx-auto mb-[60px]  text-center lg:mb-20">
+               <span class="block mb-2 text-lg font-semibold text-primary">
+               JOIN US
+               </span>
+               
+        
+               <!-- <h2 class="text-dark dark:text-white mb-4 text-3xl font-bold sm:text-[40px]/[48px]">
+                  Any Questions? Look Here
+               </h2> -->
+               <p class="text-base text-body-color dark:text-dark-6">
+               Join the RAITHAN community today and experience the future of farming. Whether you're a farmer looking for support or a service provider ready to contribute your skills, we welcome you to be a part of our journey.
+               </p><br>
+
+               
             </div>
             <div class="mt-10 flex items-center justify-center gap-x-6">
                <a href="#" class="rounded-md action-btn px-3.5 py-2.5 text-sm font-semibold  shadow-sm  focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 ">Open roles <span aria-hidden="true">&rarr;</span></a>

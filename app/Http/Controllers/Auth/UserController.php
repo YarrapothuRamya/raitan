@@ -29,6 +29,7 @@ class UserController extends Controller
             //dd($request->role_id);
             $user = User::where("mobile", $request->mobile)->get();
             $user_count = $user->count();
+            $clientIP = \Request::ip();
             if($user_count > 0){
                 $curTime = new \DateTime();
                 $currentDatetime = $curTime->format("Y-m-d H:i:s");
@@ -38,6 +39,7 @@ class UserController extends Controller
                     'description' => 'Already Registered',
                     'status' => 'already registered',
                     'audit_time' => $currentDatetime,
+                    'ipaddress' => $clientIP,
                 ]);
          
                 return response()->json(['status' => 'success', 'message' => 'Account already Registered with this number. Please login!']);
@@ -60,12 +62,14 @@ class UserController extends Controller
                 'description' => 'Registered Successfully',
                 'status' => 'registered',
                 'audit_time' => $currentDatetime,
+                'ipaddress' => $clientIP,
             ]);
      
             return response()->json(['status' => 'success', 'message' => 'Registered successfully!']);
         } catch (\Exception $e) {
             $user = User::where("mobile", $request->mobile)->get();
             $user_count = $user->count();
+            $clientIP = \Request::ip();
             if($user_count > 0){
                 $curTime = new \DateTime();
                 $currentDatetime = $curTime->format("Y-m-d H:i:s");
@@ -75,6 +79,7 @@ class UserController extends Controller
                     'description' => 'Already Registered',
                     'status' => 'already registered',
                     'audit_time' => $currentDatetime,
+                    'ipaddress' => $clientIP,
                 ]);
          
                 return response()->json(['status' => 'error', 'message' => 'Account already Registered with this number. Please login!']);
@@ -89,6 +94,7 @@ class UserController extends Controller
                 'description' => $e->getMessage(),
                 'status' => 'error',
                 'audit_time' => $currentDatetime,
+                'ipaddress' => $clientIP,
             ]);
             return response()->json(['status' => 'error', 'message' => $e->getMessage()]);
             return $e->getMessage();
@@ -111,12 +117,15 @@ class UserController extends Controller
                 //dd("Logged in");
                 $curTime = new \DateTime();
                 $currentDatetime = $curTime->format("Y-m-d H:i:s");
+                $clientIP = \Request::ip();
                 User_Login_Logs::create([
                         'user_id' => Auth::user()->id,
+                        'user_created_at' => Auth::user()->created_at,
                         'phone' => $request->mobile,
                         'description' => 'Successfully logged in',
                         'status' => 'Logged in',
                         'audit_time' => $currentDatetime,
+                        'ipaddress' => $clientIP,
                     ]);
                 return response()->json(['status' => 'success', 'message' => 'Successfully logged in!']);
             }else{
@@ -125,6 +134,7 @@ class UserController extends Controller
                 $currentDatetime = $curTime->format("Y-m-d H:i:s");
                 $user = User::where("mobile", $request->mobile)->get();
                 $user_count = $user->count();
+                $clientIP = \Request::ip();
                 if($user_count > 0){
                     User_Login_Logs::create([
                         'user_id' => $user->id,
@@ -132,6 +142,7 @@ class UserController extends Controller
                         'description' => 'Invalid Credentials',
                         'status' => 'error',
                         'audit_time' => $currentDatetime,
+                        'ipaddress' => $clientIP,
                     ]);
                     return response()->json(['status' => 'error', 'message' => 'Invalid Credentials']);
                 }else{
@@ -141,6 +152,7 @@ class UserController extends Controller
                         'description' => 'No record found',
                         'status' => 'error',
                         'audit_time' => $currentDatetime,
+                        'ipaddress' => $clientIP,
                     ]);
                     return response()->json(['status' => 'error', 'message' => 'No records found with this number, please register.']);
                 }
@@ -159,6 +171,7 @@ class UserController extends Controller
             $currentDatetime = $curTime->format("Y-m-d H:i:s");
             $user = User::where("mobile", $request->mobile)->get();
             $user_count = $user->count();
+            $clientIP = \Request::ip();
             if($user_count > 0){
                 User_Login_Logs::create([
                     'user_id' => $user->id,
@@ -166,6 +179,7 @@ class UserController extends Controller
                     'description' => $e->getMessage(),
                     'status' => 'error',
                     'audit_time' => $currentDatetime,
+                    'ipaddress' => $clientIP,
                 ]);
                 return response()->json(['status' => 'error', 'message' => $e->getMessage()]);
             }else{
@@ -175,6 +189,7 @@ class UserController extends Controller
                     'description' => $e->getMessage(),
                     'status' => 'error',
                     'audit_time' => $currentDatetime,
+                    'ipaddress' => $clientIP,
                 ]);
                 return response()->json(['status' => 'error', 'message' => 'No records found with this number, please register.']);
             }

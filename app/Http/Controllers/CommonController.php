@@ -185,6 +185,7 @@ class CommonController extends Controller
                 if($request_roles->save()){
                     $curTime = new \DateTime();
                     $currentDatetime = $curTime->format("Y-m-d H:i:s");
+                    $clientIP = \Request::ip();
                     if ($request->role_master_role_id == 5) {
                         Common_logs::create([
                             'user_id' => Auth::user()->id,
@@ -192,6 +193,7 @@ class CommonController extends Controller
                             'description' => 'Successfully requested permission for sales',
                             'status' => 'Sales Permission Request Successful',
                             'audit_time' => $currentDatetime,
+                            'ipaddress' => $clientIP,
                         ]);
                     }elseif ($request->role_master_role_id == 6) {
                         Common_logs::create([
@@ -200,6 +202,7 @@ class CommonController extends Controller
                             'description' => 'Successfully requested permission for agents',
                             'status' => 'Agents Permission Request Successful',
                             'audit_time' => $currentDatetime,
+                            'ipaddress' => $clientIP,
                         ]);
                     }elseif ($request->role_master_role_id == 7){
                         Common_logs::create([
@@ -208,6 +211,7 @@ class CommonController extends Controller
                             'description' => 'Successfully requested permission for Sellers',
                             'status' => 'Sellers Permission Request Successful',
                             'audit_time' => $currentDatetime,
+                            'ipaddress' => $clientIP,
                         ]);
                     }
 
@@ -220,6 +224,7 @@ class CommonController extends Controller
                 }else{
                     $curTime = new \DateTime();
                     $currentDatetime = $curTime->format("Y-m-d H:i:s");
+                    $clientIP = \Request::ip();
                     if ($request->role_master_role_id == 5) {
                         Common_logs::create([
                             'user_id' => Auth::user()->id,
@@ -227,6 +232,7 @@ class CommonController extends Controller
                             'description' => 'Something went wrong please try again.',
                             'status' => 'Sales Permission Request Error',
                             'audit_time' => $currentDatetime,
+                            'ipaddress' => $clientIP,
                         ]);
                     }elseif ($request->role_master_role_id == 6) {
                         Common_logs::create([
@@ -235,6 +241,7 @@ class CommonController extends Controller
                             'description' => 'Something went wrong please try again.',
                             'status' => 'Agents Permission Request Error',
                             'audit_time' => $currentDatetime,
+                            'ipaddress' => $clientIP,
                         ]);
                     }elseif ($request->role_master_role_id == 7){
                         Common_logs::create([
@@ -243,6 +250,7 @@ class CommonController extends Controller
                             'description' => 'Something went wrong please try again.',
                             'status' => 'Sellers Permission Request Error',
                             'audit_time' => $currentDatetime,
+                            'ipaddress' => $clientIP,
                         ]);
                     }
                     $data = [
@@ -259,6 +267,7 @@ class CommonController extends Controller
         } catch (\Exception $e) {
             $curTime = new \DateTime();
             $currentDatetime = $curTime->format("Y-m-d H:i:s");
+            $clientIP = \Request::ip();
             if ($request->role_master_role_id == 5) {
                 Common_logs::create([
                     'user_id' => Auth::user()->id,
@@ -266,6 +275,7 @@ class CommonController extends Controller
                     'description' => $e->getMessage(),
                     'status' => 'Sales Permission Request Error',
                     'audit_time' => $currentDatetime,
+                    'ipaddress' => $clientIP,
                 ]);
             }elseif ($request->role_master_role_id == 6) {
                 Common_logs::create([
@@ -274,6 +284,7 @@ class CommonController extends Controller
                     'description' => $e->getMessage(),
                     'status' => 'Agents Permission Request Error',
                     'audit_time' => $currentDatetime,
+                    'ipaddress' => $clientIP,
                 ]);
             }elseif ($request->role_master_role_id == 7){
                 Common_logs::create([
@@ -282,6 +293,7 @@ class CommonController extends Controller
                     'description' => $e->getMessage(),
                     'status' => 'Sellers Permission Request Error',
                     'audit_time' => $currentDatetime,
+                    'ipaddress' => $clientIP,
                 ]);
             }
             $data = [
@@ -571,5 +583,20 @@ class CommonController extends Controller
     public function sellerdetails()
     {
         return view('pages.sellerdetails');
+    }
+
+    public function sales_activity()
+    {
+        return view('user.sales.sales_activity');
+    }
+
+    public function agent_activity()
+    {
+        return view('user.agent.agent_activity');
+    }
+
+    public function seller_activity()
+    {
+        return view('user.seller.seller_activity');
     }
 }
