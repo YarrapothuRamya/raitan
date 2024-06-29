@@ -2535,7 +2535,7 @@ body, button, input, select, textarea{
   -moz-border-radius: 10px;
   border-radius: 10px;
   overflow: hidden;
-  height: 150px;
+  /* height: 150px; */
 }
 
 .cardhotkey__imgBlock img {

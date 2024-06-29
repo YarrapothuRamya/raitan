@@ -53,8 +53,8 @@
         </div>
         <div class="col-md-3">
           <div class="footer-menu">
-            <h3>Quick Links</h3>
-            <ul class="menu-list list-unstyled">
+            <h3 class="text-3xl">Quick Links</h3>
+            <ul class="menu-list list-unstyled leading-8">
               <li class="menu-item">
                 <a href="{{ route('indexroot') }}" class="nav-link">Home</a>
               </li>
@@ -73,8 +73,8 @@
         </div>
         <div class="col-md-3">
           <div class="footer-menu">
-            <h3>Help Center</h5>
-              <ul class="menu-list list-unstyled">
+            <h3 class="text-3xl">Help Center</h5>
+              <ul class="menu-list list-unstyled leading-8">
                 <li class="menu-item">
                   <a href="{{ route('faq.home') }}" class="nav-link">FAQs</a>
                 </li>
@@ -85,7 +85,7 @@
         </div>
         <div class="col-md-3">
           <div>
-            <h3>Our Newsletter</h3>
+            <h3 class="text-3xl">Our Newsletter</h3>
             <p class="blog-paragraph fs-6 pt-1">Subscribe to our newsletter to get updates about our grand offers.</p>
             <div class="search-bar border rounded-pill border-dark-subtle px-2 mt-3">
               <form class="text-center d-flex align-items-center" action="" method="">
