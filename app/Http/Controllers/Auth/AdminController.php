@@ -102,6 +102,7 @@ class AdminController extends Controller
     public function login(Request $request)
     {
         try {
+           // print_r($request);die;
             $request->validate([
                 //'name' => 'required',
                 'mobile' => 'required|digits:10',
@@ -128,20 +129,20 @@ class AdminController extends Controller
                 ]);
                 switch ($role) {
                     case '1':
-                        return redirect()->intended('/master-home');
-                        return '/master-home';
+                        return redirect()->intended('/raitan_admin/master-home');
+                       // return '/raitan_admin/master-home';
                         break;
                     case '2':
-                        return redirect()->intended('/admin-home');
-                        return '/admin-home';
+                        return redirect()->intended('/raitan_admin/admin-home');
+                        //return '/admin-home';
                         break;
                     case '3':
-                        return redirect()->intended('/staff-home');
-                        return '/staff-home';
+                        return redirect()->intended('/raitan_admin/staff-home');
+                        //return '/staff-home';
                         break;
                     case '4':
-                        return redirect()->intended('/customercare-home');
-                        return '/customercare-home';
+                        return redirect()->intended('/raitan_admin/customercare-home');
+                        //return '/customercare-home';
                         break;
                     /*case '5':
                         return redirect()->intended('/sales-home');
@@ -162,7 +163,7 @@ class AdminController extends Controller
 
                     default:
                         return redirect()->intended('/raitan_signin');
-                        return '/login'; 
+                        //return '/login'; 
                     break;
                 }
                 return redirect()->intended('/');

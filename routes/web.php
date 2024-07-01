@@ -48,10 +48,10 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('register-thankyou', [App\Http\Controllers\Auth\RegisterController::class, 'registerthankyou'])->name('register.thankyou');
 
 Route::group(['middleware' => ['auth', 'role']], function () {
-   Route::get('master-home', [App\Http\Controllers\HomeController::class, 'masterHome'])->name('master.home');
-   Route::get('admin-home', [App\Http\Controllers\HomeController::class, 'adminHome'])->name('admin.home');
-   Route::get('staff-home', [App\Http\Controllers\HomeController::class, 'staffHome'])->name('staff.home');
-   Route::get('customercare-home', [App\Http\Controllers\HomeController::class, 'customercareHome'])->name('customercare.home');
+   Route::get('/raitan_admin/master-home', [App\Http\Controllers\HomeController::class, 'masterHome'])->name('master.home');
+   Route::get('/raitan_admin/admin-home', [App\Http\Controllers\HomeController::class, 'adminHome'])->name('admin.home');
+   Route::get('/raitan_admin/staff-home', [App\Http\Controllers\HomeController::class, 'staffHome'])->name('staff.home');
+   Route::get('/raitan_admin/customercare-home', [App\Http\Controllers\HomeController::class, 'customercareHome'])->name('customercare.home');
    Route::get('sales-home', [App\Http\Controllers\HomeController::class, 'salesHome'])->name('sales.home');
    Route::get('agents-home', [App\Http\Controllers\HomeController::class, 'agentsHome'])->name('agents.home');
    Route::get('sellers-home', [App\Http\Controllers\HomeController::class, 'sellersHome'])->name('sellers.home');

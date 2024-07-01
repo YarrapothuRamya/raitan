@@ -39,7 +39,7 @@
                                 <div class="col-md-6">
                                     <input id="mobile" type="tel"
                                         class="form-control @error('mobile') is-invalid @enderror" name="mobile"
-                                        value="{{ old('mobile') }}" required autocomplete="mobile" autofocus>
+                                        C required autocomplete="mobile" autofocus>
 
                                     @error('mobile')
                                         <span class="invalid-feedback" role="alert">
@@ -127,31 +127,57 @@
             </div>
             <div class="w-full md:w-full lg:w-9/12 mx-auto md:mx-0">
                 <div class="bg-white p-10 flex flex-col w-full shadow-xl rounded-xl">
-                    <h2 class="text-2xl font-bold text-gray-800 text-left mb-5">Sign In</h2>
-                    <form action="" class="w-full">
+                    <h2 class="text-2xl font-bold text-gray-800 text-left mb-5">{{ __('Login') }}</h2>
+                    <form method="POST" action="{{ route('raitan_signin') }}"   class="w-full">
+                    @csrf
+                    @if(count($errors) > 0)
+                        @foreach($errors->all() as $message)
+                            <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-4" role="alert">
+                                <span class="block sm:inline">{{ $message }}</span>
+                                <button type="button" class="absolute top-0 bottom-0 right-0 px-4 py-3" data-dismiss="alert" aria-label="Close">
+                                    <span class="text-red-500" aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                        @endforeach
+                    @endif
                         <div id="input" class="flex flex-col w-full my-5">
-                            <label for="mobile" class="text-gray-500 mb-2">mobile*</label>
-                            <input type="text" id="username" placeholder="Please enter your mobile number"
-                                class="appearance-none border-2 border-gray-100 rounded-lg px-4 py-3 placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-green-600 focus:shadow-lg" />
+                            <label for="mobile" class="text-gray-500 mb-2">{{ __('Mobile') }}*</label>
+                            <input type="text" id="mobile" placeholder="Please enter your mobile number" name="mobile"
+                                class="appearance-none border-2 border-gray-100 rounded-lg px-4 py-3 placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-green-600 focus:shadow-lg @error('mobile') is-invalid @enderror" />
+                                @error('mobile')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{-- $message --}}</strong>
+                                        </span>
+                                    @enderror
                         </div>
                         <div id="input" class="flex flex-col w-full my-5">
-                            <label for="password" class="text-gray-500 mb-2">Password*</label>
-                            <input type="password" id="password" placeholder="Please enter your password"
-                                class="appearance-none border-2 border-gray-100 rounded-lg px-4 py-3 placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-green-600 focus:shadow-lg" />
+                            <label for="password" class="text-gray-500 mb-2">{{ __('Password') }}*</label>
+                            <input type="password" id="password" name="password" placeholder="Please enter your password" 
+                                class="appearance-none border-2 border-gray-100 rounded-lg px-4 py-3 placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-green-600 focus:shadow-lg @error('password') is-invalid @enderror" />
+                                @error('password')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{-- $message --}}</strong>
+                                        </span>
+                                    @enderror
                         </div>
                         <div id="input" class="flex flex-col w-full my-5">
-                            <label for="role" class="text-gray-500 mb-2">Role*</label>
-                            <select id="role"
-                                class="appearance-none border-2 border-gray-100 rounded-lg px-4 py-3 text-gray-600 focus:outline-none focus:ring-2 focus:ring-green-600 focus:shadow-lg">
+                            <label for="role" class="text-gray-500 mb-2">{{ __('Role') }}*</label>
+                            <select id="role" namespace="role" name="role"
+                                class="appearance-none border-2 border-gray-100 rounded-lg px-4 py-3 text-gray-600 focus:outline-none focus:ring-2 focus:ring-green-600 focus:shadow-lg @error('role') is-invalid @enderror">
                                 <option value="">Select Role</option>\
                                 <option value="1">Master</option>
                                 <option value="2">Admin</option>
                                 <option value="3">Staff</option>
                                 <option value="4">Customer Care</option>
                             </select>
+                            @error('role')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{-- $message --}}</strong>
+                                        </span>
+                                    @enderror
                         </div>
                         <div id="button" class="flex flex-col w-full my-5">
-                            <button type="button" class="w-full py-4 bg-green-600 rounded-lg text-green-100">
+                            <button type="submit" class="w-full py-4 bg-green-600 rounded-lg text-green-100">
                                 <div class="flex flex-row items-center justify-center">
                                     <div class="mr-2">
                                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -161,11 +187,11 @@
                                             </path>
                                         </svg>
                                     </div>
-                                    <div class="font-bold">Sign In</div>
+                                    <div class="font-bold">{{ __('Login') }}</div>
                                 </div>
                             </button>
                             <div class="flex justify-evenly mt-5">
-                                <a href="#" class="w-full text-center font-medium text-gray-500">Recover password!</a>
+                                <a href="{{Route::has('password.request')}}" class="w-full text-center font-medium text-gray-500">Recover password!</a>
                                 <a href="#" class="w-full text-center font-medium text-gray-500">Sign up!</a>
                             </div>
                         </div>
