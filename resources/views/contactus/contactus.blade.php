@@ -4,7 +4,7 @@
 @section('content')
 <script src="https://cdn.tailwindcss.com"></script>
 
-<nav class="bg-grey-light w-full rounded-md" style="margin-top: 5rem; margin-left: 5rem; position: absolute;">
+<!-- <nav class="bg-grey-light w-full rounded-md" style="margin-top: 5rem; margin-left: 5rem; position: absolute;">
   <ol class="list-reset flex">
     <li>
       <a
@@ -19,9 +19,9 @@
     
     <li class="text-neutral-400">ContactUs</li>
   </ol>
-</nav>
+</nav> -->
 
-<section class=" home_appextra "  style="padding-top: 140px;justify-content: center;">
+<section class="  "  style="padding-top: 140px;justify-content: center;">
         <div class="my-6">
             <div
                 class="grid sm:grid-cols-2 items-center gap-16 p-8 mx-auto max-w-4xl bg-white shadow-t-md rounded-md ">
@@ -42,9 +42,9 @@
                                             data-original="#000000" />
                                     </svg>
                                 </div>
-                                <a target="blank" href="https://raitan.io/e/FkKh7o" class=" text-sm ml-3 color007">
+                                <a target="blank" href="contact@raithan.com" class=" text-sm ml-3 color007">
                                     <small class="block">Mail</small>
-                                    <strong>https://raitan.io/e/FkKh7o</strong>
+                                    <strong>contact@raithan.com</strong>
                                 </a>
                             </li>
                         </ul>

@@ -2,7 +2,7 @@
 <script src="https://cdn.tailwindcss.com"></script>
 @section('content')
 
-<nav class="bg-grey-light w-full rounded-md" style="margin-top: 5rem; margin-left: 5rem; position: absolute;">
+<!-- <nav class="bg-grey-light w-full rounded-md" style="margin-top: 5rem; margin-left: 5rem; position: absolute;">
   <ol class="list-reset flex">
     <li>
       <a
@@ -17,9 +17,9 @@
     
     <li class="text-neutral-400">Services</li>
   </ol>
-</nav>
+</nav> -->
 
-<section class=" bg-green-500ray-50 pb-24 relative home_appextra "  style="padding-top: 140px;justify-content: center;">
+<section class=" bg-green-500ray-50 pb-24 relative  "  style="padding-top: 140px;justify-content: center;">
         <div class="mx-auto   ">
             <div class="relative container mx-auto h-full       lg:px-8">
                 <div class="px-4 py-4      lg:px-8 lg:pt-20">

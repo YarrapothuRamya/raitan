@@ -579,6 +579,16 @@ class CommonController extends Controller
         return view('pages.aboutus');
     }
 
+    public function editservice()
+    {
+        return view('pages.editservice');
+    }
+
+    public function userprofile()
+    {
+        return view('pages.userprofile');
+    }
+
 
     public function sellerdetails()
     {

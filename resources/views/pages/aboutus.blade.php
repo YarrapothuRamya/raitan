@@ -3,7 +3,7 @@
 @section('content')
 
 
-<section class=" home_appextra "  style="justify-content: center;">
+<section class=" mt-2 "  style="justify-content: center;">
         <main class="grid min-h-full place-items-center bg-white px-6 py-24 sm:py-32 lg:px-8">
         <div class="flex flex-wrap -mx-4">
          <div class="w-full px-4">
