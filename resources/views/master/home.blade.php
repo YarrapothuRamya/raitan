@@ -26,18 +26,18 @@
                     <p>Welcome to master dashboard</p>
                     <br>
                     <ul class="list-none space-y-2">
-                        <li><a href="{{ url('roles-home') }}" class="text-blue-600 hover:underline">Roles</a></li>
-                        <li><a href="{{ url('machines') }}" class="text-blue-600 hover:underline">Machines</a></li>
-                        <li><a href="{{ url('implementors') }}" class="text-blue-600 hover:underline">Implementors</a>
+                        <li><a href="{{ url('/raitan_admin/roles-home') }}" class="text-blue-600 hover:underline">Roles</a></li>
+                        <li><a href="{{ url('/raitan_admin/machines') }}" class="text-blue-600 hover:underline">Machines</a></li>
+                        <li><a href="{{ url('/raitan_admin/implementors') }}" class="text-blue-600 hover:underline">Implementors</a>
                         </li>
-                        <li><a href="{{ url('agriculture_labour') }}" class="text-blue-600 hover:underline">Agriculture
+                        <li><a href="{{ url('/raitan_admin/agriculture_labour') }}" class="text-blue-600 hover:underline">Agriculture
                                 Labour</a></li>
-                        <li><a href="{{ url('repairsandservices') }}" class="text-blue-600 hover:underline">Repairs and
+                        <li><a href="{{ url('/raitan_admin/repairsandservices') }}" class="text-blue-600 hover:underline">Repairs and
                                 Services</a></li>
-                        <li><a href="{{ url('sprayers') }}" class="text-blue-600 hover:underline">Sprayers</a></li>
-                        <li><a href="{{ url('admin_register') }}" class="text-blue-600 hover:underline">Register
+                        <li><a href="{{ url('/raitan_admin/sprayers') }}" class="text-blue-600 hover:underline">Sprayers</a></li>
+                        <li><a href="{{ url('/raitan_admin/admin_register') }}" class="text-blue-600 hover:underline">Register
                                 Admin/Staff/Customer Care</a></li>
-                        <li><a href="{{ url('approve_permissions') }}" class="text-blue-600 hover:underline">Approve
+                        <li><a href="{{ url('/raitan_admin/approve_permissions') }}" class="text-blue-600 hover:underline">Approve
                                 Permissions</a></li>
                     </ul>
                 </div>

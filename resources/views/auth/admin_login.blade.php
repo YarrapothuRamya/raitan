@@ -195,7 +195,7 @@
                             </button>
                             <div class="flex justify-evenly mt-5">
                                 <a href="{{Route::has('password.request')}}" class="w-full text-center font-medium text-gray-500">Recover password!</a>
-                                <a href="#" class="w-full text-center font-medium text-gray-500">Sign up!</a>
+                                <!-- <a href="{{route('admin_register')}}" class="w-full text-center font-medium text-gray-500">Sign up!</a> -->
                             </div>
                         </div>
                     </form>

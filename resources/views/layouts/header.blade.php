@@ -75,7 +75,7 @@
   <div class="header_home header">
     <div class="header_left">
       <div class="header_left_inner"><a role="link" class="animate__animated header_jdlogo " href="/"><img
-            src="images/raitanlogo.png" alt="Raitan Logo"
+            src="{{ asset('images/raitanlogo.png')}}" alt="Raitan Logo"
             aria-label="Raitan" title="Raitan" height="70" width="90" class=""></a></div>
     </div>
     <div class="header_center">
@@ -195,9 +195,13 @@
                                               @if ( Auth::user()->role == 8)
                                                 <a class="dropdown-item" href="{{ route('user_dashboard') }}"
                                                  >
-                                                  {{ __('Dashboard') }}
+                                                  {{ __('Service Provider') }}
                                                 </a>
                                               @endif
+                                              <a class="dropdown-item" href="{{ route('userprofile.home') }}"
+                                                 >
+                                                  {{ __('My Profile ') }}
+                                              </a>
                                               <a class="dropdown-item" href="{{ route('password') }}"
                                                  >
                                                   {{ __('Change Password') }}

@@ -57,7 +57,7 @@ class AdminController extends Controller
                 'ipaddress' => $clientIP,
             ]);
      
-            return redirect('/admin_register')->with('success', 'Registered successfully!');
+            return redirect('raitan_admin/admin_register')->with('success', 'Registered successfully!');
         } catch (\Exception $e) {
             $user = User::where("mobile", $request->mobile)->get();
             $user_count = $user->count();
@@ -74,7 +74,7 @@ class AdminController extends Controller
                     'ipaddress' => $clientIP,
                 ]);
          
-                return redirect('/admin_register')->with('error', 'Account already Registered with this number!');
+                return redirect('raitan_admin/admin_register')->with('error', 'Account already Registered with this number!');
                 
             }
 
@@ -89,7 +89,7 @@ class AdminController extends Controller
                 'audit_time' => $currentDatetime,
                 'ipaddress' => $clientIP,
             ]);
-            return redirect('/admin_register')->with('error', $e->getMessage());
+            return redirect('raitan_admin/admin_register')->with('error', $e->getMessage());
         }
         
     }

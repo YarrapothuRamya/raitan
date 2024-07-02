@@ -3,7 +3,7 @@
     <div class="relative flex h-18 items-center justify-between">
       <div class="flex items-center px-2 lg:px-0">
         <div class="flex-shrink-0">
-          <img src="images/raitanlogo.png" alt="Raitan" height="70" width="90">
+          <img src="{{ asset('images/raitanlogo.png')}}" alt="Raitan" height="70" width="90">
         </div>
         <div class="hidden lg:ml-6 lg:block">
           <div class="flex space-x-4">

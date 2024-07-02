@@ -9,10 +9,10 @@ use App\Models\Roles;
 });*/
 
 Route::group(['middleware' => ['auth', 'admin']], function () {
-   Route::get('/admin_register', [App\Http\Controllers\Auth\AdminController::class, 'showRegistrationForm']);
-   Route::post('/admin_register', [App\Http\Controllers\Auth\AdminController::class, 'register'])->name('admin_register');
+   Route::get('/raitan_admin/admin_register', [App\Http\Controllers\Auth\AdminController::class, 'showRegistrationForm']);
+   Route::post('/raitan_admin/admin_register', [App\Http\Controllers\Auth\AdminController::class, 'register'])->name('admin_register');
    
-   Route::get('/approve_permissions', [App\Http\Controllers\Auth\AdminController::class, 'approve_permissions'])->name('approve_permissions');
+   Route::get('/raitan_admin/approve_permissions', [App\Http\Controllers\Auth\AdminController::class, 'approve_permissions'])->name('approve_permissions');
    Route::post('/reject_permissions', [App\Http\Controllers\Auth\AdminController::class, 'reject_permissions_users'])->name('reject_permissions_users');
    Route::post('/approve_permissions', [App\Http\Controllers\Auth\AdminController::class, 'approve_permissions_users'])->name('approve_permissions_users');
 
@@ -62,32 +62,32 @@ Route::group(['middleware' => ['auth']], function () {
    Route::get('password', [App\Http\Controllers\Auth\ChangePasswordController::class, 'index'])->name('password');
    Route::post('change-password', [App\Http\Controllers\Auth\ChangePasswordController::class, 'changePassword'])->name('change.password');
 
-   Route::get('machines', [App\Http\Controllers\MachineImplementorsController::class, 'indexmachine'])->name('machines');
-   Route::post('machine-add', [App\Http\Controllers\MachineImplementorsController::class, 'machineAdd'])->name('machine.add');
-   Route::post('machine-update', [App\Http\Controllers\MachineImplementorsController::class, 'machineUpdate'])->name('machine.update');
+   Route::get('/raitan_admin/machines', [App\Http\Controllers\MachineImplementorsController::class, 'indexmachine'])->name('machines');
+   Route::post('/raitan_admin/machine-add', [App\Http\Controllers\MachineImplementorsController::class, 'machineAdd'])->name('machine.add');
+   Route::post('/raitan_admin/machine-update', [App\Http\Controllers\MachineImplementorsController::class, 'machineUpdate'])->name('machine.update');
 
-   Route::get('implementors', [App\Http\Controllers\MachineImplementorsController::class, 'indeximplementors'])->name('implementors');
-   Route::post('implementor-add', [App\Http\Controllers\MachineImplementorsController::class, 'implementorAdd'])->name('implementor.add');
-   Route::post('implementor-update', [App\Http\Controllers\MachineImplementorsController::class, 'implementorUpdate'])->name('implementor.update');
+   Route::get('/raitan_admin/implementors', [App\Http\Controllers\MachineImplementorsController::class, 'indeximplementors'])->name('implementors');
+   Route::post('/raitan_admin/implementor-add', [App\Http\Controllers\MachineImplementorsController::class, 'implementorAdd'])->name('implementor.add');
+   Route::post('/raitan_admin/implementor-update', [App\Http\Controllers\MachineImplementorsController::class, 'implementorUpdate'])->name('implementor.update');
 
-   Route::get('agriculture_labour', [App\Http\Controllers\AgricultureLabourController::class, 'index'])->name('agriculture_labour');
-   Route::post('agriculturelabour-add', [App\Http\Controllers\AgricultureLabourController::class, 'agriculturelabourAdd'])->name('agriculturelabour.add');
-   Route::post('agriculturelabour-update', [App\Http\Controllers\AgricultureLabourController::class, 'agriculturelabourUpdate'])->name('agriculturelabour.update');
+   Route::get('/raitan_admin/agriculture_labour', [App\Http\Controllers\AgricultureLabourController::class, 'index'])->name('agriculture_labour');
+   Route::post('/raitan_admin/agriculturelabour-add', [App\Http\Controllers\AgricultureLabourController::class, 'agriculturelabourAdd'])->name('agriculturelabour.add');
+   Route::post('/raitan_admin/agriculturelabour-update', [App\Http\Controllers\AgricultureLabourController::class, 'agriculturelabourUpdate'])->name('agriculturelabour.update');
 
-   Route::get('repairsandservices', [App\Http\Controllers\RepairAndServicesController::class, 'index'])->name('repairsandservices');
-   Route::post('repairsandservices-add', [App\Http\Controllers\RepairAndServicesController::class, 'repairsandservicesAdd'])->name('repairsandservices.add');
-   Route::post('repairsandservices-update', [App\Http\Controllers\RepairAndServicesController::class, 'repairsandservicesUpdate'])->name('repairsandservices.update');
+   Route::get('/raitan_admin/repairsandservices', [App\Http\Controllers\RepairAndServicesController::class, 'index'])->name('repairsandservices');
+   Route::post('/raitan_admin/repairsandservices-add', [App\Http\Controllers\RepairAndServicesController::class, 'repairsandservicesAdd'])->name('repairsandservices.add');
+   Route::post('/raitan_admin/repairsandservices-update', [App\Http\Controllers\RepairAndServicesController::class, 'repairsandservicesUpdate'])->name('repairsandservices.update');
 
-   Route::get('sprayers', [App\Http\Controllers\SprayersController::class, 'index'])->name('sprayers');
-   Route::post('sprayers-add', [App\Http\Controllers\SprayersController::class, 'sprayersAdd'])->name('sprayers.add');
-   Route::post('sprayers-update', [App\Http\Controllers\SprayersController::class, 'sprayersUpdate'])->name('sprayers.update');
+   Route::get('/raitan_admin/sprayers', [App\Http\Controllers\SprayersController::class, 'index'])->name('sprayers');
+   Route::post('/raitan_admin/sprayers-add', [App\Http\Controllers\SprayersController::class, 'sprayersAdd'])->name('sprayers.add');
+   Route::post('/raitan_admin/sprayers-update', [App\Http\Controllers\SprayersController::class, 'sprayersUpdate'])->name('sprayers.update');
 });
 
 Route::get('verify-email/{pass_code}/{id}', [App\Http\Controllers\Auth\RegisterController::class, 'verifyEmail'])->name('verify.email');
 
-Route::get('roles-home', [App\Http\Controllers\RolesController::class, 'index'])->name('roles.home');
-Route::post('role-update', [App\Http\Controllers\RolesController::class, 'roleUpdate'])->name('role.update');
-Route::post('role-add', [App\Http\Controllers\RolesController::class, 'roleAdd'])->name('role.add');
+Route::get('/raitan_admin/roles-home', [App\Http\Controllers\RolesController::class, 'index'])->name('role.home');
+Route::post('/raitan_admin/role-update', [App\Http\Controllers\RolesController::class, 'roleUpdate'])->name('role.update');
+Route::post('/raitan_admin/role-add', [App\Http\Controllers\RolesController::class, 'roleAdd'])->name('role.add');
 Route::get('tractors-home', [App\Http\Controllers\TractorsController::class, 'index'])->name('tractors.home');
 Route::get('page-not-found', [App\Http\Controllers\CommonController::class, 'pagenotfound'])->name('pagenotfound.home');
 Route::get('product-details', [App\Http\Controllers\CommonController::class, 'productdetails'])->name('productdetails.home');
