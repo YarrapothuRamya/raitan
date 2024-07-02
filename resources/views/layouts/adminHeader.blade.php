@@ -8,9 +8,9 @@
         <div class="hidden lg:ml-6 lg:block">
           <div class="flex space-x-4">
             <a href="#" class="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white hover:bg-[#50b500] hover:text-white">Dashboard</a>
-            <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-gray-900 hover:bg-[#50b500] hover:text-white">Products</a>
+            <!-- <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-gray-900 hover:bg-[#50b500] hover:text-white">Products</a>
             <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-gray-900 hover:bg-[#50b500] hover:text-white">Steps</a>
-            <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-gray-900 hover:bg-[#50b500] hover:text-white">Terms/Policy</a>
+            <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-gray-900 hover:bg-[#50b500] hover:text-white">Terms/Policy</a> -->
           </div>
         </div>
       </div>

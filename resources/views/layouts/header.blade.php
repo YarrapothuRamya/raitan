@@ -232,7 +232,13 @@
   h-full z-50 sm:py-0 py-1 flex justify-center items-center backdrop-blur-sm bg-black/25" style="opacity: 1;">
     <div class="sm:w-96 w-full bg-gray-50 rounded-xl text-black shadow-2xl drop-shadow-lg" style="opacity: 1;">
       <header class="modal-header-bg">
-        <h3 class="sm:text-black text-gray-50">Login</h3><button class="modal-close"><svg stroke="currentColor"
+        
+        <img
+            src="images/raitanlogo.png" alt="Raitan Logo"
+            aria-label="Raitan" title="Raitan" height="40" width="60" class="">
+            <h3 class="sm:text-black text-gray-50">Login</h3>
+        <button class="modal-close">
+          <svg stroke="currentColor"
             fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" class="w-4 h-4" height="1em" width="1em"
             xmlns="http://www.w3.org/2000/svg">
             <path
@@ -241,7 +247,7 @@
           </svg></button>
       </header>
       <div class="bg-gray-50 rounded-b-xl px-6 pt-3 pb-8 text-black">
-        <p class="py-2 font-light mb-2 text-sm">Enter your mobile number to continue</p>
+        <!-- <h3 class="sm:text-black text-gray-50">Login</h3> -->
         <form action="" method="post">
           <div class="show_message1" id="show_message1">
 
@@ -288,51 +294,65 @@
           Not Registered Yet? <a href="#" onclick="register_popup();" style="text-decoration: none; color: blue">Register</a>
           <button type="button" id="login_button"
             class="action-btn w-full py-2 rounded-xl mt-2 flex items-center justify-center space-x-2">
-            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em"
+            <!-- <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em"
               width="1em" xmlns="http://www.w3.org/2000/svg">
               <path
                 d="M160 32c-16 0-32 16-32 32v384c0 16 16 32 32 32h192c16 0 32-16 32-32V64c0-16-16-32-32-32H160zm21.68 23h96v18h-96V55zM304 55h32v18h-32V55zM154 96h204v320H154V96zm70 342h63.984c16 0 16 16 16 16v6H208v-6s0-16 16-16z">
               </path>
-            </svg>
+            </svg> -->
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1">
+                                            </path>
+                                        </svg>
             <span>Login</span>
           </button>
         </form>
         <span class="text-center block my-4">OR</span>
-        <div class="relative flex items-center mb-5">
+        <div class="relative flex items-center mb-2">
           <div class="flex-grow border-t border-pear"></div>
-          <small class="flex-shrink mx-4 font-light text-gray-600">Continue with social login</small>
+          <small class="flex-shrink mx-4 font-light text-gray-600">Continue with Social Login</small>
           <div class="flex-grow border-t border-pear"></div>
         </div>
-        <button
-          class="flex py-2 px-4 items-center justify-center space-x-3 border text-sm rounded-xl sm:border-black/50 border-black/10 w-full hover:bg-black hover:text-gray-50 smooth-animate mb-4"><svg
-            stroke="currentColor" fill="currentColor" stroke-width="0" version="1.1" x="0px" y="0px"
-            viewBox="0 0 48 48" enable-background="new 0 0 48 48" height="26" width="26"
-            xmlns="http://www.w3.org/2000/svg">
-            <path fill="#FFC107" d="M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12
+        <div class="flex justify-center space-x-4">
+  <button
+    class="flex py-2 px-4 items-center justify-center space-x-3 border text-sm rounded-xl sm:border-black/50 border-black/10 hover:bg-black hover:text-gray-50 smooth-animate">
+    <svg
+      stroke="currentColor" fill="currentColor" stroke-width="0" version="1.1" x="0px" y="0px"
+      viewBox="0 0 48 48" enable-background="new 0 0 48 48" height="26" width="26"
+      xmlns="http://www.w3.org/2000/svg">
+      <path fill="#FFC107" d="M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12
 c0-6.627,5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24
 c0,11.045,8.955,20,20,20c11.045,0,20-8.955,20-20C44,22.659,43.862,21.35,43.611,20.083z"></path>
-            <path fill="#FF3D00" d="M6.306,14.691l6.571,4.819C14.655,15.108,18.961,12,24,12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657
+      <path fill="#FF3D00" d="M6.306,14.691l6.571,4.819C14.655,15.108,18.961,12,24,12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657
 C34.046,6.053,29.268,4,24,4C16.318,4,9.656,8.337,6.306,14.691z"></path>
-            <path fill="#4CAF50" d="M24,44c5.166,0,9.86-1.977,13.409-5.192l-6.19-5.238C29.211,35.091,26.715,36,24,36
+      <path fill="#4CAF50" d="M24,44c5.166,0,9.86-1.977,13.409-5.192l-6.19-5.238C29.211,35.091,26.715,36,24,36
 c-5.202,0-9.619-3.317-11.283-7.946l-6.522,5.025C9.505,39.556,16.227,44,24,44z"></path>
-            <path fill="#1976D2" d="M43.611,20.083H42V20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571
+      <path fill="#1976D2" d="M43.611,20.083H42V20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571
 c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.659,43.862,21.35,43.611,20.083z">
-            </path>
-          </svg>
-          <div class="text-left"><span>Continue with Google</span></div>
-        </button>
-        <button
-          class="flex py-2 px-4 items-center justify-center space-x-3 border text-sm rounded-xl sm:border-black/50 border-black/10 w-full hover:bg-black hover:text-gray-50 smooth-animate"><svg
-            stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" class="text-[#4267B2]"
-            height="26" width="26" xmlns="http://www.w3.org/2000/svg">
-            <g>
-              <path fill="none" d="M0 0h24v24H0z"></path>
-              <path
-                d="M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14c-.326-.043-1.557-.14-2.857-.14C11.928 2 10 3.657 10 6.7v2.8H7v4h3V22h4v-8.5z">
-              </path>
-            </g>
-          </svg><span>Continue with Facebook</span>
-        </button>
+      </path>
+    </svg>
+    <!-- <div class="text-left">
+      <span>Continue with Google</span>
+    </div> -->
+  </button>
+  <button
+    class="flex py-2 px-4 items-center justify-center space-x-3 border text-sm rounded-xl sm:border-black/50 border-black/10 hover:bg-black hover:text-gray-50 smooth-animate">
+    <svg
+      stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" class="text-[#4267B2]"
+      height="26" width="26" xmlns="http://www.w3.org/2000/svg">
+      <g>
+        <path fill="none" d="M0 0h24v24H0z"></path>
+        <path
+          d="M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14c-.326-.043-1.557-.14-2.857-.14C11.928 2 10 3.657 10 6.7v2.8H7v4h3V22h4v-8.5z">
+        </path>
+      </g>
+    </svg>
+    <!-- <span>Continue with Facebook</span> -->
+  </button>
+</div>
+
       </div>
     </div>
   </div>
@@ -343,7 +363,11 @@ c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.
   h-full z-50 sm:py-0 py-1 flex justify-center items-center backdrop-blur-sm bg-black/25" style="opacity: 1;">
     <div class="sm:w-96 w-full bg-gray-50 rounded-xl text-black shadow-2xl drop-shadow-lg" style="opacity: 1;">
       <header class="modal-header-bg">
-        <h3 class="sm:text-black text-gray-50">Register</h3><button class="register-modal-close modal-close"><svg stroke="currentColor"
+      <img
+            src="images/raitanlogo.png" alt="Raitan Logo"
+            aria-label="Raitan" title="Raitan" height="40" width="60" class="">
+        <h3 class="sm:text-black text-gray-50">Register</h3>
+        <button class="register-modal-close modal-close"><svg stroke="currentColor"
             fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" class="w-4 h-4" height="1em" width="1em"
             xmlns="http://www.w3.org/2000/svg">
             <path
@@ -411,7 +435,7 @@ c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.
             <span>Register</span>
           </button>
         </form>
-        Already Registered!Please <a href="#" onclick="signin_popup();" style="text-decoration: none; color: blue">Login</a>
+        Already Registered! Please <a href="#" onclick="signin_popup();" style="text-decoration: none; color: blue">Login</a>
         
         
         

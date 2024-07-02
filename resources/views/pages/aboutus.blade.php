@@ -4,10 +4,10 @@
 
 
 <section class=" mt-2 "  style="justify-content: center;">
-        <main class="grid min-h-full place-items-center bg-white px-6 py-24 sm:py-32 lg:px-8">
+        <div class="grid min-h-full place-items-center bg-white px-6 mb-5 sm:py-32 lg:px-8">
         <div class="flex flex-wrap -mx-4">
          <div class="w-full px-4">
-            <div class="mx-auto mb-[60px]  text-center lg:mb-20">
+            <div class="mx-auto mb-[60px]  text-center lg:mb-5">
                <span class="block mb-2 text-lg font-semibold text-primary">
                ABOUT US
                </span>
@@ -24,7 +24,7 @@
                It is nonprofit entity, registered under section 8 company to serve the farmers across the world.
                </p><br>
             </div>
-            <div class="mx-auto mb-[60px]  text-center lg:mb-20">
+            <div class="mx-auto mb-[60px]  text-center lg:mb-5">
                <span class="block mb-2 text-lg font-semibold text-primary">
                WHO WE ARE
                </span>
@@ -38,7 +38,7 @@
 
                
             </div>
-            <div class="mx-auto mb-[60px]  text-center lg:mb-20">
+            <div class="mx-auto mb-[60px]  text-center lg:mb-5">
                <span class="block mb-2 text-lg font-semibold text-primary">
                WHAT WE OFFER
                </span>
@@ -61,7 +61,7 @@
                </ul><br>
                </p>
             </div>
-            <div class="mx-auto mb-[60px]  text-center lg:mb-20">
+            <div class="mx-auto mb-[60px]  text-center lg:mb-5">
                <span class="block mb-2 text-lg font-semibold text-primary">
                OUR VISION
                </span>
@@ -76,7 +76,7 @@
 
                
             </div>
-            <div class="mx-auto mb-[60px]  text-center lg:mb-20">
+            <div class="mx-auto mb-[60px]  text-center lg:mb-5">
                <span class="block mb-2 text-lg font-semibold text-primary">
                OUR MISSION
                </span>
@@ -91,7 +91,7 @@
 
                
             </div>
-            <div class="mx-auto mb-[60px]  text-center lg:mb-20">
+            <div class="mx-auto mb-[60px]  text-center lg:mb-5">
                <span class="block mb-2 text-lg font-semibold text-primary">
                WHY CHOOSE RAITAN?
                </span>
@@ -109,7 +109,7 @@
 
                
             </div>
-            <div class="mx-auto mb-[60px]  text-center lg:mb-20">
+            <div class="mx-auto mb-[60px]  text-center lg:mb-5">
                <span class="block mb-2 text-lg font-semibold text-primary">
                JOIN US
                </span>
@@ -136,7 +136,7 @@
             <div class="lg:text-[250px] varien absolute top-8 left-24 text-[#50b500]/5  z-0    ">
             Raitan
         </div>
-          </main>
+          </div>
 
     </section>
 
