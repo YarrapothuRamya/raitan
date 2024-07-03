@@ -27,8 +27,7 @@
                 class="grid sm:grid-cols-2 items-center gap-16 p-8 mx-auto max-w-4xl bg-white shadow-t-md rounded-md ">
                 <div>
                     <h1 class="text-3xl font-extrabold">Let's Talk</h1>
-                    <p class="text-sm text-gray-400 mt-3">Have some big idea or brand to develop and need help? Then reach
-                        out we'd love to hear about your project and provide help.</p>
+                    <p class="text-sm text-gray-400 mt-3">We'd love to hear from you! Whether you have a question about our services, need assistance, or just want to provide feedback, we're here to help.</p>
                     <div class="mt-12">
                         <h2 class="text-lg font-extrabold">Email</h2>
                         <ul class="mt-3">
