@@ -116,22 +116,6 @@
     <div class="header_right">
       <div class="header_navigation">
         <ul role="menu" class="headnav_list">
-          <!-- <li role="menuitem" tabindex="0" id="header_language" class="headnav_item headnav_language">
-            <span
-              class="headnav_item_anchor whitefill_animate ">
-              <div class="nav_language_icon jdicon"></div>
-              <div class="headnav_item_text pl-5 font14 fw400 color007">English<span role="none"
-                  class="nav_drop_icon jdicon ml-4"></span></div>
-            </span>
-            <div class="headnav_language_dropdown ">
-              <div class="language_drop_text font14 fw400 color111">हिंदी</div>
-              <div class="language_drop_text font14 fw400 color111">मराठी</div>
-              <div class="language_drop_text font14 fw400 color111">বেঙ্গলি</div>
-              <div class="language_drop_text font14 fw400 color111">ગુજરાતી</div>
-              <div class="language_drop_text font14 fw400 color111">ಕನ್ನಡ</div>
-              <div class="language_drop_text font14 fw400 color111">தமிழ்</div>
-            </div>
-          </li> -->
           <li role="menuitem" tabindex="0" class="headnav_item headnav_hiring"><a
               href="" class="headnav_item_anchor whitefill_animate ">
               <div class="headnav_item_text  font14 fw400 color111">Farm Machinery
@@ -139,17 +123,17 @@
             </a></li>
           <li role="menuitem" tabindex="0" class="headnav_item headnav_investor"><a
               href="" class="headnav_item_anchor whitefill_animate ">
-              <div class="headnav_item_text  font14 fw400 color111">Implementors
+              <div class="headnav_item_text  font14 fw400 color111">Implements
                 </div>
             </a></li>
-          <li role="menuitem" tabindex="0" id="header_advertise" class="headnav_item headnav_advertise">
+          <!--li role="menuitem" tabindex="0" id="header_advertise" class="headnav_item headnav_advertise">
             <a
             href="{{ route('service.home') }}"
               class="headnav_item_anchor whitefill_animate">
               <div class="nav_advertise_icon jdicon"></div>
               <div class="headnav_item_text pl-2 font14 fw400 color111">Services
               </div>
-            </a></li>
+            </a></li-->
           <li role="menuitem" tabindex="0" id="header_freelisting" class="headnav_item headnav_addbusiness"><a
               href=""
               class="headnav_item_anchor whitefill_animate">
