@@ -42,8 +42,8 @@
                     draggable="false" title="" src="images/Banners/Tractor implementors4.jpg" data-src="images/Banners/Tractor implementors4.jpg"
                     class="home_banner_li_image" alt=""></span></li>
               <li tabindex="0" class="slide "><span class="slide_anchor" title="" draggable="false"><img
-                    draggable="false" title="Implementors" src="images/Banners/banner1.jpg"
-                    data-src="images/Banners/banner1.jpg" class="home_banner_li_image" alt="Implementors"></span></li>
+                    draggable="false" title="Implements" src="images/Banners/banner1.jpg"
+                    data-src="images/Banners/banner1.jpg" class="home_banner_li_image" alt="Implements"></span></li>
               <li tabindex="0" class="slide "><span class="slide_anchor" title="" draggable="false"><img
                     draggable="false" title="Machines" src="images/Banners/banner5.jpg"
                     data-src="images/Banners/banner5.jpg" class="home_banner_li_image" alt="Machines"></span></li>
@@ -72,7 +72,7 @@
             </div>
           </div>
         </div>
-        <a title="JDmart - B2B marketplace" href="" class="home_banner_li home_banner_li_effect" datatype="#FFF"
+        <a title="B2B marketplace" href="" class="home_banner_li home_banner_li_effect" datatype="#FFF"
           role="link" aria-label="B2B" style="background-color:#0F7DD8">
           <div class="home_banner_text" style="color:#FFF">B2B</div>
           <div class="home_banner_subtext" style="color:#b5deff">Quick Quotes</div>
@@ -85,8 +85,8 @@
             style="box-sizing:border-box;display:block;overflow:hidden;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;position:absolute;top:0;left:0;bottom:0;right:0">
             <noscript>
             </noscript></span>
-        </a><a title="REPAIRS &amp; SERVICES in Hyderabad" href="" class="home_banner_li home_banner_li_effect"
-          datatype="#FFF" role="link" aria-label="REPAIRS &amp; SERVICES" style="background-color:#2654A1">
+        </a><a title="Repairs &amp; Services" href="" class="home_banner_li home_banner_li_effect"
+          datatype="#FFF" role="link" aria-label="Repairs &amp; Services" style="background-color:#2654A1">
           <div class="home_banner_text" style="color:#FFF">REPAIRS &amp; SERVICES</div>
           <div class="home_banner_subtext" style="color:#b1d5ff">Get Nearest Vendor</div>
           <div class="home_banner_explore" style="background-color: rgb(38, 84, 161);">
@@ -98,7 +98,7 @@
             style="box-sizing:border-box;display:block;overflow:hidden;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;position:absolute;top:0;left:0;bottom:0;right:0">
             <noscript>
             </noscript></span>
-        </a><a title="REAL ESTATE in Hyderabad" href="" class="home_banner_li home_banner_li_effect" datatype="#FFF"
+        </a><a title="Rental Services" href="" class="home_banner_li home_banner_li_effect" datatype="#FFF"
           role="link" aria-label="REAL ESTATE" style="background-color:#6769D0">
           <div class="home_banner_text" style="color:#FFF">Rental Services</div>
           <div class="home_banner_subtext" style="color:#dedfff">Finest Agents</div>
@@ -110,11 +110,11 @@
           </div><span
             style="box-sizing:border-box;display:block;overflow:hidden;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;position:absolute;top:0;left:0;bottom:0;right:0">
             <noscript>
-              <img alt="REAL ESTATE in Hyderabad" title="REAL ESTATE in Hyderabad" sizes="100vw" srcSet="" src=""
+              <img alt="Workers" title="Workers" sizes="100vw" srcSet="" src=""
                 decoding="async" data-nimg="fill"
                 style="position:absolute;top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width:0;height:0;min-width:100%;max-width:100%;min-height:100%;max-height:100%"
                 class="home_banner_img_btm" loading="lazy" /></noscript></span>
-        </a><a title="DOCTORS in Hyderabad" href="" class="home_banner_li home_banner_li_effect" datatype="#FFF"
+        </a><a title="Workers" href="" class="home_banner_li home_banner_li_effect" datatype="#FFF"
           role="link" aria-label="DOCTORS" style="background-color:#00ac7d">
           <div class="home_banner_text" style="color:#FFF">Workers</div>
           <div class="home_banner_subtext" style="color:#acffcf">Book Now</div>
@@ -146,50 +146,6 @@
       </div>
 
       <div class="home_rowbox home_row_2 home_hotkeybox mb-50" data-tracker-id="hotkey">
-        <!--<a class="home_hotkeybox_li imageZoom text_center" title="30HP" href="{{ route('tractors.home') }}">
-            <div class="home_hotkeyimg mb-10" style="background-image:url();">
-              <span
-                style="box-sizing:border-box;display:inline-block;overflow:hidden;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;position:relative;max-width:100%">
-                <span
-                  style="box-sizing:border-box;display:block;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;max-width:100%">
-                  <img
-                    style="display:block;max-width:100%;width:200px;height:auto;background:none;opacity:1;border:0;margin:0;padding:0"
-                    alt="" aria-hidden="true"
-                    src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%2745%27%20height=%2745%27/%3e">
-                </span>
-                <img alt="30HP Tractor" title="30HP Tractor" src="images/tractors/tractor1.jpg?w=96&amp;q=75"
-                  decoding="async" data-nimg="intrinsic"
-                  style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 200px; height: auto; "
-                  srcset="images/tractors/tractor1.jpg?w=48&amp;q=75 1x, images/tractors/tractor1.jpg?w=96&amp;q=75 2x">
-                <noscript>
-                  <img alt="30HP Tractor" title="30HP Tractor"
-                    srcSet="images/tractors/tractor1.jpg?w=48&amp;q=75 1x, images/tractors/tractor1.jpg?w=96&amp;q=75 2x"
-                    src="images/tractors/tractor1.jpg?w=96&amp;q=75" decoding="async" data-nimg="intrinsic"
-                    style="position:absolute;top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width:200px;height:auto;"
-                    loading="lazy">
-                </noscript>
-              </span>
-            </div>
-            <div class="font14 color111 fw400">30HP</div>
-          </a>
-          <a class="home_hotkeybox_li imageZoom text_center " title="20HP" href="#">
-            <div class="home_hotkeyimg mb-10" style="background-image:url();"><span
-                style="box-sizing:border-box;display:inline-block;overflow:hidden;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;position:relative;max-width:100%"><span
-                  style="box-sizing:border-box;display:block;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;max-width:100%"><img
-                    style="display:block;max-width:100%;width:200px;height:auto;background:none;opacity:1;border:0;margin:0;padding:0"
-                    alt="" aria-hidden="true"
-                    src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%2745%27%20height=%2745%27/%3e"></span><img
-                  alt="Hotels in Hyderabad" title="Hotels in Hyderabad" src="images/tractors/tractor3.png?w=96&amp;q=75"
-                  decoding="async" data-nimg="intrinsic"
-                  style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 200px; height: auto; "
-                  srcset="images/tractors/tractor3.png?w=48&amp;q=75 1x, images/tractors/tractor3.png?w=96&amp;q=75 2x"><noscript><img
-                    alt="Hotels in Hyderabad" title="Hotels in Hyderabad"
-                    srcSet="images/tractors/tractor3.png?w=48&amp;q=75 1x, images/tractors/tractor3.png?w=96&amp;q=75 2x"
-                    src="images/tractors/tractor3.png?w=96&amp;q=75" decoding="async" data-nimg="intrinsic"
-                    style="position:absolute;top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width:0;height:0;"
-                    loading="lazy" /></noscript></span></div>
-            <div class="font14 color111 fw400">30-50HP</div>
-          </a>-->
         @foreach($services as $service)
       <a href="<?php  echo env('APP_URL') . '/' . $service->route; ?>"
       class="home_hotkeybox_li imageZoom text_center " title="{{ $service->service_name }}">
@@ -204,7 +160,7 @@
           data-nimg="intrinsic"
           style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 200px; height: auto;"
           srcset="{{ asset('service_images') . '/' . $service->image }}?w=48&amp;q=75 1x, {{ asset('service_images') . '/' . $service->image }}?w=96&amp;q=75 2x"><noscript><img
-          alt="Implementors and Machines" title="Implementors and Machines"
+          alt="Implements and Machines" title="Implements and Machines"
           srcSet="{{ asset('service_images') . '/' . $service->image }}?w=48&amp;q=75 1x, {{ asset('service_images') . '/' . $service->image }}?w=96&amp;q=75 2x"
           src="{{ asset('service_images') . '/' . $service->image }}?w=96&amp;q=75" decoding="async"
           data-nimg="intrinsic"
@@ -221,31 +177,11 @@
 
       <div class="home_rowbox home_row_3 home_card_hotkey mb-50" data-tracker-id="cat">
         <div class="cardhotkey__wrap p-30 pt-15 pb-15 pointer"><a href="#" class="cat_Wedding Requisites"
-            title="Tractor Implementors">
-            <h2 class="cardhotkey__title fw500 font18 color111">Tractor Implementors</h2>
+            title="Tractor Implements">
+            <h2 class="cardhotkey__title fw500 font18 color111">Tractor Implements</h2>
           </a>
           <div class="cardhotkey__content">
 
-            <!--<a class="cardhotkey__imgBlock text_center mt-10" title="Disc Harrow"
-              href="#">
-              
-              <div class="cardhotkey_img_outer imageZoom"><span
-                  style="box-sizing:border-box;display:inline-block;overflow:hidden;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;position:relative;max-width:100%"><span
-                    style="box-sizing:border-box;display:block;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;max-width:100%"><img
-                      style="display:block;max-width:100%;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0"
-                      alt="" aria-hidden="true"
-                      src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%27200%27%20height=%27200%27/%3e"></span><img
-                    alt="Disc Harrow" title="Disc Harrow" src="images/implementors/disc-harrow.jpg?w=640&amp;q=75"
-                    decoding="async" data-nimg="intrinsic"
-                    style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
-                    srcset="images/implementors/disc-harrow.jpg?w=256&amp;q=75 1x, images/implementors/disc-harrow.jpg?w=640&amp;q=75 2x"><noscript><img
-                      alt="Disc Harrow" title="Disc Harrow"
-                      srcSet="images/implementors/disc-harrow.jpg?w=256&amp;q=75 1x, images/implementors/disc-harrow.jpg?w=640&amp;q=75 2x"
-                      src="images/implementors/disc-harrow.jpg?w=640&amp;q=75" decoding="async" data-nimg="intrinsic"
-                      style="position:absolute;top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width:0;height:0;min-width:100%;max-width:100%;min-height:100%;max-height:100%"
-                      loading="lazy" /></noscript></span></div>
-              <figcaption class="color111 font14 pt-10">Disc Harrow<!-- -- </figcaption>
-            </a>-->
             @foreach($tractor_implementors as $tractor_implementor)
             <a class="cardhotkey__imgBlock text_center mt-10" title="{{ $tractor_implementor->name }}" href="#">
               <div class="cardhotkey_img_outer imageZoom"><span
