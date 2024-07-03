@@ -12,8 +12,7 @@ class TractorsController extends Controller
     public function index()
     {
         $services = Services::select('*')->where('status', '=', 1)->get();
-        return view('tractors.home', compact('services'));
-        
+        return view('tractors.home', compact('services'));        
     }
 
 }
