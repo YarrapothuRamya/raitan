@@ -2024,6 +2024,16 @@ body, button, input, select, textarea{
   gap: 20px;
   padding: 0 45px;
 }
+
+
+
+/* Large screens (desktops) */
+@media (min-width: 1920px) {
+  .home_bannerbox {
+    width: 1300px;
+    gap: 50px;
+  }
+}
 .mb-50 {
   margin-bottom: 50px;
 }
@@ -2041,12 +2051,15 @@ body, button, input, select, textarea{
 .home_banner_li:nth-child(1) img {
   height: 100%;
   width: 100%;
+  max-width: 100%;
+  max-height: 100%;
   -webkit-border-radius: 0px;
   -moz-border-radius: 0px;
   border-radius: 0px;
   -o-object-fit: cover;
   object-fit: cover;
 }
+
 .home_banner_swiper {
   overflow: hidden;
   -webkit-border-radius: 12px;
@@ -2061,6 +2074,8 @@ body, button, input, select, textarea{
   height: 240px;
   position: relative;
 }
+
+
 .font11 {
   font-size: 11px;
 }
