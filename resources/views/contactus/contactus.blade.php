@@ -27,7 +27,7 @@
                 class="grid sm:grid-cols-2 items-center gap-16 p-8 mx-auto max-w-4xl bg-white shadow-t-md rounded-md ">
                 <div>
                     <h1 class="text-3xl font-extrabold">Let's Talk</h1>
-                    <p class="text-sm text-gray-400 mt-3">We value our farmers and are here to assist you with any questions, concerns, or feedback you may have. Reach out to us through the following channels.</p>
+                    <p class="text-sm text-gray-400 mt-3">We are dedicated to our users and are ready to help with any questions, concerns, or feedback. You can reach out to us through the following channels.</p>
                     <div class="mt-12">
                         <h2 class="text-lg font-extrabold">Email</h2>
                         <ul class="mt-3">
