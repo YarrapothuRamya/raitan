@@ -229,7 +229,7 @@ class CommonController extends Controller
                         Common_logs::create([
                             'user_id' => Auth::user()->id,
                             'user_phone' => Auth::user()->mobile,
-                            'description' => 'Something went wrong please try again.',
+                            'description' => 'Something went wrong, Please try again!',
                             'status' => 'Sales Permission Request Error',
                             'audit_time' => $currentDatetime,
                             'ipaddress' => $clientIP,
@@ -238,7 +238,7 @@ class CommonController extends Controller
                         Common_logs::create([
                             'user_id' => Auth::user()->id,
                             'user_phone' => Auth::user()->mobile,
-                            'description' => 'Something went wrong please try again.',
+                            'description' => 'Something went wrong, Please try again!',
                             'status' => 'Agents Permission Request Error',
                             'audit_time' => $currentDatetime,
                             'ipaddress' => $clientIP,
@@ -247,7 +247,7 @@ class CommonController extends Controller
                         Common_logs::create([
                             'user_id' => Auth::user()->id,
                             'user_phone' => Auth::user()->mobile,
-                            'description' => 'Something went wrong please try again.',
+                            'description' => 'Something went wrong, Please try again!',
                             'status' => 'Sellers Permission Request Error',
                             'audit_time' => $currentDatetime,
                             'ipaddress' => $clientIP,
@@ -255,7 +255,7 @@ class CommonController extends Controller
                     }
                     $data = [
                       'error' => true,
-                      'message'=> 'Something went wrong please try again.'
+                      'message'=> 'Something went wrong, Please try again!'
                     ] ;
                     return response()->json($data);
                 }
@@ -360,8 +360,8 @@ class CommonController extends Controller
                     ] ;
                     return response()->json($data);
 
-                    return redirect()->back()->with('status', 'Permission successfully requested.');
-                    return redirect()->back()->with('status','machine successfully updated');
+                    return redirect()->back()->with('status', 'Permission Requested!');
+                    return redirect()->back()->with('status','Modified Machine Successfully!');
                 }else{
                     $curTime = new \DateTime();
                     $currentDatetime = $curTime->format("Y-m-d H:i:s");
@@ -369,7 +369,7 @@ class CommonController extends Controller
                         Common_logs::create([
                             'user_id' => Auth::user()->id,
                             'user_phone' => Auth::user()->mobile,
-                            'description' => 'Something went wrong please try again.',
+                            'description' => 'Something went wrong, Please try again!',
                             'status' => 'Sales Permission Request cancel by user Error',
                             'audit_time' => $currentDatetime,
                         ]);
@@ -377,7 +377,7 @@ class CommonController extends Controller
                         Common_logs::create([
                             'user_id' => Auth::user()->id,
                             'user_phone' => Auth::user()->mobile,
-                            'description' => 'Something went wrong please try again.',
+                            'description' => 'Something went wrong, Please try again!',
                             'status' => 'Agents Permission Request cancel by user Error',
                             'audit_time' => $currentDatetime,
                         ]);
@@ -385,18 +385,18 @@ class CommonController extends Controller
                         Common_logs::create([
                             'user_id' => Auth::user()->id,
                             'user_phone' => Auth::user()->mobile,
-                            'description' => 'Something went wrong please try again.',
+                            'description' => 'Something went wrong, Please try again!',
                             'status' => 'Sellers Permission Request cancel by user Error',
                             'audit_time' => $currentDatetime,
                         ]);
                     }
                     $data = [
                       'error' => true,
-                      'message'=> 'Something went wrong please try again.'
+                      'message'=> 'Something went wrong, Please try again!'
                     ] ;
                     return response()->json($data);
-                    return response()->json(['status' => 400, 'error' => 'Something went wrong please try again.']);
-                    return redirect()->back()->with('error','Something went wrong please try again.');
+                    return response()->json(['status' => 400, 'error' => 'Something went wrong, Please try again!']);
+                    return redirect()->back()->with('error','Something went wrong, Please try again!');
                 }
                 //return redirect()->back()->with('name','You have no access to this page');
                 //return view('machines.home', compact('machines'));
@@ -482,11 +482,11 @@ class CommonController extends Controller
             $service->status = $request['addstatus'];
             //dd("Hello");
             if($service->save()){
-                return response()->json(['status' => 200, 'success' => 'Service successfully added.']);
-                return redirect()->back()->with('status','machine successfully updated');
+                return response()->json(['status' => 200, 'success' => 'Added Service Successfully.']);
+                return redirect()->back()->with('status','Modified Machine Successfully');
             }else{
-                return response()->json(['status' => 400, 'error' => 'Something went wrong please try again.']);
-                return redirect()->back()->with('error','Something went wrong please try again.');
+                return response()->json(['status' => 400, 'error' => 'Something went wrong, Please try again!']);
+                return redirect()->back()->with('error','Something went wrong, Please try again!');
             }
             //return redirect()->back()->with('name','You have no access to this page');
             //return view('machines.home', compact('machines'));
@@ -540,11 +540,11 @@ class CommonController extends Controller
                 /*if($request['status'] != $request['status1']){
                     Implementors::where('machine_id', '=', $request['id'])->update(['status' => $request['status']]);
                 }*/
-                return response()->json(['status' => 200, 'success' => 'Service successfully updated']);
+                return response()->json(['status' => 200, 'success' => 'Modified Service Successfully!']);
                 return redirect()->back()->with('status','Role successfully updated');
             }else{
-                return response()->json(['status' => 400, 'error' => 'Something went wrong please try again.']);
-                return redirect()->back()->with('error','Something went wrong please try again.');
+                return response()->json(['status' => 400, 'error' => 'Something went wrong, Please try again!']);
+                return redirect()->back()->with('error','Something went wrong, Please try again!');
             }
             //return redirect()->back()->with('name','You have no access to this page');
             //return view('roles.home', compact('roles'));

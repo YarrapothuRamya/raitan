@@ -99,7 +99,7 @@
       </div>
       <div class="row ">
         <div class="col-md-6 copyright">
-          <p class="secondary-font">© 2023 Raitan. All rights reserved.</p>
+          <p class="secondary-font">© 2024 Raitan. All Rights Reserved. Powered By RLK Infotech</p>
         </div>
         <div class="col-md-6 text-md-end">
           <p class="secondary-font"> </p>
