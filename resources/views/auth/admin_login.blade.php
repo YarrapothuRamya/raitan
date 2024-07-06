@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign in</title>
+    <title>Raitan Sign Up</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
@@ -124,9 +124,18 @@
             src="images/raitanlogo.png" alt="Raitan Logo"
             aria-label="Raitan" title="Raitan" height="130" width="150" class="">
                 </div>
-                <h1 class="text-5xl text-gray-800 font-bold">Client Area</h1>
-                <p class="w-5/12 mx-auto md:mx-0 text-gray-500">Control and monitor your website data from the
-                    dashboard.</p>
+                <h1 class="text-5xl text-gray-800 font-bold">Admin Panel Area</h1>
+                <p class="w-9/12 mx-auto md:mx-0 text-gray-500">Welcome to the Raithan Admin Panel! Get started managing the platform and support our users.<br><br>
+                    <b><u>Important Note:</u></b><br>
+* Make sure your password is strong and unique to protect your admin access.<br>
+* Ensure that your contact information is accurate for account recovery and notifications.<br>
+* By signing up, you agree to our [Privacy Policy] and [Terms of Service].<br><br>
+For any issues during the sign-up process, please contact our support team at [contact@raithan.com].<br><br>
+
+Thank you for joining Raitan!
+
+</p>
+
             </div>
             <div class="w-full md:w-full lg:w-9/12 mx-auto md:mx-0">
                 <div class="bg-white p-10 flex flex-col w-full shadow-xl rounded-xl">
@@ -145,7 +154,7 @@
                     @endif
                         <div id="input" class="flex flex-col w-full my-5">
                             <label for="mobile" class="text-gray-500 mb-2">{{ __('Mobile') }}*</label>
-                            <input type="text" id="mobile" placeholder="Please enter mobile number" name="mobile"
+                            <input type="text" id="mobile" placeholder="Enter Mobile Number" name="mobile"
                                 class="appearance-none border-2 border-gray-100 rounded-lg px-4 py-3 placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-green-600 focus:shadow-lg @error('mobile') is-invalid @enderror" />
                                 @error('mobile')
                                         <span class="invalid-feedback" role="alert">
@@ -155,7 +164,7 @@
                         </div>
                         <div id="input" class="flex flex-col w-full my-5">
                             <label for="password" class="text-gray-500 mb-2">{{ __('Password') }}*</label>
-                            <input type="password" id="password" name="password" placeholder="Please enter password" 
+                            <input type="password" id="password" name="password" placeholder="Enter Password" 
                                 class="appearance-none border-2 border-gray-100 rounded-lg px-4 py-3 placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-green-600 focus:shadow-lg @error('password') is-invalid @enderror" />
                                 @error('password')
                                         <span class="invalid-feedback" role="alert">

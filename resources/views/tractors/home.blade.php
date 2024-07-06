@@ -78,7 +78,10 @@
         </div>
         <div class="w-full flex flex-col col-span-2 space-y-4 lg:mt-0 mt-8 overflow-y-auto pb-5">
 
-<!--    -->
+                @foreach($services as $service)
+                <!-- lists & image -->
+                <a href="<?php echo env('APP_URL'). '/' .$service->route; ?>">
+
           <a href="{{ route('productdetails.home') }}" class="tractor-card" data-hp="30">
             <div class="tractor-block border border-pear/30 shadow-md shadow-pear/30 rounded-lg lg:p-4 p-2">
               <div class="flex justify-between clickable">
@@ -160,6 +163,7 @@
 
             </div>
           </a>
+                @endforeach
 
 <!--    -->
 
