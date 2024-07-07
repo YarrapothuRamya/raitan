@@ -162,6 +162,14 @@
         width: 16rem;
     }
 
+    .bg-custom-green-main {
+    background-color: #1A5319; 
+}
+
+.bg-custom-green-light {
+    background-color: #508D4E; 
+}
+
     @media only screen and (min-width: 768px) {
         .header-right {
             width: calc(100% - 16rem);
@@ -170,14 +178,14 @@
 </style>
 
 <body>
-<div x-data="setup()" :class="{ 'dark': isDark }">
+
 <div class="min-h-screen flex flex-col flex-auto flex-shrink-0 antialiased bg-white dark:bg-gray-700 text-black dark:text-white">
 
 @include('layouts.adminHeader')
 
     @yield('content')
 
-</div>
+
 </div>
 
 

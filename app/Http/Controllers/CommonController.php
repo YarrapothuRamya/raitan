@@ -589,6 +589,11 @@ class CommonController extends Controller
         return view('pages.userprofile');
     }
 
+    public function bookings()
+    {
+        return view('pages.bookings');
+    }
+
 
     public function sellerdetails()
     {

@@ -1,6 +1,8 @@
-@extends('layouts.app')
+@extends('layouts.adminapp')
 
 @section('content')
+
+<div class="h-full ml-14 mt-14 mb-10 md:ml-64">
 <div class="container mt-20">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -103,6 +105,8 @@
         </div>
     </div>
 </div>
+</div>
+
 
 
 <!-- jQuery library -->

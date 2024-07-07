@@ -1,13 +1,13 @@
  <!-- Header -->
  <div class="fixed w-full flex items-center justify-between h-14 text-white z-10">
                 <div
-                    class="flex items-center justify-start md:justify-center pl-3 w-14 md:w-64 h-14 bg-blue-800 dark:bg-gray-800 border-none">
+                    class="flex items-center justify-start md:justify-center pl-3 w-14 md:w-64 h-14 bg-custom-green-main dark:bg-gray-800 border-none">
                     <img class="w-7 h-7 md:w-10 md:h-10 mr-2 rounded-md overflow-hidden"
                         src="https://therminic2018.eu/wp-content/uploads/2018/07/dummy-avatar.jpg" />
                     <span class="hidden md:block">ADMIN</span>
                     
                 </div>
-                <div class="flex justify-between items-center h-14 bg-blue-800 dark:bg-gray-800 header-right">
+                <div class="flex justify-between items-center h-14 bg-custom-green-main dark:bg-gray-800 header-right">
                     <div
                         class="bg-white rounded flex items-center w-full max-w-xl mr-4 p-2 shadow-sm border border-gray-200">
                         <button class="outline-none focus:outline-none">
@@ -59,7 +59,7 @@
             <!-- ./Header -->
 
           <!-- Sidebar -->
-<div class="fixed flex flex-col top-14 left-0 w-14 hover:w-64 md:w-64 bg-blue-900 dark:bg-gray-900 h-full text-white transition-all duration-300 border-none z-10 sidebar">
+<div class="fixed flex flex-col top-14 left-0 w-14 hover:w-64 md:w-64 bg-custom-green-light dark:bg-gray-900 h-full text-white transition-all duration-300 border-none z-10 sidebar">
     <div class="overflow-y-auto overflow-x-hidden flex flex-col justify-between flex-grow">
         <ul class="flex flex-col py-4 space-y-1">
             <li class="px-5 hidden md:block">
@@ -68,7 +68,7 @@
                 </div>
             </li>
             <li>
-                <a href="#" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-blue-800 dark:hover:bg-gray-600 text-white-600 hover:text-white-800 border-l-4 border-transparent hover:border-blue-500 dark:hover:border-gray-800 pr-6">
+                <a href="{{ url('/raitan_admin/master-home') }}" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-custom-green-main dark:hover:bg-gray-600 text-white-600 hover:text-white-800 border-l-4 border-transparent hover:border-blue-500 dark:hover:border-gray-800 pr-6">
                     <span class="inline-flex justify-center items-center ml-4">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
@@ -79,7 +79,7 @@
             </li>
             <!-- New items added below -->
             <li>
-                <a href="#" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-blue-800 dark:hover:bg-gray-600 text-white-600 hover:text-white-800 border-l-4 border-transparent hover:border-blue-500 dark:hover:border-gray-800 pr-6">
+                <a href="{{ url('/raitan_admin/roles-home') }}" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-custom-green-main dark:hover:bg-gray-600 text-white-600 hover:text-white-800 border-l-4 border-transparent hover:border-blue-500 dark:hover:border-gray-800 pr-6">
                     <span class="inline-flex justify-center items-center ml-4">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
@@ -89,7 +89,7 @@
                 </a>
             </li>
             <li>
-                <a href="#" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-blue-800 dark:hover:bg-gray-600 text-white-600 hover:text-white-800 border-l-4 border-transparent hover:border-blue-500 dark:hover:border-gray-800 pr-6">
+                <a href="{{ url('/raitan_admin/machines') }}" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-custom-green-main dark:hover:bg-gray-600 text-white-600 hover:text-white-800 border-l-4 border-transparent hover:border-blue-500 dark:hover:border-gray-800 pr-6">
                     <span class="inline-flex justify-center items-center ml-4">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
@@ -99,7 +99,7 @@
                 </a>
             </li>
             <li>
-                <a href="#" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-blue-800 dark:hover:bg-gray-600 text-white-600 hover:text-white-800 border-l-4 border-transparent hover:border-blue-500 dark:hover:border-gray-800 pr-6">
+                <a href="{{ url('/raitan_admin/implementors') }}" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-custom-green-main dark:hover:bg-gray-600 text-white-600 hover:text-white-800 border-l-4 border-transparent hover:border-blue-500 dark:hover:border-gray-800 pr-6">
                     <span class="inline-flex justify-center items-center ml-4">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2l4-4"></path>
@@ -109,7 +109,7 @@
                 </a>
             </li>
             <li>
-                <a href="#" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-blue-800 dark:hover:bg-gray-600 text-white-600 hover:text-white-800 border-l-4 border-transparent hover:border-blue-500 dark:hover:border-gray-800 pr-6">
+                <a href="{{ url('/raitan_admin/agriculture_labour') }}" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-custom-green-main dark:hover:bg-gray-600 text-white-600 hover:text-white-800 border-l-4 border-transparent hover:border-blue-500 dark:hover:border-gray-800 pr-6">
                     <span class="inline-flex justify-center items-center ml-4">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3"></path>
@@ -119,7 +119,7 @@
                 </a>
             </li>
             <li>
-                <a href="#" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-blue-800 dark:hover:bg-gray-600 text-white-600 hover:text-white-800 border-l-4 border-transparent hover:border-blue-500 dark:hover:border-gray-800 pr-6">
+                <a href="{{ url('/raitan_admin/repairsandservices') }}" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-custom-green-main dark:hover:bg-gray-600 text-white-600 hover:text-white-800 border-l-4 border-transparent hover:border-blue-500 dark:hover:border-gray-800 pr-6">
                     <span class="inline-flex justify-center items-center ml-4">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14"></path>
@@ -129,7 +129,7 @@
                 </a>
             </li>
             <li>
-                <a href="#" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-blue-800 dark:hover:bg-gray-600 text-white-600 hover:text-white-800 border-l-4 border-transparent hover:border-blue-500 dark:hover:border-gray-800 pr-6">
+                <a href="{{ url('/raitan_admin/sprayers') }}" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-custom-green-main dark:hover:bg-gray-600 text-white-600 hover:text-white-800 border-l-4 border-transparent hover:border-blue-500 dark:hover:border-gray-800 pr-6">
                     <span class="inline-flex justify-center items-center ml-4">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4h16v16H4z"></path>
@@ -139,7 +139,7 @@
                 </a>
             </li>
             <li>
-                <a href="#" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-blue-800 dark:hover:bg-gray-600 text-white-600 hover:text-white-800 border-l-4 border-transparent hover:border-blue-500 dark:hover:border-gray-800 pr-6">
+                <a href="{{ url('/raitan_admin/admin_register') }}" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-custom-green-main dark:hover:bg-gray-600 text-white-600 hover:text-white-800 border-l-4 border-transparent hover:border-blue-500 dark:hover:border-gray-800 pr-6">
                     <span class="inline-flex justify-center items-center ml-4">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 4v16M17 4v16"></path>
@@ -149,7 +149,7 @@
                 </a>
             </li>
             <li>
-                <a href="#" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-blue-800 dark:hover:bg-gray-600 text-white-600 hover:text-white-800 border-l-4 border-transparent hover:border-blue-500 dark:hover:border-gray-800 pr-6">
+                <a href="{{ url('/raitan_admin/approve_permissions') }}" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-custom-green-main dark:hover:bg-gray-600 text-white-600 hover:text-white-800 border-l-4 border-transparent hover:border-blue-500 dark:hover:border-gray-800 pr-6">
                     <span class="inline-flex justify-center items-center ml-4">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3l3 3m-3 3l3 3m-3-3H6a1 1 0 00-1 1v7a1 1 0 001 1h1"></path>

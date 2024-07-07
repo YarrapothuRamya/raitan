@@ -97,6 +97,7 @@ Route::get('faq', [App\Http\Controllers\CommonController::class, 'faqs'])->name(
 Route::get('aboutus', [App\Http\Controllers\CommonController::class, 'aboutus'])->name('aboutus.home');
 Route::get('edit-service', [App\Http\Controllers\CommonController::class, 'editservice'])->name('editservice.home');
 Route::get('my-profile', [App\Http\Controllers\CommonController::class, 'userprofile'])->name('userprofile.home');
+Route::get('my-bookings', [App\Http\Controllers\CommonController::class, 'bookings'])->name('bookings.home');
 
 Route::get('/user_dashboard', [App\Http\Controllers\CommonController::class, 'user_dashboard'])->name('user_dashboard');
 Route::post('/add_role_request', [App\Http\Controllers\CommonController::class, 'add_role_request'])->name('add_role_request');
