@@ -27,7 +27,11 @@ class UserController extends Controller
             );
 
             //dd($request->role_id);
-            $user = User::where("mobile", $request->mobile)->get();
+            $user = User::where("mobile", $request->mobile)->where(function ($query) {
+                $query->where('role', 8)
+                      ->orWhere('role', 7) // Example additional role condition
+                      ->orWhere('role', 6)->orWhere('role', 5); // Example additional role condition
+            })->get();
             $user_count = $user->count();
             $clientIP = \Request::ip();
             if($user_count > 0){

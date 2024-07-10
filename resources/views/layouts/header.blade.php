@@ -154,54 +154,56 @@
               fdprocessedid="yopgan">
               <div class="">
               @guest
-                                      @if (Route::has('login'))
-                                          
-                                              <a class="headnav_item_text font14 fw500 colorFFF" id="header_login">Log in</a>
+    @if (Route::has('login'))
+        <a class="headnav_item_text font14 fw500 colorFFF" id="header_login">Log in</a>
+    @endif
 
-                                         
-                                      @endif
+    @if (Route::has('register'))
+        <a class="headnav_item_text font14 fw500 colorFFF" id="header_register">/ Register</a>
+    @endif
+@else
+    @php
+        $role = Auth::user()->role;
+    @endphp
 
-                                      @if (Route::has('register'))
-                                          
-                                              <a class="headnav_item_text font14 fw500 colorFFF" id="header_register">/ Register</a>
-                                         
-                                      @endif
-                                  @else
-                                      
-                                     
-                                          <a id="navbarDropdown" class="headnav_item_text font14 fw500 colorFFF  dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                              {{ Auth::user()->name }}
-                                          </a>
-                                          <a class="headnav_item_text font14 fw500 colorFFF d-none" id="header_login">Log in</a>
-                                          <a class="headnav_item_text font14 fw500 colorFFF d-none" id="header_register">/ Register</a>
+    @if (in_array($role, [5, 6, 7, 8]))
+        <a id="navbarDropdown" class="headnav_item_text font14 fw500 colorFFF dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+            {{ Auth::user()->name }}
+        </a>
+        <a class="headnav_item_text font14 fw500 colorFFF d-none" id="header_login">Log in</a>
+        <a class="headnav_item_text font14 fw500 colorFFF d-none" id="header_register">/ Register</a>
 
-                                          <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                              @if ( Auth::user()->role == 8)
-                                                <a class="dropdown-item" href="{{ route('user_dashboard') }}"
-                                                 >
-                                                  {{ __('Service Provider') }}
-                                                </a>
-                                              @endif
-                                              <a class="dropdown-item" href="{{ route('userprofile.home') }}"
-                                                 >
-                                                  {{ __('My Profile ') }}
-                                              </a>
-                                              <a class="dropdown-item" href="{{ route('password') }}"
-                                                 >
-                                                  {{ __('Change Password') }}
-                                              </a>
-                                              <a class="dropdown-item" href="{{ route('logout') }}"
-                                                 onclick="event.preventDefault();
-                                                               document.getElementById('logout-form').submit();">
-                                                  {{ __('Logout') }}
-                                              </a>
+        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+            @if (Auth::user()->role == 8)
+                <a class="dropdown-item" href="{{ route('user_dashboard') }}">
+                    {{ __('Service Provider') }}
+                </a>
+            @endif
+            <a class="dropdown-item" href="{{ route('userprofile.home') }}">
+                {{ __('My Profile') }}
+            </a>
+            <a class="dropdown-item" href="{{ route('password') }}">
+                {{ __('Change Password') }}
+            </a>
+            <a class="dropdown-item" href="{{ route('logout') }}"
+               onclick="event.preventDefault();
+                             document.getElementById('logout-form').submit();">
+                {{ __('Logout') }}
+            </a>
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                @csrf
+            </form>
+        </div>
+    @else
+        @if (Route::has('login'))
+            <a class="headnav_item_text font14 fw500 colorFFF" id="header_login">Log in</a>
+        @endif
 
-                                              <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                                  @csrf
-                                              </form>
-                                          </div>
-                                     
-                                  @endguest
+        @if (Route::has('register'))
+            <a class="headnav_item_text font14 fw500 colorFFF" id="header_register">/ Register</a>
+        @endif
+    @endif
+@endguest
                   
               </div>
             </div>
