@@ -2,7 +2,80 @@
 
 @section('content')
 <div class="h-full ml-14 mt-14 mb-10 md:ml-64">
-<div class="container mt-20">
+
+
+
+<div class="mt-4 mx-4">
+        <div class="w-full overflow-hidden rounded-lg shadow-xs">
+            <div class="flex flex-wrap items-center px-4 py-2">
+                <div class="relative w-full max-w-full flex-grow flex-1">
+                    <h3 class="font-semibold text-base text-gray-900 dark:text-gray-50">Roles</h3>
+                </div>
+                <div class="relative w-full max-w-full flex-grow flex-1 text-right">
+                    <button
+                        class="action-btn py-1.5 font-light text-sm  px-4 inline-block mt-2 rounded-lg text-center shadow-md roleadd"
+                        type="button" data-toggle="modal" data-target="#roleModal">Add Role</button>
+                </div>
+            </div>
+            <div class="w-full overflow-x-auto">
+                <table class="w-full">
+                    <thead>
+                        <tr
+                            class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
+                            
+                            <th class="px-4 py-3">S No</th>   
+                            <th class="px-4 py-3">Role Name</th>
+                            <th class="px-4 py-3">Role ID</th>
+                            <th class="px-4 py-3">Parent Name</th>
+                            <th class="px-4 py-3">Status</th>
+                            <th class="px-4 py-3">Actions</th>
+                            <th class="px-4 py-3"></th>
+                        </tr>
+                    </thead>
+                    <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800">
+                    <?php $i = 0; ?>
+                    @foreach($roles_with_parent as $role)
+                        <tr class="bg-gray-50 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-900 text-gray-700 dark:text-gray-400">
+                        <td class="px-4 py-3"><?php echo ++$i; ?></td>
+                        <td class="px-4 py-3">Administrator</td>
+                            <td class="px-4 py-3">{{ $role['name'] }}</td>
+                            <td class="px-4 py-3">{{ $role['role_id'] }}</td>
+                            <td class="px-4 py-3">
+                                @if(!empty($role['parent_name']->name))
+                                    {{ $role['parent_name']->name }}
+                                    @else
+                                    @endif
+                                </td>
+                                <td class="px-4 py-3">
+                                    @if($role['status'] == 1)
+                                        Active
+                                    @elseif($role['status'] == 0)
+                                        Inactive
+                                    @endif
+                                </td>
+                            <td class="px-4 py-3">
+                                <button type="button" class=" bg-blue-500 text-white py-1.5 font-light text-sm w-full px-4 inline-block mt-2 rounded-lg text-center shadow-md roleedit" data-toggle="modal" data-target="#roleModal" data-id="{{ $role['id'] }}" data-name="{{ $role['name'] }}" data-status="{{ $role['status'] }}" data-parent-id="{{ $role['parent_id'] }}">Edit</button>
+                                
+                            </td>
+                        </tr>
+                        @endforeach
+
+                       
+                        <!-- Add more rows as needed -->
+                    </tbody>
+                </table>
+            </div>
+            <!-- Pagination and other controls -->
+        </div>
+    </div>
+
+
+
+
+
+
+
+<!-- <div class="container mt-20">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -70,7 +143,7 @@
     </div>
 </div>
 
-<!-- Modal -->
+
 <div class="modal fade" id="roleModal" tabindex="-1" role="dialog" aria-labelledby="roleModalCenterTitle" aria-hidden="true" style="z-index: 9999;">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
@@ -137,13 +210,13 @@
                 </div>
             </div>
 
-            <!--<div class="row mb-0">
+            <div class="row mb-0">
                 <div class="col-md-6 offset-md-4">
                     <button type="submit" class="btn btn-primary">
                         {{ __('Update') }}
                     </button>
                 </div>
-            </div>-->
+            </div>
         
       
           <div class="modal-footer">
@@ -171,7 +244,7 @@
             <div class="show_message" id="show_message">
 
             </div>
-            <!--<input id="id" type="hidden" class="form-control @error('name') is-invalid @enderror" name="id" value="">-->
+            <input id="id" type="hidden" class="form-control @error('name') is-invalid @enderror" name="id" value="">
             <div class="row mb-3">
                 <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Name') }}*</label>
 
@@ -222,13 +295,13 @@
                 </div>
             </div>
 
-            <!--<div class="row mb-0">
+            <div class="row mb-0">
                 <div class="col-md-6 offset-md-4">
                     <button type="submit" class="btn btn-primary">
                         {{ __('Update') }}
                     </button>
                 </div>
-            </div>-->
+            </div>
         
       
           <div class="modal-footer">
@@ -239,7 +312,7 @@
         </form>
     </div>
   </div>
-</div>
+</div> -->
 
 </div>
 

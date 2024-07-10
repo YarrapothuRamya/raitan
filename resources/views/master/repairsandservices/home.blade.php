@@ -3,7 +3,86 @@
 @section('content')
 
 <div class="h-full ml-14 mt-14 mb-10 md:ml-64">
-<div class="container mt-20">
+
+
+<div class="mt-4 mx-4">
+    <div class="w-full overflow-hidden rounded-lg shadow-xs">
+        <div class="flex flex-wrap items-center px-4 py-2">
+            <div class="relative w-full max-w-full flex-grow flex-1">
+                <h3 class="font-semibold text-base text-gray-900 dark:text-gray-50">Add/Edit Repairs and Services</h3>
+            </div>
+            <div class="relative w-full max-w-full flex-grow flex-1 text-right">
+                <button class="action-btn py-1.5 font-light text-sm px-4 inline-block mt-2 rounded-lg text-center shadow-md repairsandservicesadd" type="button" data-toggle="modal" data-target="#repairsandservicesModal">Add Repairs and Services</button>
+            </div>
+        </div>
+        <div class="w-full overflow-x-auto">
+            <div class="px-4 py-3">
+                @if (session('status'))
+                    <div class="alert alert-success" role="alert">
+                        {{ session('status') }}
+                    </div>
+                @endif
+                @if (session('error'))
+                    <div class="alert alert-danger" role="alert">
+                        {{ session('error') }}
+                    </div>
+                @endif
+                @if($errors->any())
+                    {!! implode('', $errors->all('<div style="color:red">:message</div>')) !!}
+                @endif
+                @if(Session::get('error') && Session::get('error') != null)
+                    <div style="color:red">{{ Session::get('error') }}</div>
+                    @php
+                        Session::put('error', null)
+                    @endphp
+                @endif
+                @if(Session::get('success') && Session::get('success') != null)
+                    <div style="color:green">{{ Session::get('success') }}</div>
+                    @php
+                        Session::put('success', null)
+                    @endphp
+                @endif
+            </div>
+            <table class="w-full">
+                <thead>
+                    <tr class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
+                        <th class="px-4 py-3">S No</th>
+                        <th class="px-4 py-3">Name</th>
+                        <th class="px-4 py-3">Image</th>
+                        <th class="px-4 py-3">Description</th>
+                        <th class="px-4 py-3">Status</th>
+                        <th class="px-4 py-3">Action</th>
+                    </tr>
+                </thead>
+                <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800">
+                    <?php $i = 0; ?>
+                    @foreach($repairsandservices as $ras)
+                        <tr class="bg-gray-50 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-900 text-gray-700 dark:text-gray-400">
+                            <td class="px-4 py-3"><?php echo ++$i; ?></td>
+                            <td class="px-4 py-3">{{ $ras->name }}</td>
+                            <td class="px-4 py-3"><img src='{{ asset("repairsandservices_images")."/".$ras->image }}' width="100px" /></td>
+                            <td class="px-4 py-3">{{ $ras->description }}</td>
+                            <td class="px-4 py-3">
+                                @if($ras->status == 1)
+                                    Active
+                                @elseif($ras->status == 0)
+                                    Inactive
+                                @endif
+                            </td>
+                            <td class="px-4 py-3">
+                                <button type="button" class="bg-blue-500 text-white py-1.5 font-light text-sm w-full px-4 inline-block mt-2 rounded-lg text-center shadow-md repairsandservicesedit" data-toggle="modal" data-target="#repairsandservicesModal" data-id="{{ $ras['id'] }}" data-name="{{ $ras['name'] }}" data-description="{{ $ras['description'] }}" data-status="{{ $ras['status'] }}" data-image="{{ asset('repairsandservices_images').'/'.$ras['image'] }}">Edit</button>
+                            </td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- <div class="container mt-20">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -85,11 +164,11 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 
 
 <!-- Modal -->
-<div class="modal fade" id="repairsandservicesModal" tabindex="-1" role="dialog" aria-labelledby="repairsandservicesModalCenterTitle" aria-hidden="true" style="z-index: 9999;">
+<!-- <div class="modal fade" id="repairsandservicesModal" tabindex="-1" role="dialog" aria-labelledby="repairsandservicesModalCenterTitle" aria-hidden="true" style="z-index: 9999;">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -182,13 +261,13 @@
                 </div>
             </div>
 
-            <!--<div class="row mb-0">
+            <div class="row mb-0">
                 <div class="col-md-6 offset-md-4">
                     <button type="submit" class="btn btn-primary">
                         {{ __('Update') }}
                     </button>
                 </div>
-            </div>-->
+            </div>
         
       
           <div class="modal-footer">
@@ -199,10 +278,10 @@
         </form>
     </div>
   </div>
-</div>
+</div> -->
 
 
-<div class="modal fade" id="repairsandservicesaddModal" tabindex="-1" role="dialog" aria-labelledby="repairsandservicesModalCenterTitle" aria-hidden="true" style="z-index: 9999;">
+<!-- <div class="modal fade" id="repairsandservicesaddModal" tabindex="-1" role="dialog" aria-labelledby="repairsandservicesModalCenterTitle" aria-hidden="true" style="z-index: 9999;">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -217,7 +296,7 @@
             <div class="show_message" id="show_message">
 
             </div>
-            <!--<input id="id" type="hidden" class="form-control @error('name') is-invalid @enderror" name="id" value="">-->
+            <input id="id" type="hidden" class="form-control @error('name') is-invalid @enderror" name="id" value="">
             <div class="row mb-3">
                 <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Name') }}*</label>
 
@@ -277,13 +356,13 @@
                 </div>
             </div>
 
-            <!--<div class="row mb-0">
+            <div class="row mb-0">
                 <div class="col-md-6 offset-md-4">
                     <button type="submit" class="btn btn-primary">
                         {{ __('Update') }}
                     </button>
                 </div>
-            </div>-->
+            </div>
         
       
           <div class="modal-footer">
@@ -294,7 +373,9 @@
         </form>
     </div>
   </div>
-</div>
+</div> -->
+
+
 </div>
 
 <!-- jQuery library -->

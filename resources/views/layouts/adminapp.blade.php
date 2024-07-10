@@ -9,8 +9,8 @@
 </head>
 <style>
     body {
-        font-family: Poppins, sans-serif;
-    }
+    font-family: Poppins, sans-serif;
+}
 
     /* Compiled dark classes from Tailwind */
     .dark .dark\:divide-gray-700> :not([hidden])~ :not([hidden]) {
@@ -174,6 +174,11 @@
         .header-right {
             width: calc(100% - 16rem);
         }
+    }
+
+    .action-btn {
+        background-color: #50b500;
+        color: #fff;
     }
 </style>
 

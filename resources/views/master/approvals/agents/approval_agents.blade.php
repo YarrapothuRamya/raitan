@@ -1,14 +1,125 @@
-@extends('layouts.app')
+@extends('layouts.adminapp')
 
 @section('content')
-<div class="container mt-20">
+
+<div class="h-full ml-14 mt-14 mb-10 md:ml-64">
+
+
+
+    <div class="mt-4 mx-4">
+        <div class="w-full overflow-hidden rounded-lg shadow-xs">
+            <div class="bg-white shadow-md rounded-lg">
+                <div class="bg-gray-200 px-6 py-4 rounded-t-lg flex justify-between items-center">
+                    <h2 class="text-gray-800 font-semibold text-lg">Agents Approvals</h2>
+                </div>
+
+                <div class="p-6">
+                    @if (session('status'))
+                        <div class="mb-4 p-4 bg-green-100 text-green-700 rounded">
+                            {{ session('status') }}
+                        </div>
+                    @endif
+                    @if (session('error'))
+                        <div class="mb-4 p-4 bg-red-100 text-red-700 rounded">
+                            {{ session('error') }}
+                        </div>
+                    @endif
+                    <div class="show_messages" id="show_messages"></div>
+                    <div class="show_messages1" id="show_messages1"></div>
+
+                    @if($errors->any())
+                        <div class="text-red-500 mb-4">
+                            {!! implode('', $errors->all('<div>:message</div>')) !!}
+                        </div>
+                    @endif
+                    @if(Session::get('error'))
+                        <div class="text-red-500 mb-4">{{ Session::get('error') }}</div>
+                        @php
+                        Session::put('error', null)
+                        @endphp
+                    @endif
+                    @if(Session::get('success'))
+                        <div class="text-green-500 mb-4">{{ Session::get('success') }}</div>
+                        @php
+                        Session::put('success', null)
+                        @endphp
+                    @endif
+
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full bg-white">
+                            <thead>
+                                <tr>
+                                    <th class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">S No</th>
+                                    <th class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Name</th>
+                                    <th class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Role</th>
+                                    <th class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Aadhar</th>
+                                    <th class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">PAN</th>
+                                    <th class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">GST</th>
+                                    <th class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Permission Status</th>
+                                    <th class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody class="bg-white divide-y divide-gray-200">
+                                <?php $i = 0 ?>
+                                @foreach($request_roles_agents as $request_role)
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap">{{ ++$i }}</td>
+                                    <td class="px-6 py-4 whitespace-nowrap">{{ $request_role->user_name }}</td>
+                                    <td class="px-6 py-4 whitespace-nowrap">{{ $request_role->role_name }}</td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        @if($request_role->aadhar)
+                                            <a href="{{ env('APP_URL').'/aadhar_files/'.$request_role->aadhar }}" class="text-blue-600 hover:underline" download>Download</a>
+                                        @endif
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        @if($request_role->pan)
+                                            <a href="{{ env('APP_URL').'/pan_files/'.$request_role->pan }}" class="text-blue-600 hover:underline" download>Download</a>
+                                        @endif
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">{{ $request_role->gst }}</td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        @if($request_role->role_permission_status == 3)
+                                            Requested
+                                        @elseif($request_role->role_permission_status == 1)
+                                            Approved
+                                        @elseif($request_role->role_permission_status == 2)
+                                            Rejected
+                                        @endif
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        @if($request_role->role_permission_status == 3)
+                                            <button type="button" class="action-btn text-white py-1.5 font-light text-sm  px-4 inline-block mt-2 rounded-lg text-center shadow-md mr-2" data-toggle="modal" data-target="#rejectModal" data-user-id="{{ $request_role['user_id'] }}" data-name="{{ $request_role['user_name'] }}" data-role-id="{{ $request_role['role_id'] }}" data-role-permission-status="1">Approve</button>
+                                            <button type="button" class="bg-red-500 text-white py-1.5 font-light text-sm  px-4 inline-block mt-2 rounded-lg text-center shadow-md" data-toggle="modal" data-target="#rejectModal" data-user-id="{{ $request_role['user_id'] }}" data-name="{{ $request_role['user_name'] }}" data-role-id="{{ $request_role['role_id'] }}" data-role-permission-status="2">Reject</button>
+                                        @elseif($request_role->role_permission_status == 1)
+                                            <button type="button" class="bg-red-500 text-white py-1.5 font-light text-sm  px-4 inline-block mt-2 rounded-lg text-center shadow-md" data-toggle="modal" data-target="#rejectModal" data-user-id="{{ $request_role['user_id'] }}" data-name="{{ $request_role['user_name'] }}" data-role-id="{{ $request_role['role_id'] }}" data-role-permission-status="2">Reject</button>
+                                        @elseif($request_role->role_permission_status == 2)
+                                            <button type="button" class="action-btn text-white py-1.5 font-light text-sm  px-4 inline-block mt-2 rounded-lg text-center shadow-md" data-toggle="modal" data-target="#rejectModal" data-user-id="{{ $request_role['user_id'] }}" data-name="{{ $request_role['user_name'] }}" data-role-id="{{ $request_role['role_id'] }}" data-role-permission-status="1">Approve</button>
+                                        @endif
+                                    </td>
+                                </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+<!-- <div class="container mt-20">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">
                     <div class="row">
                         <div class="col-md-6 text-md-start">Approvals</div>
-                        <div class="col-md-6 text-md-end"><!--<button type="button" class="btn btn-primary machineadd"  data-toggle="modal" data-target="#roleModal">Add Machinary</button>--></div>
+                        <div class="col-md-6 text-md-end">
+                            <button type="button" class="btn btn-primary machineadd"  data-toggle="modal" data-target="#roleModal">Add Machinary</button></div>
                     </div>
                 </div>
 
@@ -57,7 +168,7 @@
                                 <th>S No</th>
                                 <th>Name</th>
                                 <th>Role</th>
-                                <!--<th>Horse power</th>-->
+                                <th>Horse power</th>
                                 <th>Aadhar</th>
                                 <th>PAN</th>
                                 <th>GST</th>
@@ -118,8 +229,10 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 
+
+</div>
 
 <!-- jQuery library -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
