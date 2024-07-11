@@ -1,14 +1,85 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container mt-20">
+
+
+<div class="mt-20 flex justify-center">
+    <div class="w-full max-w-2xl">
+        <div class="bg-white shadow-md rounded-lg">
+            <div class="bg-gray-200 px-6 py-4 rounded-t-lg flex justify-between items-center">
+                <div class="flex justify-between w-full">
+                    <h2 class="text-gray-800 font-semibold text-lg">Dashboard</h2>
+                    <!-- <button type="button" class="bg-blue-500 text-white px-4 py-2 rounded-md" data-toggle="modal" data-target="#roleModal">Add Role</button> -->
+                </div>
+            </div>
+
+            <div class="p-6">
+                @if (session('status'))
+                    <div class="mb-4 p-4 bg-green-100 text-green-700 rounded" role="alert">
+                        {{ session('status') }}
+                    </div>
+                @endif
+                @if (session('error'))
+                    <div class="mb-4 p-4 bg-red-100 text-red-700 rounded" role="alert">
+                        {{ session('error') }}
+                    </div>
+                @endif
+                <div class="show_messages" id="show_messages"></div>
+                <div class="show_messages1" id="show_messages1"></div>
+
+                @foreach($roles as $role)
+                    @if($role->request_roles_permission_status == null || $role->request_roles_permission_status == 0)
+                        @if($role->role_master_role_id == 5)
+                            <a href="#" class="text-blue-600 hover:underline addsalesrequest" data-role="{{ $role->role_master_name }}" data-role-master-role-id="{{ $role->role_master_role_id }}" data-role-id-permission-status="3">Request for {{ $role->role_master_name }} membership</a>
+                            <br>
+                        @elseif($role->role_master_role_id == 6)
+                            <a href="#" class="text-blue-600 hover:underline addagentrequest" data-role="{{ $role->role_master_name }}" data-role-master-role-id="{{ $role->role_master_role_id }}" data-role-id-permission-status="3">Request for {{ $role->role_master_name }} membership</a>
+                            <br>
+                        @elseif($role->role_master_role_id == 7)
+                            <a href="#" class="text-blue-600 hover:underline addsellerrequest" data-role="{{ $role->role_master_name }}" data-role-master-role-id="{{ $role->role_master_role_id }}" data-role-id-permission-status="3">Request for {{ $role->role_master_name }} membership</a>
+                            <br>
+                        @endif
+                    @elseif($role->request_roles_permission_status == 3)
+                        <!--<a href="#" class="text-blue-600 hover:underline requestedrequest" data-role="{{ $role->role_master_name }}" data-role-master-role-id="{{ $role->role_master_role_id }}" data-role-id-permission-status="0">Requested for {{ $role->role_master_name }} membership, cancel the request</a><br>-->
+                        <a href="#" class="text-blue-600 hover:underline" data-role="{{ $role->role_master_name }}" data-role-master-role-id="{{ $role->role_master_role_id }}" data-role-id-permission-status="0">Requested for {{ $role->role_master_name }} membership</a><br>
+                    @elseif($role->request_roles_permission_status == 1)
+                        <!--<a href="#" class="text-blue-600 hover:underline requestedrequest" data-role="{{ $role->role_master_name }}" data-role-master-role-id="{{ $role->role_master_role_id }}" data-role-id-permission-status="0">Request approved for {{ $role->role_master_name }} membership, cancel the request</a><br>-->
+                        @if($role->role_master_role_id == 5)
+                            <a href="{{ url('sales_activity').'/'.$role->role_master_role_id }}" class="text-blue-600 hover:underline" data-role="{{ $role->role_master_name }}" data-role-master-role-id="{{ $role->role_master_role_id }}" data-role-id-permission-status="0">Request approved for {{ $role->role_master_name }} membership</a><br>
+                        @elseif($role->role_master_role_id == 6)
+                            <a href="{{ url('agent_activity').'/'.$role->role_master_role_id }}" class="text-blue-600 hover:underline" data-role="{{ $role->role_master_name }}" data-role-master-role-id="{{ $role->role_master_role_id }}" data-role-id-permission-status="0">Request approved for {{ $role->role_master_name }} membership</a><br>
+                        @elseif($role->role_master_role_id == 7)
+                            <a href="{{ url('seller_activity').'/'.$role->role_master_role_id }}" class="text-blue-600 hover:underline" data-role="{{ $role->role_master_name }}" data-role-master-role-id="{{ $role->role_master_role_id }}" data-role-id-permission-status="0">Request approved for {{ $role->role_master_name }} membership</a><br>
+                        @endif
+                    @elseif($role->request_roles_permission_status == 2)
+                        @if($role->role_master_role_id == 5)
+                            <a href="#" class="text-blue-600 hover:underline addsalesrequest" data-role="{{ $role->role_master_name }}" data-role-master-role-id="{{ $role->role_master_role_id }}" data-role-id-permission-status="3">Request for {{ $role->role_master_name }} membership cancelled, re-request.</a>
+                            <br>
+                        @elseif($role->role_master_role_id == 6)
+                            <a href="#" class="text-blue-600 hover:underline addagentrequest" data-role="{{ $role->role_master_name }}" data-role-master-role-id="{{ $role->role_master_role_id }}" data-role-id-permission-status="3">Request for {{ $role->role_master_name }} membership cancelled, re-request.</a>
+                            <br>
+                        @elseif($role->role_master_role_id == 7)
+                            <a href="#" class="text-blue-600 hover:underline addsellerrequest" data-role="{{ $role->role_master_name }}" data-role-master-role-id="{{ $role->role_master_role_id }}" data-role-id-permission-status="3">Request for {{ $role->role_master_name }} membership cancelled, re-request.</a>
+                            <br>
+                        @endif
+                    @endif
+                @endforeach
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- <div class="container mt-20">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">
                     <div class="row">
                         <div class="col-md-6 text-md-start">Dashboard</div>
-                        <div class="col-md-6 text-md-end"><!--<button type="button" class="btn btn-primary roleadd"  data-toggle="modal" data-target="#roleModal">Add Role</button>--></div>
+                        <div class="col-md-6 text-md-end">
+                          <button type="button" class="btn btn-primary roleadd"  data-toggle="modal" data-target="#roleModal">Add Role</button></div>
                     </div>
                 </div>
 
@@ -47,10 +118,10 @@
                                 <br>
                             @endif
                         @elseif($role->request_roles_permission_status == 3)
-                            <!--<a href="#" class="requestedrequest" data-role="{{ $role->role_master_name }}" data-role-master-role-id="{{ $role->role_master_role_id }}" data-role-id-permission-status="0" style="text-decoration: none; color: blue;">Requested for {{ $role->role_master_name }} membership, cancel the request</a><br>-->
+                            <a href="#" class="requestedrequest" data-role="{{ $role->role_master_name }}" data-role-master-role-id="{{ $role->role_master_role_id }}" data-role-id-permission-status="0" style="text-decoration: none; color: blue;">Requested for {{ $role->role_master_name }} membership, cancel the request</a><br>
                             <a href="#" class="" data-role="{{ $role->role_master_name }}" data-role-master-role-id="{{ $role->role_master_role_id }}" data-role-id-permission-status="0" style="text-decoration: none; color: blue;">Requested for {{ $role->role_master_name }} membership</a><br>
                         @elseif($role->request_roles_permission_status == 1)
-                            <!--<a href="#" class="requestedrequest" data-role="{{ $role->role_master_name }}" data-role-master-role-id="{{ $role->role_master_role_id }}" data-role-id-permission-status="0" style="text-decoration: none; color: blue;">Request approved for {{ $role->role_master_name }} membership, cancel the request</a><br>-->
+                            <a href="#" class="requestedrequest" data-role="{{ $role->role_master_name }}" data-role-master-role-id="{{ $role->role_master_role_id }}" data-role-id-permission-status="0" style="text-decoration: none; color: blue;">Request approved for {{ $role->role_master_name }} membership, cancel the request</a><br>
                             @if($role->role_master_role_id == 5)
                                 <a href="{{ url('sales_activity').'/'.$role->role_master_role_id }}" class="" data-role="{{ $role->role_master_name }}" data-role-master-role-id="{{ $role->role_master_role_id }}" data-role-id-permission-status="0" style="text-decoration: none; color: blue;">Request approved for {{ $role->role_master_name }} membership</a><br>
                             @elseif($role->role_master_role_id == 6)
@@ -76,7 +147,7 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 
 <!-- Modal -->
 <div class="modal fade" id="salesrequestModal" tabindex="-1" role="dialog" aria-labelledby="salesrequestModalCenterTitle" aria-hidden="true" style="z-index: 9999;">

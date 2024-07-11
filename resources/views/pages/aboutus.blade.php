@@ -1,10 +1,37 @@
 @extends('layouts.app')
 <script src="https://cdn.tailwindcss.com"></script>
 @section('content')
+<style>
+    html {
+        scroll-behavior: smooth;
+    }
 
+    section[id] {
+        scroll-margin-top: 150px; /* Adjust this value based on your header height */
+    }
+</style>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const headerHeight = 90; // Adjust this value based on your header height
+        const links = document.querySelectorAll("a[href^='#']");
 
-<section class="mt-2" style="justify-content: center;">
-    <div class="grid min-h-full place-items-center bg-white px-6 mb-5 sm:py-32 lg:px-8">
+        links.forEach(link => {
+            link.addEventListener("click", function(event) {
+                event.preventDefault();
+                const targetId = this.getAttribute("href").substring(1);
+                const targetElement = document.getElementById(targetId);
+                const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: "smooth"
+                });
+            });
+        });
+    });
+</script>
+
+<section class="mt-20" style="justify-content: center;">
+    <div class="grid min-h-full place-items-center bg-white px-6 lg:px-8">
         <div class="flex flex-wrap -mx-4">
             <div class="w-full px-4">
 
@@ -45,7 +72,7 @@
                         Instant Access to Services: Our platform provides farmers with quick and easy access to a variety of services, including:
                     </p><br>
                     <p class="text-base text-body-color dark:text-dark-6">
-                        <ul style="list-style-type: circle;">
+                        <ul class="list-disc list-inside">
                             <li>Tractors and Implements: Rent high-quality tractors and implement with just a few clicks. Whether you need a plow, harrow, seeder, or any other equipment, we’ve got you covered.</li>
                             <li>Agricultural Labor: Find skilled labor for planting, harvesting, and other farm tasks. Our network of workers is ready to assist you with all your farming needs.</li>
                             <li>Harvesters: Highly technology-enabled harvesters to prevent unnecessary waste.</li>
@@ -83,7 +110,5 @@
         </div>
     </div>
 </section>
-
-
 
 @endsection

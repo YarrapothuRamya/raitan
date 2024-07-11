@@ -2014,7 +2014,7 @@ body, button, input, select, textarea{
   display: -moz-box;
   display: -ms-flexbox;
   display: flex;
-  width: 100%;
+  width: 85%;
   font-size: 0;
   -webkit-box-pack: start;
   -webkit-justify-content: flex-start;
