@@ -12,7 +12,7 @@
                 <h3 class="font-semibold text-base text-gray-900 dark:text-gray-50">Add/Edit Machinary</h3>
             </div>
             <div class="relative w-full max-w-full flex-grow flex-1 text-right">
-                <button class="action-btn py-1.5 font-light text-sm px-4 inline-block mt-2 rounded-lg text-center shadow-md machineadd" type="button" data-toggle="modal" data-target="#machineModal">Add Machinary</button>
+                <a href="{{route('machine.addview')}}" class="action-btn py-1.5 font-light text-sm px-4 inline-block mt-2 rounded-lg text-center shadow-md machineadd">Add Machinary</a>
             </div>
         </div>
         <div class="w-full overflow-x-auto">
@@ -70,7 +70,8 @@
                                 @endif
                             </td>
                             <td class="px-4 py-3">
-                                <button type="button" class="bg-blue-500 text-white py-1.5 font-light text-sm w-full px-4 inline-block mt-2 rounded-lg text-center shadow-md machineedit" data-toggle="modal" data-target="#machineModal" data-id="{{ $machine['id'] }}" data-name="{{ $machine['name'] }}" data-horse-power="{{ $machine['horse_power'] }}" data-status="{{ $machine['status'] }}" data-image="{{ asset('machine_images').'/'.$machine['image'] }}">Edit</button>
+                                <!-- <a  class="bg-blue-500 text-white py-1.5 font-light text-sm w-full px-4 inline-block mt-2 rounded-lg text-center shadow-md machineedit" data-toggle="modal" data-target="#machineModal" data-id="{{ $machine['id'] }}" data-name="{{ $machine['name'] }}" data-horse-power="{{ $machine['horse_power'] }}" data-status="{{ $machine['status'] }}" data-image="{{ asset('machine_images').'/'.$machine['image'] }}">Edit</button> -->
+                                <a href="{{route('machine.edit',['mech_id' => $machine['id']])}}" class="bg-blue-500 text-white py-1.5 font-light text-sm w-full px-4 inline-block mt-2 rounded-lg text-center shadow-md machineedit" >Edit</button>
                             </td>
                         </tr>
                     @endforeach
@@ -371,7 +372,7 @@
             <button type="button" class="btn btn-secondary closeaddbutton" data-dismiss="modal">Close</button>
             <button type="button" onclick="addMachine();" class="btn btn-primary">Add</button>
           </div>
-      </div>
+           
         </form>
     </div>
   </div>

@@ -12,9 +12,7 @@
                     <h3 class="font-semibold text-base text-gray-900 dark:text-gray-50">Roles</h3>
                 </div>
                 <div class="relative w-full max-w-full flex-grow flex-1 text-right">
-                    <button
-                        class="action-btn py-1.5 font-light text-sm  px-4 inline-block mt-2 rounded-lg text-center shadow-md roleadd"
-                        type="button" data-toggle="modal" data-target="#roleModal">Add Role</button>
+                    <a href="{{route('role.addview')}}"      class="action-btn py-1.5 font-light text-sm  px-4 inline-block mt-2 rounded-lg text-center shadow-md roleadd"  type="button" >Add Role</a>
                 </div>
             </div>
             <div class="w-full overflow-x-auto">
@@ -37,7 +35,6 @@
                     @foreach($roles_with_parent as $role)
                         <tr class="bg-gray-50 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-900 text-gray-700 dark:text-gray-400">
                         <td class="px-4 py-3"><?php echo ++$i; ?></td>
-                        <td class="px-4 py-3">Administrator</td>
                             <td class="px-4 py-3">{{ $role['name'] }}</td>
                             <td class="px-4 py-3">{{ $role['role_id'] }}</td>
                             <td class="px-4 py-3">
@@ -54,7 +51,11 @@
                                     @endif
                                 </td>
                             <td class="px-4 py-3">
-                                <button type="button" class=" bg-blue-500 text-white py-1.5 font-light text-sm w-full px-4 inline-block mt-2 rounded-lg text-center shadow-md roleedit" data-toggle="modal" data-target="#roleModal" data-id="{{ $role['id'] }}" data-name="{{ $role['name'] }}" data-status="{{ $role['status'] }}" data-parent-id="{{ $role['parent_id'] }}">Edit</button>
+                            <a 
+    id="editRoleLink"
+    class="px-2 py-1 bg-blue-500 text-white rounded-md" 
+    href="{{ route('role.edit', ['role_id' => $role['id']]) }}"
+        >Edit Role</a>
                                 
                             </td>
                         </tr>
@@ -471,5 +472,13 @@
     $(document).on('click', '.closeaddbutton', function() {
         $('#roleaddModal').modal('hide');
     });
+</script>
+<script>
+    // document.getElementById('editRoleButton').addEventListener('click', function() {
+    //     var roleId = this.getAttribute('data-id');
+    //     var routeUrl = "{{ route('role.edit') }}";
+    //     var url = routeUrl + '?role_id=' + roleId;
+    //     window.location.href = url;
+    // });
 </script>
 @endsection

@@ -49,6 +49,7 @@ Route::get('register-thankyou', [App\Http\Controllers\Auth\RegisterController::c
 
 Route::group(['middleware' => ['auth', 'role']], function () {
    Route::get('/raitan_admin/master-home', [App\Http\Controllers\HomeController::class, 'masterHome'])->name('master.home');
+   Route::get('/raitan_admin/master-home', [App\Http\Controllers\HomeController::class, 'masterHome'])->name('master.home');
    Route::get('/raitan_admin/admin-home', [App\Http\Controllers\HomeController::class, 'adminHome'])->name('admin.home');
    Route::get('/raitan_admin/staff-home', [App\Http\Controllers\HomeController::class, 'staffHome'])->name('staff.home');
    Route::get('/raitan_admin/customercare-home', [App\Http\Controllers\HomeController::class, 'customercareHome'])->name('customercare.home');
@@ -64,7 +65,9 @@ Route::group(['middleware' => ['auth']], function () {
 
    Route::get('/raitan_admin/machines', [App\Http\Controllers\MachineImplementorsController::class, 'indexmachine'])->name('machines');
    Route::post('/raitan_admin/machine-add', [App\Http\Controllers\MachineImplementorsController::class, 'machineAdd'])->name('machine.add');
+   Route::get('/raitan_admin/machine-add', [App\Http\Controllers\MachineImplementorsController::class, 'machineAddview'])->name('machine.addview');
    Route::post('/raitan_admin/machine-update', [App\Http\Controllers\MachineImplementorsController::class, 'machineUpdate'])->name('machine.update');
+   Route::get('/raitan_admin/machine-update', [App\Http\Controllers\MachineImplementorsController::class, 'machineedit'])->name('machine.edit');
 
    Route::get('/raitan_admin/implementors', [App\Http\Controllers\MachineImplementorsController::class, 'indeximplementors'])->name('implementors');
    Route::post('/raitan_admin/implementor-add', [App\Http\Controllers\MachineImplementorsController::class, 'implementorAdd'])->name('implementor.add');
@@ -88,6 +91,8 @@ Route::get('verify-email/{pass_code}/{id}', [App\Http\Controllers\Auth\RegisterC
 Route::get('/raitan_admin/roles-home', [App\Http\Controllers\RolesController::class, 'index'])->name('role.home');
 Route::post('/raitan_admin/role-update', [App\Http\Controllers\RolesController::class, 'roleUpdate'])->name('role.update');
 Route::post('/raitan_admin/role-add', [App\Http\Controllers\RolesController::class, 'roleAdd'])->name('role.add');
+Route::get('/raitan_admin/role-add', [App\Http\Controllers\RolesController::class, 'roleAddview'])->name('role.addview');
+Route::get('/raitan_admin/role-edit', [App\Http\Controllers\RolesController::class, 'roleedit'])->name('role.edit');
 Route::get('tractors-home', [App\Http\Controllers\TractorsController::class, 'index'])->name('tractors.home');
 Route::get('page-not-found', [App\Http\Controllers\CommonController::class, 'pagenotfound'])->name('pagenotfound.home');
 Route::get('product-details', [App\Http\Controllers\CommonController::class, 'productdetails'])->name('productdetails.home');

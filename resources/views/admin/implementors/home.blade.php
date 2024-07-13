@@ -364,7 +364,7 @@
             <button type="button" class="btn btn-secondary closeaddbutton" data-dismiss="modal">Close</button>
             <button type="button" onclick="addMachine();" class="btn btn-primary">Add</button>
           </div>
-      </div>
+      
         </form>
     </div>
   </div>
