@@ -77,7 +77,9 @@ Route::group(['middleware' => ['auth']], function () {
 
    Route::get('/raitan_admin/agriculture_labour', [App\Http\Controllers\AgricultureLabourController::class, 'index'])->name('agriculture_labour');
    Route::post('/raitan_admin/agriculturelabour-add', [App\Http\Controllers\AgricultureLabourController::class, 'agriculturelabourAdd'])->name('agriculturelabour.add');
+   Route::get('/raitan_admin/agriculturelabour-add', [App\Http\Controllers\AgricultureLabourController::class, 'agriculturelabourAddview'])->name('agriculturelabour.addview');
    Route::post('/raitan_admin/agriculturelabour-update', [App\Http\Controllers\AgricultureLabourController::class, 'agriculturelabourUpdate'])->name('agriculturelabour.update');
+   Route::get('/raitan_admin/agriculturelabour-update', [App\Http\Controllers\AgricultureLabourController::class, 'agriculturelabouredit'])->name('agriculturelabour.edit');
 
    Route::get('/raitan_admin/repairsandservices', [App\Http\Controllers\RepairAndServicesController::class, 'index'])->name('repairsandservices');
    Route::post('/raitan_admin/repairsandservices-add', [App\Http\Controllers\RepairAndServicesController::class, 'repairsandservicesAdd'])->name('repairsandservices.add');

@@ -22,7 +22,14 @@ class AgricultureLabourController extends Controller
         //}
         
     }
-
+    public function agriculturelabourAddview() {
+        return view('master.agriculture_labour.add');
+    }
+    public function agriculturelabouredit(Request $request) {
+        $agriId = $request->query('agri_id');
+        $agriculture_labour = Agriculture_Labour::find($agriId);
+        return view('master.agriculture_labour.edit', compact('agriculture_labour'));
+    }
     public function agriculturelabourUpdate(Request $request)
     {
         //$role = \Auth::user()->role;
@@ -65,10 +72,10 @@ class AgricultureLabourController extends Controller
                 /*if($request['status'] != $request['status1']){
                     Implementors::where('machine_id', '=', $request['id'])->update(['status' => $request['status']]);
                 }*/
-                return response()->json(['status' => 200, 'success' => 'Agriculture Labour successfully updated']);
+                //return response()->json(['status' => 200, 'success' => 'Agriculture Labour successfully updated']);
                 return redirect()->back()->with('status','Role successfully updated');
             }else{
-                return response()->json(['status' => 400, 'error' => 'Something went wrong please try again.']);
+                //return response()->json(['status' => 400, 'error' => 'Something went wrong please try again.']);
                 return redirect()->back()->with('error','Something went wrong please try again.');
             }
             //return redirect()->back()->with('name','You have no access to this page');
@@ -111,10 +118,10 @@ class AgricultureLabourController extends Controller
             $agriculture_labour->status = $request['addstatus'];
             //dd("Hello");
             if($agriculture_labour->save()){
-                return response()->json(['status' => 200, 'success' => 'Agriculture Labour successfully created']);
+                //return response()->json(['status' => 200, 'success' => 'Agriculture Labour successfully created']);
                 return redirect()->back()->with('status','Machine successfully created');
             }else{
-                return response()->json(['status' => 400, 'error' => 'Something went wrong please try again.']);
+                //return response()->json(['status' => 400, 'error' => 'Something went wrong please try again.']);
                 return redirect()->back()->with('error','Something went wrong please try again.');
             }
             //return redirect()->back()->with('name','You have no access to this page');

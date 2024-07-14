@@ -11,7 +11,7 @@
                 <h3 class="font-semibold text-base text-gray-900 dark:text-gray-50">Add/Edit Agriculture Labour</h3>
             </div>
             <div class="relative w-full max-w-full flex-grow flex-1 text-right">
-                <button class="action-btn py-1.5 font-light text-sm px-4 inline-block mt-2 rounded-lg text-center shadow-md agriculturelabouradd" type="button" data-toggle="modal" data-target="#agricultureLabourModal">Add Agriculture</button>
+                <a href="{{route('agriculturelabour.addview')}}" class="action-btn py-1.5 font-light text-sm px-4 inline-block mt-2 rounded-lg text-center shadow-md agriculturelabouradd" type="button" data-toggle="modal" data-target="#agricultureLabourModal">Add Agriculture</a>
             </div>
         </div>
         <div class="w-full overflow-x-auto">
@@ -69,7 +69,7 @@
                                 @endif
                             </td>
                             <td class="px-4 py-3">
-                                <button type="button" class="bg-blue-500 text-white py-1.5 font-light text-sm w-full px-4 inline-block mt-2 rounded-lg text-center shadow-md agriculturelabouredit" data-toggle="modal" data-target="#agricultureLabourModal" data-id="{{ $al['id'] }}" data-name="{{ $al['name'] }}" data-description="{{ $al['description'] }}" data-status="{{ $al['status'] }}" data-image="{{ asset('agriculture_labour_images').'/'.$al['image'] }}">Edit</button>
+                                <a href="{{route('agriculturelabour.edit',['agri_id' => $al['id']])}}"  class="bg-blue-500 text-white py-1.5 font-light text-sm w-full px-4 inline-block mt-2 rounded-lg text-center shadow-md agriculturelabouredit" data-toggle="modal" data-target="#agricultureLabourModal" data-id="{{ $al['id'] }}" data-name="{{ $al['name'] }}" data-description="{{ $al['description'] }}" data-status="{{ $al['status'] }}" data-image="{{ asset('agriculture_labour_images').'/'.$al['image'] }}">Edit</a>
                             </td>
                         </tr>
                     @endforeach
