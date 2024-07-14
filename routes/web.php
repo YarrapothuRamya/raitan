@@ -71,7 +71,9 @@ Route::group(['middleware' => ['auth']], function () {
 
    Route::get('/raitan_admin/implementors', [App\Http\Controllers\MachineImplementorsController::class, 'indeximplementors'])->name('implementors');
    Route::post('/raitan_admin/implementor-add', [App\Http\Controllers\MachineImplementorsController::class, 'implementorAdd'])->name('implementor.add');
+   Route::get('/raitan_admin/implementor-add', [App\Http\Controllers\MachineImplementorsController::class, 'implementorAddview'])->name('implementor.addview');
    Route::post('/raitan_admin/implementor-update', [App\Http\Controllers\MachineImplementorsController::class, 'implementorUpdate'])->name('implementor.update');
+   Route::get('/raitan_admin/implementor-update', [App\Http\Controllers\MachineImplementorsController::class, 'implementoredit'])->name('implementor.edit');
 
    Route::get('/raitan_admin/agriculture_labour', [App\Http\Controllers\AgricultureLabourController::class, 'index'])->name('agriculture_labour');
    Route::post('/raitan_admin/agriculturelabour-add', [App\Http\Controllers\AgricultureLabourController::class, 'agriculturelabourAdd'])->name('agriculturelabour.add');

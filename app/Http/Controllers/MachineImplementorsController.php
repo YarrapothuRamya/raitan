@@ -115,7 +115,13 @@ class MachineImplementorsController extends Controller
         //}
         
     }
-
+            public function implementorAddview(){
+                // $implementors=Implementors::select('Implementors.*', 'Machines.name as machine_name')
+                //       ->leftJoin('Machines','Machines.id','=','Implementors.machine_id')->get();
+            $machines=Machines::select('*')->get();
+            
+            return view('admin.implementors.add', compact('machines'));
+            }
     public function machineAdd(Request $request)
     {
         //$role = \Auth::user()->role;
@@ -203,10 +209,10 @@ class MachineImplementorsController extends Controller
             $implementor->status = $request['status'];
              
             if($implementor->save()){
-                return response()->json(['status' => 200, 'success' => 'Implementor successfully updated']);
+               // return response()->json(['status' => 200, 'success' => 'Implementor successfully updated']);
                 return redirect()->back()->with('status','Role successfully updated');
             }else{
-                return response()->json(['status' => 400, 'error' => 'Something went wrong please try again.']);
+                //return response()->json(['status' => 400, 'error' => 'Something went wrong please try again.']);
                 return redirect()->back()->with('error','Something went wrong please try again.');
             }
             //return redirect()->back()->with('name','You have no access to this page');
@@ -216,7 +222,21 @@ class MachineImplementorsController extends Controller
         //}
         
     }
+public function implementoredit(Request $request){
+    //$imple=Implementors::select('*')->get();
+    $impleId = $request->query('imp_id');
+    $implementors = Implementors::find($impleId);
 
+    // $implementors = Implementors::select('Implementors.*', 'Machines.name as machine_name')
+    // ->leftJoin('Machines', 'Machines.id', '=', 'Implementors.machine_id')
+    // ->when($impleId, function ($query, $impleId) {
+    //     return $query->where('Implementors.id', $impleId);
+    // })
+    // ->get();
+$machines=Machines::select('*')->get();
+
+return view('admin.implementors.edit', compact('machines', 'implementors'));
+}
     public function implementorAdd(Request $request)
     {
         //$role = \Auth::user()->role;

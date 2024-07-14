@@ -12,7 +12,7 @@
                 <h3 class="font-semibold text-base text-gray-900 dark:text-gray-50">Add/Edit Implementors</h3>
             </div>
             <div class="relative w-full max-w-full flex-grow flex-1 text-right">
-                <button class="action-btn py-1.5 font-light text-sm px-4 inline-block mt-2 rounded-lg text-center shadow-md implementorsadd" type="button" data-toggle="modal" data-target="#implementorModal">Add Implementor</button>
+                <a href="{{route('implementor.addview')}}" class="action-btn py-1.5 font-light text-sm px-4 inline-block mt-2 rounded-lg text-center shadow-md implementorsadd" >Add Implementor</a>
             </div>
         </div>
         <div class="w-full overflow-x-auto">
@@ -70,7 +70,8 @@
                                 @endif
                             </td>
                             <td class="px-4 py-3">
-                                <button type="button" class="bg-blue-500 text-white py-1.5 font-light text-sm w-full px-4 inline-block mt-2 rounded-lg text-center shadow-md implementorsedit" data-toggle="modal" data-target="#implementorModal" data-id="{{ $implementor['id'] }}" data-name="{{ $implementor['name'] }}" data-machine-id="{{ $implementor['machine_id'] }}" data-status="{{ $implementor['status'] }}" data-image="{{ asset('implementor_images').'/'.$implementor['image'] }}">Edit</button>
+                            <a href="{{route('implementor.edit',['imp_id' => $implementor['id']])}}" type="button" class="bg-blue-500 text-white py-1.5 font-light text-sm w-full px-4 inline-block mt-2 rounded-lg text-center shadow-md implementorsedit" data-toggle="modal" data-target="#implementorModal" data-id="{{ $implementor['id'] }}" data-name="{{ $implementor['name'] }}" data-machine-id="{{ $implementor['machine_id'] }}" data-status="{{ $implementor['status'] }}" data-image="{{ asset('implementor_images').'/'.$implementor['image'] }}">Edit</a>   
+                            <!-- <button type="button" class="bg-blue-500 text-white py-1.5 font-light text-sm w-full px-4 inline-block mt-2 rounded-lg text-center shadow-md implementorsedit" data-toggle="modal" data-target="#implementorModal" data-id="{{ $implementor['id'] }}" data-name="{{ $implementor['name'] }}" data-machine-id="{{ $implementor['machine_id'] }}" data-status="{{ $implementor['status'] }}" data-image="{{ asset('implementor_images').'/'.$implementor['image'] }}">Edit</button> -->
                             </td>
                         </tr>
                     @endforeach
