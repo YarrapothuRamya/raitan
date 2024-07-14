@@ -78,10 +78,7 @@
         </div>
         <div class="w-full flex flex-col col-span-2 space-y-4 lg:mt-0 mt-8 overflow-y-auto pb-5">
 
-                @foreach($services as $service)
-                <!-- lists & image -->
-                <a href="<?php echo env('APP_URL'). '/' .$service->route; ?>">
-
+<!-- lists & Images -->
           <a href="{{ route('productdetails.home') }}" class="tractor-card" data-hp="30">
             <div class="tractor-block border border-pear/30 shadow-md shadow-pear/30 rounded-lg lg:p-4 p-2">
               <div class="flex justify-between clickable">
@@ -89,12 +86,12 @@
                   <div>
                     <div class="w-40 h-28">
                       <div class="w-full h-full">
-                        <img src="images/tractors/tractor1.jpg" alt="..." class="w-40 h-28" width="160" height="112">
+                        <img src="images/implements/rotary-tiller.jpg" alt="..." class="w-40 h-28" width="160" height="112">
                       </div>
                     </div>
                   </div>
                   <div>
-                    <h2 class="text-lg font-medium">Mahindra OJA 3140 Tractor</h2>
+                    <h2 class="text-lg font-medium"><a href="#"><strong>Rotary Tiller</strong></a></h2>
                     <div class="flex mt-1 text-sm items-center flex-wrap text-gray-500 mb-1">
 
                       <div class="flex mt-2 mb-1"><svg stroke="currentColor" fill="currentColor" stroke-width="0"
@@ -106,8 +103,9 @@
                           <circle cx="256" cy="192" r="48" fill="none" stroke-linecap="round" stroke-linejoin="round"
                             stroke-width="32"></circle>
                         </svg>
-                        <div class="text-sm"><span class="block"> Bachupally, K V Rangareddy District</span><span
-                            class="block text-xs">Hyderabad - 500090</span></div>
+                        <div class="text-sm"><span class="block">Deal for small farms, orchards, fruit and vegetable gardens, and nurseries.<br>Perfect for soil conditioning, weed control, seedbed preparation, and puddling in small fields.<br>Can loosen and aerate soil to a depth of 4 to 5 inches.<br>Available with 6 or 4 blades per flange in L & C type blade options.<br>Helical blade arrangement reduces load on the tractor, making tillage fast and economical.<br>Equipped with a heavy-duty PTO shaft featuring a shear bolt or optional slip clutch for overload protection.<br>Sealed bearings prevent the entry of moisture and mud.<br>Strong plank assembly ensures a perfectly leveled and finished seedbed.</span>
+                          <span
+                            class="block text-xs"><a href="#"><strong>More Details</strong></a></span></div>
                       </div>
                     </div>
                     <div class="flex items-center">
@@ -155,18 +153,13 @@
                   <div class="flex justify-center">
 
                     <button id="book-now-btn"
-                      class="action-btn py-1.5 font-light text-sm w-full px-4 inline-block mt-2 rounded-lg text-center shadow-md">Call
-                      now</button>
+                      class="action-btn py-1.5 font-light text-sm w-full px-4 inline-block mt-2 rounded-lg text-center shadow-md">Service Providers</button>
                   </div>
                 </div>
               </div>
 
             </div>
           </a>
-                @endforeach
-
-<!--    -->
-
 
 
 
@@ -177,12 +170,12 @@
                 <div class="flex space-x-3">
                   <div>
                     <div class="w-40 h-28">
-                      <div class="w-full h-full"><img src="images/tractors/tractors302.jpg" alt="..." class="w-40 h-28"
+                      <div class="w-full h-full"><img src="images/implements/disc-harrow.png" alt="..." class="w-40 h-28"
                           width="160" height="112"></div>
                     </div>
                   </div>
                   <div>
-                    <h2 class="text-lg font-medium">Soli Yanmar</h2>
+                    <h2 class="text-lg font-medium"><a href="#"><strong>Harrow Disc</strong></a></h2>
                     <div class="flex mt-1 text-sm items-center flex-wrap text-gray-500 mb-1">
 
                       <div class="flex mt-2 mb-1"><svg stroke="currentColor" fill="currentColor" stroke-width="0"
@@ -194,7 +187,8 @@
                           <circle cx="256" cy="192" r="48" fill="none" stroke-linecap="round" stroke-linejoin="round"
                             stroke-width="32"></circle>
                         </svg>
-                        <div class="text-sm"><span class="block"> Bachupally, K V Rangareddy District</span><span
+                        <div class="text-sm"><span class="block">Easily adjustable drawbar helps in turning at field edges to cover maximum area.<br>Ideal for open field workings such as superficial ploughing, shattering of clods, soil preparation for sowing, and burial of organic substances and remains.<br>Can be easily transported on tractors using the hydraulic lift system.<br>Equipped with high-quality boron steel discs with 48-52 HRC hardness.<br>Effectively breaks up heavy clods due to its sturdy design and weight.<br>Bearing spools ensure better lubrication and reduce load on the tractor.<br>High-quality seals prevent mud and water entry into the bearing and hub.<br>Features a high-quality tubular frame of compact size.</span>
+                          <span
                             class="block text-xs">Hyderabad - 500090</span></div>
                       </div>
                     </div>
