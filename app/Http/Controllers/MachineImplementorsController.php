@@ -270,10 +270,10 @@ return view('admin.implementors.edit', compact('machines', 'implementors'));
             $implementor->status = $request['addstatus'];
             //dd("Hello");
             if($implementor->save()){
-                return response()->json(['status' => 200, 'success' => 'Implementor successfully created']);
+                //return response()->json(['status' => 200, 'success' => 'Implementor successfully created']);
                 return redirect()->back()->with('status','implementor successfully updated');
             }else{
-                return response()->json(['status' => 400, 'error' => 'Something went wrong please try again.']);
+               // return response()->json(['status' => 400, 'error' => 'Something went wrong please try again.']);
                 return redirect()->back()->with('error','Something went wrong please try again.');
             }
             //return redirect()->back()->with('name','You have no access to this page');

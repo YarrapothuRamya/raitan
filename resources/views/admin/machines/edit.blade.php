@@ -5,7 +5,7 @@
 <div class="min-h-screen flex items-center justify-center">
     <form action="{{ route('machine.update') }}" method="post" enctype="multipart/form-data" class="w-full max-w-md bg-white p-6 rounded-lg shadow-md">
         @csrf
-        <h2 class="text-2xl font-bold mb-4 text-center">Add Machine</h2>
+        <h2 class="text-2xl font-bold mb-4 text-center">Edit Machine</h2>
         <div class="show_message" id="show_message"></div>
 
         <div class="card-body mb-4">
@@ -61,7 +61,7 @@
 
         <div class="flex items-center justify-between">
             <button type="button" class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline closeaddbutton" onclick="closeModal();">Close</button>
-            <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Edit</button>
+            <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Update</button>
         </div>
     </form>
 </div>

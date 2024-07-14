@@ -69,7 +69,7 @@
            
 
             <div class="flex justify-end space-x-2">
-                <button type="button" class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded closeaddbutton" onclick="closeModal();" >Cancel</button>
+                <button type="button" class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded closeaddbutton" onclick="closeModal();" >Close</button>
                 <button type="submit" onclick="updateRole();" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded" >Update</button>
             </div>
         </form>

@@ -79,7 +79,7 @@
    
     function closeModal() {
         // Redirect to the roles page
-        window.location.href = "{{ url('/raitan_admin/roles-home') }}"; // Adjust the route name as per your application
+        window.location.href = "{{ url('/raitan_admin/agriculture_labour') }}"; // Adjust the route name as per your application
     }
     </script>
 @endsection
