@@ -22,7 +22,14 @@ class SprayersController extends Controller
         //}
         
     }
-
+    public function sprayersaddview(){
+        return view('master.sprayers.add');
+    }
+    public function sprayersedit(Request $request){
+        $spary_id = $request->query('spary_id');
+        $sprayer = Sprayers::find($spary_id);
+        return view('master.sprayers.edit', compact('sprayer'));
+    }
     public function sprayersUpdate(Request $request)
     {
         //$role = \Auth::user()->role;
@@ -65,10 +72,10 @@ class SprayersController extends Controller
                 /*if($request['status'] != $request['status1']){
                     Implementors::where('machine_id', '=', $request['id'])->update(['status' => $request['status']]);
                 }*/
-                return response()->json(['status' => 200, 'success' => 'Sprayer successfully updated']);
+                //return response()->json(['status' => 200, 'success' => 'Sprayer successfully updated']);
                 return redirect()->back()->with('status','Role successfully updated');
             }else{
-                return response()->json(['status' => 400, 'error' => 'Something went wrong please try again.']);
+                //return response()->json(['status' => 400, 'error' => 'Something went wrong please try again.']);
                 return redirect()->back()->with('error','Something went wrong please try again.');
             }
             //return redirect()->back()->with('name','You have no access to this page');
@@ -111,10 +118,10 @@ class SprayersController extends Controller
             $sprayers->status = $request['addstatus'];
             //dd("Hello");
             if($sprayers->save()){
-                return response()->json(['status' => 200, 'success' => 'Sprayer successfully created']);
+               // return response()->json(['status' => 200, 'success' => 'Sprayer successfully created']);
                 return redirect()->back()->with('status','Machine successfully created');
             }else{
-                return response()->json(['status' => 400, 'error' => 'Something went wrong please try again.']);
+               // return response()->json(['status' => 400, 'error' => 'Something went wrong please try again.']);
                 return redirect()->back()->with('error','Something went wrong please try again.');
             }
             //return redirect()->back()->with('name','You have no access to this page');

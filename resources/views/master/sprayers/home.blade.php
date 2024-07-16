@@ -11,7 +11,7 @@
                 <h3 class="font-semibold text-base text-gray-900 dark:text-gray-50">Add/Edit Sprayers</h3>
             </div>
             <div class="relative w-full max-w-full flex-grow flex-1 text-right">
-                <button class="action-btn py-1.5 font-light text-sm px-4 inline-block mt-2 rounded-lg text-center shadow-md sprayersadd" type="button" data-toggle="modal" data-target="#roleModal">Add Sprayer</button>
+                <a href="{{route('sprayers.addview')}}"class="action-btn py-1.5 font-light text-sm px-4 inline-block mt-2 rounded-lg text-center shadow-md sprayersadd" type="button" data-toggle="modal" data-target="#roleModal">Add Sprayer</a>
             </div>
         </div>
         <div class="w-full overflow-x-auto">
@@ -69,7 +69,7 @@
                                 @endif
                             </td>
                             <td class="px-4 py-3">
-                                <button type="button" class="bg-blue-500 text-white py-1.5 font-light text-sm w-full px-4 inline-block mt-2 rounded-lg text-center shadow-md sprayersedit" data-toggle="modal" data-target="#sprayersModal" data-id="{{ $sprayer['id'] }}" data-name="{{ $sprayer['name'] }}" data-description="{{ $sprayer['description'] }}" data-status="{{ $sprayer['status'] }}" data-image="{{ asset('sprayers_images').'/'.$sprayer['image'] }}">Edit</button>
+                                <a href="{{route('sprayers.edit',['spary_id' => $sprayer['id']])}}" type="button" class="bg-blue-500 text-white py-1.5 font-light text-sm w-full px-4 inline-block mt-2 rounded-lg text-center shadow-md sprayersedit" data-toggle="modal" data-target="#sprayersModal" data-id="{{ $sprayer['id'] }}" data-name="{{ $sprayer['name'] }}" data-description="{{ $sprayer['description'] }}" data-status="{{ $sprayer['status'] }}" data-image="{{ asset('sprayers_images').'/'.$sprayer['image'] }}">Edit</a>
                             </td>
                         </tr>
                     @endforeach

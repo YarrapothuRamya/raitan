@@ -83,10 +83,14 @@ Route::group(['middleware' => ['auth']], function () {
 
    Route::get('/raitan_admin/repairsandservices', [App\Http\Controllers\RepairAndServicesController::class, 'index'])->name('repairsandservices');
    Route::post('/raitan_admin/repairsandservices-add', [App\Http\Controllers\RepairAndServicesController::class, 'repairsandservicesAdd'])->name('repairsandservices.add');
+   Route::get('/raitan_admin/repairsandservices-add', [App\Http\Controllers\RepairAndServicesController::class, 'repairaddview'])->name('repairsandservices.addview');
    Route::post('/raitan_admin/repairsandservices-update', [App\Http\Controllers\RepairAndServicesController::class, 'repairsandservicesUpdate'])->name('repairsandservices.update');
+   Route::get('/raitan_admin/repairsandservices-update', [App\Http\Controllers\RepairAndServicesController::class, 'repaireditview'])->name('repairsandservices.edit');
 
    Route::get('/raitan_admin/sprayers', [App\Http\Controllers\SprayersController::class, 'index'])->name('sprayers');
    Route::post('/raitan_admin/sprayers-add', [App\Http\Controllers\SprayersController::class, 'sprayersAdd'])->name('sprayers.add');
+   Route::get('/raitan_admin/sprayers-add', [App\Http\Controllers\SprayersController::class, 'sprayersaddview'])->name('sprayers.addview');
+   Route::get('/raitan_admin/sprayers-update', [App\Http\Controllers\SprayersController::class, 'sprayersedit'])->name('sprayers.edit');
    Route::post('/raitan_admin/sprayers-update', [App\Http\Controllers\SprayersController::class, 'sprayersUpdate'])->name('sprayers.update');
 });
 

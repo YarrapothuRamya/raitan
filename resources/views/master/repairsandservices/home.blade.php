@@ -12,7 +12,7 @@
                 <h3 class="font-semibold text-base text-gray-900 dark:text-gray-50">Add/Edit Repairs and Services</h3>
             </div>
             <div class="relative w-full max-w-full flex-grow flex-1 text-right">
-                <button class="action-btn py-1.5 font-light text-sm px-4 inline-block mt-2 rounded-lg text-center shadow-md repairsandservicesadd" type="button" data-toggle="modal" data-target="#repairsandservicesModal">Add Repairs and Services</button>
+                <a href="{{route('repairsandservices.addview')}}" class="action-btn py-1.5 font-light text-sm px-4 inline-block mt-2 rounded-lg text-center shadow-md repairsandservicesadd" type="button" data-toggle="modal" data-target="#repairsandservicesModal">Add Repairs and Services</a>
             </div>
         </div>
         <div class="w-full overflow-x-auto">
@@ -70,7 +70,7 @@
                                 @endif
                             </td>
                             <td class="px-4 py-3">
-                                <button type="button" class="bg-blue-500 text-white py-1.5 font-light text-sm w-full px-4 inline-block mt-2 rounded-lg text-center shadow-md repairsandservicesedit" data-toggle="modal" data-target="#repairsandservicesModal" data-id="{{ $ras['id'] }}" data-name="{{ $ras['name'] }}" data-description="{{ $ras['description'] }}" data-status="{{ $ras['status'] }}" data-image="{{ asset('repairsandservices_images').'/'.$ras['image'] }}">Edit</button>
+                                <a href="{{route('repairsandservices.edit',['reas_id' => $ras['id']])}}" type="button" class="bg-blue-500 text-white py-1.5 font-light text-sm w-full px-4 inline-block mt-2 rounded-lg text-center shadow-md repairsandservicesedit" data-toggle="modal" data-target="#repairsandservicesModal" data-id="{{ $ras['id'] }}" data-name="{{ $ras['name'] }}" data-description="{{ $ras['description'] }}" data-status="{{ $ras['status'] }}" data-image="{{ asset('repairsandservices_images').'/'.$ras['image'] }}">Edit</a>
                             </td>
                         </tr>
                     @endforeach
@@ -178,7 +178,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <form action="{{ route('repairsandservices.update') }}" method="post">
+        <form action="" method="post">
             @csrf
             <div class="show_message1" id="show_message1">
 
@@ -381,171 +381,171 @@
 <!-- jQuery library -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script type="text/javascript">
-    function updateMachine(){
-        var id = $("#id").val();
-        var name = $("#name").val();
-        var image = $('#image')[0].files[0];
-        var description = $("#description").val();
-        var status = $("#status").val();
-        const status2 = $("#statusoneone").val();
-        $('#show_message').empty();
-        //alert(status + " " + status2);
-        if(status == status2){
+    // // function updateMachine(){
+    // //     var id = $("#id").val();
+    // //     var name = $("#name").val();
+    // //     var image = $('#image')[0].files[0];
+    // //     var description = $("#description").val();
+    // //     var status = $("#status").val();
+    // //     const status2 = $("#statusoneone").val();
+    // //     $('#show_message').empty();
+    // //     //alert(status + " " + status2);
+    // //     if(status == status2){
 
-        }else{
-            var status_val;
-            if(status == 1){
-                status_val = 'Active';
-            }else if(status == 0){
-                status_val = 'InActive';
-            }
-            if(id == 1 || id == 2 || id == 3){
-                if(confirm('This Repair and Service in Man power services in the home will be made '+ status_val +'. Do you want to continue?')){
+    // //     }else{
+    // //         var status_val;
+    // //         if(status == 1){
+    // //             status_val = 'Active';
+    // //         }else if(status == 0){
+    // //             status_val = 'InActive';
+    // //         }
+    // //         if(id == 1 || id == 2 || id == 3){
+    // //             if(confirm('This Repair and Service in Man power services in the home will be made '+ status_val +'. Do you want to continue?')){
                     
-                } else {
-                    return false;
-                }
-            }
+    // //             } else {
+    // //                 return false;
+    // //             }
+    // //         }
             
-        }
-        var formData = new FormData();
+    // //     }
+    //     var formData = new FormData();
         
-        formData.append("id", $('#id').val());
-        formData.append("name", $('#name').val());
-        formData.append("image", $('#image')[0].files[0]);
-        formData.append("description", $("#description").val());
-        formData.append("status", $("#status").val());
-        formData.append("status1", $("#status1").val());
-        //var formData = $(this).serialize();
-        $.ajax({
-            url: '{{ route("repairsandservices.update") }}',
-            type: 'post',
-            headers: { 'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content') },
-            contentType: false,
-            processData: false,
+    //     formData.append("id", $('#id').val());
+    //     formData.append("name", $('#name').val());
+    //     formData.append("image", $('#image')[0].files[0]);
+    //     formData.append("description", $("#description").val());
+    //     formData.append("status", $("#status").val());
+    //     formData.append("status1", $("#status1").val());
+    //     //var formData = $(this).serialize();
+    //     $.ajax({
+    //         url: '{{ route("repairsandservices.update") }}',
+    //         type: 'post',
+    //         headers: { 'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content') },
+    //         contentType: false,
+    //         processData: false,
             
-            /*data: {
-                //id : id,
-                name: addname,
-                addimage: addimage,
-                addhorsepower: addhorsepower,
-                status: status,
-            },*/
-            data: formData,
-            dataType: 'json',
+    //         /*data: {
+    //             //id : id,
+    //             name: addname,
+    //             addimage: addimage,
+    //             addhorsepower: addhorsepower,
+    //             status: status,
+    //         },*/
+    //         data: formData,
+    //         dataType: 'json',
 
             
 
-            success: function(response) {
-                $('#show_message').empty();
-                console.log(response);
-                if(response.status == 200){
-                    $('#roleModal').modal('hide');
-                    alert(response.success);
-                    location.reload()
-                }
-                if(response.status == 400){
-                    alert(response.error);
-                }
-            },
-            error: function (err) {
-                $('#show_message').empty();
-                //console.log(data);
-                if (err.status == 422 || err.status == 500) { // when status code is 422, it's a validation issue
-                    console.log(err.responseJSON);
-                    //alert(err.responseJSON.message);
-                    if(err.responseJSON.message == 'Validation rule unique requires at least 1 parameters.'){
-                        $('#show_message').html('<span style="color: red;">Role name must be unique.</span>');
-                    }else{
-                        $('#show_message').html('<span style="color: red;">'+err.responseJSON.message+'</span>');
-                    }
+    //         success: function(response) {
+    //             $('#show_message').empty();
+    //             console.log(response);
+    //             if(response.status == 200){
+    //                 $('#roleModal').modal('hide');
+    //                 alert(response.success);
+    //                 location.reload()
+    //             }
+    //             if(response.status == 400){
+    //                 alert(response.error);
+    //             }
+    //         },
+    //         error: function (err) {
+    //             $('#show_message').empty();
+    //             //console.log(data);
+    //             if (err.status == 422 || err.status == 500) { // when status code is 422, it's a validation issue
+    //                 console.log(err.responseJSON);
+    //                 //alert(err.responseJSON.message);
+    //                 if(err.responseJSON.message == 'Validation rule unique requires at least 1 parameters.'){
+    //                     $('#show_message').html('<span style="color: red;">Role name must be unique.</span>');
+    //                 }else{
+    //                     $('#show_message').html('<span style="color: red;">'+err.responseJSON.message+'</span>');
+    //                 }
                     
                     
-                    // you can loop through the errors object and show it to the user
-                    /*console.warn(err.responseJSON.errors);
-                    // display errors on each form field
-                    $.each(err.responseJSON.errors, function (i, error) {
-                        alert(i + " " + error);
-                        var el = $(document).find('[name="'+i+'"]');
-                        el.after($('<span style="color: red;">'+error[0]+'</span>'));
-                    });*/
-                }
-            },
-        });
-    }
+    //                 // you can loop through the errors object and show it to the user
+    //                 /*console.warn(err.responseJSON.errors);
+    //                 // display errors on each form field
+    //                 $.each(err.responseJSON.errors, function (i, error) {
+    //                     alert(i + " " + error);
+    //                     var el = $(document).find('[name="'+i+'"]');
+    //                     el.after($('<span style="color: red;">'+error[0]+'</span>'));
+    //                 });*/
+    //             }
+    //         },
+    //     });
+    // }
 
 
-    function addMachine(){
-        //var id = $("#id").val();
-        var addname = $("#addname").val();
-        var addimage = $('#addimage')[0].files[0];
-        var adddescription = $("#adddescription").val();
-        var status = $("#addstatus").val();
-        $('#show_message').empty();
-        //alert(name);
-        var formData = new FormData();
+    // function addMachine(){
+    //     //var id = $("#id").val();
+    //     var addname = $("#addname").val();
+    //     var addimage = $('#addimage')[0].files[0];
+    //     var adddescription = $("#adddescription").val();
+    //     var status = $("#addstatus").val();
+    //     $('#show_message').empty();
+    //     //alert(name);
+    //     var formData = new FormData();
         
-        formData.append("name", $('#addname').val());
-        formData.append("addimage", $('#addimage')[0].files[0]);
-        formData.append("adddescription", $("#adddescription").val());
-        formData.append("addstatus", $("#addstatus").val());
-        //var formData = $(this).serialize();
-        $.ajax({
-            url: '{{ route("repairsandservices.add") }}',
-            type: 'post',
-            headers: { 'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content') },
-            contentType: false,
-            processData: false,
+    //     formData.append("name", $('#addname').val());
+    //     formData.append("addimage", $('#addimage')[0].files[0]);
+    //     formData.append("adddescription", $("#adddescription").val());
+    //     formData.append("addstatus", $("#addstatus").val());
+    //     //var formData = $(this).serialize();
+    //     $.ajax({
+    //         url: '{{ route("repairsandservices.add") }}',
+    //         type: 'post',
+    //         headers: { 'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content') },
+    //         contentType: false,
+    //         processData: false,
             
-            /*data: {
-                //id : id,
-                name: addname,
-                addimage: addimage,
-                addhorsepower: addhorsepower,
-                status: status,
-            },*/
-            data: formData,
-            dataType: 'json',
+    //         /*data: {
+    //             //id : id,
+    //             name: addname,
+    //             addimage: addimage,
+    //             addhorsepower: addhorsepower,
+    //             status: status,
+    //         },*/
+    //         data: formData,
+    //         dataType: 'json',
 
             
 
-            success: function(response) {
-                $('#show_message').empty();
-                console.log(response);
-                if(response.status == 200){
-                    $('#roleModal').modal('hide');
-                    alert(response.success);
-                    location.reload()
-                }
-                if(response.status == 400){
-                    alert(response.error);
-                }
-            },
-            error: function (err) {
-                $('#show_message').empty();
-                //console.log(data);
-                if (err.status == 422 || err.status == 500) { // when status code is 422, it's a validation issue
-                    console.log(err.responseJSON);
-                    //alert(err.responseJSON.message);
-                    if(err.responseJSON.message == 'Validation rule unique requires at least 1 parameters.'){
-                        $('#show_message').html('<span style="color: red;">Role name must be unique.</span>');
-                    }else{
-                        $('#show_message').html('<span style="color: red;">'+err.responseJSON.message+'</span>');
-                    }
+    //         success: function(response) {
+    //             $('#show_message').empty();
+    //             console.log(response);
+    //             if(response.status == 200){
+    //                 $('#roleModal').modal('hide');
+    //                 alert(response.success);
+    //                 location.reload()
+    //             }
+    //             if(response.status == 400){
+    //                 alert(response.error);
+    //             }
+    //         },
+    //         error: function (err) {
+    //             $('#show_message').empty();
+    //             //console.log(data);
+    //             if (err.status == 422 || err.status == 500) { // when status code is 422, it's a validation issue
+    //                 console.log(err.responseJSON);
+    //                 //alert(err.responseJSON.message);
+    //                 if(err.responseJSON.message == 'Validation rule unique requires at least 1 parameters.'){
+    //                     $('#show_message').html('<span style="color: red;">Role name must be unique.</span>');
+    //                 }else{
+    //                     $('#show_message').html('<span style="color: red;">'+err.responseJSON.message+'</span>');
+    //                 }
                     
                     
-                    // you can loop through the errors object and show it to the user
-                    /*console.warn(err.responseJSON.errors);
-                    // display errors on each form field
-                    $.each(err.responseJSON.errors, function (i, error) {
-                        alert(i + " " + error);
-                        var el = $(document).find('[name="'+i+'"]');
-                        el.after($('<span style="color: red;">'+error[0]+'</span>'));
-                    });*/
-                }
-            },
-        });
-    }
+    //                 // you can loop through the errors object and show it to the user
+    //                 /*console.warn(err.responseJSON.errors);
+    //                 // display errors on each form field
+    //                 $.each(err.responseJSON.errors, function (i, error) {
+    //                     alert(i + " " + error);
+    //                     var el = $(document).find('[name="'+i+'"]');
+    //                     el.after($('<span style="color: red;">'+error[0]+'</span>'));
+    //                 });*/
+    //             }
+    //         },
+    //     });
+    // }
 
     function preview() {
         frame.src=URL.createObjectURL(event.target.files[0]);
