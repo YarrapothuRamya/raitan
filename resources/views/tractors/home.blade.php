@@ -58,561 +58,92 @@
           </div>
         </div>
 
-      <div class="relative w-full">
-
-        <div class="sticky  mt-2">
-          <div class="bg-white shadow-t-md border border-pear/60 p-2 rounded-xl text-sm grid grid-cols-2 gap-6">
-            <div class="text-sm">
-              <p>Horse Power</p>
-              <div class="relative select-none">
-                <div
-                  class=" flex overflow-x-auto overflow-y-hidden hide-scrollbar will-change-transform transition-all duration-300 cursor-grabbing relative flex rounded-full mt-4 mb-2 border sm:snap-none snap-x">
-                  <button id="filter-30hp" class="text-sm py-2 px-4 whitespace-nowrap text-pistachio rounded-full w-full smooth-animate">< 30HP</button>
-          <button id="filter-30-50hp" class="hover:bg-gray-200 text-sm py-2 px-4 whitespace-nowrap text-pistachio rounded-full w-full smooth-animate">30 - 50HP</button>
-          <button id="filter-50-75hp" class="hover:bg-gray-200 text-sm py-2 px-4 whitespace-nowrap text-pistachio rounded-full w-full smooth-animate">50 - 75HP</button>
-          <button id="filter-75hp" class="hover:bg-gray-200 text-sm py-2 px-4 whitespace-nowrap text-pistachio rounded-full w-full smooth-animate">> 75HP</button>
-                </div>
-              </div>
-            </div>
+        <div class="relative w-full">
+  <div class="sticky mt-2">
+    <div class="bg-white shadow-t-md border border-pear/60 p-2 rounded-xl text-sm grid grid-cols-2 gap-6">
+      <div class="text-sm">
+        <p>Horse Power</p>
+        <div class="relative select-none">
+          <div class="flex overflow-x-auto overflow-y-hidden hide-scrollbar will-change-transform transition-all duration-300 cursor-grabbing relative flex rounded-full mt-4 mb-2 border sm:snap-none snap-x">
+            <button id="filter-30hp" class="text-sm py-2 px-4 whitespace-nowrap text-pistachio rounded-full w-full smooth-animate">< 30HP</button>
+            <button id="filter-30-50hp" class="hover:bg-gray-200 text-sm py-2 px-4 whitespace-nowrap text-pistachio rounded-full w-full smooth-animate">30 - 50HP</button>
+            <button id="filter-50-75hp" class="hover:bg-gray-200 text-sm py-2 px-4 whitespace-nowrap text-pistachio rounded-full w-full smooth-animate">50 - 75HP</button>
+            <button id="filter-75hp" class="hover:bg-gray-200 text-sm py-2 px-4 whitespace-nowrap text-pistachio rounded-full w-full smooth-animate">> 75HP</button>
           </div>
         </div>
-        <div class="w-full flex flex-col col-span-2 space-y-4 lg:mt-0 mt-8 overflow-y-auto pb-5">
-
-<!-- lists & Images -->
-          <a href="{{ route('productdetails.home') }}" class="tractor-card" data-hp="30">
-            <div class="tractor-block border border-pear/30 shadow-md shadow-pear/30 rounded-lg lg:p-4 p-2">
-              <div class="flex justify-between clickable">
-                <div class="flex space-x-3">
-                  <div>
-                    <div class="w-40 h-28">
-                      <div class="w-full h-full">
-                        <img src="images/implements/rotary-tiller.jpg" alt="..." class="w-40 h-28" width="160" height="112">
-                      </div>
-                    </div>
-                  </div>
-                  <div>
-                    <h2 class="text-lg font-medium"><a href="#"><strong>Rotary Tiller</strong></a></h2>
-                    <div class="flex mt-1 text-sm items-center flex-wrap text-gray-500 mb-1">
-
-                      <div class="flex mt-2 mb-1"><svg stroke="currentColor" fill="currentColor" stroke-width="0"
-                          viewBox="0 0 512 512" class="mt-1 mr-1 text-pistachio min-w-[24px]" height="24" width="24"
-                          xmlns="http://www.w3.org/2000/svg">
-                          <path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"
-                            d="M256 48c-79.5 0-144 61.39-144 137 0 87 96 224.87 131.25 272.49a15.77 15.77 0 0025.5 0C304 409.89 400 272.07 400 185c0-75.61-64.5-137-144-137z">
-                          </path>
-                          <circle cx="256" cy="192" r="48" fill="none" stroke-linecap="round" stroke-linejoin="round"
-                            stroke-width="32"></circle>
-                        </svg>
-                        <div class="text-sm"><span class="block">Deal for small farms, orchards, fruit and vegetable gardens, and nurseries.<br>Perfect for soil conditioning, weed control, seedbed preparation, and puddling in small fields.<br>Can loosen and aerate soil to a depth of 4 to 5 inches.<br>Available with 6 or 4 blades per flange in L & C type blade options.<br>Helical blade arrangement reduces load on the tractor, making tillage fast and economical.<br>Equipped with a heavy-duty PTO shaft featuring a shear bolt or optional slip clutch for overload protection.<br>Sealed bearings prevent the entry of moisture and mud.<br>Strong plank assembly ensures a perfectly leveled and finished seedbed.</span>
-                          <span
-                            class="block text-xs"><a href="#"><strong>More Details</strong></a></span></div>
-                      </div>
-                    </div>
-                    <div class="flex items-center">
-                      <svg class="w-4 h-4 text-yellow-300 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                        fill="currentColor" viewBox="0 0 22 20">
-                        <path
-                          d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                      </svg>
-                      <svg class="w-4 h-4 text-yellow-300 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                        fill="currentColor" viewBox="0 0 22 20">
-                        <path
-                          d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                      </svg>
-                      <svg class="w-4 h-4 text-yellow-300 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                        fill="currentColor" viewBox="0 0 22 20">
-                        <path
-                          d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                      </svg>
-                      <svg class="w-4 h-4 text-yellow-300 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                        fill="currentColor" viewBox="0 0 22 20">
-                        <path
-                          d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                      </svg>
-                      <svg class="w-4 h-4 ms-1 text-gray-300 dark:text-gray-500" aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
-                        <path
-                          d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-                <div class="ml-4 flex flex-col items-stretch justify-between">
-                  <!-- <div>
-                    <div class="font-medium flex space-x-1 items-center mb-1">
-                      <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em"
-                        width="1em" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                          d="M17 6V4H6v2h3.5c1.302 0 2.401.838 2.815 2H6v2h6.315A2.994 2.994 0 0 1 9.5 12H6v2.414L11.586 20h2.828l-6-6H9.5a5.007 5.007 0 0 0 4.898-4H17V8h-2.602a4.933 4.933 0 0 0-.924-2H17z">
-                        </path>
-                      </svg>
-                      <span>1,290</span>
-                    </div>
-                    <span class="text-xs block text-gray-600">for 135 kms without fuel</span>
-                  </div> -->
-                  <div class="flex justify-center">
-
-                    <button id="book-now-btn"
-                      class="action-btn py-1.5 font-light text-sm w-full px-4 inline-block mt-2 rounded-lg text-center shadow-md">Service Providers</button>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-          </a>
-
-
-
-
-          <a href="{{ route('productdetails.home') }}" class="tractor-card" data-hp="50">
-            <div class=" border border-pear/30 shadow-md shadow-pear/30 rounded-lg lg:p-4 p-2">
-              <div class="flex justify-between">
-                <div class="flex space-x-3">
-                  <div>
-                    <div class="w-40 h-28">
-                      <div class="w-full h-full"><img src="images/implements/disc-harrow.png" alt="..." class="w-40 h-28"
-                          width="160" height="112"></div>
-                    </div>
-                  </div>
-                  <div>
-                    <h2 class="text-lg font-medium"><a href="#"><strong>Harrow Disc</strong></a></h2>
-                    <div class="flex mt-1 text-sm items-center flex-wrap text-gray-500 mb-1">
-
-                      <div class="flex mt-2 mb-1"><svg stroke="currentColor" fill="currentColor" stroke-width="0"
-                          viewBox="0 0 512 512" class="mt-1 mr-1 text-pistachio min-w-[24px]" height="24" width="24"
-                          xmlns="http://www.w3.org/2000/svg">
-                          <path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"
-                            d="M256 48c-79.5 0-144 61.39-144 137 0 87 96 224.87 131.25 272.49a15.77 15.77 0 0025.5 0C304 409.89 400 272.07 400 185c0-75.61-64.5-137-144-137z">
-                          </path>
-                          <circle cx="256" cy="192" r="48" fill="none" stroke-linecap="round" stroke-linejoin="round"
-                            stroke-width="32"></circle>
-                        </svg>
-                        <div class="text-sm"><span class="block">Easily adjustable drawbar helps in turning at field edges to cover maximum area.<br>Ideal for open field workings such as superficial ploughing, shattering of clods, soil preparation for sowing, and burial of organic substances and remains.<br>Can be easily transported on tractors using the hydraulic lift system.<br>Equipped with high-quality boron steel discs with 48-52 HRC hardness.<br>Effectively breaks up heavy clods due to its sturdy design and weight.<br>Bearing spools ensure better lubrication and reduce load on the tractor.<br>High-quality seals prevent mud and water entry into the bearing and hub.<br>Features a high-quality tubular frame of compact size.</span>
-                          <span
-                            class="block text-xs">Hyderabad - 500090</span></div>
-                      </div>
-                    </div>
-                    <div class="flex items-center">
-                      <svg class="w-4 h-4 text-yellow-300 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                        fill="currentColor" viewBox="0 0 22 20">
-                        <path
-                          d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                      </svg>
-                      <svg class="w-4 h-4 text-yellow-300 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                        fill="currentColor" viewBox="0 0 22 20">
-                        <path
-                          d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                      </svg>
-                      <svg class="w-4 h-4 text-yellow-300 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                        fill="currentColor" viewBox="0 0 22 20">
-                        <path
-                          d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                      </svg>
-                      <svg class="w-4 h-4 text-yellow-300 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                        fill="currentColor" viewBox="0 0 22 20">
-                        <path
-                          d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                      </svg>
-                      <svg class="w-4 h-4 ms-1 text-gray-300 dark:text-gray-500" aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
-                        <path
-                          d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-                <div class="ml-4 flex flex-col items-stretch justify-between">
-                  <!-- <div>
-                    <div class="font-medium flex space-x-1 items-center mb-1"><svg stroke="currentColor"
-                        fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path
-                          d="M17 6V4H6v2h3.5c1.302 0 2.401.838 2.815 2H6v2h6.315A2.994 2.994 0 0 1 9.5 12H6v2.414L11.586 20h2.828l-6-6H9.5a5.007 5.007 0 0 0 4.898-4H17V8h-2.602a4.933 4.933 0 0 0-.924-2H17z">
-                        </path>
-                      </svg><span>1,520</span></div><span class="text-xs block text-gray-600">for 135 kms without
-                      fuel</span>
-                  </div> -->
-                  <div class="flex justify-center"><button id="book-now-btn"
-                      class="action-btn py-1.5 font-light text-sm w-full px-4 inline-block mt-2 rounded-lg text-center shadow-md">Call
-                      now</button></div>
-                </div>
-              </div>
-            </div>
-          </a>
-
-          <a href="{{ route('productdetails.home') }}" class="tractor-card" data-hp="50">
-            <div class=" border border-pear/30 shadow-md shadow-pear/30 rounded-lg lg:p-4 p-2">
-              <div class="flex justify-between">
-                <div class="flex space-x-3">
-                  <div>
-                    <div class="w-40 h-28">
-                      <div class="w-full h-full"><img src="images/tractors/tractors301.jpg" alt="..." class="w-40 h-28"
-                          width="160" height="112"></div>
-                    </div>
-                  </div>
-                  <div>
-                    <h2 class="text-lg font-medium">Mahindra Oja 2121</h2>
-                    <div class="flex mt-1 text-sm items-center flex-wrap text-gray-500 mb-1">
-
-                      <div class="flex mt-2 mb-1"><svg stroke="currentColor" fill="currentColor" stroke-width="0"
-                          viewBox="0 0 512 512" class="mt-1 mr-1 text-pistachio min-w-[24px]" height="24" width="24"
-                          xmlns="http://www.w3.org/2000/svg">
-                          <path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"
-                            d="M256 48c-79.5 0-144 61.39-144 137 0 87 96 224.87 131.25 272.49a15.77 15.77 0 0025.5 0C304 409.89 400 272.07 400 185c0-75.61-64.5-137-144-137z">
-                          </path>
-                          <circle cx="256" cy="192" r="48" fill="none" stroke-linecap="round" stroke-linejoin="round"
-                            stroke-width="32"></circle>
-                        </svg>
-                        <div class="text-sm"><span class="block"> Bachupally, K V Rangareddy District</span><span
-                            class="block text-xs">Hyderabad - 500090</span></div>
-                      </div>
-                    </div>
-                    <div class="flex items-center">
-                      <svg class="w-4 h-4 text-yellow-300 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                        fill="currentColor" viewBox="0 0 22 20">
-                        <path
-                          d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                      </svg>
-                      <svg class="w-4 h-4 text-yellow-300 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                        fill="currentColor" viewBox="0 0 22 20">
-                        <path
-                          d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                      </svg>
-                      <svg class="w-4 h-4 text-yellow-300 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                        fill="currentColor" viewBox="0 0 22 20">
-                        <path
-                          d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                      </svg>
-                      <svg class="w-4 h-4 text-yellow-300 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                        fill="currentColor" viewBox="0 0 22 20">
-                        <path
-                          d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                      </svg>
-                      <svg class="w-4 h-4 ms-1 text-gray-300 dark:text-gray-500" aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
-                        <path
-                          d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-                <div class="ml-4 flex flex-col items-stretch justify-between">
-                  <!-- <div>
-                    <div class="font-medium flex space-x-1 items-center mb-1"><svg stroke="currentColor"
-                        fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path
-                          d="M17 6V4H6v2h3.5c1.302 0 2.401.838 2.815 2H6v2h6.315A2.994 2.994 0 0 1 9.5 12H6v2.414L11.586 20h2.828l-6-6H9.5a5.007 5.007 0 0 0 4.898-4H17V8h-2.602a4.933 4.933 0 0 0-.924-2H17z">
-                        </path>
-                      </svg><span>1,570</span></div><span class="text-xs block text-gray-600">for 135 kms without
-                      fuel</span>
-                  </div> -->
-                  <div class="flex justify-center"><button id="book-now-btn"
-                      class="action-btn py-1.5 font-light text-sm w-full px-4 inline-block mt-2 rounded-lg text-center shadow-md">Call
-                      now</button></div>
-                </div>
-              </div>
-            </div>
-          </a>
-          <a href="{{ route('productdetails.home') }}" class="tractor-card" data-hp="50">
-            <div class=" border border-pear/30 shadow-md shadow-pear/30 rounded-lg lg:p-4 p-2">
-              <div class="flex justify-between">
-                <div class="flex space-x-3">
-                  <div>
-                    <div class="w-40 h-28">
-                      <div class="w-full h-full"><img src="images/tractors/tractor1.jpg" alt="..." class="w-40 h-28"
-                          width="160" height="112"></div>
-                    </div>
-                  </div>
-                  <div>
-                    <h2 class="text-lg font-medium">Mahindra OJA 3140 Tractor</h2>
-                    <div class="flex mt-1 text-sm items-center flex-wrap text-gray-500 mb-1">
-
-                      <div class="flex mt-2 mb-1"><svg stroke="currentColor" fill="currentColor" stroke-width="0"
-                          viewBox="0 0 512 512" class="mt-1 mr-1 text-pistachio min-w-[24px]" height="24" width="24"
-                          xmlns="http://www.w3.org/2000/svg">
-                          <path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"
-                            d="M256 48c-79.5 0-144 61.39-144 137 0 87 96 224.87 131.25 272.49a15.77 15.77 0 0025.5 0C304 409.89 400 272.07 400 185c0-75.61-64.5-137-144-137z">
-                          </path>
-                          <circle cx="256" cy="192" r="48" fill="none" stroke-linecap="round" stroke-linejoin="round"
-                            stroke-width="32"></circle>
-                        </svg>
-                        <div class="text-sm"><span class="block"> Bachupally, K V Rangareddy District</span><span
-                            class="block text-xs">Hyderabad - 500090</span></div>
-                      </div>
-                    </div>
-                    <div class="flex items-center">
-                      <svg class="w-4 h-4 text-yellow-300 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                        fill="currentColor" viewBox="0 0 22 20">
-                        <path
-                          d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                      </svg>
-                      <svg class="w-4 h-4 text-yellow-300 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                        fill="currentColor" viewBox="0 0 22 20">
-                        <path
-                          d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                      </svg>
-                      <svg class="w-4 h-4 text-yellow-300 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                        fill="currentColor" viewBox="0 0 22 20">
-                        <path
-                          d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                      </svg>
-                      <svg class="w-4 h-4 text-yellow-300 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                        fill="currentColor" viewBox="0 0 22 20">
-                        <path
-                          d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                      </svg>
-                      <svg class="w-4 h-4 ms-1 text-gray-300 dark:text-gray-500" aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
-                        <path
-                          d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-                <div class="ml-4 flex flex-col items-stretch justify-between">
-                  <!-- <div>
-                    <div class="font-medium flex space-x-1 items-center mb-1"><svg stroke="currentColor"
-                        fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path
-                          d="M17 6V4H6v2h3.5c1.302 0 2.401.838 2.815 2H6v2h6.315A2.994 2.994 0 0 1 9.5 12H6v2.414L11.586 20h2.828l-6-6H9.5a5.007 5.007 0 0 0 4.898-4H17V8h-2.602a4.933 4.933 0 0 0-.924-2H17z">
-                        </path>
-                      </svg><span>1,690</span></div><span class="text-xs block text-gray-600">for 135 kms without
-                      fuel</span>
-                  </div> -->
-                  <div class="flex justify-center"><button id="book-now-btn"
-                      class="action-btn py-1.5 font-light text-sm w-full px-4 inline-block mt-2 rounded-lg text-center shadow-md">Call
-                      now</button></div>
-                </div>
-              </div>
-            </div>
-          </a>
-          <a href="{{ route('productdetails.home') }}" class="tractor-card" data-hp="30">
-            <div class=" border border-pear/30 shadow-md shadow-pear/30 rounded-lg lg:p-4 p-2">
-              <div class="flex justify-between">
-                <div class="flex space-x-3">
-                  <div>
-                    <div class="w-40 h-28">
-                      <div class="w-full h-full"><img src="images/tractors/tractors303.jpg" alt="..." class="w-40 h-28"
-                          width="160" height="112"></div>
-                    </div>
-                  </div>
-                  <div>
-                    <h2 class="text-lg font-medium">Sonalika</h2>
-                    <div class="flex mt-1 text-sm items-center flex-wrap text-gray-500 mb-1">
-
-                      <div class="flex mt-2 mb-1"><svg stroke="currentColor" fill="currentColor" stroke-width="0"
-                          viewBox="0 0 512 512" class="mt-1 mr-1 text-pistachio min-w-[24px]" height="24" width="24"
-                          xmlns="http://www.w3.org/2000/svg">
-                          <path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"
-                            d="M256 48c-79.5 0-144 61.39-144 137 0 87 96 224.87 131.25 272.49a15.77 15.77 0 0025.5 0C304 409.89 400 272.07 400 185c0-75.61-64.5-137-144-137z">
-                          </path>
-                          <circle cx="256" cy="192" r="48" fill="none" stroke-linecap="round" stroke-linejoin="round"
-                            stroke-width="32"></circle>
-                        </svg>
-                        <div class="text-sm"><span class="block"> Bachupally, K V Rangareddy District</span><span
-                            class="block text-xs">Hyderabad - 500090</span></div>
-                      </div>
-                    </div>
-                    <div class="flex items-center">
-                      <svg class="w-4 h-4 text-yellow-300 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                        fill="currentColor" viewBox="0 0 22 20">
-                        <path
-                          d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                      </svg>
-                      <svg class="w-4 h-4 text-yellow-300 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                        fill="currentColor" viewBox="0 0 22 20">
-                        <path
-                          d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                      </svg>
-                      <svg class="w-4 h-4 text-yellow-300 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                        fill="currentColor" viewBox="0 0 22 20">
-                        <path
-                          d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                      </svg>
-                      <svg class="w-4 h-4 text-yellow-300 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                        fill="currentColor" viewBox="0 0 22 20">
-                        <path
-                          d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                      </svg>
-                      <svg class="w-4 h-4 ms-1 text-gray-300 dark:text-gray-500" aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
-                        <path
-                          d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-                <div class="ml-4 flex flex-col items-stretch justify-between">
-                  <!-- <div>
-                    <div class="font-medium flex space-x-1 items-center mb-1"><svg stroke="currentColor"
-                        fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path
-                          d="M17 6V4H6v2h3.5c1.302 0 2.401.838 2.815 2H6v2h6.315A2.994 2.994 0 0 1 9.5 12H6v2.414L11.586 20h2.828l-6-6H9.5a5.007 5.007 0 0 0 4.898-4H17V8h-2.602a4.933 4.933 0 0 0-.924-2H17z">
-                        </path>
-                      </svg><span>1,740</span></div><span class="text-xs block text-gray-600">for 135 kms without
-                      fuel</span>
-                  </div> -->
-                  <div class="flex justify-center"><button id="book-now-btn"
-                      class="action-btn py-1.5 font-light text-sm w-full px-4 inline-block mt-2 rounded-lg text-center shadow-md">Call
-                      now</button></div>
-                </div>
-              </div>
-            </div>
-          </a>
-          <a href="{{ route('productdetails.home') }}" class="tractor-card" data-hp="50">
-            <div class=" border border-pear/30 shadow-md shadow-pear/30 rounded-lg lg:p-4 p-2">
-              <div class="flex justify-between">
-                <div class="flex space-x-3">
-                  <div>
-                    <div class="w-40 h-28">
-                      <div class="w-full h-full"><img src="images/tractors/tractor1.jpg" alt="..." class="w-40 h-28"
-                          width="160" height="112"></div>
-                    </div>
-                  </div>
-                  <div>
-                    <h2 class="text-lg font-medium">Mahindra OJA 3140 Tractor</h2>
-                    <div class="flex mt-1 text-sm items-center flex-wrap text-gray-500 mb-1">
-
-                      <div class="flex mt-2 mb-1"><svg stroke="currentColor" fill="currentColor" stroke-width="0"
-                          viewBox="0 0 512 512" class="mt-1 mr-1 text-pistachio min-w-[24px]" height="24" width="24"
-                          xmlns="http://www.w3.org/2000/svg">
-                          <path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"
-                            d="M256 48c-79.5 0-144 61.39-144 137 0 87 96 224.87 131.25 272.49a15.77 15.77 0 0025.5 0C304 409.89 400 272.07 400 185c0-75.61-64.5-137-144-137z">
-                          </path>
-                          <circle cx="256" cy="192" r="48" fill="none" stroke-linecap="round" stroke-linejoin="round"
-                            stroke-width="32"></circle>
-                        </svg>
-                        <div class="text-sm"><span class="block"> Bachupally, K V Rangareddy District</span><span
-                            class="block text-xs">Hyderabad - 500090</span></div>
-                      </div>
-                    </div>
-                    <div class="flex items-center">
-                      <svg class="w-4 h-4 text-yellow-300 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                        fill="currentColor" viewBox="0 0 22 20">
-                        <path
-                          d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                      </svg>
-                      <svg class="w-4 h-4 text-yellow-300 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                        fill="currentColor" viewBox="0 0 22 20">
-                        <path
-                          d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                      </svg>
-                      <svg class="w-4 h-4 text-yellow-300 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                        fill="currentColor" viewBox="0 0 22 20">
-                        <path
-                          d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                      </svg>
-                      <svg class="w-4 h-4 text-yellow-300 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                        fill="currentColor" viewBox="0 0 22 20">
-                        <path
-                          d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                      </svg>
-                      <svg class="w-4 h-4 ms-1 text-gray-300 dark:text-gray-500" aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
-                        <path
-                          d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-                <div class="ml-4 flex flex-col items-stretch justify-between">
-                  <!-- <div>
-                    <div class="font-medium flex space-x-1 items-center mb-1"><svg stroke="currentColor"
-                        fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path
-                          d="M17 6V4H6v2h3.5c1.302 0 2.401.838 2.815 2H6v2h6.315A2.994 2.994 0 0 1 9.5 12H6v2.414L11.586 20h2.828l-6-6H9.5a5.007 5.007 0 0 0 4.898-4H17V8h-2.602a4.933 4.933 0 0 0-.924-2H17z">
-                        </path>
-                      </svg><span>2,200</span></div><span class="text-xs block text-gray-600">for 135 kms without
-                      fuel</span>
-                  </div> -->
-                  <div class="flex justify-center"><button id="book-now-btn"
-                      class="action-btn py-1.5 font-light text-sm w-full px-4 inline-block mt-2 rounded-lg text-center shadow-md">Call
-                      now</button></div>
-                </div>
-              </div>
-            </div>
-          </a>
-          <a href="{{ route('productdetails.home') }}" class="tractor-card" data-hp="50">
-            <div class="disabled border border-pear/30 shadow-md shadow-pear/30 rounded-lg lg:p-4 p-2">
-              <div class="flex justify-between">
-                <div class="flex space-x-3">
-                  <div>
-                    <div class="w-40 h-28">
-                      <div class="w-full h-full"><img src="images/tractors/tractor1.jpg" alt="..." class="w-40 h-28"
-                          width="160" height="112"></div>
-                    </div>
-                  </div>
-                  <div>
-                    <h2 class="text-lg font-medium">Mahindra YUVRAJ</h2>
-                    <div class="flex mt-1 text-sm items-center flex-wrap text-gray-500 mb-1">
-
-                      <div class="flex mt-2 mb-1"><svg stroke="currentColor" fill="currentColor" stroke-width="0"
-                          viewBox="0 0 512 512" class="mt-1 mr-1 text-pistachio min-w-[24px]" height="24" width="24"
-                          xmlns="http://www.w3.org/2000/svg">
-                          <path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"
-                            d="M256 48c-79.5 0-144 61.39-144 137 0 87 96 224.87 131.25 272.49a15.77 15.77 0 0025.5 0C304 409.89 400 272.07 400 185c0-75.61-64.5-137-144-137z">
-                          </path>
-                          <circle cx="256" cy="192" r="48" fill="none" stroke-linecap="round" stroke-linejoin="round"
-                            stroke-width="32"></circle>
-                        </svg>
-                        <div class="text-sm"><span class="block"> Bachupally, K V Rangareddy District</span><span
-                            class="block text-xs">Hyderabad - 500090</span></div>
-                      </div>
-                    </div>
-                    <div class="flex items-center">
-                      <svg class="w-4 h-4 text-yellow-300 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                        fill="currentColor" viewBox="0 0 22 20">
-                        <path
-                          d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                      </svg>
-                      <svg class="w-4 h-4 text-yellow-300 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                        fill="currentColor" viewBox="0 0 22 20">
-                        <path
-                          d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                      </svg>
-                      <svg class="w-4 h-4 text-yellow-300 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                        fill="currentColor" viewBox="0 0 22 20">
-                        <path
-                          d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                      </svg>
-                      <svg class="w-4 h-4 text-yellow-300 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                        fill="currentColor" viewBox="0 0 22 20">
-                        <path
-                          d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                      </svg>
-                      <svg class="w-4 h-4 ms-1 text-gray-300 dark:text-gray-500" aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
-                        <path
-                          d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-                <div class="ml-4 flex flex-col items-stretch justify-between">
-                  <!-- <div>
-                    <div class="font-medium flex space-x-1 items-center mb-1"><svg stroke="currentColor"
-                        fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path
-                          d="M17 6V4H6v2h3.5c1.302 0 2.401.838 2.815 2H6v2h6.315A2.994 2.994 0 0 1 9.5 12H6v2.414L11.586 20h2.828l-6-6H9.5a5.007 5.007 0 0 0 4.898-4H17V8h-2.602a4.933 4.933 0 0 0-.924-2H17z">
-                        </path>
-                      </svg><span>2,810</span></div><span class="text-xs block text-gray-600">for 135 kms without
-                      fuel</span>
-                  </div> -->
-                  <div class="flex justify-center"><button disabled="" id="book-now-btn"
-                      class="action-btn py-1.5 font-light text-sm w-full px-4 inline-block mt-2 rounded-lg text-center shadow-md">Call
-                      now</button></div>
-                </div>
-              </div>
-              <p class="text-sm text-center text-red-600 font-medium">You missed it</p>
-            </div>
-          </a>
-        </div>
       </div>
+    </div>
+  </div>
+  <div class="w-full grid grid-cols-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 lg:mt-0 mt-8 overflow-y-auto pb-5">
+    <!-- lists & Images -->
+    <a href="{{ route('productdetails.home') }}" class="tractor-card" data-hp="30">
+      <div class="border border-pear/30 shadow-md shadow-pear/30 rounded-lg lg:p-4 p-2 flex flex-col items-center">
+        <div class="w-40 h-30 mb-4">
+          <img src="images/implementors/cultivator.jpg" alt="Rotary Tiller" class="w-full h-full object-cover" >
+        </div>
+        <h2 class="text-lg font-medium mb-2">Rotary Tiller</h2>
+        <button id="book-now-btn" class="action-btn py-1.5 font-light text-sm w-full px-4 inline-block rounded-lg text-center shadow-md">Details</button>
+      </div>
+    </a>
+    <a href="{{ route('productdetails.home') }}" class="tractor-card" data-hp="30">
+      <div class="border border-pear/30 shadow-md shadow-pear/30 rounded-lg lg:p-4 p-2 flex flex-col items-center">
+        <div class="w-40 h-30 mb-4">
+          <img src="images/implementors/cultivator.jpg" alt="Rotary Tiller" class="w-full h-full object-cover" >
+        </div>
+        <h2 class="text-lg font-medium mb-2">Rotary Tiller</h2>
+        <button id="book-now-btn" class="action-btn py-1.5 font-light text-sm w-full px-4 inline-block rounded-lg text-center shadow-md">Details</button>
+      </div>
+    </a>
+    <a href="{{ route('productdetails.home') }}" class="tractor-card" data-hp="30">
+      <div class="border border-pear/30 shadow-md shadow-pear/30 rounded-lg lg:p-4 p-2 flex flex-col items-center">
+        <div class="w-40 h-30 mb-4">
+          <img src="images/implementors/cultivator.jpg" alt="Rotary Tiller" class="w-full h-full object-cover" >
+        </div>
+        <h2 class="text-lg font-medium mb-2">Rotary Tiller</h2>
+        <button id="book-now-btn" class="action-btn py-1.5 font-light text-sm w-full px-4 inline-block rounded-lg text-center shadow-md">Details</button>
+      </div>
+    </a>
+    <a href="{{ route('productdetails.home') }}" class="tractor-card" data-hp="30">
+      <div class="border border-pear/30 shadow-md shadow-pear/30 rounded-lg lg:p-4 p-2 flex flex-col items-center">
+        <div class="w-40 h-30 mb-4">
+          <img src="images/implementors/cultivator.jpg" alt="Rotary Tiller" class="w-full h-full object-cover" >
+        </div>
+        <h2 class="text-lg font-medium mb-2">Rotary Tiller</h2>
+        <button id="book-now-btn" class="action-btn py-1.5 font-light text-sm w-full px-4 inline-block rounded-lg text-center shadow-md">Details</button>
+      </div>
+    </a>
+    <a href="{{ route('productdetails.home') }}" class="tractor-card" data-hp="30">
+      <div class="border border-pear/30 shadow-md shadow-pear/30 rounded-lg lg:p-4 p-2 flex flex-col items-center">
+        <div class="w-40 h-30 mb-4">
+          <img src="images/implementors/cultivator.jpg" alt="Rotary Tiller" class="w-full h-full object-cover" >
+        </div>
+        <h2 class="text-lg font-medium mb-2">Rotary Tiller</h2>
+        <button id="book-now-btn" class="action-btn py-1.5 font-light text-sm w-full px-4 inline-block rounded-lg text-center shadow-md">Details</button>
+      </div>
+    </a>
+    <a href="{{ route('productdetails.home') }}" class="tractor-card" data-hp="30">
+      <div class="border border-pear/30 shadow-md shadow-pear/30 rounded-lg lg:p-4 p-2 flex flex-col items-center">
+        <div class="w-40 h-30 mb-4">
+          <img src="images/implementors/cultivator.jpg" alt="Rotary Tiller" class="w-full h-full object-cover" >
+        </div>
+        <h2 class="text-lg font-medium mb-2">Rotary Tiller</h2>
+        <button id="book-now-btn" class="action-btn py-1.5 font-light text-sm w-full px-4 inline-block rounded-lg text-center shadow-md">Details</button>
+      </div>
+    </a>
+    <a href="{{ route('productdetails.home') }}" class="tractor-card" data-hp="30">
+      <div class="border border-pear/30 shadow-md shadow-pear/30 rounded-lg lg:p-4 p-2 flex flex-col items-center">
+        <div class="w-40 h-30 mb-4">
+          <img src="images/implementors/cultivator.jpg" alt="Rotary Tiller" class="w-full h-full object-cover" >
+        </div>
+        <h2 class="text-lg font-medium mb-2">Rotary Tiller</h2>
+        <button id="book-now-btn" class="action-btn py-1.5 font-light text-sm w-full px-4 inline-block rounded-lg text-center shadow-md">Details</button>
+      </div>
+    </a>
+
+    
+  </div>
+</div>
+
       
     </div>
   </div>
