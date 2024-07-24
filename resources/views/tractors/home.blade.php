@@ -24,14 +24,14 @@
   <div class="section-container">
     <div class="lg:flex lg:space-x-6">
     <div class="lg:min-w-[384px] lg:mt-0 mt-6">
-          <div class="lg:fixed lg:w-96 bg-white rounded-lg z-10">
+          <div class="lg:w-96 bg-white rounded-lg z-10">
             <div>
               <!-- <p class="text-sm tracking-[0.1px] mb-3 mt-3 md:mt-0">Other Services</p> -->
               <div
               class="w-full p-4 bg-neutral-10 dark:bg-neutral-900 rounded-2xl border border-gray-200 dark:border-gray-700 shadow-t-md border">
-              <!-- Lists -->
+              <!-- Lists --max-h-60-->
               <div
-                class="w-full md:w-[360px] flex flex-col py-2 rounded-xl overflow-hidden bg-neutral-10 dark:bg-neutral-900 max-h-60 overflow-y-auto">
+                class="w-full md:w-[360px] flex flex-col py-2 rounded-xl overflow-hidden bg-neutral-10 dark:bg-neutral-900  overflow-y-auto">
                 
                 @foreach($services as $service)
                 <!-- lists & image -->
@@ -74,68 +74,86 @@
       </div>
     </div>
   </div>
-  <div class="w-full grid grid-cols-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 lg:mt-0 mt-8 overflow-y-auto pb-5">
+  <div class="w-full grid grid-cols-5 sm:grid-cols-5 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 lg:mt-0 mt-8 overflow-y-auto pb-5">
     <!-- lists & Images -->
-    <a href="{{ route('productdetails.home') }}" class="tractor-card" data-hp="30">
+    <a href="{{ route('productdetails.home') }}" class="tractor-card" data-hp="20">
       <div class="border border-pear/30 shadow-md shadow-pear/30 rounded-lg lg:p-4 p-2 flex flex-col items-center">
         <div class="w-40 h-30 mb-4">
-          <img src="images/implementors/cultivator.jpg" alt="Rotary Tiller" class="w-full h-full object-cover" >
+          <img src="images/implements/zero-till.png" alt="Zero Till" class="w-full h-full object-cover" >
+        </div>
+        <h2 class="text-lg font-medium mb-2">Zero Till</h2>
+        <button id="book-now-btn" class="action-btn py-1.5 font-light text-sm w-full px-4 inline-block rounded-lg text-center shadow-md">Details</button>
+      </div>
+    </a>
+    <a href="{{ route('productdetails.home') }}" class="tractor-card" data-hp="20">
+      <div class="border border-pear/30 shadow-md shadow-pear/30 rounded-lg lg:p-4 p-2 flex flex-col items-center">
+        <div class="w-40 h-30 mb-4">
+          <img src="images/implements/terracer-blade.png" alt="Terracer Blade" class="w-full h-full object-cover" >
+        </div>
+        <h2 class="text-lg font-medium mb-2">Terracer Blade</h2>
+        <button id="book-now-btn" class="action-btn py-1.5 font-light text-sm w-full px-4 inline-block rounded-lg text-center shadow-md">Details</button>
+      </div>
+    </a>
+    <a href="{{ route('productdetails.home') }}" class="tractor-card" data-hp="20">
+      <div class="border border-pear/30 shadow-md shadow-pear/30 rounded-lg lg:p-4 p-2 flex flex-col items-center">
+        <div class="w-40 h-30 mb-4">
+          <img src="images/implements/super-seeder.png" alt="Super Seeder" class="w-full h-full object-cover" >
+        </div>
+        <h2 class="text-lg font-medium mb-2">Super Seeder</h2>
+        <button id="book-now-btn" class="action-btn py-1.5 font-light text-sm w-full px-4 inline-block rounded-lg text-center shadow-md">Details</button>
+      </div>
+    </a>
+    <a href="{{ route('productdetails.home') }}" class="tractor-card" data-hp="20">
+      <div class="border border-pear/30 shadow-md shadow-pear/30 rounded-lg lg:p-4 p-2 flex flex-col items-center">
+        <div class="w-40 h-30 mb-4">
+          <img src="images/implements/sub-soiler.png" alt="Sub Soiler" class="w-full h-full object-cover" >
+        </div>
+        <h2 class="text-lg font-medium mb-2">Sub Soiler</h2>
+        <button id="book-now-btn" class="action-btn py-1.5 font-light text-sm w-full px-4 inline-block rounded-lg text-center shadow-md">Details</button>
+      </div>
+    </a>
+    <a href="{{ route('productdetails.home') }}" class="tractor-card" data-hp="20">
+      <div class="border border-pear/30 shadow-md shadow-pear/30 rounded-lg lg:p-4 p-2 flex flex-col items-center">
+        <div class="w-40 h-30 mb-4">
+          <img src="images/implements/roto-seed-drill.png" alt="Roto Seed Drill" class="w-full h-full object-cover" >
+        </div>
+        <h2 class="text-lg font-medium mb-2">Roto Seed Drill</h2>
+        <button id="book-now-btn" class="action-btn py-1.5 font-light text-sm w-full px-4 inline-block rounded-lg text-center shadow-md">Details</button>
+      </div>
+    </a>
+    <a href="{{ route('productdetails.home') }}" class="tractor-card" data-hp="20">
+      <div class="border border-pear/30 shadow-md shadow-pear/30 rounded-lg lg:p-4 p-2 flex flex-col items-center">
+        <div class="w-40 h-30 mb-4">
+          <img src="images/implements/rotary-tiller.png" alt="Rotary Tiller" class="w-full h-full object-cover" >
         </div>
         <h2 class="text-lg font-medium mb-2">Rotary Tiller</h2>
         <button id="book-now-btn" class="action-btn py-1.5 font-light text-sm w-full px-4 inline-block rounded-lg text-center shadow-md">Details</button>
       </div>
     </a>
-    <a href="{{ route('productdetails.home') }}" class="tractor-card" data-hp="30">
+    <a href="{{ route('productdetails.home') }}" class="tractor-card" data-hp="20">
       <div class="border border-pear/30 shadow-md shadow-pear/30 rounded-lg lg:p-4 p-2 flex flex-col items-center">
         <div class="w-40 h-30 mb-4">
-          <img src="images/implementors/cultivator.jpg" alt="Rotary Tiller" class="w-full h-full object-cover" >
+          <img src="images/implements/robust-multi-crop-row-planter.png" alt="Robust Multi Crop Row Planter" class="w-full h-full object-cover" >
         </div>
-        <h2 class="text-lg font-medium mb-2">Rotary Tiller</h2>
+        <h2 class="text-lg font-medium mb-2">Robust Multi Crop Row Planter</h2>
         <button id="book-now-btn" class="action-btn py-1.5 font-light text-sm w-full px-4 inline-block rounded-lg text-center shadow-md">Details</button>
       </div>
     </a>
-    <a href="{{ route('productdetails.home') }}" class="tractor-card" data-hp="30">
+    <a href="{{ route('productdetails.home') }}" class="tractor-card" data-hp="20">
       <div class="border border-pear/30 shadow-md shadow-pear/30 rounded-lg lg:p-4 p-2 flex flex-col items-center">
         <div class="w-40 h-30 mb-4">
-          <img src="images/implementors/cultivator.jpg" alt="Rotary Tiller" class="w-full h-full object-cover" >
+          <img src="images/implements/ripper.png" alt="Ripper" class="w-full h-full object-cover" >
         </div>
-        <h2 class="text-lg font-medium mb-2">Rotary Tiller</h2>
+        <h2 class="text-lg font-medium mb-2">Ripper</h2>
         <button id="book-now-btn" class="action-btn py-1.5 font-light text-sm w-full px-4 inline-block rounded-lg text-center shadow-md">Details</button>
       </div>
     </a>
-    <a href="{{ route('productdetails.home') }}" class="tractor-card" data-hp="30">
+    <a href="{{ route('productdetails.home') }}" class="tractor-card" data-hp="20">
       <div class="border border-pear/30 shadow-md shadow-pear/30 rounded-lg lg:p-4 p-2 flex flex-col items-center">
         <div class="w-40 h-30 mb-4">
-          <img src="images/implementors/cultivator.jpg" alt="Rotary Tiller" class="w-full h-full object-cover" >
+          <img src="images/implements/reversible-mb-plough.png" alt="Reversible mb Plough" class="w-full h-full object-cover" >
         </div>
-        <h2 class="text-lg font-medium mb-2">Rotary Tiller</h2>
-        <button id="book-now-btn" class="action-btn py-1.5 font-light text-sm w-full px-4 inline-block rounded-lg text-center shadow-md">Details</button>
-      </div>
-    </a>
-    <a href="{{ route('productdetails.home') }}" class="tractor-card" data-hp="30">
-      <div class="border border-pear/30 shadow-md shadow-pear/30 rounded-lg lg:p-4 p-2 flex flex-col items-center">
-        <div class="w-40 h-30 mb-4">
-          <img src="images/implementors/cultivator.jpg" alt="Rotary Tiller" class="w-full h-full object-cover" >
-        </div>
-        <h2 class="text-lg font-medium mb-2">Rotary Tiller</h2>
-        <button id="book-now-btn" class="action-btn py-1.5 font-light text-sm w-full px-4 inline-block rounded-lg text-center shadow-md">Details</button>
-      </div>
-    </a>
-    <a href="{{ route('productdetails.home') }}" class="tractor-card" data-hp="30">
-      <div class="border border-pear/30 shadow-md shadow-pear/30 rounded-lg lg:p-4 p-2 flex flex-col items-center">
-        <div class="w-40 h-30 mb-4">
-          <img src="images/implementors/cultivator.jpg" alt="Rotary Tiller" class="w-full h-full object-cover" >
-        </div>
-        <h2 class="text-lg font-medium mb-2">Rotary Tiller</h2>
-        <button id="book-now-btn" class="action-btn py-1.5 font-light text-sm w-full px-4 inline-block rounded-lg text-center shadow-md">Details</button>
-      </div>
-    </a>
-    <a href="{{ route('productdetails.home') }}" class="tractor-card" data-hp="30">
-      <div class="border border-pear/30 shadow-md shadow-pear/30 rounded-lg lg:p-4 p-2 flex flex-col items-center">
-        <div class="w-40 h-30 mb-4">
-          <img src="images/implementors/cultivator.jpg" alt="Rotary Tiller" class="w-full h-full object-cover" >
-        </div>
-        <h2 class="text-lg font-medium mb-2">Rotary Tiller</h2>
+        <h2 class="text-lg font-medium mb-2">Reversible mb Plough</h2>
         <button id="book-now-btn" class="action-btn py-1.5 font-light text-sm w-full px-4 inline-block rounded-lg text-center shadow-md">Details</button>
       </div>
     </a>
@@ -153,13 +171,15 @@
     const filterButtons = {
       '30': document.getElementById('filter-30hp'),
       '30-50': document.getElementById('filter-30-50hp'),
-      '50-75': document.getElementById('filter-50-75hp')
+      '50-75': document.getElementById('filter-50-75hp'),
+      '75': document.getElementById('filter-75hp')
     };
     const tractorCards = document.querySelectorAll('.tractor-card');
 
     filterButtons['30'].addEventListener('click', () => filterTractors('30'));
     filterButtons['30-50'].addEventListener('click', () => filterTractors('30-50'));
     filterButtons['50-75'].addEventListener('click', () => filterTractors('50-75'));
+    filterButtons['75'].addEventListener('click', () => filterTractors('75'));
 
     function filterTractors(hpRange) {
       filterButtons[hpRange].classList.add('bg-black');
@@ -167,11 +187,13 @@
         const hp = parseInt(card.getAttribute('data-hp'), 10);
         let showCard = false;
 
-        if (hpRange === '30' && hp === 30) {
+        if (hpRange === '30' && hp < 30) {
           showCard = true;
-        } else if (hpRange === '30-50' && hp > 30 && hp <= 50) {
+        } else if (hpRange === '30-50' && hp >= 30 && hp < 50) {
           showCard = true;
-        } else if (hpRange === '50-75' && hp > 50 && hp <= 75) {
+        } else if (hpRange === '50-75' && hp >= 50 && hp < 75) {
+          showCard = true;
+        } else if (hpRange === '75' && hp >= 75) {
           showCard = true;
         }
 
