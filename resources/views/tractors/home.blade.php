@@ -75,91 +75,90 @@
     </div>
   </div>
   <div class="w-full grid grid-cols-5 sm:grid-cols-5 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 lg:mt-0 mt-8 overflow-y-auto pb-5">
-    <!-- lists & Images -->
-    <a href="{{ route('productdetails.home') }}" class="tractor-card" data-hp="20">
-      <div class="border border-pear/30 shadow-md shadow-pear/30 rounded-lg lg:p-4 p-2 flex flex-col items-center">
-        <div class="w-40 h-30 mb-4">
-          <img src="images/implements/zero-till.png" alt="Zero Till" class="w-full h-full object-cover" >
-        </div>
-        <h2 class="text-lg font-medium mb-2">Zero Till</h2>
-        <button id="book-now-btn" class="action-btn py-1.5 font-light text-sm w-full px-4 inline-block rounded-lg text-center shadow-md">Details</button>
+  <!-- lists & Images -->
+  <a href="{{ route('productdetails.home') }}" class="tractor-card" data-hp="20">
+    <div class="border border-pear/30 shadow-md shadow-pear/30 rounded-lg p-4 flex flex-col items-center w-full h-full">
+      <div class="w-40 h-40 mb-4">
+        <img src="images/implements/zero-till.png" alt="Zero Till" class="w-full h-full object-cover">
       </div>
-    </a>
-    <a href="{{ route('productdetails.home') }}" class="tractor-card" data-hp="20">
-      <div class="border border-pear/30 shadow-md shadow-pear/30 rounded-lg lg:p-4 p-2 flex flex-col items-center">
-        <div class="w-40 h-30 mb-4">
-          <img src="images/implements/terracer-blade.png" alt="Terracer Blade" class="w-full h-full object-cover" >
-        </div>
-        <h2 class="text-lg font-medium mb-2">Terracer Blade</h2>
-        <button id="book-now-btn" class="action-btn py-1.5 font-light text-sm w-full px-4 inline-block rounded-lg text-center shadow-md">Details</button>
+      <h2 class="text-lg font-medium mb-2">Zero Till</h2>
+      <button id="book-now-btn" class="action-btn py-1.5 font-light text-sm w-full px-4 inline-block rounded-lg text-center shadow-md">Details</button>
+    </div>
+  </a>
+  <a href="{{ route('productdetails.home') }}" class="tractor-card" data-hp="20">
+    <div class="border border-pear/30 shadow-md shadow-pear/30 rounded-lg p-4 flex flex-col items-center w-full h-full">
+      <div class="w-40 h-40 mb-4">
+        <img src="images/implements/terracer-blade.png" alt="Terracer Blade" class="w-full h-full object-cover">
       </div>
-    </a>
-    <a href="{{ route('productdetails.home') }}" class="tractor-card" data-hp="20">
-      <div class="border border-pear/30 shadow-md shadow-pear/30 rounded-lg lg:p-4 p-2 flex flex-col items-center">
-        <div class="w-40 h-30 mb-4">
-          <img src="images/implements/super-seeder.png" alt="Super Seeder" class="w-full h-full object-cover" >
-        </div>
-        <h2 class="text-lg font-medium mb-2">Super Seeder</h2>
-        <button id="book-now-btn" class="action-btn py-1.5 font-light text-sm w-full px-4 inline-block rounded-lg text-center shadow-md">Details</button>
+      <h2 class="text-lg font-medium mb-2">Terracer Blade</h2>
+      <button id="book-now-btn" class="action-btn py-1.5 font-light text-sm w-full px-4 inline-block rounded-lg text-center shadow-md">Details</button>
+    </div>
+  </a>
+  <a href="{{ route('productdetails.home') }}" class="tractor-card" data-hp="20">
+    <div class="border border-pear/30 shadow-md shadow-pear/30 rounded-lg p-4 flex flex-col items-center w-full h-full">
+      <div class="w-40 h-40 mb-4">
+        <img src="images/implements/super-seeder.png" alt="Super Seeder" class="w-full h-full object-cover">
       </div>
-    </a>
-    <a href="{{ route('productdetails.home') }}" class="tractor-card" data-hp="20">
-      <div class="border border-pear/30 shadow-md shadow-pear/30 rounded-lg lg:p-4 p-2 flex flex-col items-center">
-        <div class="w-40 h-30 mb-4">
-          <img src="images/implements/sub-soiler.png" alt="Sub Soiler" class="w-full h-full object-cover" >
-        </div>
-        <h2 class="text-lg font-medium mb-2">Sub Soiler</h2>
-        <button id="book-now-btn" class="action-btn py-1.5 font-light text-sm w-full px-4 inline-block rounded-lg text-center shadow-md">Details</button>
+      <h2 class="text-lg font-medium mb-2">Super Seeder</h2>
+      <button id="book-now-btn" class="action-btn py-1.5 font-light text-sm w-full px-4 inline-block rounded-lg text-center shadow-md">Details</button>
+    </div>
+  </a>
+  <a href="{{ route('productdetails.home') }}" class="tractor-card" data-hp="20">
+    <div class="border border-pear/30 shadow-md shadow-pear/30 rounded-lg p-4 flex flex-col items-center w-full h-full">
+      <div class="w-40 h-40 mb-4">
+        <img src="images/implements/sub-soiler.png" alt="Sub Soiler" class="w-full h-full object-cover">
       </div>
-    </a>
-    <a href="{{ route('productdetails.home') }}" class="tractor-card" data-hp="20">
-      <div class="border border-pear/30 shadow-md shadow-pear/30 rounded-lg lg:p-4 p-2 flex flex-col items-center">
-        <div class="w-40 h-30 mb-4">
-          <img src="images/implements/roto-seed-drill.png" alt="Roto Seed Drill" class="w-full h-full object-cover" >
-        </div>
-        <h2 class="text-lg font-medium mb-2">Roto Seed Drill</h2>
-        <button id="book-now-btn" class="action-btn py-1.5 font-light text-sm w-full px-4 inline-block rounded-lg text-center shadow-md">Details</button>
+      <h2 class="text-lg font-medium mb-2">Sub Soiler</h2>
+      <button id="book-now-btn" class="action-btn py-1.5 font-light text-sm w-full px-4 inline-block rounded-lg text-center shadow-md">Details</button>
+    </div>
+  </a>
+  <a href="{{ route('productdetails.home') }}" class="tractor-card" data-hp="20">
+    <div class="border border-pear/30 shadow-md shadow-pear/30 rounded-lg p-4 flex flex-col items-center w-full h-full">
+      <div class="w-40 h-40 mb-4">
+        <img src="images/implements/roto-seed-drill.png" alt="Roto Seed Drill" class="w-full h-full object-cover">
       </div>
-    </a>
-    <a href="{{ route('productdetails.home') }}" class="tractor-card" data-hp="20">
-      <div class="border border-pear/30 shadow-md shadow-pear/30 rounded-lg lg:p-4 p-2 flex flex-col items-center">
-        <div class="w-40 h-30 mb-4">
-          <img src="images/implements/rotary-tiller.png" alt="Rotary Tiller" class="w-full h-full object-cover" >
-        </div>
-        <h2 class="text-lg font-medium mb-2">Rotary Tiller</h2>
-        <button id="book-now-btn" class="action-btn py-1.5 font-light text-sm w-full px-4 inline-block rounded-lg text-center shadow-md">Details</button>
+      <h2 class="text-lg font-medium mb-2">Roto Seed Drill</h2>
+      <button id="book-now-btn" class="action-btn py-1.5 font-light text-sm w-full px-4 inline-block rounded-lg text-center shadow-md">Details</button>
+    </div>
+  </a>
+  <a href="{{ route('productdetails.home') }}" class="tractor-card" data-hp="20">
+    <div class="border border-pear/30 shadow-md shadow-pear/30 rounded-lg p-4 flex flex-col items-center w-full h-full">
+      <div class="w-40 h-40 mb-4">
+        <img src="images/implements/rotary-tiller.png" alt="Rotary Tiller" class="w-full h-full object-cover">
       </div>
-    </a>
-    <a href="{{ route('productdetails.home') }}" class="tractor-card" data-hp="20">
-      <div class="border border-pear/30 shadow-md shadow-pear/30 rounded-lg lg:p-4 p-2 flex flex-col items-center">
-        <div class="w-40 h-30 mb-4">
-          <img src="images/implements/robust-multi-crop-row-planter.png" alt="Robust Multi Crop Row Planter" class="w-full h-full object-cover" >
-        </div>
-        <h2 class="text-lg font-medium mb-2">Robust Multi Crop Row Planter</h2>
-        <button id="book-now-btn" class="action-btn py-1.5 font-light text-sm w-full px-4 inline-block rounded-lg text-center shadow-md">Details</button>
+      <h2 class="text-lg font-medium mb-2">Rotary Tiller</h2>
+      <button id="book-now-btn" class="action-btn py-1.5 font-light text-sm w-full px-4 inline-block rounded-lg text-center shadow-md">Details</button>
+    </div>
+  </a>
+  <a href="{{ route('productdetails.home') }}" class="tractor-card" data-hp="20">
+    <div class="border border-pear/30 shadow-md shadow-pear/30 rounded-lg p-4 flex flex-col items-center w-full h-full">
+      <div class="w-40 h-40 mb-4">
+        <img src="images/implements/robust-multi-crop-row-planter.png" alt="Robust Multi Crop Row Planter" class="w-full h-full object-cover">
       </div>
-    </a>
-    <a href="{{ route('productdetails.home') }}" class="tractor-card" data-hp="20">
-      <div class="border border-pear/30 shadow-md shadow-pear/30 rounded-lg lg:p-4 p-2 flex flex-col items-center">
-        <div class="w-40 h-30 mb-4">
-          <img src="images/implements/ripper.png" alt="Ripper" class="w-full h-full object-cover" >
-        </div>
-        <h2 class="text-lg font-medium mb-2">Ripper</h2>
-        <button id="book-now-btn" class="action-btn py-1.5 font-light text-sm w-full px-4 inline-block rounded-lg text-center shadow-md">Details</button>
+      <h2 class="text-lg font-medium mb-2">Robust Multi Crop Row Planter</h2>
+      <button id="book-now-btn" class="action-btn py-1.5 font-light text-sm w-full px-4 inline-block rounded-lg text-center shadow-md">Details</button>
+    </div>
+  </a>
+  <a href="{{ route('productdetails.home') }}" class="tractor-card" data-hp="20">
+    <div class="border border-pear/30 shadow-md shadow-pear/30 rounded-lg p-4 flex flex-col items-center w-full h-full">
+      <div class="w-40 h-40 mb-4">
+        <img src="images/implements/ripper.png" alt="Ripper" class="w-full h-full object-cover">
       </div>
-    </a>
-    <a href="{{ route('productdetails.home') }}" class="tractor-card" data-hp="20">
-      <div class="border border-pear/30 shadow-md shadow-pear/30 rounded-lg lg:p-4 p-2 flex flex-col items-center">
-        <div class="w-40 h-30 mb-4">
-          <img src="images/implements/reversible-mb-plough.png" alt="Reversible mb Plough" class="w-full h-full object-cover" >
-        </div>
-        <h2 class="text-lg font-medium mb-2">Reversible mb Plough</h2>
-        <button id="book-now-btn" class="action-btn py-1.5 font-light text-sm w-full px-4 inline-block rounded-lg text-center shadow-md">Details</button>
+      <h2 class="text-lg font-medium mb-2">Ripper</h2>
+      <button id="book-now-btn" class="action-btn py-1.5 font-light text-sm w-full px-4 inline-block rounded-lg text-center shadow-md">Details</button>
+    </div>
+  </a>
+  <a href="{{ route('productdetails.home') }}" class="tractor-card" data-hp="20">
+    <div class="border border-pear/30 shadow-md shadow-pear/30 rounded-lg p-4 flex flex-col items-center w-full h-full">
+      <div class="w-40 h-40 mb-4">
+        <img src="images/implements/reversible-mb-plough.png" alt="Reversible mb Plough" class="w-full h-full object-cover">
       </div>
-    </a>
+      <h2 class="text-lg font-medium mb-2">Reversible mb Plough</h2>
+      <button id="book-now-btn" class="action-btn py-1.5 font-light text-sm w-full px-4 inline-block rounded-lg text-center shadow-md">Details</button>
+    </div>
+  </a>
+</div>
 
-    
-  </div>
 </div>
 
       

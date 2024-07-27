@@ -594,6 +594,71 @@ class CommonController extends Controller
         return view('pages.bookings');
     }
 
+    public function listing()
+    {
+        return view('business.listing');
+    }
+
+    public function businessAddress()
+    {
+        return view('business.address');
+    }
+
+    public function businessTimings()
+    {
+        return view('business.timings');
+    }
+
+    public function businessCategory()
+    {
+        return view('business.category');
+    }
+
+    public function businessContact()
+    {
+        return view('business.addcontact');
+    }
+
+    public function businessProfile()
+    {
+        return view('business.businessProfile');
+    }
+
+    public function mybusiness()
+    {
+        return view('business.mybusiness');
+    }
+
+    public function advertiseplans()
+    {
+        return view('business.advertiseplans');
+    }
+
+    public function choosepayment()
+    {
+        return view('business.choosepayment');
+    }
+
+    public function addphoto()
+    {
+        return view('business.addphoto');
+    }
+
+    public function additionalcontact()
+    {
+        return view('business.additionalcontact');
+    }
+
+    public function edittimings()
+    {
+        return view('business.edittimings');
+    }
+
+    public function addSocialLinks()
+    {
+        return view('business.addsociallinks');
+    }
+
 
     public function sellerdetails()
     {
