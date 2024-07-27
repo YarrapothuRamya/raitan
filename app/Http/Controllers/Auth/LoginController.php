@@ -63,6 +63,7 @@ class LoginController extends Controller
         }
         
     }
+   
 
     public function redirectTo() {
         $role = \Auth::user()->role; 

@@ -588,79 +588,14 @@ class CommonController extends Controller
 
     public function userprofile()
     {
-      //  print_r(Auth::guard('customer')->user)
-        $user_data = Customer::find(Auth::guard('customer')->user()->id);
+        // $user_data= user::find
+        $user_data = User::find(Auth::user()->id);
         return view('pages.userprofile',['user_data'=>$user_data]);
     }
 
     public function bookings()
     {
         return view('pages.bookings');
-    }
-
-    public function listing()
-    {
-        return view('business.listing');
-    }
-
-    public function businessAddress()
-    {
-        return view('business.address');
-    }
-
-    public function businessTimings()
-    {
-        return view('business.timings');
-    }
-
-    public function businessCategory()
-    {
-        return view('business.category');
-    }
-
-    public function businessContact()
-    {
-        return view('business.addcontact');
-    }
-
-    public function businessProfile()
-    {
-        return view('business.businessProfile');
-    }
-
-    public function mybusiness()
-    {
-        return view('business.mybusiness');
-    }
-
-    public function advertiseplans()
-    {
-        return view('business.advertiseplans');
-    }
-
-    public function choosepayment()
-    {
-        return view('business.choosepayment');
-    }
-
-    public function addphoto()
-    {
-        return view('business.addphoto');
-    }
-
-    public function additionalcontact()
-    {
-        return view('business.additionalcontact');
-    }
-
-    public function edittimings()
-    {
-        return view('business.edittimings');
-    }
-
-    public function addSocialLinks()
-    {
-        return view('business.addsociallinks');
     }
 
 

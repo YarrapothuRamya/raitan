@@ -103,7 +103,7 @@ class MachineImplementorsController extends Controller
                     Implementors::where('machine_id', '=', $request['id'])->update(['status' => $request['status']]);
                 }
                // return response()->json(['status' => 200, 'success' => 'Machine successfully updated']);
-                return redirect()->back()->with('status','Role successfully updated');
+                return redirect()->back()->with('status','Machine successfully updated');
             }else{
                 return response()->json(['status' => 400, 'error' => 'Something went wrong please try again.']);
                 return redirect()->back()->with('error','Something went wrong please try again.');
@@ -210,7 +210,7 @@ class MachineImplementorsController extends Controller
              
             if($implementor->save()){
                // return response()->json(['status' => 200, 'success' => 'Implementor successfully updated']);
-                return redirect()->back()->with('status','Role successfully updated');
+                return redirect()->back()->with('status','Implementor successfully updated');
             }else{
                 //return response()->json(['status' => 400, 'error' => 'Something went wrong please try again.']);
                 return redirect()->back()->with('error','Something went wrong please try again.');

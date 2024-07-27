@@ -73,7 +73,7 @@ class AgricultureLabourController extends Controller
                     Implementors::where('machine_id', '=', $request['id'])->update(['status' => $request['status']]);
                 }*/
                 //return response()->json(['status' => 200, 'success' => 'Agriculture Labour successfully updated']);
-                return redirect()->back()->with('status','Role successfully updated');
+                return redirect()->back()->with('status','Agriculture successfully updated');
             }else{
                 //return response()->json(['status' => 400, 'error' => 'Something went wrong please try again.']);
                 return redirect()->back()->with('error','Something went wrong please try again.');
@@ -119,7 +119,7 @@ class AgricultureLabourController extends Controller
             //dd("Hello");
             if($agriculture_labour->save()){
                 //return response()->json(['status' => 200, 'success' => 'Agriculture Labour successfully created']);
-                return redirect()->back()->with('status','Machine successfully created');
+                return redirect()->back()->with('status','Agriculture successfully created');
             }else{
                 //return response()->json(['status' => 400, 'error' => 'Something went wrong please try again.']);
                 return redirect()->back()->with('error','Something went wrong please try again.');

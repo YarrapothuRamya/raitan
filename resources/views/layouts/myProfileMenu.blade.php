@@ -2,14 +2,14 @@
                 <div class="flex justify-center flex-col items-center bg-gray-200 py-4 px-3">
                     <div class="rounded-full border border-pear">
                         <div class="w-24 h-24 rounded-full object-cover">
-                            <div class="w-full h-full"><img src="images/farmer1.png" alt="..."
+                            <div class="w-full h-full"><img src='{{ $user_data->image ? asset(asset("customer_images")."/".$user_data->image ) : asset("images/farmer1.png") }}' alt="..."
                                     class="w-24 h-24 rounded-full object-cover" width="96" height="96"></div>
                         </div>
                     </div>
-                    <p class="mt-3 font-medium">Raja Vardhinedi</p>
+                    <p class="mt-3 font-medium">{{$user_data->name}}</p>
                     <p class="mt-1 text-sm text-gray-500"></p>
                 </div>
-                <div><a href="/account/profile/">
+                <div><a href="">
                         <div
                             class="bg-pear/30 px-3 smooth-animate flex items-center border-b border-opacity-50 text-gray-700 border-gray-400 py-3 space-x-2 text-sm">
                             <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024"
@@ -32,7 +32,7 @@
                             </svg>
                             <p>Bookings</p>
                         </div>
-                    </a><a target="_blank" rel="noreferrer" href="/terms-and-conditions/">
+                    </a><a target="_blank" rel="noreferrer" href="#">
                         <div
                             class="px-3 smooth-animate hover:bg-pear/20 flex items-center border-b border-opacity-50 text-gray-700 border-gray-400 py-3 space-x-2 text-sm">
                             <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24"
@@ -46,7 +46,7 @@
                             </svg>
                             <p>Terms &amp; Conditions</p>
                         </div>
-                    </a><a target="_blank" rel="noreferrer" href="/privacy-policy/">
+                    </a><a target="_blank" rel="noreferrer" href="#">
                         <div
                             class="px-3 smooth-animate hover:bg-pear/20 flex items-center border-b border-opacity-50 text-gray-700 border-gray-400 py-3 space-x-2 text-sm">
                             <svg stroke="currentColor" fill="currentColor" stroke-width="0" role="img"
@@ -60,6 +60,8 @@
                             <p>Privacy Policy</p>
                         </div>
                     </a>
+                    <a target="_blank" rel="noreferrer" href=""  onclick="event.preventDefault();
+                             document.getElementById('logout-form').submit();">
                     <div role="button"
                         class="px-3 smooth-animate hover:bg-pear/20 flex items-center text-gray-700 border-gray-400 py-3 space-x-2 text-sm">
                         <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512"
@@ -72,6 +74,11 @@
                             </path>
                         </svg>
                         <p>Logout</p>
+                       
                     </div>
+                    </a>
+                    <form id="logout-form1" action="{{ route('customer.logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
                 </div>
             </div>

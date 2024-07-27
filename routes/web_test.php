@@ -40,8 +40,6 @@ Route::post('/raitan_signin', [App\Http\Controllers\Auth\AdminController::class,
 Route::post('/user_register', [App\Http\Controllers\Auth\UserController::class, 'userregister'])->name('user_register');
 Route::post('/user_login', [App\Http\Controllers\Auth\UserController::class, 'userlogin'])->name('user_login');
 Route::post('/customer_logout', [App\Http\Controllers\Auth\UserController::class, 'logout'])->name('customer.logout');
-Route::post('/user_profile_update', [App\Http\Controllers\Auth\UserController::class, 'user_profile_update'])->name('customer.user_profile_update');
-
 Route::get('/', [App\Http\Controllers\CommonController::class, 'indexroot'])->name('indexroot');
 Auth::routes(['verify' => true]);
 
@@ -113,23 +111,6 @@ Route::get('aboutus', [App\Http\Controllers\CommonController::class, 'aboutus'])
 Route::get('edit-service', [App\Http\Controllers\CommonController::class, 'editservice'])->name('editservice.home');
 Route::get('my-profile', [App\Http\Controllers\CommonController::class, 'userprofile'])->name('userprofile.home');
 Route::get('my-bookings', [App\Http\Controllers\CommonController::class, 'bookings'])->name('bookings.home');
-
-
-Route::get('free-listing', [App\Http\Controllers\CommonController::class, 'listing'])->name('listing.home');
-Route::get('business-address', [App\Http\Controllers\CommonController::class, 'businessAddress'])->name('address.home');
-Route::get('business-contact', [App\Http\Controllers\CommonController::class, 'businessContact'])->name('addcontact.home');
-Route::get('business-timings', [App\Http\Controllers\CommonController::class, 'businessTimings'])->name('timings.home');
-Route::get('business-category', [App\Http\Controllers\CommonController::class, 'businessCategory'])->name('category.home');
-Route::get('business-profile', [App\Http\Controllers\CommonController::class, 'businessProfile'])->name('businessProfile.home');
-Route::get('mybusiness', [App\Http\Controllers\CommonController::class, 'mybusiness'])->name('mybusiness.home');
-Route::get('advertiseplans', [App\Http\Controllers\CommonController::class, 'advertiseplans'])->name('advertiseplans.home');
-Route::get('choose-payment', [App\Http\Controllers\CommonController::class, 'choosepayment'])->name('choosepayment.home');
-Route::get('addphoto', [App\Http\Controllers\CommonController::class, 'addphoto'])->name('addphoto.home');
-Route::get('additionalcontact', [App\Http\Controllers\CommonController::class, 'additionalcontact'])->name('additionalcontact.home');
-Route::get('edit-timings', [App\Http\Controllers\CommonController::class, 'edittimings'])->name('edittimings.home');
-Route::get('add-socila-links', [App\Http\Controllers\CommonController::class, 'addSocialLinks'])->name('addsociallinks.home');
-
-
 
 Route::get('/user_dashboard', [App\Http\Controllers\CommonController::class, 'user_dashboard'])->name('user_dashboard');
 Route::post('/add_role_request', [App\Http\Controllers\CommonController::class, 'add_role_request'])->name('add_role_request');

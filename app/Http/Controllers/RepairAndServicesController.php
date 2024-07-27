@@ -73,7 +73,7 @@ class RepairAndServicesController extends Controller
                     Implementors::where('machine_id', '=', $request['id'])->update(['status' => $request['status']]);
                 }*/
                // return response()->json(['status' => 200, 'success' => 'Repairs and Services successfully updated']);
-                return redirect()->back()->with('status','Role successfully updated');
+                return redirect()->back()->with('status','Repairs and Services successfully updated');
             }else{
                // return response()->json(['status' => 400, 'error' => 'Something went wrong please try again.']);
                 return redirect()->back()->with('error','Something went wrong please try again.');

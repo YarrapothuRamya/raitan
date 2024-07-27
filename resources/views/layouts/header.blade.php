@@ -69,7 +69,8 @@
   </div> -->
 
 
-
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  
 
 <header class="jdheader jdheader_home header_fixed header_sticky">
   <div class="header_home header">
@@ -153,57 +154,47 @@
             <div role="button" tabindex="0" aria-label="Login/Sign Up" class="headnav_item_anchor  greenfill_animate"
               fdprocessedid="yopgan">
               <div class="">
-              @guest
-    @if (Route::has('login'))
-        <a class="headnav_item_text font14 fw500 colorFFF" id="header_login">Log in</a>
-    @endif
+  
+    
 
-    @if (Route::has('register'))
-        <a class="headnav_item_text font14 fw500 colorFFF" id="header_register">/ Register</a>
-    @endif
-@else
-    @php
-        $role = Auth::user()->role;
-    @endphp
+   
 
-    @if (in_array($role, [5, 6, 7, 8]))
+    @if (Auth::guard('customer')->check())
         <a id="navbarDropdown" class="headnav_item_text font14 fw500 colorFFF dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-            {{ Auth::user()->name }}
+            {{ Auth::guard('customer')->user()->name}}
         </a>
-        <a class="headnav_item_text font14 fw500 colorFFF d-none" id="header_login">Log in</a>
-        <a class="headnav_item_text font14 fw500 colorFFF d-none" id="header_register">/ Register</a>
 
         <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-            @if (Auth::user()->role == 8)
-                <a class="dropdown-item" href="{{ route('user_dashboard') }}">
+           
+                <!-- <a class="dropdown-item" href="{{ route('user_dashboard') }}">
                     {{ __('Service Provider') }}
-                </a>
-            @endif
+                </a> -->
+            
             <a class="dropdown-item" href="{{ route('userprofile.home') }}">
                 {{ __('My Profile') }}
             </a>
             <a class="dropdown-item" href="{{ route('password') }}">
                 {{ __('Change Password') }}
             </a>
-            <a class="dropdown-item" href="{{ route('logout') }}"
+            <a class="dropdown-item" href=""
                onclick="event.preventDefault();
                              document.getElementById('logout-form').submit();">
                 {{ __('Logout') }}
             </a>
-            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+            <form id="logout-form" action="{{ route('customer.logout') }}" method="POST" class="d-none">
                 @csrf
             </form>
         </div>
-    @else
+        @else
         @if (Route::has('login'))
-            <a class="headnav_item_text font14 fw500 colorFFF" id="header_login">Log in</a>
-        @endif
-
-        @if (Route::has('register'))
-            <a class="headnav_item_text font14 fw500 colorFFF" id="header_register">/ Register</a>
-        @endif
+        <a class="headnav_item_text font14 fw500 colorFFF" id="header_login">Log in</a>
     @endif
-@endguest
+
+    @if (Route::has('register'))
+        <a class="headnav_item_text font14 fw500 colorFFF" id="header_register">/ Register</a>
+    @endif
+    @endif
+
                   
               </div>
             </div>
