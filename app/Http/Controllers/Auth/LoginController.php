@@ -56,11 +56,11 @@ class LoginController extends Controller
     {
         $role = Auth::user()->role;
         Auth::logout();
-        if($role == 1 || $role == 2 || $role == 3 || $role == 4){
+       // if($role == 1 || $role == 2 || $role == 3 || $role == 4){
             return redirect('raitan_signin');
-        }else{
-            return redirect('/');
-        }
+        // }else{
+        //     return redirect('/');
+        // }
         
     }
    
