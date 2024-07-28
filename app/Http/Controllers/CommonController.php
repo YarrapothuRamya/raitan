@@ -653,6 +653,16 @@ class CommonController extends Controller
         return view('business.additionalcontact');
     }
 
+    public function serviceprovider()
+    {
+        return view('serviceprovider.home');
+    }
+
+    public function serviceproviderdetails()
+    {
+        return view('serviceprovider.serviceproviderdetails');
+    }
+
     public function edittimings()
     {
         return view('business.edittimings');
