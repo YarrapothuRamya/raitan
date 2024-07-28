@@ -210,8 +210,8 @@ class UserController extends Controller
             $curTime = new \DateTime();
             $currentDatetime = $curTime->format("Y-m-d H:i:s");
             $clientIP = $request->ip();
-            $user = Auth::guard('customer')->user();
-
+            $user = Auth::guard('customer')->user();        
+            //print_r($user);die();
             // Log successful login
             User_Login_Logs::create([
                 'user_id' => $user->id,

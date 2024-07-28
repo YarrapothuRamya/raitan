@@ -588,7 +588,7 @@ class CommonController extends Controller
 
     public function userprofile()
     {
-      //  print_r(Auth::guard('customer')->user)
+//        print_r(Auth::guard('customer')->user()); die();
         $user_data = Customer::find(Auth::guard('customer')->user()->id);
         return view('pages.userprofile',['user_data'=>$user_data]);
     }
