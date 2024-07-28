@@ -114,6 +114,10 @@ Route::get('edit-service', [App\Http\Controllers\CommonController::class, 'edits
 Route::get('my-profile', [App\Http\Controllers\CommonController::class, 'userprofile'])->name('userprofile.home');
 Route::get('my-bookings', [App\Http\Controllers\CommonController::class, 'bookings'])->name('bookings.home');
 
+Route::get('serviceproviders', [App\Http\Controllers\CommonController::class, 'serviceprovider'])->name('serviceprovider.home');
+
+Route::get('serviceprovider-details', [App\Http\Controllers\CommonController::class, 'serviceproviderdetails'])->name('serviceprovider.serviceproviderdetails');
+
 
 Route::get('free-listing', [App\Http\Controllers\CommonController::class, 'listing'])->name('listing.home');
 Route::get('business-address', [App\Http\Controllers\CommonController::class, 'businessAddress'])->name('address.home');

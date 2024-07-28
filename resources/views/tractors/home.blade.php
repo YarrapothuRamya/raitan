@@ -81,8 +81,10 @@
       <div class="w-40 h-40 mb-4">
         <img src="images/implements/zero-till.png" alt="Zero Till" class="w-full h-full object-cover">
       </div>
-      <h2 class="text-lg font-medium mb-2">Zero Till</h2>
-      <button id="book-now-btn" class="action-btn py-1.5 font-light text-sm w-full px-4 inline-block rounded-lg text-center shadow-md">Details</button>
+      <h2 class="text-lg font-medium mb-3 text-center h-10">Zero Till</h2>
+      <div class="mt-auto w-full">
+        <button id="book-now-btn" class="action-btn py-1.5 font-light text-sm w-full px-4 inline-block rounded-lg text-center shadow-md">Details</button>
+      </div>
     </div>
   </a>
   <a href="{{ route('productdetails.home') }}" class="tractor-card" data-hp="20">
@@ -90,8 +92,10 @@
       <div class="w-40 h-40 mb-4">
         <img src="images/implements/terracer-blade.png" alt="Terracer Blade" class="w-full h-full object-cover">
       </div>
-      <h2 class="text-lg font-medium mb-2">Terracer Blade</h2>
-      <button id="book-now-btn" class="action-btn py-1.5 font-light text-sm w-full px-4 inline-block rounded-lg text-center shadow-md">Details</button>
+      <h2 class="text-lg font-medium mb-3 text-center h-10">Terracer Blade</h2>
+      <div class="mt-auto w-full">
+        <button id="book-now-btn" class="action-btn py-1.5 font-light text-sm w-full px-4 inline-block rounded-lg text-center shadow-md">Details</button>
+      </div>
     </div>
   </a>
   <a href="{{ route('productdetails.home') }}" class="tractor-card" data-hp="20">
@@ -99,8 +103,10 @@
       <div class="w-40 h-40 mb-4">
         <img src="images/implements/super-seeder.png" alt="Super Seeder" class="w-full h-full object-cover">
       </div>
-      <h2 class="text-lg font-medium mb-2">Super Seeder</h2>
-      <button id="book-now-btn" class="action-btn py-1.5 font-light text-sm w-full px-4 inline-block rounded-lg text-center shadow-md">Details</button>
+      <h2 class="text-lg font-medium mb-3 text-center h-10">Super Seeder</h2>
+      <div class="mt-auto w-full">
+        <button id="book-now-btn" class="action-btn py-1.5 font-light text-sm w-full px-4 inline-block rounded-lg text-center shadow-md">Details</button>
+      </div>
     </div>
   </a>
   <a href="{{ route('productdetails.home') }}" class="tractor-card" data-hp="20">
@@ -108,8 +114,10 @@
       <div class="w-40 h-40 mb-4">
         <img src="images/implements/sub-soiler.png" alt="Sub Soiler" class="w-full h-full object-cover">
       </div>
-      <h2 class="text-lg font-medium mb-2">Sub Soiler</h2>
-      <button id="book-now-btn" class="action-btn py-1.5 font-light text-sm w-full px-4 inline-block rounded-lg text-center shadow-md">Details</button>
+      <h2 class="text-lg font-medium mb-3 text-center h-10">Sub Soiler</h2>
+      <div class="mt-auto w-full">
+        <button id="book-now-btn" class="action-btn py-1.5 font-light text-sm w-full px-4 inline-block rounded-lg text-center shadow-md">Details</button>
+      </div>
     </div>
   </a>
   <a href="{{ route('productdetails.home') }}" class="tractor-card" data-hp="20">
@@ -117,8 +125,10 @@
       <div class="w-40 h-40 mb-4">
         <img src="images/implements/roto-seed-drill.png" alt="Roto Seed Drill" class="w-full h-full object-cover">
       </div>
-      <h2 class="text-lg font-medium mb-2">Roto Seed Drill</h2>
-      <button id="book-now-btn" class="action-btn py-1.5 font-light text-sm w-full px-4 inline-block rounded-lg text-center shadow-md">Details</button>
+      <h2 class="text-lg font-medium mb-3 text-center h-10">Roto Seed Drill</h2>
+      <div class="mt-auto w-full">
+        <button id="book-now-btn" class="action-btn py-1.5 font-light text-sm w-full px-4 inline-block rounded-lg text-center shadow-md">Details</button>
+      </div>
     </div>
   </a>
   <a href="{{ route('productdetails.home') }}" class="tractor-card" data-hp="20">
@@ -126,8 +136,10 @@
       <div class="w-40 h-40 mb-4">
         <img src="images/implements/rotary-tiller.png" alt="Rotary Tiller" class="w-full h-full object-cover">
       </div>
-      <h2 class="text-lg font-medium mb-2">Rotary Tiller</h2>
-      <button id="book-now-btn" class="action-btn py-1.5 font-light text-sm w-full px-4 inline-block rounded-lg text-center shadow-md">Details</button>
+      <h2 class="text-lg font-medium mb-3 text-center h-10">Rotary Tiller</h2>
+      <div class="mt-auto w-full">
+        <button id="book-now-btn" class="action-btn py-1.5 font-light text-sm w-full px-4 inline-block rounded-lg text-center shadow-md">Details</button>
+      </div>
     </div>
   </a>
   <a href="{{ route('productdetails.home') }}" class="tractor-card" data-hp="20">
@@ -135,8 +147,10 @@
       <div class="w-40 h-40 mb-4">
         <img src="images/implements/robust-multi-crop-row-planter.png" alt="Robust Multi Crop Row Planter" class="w-full h-full object-cover">
       </div>
-      <h2 class="text-lg font-medium mb-2">Robust Multi Crop Row Planter</h2>
-      <button id="book-now-btn" class="action-btn py-1.5 font-light text-sm w-full px-4 inline-block rounded-lg text-center shadow-md">Details</button>
+      <h2 class="text-lg font-medium mb-3 text-center h-10">Robust Multi Crop Row Planter</h2>
+      <div class="mt-auto w-full">
+        <button id="book-now-btn" class="action-btn py-1.5 font-light text-sm w-full px-4 inline-block rounded-lg text-center shadow-md">Details</button>
+      </div>
     </div>
   </a>
   <a href="{{ route('productdetails.home') }}" class="tractor-card" data-hp="20">
@@ -144,8 +158,10 @@
       <div class="w-40 h-40 mb-4">
         <img src="images/implements/ripper.png" alt="Ripper" class="w-full h-full object-cover">
       </div>
-      <h2 class="text-lg font-medium mb-2">Ripper</h2>
-      <button id="book-now-btn" class="action-btn py-1.5 font-light text-sm w-full px-4 inline-block rounded-lg text-center shadow-md">Details</button>
+      <h2 class="text-lg font-medium mb-3 text-center h-10">Ripper</h2>
+      <div class="mt-auto w-full">
+        <button id="book-now-btn" class="action-btn py-1.5 font-light text-sm w-full px-4 inline-block rounded-lg text-center shadow-md">Details</button>
+      </div>
     </div>
   </a>
   <a href="{{ route('productdetails.home') }}" class="tractor-card" data-hp="20">
@@ -153,11 +169,14 @@
       <div class="w-40 h-40 mb-4">
         <img src="images/implements/reversible-mb-plough.png" alt="Reversible mb Plough" class="w-full h-full object-cover">
       </div>
-      <h2 class="text-lg font-medium mb-2">Reversible mb Plough</h2>
-      <button id="book-now-btn" class="action-btn py-1.5 font-light text-sm w-full px-4 inline-block rounded-lg text-center shadow-md">Details</button>
+      <h2 class="text-lg font-medium mb-3 text-center h-10">Reversible mb Plough</h2>
+      <div class="mt-auto w-full">
+        <button id="book-now-btn" class="action-btn py-1.5 font-light text-sm w-full px-4 inline-block rounded-lg text-center shadow-md">Details</button>
+      </div>
     </div>
   </a>
 </div>
+
 
 </div>
 
