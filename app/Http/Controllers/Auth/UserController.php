@@ -281,8 +281,8 @@ public function logout(Request $request)
             $validated = $request->validate([
                 'name' => 'required',
                 //'image' => 'required',
-                'email' => 'required',
-                'dob' => 'required',
+                // 'email' => 'required',
+                // 'dob' => 'required',
                 
             ]);
             $customer = Customer::find($request['id']);
