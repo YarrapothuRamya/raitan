@@ -210,8 +210,8 @@ class UserController extends Controller
             $curTime = new \DateTime();
             $currentDatetime = $curTime->format("Y-m-d H:i:s");
             $clientIP = $request->ip();
-            $user = Auth::guard('customer')->user();        
-            //print_r($user);die();
+            $user = Auth::guard('customer')->user();
+
             // Log successful login
             User_Login_Logs::create([
                 'user_id' => $user->id,
@@ -222,7 +222,7 @@ class UserController extends Controller
                 'audit_time' => $currentDatetime,
                 'ipaddress' => $clientIP,
             ]);
-
+            //dd($request->session()->all());die();
             return response()->json(['status' => 'success', 'message' => 'Successfully logged in!']);
         } else {
             // Log invalid credentials
@@ -268,9 +268,10 @@ public function logout(Request $request)
     {
         Auth::guard('customer')->logout();
 
-        $request->session()->invalidate();
+        // $request->session()->invalidate();
 
-        $request->session()->regenerateToken();
+        // $request->session()->regenerateToken();
+        // $request->session()->put($dataToKeep);
 
         return redirect('/'); // Redirect to the desired location after logout
     }
@@ -278,10 +279,10 @@ public function logout(Request $request)
     {
         
             $validated = $request->validate([
-                'name' => 'required|unique:customers,name,'.$request['id'],
+                'name' => 'required',
                 //'image' => 'required',
-                'email' => 'required',
-                'dob' => 'required',
+                // 'email' => 'required',
+                // 'dob' => 'required',
                 
             ]);
             $customer = Customer::find($request['id']);
@@ -292,7 +293,8 @@ public function logout(Request $request)
                 $image = $request->file('image');
                 if ($request->file('image') != '' || $request->file('image') != NULL) {
                     $file_path = public_path('customer_images').'/'.$customer->image;
-                    if (file_exists($file_path)) {
+                    //echo $file_path;die;
+                    if (!empty($customer->image) && file_exists($file_path)) {
                         unlink($file_path);
                     }
                     $fileName = rand() . "." . $request->file('image')->getClientOriginalExtension();

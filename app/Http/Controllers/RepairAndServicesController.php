@@ -54,6 +54,7 @@ class RepairAndServicesController extends Controller
                 $image = $request->file('image');
                 if ($request->file('image') != '' || $request->file('image') != NULL) {
                     $file_path = public_path('repairsandservices_images').'/'.$repairsandservices->image;
+                      echo $file_path;die;
                     if (file_exists($file_path)) {
                         unlink($file_path);
                     }
