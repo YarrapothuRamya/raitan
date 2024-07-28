@@ -26,15 +26,14 @@
 
 <section class=" home_appextra " aria-describedby="Cars list Page" style="padding-top: 140px;">
     <div class="section-container" style="opacity: 1;">
-        <section aria-describedby="Book implement Page" class="mb-20 section-container">
+        <section aria-describedby="Book car Page" class="mb-20 section-container">
 
             <div class="max-w-5xl mx-auto border rounded-lg shadow-sm ">
                 <div class="sm:px-6 px-4 py-4 lg:px-2">
                     <div class="flex">
-                       
-                    <div class="w-72 h-72">
+                        <div class="w-40 h-28">
                             <div class="w-full h-full"><img src="images/tractors/tractor1.jpg" alt="..."
-                                    class="w-72 h-72" ></div>
+                                    class="w-40 h-28" width="160" height="112"></div>
                         </div>
                         <div class="p-11">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
@@ -43,25 +42,60 @@
                             </svg>
 
                         </div>
-                        <div class="w-52 h-52">
-                        
+                        <div class="w-40 h-28">
                             <div class="w-full h-full"><img src="/images/implementors/cultivator.jpg" alt="..."
-                                    class="w-52 h-52" ></div>
+                                    class="w-40 h-28" width="160" height="112"></div>
                         </div>
-                        <div class="ml-10 w-64">
-                            <h2 class="text-lg font-medium">Cultivator</h2>
+                        <div class="ml-10">
+                            <h2 class="text-lg font-medium">Mahindra OJA 3140 Tractor With Cultivator</h2>
                             <div class="flex mt-1 text-sm items-center flex-wrap text-gray-500"><span
-                                    class="text-sm">Cultivator is secondary tillage implement and it is always being used by every farmer.
-This RVD model is made to be work in the soil where may have some strong roots or stone.</span></div>
-                            
-                            
+                                    class="text-sm">Manual, Desiel</span></div>
+                            <div class="flex items-center">
+                                <svg class="w-4 h-4 text-yellow-300 ms-1" aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                                    <path
+                                        d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                                </svg>
+                                <svg class="w-4 h-4 text-yellow-300 ms-1" aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                                    <path
+                                        d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                                </svg>
+                                <svg class="w-4 h-4 text-yellow-300 ms-1" aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                                    <path
+                                        d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                                </svg>
+                                <svg class="w-4 h-4 text-yellow-300 ms-1" aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                                    <path
+                                        d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                                </svg>
+                                <svg class="w-4 h-4 ms-1 text-gray-300 dark:text-gray-500" aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                                    <path
+                                        d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                                </svg>
+                            </div>
+                            <div class="flex mt-2"><svg stroke="currentColor" fill="currentColor" stroke-width="0"
+                                    viewBox="0 0 512 512" class="mt-1 mr-1 text-pistachio" height="24" width="24"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"
+                                        d="M256 48c-79.5 0-144 61.39-144 137 0 87 96 224.87 131.25 272.49a15.77 15.77 0 0025.5 0C304 409.89 400 272.07 400 185c0-75.61-64.5-137-144-137z">
+                                    </path>
+                                    <circle cx="256" cy="192" r="48" fill="none" stroke-linecap="round"
+                                        stroke-linejoin="round" stroke-width="32"></circle>
+                                </svg>
+                                <div class="text-sm"><span class="block">Bachupally, K V Rangareddy District
+                                    </span><span class="block">Hyderabad - 500090</span></div>
+                            </div>
                         </div>
 
 
 
                     </div>
                     <div class="px-6 ">
-                        <!-- <div class="text-xs mt-4 text-gray-500">
+                        <div class="text-xs mt-4 text-gray-500">
                             <div class=" flex items-center ">
                                 <p>Includes 80 kms without fuel</p><svg stroke="currentColor" fill="currentColor"
                                     stroke-width="0" viewBox="0 0 16 16" role="button" class="text-pistachio ml-2"
@@ -73,9 +107,98 @@ This RVD model is made to be work in the soil where may have some strong roots o
                             </div>
                             <p class="mt-2">Extra Kms @ 9/km</p>
 
+                        </div>
+
+                        <!-- <div class="flex flex-col md:flex-row md:space-x-5 space-y-3 md:space-y-0 rounded-xl  p-3 mx-auto shadow-lg border border-gray-200 bg-white">
+
+
+                            <div class="flex justify-between items-center">
+
+                                <div class="flex items-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-500"
+                                        viewBox="0 0 20 20" fill="currentColor">
+                                        <path
+                                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                    </svg>
+                                    <p class="text-gray-600 font-bold text-sm ml-1">
+                                        4.96
+                                        <span class="text-gray-500 font-normal">(76 reviews)</span>
+                                    </p>
+                                </div>
+
+                                <div
+                                    class="bg-gray-200 px-3 py-1 rounded-full text-xs font-medium text-gray-800 hidden md:block">
+                                    Superhost
+                                </div>
+                            </div>
+                            <h3 class="font-black text-gray-800 md:text-3xl text-xl">The Majestic and Wonderful Bahamas
+                            </h3>
+                            <p class="md:text-lg text-gray-500 text-base">The best kept secret of The Bahamas is the
+                                country’s sheer size and diversity. With 16 major islands, The Bahamas is an unmatched
+                                destination</p>
+                            <p class="text-xl font-black text-gray-800">
+                                $110
+                                <span class="font-normal text-gray-600 text-base">/night</span>
+                            </p>
+
                         </div> -->
 
-                        <div class="max-w-7xl mx-auto bg-white shadow-lg rounded-lg overflow-hidden">
+
+
+
+                        <div class="px-6 mb-5 shadow-lg border border-gray-200">
+                            <div class="flex flex-wrap justify-center">
+                                <div class="w-full flex justify-center">
+                                    <div class="relative">
+                                        <img src="https://github.com/creativetimofficial/soft-ui-dashboard-tailwind/blob/main/build/assets/img/team-2.jpg?raw=true"
+                                            class="shadow-xl rounded-full align-middle border-none absolute -m-16 -ml-20 lg:-ml-16 max-w-[150px]" />
+                                    </div>
+                                </div>
+                                <div class="w-full text-center ">
+                                    <div class="flex justify-center lg:pt-4 pt-8 pb-0">
+                                        <div class="p-3 text-center">
+                                            <span
+                                                class="text-xl font-bold block uppercase tracking-wide text-slate-700">3,360</span>
+                                            <span class="text-sm text-slate-400">Deals</span>
+                                        </div>
+                                        <div class="p-3 text-center">
+                                            <span
+                                                class="text-xl font-bold block uppercase tracking-wide text-slate-700">2,454</span>
+                                            <span class="text-sm text-slate-400">Services</span>
+                                        </div>
+
+                                        <div class="p-3 text-center">
+                                            <span
+                                                class="text-xl font-bold block uppercase tracking-wide text-slate-700">9AM
+                                                - 6PM</span>
+                                            <span class="text-sm text-slate-400">Timmings</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-center mt-2">
+                                <h3 class="text-2xl text-slate-700 font-bold leading-normal mb-1">Krishna</h3>
+                                <div class="text-xs mt-0 mb-2 text-slate-400 font-bold uppercase">
+                                    <i class="fas fa-map-marker-alt mr-2 text-slate-400 opacity-75"></i>Bachupally,
+                                    Hyderabad
+                                </div>
+                            </div>
+                            <div class="mt-6 py-6 border-t border-slate-200 text-center">
+                                <div class="flex flex-wrap justify-center">
+                                    <div class="w-full px-4">
+                                        <p class="font-light leading-relaxed text-slate-600 mb-4">Urna id volutpat lacus
+                                            laoreet non curabitur gravida arcu. Lorem ipsum dolor sit amet consectetur
+                                            adipiscing elit duis tristique. Ante in niis aenean et tortor at risus
+                                            viverra.</p>
+                                        <a href="javascript:;"
+                                            class="font-normal text-slate-700 hover:text-slate-400">Follow Account</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="max-w-7xl mx-auto bg-white rounded-lg overflow-hidden">
                             <table class="min-w-full divide-y divide-gray-300 border border-gray-300">
                                 <thead class="bg-gray-200">
                                     <tr>
@@ -200,15 +323,6 @@ This RVD model is made to be work in the soil where may have some strong roots o
                                 </tbody>
                             </table>
                         </div>
-
-
-
-
-
-
-
-
-
 
                         <div id="modal" class="modal">
                             <div class="modal-content">
@@ -349,11 +463,15 @@ This RVD model is made to be work in the soil where may have some strong roots o
 
                         </div>
                         <div class="sm:mt-0">
+                            <!-- <div>
+                                <div role="button" class="items-center flex text-sm text-red-600">
 
-                            <a id="service-provider" href="{{ route('serviceprovider.home') }}"
-                                class="proceed-to-pay action-btn sm:inline-block block sm:w-auto w-full sm:py-2 py-3 px-4 rounded-xl text-sm whitespace-nowrap">
-                                <span>Service Providers</span>
-                            </a>
+                                    <p class="ml-1">Apply coupon</p>
+                                </div>
+                            </div> -->
+                            <button id="checkout-proceed-to-pay"
+                                class="proceed-to-pay action-btn sm:inline-block block sm:w-auto w-full sm:py-2 py-3 px-4 rounded-xl text-sm whitespace-nowrap"><span>Call
+                                    Now</span></button>
                         </div>
                     </div><button id="booking-success" style="display: none;"></button>
                 </div>
