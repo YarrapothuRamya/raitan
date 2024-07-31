@@ -21,11 +21,11 @@
             @endif
         </div>
 
-        <input id="id" type="hidden" name="id" value="{{ $impls['id'] }}">
+        <input id="id" type="hidden" name="id" value="{{ $horse_power_implements['id'] }}">
 
         <div class="mb-4">
             <label for="name" class="block text-gray-700 text-sm font-bold mb-2">{{ __('Name') }}*</label>
-            <input id="addname" type="text" class="shadow appearance-none border @error('name') border-red-500 @enderror rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="name" value="{{ $impls['name'] }}">
+            <input id="addname" type="text" class="shadow appearance-none border @error('name') border-red-500 @enderror rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="name" value="{{ $horse_power_implements['name'] }}">
             @error('name')
                 <p class="text-red-500 text-xs italic mt-2">{{ $message }}</p>
             @enderror
@@ -36,7 +36,7 @@
             <select class="shadow appearance-none border @error('status') border-red-500 @enderror rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="machine_id" id="add_machine_id">
                 <option value="0">Select Parent Name</option>
                 @foreach($machines as $machine)
-                    <option value="{{ $machine->id }}" {{ $machine->id == $impls->machine_id ? 'selected' : '' }}>{{ $machine->name }}</option>
+                    <option value="{{ $machine->id }}" {{ $machine->id == $horse_power_implements->machine_id ? 'selected' : '' }}>{{ $machine->name }}</option>
                 @endforeach
             </select>
             @if($errors->has('parent_id'))
@@ -46,7 +46,7 @@
 
         <div class="mb-4">
             <label for="status" class="block text-gray-700 text-sm font-bold mb-2">{{ __('Image') }}*</label>
-            <input id="addimage" type="file" class="shadow appearance-none border @error('addimage') border-red-500 @enderror rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="image" value="{{ asset('implement_images').'/'.$impls['image'] }}">
+            <input id="addimage" type="file" class="shadow appearance-none border @error('addimage') border-red-500 @enderror rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="image" value="{{ asset('implement_images').'/'.$horse_power_implements['image'] }}">
             @if($errors->has('parent_id'))
                 <p class="text-red-500 text-xs italic mt-2">{{ $errors->first('parent_id') }}</p>
             @endif
@@ -55,9 +55,9 @@
         <div class="mb-4">
             <label for="status" class="block text-gray-700 text-sm font-bold mb-2">{{ __('Status') }}*</label>
             <select class="shadow appearance-none border @error('status') border-red-500 @enderror rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="status" id="addstatus">
-                <option value="" {{ $impls->status === null ? 'selected' : '' }}>Select Status</option>
-                <option value="1" {{ $impls->status === 1 ? 'selected' : '' }}>Active</option>
-                <option value="0" {{ $impls->status === 0 ? 'selected' : '' }}>Inactive</option>
+                <option value="" {{ $horse_power_implements->status === null ? 'selected' : '' }}>Select Status</option>
+                <option value="1" {{ $horse_power_implements->status === 1 ? 'selected' : '' }}>Active</option>
+                <option value="0" {{ $horse_power_implements->status === 0 ? 'selected' : '' }}>Inactive</option>
             </select>
             @if($errors->has('status'))
                 <p class="text-red-500 text-xs italic mt-2">{{ $errors->first('role_id') }}</p>

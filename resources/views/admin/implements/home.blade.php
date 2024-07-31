@@ -56,21 +56,21 @@
                 </thead>
                 <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800">
                     <?php $i = 0; ?>
-                    @foreach($impls as $impl)    
+                    @foreach($horse_power_implements as $horse_power_implement)    
                         <tr class="bg-gray-50 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-900 text-gray-700 dark:text-gray-400">
                             <td class="px-4 py-3"><?php echo ++$i; ?></td>
-                            <td class="px-4 py-3">{{ $impl->name }}</td>
-                            <td class="px-4 py-3">{{ $impl->machine_name }}</td>
-                            <td class="px-4 py-3"><img src='{{ asset("implement_images")."/".$impl->image }}' width="100px" /></td>
+                            <td class="px-4 py-3">{{ $horse_power_implement->name }}</td>
+                            <td class="px-4 py-3">{{ $horse_power_implement->machine_name }}</td>
+                            <td class="px-4 py-3"><img src='{{ asset("implement_images")."/".$horse_power_implement->image }}' width="100px" /></td>
                             <td class="px-4 py-3">
-                                @if($impl->status == 1)
+                                @if($horse_power_implement->status == 1)
                                     Active
-                                @elseif($impl->status == 0)
+                                @elseif($horse_power_implement->status == 0)
                                     Inactive
                                 @endif
                             </td>
                             <td class="px-4 py-3">
-                            <a href="{{route('implements.edit',['imp_id' => $impl['id']])}}" type="button" class="bg-blue-500 text-white py-1.5 font-light text-sm w-full px-4 inline-block mt-2 rounded-lg text-center shadow-md implementorsedit" data-toggle="modal" data-target="#implementorModal" data-id="{{ $impl['id'] }}" data-name="{{ $impl['name'] }}" data-machine-id="{{ $impl['machine_id'] }}" data-status="{{ $impl['status'] }}" data-image="{{ asset('implement_images').'/'.$impl['image'] }}">Edit</a>   
+                            <a href="{{route('implements.edit',['imp_id' => $horse_power_implement['id']])}}" type="button" class="bg-blue-500 text-white py-1.5 font-light text-sm w-full px-4 inline-block mt-2 rounded-lg text-center shadow-md implementorsedit" data-toggle="modal" data-target="#implementorModal" data-id="{{ $horse_power_implement['id'] }}" data-name="{{ $horse_power_implement['name'] }}" data-machine-id="{{ $horse_power_implement['machine_id'] }}" data-status="{{ $horse_power_implement['status'] }}" data-image="{{ asset('implement_images').'/'.$horse_power_implement['image'] }}">Edit</a>   
                            
                             </td>
                         </tr>
