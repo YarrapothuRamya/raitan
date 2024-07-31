@@ -162,6 +162,16 @@
                     <span class="ml-2 text-sm tracking-wide truncate">Approve Permissions</span>
                 </a>
             </li>
+            <li>
+                <a href="{{ url('/raitan_admin/implements') }}" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-custom-green-main dark:hover:bg-gray-600 text-white-600 hover:text-white-800 border-l-4 border-transparent hover:border-blue-500 dark:hover:border-gray-800 pr-6">
+                    <span class="inline-flex justify-center items-center ml-4">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2l4-4"></path>
+                        </svg>
+                    </span>
+                    <span class="ml-2 text-sm tracking-wide truncate">Implements</span>
+                </a>
+            </li>
         </ul>
         <!-- <p class="mb-14 px-5 py-3 hidden md:block text-center text-xs">Copyright @2021</p> -->
     </div>

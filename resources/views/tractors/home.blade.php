@@ -175,6 +175,47 @@
       </div>
     </div>
   </a>
+    
+  @foreach($impls as $impl)  
+  @if($impl->machine_id =='1')
+     <a href="{{ route('productdetails.home') }}" class="tractor-card" data-hp="20">
+    <div class="border border-pear/30 shadow-md shadow-pear/30 rounded-lg p-4 flex flex-col items-center w-full h-full">
+      <div class="w-40 h-40 mb-4">
+        <img src='{{ asset("implement_images")."/".$impl->image }}' alt="Reversible mb Plough" class="w-full h-full object-cover">
+      </div>
+      <h2 class="text-lg font-medium mb-3 text-center h-10">{{ $impl->name }}</h2>
+      <div class="mt-auto w-full">
+        <button id="book-now-btn" class="action-btn py-1.5 font-light text-sm w-full px-4 inline-block rounded-lg text-center shadow-md">Details</button>
+      </div>
+    </div>
+  </a>
+  @elseif($impl->machine_id =='2')
+  <a href="{{ route('productdetails.home') }}" class="tractor-card" data-hp="30-50">
+    <div class="border border-pear/30 shadow-md shadow-pear/30 rounded-lg p-4 flex flex-col items-center w-full h-full">
+      <div class="w-40 h-40 mb-4">
+        <img src='{{ asset("implement_images")."/".$impl->image }}' alt="Reversible mb Plough" class="w-full h-full object-cover">
+      </div>
+      <h2 class="text-lg font-medium mb-3 text-center h-10">{{ $impl->name }}</h2>
+      <div class="mt-auto w-full">
+        <button id="book-now-btn" class="action-btn py-1.5 font-light text-sm w-full px-4 inline-block rounded-lg text-center shadow-md">Details</button>
+      </div>
+    </div>
+  </a>
+  @elseif($impl->machine_id =='3')
+  <a href="{{ route('productdetails.home') }}" class="tractor-card" data-hp="50-75">
+    <div class="border border-pear/30 shadow-md shadow-pear/30 rounded-lg p-4 flex flex-col items-center w-full h-full">
+      <div class="w-40 h-40 mb-4">
+        <img src='{{ asset("implement_images")."/".$impl->image }}' alt="Reversible mb Plough" class="w-full h-full object-cover">
+      </div>
+      <h2 class="text-lg font-medium mb-3 text-center h-10">{{ $impl->name }}</h2>
+      <div class="mt-auto w-full">
+        <button id="book-now-btn" class="action-btn py-1.5 font-light text-sm w-full px-4 inline-block rounded-lg text-center shadow-md">Details</button>
+      </div>
+    </div>
+  </a>
+  @endif
+  @endforeach 
+ 
 </div>
 
 
