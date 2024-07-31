@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('impls', function (Blueprint $table) {
+        Schema::create('horse_power_implements', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->string('image');
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('impls');
+        Schema::dropIfExists('horse_power_implements');
     }
 };

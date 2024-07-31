@@ -144,11 +144,11 @@ Route::get('/seller_activity/{master_role_id}', [App\Http\Controllers\CommonCont
 
 Route::get('seller-details', [App\Http\Controllers\CommonController::class, 'sellerdetails'])->name('sellerdetails.home');
 
-Route::get('/raitan_admin/implements', [App\Http\Controllers\ImplsController::class, 'indeximpls'])->name('implements');
-Route::post('/raitan_admin/implements/add', [App\Http\Controllers\ImplsController::class, 'implementsAdd'])->name('implements.add');
-Route::get('/raitan_admin/implements/add', [App\Http\Controllers\ImplsController::class, 'implementsAddview'])->name('implements.addview');
-Route::post('/raitan_admin/implements/update', [App\Http\Controllers\ImplsController::class, 'implementUpdate'])->name('implements.update');
-Route::get('/raitan_admin/implements/update', [App\Http\Controllers\ImplsController::class, 'implementedit'])->name('implements.edit');
+Route::get('/raitan_admin/implements', [App\Http\Controllers\Horse_power_implementsController::class, 'indeximpls'])->name('implements');
+Route::post('/raitan_admin/implements/add', [App\Http\Controllers\Horse_power_implementsController::class, 'implementsAdd'])->name('implements.add');
+Route::get('/raitan_admin/implements/add', [App\Http\Controllers\Horse_power_implementsController::class, 'implementsAddview'])->name('implements.addview');
+Route::post('/raitan_admin/implements/update', [App\Http\Controllers\Horse_power_implementsController::class, 'implementUpdate'])->name('implements.update');
+Route::get('/raitan_admin/implements/update', [App\Http\Controllers\Horse_power_implementsController::class, 'implementedit'])->name('implements.edit');
 
 // Route::get('tractors/home', [App\Http\Controllers\TractorsController::class, 'indeximpls'])->name('tractors.home');
 // Route::get('tractors/home', [App\Http\Controllers\TractorsController::class, 'implementsAddview'])->name('tractors.home');
