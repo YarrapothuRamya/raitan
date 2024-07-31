@@ -53,7 +53,7 @@ return view('admin.implements.home', compact('machines', 'horse_power_implements
                
                 if($horse_power_implements->save()){
                    
-                    return redirect()->back()->with('status','implement successfully updated');
+                    return redirect()->back()->with('status','Implement Successfully Inserted');
                 }else{
                   
                     return redirect()->back()->with('error','Something went wrong please try again.');
@@ -95,7 +95,7 @@ return view('admin.implements.home', compact('machines', 'horse_power_implements
              
             if($horse_power_implements->save()){
                
-                return redirect()->back()->with('status','Role successfully updated');
+                return redirect()->back()->with('status','Implement Successfully Updated');
             }else{
                 return redirect()->back()->with('error','Something went wrong please try again.');
             }
