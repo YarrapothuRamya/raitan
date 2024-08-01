@@ -76,7 +76,7 @@
   </div>
   <div class="w-full grid grid-cols-5 sm:grid-cols-5 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 lg:mt-0 mt-8 overflow-y-auto pb-5">
   <!-- lists & Images -->
-  <a href="{{ route('productdetails.home') }}" class="tractor-card" data-hp="20">
+  <!--a href="{{ route('productdetails.home') }}" class="tractor-card" data-hp="20">
     <div class="border border-pear/30 shadow-md shadow-pear/30 rounded-lg p-4 flex flex-col items-center w-full h-full">
       <div class="w-40 h-40 mb-4">
         <img src="images/implements/zero-till.png" alt="Zero Till" class="w-full h-full object-cover">
@@ -174,7 +174,7 @@
         <button id="book-now-btn" class="action-btn py-1.5 font-light text-sm w-full px-4 inline-block rounded-lg text-center shadow-md">Details</button>
       </div>
     </div>
-  </a>
+  </a-->
     
   @foreach($horse_power_implements as $horse_power_implement)  
   @if($horse_power_implement->machine_id =='1')
