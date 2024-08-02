@@ -15,6 +15,9 @@ use App\Models\Sprayers;
 use App\Models\Request_role;
 use App\Models\User_Login_Logs;
 use App\Models\Common_logs;
+use App\Models\Horse_power_implements;
+use App\Models\Machines;
+
 
 class CommonController extends Controller
 {
@@ -31,6 +34,18 @@ class CommonController extends Controller
     public function productdetails()
     {
         return view('productdetails.home');
+    }
+
+    public function implementsdetails(Request $request)
+    { 
+        $impleId = $request->query('imp_id');
+        $machineId = $request->query('machineid');
+        $horse_power_implements = Horse_power_implements::find($impleId);
+        $machines = Machines::find($machineId);
+    // $machines=Machines::select('*')->get();
+    
+    return view('implementsdetails.home', compact('machines', 'horse_power_implements'));
+
     }
 
     public function user_dashboard()

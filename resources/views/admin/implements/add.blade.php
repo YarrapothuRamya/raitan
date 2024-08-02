@@ -33,8 +33,8 @@
 
         <div class="mb-4">
             <label for="status" class="block text-gray-700 text-sm font-bold mb-2">{{ __('Machine Type') }}*</label>
-            <select class="shadow appearance-none border @error('status') border-red-500 @enderror rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="add_machine_id" id="add_machine_id">
-                <option value="0">Select Parent Name</option>
+            <select class="shadow appearance-none border @error('status') border-red-500 @enderror rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="add_machine_id" id="add_machine_id" required>
+                <option value="">Select Parent Name</option>
                 @foreach($machines as $machine)
                     <option value="{{ $machine->id }}">{{ $machine->name }}</option>
                 @endforeach

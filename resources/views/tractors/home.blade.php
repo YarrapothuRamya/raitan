@@ -145,19 +145,20 @@
     
   @foreach($horse_power_implements as $horse_power_implement)  
   @if($horse_power_implement->machine_id =='1')
-     <a href="{{ route('productdetails.home') }}" class="tractor-card" data-hp="29">
+     <a href="{{ route('implementsdetails.home',['imp_id' => $horse_power_implement['id'],'machineid' => $horse_power_implement['machine_id']]) }}" class="tractor-card" data-hp="0-29">
     <div class="border border-pear/30 shadow-md shadow-pear/30 rounded-lg p-4 flex flex-col items-center w-full h-full">
       <div class="w-40 h-40 mb-4">
         <img src='{{ asset("implement_images")."/".$horse_power_implement->image }}' alt="Reversible mb Plough" class="w-full h-full object-cover">
       </div>
       <h2 class="text-lg font-medium mb-3 text-center h-10">{{ $horse_power_implement->name }}</h2>
+ 
       <div class="mt-auto w-full">
         <button id="book-now-btn" class="action-btn py-1.5 font-light text-sm w-full px-4 inline-block rounded-lg text-center shadow-md">Details</button>
       </div>
     </div>
   </a>
   @elseif($horse_power_implement->machine_id =='2')
-  <a href="{{ route('productdetails.home') }}" class="tractor-card" data-hp="30-49">
+  <a href="{{ route('implementsdetails.home',['imp_id' => $horse_power_implement['id'],'machineid' => $horse_power_implement['machine_id']]) }}" class="tractor-card" data-hp="30-49">
     <div class="border border-pear/30 shadow-md shadow-pear/30 rounded-lg p-4 flex flex-col items-center w-full h-full">
       <div class="w-40 h-40 mb-4">
         <img src='{{ asset("implement_images")."/".$horse_power_implement->image }}' alt="Reversible mb Plough" class="w-full h-full object-cover">
@@ -169,7 +170,7 @@
     </div>
   </a>
   @elseif($horse_power_implement->machine_id =='3')
-  <a href="{{ route('productdetails.home') }}" class="tractor-card" data-hp="50-74">
+  <a href="{{ route('implementsdetails.home',['imp_id' => $horse_power_implement['id'],'machineid' => $horse_power_implement['machine_id']]) }}" class="tractor-card" data-hp="50-74">
     <div class="border border-pear/30 shadow-md shadow-pear/30 rounded-lg p-4 flex flex-col items-center w-full h-full">
       <div class="w-40 h-40 mb-4">
         <img src='{{ asset("implement_images")."/".$horse_power_implement->image }}' alt="Reversible mb Plough" class="w-full h-full object-cover">
@@ -181,7 +182,7 @@
     </div>
   </a>
   @elseif($horse_power_implement->machine_id =='4')
-  <a href="{{ route('productdetails.home') }}" class="tractor-card" data-hp="75">
+  <a href="{{ route('implementsdetails.home',['imp_id' => $horse_power_implement['id'],'machineid' => $horse_power_implement['machine_id']]) }}" class="tractor-card" data-hp="75">
     <div class="border border-pear/30 shadow-md shadow-pear/30 rounded-lg p-4 flex flex-col items-center w-full h-full">
       <div class="w-40 h-40 mb-4">
         <img src='{{ asset("implement_images")."/".$horse_power_implement->image }}' alt="Reversible mb Plough" class="w-full h-full object-cover">

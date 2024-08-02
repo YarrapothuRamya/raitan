@@ -134,6 +134,10 @@
 							<a href="#"
 								class="flex items-center w-full p-2 text-base font-normal text-white-600 hover:text-white-800  pl-11">Invoice</a>
 						</li>
+                        <li>
+							<a href="{{ url('/raitan_admin/implements') }}"
+								class="flex items-center w-full p-2 text-base font-normal text-white-600 hover:text-white-800  pl-11">Implements</a>
+						</li>
 					</ul>
 				</li>
             <li>

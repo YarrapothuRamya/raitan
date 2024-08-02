@@ -150,6 +150,9 @@ Route::get('/raitan_admin/implements/add', [App\Http\Controllers\Horse_power_imp
 Route::post('/raitan_admin/implements/update', [App\Http\Controllers\Horse_power_implementsController::class, 'implementUpdate'])->name('implements.update');
 Route::get('/raitan_admin/implements/update', [App\Http\Controllers\Horse_power_implementsController::class, 'implementedit'])->name('implements.edit');
 
+Route::get('implementsdetails', [App\Http\Controllers\CommonController::class, 'implementsdetails'])->name('implementsdetails.home');
+//Route::get('implements-details/{imp_id}/{machine_id}', [App\Http\Controllers\CommonController::class, 'implementsdetails'])->name('implementsdetails.home');
+
 // Route::get('tractors/home', [App\Http\Controllers\TractorsController::class, 'indeximpls'])->name('tractors.home');
 // Route::get('tractors/home', [App\Http\Controllers\TractorsController::class, 'implementsAddview'])->name('tractors.home');
 
