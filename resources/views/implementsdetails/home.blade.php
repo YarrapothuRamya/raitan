@@ -51,8 +51,7 @@
                         <div class="ml-10 w-64">
                             <h2 class="text-lg font-medium">{{ $horse_power_implements->name }} {{ $machines->name}}</h2>
                             <div class="flex mt-1 text-sm items-center flex-wrap text-gray-500"><span
-                                     class="text-sm">{{ $horse_power_implements->name }} is secondary tillage implement and it is always being used by every farmer.
-This RVD model is made to be work in the soil where may have some strong roots or stone.</span></div>
+                                     class="text-sm">{{ $horse_power_implements->name }} {{$horse_power_implements->description}}</span></div>
                             
                             
                         </div>
@@ -76,36 +75,16 @@ This RVD model is made to be work in the soil where may have some strong roots o
                         </div> -->
 
                         <div class="max-w-7xl mx-auto bg-white shadow-lg rounded-lg overflow-hidden">
-                            <table class="min-w-full divide-y divide-gray-300 border border-gray-300">
-                                <thead class="bg-gray-200">
-                                    <tr>
-                                        <th
-                                            class="px-6 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider border border-gray-300">
-                                            Tillage Width (mm / inch)</th>
-                                        <th
-                                            class="px-6 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider border border-gray-300">
-                                            1500 / 59"</th>
-                                        <th
-                                            class="px-6 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider border border-gray-300">
-                                            1750 / 69"</th>
-                                        <th
-                                            class="px-6 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider border border-gray-300">
-                                            2000 / 79"</th>
-                                        <th
-                                            class="px-6 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider border border-gray-300">
-                                            2250 / 89"</th>
-                                    </tr>
-                                </thead>
-                                <tbody class="bg-white divide-y divide-gray-300">
-                                    <tr>
-                                        <td
-                                            class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 border border-gray-300">
-                                            Gearbox</td>
-                                        <td colspan="4"
+                            
+                                      
+                                            <img src='{{ asset("implement_images")."/".$horse_power_implements->description_image }}' alt="..." style="width:100%; height:auto"
+                                    class="w-52 h-52" >
+                                    
+                                        <!-- <td colspan="4"
                                             class="px-6 py-4 whitespace-nowrap text-sm text-gray-700 border border-gray-300">
-                                            Semi Automatic Multi (2 Speed)</td>
+                                            Semi Automatic Multi (2 Speed)</td> -->
                                     </tr>
-                                    <tr>
+                                    <!-- <tr>
                                         <td
                                             class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 border border-gray-300">
                                             Side Transmission</td>
@@ -195,10 +174,8 @@ This RVD model is made to be work in the soil where may have some strong roots o
                                             50-60</td>
                                         <td
                                             class="px-6 py-4 whitespace-nowrap text-sm text-gray-700 border border-gray-300">
-                                            60-70</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                                            60-70</td> -->
+                                    
                         </div>
 
 

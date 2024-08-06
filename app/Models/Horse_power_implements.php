@@ -13,6 +13,8 @@ class Horse_power_implements extends Model
         'name',
         'image',
         'machine_id',
+        'description',
+        'description_image',
         'status',        
     ];
 }

@@ -16,6 +16,8 @@ return new class extends Migration
             $table->string('name');
             $table->string('image');
             $table->integer('machine_id');
+            $table->string('description');
+            $table->string('description_image');
             $table->tinyInteger('status');
             $table->timestamps();
         });
