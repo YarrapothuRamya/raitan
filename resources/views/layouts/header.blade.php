@@ -117,7 +117,7 @@
     <div class="header_right">
       <div class="header_navigation">
         <ul role="menu" class="headnav_list">
-          <li role="menuitem" tabindex="0" class="headnav_item headnav_hiring"><a
+          <!-- <li role="menuitem" tabindex="0" class="headnav_item headnav_hiring"><a
               href="" class="headnav_item_anchor whitefill_animate ">
               <div class="headnav_item_text  font14 fw400 color111">Farm Machinery
               </div>
@@ -126,7 +126,7 @@
               href="" class="headnav_item_anchor whitefill_animate ">
               <div class="headnav_item_text  font14 fw400 color111">Implements
                 </div>
-            </a></li>
+            </a></li> -->
           <!--li role="menuitem" tabindex="0" id="header_advertise" class="headnav_item headnav_advertise">
             <a
             href="{{ route('service.home') }}"
@@ -135,11 +135,17 @@
               <div class="headnav_item_text pl-2 font14 fw400 color111">Services
               </div>
             </a></li-->
-          <li role="menuitem" tabindex="0" id="header_freelisting" class="headnav_item headnav_addbusiness"><a
-              href="free-listing"
+          
+    
+
+   
+
+    @if (Auth::guard('customer')->check())
+    <li role="menuitem" tabindex="0" id="header_freelisting" class="headnav_item headnav_addbusiness"><a
+              href="{{ route('mybusiness.home') }}"
               class="headnav_item_anchor whitefill_animate">
               <div class="nav_listing_icon jdicon"></div>
-              <div class="headnav_item_text pl-2 font14 fw400 color111">Free Listing
+              <div class="headnav_item_text pl-2 font14 fw400 color111">My Listing
               </div>
               <div class="headnav_tag font8 fw700 colorFFF text_uppercase mr-4">
                 Business</div>
@@ -155,11 +161,7 @@
               fdprocessedid="yopgan">
               <div class="">
   
-    
 
-   
-
-    @if (Auth::guard('customer')->check())
         <a id="navbarDropdown" class="headnav_item_text font14 fw500 colorFFF dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
             {{ Auth::guard('customer')->user()->name}}
         </a>
@@ -186,6 +188,26 @@
             </form>
         </div>
         @else
+        <li role="menuitem" tabindex="0" id="header_freelisting" class="headnav_item headnav_addbusiness"><a
+              href="{{ route('listing.home') }}"
+              class="headnav_item_anchor whitefill_animate">
+              <div class="nav_listing_icon jdicon"></div>
+              <div class="headnav_item_text pl-2 font14 fw400 color111">Free Listing
+              </div>
+              <div class="headnav_tag font8 fw700 colorFFF text_uppercase mr-4">
+                Business</div>
+            </a></li>
+          <li role="menuitem" aria-label="notification" class="headnav_item headnav_notify">
+            <div role="button" tabindex="0" aria-label="Notifications" class="headnav_item_anchor whitefill_animate"
+              fdprocessedid="xsjip">
+              <div class="nav_notify_icon jdicon"></div>
+            </div>
+          </li>
+          <li role="menuitem" tabindex="0" id="header_login1" class="headnav_item headnav_user">
+            <div role="button" tabindex="0" aria-label="Login/Sign Up" class="headnav_item_anchor  greenfill_animate"
+              fdprocessedid="yopgan">
+              <div class="">
+  
         @if (Route::has('login'))
         <a class="headnav_item_text font14 fw500 colorFFF" id="header_login">Log in</a>
     @endif
