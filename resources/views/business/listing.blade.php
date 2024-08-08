@@ -13,10 +13,11 @@
           <div class="lg:w-1/2 lg:pr-8 mb-8 lg:mb-0">
             <h1 class="text-2xl font-bold text-gray-900 mb-4">List Your Business <span class="main-color">for FREE</span></h1>
             <span class="text-gray-700 font-medium mb-4 block">with India’s No. 1 Local Search Engine</span>
-            <form class="flex items-center space-x-4 mb-6">
+            <form class="flex items-center space-x-4 mb-6" action="{{ route('addcontact.home') }}" method="POST">
+              @csrf
               <span class="text-gray-700 font-medium">+91</span>
-              <input aria-label="Enter Mobile Number" aria-required="true" class="flex-1 p-2 border border-gray-300 rounded-md" inputmode="numeric" pattern="[0-9]*" name="pincode" autocomplete="off" maxlength="10" required="" placeholder="Enter Mobile No.">
-              <a aria-label="Start Now" class="px-4 py-2 bg-main-green-600 text-white font-semibold rounded-md hover:bg-main-green-700" href="{{ route('addcontact.home') }}">Start Now <span class="ml-2">→</span></a>
+              <input aria-label="Enter Mobile Number" aria-required="true" class="flex-1 p-2 border border-gray-300 rounded-md" inputmode="numeric" pattern="[0-9]*" name="mobile" autocomplete="off" maxlength="10" required="" placeholder="Enter Mobile No.">
+              <button aria-label="Start Now" type="submit" class="px-4 py-2 bg-main-green-600 text-white font-semibold rounded-md hover:bg-main-green-700">Start Now <span class="ml-2">→</span></button>
             </form>
             <ul class="list-disc list-inside space-y-2">
               <li>Get Discovered and Create Your Online Business</li>
