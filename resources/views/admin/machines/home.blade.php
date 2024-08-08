@@ -6,13 +6,13 @@
 
 
 <div class="mt-4 mx-4">
-    <div class="w-full overflow-hidden rounded-lg shadow-xs">
-        <div class="flex flex-wrap items-center px-4 py-2">
+    <div class="w-full overflow-hidden rounded-lg shadow-md">
+        <div class="flex flex-wrap items-center px-4 py-2 bg-gray-50 dark:bg-gray-800">
             <div class="relative w-full max-w-full flex-grow flex-1">
                 <h3 class="font-semibold text-base text-gray-900 dark:text-gray-50">Add/Edit Machinary</h3>
             </div>
             <div class="relative w-full max-w-full flex-grow flex-1 text-right">
-                <a href="{{route('machine.addview')}}" class="action-btn py-1.5 font-light text-sm px-4 inline-block mt-2 rounded-lg text-center shadow-md machineadd">Add Machinary</a>
+                <a href="{{route('machine.addview')}}" class="action-btn py-1.5 font-light text-sm px-4 inline-block mt-2 rounded-lg text-center shadow-md bg-blue-500 text-white  transition duration-200 machineadd">Add Machinary</a>
             </div>
         </div>
         <div class="w-full overflow-x-auto">
@@ -45,7 +45,7 @@
             </div>
             <table class="w-full">
                 <thead>
-                    <tr class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
+                    <tr class="text-sm font-semibold tracking-wide text-left text-white uppercase border-b dark:border-gray-700 bg-custom-green-light dark:text-gray-400 dark:bg-gray-800">
                         <th class="px-4 py-3">S No</th>
                         <th class="px-4 py-3">Name</th>
                         <th class="px-4 py-3">Image</th>
@@ -54,25 +54,32 @@
                         <th class="px-4 py-3">Action</th>
                     </tr>
                 </thead>
-                <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800">
+                <tbody class="bg-white divide-y divide-gray-200 dark:divide-gray-700 dark:bg-gray-800">
                     <?php $i = 0; ?>
                     @foreach($machines as $machine)
-                        <tr class="bg-gray-50 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-900 text-gray-700 dark:text-gray-400">
+                        <tr class="text-sm bg-white dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-900 text-gray-700 dark:text-gray-400 transition duration-200">
                             <td class="px-4 py-3"><?php echo ++$i; ?></td>
                             <td class="px-4 py-3">{{ $machine->name }}</td>
-                            <td class="px-4 py-3"><img src='{{ asset("machine_images")."/".$machine->image }}' width="100px" /></td>
+                            
+                            <td class="px-4 py-3">
+                                    <button onclick="openModal('{{ asset('machine_images').'/'.$machine->image }}')" class="">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </td>
                             <td class="px-4 py-3">{{ $machine->horse_power }}</td>
                             <td class="px-4 py-3">
                                 @if($machine->status == 1)
-                                    Active
+                                <span class="text-green-600">Active</span>
                                 @elseif($machine->status == 0)
-                                    Inactive
+                                <span class="text-red-600">Inactive</span>
                                 @endif
                             </td>
+                            
                             <td class="px-4 py-3">
-                                <!-- <a  class="bg-blue-500 text-white py-1.5 font-light text-sm w-full px-4 inline-block mt-2 rounded-lg text-center shadow-md machineedit" data-toggle="modal" data-target="#machineModal" data-id="{{ $machine['id'] }}" data-name="{{ $machine['name'] }}" data-horse-power="{{ $machine['horse_power'] }}" data-status="{{ $machine['status'] }}" data-image="{{ asset('machine_images').'/'.$machine['image'] }}">Edit</button> -->
-                                <a href="{{route('machine.edit',['mech_id' => $machine['id']])}}" class="bg-blue-500 text-white py-1.5 font-light text-sm w-full px-4 inline-block mt-2 rounded-lg text-center shadow-md machineedit" >Edit</button>
-                            </td>
+                                    <a href="{{route('machine.edit',['mech_id' => $machine['id']])}}" class=" implementorsedit">
+                                        <i class="fas fa-edit"></i>
+                                    </a>
+                                </td>
                         </tr>
                     @endforeach
                 </tbody>
@@ -381,8 +388,32 @@
 
 </div>
 
+ <!-- Image Modal -->
+ <div id="imageModal" class="fixed inset-0 bg-black bg-opacity-50 hidden justify-center items-center z-50">
+        <div class="bg-white p-4 rounded-lg">
+            <span class="text-gray-500 cursor-pointer float-right" onclick="closeModal()">&times;</span>
+            <img id="modalImage" src="" alt="Preview Image" class="max-w-full h-auto rounded-lg" />
+        </div>
+    </div>
+
+    
 <!-- jQuery library -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+<script>
+        function openModal(imageSrc) {
+            document.getElementById('modalImage').src = imageSrc;
+            document.getElementById('imageModal').classList.remove('hidden');
+            document.getElementById('imageModal').classList.add('flex');
+        }
+
+        function closeModal() {
+            document.getElementById('imageModal').classList.remove('flex');
+            document.getElementById('imageModal').classList.add('hidden');
+        }
+    </script>
+
+
 <script type="text/javascript">
     function updateMachine(){
         var id = $("#id").val();
