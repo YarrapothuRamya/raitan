@@ -51,7 +51,21 @@
                 <p class="text-red-500 text-xs italic mt-2">{{ $errors->first('parent_id') }}</p>
             @endif
         </div>
+        <div class="mb-4">
+            <label for="description" class="block text-gray-700 text-sm font-bold mb-2">{{ __('Description') }}*</label>
+            <textarea id="description" type="textarea" class="shadow appearance-none border @error('description') border-red-500 @enderror rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="description" value=""></textarea>
+            @error('description')
+                <p class="text-red-500 text-xs italic mt-2">{{ $message }}</p>
+            @enderror
+        </div>
 
+        <div class="mb-4">
+            <label for="status" class="block text-gray-700 text-sm font-bold mb-2">{{ __('Description image') }}*</label>
+            <input id="description_image" type="file" class="shadow appearance-none border @error('addimage') border-red-500 @enderror rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="description_image" value="">
+            @if($errors->has('parent_id'))
+                <p class="text-red-500 text-xs italic mt-2">{{ $errors->first('parent_id') }}</p>
+            @endif
+        </div>
         <div class="mb-4">
             <label for="status" class="block text-gray-700 text-sm font-bold mb-2">{{ __('Status') }}*</label>
             <select class="shadow appearance-none border @error('status') border-red-500 @enderror rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="status" id="addstatus">

@@ -51,7 +51,7 @@
                         <div class="ml-10 w-64">
                             <h2 class="text-lg font-medium">{{ $horse_power_implements->name }} {{ $machines->name}}</h2>
                             <div class="flex mt-1 text-sm items-center flex-wrap text-gray-500"><span
-                                     class="text-sm">{{ $horse_power_implements->name }} {{$horse_power_implements->description}}</span></div>
+                                     class="text-sm">{{ $horse_power_implements->name }} {!!$horse_power_implements->description!!}</span></div>
                             
                             
                         </div>
@@ -77,7 +77,7 @@
                         <div class="max-w-7xl mx-auto bg-white shadow-lg rounded-lg overflow-hidden">
                             
                                       
-                                            <img src='{{ asset("implement_images")."/".$horse_power_implements->description_image }}' alt="..." style="width:100%; height:auto"
+                                            <img src='{{ asset("implement_images")."/".$horse_power_implements->description_image }}'  style="width:100%; height:auto"
                                     class="w-52 h-52" >
                                     
                                         <!-- <td colspan="4"

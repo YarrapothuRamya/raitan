@@ -91,6 +91,7 @@ return view('admin.implements.home', compact('machines', 'horse_power_implements
             $horse_power_implements = Horse_power_implements::find($request['id']);
             $horse_power_implements->name = $request['name'];
             $horse_power_implements->machine_id = $request['machine_id'];
+            $horse_power_implements->description = $request['description'];
                 $image = $request->file('image');
                 if ($request->file('image') != '' || $request->file('image') != NULL) {
                     $file_path = public_path('implement_images').'/'.$horse_power_implements->image;
@@ -102,6 +103,11 @@ return view('admin.implements.home', compact('machines', 'horse_power_implements
                     $horse_power_implements->image = $fileName;
                 }
                 
+                $image1 = $request->file('description_image');
+                $fileName1 = rand() . "." . $request->file('description_image')->getClientOriginalExtension();
+                $request->file('description_image')->move(public_path('implement_images'), $fileName1);
+
+                $horse_power_implements->description_image = $fileName1;
             $horse_power_implements->status = $request['status'];
              
             if($horse_power_implements->save()){

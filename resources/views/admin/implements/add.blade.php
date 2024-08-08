@@ -1,7 +1,13 @@
 @extends('layouts.adminapp')
 
 @section('content')
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
+<!-- include summernote css/js -->
+<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
 <div class="min-h-screen flex items-center justify-center bg-gray-100 p-4">
     <form action="{{ route('implements.add') }}" method="post" enctype="multipart/form-data" class="w-full max-w-lg bg-white p-8 rounded-lg shadow-lg">
         @csrf
@@ -54,7 +60,7 @@
 
         <div class="mb-4">
             <label for="description" class="block text-gray-700 text-sm font-bold mb-2">{{ __('Description') }}*</label>
-            <textarea id="description" type="textarea" class="shadow appearance-none border @error('description') border-red-500 @enderror rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="description" value=""></textarea>
+            <textarea id="summernote" type="textarea" class="shadow appearance-none border @error('description') border-red-500 @enderror rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="description" value=""></textarea>
             @error('description')
                 <p class="text-red-500 text-xs italic mt-2">{{ $message }}</p>
             @enderror
@@ -96,4 +102,10 @@
         window.location.href = "{{ url('/raitan_admin/implements') }}"; // Adjust the route name as per your application
     }
     </script>
+    <script type="text/javascript">
+    $(document).ready(function()
+     {
+          $('#summernote').summernote();
+     });
+</script>
 @endsection
