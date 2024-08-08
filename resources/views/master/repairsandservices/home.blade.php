@@ -6,13 +6,13 @@
 
 
 <div class="mt-4 mx-4">
-    <div class="w-full overflow-hidden rounded-lg shadow-xs">
-        <div class="flex flex-wrap items-center px-4 py-2">
+    <div class="w-full overflow-hidden rounded-lg shadow-md">
+        <div class="flex flex-wrap items-center px-4 py-2 bg-gray-50 dark:bg-gray-800">
             <div class="relative w-full max-w-full flex-grow flex-1">
                 <h3 class="font-semibold text-base text-gray-900 dark:text-gray-50">Add/Edit Repairs and Services</h3>
             </div>
             <div class="relative w-full max-w-full flex-grow flex-1 text-right">
-                <a href="{{route('repairsandservices.addview')}}" class="action-btn py-1.5 font-light text-sm px-4 inline-block mt-2 rounded-lg text-center shadow-md repairsandservicesadd" type="button" data-toggle="modal" data-target="#repairsandservicesModal">Add Repairs and Services</a>
+                <a href="{{route('repairsandservices.addview')}}" class="action-btn py-1.5 font-light text-sm px-4 inline-block mt-2 rounded-lg text-center shadow-md bg-blue-500 text-white  transition duration-200 repairsandservicesadd" type="button" data-toggle="modal" data-target="#repairsandservicesModal">Add Repairs and Services</a>
             </div>
         </div>
         <div class="w-full overflow-x-auto">
@@ -45,7 +45,7 @@
             </div>
             <table class="w-full">
                 <thead>
-                    <tr class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
+                    <tr class="text-sm font-semibold tracking-wide text-left text-white uppercase border-b dark:border-gray-700 bg-custom-green-light dark:text-gray-400 dark:bg-gray-800">
                         <th class="px-4 py-3">S No</th>
                         <th class="px-4 py-3">Name</th>
                         <th class="px-4 py-3">Image</th>
@@ -57,10 +57,15 @@
                 <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800">
                     <?php $i = 0; ?>
                     @foreach($repairsandservices as $ras)
-                        <tr class="bg-gray-50 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-900 text-gray-700 dark:text-gray-400">
+                        <tr class="text-sm bg-white dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-900 text-gray-700 dark:text-gray-400 transition duration-200">
                             <td class="px-4 py-3"><?php echo ++$i; ?></td>
                             <td class="px-4 py-3">{{ $ras->name }}</td>
-                            <td class="px-4 py-3"><img src='{{ asset("repairsandservices_images")."/".$ras->image }}' width="100px" /></td>
+                            
+                            <td class="px-4 py-3">
+                                    <button onclick="openModal('{{ asset('repairsandservices_images').'/'.$ras->image }}')" class="">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </td>
                             <td class="px-4 py-3">{{ $ras->description }}</td>
                             <td class="px-4 py-3">
                                 @if($ras->status == 1)
@@ -70,7 +75,7 @@
                                 @endif
                             </td>
                             <td class="px-4 py-3">
-                                <a href="{{route('repairsandservices.edit',['reas_id' => $ras['id']])}}" type="button" class="bg-blue-500 text-white py-1.5 font-light text-sm w-full px-4 inline-block mt-2 rounded-lg text-center shadow-md repairsandservicesedit" data-toggle="modal" data-target="#repairsandservicesModal" data-id="{{ $ras['id'] }}" data-name="{{ $ras['name'] }}" data-description="{{ $ras['description'] }}" data-status="{{ $ras['status'] }}" data-image="{{ asset('repairsandservices_images').'/'.$ras['image'] }}">Edit</a>
+                                <a href="{{route('repairsandservices.edit',['reas_id' => $ras['id']])}}" type="button" class=" repairsandservicesedit" data-toggle="modal" data-target="#repairsandservicesModal" data-id="{{ $ras['id'] }}" data-name="{{ $ras['name'] }}" data-description="{{ $ras['description'] }}" data-status="{{ $ras['status'] }}" data-image="{{ asset('repairsandservices_images').'/'.$ras['image'] }}"><i class="fas fa-edit"></i></a>
                             </td>
                         </tr>
                     @endforeach
@@ -80,7 +85,25 @@
     </div>
 </div>
 
+<div id="imageModal" class="fixed inset-0 bg-black bg-opacity-50 hidden justify-center items-center z-50">
+        <div class="bg-white p-4 rounded-lg">
+            <span class="text-gray-500 cursor-pointer float-right" onclick="closeModal()">&times;</span>
+            <img id="modalImage" src="" alt="Preview Image" class="max-w-full h-auto rounded-lg" />
+        </div>
+    </div>
 
+    <script>
+        function openModal(imageSrc) {
+            document.getElementById('modalImage').src = imageSrc;
+            document.getElementById('imageModal').classList.remove('hidden');
+            document.getElementById('imageModal').classList.add('flex');
+        }
+
+        function closeModal() {
+            document.getElementById('imageModal').classList.remove('flex');
+            document.getElementById('imageModal').classList.add('hidden');
+        }
+    </script>
 
 <!-- <div class="container mt-20">
     <div class="row justify-content-center">

@@ -1,85 +1,113 @@
 @extends('layouts.adminapp')
 
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 @section('content')
 
 <div class="h-full ml-14 mt-14 mb-10 md:ml-64">
 
 
 <div class="mt-4 mx-4">
-    <div class="w-full overflow-hidden rounded-lg shadow-xs">
-        <div class="flex flex-wrap items-center px-4 py-2">
-            <div class="relative w-full max-w-full flex-grow flex-1">
-                <h3 class="font-semibold text-base text-gray-900 dark:text-gray-50">Add/Edit Implementors</h3>
+        <div class="w-full overflow-hidden rounded-lg  shadow-md">
+            <div class="flex flex-wrap items-center px-4 py-2 bg-gray-50 dark:bg-gray-800">
+                <div class="relative w-full max-w-full flex-grow flex-1">
+                    <h3 class="font-semibold text-base text-gray-900 dark:text-gray-50">Add/Edit Implementors</h3>
+                </div>
+                <div class="relative w-full max-w-full flex-grow flex-1 text-right">
+                    <a href="{{ route('implementor.addview') }}" class="action-btn py-1.5 font-light text-sm px-4 inline-block mt-2 rounded-lg text-center shadow-md bg-blue-500 text-white  transition duration-200">Add Implementor</a>
+                </div>
             </div>
-            <div class="relative w-full max-w-full flex-grow flex-1 text-right">
-                <a href="{{route('implementor.addview')}}" class="action-btn py-1.5 font-light text-sm px-4 inline-block mt-2 rounded-lg text-center shadow-md implementorsadd" >Add Implementor</a>
-            </div>
-        </div>
-        <div class="w-full overflow-x-auto">
-            <div class="px-4 py-3">
-                @if (session('status'))
-                    <div class="alert alert-success" role="alert">
-                        {{ session('status') }}
-                    </div>
-                @endif
-                @if (session('error'))
-                    <div class="alert alert-danger" role="alert">
-                        {{ session('error') }}
-                    </div>
-                @endif
-                @if($errors->any())
-                    {!! implode('', $errors->all('<div style="color:red">:message</div>')) !!}
-                @endif
-                @if(Session::get('error') && Session::get('error') != null)
-                    <div style="color:red">{{ Session::get('error') }}</div>
-                    @php
-                        Session::put('error', null)
-                    @endphp
-                @endif
-                @if(Session::get('success') && Session::get('success') != null)
-                    <div style="color:green">{{ Session::get('success') }}</div>
-                    @php
-                        Session::put('success', null)
-                    @endphp
-                @endif
-            </div>
-            <table class="w-full">
-                <thead>
-                    <tr class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
-                        <th class="px-4 py-3">S No</th>
-                        <th class="px-4 py-3">Name</th>
-                        <th class="px-4 py-3">Machine Type</th>
-                        <th class="px-4 py-3">Image</th>
-                        <th class="px-4 py-3">Status</th>
-                        <th class="px-4 py-3">Action</th>
-                    </tr>
-                </thead>
-                <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800">
-                    <?php $i = 0; ?>
-                    @foreach($implementors as $implementor)
-                        <tr class="bg-gray-50 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-900 text-gray-700 dark:text-gray-400">
-                            <td class="px-4 py-3"><?php echo ++$i; ?></td>
-                            <td class="px-4 py-3">{{ $implementor->name }}</td>
-                            <td class="px-4 py-3">{{ $implementor->machine_name }}</td>
-                            <td class="px-4 py-3"><img src='{{ asset("implementor_images")."/".$implementor->image }}' width="100px" /></td>
-                            <td class="px-4 py-3">
-                                @if($implementor->status == 1)
-                                    Active
-                                @elseif($implementor->status == 0)
-                                    Inactive
-                                @endif
-                            </td>
-                            <td class="px-4 py-3">
-                            <a href="{{route('implementor.edit',['imp_id' => $implementor['id']])}}" type="button" class="bg-blue-500 text-white py-1.5 font-light text-sm w-full px-4 inline-block mt-2 rounded-lg text-center shadow-md implementorsedit" data-toggle="modal" data-target="#implementorModal" data-id="{{ $implementor['id'] }}" data-name="{{ $implementor['name'] }}" data-machine-id="{{ $implementor['machine_id'] }}" data-status="{{ $implementor['status'] }}" data-image="{{ asset('implementor_images').'/'.$implementor['image'] }}">Edit</a>   
-                            <!-- <button type="button" class="bg-blue-500 text-white py-1.5 font-light text-sm w-full px-4 inline-block mt-2 rounded-lg text-center shadow-md implementorsedit" data-toggle="modal" data-target="#implementorModal" data-id="{{ $implementor['id'] }}" data-name="{{ $implementor['name'] }}" data-machine-id="{{ $implementor['machine_id'] }}" data-status="{{ $implementor['status'] }}" data-image="{{ asset('implementor_images').'/'.$implementor['image'] }}">Edit</button> -->
-                            </td>
+            <div class="w-full overflow-x-auto ">
+                <div class="px-4 py-3">
+                    @if (session('status'))
+                        <div class="alert alert-success" role="alert">
+                            {{ session('status') }}
+                        </div>
+                    @endif
+                    @if (session('error'))
+                        <div class="alert alert-danger" role="alert">
+                            {{ session('error') }}
+                        </div>
+                    @endif
+                    @if ($errors->any())
+                        {!! implode('', $errors->all('<div class="text-red-600">:message</div>')) !!}
+                    @endif
+                    @if (Session::get('error') && Session::get('error') != null)
+                        <div class="text-red-600">{{ Session::get('error') }}</div>
+                        @php
+                            Session::put('error', null)
+                        @endphp
+                    @endif
+                    @if (Session::get('success') && Session::get('success') != null)
+                        <div class="text-green-600">{{ Session::get('success') }}</div>
+                        @php
+                            Session::put('success', null)
+                        @endphp
+                    @endif
+                </div>
+                <table class="w-full divide-y divide-gray-200 ">
+                    <thead>
+                        <tr class="text-sm font-semibold tracking-wide text-left text-white uppercase border-b dark:border-gray-700 bg-custom-green-light dark:text-gray-400 dark:bg-gray-800">
+                            <th class="px-4 py-3">S No</th>
+                            <th class="px-4 py-3">Name</th>
+                            <th class="px-4 py-3">Machine Type</th>
+                            <th class="px-4 py-3">Image</th>
+                            <th class="px-4 py-3">Status</th>
+                            <th class="px-4 py-3">Action</th>
                         </tr>
-                    @endforeach
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody class="bg-white divide-y divide-gray-200 dark:divide-gray-700 dark:bg-gray-800">
+                        <?php $i = 0; ?>
+                        @foreach ($implementors as $implementor)
+                            <tr class="text-sm bg-white dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-900 text-gray-700 dark:text-gray-400 transition duration-200">
+                                <td class="px-4 py-3"><?php echo ++$i; ?></td>
+                                <td class="px-4 py-3">{{ $implementor->name }}</td>
+                                <td class="px-4 py-3">{{ $implementor->machine_name }}</td>
+                                <td class="px-4 py-3">
+                                    <button onclick="openModal('{{ asset('implementor_images').'/'.$implementor->image }}')" class="">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </td>
+                                <td class="px-4 py-3">
+                                    @if ($implementor->status == 1)
+                                        <span class="text-green-600">Active</span>
+                                    @elseif ($implementor->status == 0)
+                                        <span class="text-red-600">Inactive</span>
+                                    @endif
+                                </td>
+                                <td class="px-4 py-3">
+                                    <a href="{{ route('implementor.edit', ['imp_id' => $implementor['id']]) }}" class=" implementorsedit">
+                                        <i class="fas fa-edit"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
-</div>
+
+    <!-- Image Modal -->
+    <div id="imageModal" class="fixed inset-0 bg-black bg-opacity-50 hidden justify-center items-center z-50">
+        <div class="bg-white p-4 rounded-lg">
+            <span class="text-gray-500 cursor-pointer float-right" onclick="closeModal()">&times;</span>
+            <img id="modalImage" src="" alt="Preview Image" class="max-w-full h-auto rounded-lg" />
+        </div>
+    </div>
+
+    <script>
+        function openModal(imageSrc) {
+            document.getElementById('modalImage').src = imageSrc;
+            document.getElementById('imageModal').classList.remove('hidden');
+            document.getElementById('imageModal').classList.add('flex');
+        }
+
+        function closeModal() {
+            document.getElementById('imageModal').classList.remove('flex');
+            document.getElementById('imageModal').classList.add('hidden');
+        }
+    </script>
+
 
 
 

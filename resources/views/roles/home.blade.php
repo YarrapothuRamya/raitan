@@ -6,20 +6,20 @@
 
 
 <div class="mt-4 mx-4">
-        <div class="w-full overflow-hidden rounded-lg shadow-xs">
+        <div class="w-full overflow-hidden rounded-lg shadow-xs shadow-md">
             <div class="flex flex-wrap items-center px-4 py-2">
                 <div class="relative w-full max-w-full flex-grow flex-1">
                     <h3 class="font-semibold text-base text-gray-900 dark:text-gray-50">Roles</h3>
                 </div>
                 <div class="relative w-full max-w-full flex-grow flex-1 text-right">
-                    <a href="{{route('role.addview')}}"      class="action-btn py-1.5 font-light text-sm  px-4 inline-block mt-2 rounded-lg text-center shadow-md roleadd"  type="button" >Add Role</a>
+                    <a href="{{route('role.addview')}}"      class="action-btn py-1.5 font-light text-sm px-4 inline-block mt-2 rounded-lg text-center shadow-md bg-blue-500 text-white  transition duration-200 roleadd"  type="button" >Add Role</a>
                 </div>
             </div>
             <div class="w-full overflow-x-auto">
                 <table class="w-full">
                     <thead>
                         <tr
-                            class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
+                            class="text-sm font-semibold tracking-wide text-left text-white uppercase border-b dark:border-gray-700 bg-custom-green-light dark:text-gray-400 dark:bg-gray-800">
                             
                             <th class="px-4 py-3">S No</th>   
                             <th class="px-4 py-3">Role Name</th>
@@ -27,13 +27,13 @@
                             <th class="px-4 py-3">Parent Name</th>
                             <th class="px-4 py-3">Status</th>
                             <th class="px-4 py-3">Actions</th>
-                            <th class="px-4 py-3"></th>
+                            
                         </tr>
                     </thead>
                     <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800">
                     <?php $i = 0; ?>
                     @foreach($roles_with_parent as $role)
-                        <tr class="bg-gray-50 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-900 text-gray-700 dark:text-gray-400">
+                        <tr class="text-sm bg-white dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-900 text-gray-700 dark:text-gray-400 transition duration-200">
                         <td class="px-4 py-3"><?php echo ++$i; ?></td>
                             <td class="px-4 py-3">{{ $role['name'] }}</td>
                             <td class="px-4 py-3">{{ $role['role_id'] }}</td>
@@ -45,19 +45,17 @@
                                 </td>
                                 <td class="px-4 py-3">
                                     @if($role['status'] == 1)
-                                        Active
+                                    <span class="text-green-600">Active</span>
                                     @elseif($role['status'] == 0)
-                                        Inactive
+                                    <span class="text-red-600">Inactive</span>
                                     @endif
                                 </td>
+                            
                             <td class="px-4 py-3">
-                            <a 
-    id="editRoleLink"
-    class="px-2 py-1 bg-blue-500 text-white rounded-md" 
-    href="{{ route('role.edit', ['role_id' => $role['id']]) }}"
-        >Edit Role</a>
-                                
-                            </td>
+                                    <a href="{{ route('role.edit', ['role_id' => $role['id']]) }}" id="editRoleLink" class=" ">
+                                        <i class="fas fa-edit"></i>
+                                    </a>
+                                </td>
                         </tr>
                         @endforeach
 

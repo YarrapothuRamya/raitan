@@ -118,25 +118,25 @@
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2l4-4"></path>
                         </svg>
-                  <span class="flex-1 ml-3 text-left whitespace-nowrap" sidebar-toggle-item>E-commerce</span>
+                  <span class="flex-1 ml-3 text-left whitespace-nowrap text-sm" sidebar-toggle-item>E-commerce</span>
                   <svg sidebar-toggle-item class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
             </a>
 					<ul id="dropdown-example" class="hidden py-2 space-y-2">
 						<li>
 							<a href="#"
-								class="flex items-center w-full p-2 text-base font-normal text-white-600 hover:text-white-800  pl-11">Products</a>
+								class="flex items-center w-full p-2 text-base font-normal text-white-600 hover:text-white-800  pl-11 text-sm">Products</a>
 						</li>
 						<li>
 							<a href="#"
-								class="flex items-center w-full p-2 text-base font-normal text-white-600 hover:text-white-800  pl-11">Billing</a>
+								class="flex items-center w-full p-2 text-base font-normal text-white-600 hover:text-white-800  pl-11 text-sm">Billing</a>
 						</li>
 						<li>
 							<a href="#"
-								class="flex items-center w-full p-2 text-base font-normal text-white-600 hover:text-white-800  pl-11">Invoice</a>
+								class="flex items-center w-full p-2 text-base font-normal text-white-600 hover:text-white-800  pl-11 text-sm">Invoice</a>
 						</li>
                         <li>
 							<a href="{{ url('/raitan_admin/implements') }}"
-								class="flex items-center w-full p-2 text-base font-normal text-white-600 hover:text-white-800  pl-11">Implements</a>
+								class="flex items-center w-full p-2 text-base font-normal text-white-600 hover:text-white-800  pl-11 text-sm">Implements</a>
 						</li>
 					</ul>
 				</li>
