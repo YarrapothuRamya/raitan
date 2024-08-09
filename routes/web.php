@@ -104,6 +104,7 @@ Route::post('/raitan_admin/role-add', [App\Http\Controllers\RolesController::cla
 Route::get('/raitan_admin/role-add', [App\Http\Controllers\RolesController::class, 'roleAddview'])->name('role.addview');
 Route::get('/raitan_admin/role-edit', [App\Http\Controllers\RolesController::class, 'roleedit'])->name('role.edit');
 Route::get('tractors-home', [App\Http\Controllers\TractorsController::class, 'index'])->name('tractors.home');
+Route::get('earthmovers-home', [App\Http\Controllers\EarthmoversController::class, 'index'])->name('earthmovers.home');
 Route::get('page-not-found', [App\Http\Controllers\CommonController::class, 'pagenotfound'])->name('pagenotfound.home');
 Route::get('product-details', [App\Http\Controllers\CommonController::class, 'productdetails'])->name('productdetails.home');
 Route::get('services', [App\Http\Controllers\CommonController::class, 'services'])->name('service.home');
