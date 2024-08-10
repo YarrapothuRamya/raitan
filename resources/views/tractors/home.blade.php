@@ -100,11 +100,11 @@
           showCard = true;
         }
 
-        if (showCard) {
+      //  if (showCard) {
           card.style.display = 'block';
-        } else {
-          card.style.display = 'none';
-        }
+//        } else {
+  //        card.style.display = 'none';
+    //    }
       });
 
       // Update button styles
