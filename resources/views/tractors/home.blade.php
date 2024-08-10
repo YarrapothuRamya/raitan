@@ -202,13 +202,14 @@
         } else if (hpRange === '75' && hp >= 75) {
           showCard = true;
         }
-
+/*
         if (showCard) {
           card.style.display = 'block';
         } else {
           card.style.display = 'none';
         }
-      });
+  */
+     });
 
       // Update button styles
       Object.keys(filterButtons).forEach(key => {
