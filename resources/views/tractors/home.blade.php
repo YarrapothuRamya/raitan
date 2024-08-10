@@ -147,7 +147,7 @@
   @foreach($horse_power_implements as $horse_power_implement)  
   @if($machine->id == $horse_power_implement->machine_id )
 
-     <a href="{{ route('implementsdetails.home',['imp_id' => $horse_power_implement['id'],'machineid' => $horse_power_implement['machine_id']]) }}" class="tractor-card" data-hp="{{$machine->name}}">
+     <a href="{{ route('implementsdetails.home',['imp_id' => $horse_power_implement['id'],'machineid' => $horse_power_implement['machine_id']]) }}" class="tractor-card" data-hp="{{$machine->horse_power}}">
     <div class="border border-pear/30 shadow-md shadow-pear/30 rounded-lg p-4 flex flex-col items-center w-full h-full">
       <div class="w-40 h-40 mb-4">
         <img src='{{ asset("implement_images")."/".$horse_power_implement->image }}' alt="Reversible mb Plough" class="w-full h-full object-cover">
@@ -191,6 +191,7 @@
       filterButtons[hpRange].classList.add('bg-black');
       tractorCards.forEach(card => {
         const hp = parseInt(card.getAttribute('data-hp'), 10);
+       //alert(hp.toString());
         let showCard = false;
 
         if (hpRange === '30' && hp < 30) {
@@ -202,13 +203,13 @@
         } else if (hpRange === '75' && hp >= 75) {
           showCard = true;
         }
-/*
+
         if (showCard) {
           card.style.display = 'block';
         } else {
           card.style.display = 'none';
         }
-  */
+  
      });
 
       // Update button styles
