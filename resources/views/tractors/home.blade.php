@@ -142,9 +142,11 @@
       </div>
     </div>
   </a-->
+  
   @foreach($machines as $machine) 
   @foreach($horse_power_implements as $horse_power_implement)  
   @if($machine->id == $horse_power_implement->machine_id )
+
      <a href="{{ route('implementsdetails.home',['imp_id' => $horse_power_implement['id'],'machineid' => $horse_power_implement['machine_id']]) }}" class="tractor-card" data-hp="{{$machine->name}}">
     <div class="border border-pear/30 shadow-md shadow-pear/30 rounded-lg p-4 flex flex-col items-center w-full h-full">
       <div class="w-40 h-40 mb-4">
@@ -157,6 +159,7 @@
       </div>
     </div>
   </a>
+
   @endif
   @endforeach 
   @endforeach 
