@@ -33,6 +33,7 @@ class BusinessController extends Controller
                 return view('business.addcontact',  [  'services' => $services,  'mobileno' => $mobileno,  'existingData' => $businessContact]);
           
         } else {
+            //$existingData=[];
             return view('business.addcontact', compact('services','mobileno',));
         }
         //return view('business.addcontact', compact('services','mobileno','existingData'));

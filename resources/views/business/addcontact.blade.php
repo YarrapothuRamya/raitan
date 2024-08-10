@@ -13,13 +13,13 @@
           <form  method="post" action="{{route('address.home')}}" enctype="multipart/form-data" novalidate="novalidate">
             @csrf
             <p class="addcontact_title___IxGV text-xl font-semibold text-gray-900">Add Contact Details</p>
-            <input type="hidden" name="id" value="{{ $existingData->id}}" />
+            <input type="hidden" name="id" value="{{ $existingData->id ?? ''}}" />
             <div class="relative mb-6">
               <!-- <input type="text" name="title" class="input border-gray-300 border-2 px-4 py-2 rounded-md focus:outline-none focus:border-main-green w-full" placeholder=" " required> -->
               <select name="title" id="title" required class="input border-gray-300 border-2 px-4 py-2 rounded-md focus:outline-none focus:border-main-green w-full">
                 <option value="">Select</option>
               @foreach($services as $service)
-                  <option value="{{ $service->id }}" @selected($service->id == $existingData->title)>{{ $service->service_name }}</option>
+                  <option value="{{ $service->id }}" @selected($service->id == ($existingData->title ?? ''))>{{ $service->service_name }}</option>
               @endforeach
               </select>
               
@@ -28,7 +28,7 @@
             </div>
 
             <div class="relative mb-6">
-              <input type="text" name="contactPerson" class="input border-gray-300 border-2 px-4 py-2 rounded-md focus:outline-none focus:border-main-green w-full" placeholder=" " value="{{$existingData->name}}" required>
+              <input type="text" name="contactPerson" class="input border-gray-300 border-2 px-4 py-2 rounded-md focus:outline-none focus:border-main-green w-full" placeholder=" " value="{{$existingData->name ?? ''}}" required>
               <label class="label-float bg-white">Contact Person</label>
               <div class="error__message mt-2 hidden text-red-500">Please enter a contact person</div>
             </div>
@@ -42,7 +42,7 @@
             <button class="text-main-green-600 px-4 py-2 rounded hover:text-main-green-700 focus:outline-none w-full lg:w-auto">+ Add Another Mobile Number</button>
 
             <div class="relative mb-6 mt-5">
-              <input type="text" name="whatsappNumber" class="input border-gray-300 border-2 px-4 py-2 rounded-md focus:outline-none focus:border-main-green w-full" value="{{$existingData->whatsapp_no}}" placeholder=" " required>
+              <input type="text" name="whatsappNumber" class="input border-gray-300 border-2 px-4 py-2 rounded-md focus:outline-none focus:border-main-green w-full" value="{{$existingData->whatsapp_no ?? ''}}" placeholder=" " required>
               <label class="label-float bg-white">WhatsApp Number</label>
               <div class="error__message mt-2 hidden text-red-500">Please enter a WhatsApp number</div>
             </div>
@@ -59,7 +59,7 @@
             <button class="mt-2 text-main-green-600 px-4 py-2 rounded hover:text-main-green-700 focus:outline-none w-full lg:w-auto">+ Add Landline Number</button>
 
             <div class="relative mb-6 mt-5">
-              <input type="text" name="email" class="input border-gray-300 border-2 px-4 py-2 rounded-md focus:outline-none focus:border-main-green w-full" value="{{ $existingData->email}}" placeholder=" " required>
+              <input type="text" name="email" class="input border-gray-300 border-2 px-4 py-2 rounded-md focus:outline-none focus:border-main-green w-full" value="{{ $existingData->email ?? ''}}" placeholder=" " required>
               <label class="label-float bg-white">Email</label>
               <div class="error__message mt-2 hidden text-red-500">Please enter an email</div>
             </div>
