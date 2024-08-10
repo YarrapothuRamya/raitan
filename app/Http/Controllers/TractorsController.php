@@ -15,8 +15,8 @@ class TractorsController extends Controller
     public function index()
 
     {
-        $horse_power_implements=Horse_power_implements::select('Horse_power_implements.*', 'Machines.name as machine_name')
-        ->leftJoin('Machines','Machines.id','=','Horse_power_implements.machine_id')->get();
+        $horse_power_implements=Horse_power_implements::select('horse_power_implements.*', 'machines.name as machine_name')
+        ->leftJoin('machines','machines.id','=','horse_power_implements.machine_id')->get();
 $machines=Machines::select('*')->get();
 // return view('tractors.home', compact('machines', 'impls'));
 
