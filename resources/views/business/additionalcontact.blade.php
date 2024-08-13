@@ -59,7 +59,7 @@
             </div>
 
             <div class="addcontact_button_outer__oJRac mt-2 flex flex-col lg:flex-row lg:items-center space-y-2 lg:space-y-0 lg:space-x-4">
-                <button class="text-main-green-600 px-4 py-2 rounded hover:text-main-green-700 focus:outline-none w-full lg:w-auto">+ Add WhatsApp Number</button>
+                
                 <label class="font13 text-main-green addcontact_samefield__XucOM flex items-center">
                   <input type="checkbox" id="wupCheckbox" title="Same As Mobile Number">
                   <span class="addcontact_uncheck__mAy08 ml-2"></span>
@@ -67,7 +67,7 @@
                 </label>
               </div>
 
-            <button class="mt-2 text-main-green-600 px-4 py-2 rounded hover:text-main-green-700 focus:outline-none w-full lg:w-auto">+ Add Landline Number</button>
+            
 
             <div class="relative mb-6 mt-5">
               <input type="text" name="email" class="input border-gray-300 border-2 px-4 py-2 rounded-md focus:outline-none focus:border-main-green w-full" placeholder=" " required>

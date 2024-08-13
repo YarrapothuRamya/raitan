@@ -257,14 +257,7 @@
                                         Info</span><span class="jdBusiness_p_subtext__79c3a mt-5"><span
                                             class="jdBusiness_p_subtext_1__0QBi_"></span></span></div>
                             </a></div>
-                        <div class="jdBusiness_profile__wrapper__anchrwrap__ripple___6XCj ripple ripple-container">
-                            <a><img src="https://akam.cdn.jdmagicbox.com/images/icontent/analytics/yearly_turnover_icon.svg"
-                                    class="jdBusiness_icbx_26__0RuRm mr-10">
-                                <div class="jdBusiness_sub_text__7905s"><span class="jdBusiness_p_text__BwDSF">Yearly
-                                        Turnover</span><span class="jdBusiness_missing_profile__XxwpN">Missing
-                                        Info</span><span class="jdBusiness_p_subtext__79c3a mt-5"><span
-                                            class="jdBusiness_p_subtext_1__0QBi_"></span></span></div>
-                            </a></div>
+                        
                         <div class="jdBusiness_profile__wrapper__anchrwrap__ripple___6XCj ripple ripple-container">
                             <a><img src="https://akam.cdn.jdmagicbox.com/images/icontent/analytics/no_employees_icon.svg"
                                     class="jdBusiness_icbx_26__0RuRm mr-10">

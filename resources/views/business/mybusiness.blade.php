@@ -18,11 +18,11 @@
         <div class="bg-gray-50 p-8 rounded-lg shadow-md mb-10">
             <div class="text-lg font-medium text-gray-800 mb-4">Business Profile Score</div>
             <div class="flex flex-col md:flex-row items-center">
-                <a href="https://www.justdial.com/jd-business?source=77&amp;wap=77&amp;docid=040PXX40.XX40.240713003415.L7D9" class="block w-32 h-32 overflow-hidden rounded-lg shadow-lg mb-4 md:mb-0 md:mr-6">
+                <a href="#" class="block w-32 h-32 overflow-hidden rounded-lg shadow-lg mb-4 md:mb-0 md:mr-6">
                     <img src="https://images.jdmagicbox.com/comp/def_content/computer-software-developers/shutterstock-178800794-computer-software-developers-4-u72gy.jpg" alt="RLK InfoTech" class="w-full h-full object-cover">
                 </a>
                 <div class="flex-1">
-                    <a href="https://www.justdial.com/jd-business?source=77&amp;wap=77&amp;docid=040PXX40.XX40.240713003415.L7D9">
+                    <a href="#">
                         <div class="text-2xl font-bold text-gray-900 mb-2">RLK InfoTech</div>
                         <div class="text-base text-gray-700 mb-4">Indira Nagar-Moosarambagh, Hyderabad</div>
                     </a>
@@ -39,7 +39,7 @@
                         <text x="50%" y="50%" dy=".3em" text-anchor="middle" class="text-lg font-bold text-black">43%</text>
                         <text x="50%" y="70%" dy=".3em" text-anchor="middle" class="text-sm font-bold text-yellow-500">Fair</text>
                     </svg>
-                    <a href="https://www.justdial.com/jd-business?source=77&amp;wap=77&amp;docid=040PXX40.XX40.240713003415.L7D9&amp;ep=profile_score" class="mt-2 block border border-main-green text-main-green-600 font-medium py-2 px-4 rounded hover:bg-blue-100">Increase Profile Score</a>
+                    
                 </div>
             </div>
         </div>

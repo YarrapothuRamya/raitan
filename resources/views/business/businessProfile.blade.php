@@ -74,13 +74,7 @@
                                 class="quickLinks_quicklink_image__8Yn1D"></div>
                         <div class="quickLinks_leads__section__text__GN0a_">Business Timings</div>
                     </a>
-                    <a class="quickLinks_leads__section__inner__P3_dE" tabindex="0" >
-                        <div class="quickLinks_leads__section__count__oUx_V undefined "
-                            style="background-color: rgb(191, 239, 229);"><img
-                                src="https://akam.cdn.jdmagicbox.com/images/icontent/analytics/hotkeys_addoffer.svg"
-                                class="quickLinks_quicklink_image__8Yn1D"></div>
-                        <div class="quickLinks_leads__section__text__GN0a_">Add Offer</div>
-                    </a>
+                    
                     <div class="quickLinks_leads__section__inner__P3_dE" tabindex="0">
                         <div class="quickLinks_leads__section__count__oUx_V undefined "
                             style="background-color: rgb(223, 245, 255);"><img
@@ -95,13 +89,7 @@
                                 class="quickLinks_quicklink_image__8Yn1D"></div>
                         <div class="quickLinks_leads__section__text__GN0a_">Add Website</div>
                     </div>
-                    <div class="quickLinks_leads__section__inner__P3_dE" tabindex="0">
-                        <div class="quickLinks_leads__section__count__oUx_V undefined "
-                            style="background-color: rgb(252, 220, 250);"><img
-                                src="https://akam.cdn.jdmagicbox.com/images/icontent/analytics/hotkeys_addvideo.svg"
-                                class="quickLinks_quicklink_image__8Yn1D"></div>
-                        <div class="quickLinks_leads__section__text__GN0a_">Add Video</div>
-                    </div>
+                    
                     <a class="quickLinks_leads__section__inner__P3_dE" tabindex="0" href="{{ route('addsociallinks.home') }}">
                         <div class="quickLinks_leads__section__count__oUx_V undefined "
                             style="background-color: rgb(205, 249, 237);"><img
@@ -109,196 +97,11 @@
                                 class="quickLinks_quicklink_image__8Yn1D"></div>
                         <div class="quickLinks_leads__section__text__GN0a_">Add Social Links</div>
                     </a>
-                    <div class="quickLinks_leads__section__inner__P3_dE" tabindex="0">
-                        <div class="quickLinks_leads__section__count__oUx_V undefined "
-                            style="background-color: rgb(244, 237, 189);"><img
-                                src="http://akam.cdn.jdmagicbox.com/images/icontent/jdbusiness/biz_icon.svg"
-                                class="quickLinks_quicklink_image__8Yn1D"></div>
-                        <div class="quickLinks_leads__section__text__GN0a_">Share Biz Card</div>
-                    </div>
+                    
                 </div>
 
 
-                <div id="smart_card" class="smartCard_smartcard__sectionwrapper__zv93i">
-                    <div class="smartCard_smartcard__section__XGGYr">
-                        <div class="swiper swiper-initialized swiper-horizontal mySwiper swiper-backface-hidden">
-                            <div class="swiper-wrapper" style="transform: translate3d(0px, 0px, 0px);">
-                                <div class="swiper-slide swiper-slide-active"
-                                    style="width: 384.6px; margin-right: 15px;">
-                                    <div class="smartCard_smartcard__section__inner__aASyI">
-                                        <div class="smartCard_smartcard__section__inner__left__8sAQc">
-                                            <div>
-                                                <div class="smartCard_addtext__oAUHC">Improve your Ratings</div>
-                                                <div class="smartCard_helptext__RAVxj">Download &amp; share QR Code
-                                                </div>
-                                            </div>
-                                            <form method="POST" id="myForm_smart_card"
-                                                action="https://wap.justdial.com/jdpay2/?page=ratingsqr&amp;name=lasso&amp;source=77&amp;vertical=562&amp;docid=9999P8818.8818.240713114332.J9A2&amp;campaign_name=ratings_qr&amp;message_template=JdBusiness_ratingsqr&amp;communication_channel=&amp;customer_segment=vendors_all&amp;wkwebview=1&amp;hide_header=1&amp;ep=smart_card&amp;source_link=jdBusiness&amp;docid=9999P8818.8818.240713114332.J9A2">
-                                                <input hidden="" type="text" name="sid" readonly=""
-                                                    value="2vp4o7g5rz8%2FGMo0aOIL9npfWjNBHvu%2BDg7HLAMMiy4%3D"><input
-                                                    type="text" hidden="" name="mobile" readonly="" value="9553775093">
-                                            </form><button
-                                                class="smartCard_primary__btn__E419X primary__btn ripple ripple-container">GET
-                                                MY QR CODE<i class="smartCard_arrowrgt__m13X3"></i></button>
-                                        </div><img class="smartCard_smartcard__section__inner__right__tibpU"
-                                            src="https://akam.cdn.jdmagicbox.com/images/icontent/analytics/smart_qrode_icon.svg">
-                                    </div>
-                                </div>
-                                <div class="swiper-slide swiper-slide-next" style="width: 384.6px; margin-right: 15px;">
-                                    <div class="smartCard_smartcard__section__inner__aASyI">
-                                        <div class="smartCard_smartcard__section__inner__left__8sAQc">
-                                            <div>
-                                                <div class="smartCard_addtext__oAUHC">Add Complete Address</div>
-                                                <div class="smartCard_helptext__RAVxj">Add store location for your
-                                                    customer to locate you easily</div>
-                                            </div>
-                                            <form method="POST" id="myForm_smart_card"
-                                                action="https://wap.justdial.com/edit_list/index.php?docid=9999P8818.8818.240713114332.J9A2&amp;owner=1&amp;hide_header=1&amp;city=Tadepalligudem&amp;source=77&amp;version=0&amp;editlist=address&amp;editname=address&amp;vertical=jdBusiness&amp;ep=smart_card&amp;source_link=jdBusiness&amp;docid=9999P8818.8818.240713114332.J9A2">
-                                                <input hidden="" type="text" name="sid" readonly=""
-                                                    value="2vp4o7g5rz8%2FGMo0aOIL9npfWjNBHvu%2BDg7HLAMMiy4%3D"><input
-                                                    type="text" hidden="" name="mobile" readonly="" value="9553775093">
-                                            </form><button
-                                                class="smartCard_primary__btn__E419X primary__btn ripple ripple-container">ADD<i
-                                                    class="smartCard_arrowrgt__m13X3"></i></button>
-                                        </div><img class="smartCard_smartcard__section__inner__right__tibpU"
-                                            src="https://akam.cdn.jdmagicbox.com/images/icontent/analytics/smart_address_icon.svg">
-                                    </div>
-                                </div>
-                                <div class="swiper-slide" style="width: 384.6px; margin-right: 15px;">
-                                    <div class="smartCard_smartcard__section__inner__aASyI">
-                                        <div class="smartCard_smartcard__section__inner__left__8sAQc">
-                                            <div>
-                                                <div class="smartCard_addtext__oAUHC">Add Store Timings</div>
-                                                <div class="smartCard_helptext__RAVxj">Add store timings for your
-                                                    customer to know when you are open</div>
-                                            </div>
-                                            <form method="POST" id="myForm_smart_card"
-                                                action="https://wap.justdial.com/edit_list/index.php?docid=9999P8818.8818.240713114332.J9A2&amp;owner=1&amp;hide_header=1&amp;city=Tadepalligudem&amp;source=77&amp;version=0&amp;editlist=timingnew&amp;editname=timingnew&amp;vertical=jdBusiness&amp;ep=smart_card&amp;source_link=jdBusiness&amp;docid=9999P8818.8818.240713114332.J9A2">
-                                                <input hidden="" type="text" name="sid" readonly=""
-                                                    value="2vp4o7g5rz8%2FGMo0aOIL9npfWjNBHvu%2BDg7HLAMMiy4%3D"><input
-                                                    type="text" hidden="" name="mobile" readonly="" value="9553775093">
-                                            </form><button
-                                                class="smartCard_primary__btn__E419X primary__btn ripple ripple-container">ADD<i
-                                                    class="smartCard_arrowrgt__m13X3"></i></button>
-                                        </div><img class="smartCard_smartcard__section__inner__right__tibpU"
-                                            src="https://akam.cdn.jdmagicbox.com/images/icontent/analytics/storetiming_icon.svg">
-                                    </div>
-                                </div>
-                                <div class="swiper-slide" style="width: 384.6px; margin-right: 15px;">
-                                    <div class="smartCard_smartcard__section__inner__aASyI">
-                                        <div class="smartCard_smartcard__section__inner__left__8sAQc">
-                                            <div>
-                                                <div class="smartCard_addtext__oAUHC">Upload Rate Card / Catalogue</div>
-                                                <div class="smartCard_helptext__RAVxj">Upload a Rate Card / Catalogue to
-                                                    help your customers</div>
-                                            </div>
-                                            <form method="POST" id="myForm_smart_card"
-                                                action="https://wap.justdial.com/edit_list/index.php?docid=9999P8818.8818.240713114332.J9A2&amp;owner=1&amp;hide_header=1&amp;city=Tadepalligudem&amp;source=77&amp;version=0&amp;editlist=rcBrochure&amp;editname=rcBrochure&amp;vertical=jdBusiness&amp;ep=smart_card&amp;source_link=jdBusiness&amp;docid=9999P8818.8818.240713114332.J9A2">
-                                                <input hidden="" type="text" name="sid" readonly=""
-                                                    value="2vp4o7g5rz8%2FGMo0aOIL9npfWjNBHvu%2BDg7HLAMMiy4%3D"><input
-                                                    type="text" hidden="" name="mobile" readonly="" value="9553775093">
-                                            </form><button
-                                                class="smartCard_primary__btn__E419X primary__btn ripple ripple-container">UPLOAD<i
-                                                    class="smartCard_arrowrgt__m13X3"></i></button>
-                                        </div><img class="smartCard_smartcard__section__inner__right__tibpU"
-                                            src="https://akam.cdn.jdmagicbox.com/images/icontent/analytics/update_ratecard.svg">
-                                    </div>
-                                </div>
-                                <div class="swiper-slide" style="width: 384.6px; margin-right: 15px;">
-                                    <div class="smartCard_smartcard__section__inner__aASyI">
-                                        <div class="smartCard_smartcard__section__inner__left__8sAQc">
-                                            <div>
-                                                <div class="smartCard_addtext__oAUHC">Add Business Categories</div>
-                                                <div class="smartCard_helptext__RAVxj">Add more categories to reach out
-                                                    to more customers</div>
-                                            </div>
-                                            <form method="POST" id="myForm_smart_card"
-                                                action="https://wap.justdial.com/edit_list/index.php?docid=9999P8818.8818.240713114332.J9A2&amp;owner=1&amp;hide_header=1&amp;city=Tadepalligudem&amp;source=77&amp;version=0&amp;editlist=category&amp;editname=category&amp;vertical=jdBusiness&amp;ep=smart_card&amp;source_link=jdBusiness&amp;docid=9999P8818.8818.240713114332.J9A2">
-                                                <input hidden="" type="text" name="sid" readonly=""
-                                                    value="2vp4o7g5rz8%2FGMo0aOIL9npfWjNBHvu%2BDg7HLAMMiy4%3D"><input
-                                                    type="text" hidden="" name="mobile" readonly="" value="9553775093">
-                                            </form><button
-                                                class="smartCard_primary__btn__E419X primary__btn ripple ripple-container">ADD<i
-                                                    class="smartCard_arrowrgt__m13X3"></i></button>
-                                        </div><img class="smartCard_smartcard__section__inner__right__tibpU"
-                                            src="https://akam.cdn.jdmagicbox.com/images/icontent/analytics/business_catgory_icon.svg">
-                                    </div>
-                                </div>
-                                <div class="swiper-slide" style="width: 384.6px; margin-right: 15px;">
-                                    <div class="smartCard_smartcard__section__inner__aASyI">
-                                        <div class="smartCard_smartcard__section__inner__left__8sAQc">
-                                            <div>
-                                                <div class="smartCard_addtext__oAUHC">Add Contact Details</div>
-                                                <div class="smartCard_helptext__RAVxj">Add multiple contact details for
-                                                    your customers to reach you easily</div>
-                                            </div>
-                                            <form method="POST" id="myForm_smart_card"
-                                                action="https://wap.justdial.com/edit_list/index.php?docid=9999P8818.8818.240713114332.J9A2&amp;owner=1&amp;hide_header=1&amp;city=Tadepalligudem&amp;source=77&amp;version=0&amp;editlist=contactsV2&amp;editname=contactsV2&amp;vertical=jdBusiness&amp;ep=smart_card&amp;source_link=jdBusiness&amp;docid=9999P8818.8818.240713114332.J9A2">
-                                                <input hidden="" type="text" name="sid" readonly=""
-                                                    value="2vp4o7g5rz8%2FGMo0aOIL9npfWjNBHvu%2BDg7HLAMMiy4%3D"><input
-                                                    type="text" hidden="" name="mobile" readonly="" value="9553775093">
-                                            </form><button
-                                                class="smartCard_primary__btn__E419X primary__btn ripple ripple-container">ADD<i
-                                                    class="smartCard_arrowrgt__m13X3"></i></button>
-                                        </div><img class="smartCard_smartcard__section__inner__right__tibpU"
-                                            src="https://akam.cdn.jdmagicbox.com/images/icontent/analytics/smcontact_details_icon.svg">
-                                    </div>
-                                </div>
-                                <div class="swiper-slide" style="width: 384.6px; margin-right: 15px;">
-                                    <div class="smartCard_smartcard__section__inner__aASyI">
-                                        <div class="smartCard_smartcard__section__inner__left__8sAQc">
-                                            <div>
-                                                <div class="smartCard_addtext__oAUHC">Add Offers</div>
-                                                <div class="smartCard_helptext__RAVxj">Add exciting offers to attract
-                                                    more customers</div>
-                                            </div>
-                                            <form method="POST" id="myForm_smart_card"
-                                                action="https://m.justdial.com/deals-offers/addoffer?docid=9999P8818.8818.240713114332.J9A2&amp;source=77&amp;hide_header=1&amp;el=1&amp;jdbusiness=1&amp;sc=1&amp;ep=smart_card&amp;source_link=jdBusiness&amp;docid=9999P8818.8818.240713114332.J9A2">
-                                                <input hidden="" type="text" name="sid" readonly=""
-                                                    value="2vp4o7g5rz8%2FGMo0aOIL9npfWjNBHvu%2BDg7HLAMMiy4%3D"><input
-                                                    type="text" hidden="" name="mobile" readonly="" value="9553775093">
-                                            </form><button
-                                                class="smartCard_primary__btn__E419X primary__btn ripple ripple-container">ADD<i
-                                                    class="smartCard_arrowrgt__m13X3"></i></button>
-                                        </div><img class="smartCard_smartcard__section__inner__right__tibpU"
-                                            src="https://akam.cdn.jdmagicbox.com/images/icontent/analytics/add_offers.svg">
-                                    </div>
-                                </div>
-                                <div class="swiper-slide" style="width: 384.6px; margin-right: 15px;">
-                                    <div class="smartCard_smartcard__section__inner__aASyI">
-                                        <div class="smartCard_smartcard__section__inner__left__8sAQc">
-                                            <div>
-                                                <div class="smartCard_addtext__oAUHC">Complete your KYC</div>
-                                                <div class="smartCard_helptext__RAVxj">Complete your KYC to verify your
-                                                    business profile on Justdial</div>
-                                            </div>
-                                            <form method="POST" id="myForm_smart_card"
-                                                action="https://wap.justdial.com/jdpay2/?name=lasso&amp;hide_header=1&amp;wap=77&amp;source=77&amp;version=&amp;native=1&amp;mobtype=2&amp;page=kyc&amp;vertical=6&amp;docid=9999P8818.8818.240713114332.J9A2&amp;wkwebview=1&amp;ep=smart_card&amp;source_link=jdBusiness&amp;docid=9999P8818.8818.240713114332.J9A2">
-                                                <input hidden="" type="text" name="sid" readonly=""
-                                                    value="2vp4o7g5rz8%2FGMo0aOIL9npfWjNBHvu%2BDg7HLAMMiy4%3D"><input
-                                                    type="text" hidden="" name="mobile" readonly="" value="9553775093">
-                                            </form><button
-                                                class="smartCard_primary__btn__E419X primary__btn ripple ripple-container">COMPLETE
-                                                KYC<i class="smartCard_arrowrgt__m13X3"></i></button>
-                                        </div><img class="smartCard_smartcard__section__inner__right__tibpU"
-                                            src="https://akam.cdn.jdmagicbox.com/images/icontent/analytics/kyc_icon.svg">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-button-prev swiper-button-disabled"></div>
-                            <div class="swiper-button-next"></div>
-                            <div class="swiper-scrollbar"></div>
-                            <div class="swiper-pagination swiper-pagination-custom swiper-pagination-horizontal"><span
-                                    class="activecount">1/7</span> <span key="1"
-                                    class="swiper-pagination-bullet"></span> <span key="2"
-                                    class="swiper-pagination-bullet"></span> <span key="3"
-                                    class="swiper-pagination-bullet"></span> <span key="4"
-                                    class="swiper-pagination-bullet"></span> <span key="5"
-                                    class="swiper-pagination-bullet"></span> <span key="6"
-                                    class="swiper-pagination-bullet"></span></div>
-                        </div>
-                    </div>
-                </div>
+                
 
 
 

@@ -9,7 +9,7 @@
         <div class="container__inner bg-white rounded-lg shadow-md p-8">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 <div class="left__img relative">
-                    <img src="/Free-Listing/_next/image?url=https%3A%2F%2Fakam.cdn.jdmagicbox.com%2Fimages%2Ficontent%2Flistingbusiness%2Fbusiness_details_2x.png&amp;w=3840&amp;q=75" alt="left image" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover">
+                    <img src="images/Banners/bussiness_banner2.png" alt="left image" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover">
                 </div>
                 <div class="container__inner__right p-8 bg-white rounded shadow-md">
                     <p class="text-xl font-semibold text-gray-900">Enter your business details</p>

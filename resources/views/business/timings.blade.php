@@ -4,10 +4,8 @@
 <div class="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
         <div class="container__inner bg-white rounded-lg shadow-md p-8">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                <div class="container__inner__left">
-                    <div class="left__img relative">
-                        <img src="/Free-Listing/_next/image?url=https%3A%2F%2Fakam.cdn.jdmagicbox.com%2Fimages%2Ficontent%2Flistingbusiness%2Fbusiness_time_2x_new.png&amp;w=3840&amp;q=75" alt="left image" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover" style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;">
-                    </div>
+            <div class="left__img relative">
+                    <img src="images/Banners/bussiness_banner3.png" alt="left image" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover">
                 </div>
                 <div class="container__inner__right p-8 bg-white rounded shadow-md">
                     

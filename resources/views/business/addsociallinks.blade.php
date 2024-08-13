@@ -34,7 +34,7 @@
                     <i class="e-facebook-icn"></i>
                 </span>
             </div>
-            <button class="text-blue-500 text-sm font-semibold">+ Add Another Facebook Business Page Link</button>
+            
 
             <!-- X Link -->
             <div class="flex items-center space-x-4 mb-4">
@@ -43,7 +43,7 @@
                     <i class="e-twitter-icn"></i>
                 </span>
             </div>
-            <button class="text-blue-500 text-sm font-semibold">+ Add Another X Business Account Link</button>
+            
 
             <!-- LinkedIn Link -->
             <div class="flex items-center space-x-4 mb-4">
@@ -52,7 +52,7 @@
                     <i class="e-linkedin-icn"></i>
                 </span>
             </div>
-            <button class="text-blue-500 text-sm font-semibold">+ Add Another LinkedIn Company Page Link</button>
+            
 
             <!-- YouTube Link -->
             <div class="flex items-center space-x-4 mb-4">
@@ -61,7 +61,7 @@
                     <i class="e-youtube-icn"></i>
                 </span>
             </div>
-            <button class="text-blue-500 text-sm font-semibold">+ Add Another YouTube Channel Link</button>
+            
 
             <!-- Instagram Link -->
             <div class="flex items-center space-x-4 mb-4">
@@ -70,7 +70,7 @@
                     <i class="e-instagram-icn"></i>
                 </span>
             </div>
-            <button class="text-blue-500 text-sm font-semibold">+ Add Another Instagram Profile Link</button>
+            
 
             <!-- Other Platform Link -->
             <div class="flex items-center space-x-4 mb-4">
@@ -79,7 +79,7 @@
                     <i class="e-other-icn"></i>
                 </span>
             </div>
-            <button class="text-blue-500 text-sm font-semibold">+ Add Another Other Platform Link</button>
+            
         </div>
 
         <!-- Save Button -->

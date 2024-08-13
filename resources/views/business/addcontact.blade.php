@@ -5,7 +5,7 @@
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
         <div class="container__inner__left relative">
           <div class="left__img">
-            <img alt="Business Listing Image" title="Business Listing Image" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover" src="/Free-Listing/_next/image?url=https%3A%2F%2Fakam.cdn.jdmagicbox.com%2Fimages%2Ficontent%2Flistingbusiness%2Fadd_contact_2x.png&amp;w=3840&amp;q=75" srcset="/Free-Listing/_next/image?url=https%3A%2F%2Fakam.cdn.jdmagicbox.com%2Fimages%2Ficontent%2Flistingbusiness%2Fadd_contact_2x.png&amp;w=640&amp;q=75 640w, /Free-Listing/_next/image?url=https%3A%2F%2Fakam.cdn.jdmagicbox.com%2Fimages%2Ficontent%2Flistingbusiness%2Fadd_contact_2x.png&amp;w=750&amp;q=75 750w, /Free-Listing/_next/image?url=https%3A%2F%2Fakam.cdn.jdmagicbox.com%2Fimages%2Ficontent%2Flistingbusiness%2Fadd_contact_2x.png&amp;w=828&amp;q=75 828w, /Free-Listing/_next/image?url=https%3A%2F%2Fakam.cdn.jdmagicbox.com%2Fimages%2Ficontent%2Flistingbusiness%2Fadd_contact_2x.png&amp;w=1080&amp;q=75 1080w, /Free-Listing/_next/image?url=https%3A%2F%2Fakam.cdn.jdmagicbox.com%2Fimages%2Ficontent%2Flistingbusiness%2Fadd_contact_2x.png&amp;w=1200&amp;q=75 1200w, /Free-Listing/_next/image?url=https%3A%2F%2Fakam.cdn.jdmagicbox.com%2Fimages%2Ficontent%2Flistingbusiness%2Fadd_contact_2x.png&amp;w=1920&amp;q=75 1920w, /Free-Listing/_next/image?url=https%3A%2F%2Fakam.cdn.jdmagicbox.com%2Fimages%2Ficontent%2Flistingbusiness%2Fadd_contact_2x.png&amp;w=2048&amp;q=75 2048w, /Free-Listing/_next/image?url=https%3A%2F%2Fakam.cdn.jdmagicbox.com%2Fimages%2Ficontent%2Flistingbusiness%2Fadd_contact_2x.png&amp;w=3840&amp;q=75 3840w">
+            <img alt="Business Listing Image" title="Business Listing Image" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover" src="images/Banners/bussiness_banner1.png">
           </div>
         </div>
        
@@ -48,7 +48,7 @@
             </div>
 
             <div class="addcontact_button_outer__oJRac mt-2 flex flex-col lg:flex-row lg:items-center space-y-2 lg:space-y-0 lg:space-x-4">
-                <button class="text-main-green-600 px-4 py-2 rounded hover:text-main-green-700 focus:outline-none w-full lg:w-auto">+ Add WhatsApp Number</button>
+                
                 <label class="font13 text-main-green addcontact_samefield__XucOM flex items-center">
                   <input type="checkbox" id="wupCheckbox" title="Same As Mobile Number">
                   <span class="addcontact_uncheck__mAy08 ml-2"></span>
@@ -56,7 +56,7 @@
                 </label>
               </div>
 
-            <button class="mt-2 text-main-green-600 px-4 py-2 rounded hover:text-main-green-700 focus:outline-none w-full lg:w-auto">+ Add Landline Number</button>
+            
 
             <div class="relative mb-6 mt-5">
               <input type="text" name="email" class="input border-gray-300 border-2 px-4 py-2 rounded-md focus:outline-none focus:border-main-green w-full" value="{{ $existingData->email ?? ''}}" placeholder=" " required>
