@@ -42,7 +42,10 @@
                     @endphp
                 @endif
             </div>
-            <table class="w-full">
+            <div class="px-1 py-1 mb-2 float-right">
+            <input type="text" id="searchInput" onkeyup="filterTable()" placeholder="Search for agriculture labour..." class="px-4 py-2   bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-md">
+        </div>
+            <table class="w-full divide-y divide-gray-200" id="agriculture">
                 <thead>
                     <tr class="text-sm font-semibold tracking-wide text-left text-white uppercase border-b dark:border-gray-700 bg-custom-green-light dark:text-gray-400 dark:bg-gray-800">
                         <th class="px-4 py-3">S No</th>
@@ -617,5 +620,30 @@
     $(document).on('click', '.closeaddbutton', function() {
         $('#agriculturelabouraddModal').modal('hide');
     });
+</script>
+
+
+<script>
+function filterTable() {
+    const input = document.getElementById('searchInput');
+    const filter = input.value.toLowerCase();
+    const table = document.getElementById('agriculture');
+    const tr = table.getElementsByTagName('tr');
+
+    for (let i = 1; i < tr.length; i++) {
+        const tdArray = tr[i].getElementsByTagName('td');
+        let match = false;
+        for (let j = 0; j < tdArray.length; j++) {
+            const td = tdArray[j];
+            if (td) {
+                const txtValue = td.textContent || td.innerText;
+                if (txtValue.toLowerCase().indexOf(filter) > -1) {
+                    match = true;
+                }
+            }
+        }
+        tr[i].style.display = match ? '' : 'none';
+    }
+}
 </script>
 @endsection

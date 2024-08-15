@@ -1,14 +1,12 @@
 @extends('layouts.adminapp')
 
 @section('content')
-<link href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
 
-<!-- include summernote css/js -->
-<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
-<div class="min-h-screen flex items-center justify-center bg-gray-100 p-4">
+    <div class="min-h-screen flex items-center justify-center bg-gray-100 p-4">
+    <div class="mt-12 mx-4">
     <form action="{{ route('implements.add') }}" method="post" enctype="multipart/form-data" class="w-full max-w-lg bg-white p-8 rounded-lg shadow-lg">
         @csrf
         <div id="show_message" class="mb-4"></div>
@@ -92,6 +90,10 @@
             <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Add</button>
         </div>
     </form>
+    </div>
+    
+    </div>
+    
 </div>
 
 
@@ -102,10 +104,12 @@
         window.location.href = "{{ url('/raitan_admin/implements') }}"; // Adjust the route name as per your application
     }
     </script>
-    <script type="text/javascript">
-    $(document).ready(function()
-     {
-          $('#summernote').summernote();
-     });
-</script>
+    <script>
+      $('#summernote').summernote({
+        placeholder: 'Hello stand alone ui',
+        tabsize: 2,
+        height: 120
+        
+      });
+    </script>
 @endsection
