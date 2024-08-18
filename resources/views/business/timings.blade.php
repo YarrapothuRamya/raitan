@@ -13,7 +13,7 @@
                         <p class="addcontact_title___IxGV text-xl font-semibold text-gray-900">Add business timings</p>
                         
                         <p class="addtiming_content__TRJ_N color111">Let your customers know when you are open for business</p>
-                        <div class="addtiming_usines_heght__fv00E">
+                        <div class="addtiming_usines_heght__fv00E mb-3">
                             <div class="form">
                                 <div class="addtiming_week___1YRi">
                                     <div>
