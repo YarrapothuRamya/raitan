@@ -83,6 +83,16 @@
             </li>
             <!-- New items added below -->
             <li>
+                <a href="#" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-custom-green-main dark:hover:bg-gray-600 text-white-600 hover:text-white-800 border-l-4 border-transparent hover:border-blue-500 dark:hover:border-gray-800 pr-6">
+                    <span class="inline-flex justify-center items-center ml-4">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3l3 3m-3 3l3 3m-3-3H6a1 1 0 00-1 1v7a1 1 0 001 1h1"></path>
+                        </svg>
+                    </span>
+                    <span class="ml-2 text-sm tracking-wide truncate">Service Seekers / Farmers</span>
+                </a>
+            </li>
+            <li>
                 <a href="{{ url('/raitan_admin/roles-home') }}" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-custom-green-main dark:hover:bg-gray-600 text-white-600 hover:text-white-800 border-l-4 border-transparent hover:border-blue-500 dark:hover:border-gray-800 pr-6">
                     <span class="inline-flex justify-center items-center ml-4">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -93,46 +103,34 @@
                 </a>
             </li>
             <li>
-                <a href="{{ url('/raitan_admin/machines') }}" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-custom-green-main dark:hover:bg-gray-600 text-white-600 hover:text-white-800 border-l-4 border-transparent hover:border-blue-500 dark:hover:border-gray-800 pr-6">
-                    <span class="inline-flex justify-center items-center ml-4">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                        </svg>
-                    </span>
-                    <span class="ml-2 text-sm tracking-wide truncate">Machines</span>
-                </a>
-            </li>
-            <li>
-                <a href="{{ url('/raitan_admin/implementors') }}" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-custom-green-main dark:hover:bg-gray-600 text-white-600 hover:text-white-800 border-l-4 border-transparent hover:border-blue-500 dark:hover:border-gray-800 pr-6">
-                    <span class="inline-flex justify-center items-center ml-4">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2l4-4"></path>
-                        </svg>
-                    </span>
-                    <span class="ml-2 text-sm tracking-wide truncate">Implementors</span>
-                </a>
-            </li>
-            <li>
 					<a  href="#" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-custom-green-main dark:hover:bg-gray-600 text-white-600 hover:text-white-800 border-l-4 border-transparent hover:border-blue-500 dark:hover:border-gray-800 pr-6" aria-controls="dropdown-example" data-collapse-toggle="dropdown-example">
                     <span class="inline-flex justify-center items-center ml-4"></span>
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2l4-4"></path>
                         </svg>
-                  <span class="flex-1 ml-3 text-left whitespace-nowrap text-sm" sidebar-toggle-item>E-commerce</span>
+                  <span class="flex-1 ml-3 text-left whitespace-nowrap text-sm" sidebar-toggle-item>Home Page</span>
                   <svg sidebar-toggle-item class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
             </a>
 					<ul id="dropdown-example" class="hidden py-2 space-y-2">
 						<li>
-							<a href="#"
-								class="flex items-center w-full p-2 text-base font-normal text-white-600 hover:text-white-800  pl-11 text-sm">Products</a>
+							<a href="{{ url('/raitan_admin/machines') }}"
+								class="flex items-center w-full p-2 text-base font-normal text-white-600 hover:text-white-800  pl-11 text-sm">Machines</a>
 						</li>
 						<li>
-							<a href="#"
-								class="flex items-center w-full p-2 text-base font-normal text-white-600 hover:text-white-800  pl-11 text-sm">Billing</a>
+							<a href="{{ url('/raitan_admin/implementors') }}"
+								class="flex items-center w-full p-2 text-base font-normal text-white-600 hover:text-white-800  pl-11 text-sm">Implementors</a>
 						</li>
 						<li>
-							<a href="#"
-								class="flex items-center w-full p-2 text-base font-normal text-white-600 hover:text-white-800  pl-11 text-sm">Invoice</a>
+							<a href="{{ url('/raitan_admin/repairsandservices') }}"
+								class="flex items-center w-full p-2 text-base font-normal text-white-600 hover:text-white-800  pl-11 text-sm">Repair and Services</a>
+						</li>
+						<li>
+							<a href="{{ url('/raitan_admin/agriculture_labour') }}"
+								class="flex items-center w-full p-2 text-base font-normal text-white-600 hover:text-white-800  pl-11 text-sm">Agriculture Labour</a>
+						</li>
+						<li>
+							<a href="{{ url('/raitan_admin/sprayers') }}"
+								class="flex items-center w-full p-2 text-base font-normal text-white-600 hover:text-white-800  pl-11 text-sm">Sprayers</a>
 						</li>
                         <li>
 							<a href="{{ url('/raitan_admin/implements') }}"
@@ -140,36 +138,6 @@
 						</li>
 					</ul>
 				</li>
-            <li>
-                <a href="{{ url('/raitan_admin/agriculture_labour') }}" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-custom-green-main dark:hover:bg-gray-600 text-white-600 hover:text-white-800 border-l-4 border-transparent hover:border-blue-500 dark:hover:border-gray-800 pr-6">
-                    <span class="inline-flex justify-center items-center ml-4">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3"></path>
-                        </svg>
-                    </span>
-                    <span class="ml-2 text-sm tracking-wide truncate">Agriculture Labour</span>
-                </a>
-            </li>
-            <li>
-                <a href="{{ url('/raitan_admin/repairsandservices') }}" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-custom-green-main dark:hover:bg-gray-600 text-white-600 hover:text-white-800 border-l-4 border-transparent hover:border-blue-500 dark:hover:border-gray-800 pr-6">
-                    <span class="inline-flex justify-center items-center ml-4">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14"></path>
-                        </svg>
-                    </span>
-                    <span class="ml-2 text-sm tracking-wide truncate">Repairs and Services</span>
-                </a>
-            </li>
-            <li>
-                <a href="{{ url('/raitan_admin/sprayers') }}" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-custom-green-main dark:hover:bg-gray-600 text-white-600 hover:text-white-800 border-l-4 border-transparent hover:border-blue-500 dark:hover:border-gray-800 pr-6">
-                    <span class="inline-flex justify-center items-center ml-4">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4h16v16H4z"></path>
-                        </svg>
-                    </span>
-                    <span class="ml-2 text-sm tracking-wide truncate">Sprayers</span>
-                </a>
-            </li>
             <li>
                 <a href="{{ url('/raitan_admin/admin_register') }}" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-custom-green-main dark:hover:bg-gray-600 text-white-600 hover:text-white-800 border-l-4 border-transparent hover:border-blue-500 dark:hover:border-gray-800 pr-6">
                     <span class="inline-flex justify-center items-center ml-4">
@@ -188,16 +156,6 @@
                         </svg>
                     </span>
                     <span class="ml-2 text-sm tracking-wide truncate">Approve Permissions</span>
-                </a>
-            </li>
-            <li>
-                <a href="{{ url('/raitan_admin/implements') }}" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-custom-green-main dark:hover:bg-gray-600 text-white-600 hover:text-white-800 border-l-4 border-transparent hover:border-blue-500 dark:hover:border-gray-800 pr-6">
-                    <span class="inline-flex justify-center items-center ml-4">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2l4-4"></path>
-                        </svg>
-                    </span>
-                    <span class="ml-2 text-sm tracking-wide truncate">Implements</span>
                 </a>
             </li>
         </ul>

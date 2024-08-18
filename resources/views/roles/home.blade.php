@@ -15,7 +15,10 @@
                     <a href="{{route('role.addview')}}"      class="action-btn py-1.5 font-light text-sm px-4 inline-block mt-2 rounded-lg text-center shadow-md bg-blue-500 text-white  transition duration-200 roleadd"  type="button" >Add Role</a>
                 </div>
             </div>
-            <div class="w-full overflow-x-auto">
+            <div class="px-1 py-1 mb-2 float-right">
+                <input type="text" id="searchInput" onkeyup="filterTable()" placeholder="Search for Roles..." class="px-4 py-2   bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-md">
+            </div>
+                <div class="w-full overflow-x-auto" id="roles">
                 <table class="w-full">
                     <thead>
                         <tr
@@ -479,4 +482,27 @@
     //     window.location.href = url;
     // });
 </script>
-@endsection
+<script>
+    function filterTable() {
+        const input = document.getElementById('searchInput');
+        const filter = input.value.toLowerCase();
+        const table = document.getElementById('roles');
+        const tr = table.getElementsByTagName('tr');
+    
+        for (let i = 1; i < tr.length; i++) {
+            const tdArray = tr[i].getElementsByTagName('td');
+            let match = false;
+            for (let j = 0; j < tdArray.length; j++) {
+                const td = tdArray[j];
+                if (td) {
+                    const txtValue = td.textContent || td.innerText;
+                    if (txtValue.toLowerCase().indexOf(filter) > -1) {
+                        match = true;
+                    }
+                }
+            }
+            tr[i].style.display = match ? '' : 'none';
+        }
+    }
+    </script>
+    @endsection

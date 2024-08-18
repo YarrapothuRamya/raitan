@@ -30,8 +30,8 @@ class MachineImplementorsController extends Controller
         //$role = \Auth::user()->role;
         //if($role == 1){
             
-            $implementors=Implementors::select('Implementors.*', 'Machines.name as machine_name')
-                      ->leftJoin('Machines','Machines.id','=','Implementors.machine_id')->get();
+            $implementors=Implementors::select('implementors.*', 'machines.name as machine_name')
+                      ->leftJoin('machines','machines.id','=','implementors.machine_id')->get();
             $machines=Machines::select('*')->get();
             
             return view('admin.implementors.home', compact('machines', 'implementors'));

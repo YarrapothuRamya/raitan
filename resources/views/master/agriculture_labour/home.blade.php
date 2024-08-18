@@ -43,7 +43,7 @@
                 @endif
             </div>
             <div class="px-1 py-1 mb-2 float-right">
-            <input type="text" id="searchInput" onkeyup="filterTable()" placeholder="Search for agriculture labour..." class="px-4 py-2   bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-md">
+            <input type="text" id="searchInput" onkeyup="filterTable()" placeholder="Search for Agriculture Labour..." class="px-4 py-2   bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-md">
         </div>
             <table class="w-full divide-y divide-gray-200" id="agriculture">
                 <thead>
