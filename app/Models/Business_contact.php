@@ -28,9 +28,20 @@ class Business_contact extends Authenticatable
         'status',
         'title',
     ];
+    protected $hidden = [
+        'password',
+        'remember_token',
+    ];
 
     /**
      * The attributes that should be hidden for serialization.
      *
      */
+    protected function casts(): array
+    {
+        return [
+            // 'email_verified_at' => 'datetime',
+            'password' => 'hashed',
+        ];
+    }
 }

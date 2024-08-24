@@ -15,6 +15,7 @@
             <img class="h-4 w-4 mr-2" src="images/icons/Call.svg" alt="Call icon">
             <span>######</span>
           </a>
+          <a id="navbarDropdown" class="headnav_item_text font14 fw500 colorFFF dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre> Log in</a>
         </div>
       </div>
     </div>

@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\Services;
 use App\Models\Roles;
 use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 use App\Models\Customer;
 use App\Models\Business_contact;
 use App\Models\Implementors;
@@ -19,6 +20,11 @@ use App\Models\Common_logs;
 
 class BusinessController extends Controller
 {
+    // public function businessContactviwe()
+    // {
+    //     return view('business.addcontact');
+    // }
+
     public function businessContact(Request $request)
     {
         $validated = $request->validate([
@@ -27,92 +33,71 @@ class BusinessController extends Controller
         ]);
         $mobileno=$request->input('mobile');
         $services = Services::select('*')->where('status', '=', 1)->get();
-        $businessContact = Business_contact::where('mobile', $validated['mobile'])->first();
+        //$businessContact = Business_contact::where('mobile', $validated['mobile'])->first();
         //echo $mobileno;die;
-        if ($businessContact) {
-                return view('business.addcontact',  [  'services' => $services,  'mobileno' => $mobileno,  'existingData' => $businessContact]);
-          
-        } else {
+        $exists = Business_contact::where('mobile', $validated['mobile'])->exists();
+
+        if ($exists) {
+            // Redirect back with an error message
+            return redirect()->back()->withErrors(['mobile' => 'Mobile number already registered. Please log in.']);
+        }else {
+    
             //$existingData=[];
-            return view('business.addcontact', compact('services','mobileno',));
+           
+            return redirect()->route('addcontact.home')
+            ->with('services', $services)
+            ->with('mobileno', $mobileno);
         }
         //return view('business.addcontact', compact('services','mobileno','existingData'));
     }
-    public function businessAddress(Request $request){
+    public function showForm(Request $request)
+    {
+        // Retrieve data needed for the form
+        $services = $request->session()->get('services');
+        $mobileno = $request->session()->get('mobileno');
 
-    
-            $validated = $request->validate([
-                'id' => 'nullable|exists:business_contacts,id',
-                'title' => 'required|string|max:255',
-                'contactPerson' => 'required|string|max:255',
-                'mobileNumber' => 'required|string|max:15',
-                'email' => 'required|email|max:255',
-                'whatsappNumber'=>'required',
-            ]);
-       
-       // echo "hello world";die;
-       // Create a new BusinessContact record
-
-       $id = $validated['id'] ?? null;  // ID for the record to be updated
-
-   
-        // Update existing record
-        $businessContact = Business_contact::where('id', $id)
-        ->where('title', $validated['title'])
-        ->first();
-        if ($businessContact) {
-        $businessContact->title = $validated['title'];
-        $businessContact->name = $validated['contactPerson'];
-        $businessContact->mobile = $validated['mobileNumber'];
-        $businessContact->whatsapp_no = $validated['whatsappNumber'];
-        $businessContact->email = $validated['email'];
-        $businessContact->updated_at = now();
-        //print_r($businessContact);die;
-
-        if($businessContact->save()){
-            $lastInsertedId = $id;
-            // return response()->json(['status' => 200, 'success' => 'Machine successfully created']);
-            //return redirect()->route('address.home')->with('success', 'Contact details saved successfully! Last inserted ID: ' . $lastInsertedId);
-            return view('business.address', compact('lastInsertedId'));
-             //return redirect()->back()->with('status','Machine successfully created');
-         }
-        
-    } else {
-        // Create new record
-        $businessContact = new Business_contact;
-        $businessContact->title = $validated['title'];
-        $businessContact->name = $validated['contactPerson'];
-        $businessContact->mobile = $validated['mobileNumber'];
-        $businessContact->whatsapp_no = $validated['whatsappNumber'];
-        $businessContact->email = $validated['email'];
-        $businessContact->status = 1;
-        $businessContact->created_at = now();
-        $message = 'Contact details saved successfully!';
-        if($businessContact->save()){
-            $lastInsertedId = $businessContact->id;
-            // return response()->json(['status' => 200, 'success' => 'Machine successfully created']);
-            //return redirect()->route('address.home')->with('success', 'Contact details saved successfully! Last inserted ID: ' . $lastInsertedId);
-            return view('business.address', compact('lastInsertedId'));
-             //return redirect()->back()->with('status','Machine successfully created');
-         }
+        return view('business.addcontact', compact('services', 'mobileno'));
     }
-        // Check and save optional fields if they are provided
-        // if (!empty($validatedData['alternateEmail'])) {
-        //     $businessContact->alt_email = $validatedData['alternateEmail'];
-        // }
+    public function business_Contact(Request $request){
 
-        // if (!empty($validatedData['additionalMobileNumber'])) {
-        //     $businessContact->alt_mobile = $validatedData['additionalMobileNumber'];
-        // }
-//print_r($businessContact);die;
-        // Save the record to the database
-        if($businessContact->save()){
-            $lastInsertedId = $businessContact->id;
-            // return response()->json(['status' => 200, 'success' => 'Machine successfully created']);
-            //return redirect()->route('address.home')->with('success', 'Contact details saved successfully! Last inserted ID: ' . $lastInsertedId);
-            return view('business.address', compact('lastInsertedId'));
-             //return redirect()->back()->with('status','Machine successfully created');
-         }
+        $validated = $request->validate([
+            'title' => 'required',
+            'contactPerson' => 'required|string|max:255',
+            'mobileNumber' => 'required|string|max:15',
+            'email' => 'required|email|max:255',
+            'whatsappNumber' => 'required',
+           'username' => 'required|string|unique:business_contacts,username',
+            'password' => 'required',
+        ]);
+        
+        //echo "hello world"; die;
+        
+        try {
+           
+                // Create new record
+                $businessContact = new Business_contact;
+                $businessContact->title = $validated['title'];
+                $businessContact->name = $validated['contactPerson'];
+                $businessContact->mobile = $validated['mobileNumber'];
+                $businessContact->whatsapp_no = $validated['whatsappNumber'];
+                $businessContact->email = $validated['email'];
+                $businessContact->password = Hash::make($validated['password']);
+                $businessContact->username = $validated['username'];
+                $businessContact->status = 1;
+                $businessContact->created_at = now();
+        
+                if ($businessContact->save()) {
+                    $lastInsertedId = $businessContact->id;
+                    return view('business.address', compact('lastInsertedId'));
+                }
+            
+        } catch (\Exception $e) {
+            // Log the error
+            \Log::error('Error saving business contact: '.$e->getMessage());
+        
+            // Optionally, return an error response
+            return redirect()->back()->withErrors(['error' => 'Failed to save contact details. Please try again later.']);
+        }
         
   
         // Get the last inserted ID

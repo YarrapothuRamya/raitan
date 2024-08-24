@@ -13,8 +13,13 @@
           <div class="lg:w-1/2 lg:pr-8 mb-8 lg:mb-0">
             <h1 class="text-2xl font-bold text-gray-900 mb-4">List Your Business <span class="main-color">for FREE</span></h1>
             <span class="text-gray-700 font-medium mb-4 block">with India’s No. 1 Local Search Engine</span>
-            <form class="flex items-center space-x-4 mb-6" action="{{ route('addcontact.home') }}" method="POST">
+            <form class="flex items-center space-x-4 mb-6" action="{{ route('addcontact.home1') }}" method="POST">
               @csrf
+                            @if ($errors->has('mobile'))
+                  <div class="alert alert-danger">
+                      {{ $errors->first('mobile') }}
+                  </div>
+              @endif
               <span class="text-gray-700 font-medium">+91</span>
               <input aria-label="Enter Mobile Number" aria-required="true" class="flex-1 p-2 border border-gray-300 rounded-md" inputmode="numeric" pattern="[0-9]*" name="mobile" autocomplete="off" maxlength="10" required="" placeholder="Enter Mobile No.">
               <button aria-label="Start Now" type="submit" class="px-4 py-2 bg-main-green-600 text-white font-semibold rounded-md hover:bg-main-green-700">Start Now <span class="ml-2">→</span></button>
@@ -154,11 +159,18 @@
                 <h1 class="text-2xl font-bold text-gray-900 mb-2">List Your Business for FREE on Raitan Today</h1>
                 <span class="text-gray-700">India's No. 1 Local Search Engine</span>
                 
-                <form class="mt-4">
+                <form class="flex items-center space-x-4 mb-6" action="{{ route('addcontact.home1') }}" method="POST">
+              @csrf
+                            @if ($errors->has('mobile'))
+                  <div class="alert alert-danger">
+                      {{ $errors->first('mobile') }}
+                  </div>
+              @endif
                     <div class="flex items-center">
                         <span class="text-gray-700 font-semibold mr-2">+91</span>
-                        <input type="text" id="mobileNumber" name="mobileNumber" placeholder="Enter Mobile No." 
+                        <input type="text" id="mobile" inputmode="numeric" pattern="[0-9]*" required="" aria-required="true"  name="mobile"  autocomplete="off" maxlength="10" placeholder="Enter Mobile No." 
                                class="input border-gray-300 border-2 px-4 py-2 rounded-md focus:outline-none focus:border-blue-500">
+                               
                         <button type="submit" class="bg-main-green-600 hover:bg-main-green-700 text-white font-bold py-2 px-4 ml-2 rounded-md focus:outline-none focus:shadow-outline">
                             Create FREE Account
                             <span class="ml-1">
@@ -169,6 +181,7 @@
                             </span>
                         </button>
                     </div>
+                    
                 </form>
                 
                 <div class="mt-4 text-gray-700">

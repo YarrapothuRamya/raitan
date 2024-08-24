@@ -121,7 +121,9 @@ Route::get('serviceprovider-details', [App\Http\Controllers\CommonController::cl
 
 Route::get('free-listing', [App\Http\Controllers\CommonController::class, 'listing'])->name('listing.home');
 Route::post('business-address', [App\Http\Controllers\BusinessController::class, 'businessAddress'])->name('address.home');
-Route::post('business-contact', [App\Http\Controllers\BusinessController::class, 'businessContact'])->name('addcontact.home');
+Route::get('business-contact', [App\Http\Controllers\BusinessController::class, 'showForm'])->name('addcontact.home');
+Route::post('business-contact', [App\Http\Controllers\BusinessController::class, 'businessContact'])->name('addcontact.home1');
+Route::post('business-contact/add', [App\Http\Controllers\BusinessController::class, 'business_Contact'])->name('addcontact.add');
 Route::get('business-timings', [App\Http\Controllers\CommonController::class, 'businessTimings'])->name('timings.home');
 Route::get('business-category', [App\Http\Controllers\CommonController::class, 'businessCategory'])->name('category.home');
 Route::get('business-profile', [App\Http\Controllers\CommonController::class, 'businessProfile'])->name('businessProfile.home');
