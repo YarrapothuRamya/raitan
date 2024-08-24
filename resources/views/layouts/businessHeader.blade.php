@@ -2,8 +2,10 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between h-16">
         <div class="flex">
-          <div class="flex-shrink-0">
-            <img class="h-16 w-16" src="{{ asset('images/raitanlogo.png')}}" alt="Raitan Logo">
+          <div class="flex-shrink-0"><a role="link" class=" " href="/">
+          <img class="h-16 w-16" src="{{ asset('images/raitanlogo.png')}}" alt="Raitan Logo">
+          </a>
+            
           </div>
           <div class="hidden sm:-my-px sm:ml-6 sm:flex sm:space-x-8">
             <a href="#" class="text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 border-indigo-500 text-sm font-medium">List Your Business</a>

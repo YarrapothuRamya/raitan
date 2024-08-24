@@ -52,6 +52,8 @@
                         <th class="px-4 py-3">S No</th>
                         <th class="px-4 py-3">Name</th>
                         <th class="px-4 py-3">Machine Type</th>
+                        <th class="px-4 py-3">specification  </th>
+                        <th class="px-4 py-3">Description </th>
                         <th class="px-4 py-3">Image</th>
                         <th class="px-4 py-3">Status</th>
                         <th class="px-4 py-3">Action</th>
@@ -64,7 +66,8 @@
                             <td class="px-4 py-3"><?php echo ++$i; ?></td>
                             <td class="px-4 py-3">{{ $horse_power_implement->name }}</td>
                             <td class="px-4 py-3">{{ $horse_power_implement->machine_name }}</td>
-                            
+                            <td class="px-4 py-3"></td>
+                            <td class="px-4 py-3"></td>
                             <td class="px-4 py-3">
                                     <button onclick="openModal('{{ asset('implement_images').'/'.$horse_power_implement->image }}')" class="">
                                         <i class="fas fa-eye"></i>
