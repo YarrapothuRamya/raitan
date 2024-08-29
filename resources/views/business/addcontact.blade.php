@@ -13,7 +13,7 @@
           <form  method="post" action="{{route('addcontact.add')}}" enctype="multipart/form-data" autocomplete="off" novalidate="novalidate">
             @csrf
             <p class="addcontact_title___IxGV text-xl font-semibold text-gray-900">Add Contact Details</p>
-            <div class="relative mb-6 flex items-center space-x-6">
+            <!-- <div class="relative mb-6 flex items-center space-x-6">
               <div class="flex items-center space-x-2">
                 <input type="radio" name="title" value="machines" class="input  border-gray-300 border-2 px-4 py-2 rounded-md focus:outline-none focus:border-main-green" required>
                 <label class="bg-white">Machines</label>
@@ -28,8 +28,8 @@
                 <input type="radio" name="title" value="" class="input border-gray-300 border-2 px-4 py-2 rounded-md focus:outline-none focus:border-main-green" required>
                 <label class="bg-white">Mechanic</label>
               </div>
-            </div>
-            <div class="error__message mt-2 hidden text-red-500">Please Select a Title</div>
+            </div> -->
+            <!-- <div class="error__message mt-2 hidden text-red-500">Please Select a Title</div> -->
 
             <div class="relative mb-6">
               <input type="text" name="contactPerson" class="input border-gray-300 border-2 px-4 py-2 rounded-md focus:outline-none focus:border-main-green w-full" placeholder=" " value="" required>
@@ -45,11 +45,11 @@
 
             <!-- <button class="text-main-green-600 px-4 py-2 rounded hover:text-main-green-700 focus:outline-none w-full lg:w-auto">+ Add Another Mobile Number</button> -->
 
-            <div class="relative mb-6 mt-5">
+            <!-- <div class="relative mb-6 mt-5">
               <input type="text" name="whatsappNumber" class="input border-gray-300 border-2 px-4 py-2 rounded-md focus:outline-none focus:border-main-green w-full" value="" placeholder=" " required>
               <label class="label-float bg-white">WhatsApp Number</label>
               <div class="error__message mt-2 hidden text-red-500">Please enter a WhatsApp number</div>
-            </div>
+            </div> -->
 
             <!-- <div class="addcontact_button_outer__oJRac mt-2 flex flex-col lg:flex-row lg:items-center space-y-2 lg:space-y-0 lg:space-x-4">
                 
@@ -67,11 +67,11 @@
               <label class="label-float bg-white">Email</label>
               <div class="error__message mt-2 hidden text-red-500">Please enter an email</div>
             </div>
-            <div class="relative mb-6 mt-5">
+            <!-- <div class="relative mb-6 mt-5">
               <input type="text" name="username" class="input border-gray-300 border-2 px-4 py-2 rounded-md focus:outline-none focus:border-main-green w-full" autocomplete="off" value="" placeholder=" " required>
               <label class="label-float bg-white">Username</label>
               <div class="error__message mt-2 hidden text-red-500">Please enter an Username</div>
-            </div>
+            </div> -->
             <div class="relative mb-6 mt-5">
               <input type="password" name="password" autocomplete="new-password" class="input border-gray-300 border-2 px-4 py-2 rounded-md focus:outline-none focus:border-main-green w-full" value="" placeholder=" " required>
               <label class="label-float bg-white">Password</label>

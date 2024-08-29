@@ -46,7 +46,6 @@ class UserController extends Controller
             Customer::create([
                 'name' => $request->name,
                 'mobile' => $request->mobile,
-                'role' => 8,
                 'password' => Hash::make($request->password),
                 'status' => $request->status,
             ]);

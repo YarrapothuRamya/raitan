@@ -37,18 +37,44 @@ class BusinessController extends Controller
         //echo $mobileno;die;
         $exists = Business_contact::where('mobile', $validated['mobile'])->exists();
 
-        if ($exists) {
-            // Redirect back with an error message
-            return redirect()->back()->withErrors(['mobile' => 'Mobile number already registered. Please log in.']);
-        }else {
+        // if ($exists) {
+            $credentials = $request->only('mobile');
+
+        // Attempt to authenticate using the 'customer' guard
+        $user_login = Auth::guard('customer')->getProvider()->retrieveByCredentials(['mobile' => $validated['mobile']]);
+
+        // Check if user exists
+        if ($user_login) {
+            // Log the user in
+            Auth::guard('customer')->login($user_login);
     
-            //$existingData=[];
-           
-            return redirect()->route('addcontact.home')
-            ->with('services', $services)
-            ->with('mobileno', $mobileno);
+            // Access the authenticated user
+            $user = Auth::guard('customer')->user();
+    
+            // Redirect to a different page or handle the user after login
+            return view('business.address', compact('user'));
+        } else {
+            // Handle case where the user is not found
+            return redirect()->route('addcontact.home1')
+            ->with('mobileno', $mobileno);;
         }
-        //return view('business.addcontact', compact('services','mobileno','existingData'));
+        
+            // Now you can access the authenticated user
+            
+        
+            // Redirect back with an error message
+           // return redirect()->back()->withErrors(['mobile' => 'Mobile number already registered. Please log in.']);
+        //    return redirect()->route('addcontact.home')
+        //    ->with('services', $services)
+        //    ->with('mobileno', $mobileno);
+        // }else {
+    
+        //     //$existingData=[];
+           
+        //     return redirect()->route('addcontact.home')
+        //     ->with('services', $services)
+        //     ->with('mobileno', $mobileno);
+        //}
     }
     public function showForm(Request $request)
     {
@@ -61,30 +87,32 @@ class BusinessController extends Controller
     public function business_Contact(Request $request){
 
         $validated = $request->validate([
-            'title' => 'required',
             'contactPerson' => 'required|string|max:255',
             'mobileNumber' => 'required|string|max:15',
             'email' => 'required|email|max:255',
-            'whatsappNumber' => 'required',
-           'username' => 'required|string|unique:business_contacts,username',
             'password' => 'required',
         ]);
         
         //echo "hello world"; die;
         
         try {
+
+            // Customer::create([
+            //     'name' => $validated['contactPerson'],
+            //     'mobile' =>$validated['mobileNumber'],
+            //     'email' => $validated['email'],
+            //     'password' => Hash::make($validated['password']),
+            //     'status' => 1,
+            // ]);
            
                 // Create new record
-                $businessContact = new Business_contact;
-                $businessContact->title = $validated['title'];
+                $businessContact = new Customer;
+                // $businessContact->title = $validated['title'];
                 $businessContact->name = $validated['contactPerson'];
                 $businessContact->mobile = $validated['mobileNumber'];
-                $businessContact->whatsapp_no = $validated['whatsappNumber'];
                 $businessContact->email = $validated['email'];
                 $businessContact->password = Hash::make($validated['password']);
-                $businessContact->username = $validated['username'];
                 $businessContact->status = 1;
-                $businessContact->created_at = now();
         
                 if ($businessContact->save()) {
                     $lastInsertedId = $businessContact->id;
