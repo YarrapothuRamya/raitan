@@ -17,31 +17,29 @@ class Business_contact extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
+        'user_id',
+        'business_name',
         'mobile',
-        'email',
-        'whatsapp_no',
-        'alt_email',
-        'alt_mobile',
-        'alt_whatsapp',
-        'landline',
+        'pincode',
+        'block_no',
+        'street',
+        'area',
+        'city',
+        'state',
         'status',
         'title',
     ];
-    protected $hidden = [
-        'password',
-        'remember_token',
-    ];
+
 
     /**
      * The attributes that should be hidden for serialization.
      *
      */
-    protected function casts(): array
-    {
-        return [
-            // 'email_verified_at' => 'datetime',
-            'password' => 'hashed',
-        ];
-    }
+    // protected function casts(): array
+    // {
+    //     return [
+    //         // 'email_verified_at' => 'datetime',
+    //         'password' => 'hashed',
+    //     ];
+    // }
 }

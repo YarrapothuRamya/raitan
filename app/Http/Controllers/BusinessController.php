@@ -32,10 +32,10 @@ class BusinessController extends Controller
            
         ]);
         $mobileno=$request->input('mobile');
-        $services = Services::select('*')->where('status', '=', 1)->get();
+       // $services = Services::select('*')->where('status', '=', 1)->get();
         //$businessContact = Business_contact::where('mobile', $validated['mobile'])->first();
         //echo $mobileno;die;
-        $exists = Business_contact::where('mobile', $validated['mobile'])->exists();
+        //$exists = Business_contact::where('mobile', $validated['mobile'])->exists();
 
         // if ($exists) {
             $credentials = $request->only('mobile');
@@ -50,9 +50,10 @@ class BusinessController extends Controller
     
             // Access the authenticated user
             $user = Auth::guard('customer')->user();
-    
+            //$user_id=Auth::guard('customer')->user()->id;
             // Redirect to a different page or handle the user after login
-            return view('business.address', compact('user'));
+            //return view('business.address', compact('user'));
+            return redirect()->route('address.home');
         } else {
             // Handle case where the user is not found
             return redirect()->route('addcontact.home1')
@@ -84,7 +85,7 @@ class BusinessController extends Controller
 
         return view('business.addcontact', compact('services', 'mobileno'));
     }
-    public function business_Contact(Request $request){
+    public function business_Contact_register(Request $request){
 
         $validated = $request->validate([
             'contactPerson' => 'required|string|max:255',
@@ -134,4 +135,30 @@ class BusinessController extends Controller
         // Optionally, you can use this ID to redirect or pass it to another method
       
     }
+     public function businessAddressAdd(Request $request){
+        $validated = $request->validate([
+            'business_name' => 'required|string|max:255',
+            'mobile' => 'required|string|max:15',
+            'pincode' => 'required|string|max:7',
+            'block_no' => 'required',
+            'street'=>'required',
+            'area' => 'required',
+            'landmark' => 'required',
+            'city' => 'required',
+            'state' => 'required',
+            'user_id' => 'required',
+
+        ]);
+        $validated['status'] = 1;
+
+        $businessAddress= Business_contact::create($validated);
+        if ($businessAddress) {
+            // Redirect to another page, for example, to the 'businessAddressList' route
+            // return redirect()->route('timings.home')->with('success', 'Business address added successfully.');
+            return redirect()->route('timings.home');
+        }
+    
+        // If insertion failed, redirect back with an error message
+        return redirect()->back()->with('error', 'Failed to add business address.');
+     }
 }

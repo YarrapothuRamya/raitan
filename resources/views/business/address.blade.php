@@ -13,11 +13,28 @@
                 </div>
                 <div class="container__inner__right p-8 bg-white rounded shadow-md">
                     <p class="text-xl font-semibold text-gray-900">Enter your business details</p>
-                    <form class="mt-4">
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+                    <form class="mt-4" action="{{route('address.add')}}" enctype="multipart/form-data" method="POST">
+                        @csrf
                         <div class="relative mb-6">
-                            <input type="text" name="businessName" class="input border-gray-300 border-2 px-4 py-2 rounded-md focus:outline-none focus:border-main-green w-full" placeholder=" " required>
+                        <input type="hidden" name="user_id" class="form-control" value="{{Auth::guard('customer')->user()->id}}"/>
+                            <input type="text" name="business_name" class="input border-gray-300 border-2 px-4 py-2 rounded-md focus:outline-none focus:border-main-green w-full" placeholder=" " required>
+                           
                             <label class="label-float bg-white">Business Name</label>
                             <div class="error__message mt-2 hidden text-red-500">Please enter a business name</div>
+                        </div>
+                        <div class="relative mb-6">
+                            <input type="text" name="mobile" class="input border-gray-300 border-2 px-4 py-2 rounded-md focus:outline-none focus:border-main-green w-full" placeholder=" " autocomplete="off" maxlength="11" inputmode="numeric" pattern="[0-9]*" required>
+                            <label class="label-float bg-white">Business Contact No</label>
+                            <div class="error__message mt-2 hidden text-red-500">Please enter a pincode</div>
                         </div>
                         <div class="relative mb-6">
                             <input type="text" name="pincode" class="input border-gray-300 border-2 px-4 py-2 rounded-md focus:outline-none focus:border-main-green w-full" placeholder=" " autocomplete="off" maxlength="6" inputmode="numeric" pattern="[0-9]*" required>
@@ -25,7 +42,7 @@
                             <div class="error__message mt-2 hidden text-red-500">Please enter a pincode</div>
                         </div>
                         <div class="relative mb-6">
-                            <input type="text" name="block_num" class="input border-gray-300 border-2 px-4 py-2 rounded-md focus:outline-none focus:border-main-green w-full" placeholder=" " autocomplete="off" maxlength="250" required>
+                            <input type="text" name="block_no" class="input border-gray-300 border-2 px-4 py-2 rounded-md focus:outline-none focus:border-main-green w-full" placeholder=" " autocomplete="off" maxlength="250" required>
                             <label class="label-float bg-white">Block Number / Building Name</label>
                             <div class="error__message mt-2 hidden text-red-500">Please enter block number or building name</div>
                         </div>
@@ -56,7 +73,7 @@
                                 <div class="error__message mt-2 hidden text-red-500">Please select state</div>
                             </div>
                         </div>
-                        <a type="submit" class=" fw500 ripple mt-4 bg-main-green-600 text-white px-4 py-2 rounded hover:bg-main-green-700 focus:outline-none" href="{{ route('timings.home') }}">Save and Continue</a>
+                        <button type="submit" class=" fw500 ripple mt-4 bg-main-green-600 text-white px-4 py-2 rounded hover:bg-main-green-700 focus:outline-none" href="{{ route('timings.home') }}">Save and Continue</button>
                     </form>
                 </div>
             </div>
