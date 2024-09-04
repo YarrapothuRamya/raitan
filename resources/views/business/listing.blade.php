@@ -21,9 +21,10 @@
                   </div>
               @endif
               <span class="text-gray-700 font-medium">+91</span>
-              <input aria-label="Enter Mobile Number" aria-required="true" class="flex-1 p-2 border border-gray-300 rounded-md" inputmode="numeric" pattern="[0-9]*" name="mobile" autocomplete="off" maxlength="10" required="" placeholder="Enter Mobile No.">
+              <input aria-label="Enter Mobile Number" aria-required="true" class="flex-1 p-2 border border-gray-300 rounded-md" inputmode="numeric" pattern="[0-9]*" name="mobile" autocomplete="off" maxlength="10" required="" placeholder="Enter Mobile No." value="{{session('mobile')}}">
               <button aria-label="Start Now" type="submit" class="px-4 py-2 bg-main-green-600 text-white font-semibold rounded-md hover:bg-main-green-700">Start Now <span class="ml-2">→</span></button>
             </form>
+            
             <ul class="list-disc list-inside space-y-2">
               <li>Get Discovered and Create Your Online Business</li>
               <li>Respond to Customer Reviews and Questions</li>
@@ -200,6 +201,80 @@
     
     
     </div>
+    <div id="user-register" style="{{ session('mobile') ? 'display: block;' : 'display: none;' }}">
+  <div class="fixed top-0 left-0 w-full
+  h-full z-50 sm:py-0 py-1 flex justify-center items-center backdrop-blur-sm bg-black/25" style="opacity: 1;">
+    <div class="sm:w-96 w-full bg-gray-50 rounded-xl text-black shadow-2xl drop-shadow-lg" style="opacity: 1;">
+      <header class="modal-header-bg">
+      <img
+            src="images/raitanlogo.png" alt="Raitan Logo"
+            aria-label="Raitan" title="Raitan" height="40" width="60" class="">
+        <h3 class="sm:text-black text-gray-50">Register</h3>
+        <button class="register-modal-close modal-close"><svg stroke="currentColor"
+            fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" class="w-4 h-4" height="1em" width="1em"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M563.8 512l262.5-312.9c4.4-5.2.7-13.1-6.1-13.1h-79.8c-4.7 0-9.2 2.1-12.3 5.7L511.6 449.8 295.1 191.7c-3-3.6-7.5-5.7-12.3-5.7H203c-6.8 0-10.5 7.9-6.1 13.1L459.4 512 196.9 824.9A7.95 7.95 0 0 0 203 838h79.8c4.7 0 9.2-2.1 12.3-5.7l216.5-258.1 216.5 258.1c3 3.6 7.5 5.7 12.3 5.7h79.8c6.8 0 10.5-7.9 6.1-13.1L563.8 512z">
+            </path>
+          </svg></button>
+      </header>
+      <div class="bg-gray-50 rounded-b-xl px-6 pt-3 pb-8 text-black">
+        <p class="py-2 font-light mb-2 text-sm">Enter Your password</p>
+        <form action="{{ route('addcontact.login') }}" method="post">
+          @csrf
+          <div class="show_message" id="show_message">
 
+          </div>
+          <div class="my-2">
+       
+            <div class="relative mb-2">
+
+            <input type="hidden" name="mobile" id="mobile"
+                class="common-input input-focus text-sm py-3 rounded-xl" placeholder="Enter Your Mobile Number*"
+                 value="{{session('mobile')}}" style="padding-left: 46.8px;">
+              
+            </div>
+            
+            <div class="relative mb-2">
+
+            <input  type="password" name="password" id="password" 
+                class="common-input input-focus text-sm py-3 rounded-xl" placeholder="Enter Your Password*"
+                 value="" style="padding-left: 46.8px;" required>
+              
+            </div>
+            
+
+          </div>
+          <div class="min-h-[25px] text-xs text-center"></div>
+          <button type="submit" id="register_button"
+            class="action-btn w-full py-2 rounded-xl mt-2 flex items-center justify-center space-x-2 register_button">
+            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em"
+              width="1em" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M160 32c-16 0-32 16-32 32v384c0 16 16 32 32 32h192c16 0 32-16 32-32V64c0-16-16-32-32-32H160zm21.68 23h96v18h-96V55zM304 55h32v18h-32V55zM154 96h204v320H154V96zm70 342h63.984c16 0 16 16 16 16v6H208v-6s0-16 16-16z">
+              </path>
+            </svg>
+            <span>Register</span>
+          </button>
+        </form>
+        Already Registered! Please <a href="#" onclick="signin_popup();" style="text-decoration: none; color: blue">Login</a>
+        
+        
+        
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const registersection = document.querySelector('#user-register');
+    const registercloseButton = document.querySelector('.register-modal-close');
+    registercloseButton.addEventListener('click', function () {
+
+registersection.style.display = (registersection.style.display === 'none') ? 'block' : 'none';
+location.reload();
+});
+  });
+</script>
     @endsection
     

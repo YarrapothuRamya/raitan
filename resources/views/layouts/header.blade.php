@@ -230,7 +230,7 @@
   </div>
 </header>
 
-  <div id="login-signup" style="display: none;">
+<div id="login-signup" style="display: none;">
   <div class="fixed top-0 left-0 w-full
   h-full z-50 sm:py-0 py-1 flex justify-center items-center backdrop-blur-sm bg-black/25" style="opacity: 1;">
     <div class="sm:w-96 w-full bg-gray-50 rounded-xl text-black shadow-2xl drop-shadow-lg" style="opacity: 1;">

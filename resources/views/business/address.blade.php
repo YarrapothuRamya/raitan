@@ -25,7 +25,7 @@
                     <form class="mt-4" action="{{route('address.add')}}" enctype="multipart/form-data" method="POST">
                         @csrf
                         <div class="relative mb-6">
-                        <input type="hidden" name="user_id" class="form-control" value="{{Auth::guard('customer')->user()->id}}"/>
+                        <input type="hidden" name="user_id" class="form-control" value="{{session('user_id')}}"/>
                             <input type="text" name="business_name" class="input border-gray-300 border-2 px-4 py-2 rounded-md focus:outline-none focus:border-main-green w-full" placeholder=" " required>
                            
                             <label class="label-float bg-white">Business Name</label>

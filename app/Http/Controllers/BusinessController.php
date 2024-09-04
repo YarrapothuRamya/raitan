@@ -24,6 +24,9 @@ class BusinessController extends Controller
     // {
     //     return view('business.addcontact');
     // }
+// app/Http/Controllers/YourControllerName.php
+
+
 
     public function businessContact(Request $request)
     {
@@ -41,23 +44,20 @@ class BusinessController extends Controller
             $credentials = $request->only('mobile');
 
         // Attempt to authenticate using the 'customer' guard
-        $user_login = Auth::guard('customer')->getProvider()->retrieveByCredentials(['mobile' => $validated['mobile']]);
+        $user_login = Customer::where('mobile', $mobileno)->first();
 
         // Check if user exists
         if ($user_login) {
             // Log the user in
-            Auth::guard('customer')->login($user_login);
-    
-            // Access the authenticated user
-            $user = Auth::guard('customer')->user();
+           
             //$user_id=Auth::guard('customer')->user()->id;
             // Redirect to a different page or handle the user after login
             //return view('business.address', compact('user'));
-            return redirect()->route('address.home');
+            return redirect()->route('listing.home')->with('mobile', $mobileno);
         } else {
             // Handle case where the user is not found
             return redirect()->route('addcontact.home1')
-            ->with('mobileno', $mobileno);;
+            ->with('mobileno', $mobileno);
         }
         
             // Now you can access the authenticated user
@@ -90,7 +90,7 @@ class BusinessController extends Controller
         $validated = $request->validate([
             'contactPerson' => 'required|string|max:255',
             'mobileNumber' => 'required|string|max:15',
-            'email' => 'required|email|max:255',
+            'email' => 'nullable',
             'password' => 'required',
         ]);
         
@@ -117,7 +117,7 @@ class BusinessController extends Controller
         
                 if ($businessContact->save()) {
                     $lastInsertedId = $businessContact->id;
-                    return view('business.address', compact('lastInsertedId'));
+                    return redirect()->route('address.home')->with('user_id', $lastInsertedId);
                 }
             
         } catch (\Exception $e) {
@@ -160,5 +160,21 @@ class BusinessController extends Controller
     
         // If insertion failed, redirect back with an error message
         return redirect()->back()->with('error', 'Failed to add business address.');
+     }
+     public function login(Request $request){
+        $request->validate([
+            'mobile' => 'required|digits:10',
+            'password' => 'required|min:6',
+        ]);
+
+        $credentials = $request->only('mobile', 'password');
+//print_r($credentials);exit();
+        // Attempt to authenticate using the 'customer' guard
+        Auth::guard('customer')->attempt($credentials);
+        $user_id=Auth::guard('customer')->user()->id;
+        //echo $user_id;die;
+            // Redirect to a different page or handle the user after login
+            //return view('business.address', compact('user'));
+            return redirect()->route('address.home')->with('user_id', $user_id);
      }
 }

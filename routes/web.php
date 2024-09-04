@@ -123,6 +123,7 @@ Route::get('free-listing', [App\Http\Controllers\CommonController::class, 'listi
 Route::get('business-address', [App\Http\Controllers\CommonController::class, 'businessAddress'])->name('address.home');
 Route::post('business-address/add', [App\Http\Controllers\BusinessController::class, 'businessAddressAdd'])->name('address.add');
 Route::get('business-contact', [App\Http\Controllers\BusinessController::class, 'showForm'])->name('addcontact.home');
+Route::post('free-listing/login', [App\Http\Controllers\BusinessController::class, 'login'])->name('addcontact.login');
 Route::post('business-contact', [App\Http\Controllers\BusinessController::class, 'businessContact'])->name('addcontact.home1');
 Route::post('business-contact/add', [App\Http\Controllers\BusinessController::class, 'business_Contact_register'])->name('addcontact.add');
 Route::get('business-timings', [App\Http\Controllers\CommonController::class, 'businessTimings'])->name('timings.home');
@@ -135,7 +136,7 @@ Route::get('addphoto', [App\Http\Controllers\CommonController::class, 'addphoto'
 Route::get('additionalcontact', [App\Http\Controllers\CommonController::class, 'additionalcontact'])->name('additionalcontact.home');
 Route::get('edit-timings', [App\Http\Controllers\CommonController::class, 'edittimings'])->name('edittimings.home');
 Route::get('add-socila-links', [App\Http\Controllers\CommonController::class, 'addSocialLinks'])->name('addsociallinks.home');
-
+Route::post('/check-mobile-exists', [BusinessController::class, 'checkMobileExists'])->name('check.mobile.exists');
 
 
 Route::get('/user_dashboard', [App\Http\Controllers\CommonController::class, 'user_dashboard'])->name('user_dashboard');
