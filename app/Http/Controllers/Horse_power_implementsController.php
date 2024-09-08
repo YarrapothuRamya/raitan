@@ -81,10 +81,11 @@ return view('admin.implements.home', compact('machines', 'horse_power_implements
         return view('admin.implements.edit', compact('machines', 'horse_power_implements'));
         }
            
-/*|unique:horse_power_implements,name,'*/
+/*|unique:horse_power_implements*/
         public function implementUpdate(Request $request){
             $validated = $request->validate([
-                'name' => 'required'.$request['id'],
+                'name' => 'required',
+                'name,'.$request['id'],
                 'machine_id' => 'required',
                 'status' => 'required',
             ]);
