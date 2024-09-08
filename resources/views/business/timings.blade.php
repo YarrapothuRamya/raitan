@@ -2,105 +2,105 @@
 
 @section('content')
 <div class="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
-    <div class="container__inner bg-white rounded-lg shadow-md p-8">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            <div class="left__img relative">
-                <img src="images/Banners/bussiness_banner3.png" alt="left image" loading="lazy" decoding="async"
-                    class="absolute inset-0 w-full h-full object-cover">
-            </div>
-            <div class="container__inner__right p-8 bg-white rounded shadow-md">
+  <div class="container__inner bg-white rounded-lg shadow-md p-8">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <div class="left__img relative">
+        <img src="images/Banners/bussiness_banner3.png" alt="left image" loading="lazy" decoding="async"
+          class="absolute inset-0 w-full h-full object-cover">
+      </div>
+      <div class="container__inner__right p-8 bg-white rounded shadow-md">
+        <form id="businessTimingsForm">
+          <div class="form-wrapper">
+            <p class="addcontact_title___IxGV text-xl font-semibold text-gray-900">Add business timings</p>
 
-                <div class="form-wrapper">
-                    <p class="addcontact_title___IxGV text-xl font-semibold text-gray-900">Add business timings</p>
-
-                    <p class="addtiming_content__TRJ_N color111">Let your customers know when you are open for business
-                    </p>
-                    <div class="addtiming_usines_heght__fv00E mb-3">
-                        <div class="form">
-                            <div class="addtiming_week___1YRi">
-                                <div>
-                                    <label class="color111 font14">Select Days of the Week</label>
-                                    <div class="addtiming_week__block mt-10 mb-10">
-                                        <div class="addtiming_week__select">
-                                            <label class="addtiming_week__select__label"><input autocomplete="off"
-                                                    id="test" type="checkbox"><span class="font12">Mon</span></label>
-                                            <label class="addtiming_week__select__label"><input autocomplete="off"
-                                                    id="test" type="checkbox"><span class="font12">Tue</span></label>
-                                            <label class="addtiming_week__select__label"><input autocomplete="off"
-                                                    id="test" type="checkbox"><span class="font12">Wed</span></label>
-                                            <label class="addtiming_week__select__label"><input autocomplete="off"
-                                                    id="test" type="checkbox"><span class="font12">Thu</span></label>
-                                            <label class="addtiming_week__select__label"><input autocomplete="off"
-                                                    id="test" type="checkbox"><span class="font12">Fri</span></label>
-                                            <label class="addtiming_week__select__label"><input autocomplete="off"
-                                                    id="test" type="checkbox"><span class="font12">Sat</span></label>
-                                            <label class="addtiming_week__select__label"><input autocomplete="off"
-                                                    id="test" type="checkbox"><span class="font12">Sun</span></label>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <label class="addtiming_selectalldays radio font0 color007 flex">
-                                            <input type="checkbox" class="m-0">
-                                            <span class="uncheck addtiming_uncheck"></span>
-                                            <span class="ml-10 font13 fw500 text-main-green-600">Select All Days</span>
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="sm:flex sm:space-x-8">
-  <!-- Open At Input -->
-  <div class="relative">
-    <input id="openAtInput" autocomplete="off"
-      class="input border border-gray-300 rounded px-3 py-2 w-40 cursor-pointer" type="tel"
-      placeholder="Select" required="">
-    <label
-      class="input__label input__label__top absolute left-3 -top-2 bg-white px-1">Open
-      at</label>
-    <ul class="dropdown color111 customscroll absolute bg-white border border-gray-300 rounded-md mt-1 w-full max-h-60 overflow-auto hidden"
-      id="openAtDropdown">
-      <li class="ripple px-4 py-2 cursor-pointer hover:bg-gray-200">Open 24hrs</li>
-      <li class="ripple px-4 py-2 cursor-pointer hover:bg-gray-200">Closed</li>
-      <!-- Add the rest of the time slots here -->
-      <li class="ripple px-4 py-2 cursor-pointer hover:bg-gray-200">07:00 AM</li>
-      <li class="ripple px-4 py-2 cursor-pointer hover:bg-gray-200">07:15 AM</li>
-      <li class="ripple px-4 py-2 cursor-pointer hover:bg-gray-200">07:30 AM</li>
-      <!-- ... -->
-      <li class="ripple px-4 py-2 cursor-pointer hover:bg-gray-200">06:45 AM</li>
-    </ul>
-  </div>
-
-  <!-- Close At Input -->
-  <div class="relative">
-    <input id="closeAtInput" autocomplete="off"
-      class="input border border-gray-300 rounded px-3 py-2 w-40 cursor-pointer" type="tel"
-      placeholder="Select" required="">
-    <label
-      class="input__label input__label__top absolute left-3 -top-2 bg-white px-1">Close
-      at</label>
-    <ul class="dropdown color111 customscroll absolute bg-white border border-gray-300 rounded-md mt-1 w-full max-h-60 overflow-auto hidden"
-      id="closeAtDropdown">
-      <li class="ripple px-4 py-2 cursor-pointer hover:bg-gray-200">08:00 AM</li>
-      <li class="ripple px-4 py-2 cursor-pointer hover:bg-gray-200">08:15 AM</li>
-      <!-- Add the rest of the time slots here -->
-      <li class="ripple px-4 py-2 cursor-pointer hover:bg-gray-200">09:00 PM</li>
-      <li class="ripple px-4 py-2 cursor-pointer hover:bg-gray-200">09:15 PM</li>
-      <!-- ... -->
-      <li class="ripple px-4 py-2 cursor-pointer hover:bg-gray-200">06:45 AM</li>
-    </ul>
-  </div>
-</div>
-
-
-                            </div>
-                            <button class="transparentButton font13 mt-5 text-main-green-600">+ Add Another Time
-                                Slot</button>
-                        </div>
+            <p class="addtiming_content__TRJ_N color111">Let your customers know when you are open for business
+            </p>
+            <div class="addtiming_usines_heght__fv00E mb-3">
+              <div class="form">
+                <div class="addtiming_week___1YRi">
+                  <div>
+                    <label class="color111 font14">Select Days of the Week</label>
+                    <div class="addtiming_week__block mt-10 mb-10">
+                      <div class="addtiming_week__select">
+                        <label class="addtiming_week__select__label"><input autocomplete="off" id="test" class="day-checkbox" name="days[]"
+                            type="checkbox"><span class="font12">Mon</span></label>
+                        <label class="addtiming_week__select__label"><input autocomplete="off" id="test" class="day-checkbox" name="days[]"
+                            type="checkbox"><span class="font12">Tue</span></label>
+                        <label class="addtiming_week__select__label"><input autocomplete="off" id="test" class="day-checkbox" name="days[]"
+                            type="checkbox"><span class="font12">Wed</span></label>
+                        <label class="addtiming_week__select__label"><input autocomplete="off" id="test" class="day-checkbox" name="days[]"
+                            type="checkbox"><span class="font12">Thu</span></label>
+                        <label class="addtiming_week__select__label"><input autocomplete="off" id="test" class="day-checkbox" name="days[]"
+                            type="checkbox"><span class="font12">Fri</span></label>
+                        <label class="addtiming_week__select__label"><input autocomplete="off" id="test" class="day-checkbox" name="days[]"
+                            type="checkbox"><span class="font12">Sat</span></label>
+                        <label class="addtiming_week__select__label"><input autocomplete="off" id="test" class="day-checkbox" name="days[]"
+                            type="checkbox"><span class="font12">Sun</span></label>
+                      </div>
                     </div>
-                    <a class="primarybutton fw500 ripple mt-5 bg-main-green-600 text-white px-4 py-2 rounded hover:bg-main-green-700 focus:outline-none w-full lg:w-auto"
-                        href="{{ route('category.home') }}">Save and Continue</a>
+                    <div>
+                      <label class="addtiming_selectalldays radio font0 color007 flex">
+                        <input type="checkbox" class="m-0">
+                        <span class="uncheck addtiming_uncheck"></span>
+                        <span class="ml-10 font13 fw500 text-main-green-600">Select All Days</span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="sm:flex sm:space-x-8">
+                    <!-- Open At Input -->
+                    <div class="relative">
+                      <input id="openAtInput" autocomplete="off"
+                        class="input border border-gray-300 rounded px-3 py-2 w-40 cursor-pointer" type="tel"
+                        placeholder="Select" required="">
+                      <label class="input__label input__label__top absolute left-3 -top-2 bg-white px-1">Open
+                        at</label>
+                      <ul
+                        class="dropdown color111 customscroll absolute bg-white border border-gray-300 rounded-md mt-1 w-full max-h-60 overflow-auto hidden"
+                        id="openAtDropdown">
+                        <li class="ripple px-4 py-2 cursor-pointer hover:bg-gray-200">Open 24hrs</li>
+                        <li class="ripple px-4 py-2 cursor-pointer hover:bg-gray-200">Closed</li>
+                        <!-- Add the rest of the time slots here -->
+                        <li class="ripple px-4 py-2 cursor-pointer hover:bg-gray-200">07:00 AM</li>
+                        <li class="ripple px-4 py-2 cursor-pointer hover:bg-gray-200">07:15 AM</li>
+                        <li class="ripple px-4 py-2 cursor-pointer hover:bg-gray-200">07:30 AM</li>
+                        <!-- ... -->
+                        <li class="ripple px-4 py-2 cursor-pointer hover:bg-gray-200">06:45 AM</li>
+                      </ul>
+                    </div>
+
+                    <!-- Close At Input -->
+                    <div class="relative">
+                      <input id="closeAtInput" autocomplete="off"
+                        class="input border border-gray-300 rounded px-3 py-2 w-40 cursor-pointer" type="tel"
+                        placeholder="Select" required="">
+                      <label class="input__label input__label__top absolute left-3 -top-2 bg-white px-1">Close
+                        at</label>
+                      <ul
+                        class="dropdown color111 customscroll absolute bg-white border border-gray-300 rounded-md mt-1 w-full max-h-60 overflow-auto hidden"
+                        id="closeAtDropdown">
+                        <li class="ripple px-4 py-2 cursor-pointer hover:bg-gray-200">08:00 AM</li>
+                        <li class="ripple px-4 py-2 cursor-pointer hover:bg-gray-200">08:15 AM</li>
+                        <!-- Add the rest of the time slots here -->
+                        <li class="ripple px-4 py-2 cursor-pointer hover:bg-gray-200">09:00 PM</li>
+                        <li class="ripple px-4 py-2 cursor-pointer hover:bg-gray-200">09:15 PM</li>
+                        <!-- ... -->
+                        <li class="ripple px-4 py-2 cursor-pointer hover:bg-gray-200">06:45 AM</li>
+                      </ul>
+                    </div>
+                  </div>
+
                 </div>
+                <button class="transparentButton font13 mt-5 text-main-green-600">+ Add Another Time
+                  Slot</button>
+              </div>
             </div>
-        </div>
+            <a class="primarybutton fw500 ripple mt-5 bg-main-green-600 text-white px-4 py-2 rounded hover:bg-main-green-700 focus:outline-none w-full lg:w-auto"
+              href="{{ route('category.home') }}">Save and Continue</a>
+          </div>
+        </form>
+      </div>
     </div>
+  </div>
 </div>
 <script>
   // Handle Open At Dropdown
@@ -144,5 +144,61 @@
       closeAtDropdown.classList.add('hidden');
     }
   });
+  document.addEventListener('DOMContentLoaded', function() {
+    const selectAllCheckbox = document.getElementById('selectAllDays');
+    const dayCheckboxes = document.querySelectorAll('.day-checkbox');
+    const openAtInput = document.getElementById('openAtInput');
+    const closeAtInput = document.getElementById('closeAtInput');
+    const form = document.getElementById('businessTimingsForm');
+
+    // Handle 'Select All Days' click event
+    selectAllCheckbox.addEventListener('change', function() {
+        dayCheckboxes.forEach(checkbox => checkbox.checked = this.checked);
+    });
+
+    // Handle each individual day checkbox change event
+    dayCheckboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', function() {
+            const allChecked = Array.from(dayCheckboxes).every(dayCheckbox => dayCheckbox.checked);
+            selectAllCheckbox.checked = allChecked;
+
+            // If 'Select All' is checked but any day is unchecked, 'Select All' should be unchecked
+            if (!this.checked) {
+                selectAllCheckbox.checked = false;
+            } else {
+                // If all day checkboxes are selected, check 'Select All'
+                const allDaysSelected = Array.from(dayCheckboxes).every(dayCheckbox => dayCheckbox.checked);
+                selectAllCheckbox.checked = allDaysSelected;
+            }
+        });
+    });
+
+    // Form submission handler to validate required fields
+    form.addEventListener('submit', function(event) {
+        // Check if at least one day is selected
+        const isDaySelected = Array.from(dayCheckboxes).some(checkbox => checkbox.checked);
+        if (!isDaySelected) {
+            alert('Please select at least one day.');
+            event.preventDefault(); // Prevent form submission
+            return;
+        }
+
+        // Check if 'Open At' and 'Close At' fields are filled
+        if (openAtInput.value.trim() === '') {
+            alert('Please enter the opening time.');
+            event.preventDefault(); // Prevent form submission
+            return;
+        }
+
+        if (closeAtInput.value.trim() === '') {
+            alert('Please enter the closing time.');
+            event.preventDefault(); // Prevent form submission
+            return;
+        }
+
+        // Add more validation checks if necessary
+    });
+});
+
 </script>
 @endsection

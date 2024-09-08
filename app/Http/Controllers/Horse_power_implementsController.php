@@ -102,12 +102,20 @@ return view('admin.implements.home', compact('machines', 'horse_power_implements
                     $request->file('image')->move(public_path('implement_images'), $fileName);
                     $horse_power_implements->image = $fileName;
                 }
-                
-                $image1 = $request->file('description_image');
-                $fileName1 = rand() . "." . $request->file('description_image')->getClientOriginalExtension();
-                $request->file('description_image')->move(public_path('implement_images'), $fileName1);
+                if ($request->file('description_image') != '' || $request->file('description_image') != NULL) {
+                    $file_path_1 = public_path('implement_images').'/'.$horse_power_implements->description_image;
+                    if (file_exists($file_path_1)) {
+                        unlink($file_path_1);
+                    }
+                    $desfileName = rand() . "." . $request->file('image')->getClientOriginalExtension();
+                    $request->file('image')->move(public_path('implement_images'), $desfileName);
+                    $horse_power_implements->description_image = $desfileName;
+                }
+                // $image1 = $request->file('description_image');
+                // $fileName1 = rand() . "." . $request->file('description_image')->getClientOriginalExtension();
+                // $request->file('description_image')->move(public_path('implement_images'), $fileName1);
 
-                $horse_power_implements->description_image = $fileName1;
+                // $horse_power_implements->description_image = $fileName1;
             $horse_power_implements->status = $request['status'];
              
             if($horse_power_implements->save()){
