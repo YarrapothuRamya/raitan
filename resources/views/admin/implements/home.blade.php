@@ -9,7 +9,7 @@
     <div class="w-full overflow-hidden rounded-lg shadow-md">
         <div class="flex flex-wrap items-center px-4 py-2 bg-gray-50 dark:bg-gray-800">
             <div class="relative w-full max-w-full flex-grow flex-1">
-                <h3 class="font-semibold text-base text-gray-900 dark:text-gray-50">Add/Edit Implements</h3>
+                <h3 class="font-semibold text-base text-gray-900 dark:text-gray-50">Implements</h3>
             </div>
             <div class="relative w-full max-w-full flex-grow flex-1 text-right">
                 <a href="{{route('implements.addview')}}" class="action-btn py-1.5 font-light text-sm px-4 inline-block mt-2 rounded-lg text-center shadow-md bg-blue-500 text-white  transition duration-200 implementorsadd" >Add Implements</a>

@@ -28,10 +28,10 @@ return view('admin.implements.home', compact('machines', 'horse_power_implements
                 return view('admin.implements.add', compact('machines'));
                    
         }
-
+//*|unique:horse_power_implements',*/
         public function implementsAdd(Request $request){
                 $validated = $request->validate([
-                        'name' => 'required|unique:horse_power_implements',
+                        'name' => 'required',
                         'add_machine_id' => 'required',
                         'addimage' => 'required',
                         'description' => 'required',
