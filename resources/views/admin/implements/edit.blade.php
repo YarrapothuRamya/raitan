@@ -61,7 +61,7 @@
 
         <div class="mb-4">
             <label for="status" class="block text-gray-700 text-sm font-bold mb-2">{{ __('Description image') }}*</label>
-            <input id="description_image" type="file" class="shadow appearance-none border @error('addimage') border-red-500 @enderror rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="description_image" value="{{ asset('implement_images').'/'.$horse_power_implements['description_image'] }}">
+            <input id="description_image" type="file" class="shadow appearance-none border @error('addimage') border-red-500 @enderror rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="description_image" value="{{ isset($horse_power_implements['description_image']) && $horse_power_implements['description_image'] ? asset('implement_images').'/'.$horse_power_implements['description_image'] : '' }}">
             @if($errors->has('parent_id'))
                 <p class="text-red-500 text-xs italic mt-2">{{ $errors->first('parent_id') }}</p>
             @endif

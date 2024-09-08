@@ -84,6 +84,7 @@ class MachineImplementorsController extends Controller
                 $image = $request->file('image');
                 if ($request->file('image') != '' || $request->file('image') != NULL) {
                     $file_path = public_path('machine_images').'/'.$machine->image;
+                   
                     if (file_exists($file_path)) {
                         unlink($file_path);
                     }
@@ -193,10 +194,14 @@ class MachineImplementorsController extends Controller
             //if ($request->hasFile('photo')) {
                 $image = $request->file('image');
                 if ($request->file('image') != '' || $request->file('image') != NULL) {
+                    if($implementor->image){
                     $file_path = public_path('implementor_images').'/'.$implementor->image;
+                    //echo $file_path ;exit;
                     if (file_exists($file_path)) {
+                        
                         unlink($file_path);
                     }
+                }
                     $fileName = rand() . "." . $request->file('image')->getClientOriginalExtension();
                     $request->file('image')->move(public_path('implementor_images'), $fileName);
                     $implementor->image = $fileName;
