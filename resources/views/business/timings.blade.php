@@ -9,7 +9,10 @@
           class="absolute inset-0 w-full h-full object-cover">
       </div>
       <div class="container__inner__right p-8 bg-white rounded shadow-md">
-        <form id="businessTimingsForm">
+        <form action="{{route('timings.add')}}" method="POST"id="businessTimingsForm">
+         
+          @csrf
+          <input type="hidden" name="id" value="{{session('address_Id')}}"/>
           <div class="form-wrapper">
             <p class="addcontact_title___IxGV text-xl font-semibold text-gray-900">Add business timings</p>
 
@@ -22,19 +25,19 @@
                     <label class="color111 font14">Select Days of the Week</label>
                     <div class="addtiming_week__block mt-10 mb-10">
                       <div class="addtiming_week__select">
-                        <label class="addtiming_week__select__label"><input autocomplete="off" id="test" class="day-checkbox" name="days[]"
+                        <label class="addtiming_week__select__label"><input autocomplete="off" id="test" value="Mon" class="day-checkbox" name="days[]"
                             type="checkbox"><span class="font12">Mon</span></label>
-                        <label class="addtiming_week__select__label"><input autocomplete="off" id="test" class="day-checkbox" name="days[]"
+                        <label class="addtiming_week__select__label"><input autocomplete="off" id="test" value="Tue" class="day-checkbox" name="days[]"
                             type="checkbox"><span class="font12">Tue</span></label>
-                        <label class="addtiming_week__select__label"><input autocomplete="off" id="test" class="day-checkbox" name="days[]"
+                        <label class="addtiming_week__select__label"><input autocomplete="off" id="test" value="Wed" class="day-checkbox" name="days[]"
                             type="checkbox"><span class="font12">Wed</span></label>
-                        <label class="addtiming_week__select__label"><input autocomplete="off" id="test" class="day-checkbox" name="days[]"
+                        <label class="addtiming_week__select__label"><input autocomplete="off" id="test" value="Thu" class="day-checkbox" name="days[]"
                             type="checkbox"><span class="font12">Thu</span></label>
-                        <label class="addtiming_week__select__label"><input autocomplete="off" id="test" class="day-checkbox" name="days[]"
+                        <label class="addtiming_week__select__label"><input autocomplete="off" id="test" value="Fri" class="day-checkbox" name="days[]"
                             type="checkbox"><span class="font12">Fri</span></label>
-                        <label class="addtiming_week__select__label"><input autocomplete="off" id="test" class="day-checkbox" name="days[]"
+                        <label class="addtiming_week__select__label"><input autocomplete="off" id="test" value="Sat" class="day-checkbox" name="days[]"
                             type="checkbox"><span class="font12">Sat</span></label>
-                        <label class="addtiming_week__select__label"><input autocomplete="off" id="test" class="day-checkbox" name="days[]"
+                        <label class="addtiming_week__select__label"><input autocomplete="off" id="test" value="Sun" class="day-checkbox" name="days[]"
                             type="checkbox"><span class="font12">Sun</span></label>
                       </div>
                     </div>
@@ -51,7 +54,7 @@
                     <div class="relative">
                       <input id="openAtInput" autocomplete="off"
                         class="input border border-gray-300 rounded px-3 py-2 w-40 cursor-pointer" type="tel"
-                        placeholder="Select" required="">
+                        placeholder="Select" required="" name="opentime">
                       <label class="input__label input__label__top absolute left-3 -top-2 bg-white px-1">Open
                         at</label>
                       <ul
@@ -72,7 +75,7 @@
                     <div class="relative">
                       <input id="closeAtInput" autocomplete="off"
                         class="input border border-gray-300 rounded px-3 py-2 w-40 cursor-pointer" type="tel"
-                        placeholder="Select" required="">
+                        placeholder="Select" required="" name="closetime">
                       <label class="input__label input__label__top absolute left-3 -top-2 bg-white px-1">Close
                         at</label>
                       <ul
@@ -94,8 +97,8 @@
                   Slot</button>
               </div>
             </div>
-            <a class="primarybutton fw500 ripple mt-5 bg-main-green-600 text-white px-4 py-2 rounded hover:bg-main-green-700 focus:outline-none w-full lg:w-auto"
-              href="{{ route('category.home') }}">Save and Continue</a>
+            <button type="submit" class="primarybutton fw500 ripple mt-5 bg-main-green-600 text-white px-4 py-2 rounded hover:bg-main-green-700 focus:outline-none w-full lg:w-auto"
+              href="{{ route('category.home') }}">Save and Continue</button>
           </div>
         </form>
       </div>
@@ -152,7 +155,7 @@
     const form = document.getElementById('businessTimingsForm');
 
     // Handle 'Select All Days' click event
-    selectAllCheckbox.addEventListener('change', function() {
+    selectAllCheckbox.addEventListener('click', function() {
         dayCheckboxes.forEach(checkbox => checkbox.checked = this.checked);
     });
 

@@ -149,13 +149,30 @@ class BusinessController extends Controller
             'user_id' => 'required',
 
         ]);
+        
         $validated['status'] = 1;
+        $businessAddress = new Business_contact;
+        $businessAddress->business_name= $validated['business_name'];
+        $businessAddress->mobile= $validated['mobile'];
+        $businessAddress->pincode= $validated['pincode'];
+        $businessAddress->block_no= $validated['block_no'];
+        $businessAddress->street= $validated['street'];
+        $businessAddress->area= $validated['area'];
 
-        $businessAddress= Business_contact::create($validated);
-        if ($businessAddress) {
+        $businessAddress->landmark= $validated['landmark'];
+
+        $businessAddress->city= $validated['city'];
+        $businessAddress->user_id= $validated['user_id'];
+        $businessAddress->status= $validated['status'];
+        $businessAddress->business_add_status= "Pending";
+
+
+
+        if ($businessAddress->save()) {
+            $lastInsertedId = $businessAddress->id;
             // Redirect to another page, for example, to the 'businessAddressList' route
-            // return redirect()->route('timings.home')->with('success', 'Business address added successfully.');
-            return redirect()->route('timings.home');
+             return redirect()->route('timings.home')->with('address_Id',$lastInsertedId);
+            //return redirect()->route('timings.home');
         }
     
         // If insertion failed, redirect back with an error message
@@ -176,5 +193,27 @@ class BusinessController extends Controller
             // Redirect to a different page or handle the user after login
             //return view('business.address', compact('user'));
             return redirect()->route('address.home')->with('user_id', $user_id);
+     }
+     public function Timings(Request $request){
+       // echo "hello";exit;
+        // $request->validate([
+        //      'id' => 'nullable',
+        //     'days' => 'required|array',
+        //     'open_time' => 'required|string',
+        //     'close_time' => 'required|string',
+        // ]);
+            print_r($request->input());exit;
+        // Retrieve the business contact or create a new one
+        $businessContact = Business_contact::first($request->input('id')); // Adjust based on your unique identifier
+
+        // Store the selected days, open time, and close time
+        $businessContact->working_days = json_encode($request->input('days'));
+        $businessContact->open_time = $request->input('open_time');
+        $businessContact->close_time = $request->input('close_time');
+
+        // Save the record category.home
+        if($businessContact->save()){
+        return redirect()->route('category.home');
+        }
      }
 }

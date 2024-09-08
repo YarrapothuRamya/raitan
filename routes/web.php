@@ -127,6 +127,7 @@ Route::post('free-listing/login', [App\Http\Controllers\BusinessController::clas
 Route::post('business-contact', [App\Http\Controllers\BusinessController::class, 'businessContact'])->name('addcontact.home1');
 Route::post('business-contact/add', [App\Http\Controllers\BusinessController::class, 'business_Contact_register'])->name('addcontact.add');
 Route::get('business-timings', [App\Http\Controllers\CommonController::class, 'businessTimings'])->name('timings.home');
+Route::post('business-timings/add', [App\Http\Controllers\BusinessController::class, 'Timings'])->name('timings.add');
 Route::get('business-category', [App\Http\Controllers\CommonController::class, 'businessCategory'])->name('category.home');
 Route::get('business-profile', [App\Http\Controllers\CommonController::class, 'businessProfile'])->name('businessProfile.home');
 Route::get('mybusiness', [App\Http\Controllers\CommonController::class, 'mybusiness'])->name('mybusiness.home');
