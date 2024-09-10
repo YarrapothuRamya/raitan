@@ -178,7 +178,10 @@
                                     
                         </div>
 
-
+<div>Disclaimer:
+<br><br>
+    Some time the product details may differ from the given information so it is customer responsibility to cross-check the details before confirming the services.
+</div>
 
 
 
