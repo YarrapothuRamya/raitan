@@ -12,6 +12,7 @@ use App\Models\Implementors;
 use App\Models\Agriculture_Labour;
 use App\Models\RepairsAndServices;
 use App\Models\Sprayers;
+use App\Models\Business_contact;
 use App\Models\Request_role;
 use App\Models\User_Login_Logs;
 use App\Models\Common_logs;
@@ -645,6 +646,17 @@ class CommonController extends Controller
 
     public function mybusiness()
     {
+        $addressId = session('address_id');
+
+        if ($addressId) {
+            // Now you can use $addressId to fetch data or perform actions
+            //$businessContact = BusinessContact::find($addressId);
+            $business = BusinessContact::where('id', $addressId)->first(); // Adjust based on your table and relationship
+
+            // Pass the business data to the view
+            return view('business.mybusiness', compact('business'));
+           
+        }
         return view('business.mybusiness');
     }
 

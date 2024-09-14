@@ -9,9 +9,19 @@
           class="absolute inset-0 w-full h-full object-cover">
       </div>
       <div class="container__inner__right p-8 bg-white rounded shadow-md">
+      @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
         <form action="{{route('timings.add')}}" method="POST"id="businessTimingsForm">
          
           @csrf
+          
           <input type="hidden" name="id" value="{{session('address_Id')}}"/>
           <div class="form-wrapper">
             <p class="addcontact_title___IxGV text-xl font-semibold text-gray-900">Add business timings</p>
@@ -55,6 +65,7 @@
                       <input id="openAtInput" autocomplete="off"
                         class="input border border-gray-300 rounded px-3 py-2 w-40 cursor-pointer" type="tel"
                         placeholder="Select" required="" name="opentime">
+                        
                       <label class="input__label input__label__top absolute left-3 -top-2 bg-white px-1">Open
                         at</label>
                       <ul
@@ -69,6 +80,7 @@
                         <!-- ... -->
                         <li class="ripple px-4 py-2 cursor-pointer hover:bg-gray-200">06:45 AM</li>
                       </ul>
+                      
                     </div>
 
                     <!-- Close At Input -->
@@ -147,61 +159,6 @@
       closeAtDropdown.classList.add('hidden');
     }
   });
-  document.addEventListener('DOMContentLoaded', function() {
-    const selectAllCheckbox = document.getElementById('selectAllDays');
-    const dayCheckboxes = document.querySelectorAll('.day-checkbox');
-    const openAtInput = document.getElementById('openAtInput');
-    const closeAtInput = document.getElementById('closeAtInput');
-    const form = document.getElementById('businessTimingsForm');
-
-    // Handle 'Select All Days' click event
-    selectAllCheckbox.addEventListener('click', function() {
-        dayCheckboxes.forEach(checkbox => checkbox.checked = this.checked);
-    });
-
-    // Handle each individual day checkbox change event
-    dayCheckboxes.forEach(checkbox => {
-        checkbox.addEventListener('change', function() {
-            const allChecked = Array.from(dayCheckboxes).every(dayCheckbox => dayCheckbox.checked);
-            selectAllCheckbox.checked = allChecked;
-
-            // If 'Select All' is checked but any day is unchecked, 'Select All' should be unchecked
-            if (!this.checked) {
-                selectAllCheckbox.checked = false;
-            } else {
-                // If all day checkboxes are selected, check 'Select All'
-                const allDaysSelected = Array.from(dayCheckboxes).every(dayCheckbox => dayCheckbox.checked);
-                selectAllCheckbox.checked = allDaysSelected;
-            }
-        });
-    });
-
-    // Form submission handler to validate required fields
-    form.addEventListener('submit', function(event) {
-        // Check if at least one day is selected
-        const isDaySelected = Array.from(dayCheckboxes).some(checkbox => checkbox.checked);
-        if (!isDaySelected) {
-            alert('Please select at least one day.');
-            event.preventDefault(); // Prevent form submission
-            return;
-        }
-
-        // Check if 'Open At' and 'Close At' fields are filled
-        if (openAtInput.value.trim() === '') {
-            alert('Please enter the opening time.');
-            event.preventDefault(); // Prevent form submission
-            return;
-        }
-
-        if (closeAtInput.value.trim() === '') {
-            alert('Please enter the closing time.');
-            event.preventDefault(); // Prevent form submission
-            return;
-        }
-
-        // Add more validation checks if necessary
-    });
-});
-
+  
 </script>
 @endsection

@@ -129,6 +129,7 @@ Route::post('business-contact/add', [App\Http\Controllers\BusinessController::cl
 Route::get('business-timings', [App\Http\Controllers\CommonController::class, 'businessTimings'])->name('timings.home');
 Route::post('business-timings/add', [App\Http\Controllers\BusinessController::class, 'Timings'])->name('timings.add');
 Route::get('business-category', [App\Http\Controllers\CommonController::class, 'businessCategory'])->name('category.home');
+Route::post('business-category/add', [App\Http\Controllers\BusinessController::class, 'businessCategoryadd'])->name('category.add');
 Route::get('business-profile', [App\Http\Controllers\CommonController::class, 'businessProfile'])->name('businessProfile.home');
 Route::get('mybusiness', [App\Http\Controllers\CommonController::class, 'mybusiness'])->name('mybusiness.home');
 Route::get('advertiseplans', [App\Http\Controllers\CommonController::class, 'advertiseplans'])->name('advertiseplans.home');

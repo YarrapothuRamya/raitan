@@ -195,25 +195,41 @@ class BusinessController extends Controller
             return redirect()->route('address.home')->with('user_id', $user_id);
      }
      public function Timings(Request $request){
-       // echo "hello";exit;
-        // $request->validate([
-        //      'id' => 'nullable',
-        //     'days' => 'required|array',
-        //     'open_time' => 'required|string',
-        //     'close_time' => 'required|string',
-        // ]);
-            print_r($request->input());exit;
+        //echo "hello";exit;
+        $request->validate([
+             'id' => 'nullable',
+            'days' => 'required|array',
+            'opentime' => 'required|string',
+            'closetime' => 'required|string',
+        ]);
+           // print_r($request->input());exit;
         // Retrieve the business contact or create a new one
-        $businessContact = Business_contact::first($request->input('id')); // Adjust based on your unique identifier
-
+        $businessContact = Business_contact::find($request->input('id')); // Adjust based on your unique identifier
+//print_r($businessContact);exit;
         // Store the selected days, open time, and close time
         $businessContact->working_days = json_encode($request->input('days'));
-        $businessContact->open_time = $request->input('open_time');
-        $businessContact->close_time = $request->input('close_time');
+        $businessContact->open_time = $request->input('opentime');
+        $businessContact->close_time = $request->input('closetime');
 
         // Save the record category.home
         if($businessContact->save()){
-        return redirect()->route('category.home');
+        return redirect()->route('category.home')->with('address_id',$businessContact->id);
+        }
+     }
+     public function businessCategoryadd(Request $request){
+        $request->validate([
+            'id' => 'nullable',
+            'searchInput' => 'required|string|max:255',
+        ]);
+        //print_r($request->input());exit;
+        // Retrieve the business category by ID
+        $category = Business_contact::find($request->input('id'));
+        $category->category = $request->input('searchInput');
+        $category->registration_status = 'registered';
+        if ($category->save()) {
+            return redirect()->route('mybusiness.home')->with('address_id',$request->input('id'));
+        } else {
+            return back()->with('error', 'Failed to update the category.');
         }
      }
 }

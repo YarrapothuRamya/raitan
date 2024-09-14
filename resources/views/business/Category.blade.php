@@ -10,7 +10,10 @@
                     class="absolute inset-0 w-full h-full object-cover">
             </div>
             <div class="container__inner__right p-8 bg-white rounded-lg shadow-md">
-                <form>
+            
+                <form action="{{route('category.add')}}" method="POST">
+                    @csrf
+                    <input type="hidden" name="id" value="{{session('address_id')}}"/>
                     <div class="form-wrapper">
                         <p class="styles_title__dVmvo text-xl font-semibold text-gray-900 mb-2">Add business category
                         </p>
@@ -23,7 +26,7 @@
                                 <span class="iconwrap styles_searchicon__xRQmH absolute top-3 left-3"></span>
                                 <input type="text" placeholder="Type Business Category"
                                     class="input styles_textsearch__hxEo7 border-gray-300 border-2 px-4 py-2 rounded-md focus:outline-none focus:border-main-green w-full pl-10"
-                                    value="" id="searchInput">
+                                    value="" id="searchInput" name="searchInput">
                                 <ul class="dropdown color111 customscroll absolute bg-white border border-gray-300 rounded-md mt-1 w-full max-h-60 overflow-auto hidden"
                                     id="dropdownList">
                                     <!-- Dropdown Items -->
@@ -37,15 +40,12 @@
                                     <li class="ripple px-4 py-2 cursor-pointer hover:bg-gray-200">Repair & Services</li>
                                     <li class="ripple px-4 py-2 cursor-pointer hover:bg-gray-200">Dealers-Powertrac</li>
                                     <li class="ripple px-4 py-2 cursor-pointer hover:bg-gray-200">Dealers-Kubota</li>
-                                    <li class="ripple px-4 py-2 cursor-pointer hover:bg-gray-200">Dealers-Mahindra
-                                        (Authorised)</li>
+                                    <li class="ripple px-4 py-2 cursor-pointer hover:bg-gray-200">Dealers-Mahindra (Authorised)</li>
                                     <li class="ripple px-4 py-2 cursor-pointer hover:bg-gray-200">Aqualock Dealers</li>
                                     <li class="ripple px-4 py-2 cursor-pointer hover:bg-gray-200">Compressors On Rent
                                     </li>
-                                    <li class="ripple px-4 py-2 cursor-pointer hover:bg-gray-200">Dealers-Massey
-                                        Ferguson</li>
-                                    <li class="ripple px-4 py-2 cursor-pointer hover:bg-gray-200">Dealers-John Deere
-                                        (Authorised)</li>
+                                    <li class="ripple px-4 py-2 cursor-pointer hover:bg-gray-200">Dealers-Massey Ferguson</li>
+                                    <li class="ripple px-4 py-2 cursor-pointer hover:bg-gray-200">Dealers-John Deere  (Authorised)</li>
                                     <li class="ripple px-4 py-2 cursor-pointer hover:bg-gray-200">Tyre Dealers-BKT</li>
                                 </ul>
                                 <p class="color111 mt-4 font-semibold text-gray-900">Selected Categories</p>
@@ -66,11 +66,12 @@
                             <!-- Repeat the above label for other selected categories -->
                         </div>
                     </div>
+                    <button type="submit" class="primarybutton fw500 ripple mt-5 bg-main-green-600 text-white  px-4 py-2 rounded hover:bg-main-green-700 focus:outline-none w-full lg:w-auto" href="{{ route('category.home') }}">Save and Continue</button>
                 </form>
 
             </div>
         </div>
-        <a class="primarybutton fw500 ripple mt-5 bg-main-green-600 text-white  px-4 py-2 rounded hover:bg-main-green-700 focus:outline-none w-full lg:w-auto" href="{{ route('category.home') }}">Save and Continue</a>
+      
     </div>
 </div>
 
