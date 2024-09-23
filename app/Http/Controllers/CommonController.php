@@ -651,7 +651,7 @@ class CommonController extends Controller
         if ($addressId) {
             // Now you can use $addressId to fetch data or perform actions
             //$businessContact = BusinessContact::find($addressId);
-            $business = BusinessContact::where('id', $addressId)->first(); // Adjust based on your table and relationship
+            $business = Business_contact::where('id', $addressId)->first(); // Adjust based on your table and relationship
 
             // Pass the business data to the view
             return view('business.mybusiness', compact('business'));
