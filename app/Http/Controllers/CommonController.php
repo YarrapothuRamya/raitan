@@ -646,12 +646,15 @@ class CommonController extends Controller
 
     public function mybusiness()
     {
-        $addressId = session('address_id');
+    //     $addressId = session('address_id');
 
-        if ($addressId) {
+     $id = Auth::guard('customer')->user()->id;
+     
+
+        if ($id) {
             // Now you can use $addressId to fetch data or perform actions
             //$businessContact = BusinessContact::find($addressId);
-            $business = Business_contact::where('id', $addressId)->first(); // Adjust based on your table and relationship
+             $business = Business_contact::where('user_id', $id)->get(); // Adjust based on your table and relationship
 
             // Pass the business data to the view
             return view('business.mybusiness', compact('business'));

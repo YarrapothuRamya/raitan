@@ -1,13 +1,15 @@
 @extends('layouts.businessapp')
 
 @section('content')
+<?php 
+ $userid = Auth::guard('customer')->user()->id;
+?>
 <section class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
     <div class="bg-white rounded-lg shadow-lg p-8">
         <div class="border-b pb-4 mb-8 flex flex-col md:flex-row justify-between items-center">
             <h2 class="text-3xl font-bold text-gray-900">My Business</h2>
             <button class="mt-4 md:mt-0 flex items-center bg-main-green-600 text-white font-semibold py-2 px-4 rounded hover:bg-main-green-700">
-               
-                Add New Business
+           <a href="{{route('address.home')}}">Add New Business</a> 
                 <span class="ml-2">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-200" viewBox="0 0 20 20" fill="currentColor">
                         <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11V5a1 1 0 10-2 0v2H7a1 1 0 000 2h2v2a1 1 0 002 0v-2h2a1 1 0 000-2h-2z" clip-rule="evenodd" />
@@ -15,6 +17,7 @@
                 </span>
             </button>
         </div>
+        @foreach($business as $busines)
         <div class="bg-gray-50 p-8 rounded-lg shadow-md mb-10">
             <div class="text-lg font-medium text-gray-800 mb-4">Business Profile Score</div>
             <div class="flex flex-col md:flex-row items-center">
@@ -23,8 +26,8 @@
                 </a>
                 <div class="flex-1">
                     <a href="#">
-                        <div class="text-2xl font-bold text-gray-900 mb-2">RLK InfoTech</div>
-                        <div class="text-base text-gray-700 mb-4">Indira Nagar-Moosarambagh, Hyderabad</div>
+                        <div class="text-2xl font-bold text-gray-900 mb-2">{{$busines->business_name}}</div>
+                        <div class="text-base text-gray-700 mb-4">{{$busines->landmark}}</div>
                     </a>
                     <div class="flex flex-wrap space-x-4">
                         <a class="bg-main-green-600 text-white font-medium py-2 px-4 rounded hover:bg-main-green-700" href="{{ route('advertiseplans.home') }}">Advertise Now</a>
@@ -43,6 +46,7 @@
                 </div>
             </div>
         </div>
+        @endforeach
     </div>
 </section>
 

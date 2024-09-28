@@ -149,7 +149,14 @@ class BusinessController extends Controller
             'user_id' => 'required',
 
         ]);
-        
+        // $userid =  $request->input('user_id');
+        // if($userid){
+        //     $userid =  $request->input('user_id');  
+        // }
+        // else{
+        //     $userid =  Auth::guard('customer')->user()->id;  
+        // }
+        // exit;
         $validated['status'] = 1;
         $businessAddress = new Business_contact;
         $businessAddress->business_name= $validated['business_name'];
