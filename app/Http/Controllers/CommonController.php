@@ -19,7 +19,6 @@ use App\Models\Common_logs;
 use App\Models\Horse_power_implements;
 use App\Models\Machines;
 
-
 class CommonController extends Controller
 {
     public function indexroot()
@@ -624,14 +623,19 @@ class CommonController extends Controller
         return view('business.address');
     }
 
-    public function businessTimings()
+    public function businessTimings($business_id)
     {
-        return view('business.timings');
+    //  echo   $business_id;
+    //  exit;
+    return view('business.timings',compact('business_id'));
     }
 
-    public function businessCategory()
+    public function businessCategory($business_id)
     {
-        return view('business.category');
+    //    echo  $business_id;
+    //    exit;
+        $services = Services::all();
+        return view('business.Category', compact('services', 'business_id'));
     }
 
     public function businessContact()
@@ -648,9 +652,15 @@ class CommonController extends Controller
     {
     //     $addressId = session('address_id');
 
-     $id = Auth::guard('customer')->user()->id;
-     
+    $id = null; // Initialize the variable
 
+    if (Auth::guard('customer')->check()) {
+        $id = Auth::guard('customer')->user()->id;
+    }
+    else{
+         $id = session('user_id');
+    }
+// exit;
         if ($id) {
             // Now you can use $addressId to fetch data or perform actions
             //$businessContact = BusinessContact::find($addressId);

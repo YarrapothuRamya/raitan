@@ -1,6 +1,8 @@
 
 @extends('layouts.businessapp')
 @section('content')
+<!-- Example in the <head> section -->
+
 <div class="container__inner max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8 bg-white rounded-lg shadow-md">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
         <div class="container__inner__left relative">
@@ -9,6 +11,20 @@
           </div>
         </div>
        
+
+        @if(session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+    @endif
+
+    @if(session('error'))
+        <div class="alert alert-danger">
+            {{ session('error') }}
+        </div>
+    @endif
+
+
         <div class="container__inner__right p-8 bg-white rounded shadow-md">
           <form  method="post" action="{{route('addcontact.add')}}" enctype="multipart/form-data" autocomplete="off" novalidate="novalidate">
             @csrf

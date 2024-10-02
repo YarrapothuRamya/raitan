@@ -94,8 +94,6 @@ class BusinessController extends Controller
             'password' => 'required',
         ]);
         
-        //echo "hello world"; die;
-        
         try {
 
             // Customer::create([
@@ -108,7 +106,6 @@ class BusinessController extends Controller
            
                 // Create new record
                 $businessContact = new Customer;
-                // $businessContact->title = $validated['title'];
                 $businessContact->name = $validated['contactPerson'];
                 $businessContact->mobile = $validated['mobileNumber'];
                 $businessContact->email = $validated['email'];
@@ -116,24 +113,25 @@ class BusinessController extends Controller
                 $businessContact->status = 1;
         
                 if ($businessContact->save()) {
-                    $lastInsertedId = $businessContact->id;
-                    return redirect()->route('address.home')->with('user_id', $lastInsertedId);
+                    $credentials = [
+                        'mobile' => $businessContact->mobile,
+                        'password' => $validated['password'], // Use the plain password for authentication
+                    ];
+                    if (Auth::guard('customer')->attempt($credentials)) {
+                        // Authentication passed
+                        $user_id = Auth::guard('customer')->user()->id;
+                        return redirect()->route('address.home')->with('user_id', $user_id);
+                    } else {
+                        return redirect()->route('business.addcontact')->with('error', 'Authentication failed. Please try again.');
+                    }
+                    // $lastInsertedId = $businessContact->id;
+                    // return redirect()->route('address.home')->with('user_id', $lastInsertedId);
                 }
             
         } catch (\Exception $e) {
-            // Log the error
             \Log::error('Error saving business contact: '.$e->getMessage());
-        
-            // Optionally, return an error response
             return redirect()->back()->withErrors(['error' => 'Failed to save contact details. Please try again later.']);
-        }
-        
-  
-        // Get the last inserted ID
-        
-
-        // Optionally, you can use this ID to redirect or pass it to another method
-      
+        } 
     }
      public function businessAddressAdd(Request $request){
         $validated = $request->validate([
@@ -147,6 +145,7 @@ class BusinessController extends Controller
             'city' => 'required',
             'state' => 'required',
             'user_id' => 'required',
+            'email' => 'nullable',
 
         ]);
         // $userid =  $request->input('user_id');
@@ -165,7 +164,7 @@ class BusinessController extends Controller
         $businessAddress->block_no= $validated['block_no'];
         $businessAddress->street= $validated['street'];
         $businessAddress->area= $validated['area'];
-
+        $businessAddress->email = $validated['email'];
         $businessAddress->landmark= $validated['landmark'];
 
         $businessAddress->city= $validated['city'];
@@ -174,11 +173,19 @@ class BusinessController extends Controller
         $businessAddress->business_add_status= "Pending";
 
 
-
+// echo $address_Id = $validated['user_id'];
+// exit;
         if ($businessAddress->save()) {
-            $lastInsertedId = $businessAddress->id;
+            // $business_id = $businessAddress->id;
+            $business_id= $businessAddress->id;
+            if($business_id){
+                return redirect()->route('timings.home', $business_id);
+            }
+            else{
+                return redirect()->route('timings.home');  
+            }
             // Redirect to another page, for example, to the 'businessAddressList' route
-             return redirect()->route('timings.home')->with('address_Id',$lastInsertedId);
+             
             //return redirect()->route('timings.home');
         }
     
@@ -209,18 +216,20 @@ class BusinessController extends Controller
             'opentime' => 'required|string',
             'closetime' => 'required|string',
         ]);
+        // echo $request->input('id');
+        // echo json_encode($request->input('days'));
+        // exit;
            // print_r($request->input());exit;
         // Retrieve the business contact or create a new one
-        $businessContact = Business_contact::find($request->input('id')); // Adjust based on your unique identifier
-//print_r($businessContact);exit;
-        // Store the selected days, open time, and close time
+         $businessContact = Business_contact::find($request->input('id')); // Adjust based on your unique identifier
         $businessContact->working_days = json_encode($request->input('days'));
         $businessContact->open_time = $request->input('opentime');
         $businessContact->close_time = $request->input('closetime');
 
         // Save the record category.home
         if($businessContact->save()){
-        return redirect()->route('category.home')->with('address_id',$businessContact->id);
+           $business_id =  $businessContact->id;
+        return redirect()->route('category.home', $business_id);
         }
      }
      public function businessCategoryadd(Request $request){
@@ -230,11 +239,16 @@ class BusinessController extends Controller
         ]);
         //print_r($request->input());exit;
         // Retrieve the business category by ID
-        $category = Business_contact::find($request->input('id'));
+         $category = Business_contact::find($request->input('id'));
         $category->category = $request->input('searchInput');
         $category->registration_status = 'registered';
+        // echo $request->input('id');
+
         if ($category->save()) {
-            return redirect()->route('mybusiness.home')->with('address_id',$request->input('id'));
+$user_id =  $category->user_id;
+  $business = Business_contact::where('user_id', $user_id)->get();
+        // exit;
+        return redirect()->route('mybusiness.home')->with('user_id',$user_id);
         } else {
             return back()->with('error', 'Failed to update the category.');
         }

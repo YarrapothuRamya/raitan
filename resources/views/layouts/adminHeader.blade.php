@@ -151,11 +151,34 @@
             <li>
                 <a href="{{ url('/raitan_admin/approve_permissions') }}" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-custom-green-main dark:hover:bg-gray-600 text-white-600 hover:text-white-800 border-l-4 border-transparent hover:border-blue-500 dark:hover:border-gray-800 pr-6">
                     <span class="inline-flex justify-center items-center ml-4">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <i class="fa fa-key"></i>
+                        <!-- <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3l3 3m-3 3l3 3m-3-3H6a1 1 0 00-1 1v7a1 1 0 001 1h1"></path>
-                        </svg>
+                        </svg> -->
                     </span>
                     <span class="ml-2 text-sm tracking-wide truncate">Approve Permissions</span>
+                </a>
+            </li>
+            <li>
+                <a href="{{ url('/raitan_admin/service-providers') }}" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-custom-green-main dark:hover:bg-gray-600 text-white-600 hover:text-white-800 border-l-4 border-transparent hover:border-blue-500 dark:hover:border-gray-800 pr-6">
+                    <span class="inline-flex justify-center items-center ml-4">
+                    <i class="fas fa-user-alt"></i>
+                        <!-- <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3l3 3m-3 3l3 3m-3-3H6a1 1 0 00-1 1v7a1 1 0 001 1h1"></path>
+                        </svg> -->
+                    </span>
+                    <span class="ml-2 text-sm tracking-wide truncate">Service Provider</span>
+                </a>
+            </li>
+            <li>
+                <a href="{{ url('/raitan_admin/Business-contact') }}" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-custom-green-main dark:hover:bg-gray-600 text-white-600 hover:text-white-800 border-l-4 border-transparent hover:border-blue-500 dark:hover:border-gray-800 pr-6">
+                    <span class="inline-flex justify-center items-center ml-4">
+                    <i class="fa fa-cogs"></i>
+                        <!-- <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3l3 3m-3 3l3 3m-3-3H6a1 1 0 00-1 1v7a1 1 0 001 1h1"></path>
+                        </svg> -->
+                    </span>
+                    <span class="ml-2 text-sm tracking-wide truncate">Business Contact</span>
                 </a>
             </li>
         </ul>

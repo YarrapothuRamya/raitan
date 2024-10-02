@@ -28,6 +28,8 @@ class Business_contact extends Authenticatable
         'state',
         'status',
         'title',
+        'working_days',
+        'email',
     ];
 
 

@@ -6,14 +6,14 @@
     <div class="container__inner bg-white rounded-lg shadow-md p-8">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
             <div class="left__img relative">
-                <img src="images/Banners/bussiness_banner4.png" alt="left image" loading="lazy" decoding="async"
+                <img src="../images/Banners/bussiness_banner4.png" alt="left image" loading="lazy" decoding="async"
                     class="absolute inset-0 w-full h-full object-cover">
             </div>
             <div class="container__inner__right p-8 bg-white rounded-lg shadow-md">
             
                 <form action="{{route('category.add')}}" method="POST">
                     @csrf
-                    <input type="hidden" name="id" value="{{session('address_id')}}"/>
+                    <input type="hidden" name="id" value="{{$business_id}}"/>
                     <div class="form-wrapper">
                         <p class="styles_title__dVmvo text-xl font-semibold text-gray-900 mb-2">Add business category
                         </p>
@@ -24,12 +24,18 @@
                         <div class="form styles_selected__form__Wbgft">
                             <div class="inputwrap mb-6 relative">
                                 <span class="iconwrap styles_searchicon__xRQmH absolute top-3 left-3"></span>
-                                <input type="text" placeholder="Type Business Category"
+                                <select name="searchInput" id="searchInput" class="input styles_textsearch__hxEo7 border-gray-300 border-2 px-4 py-2 rounded-md focus:outline-none focus:border-main-green w-full pl-10">
+                                @foreach($services as $service)
+                                    <option value="{{ $service->service_name }}" {{ old('searchInput') == $service->service_name ? 'selected' : '' }}>
+                                        {{ $service->service_name }}
+                                    </option>
+                                @endforeach
+                                </select>
+                                <!-- <input type="text" placeholder="Type Business Category"
                                     class="input styles_textsearch__hxEo7 border-gray-300 border-2 px-4 py-2 rounded-md focus:outline-none focus:border-main-green w-full pl-10"
-                                    value="" id="searchInput" name="searchInput">
-                                <ul class="dropdown color111 customscroll absolute bg-white border border-gray-300 rounded-md mt-1 w-full max-h-60 overflow-auto hidden"
+                                    value="" id="searchInput" name="searchInput"> -->
+                                <!-- <ul class="dropdown color111 customscroll absolute bg-white border border-gray-300 rounded-md mt-1 w-full max-h-60 overflow-auto hidden"
                                     id="dropdownList">
-                                    <!-- Dropdown Items -->
                                     <li class="ripple px-4 py-2 cursor-pointer hover:bg-gray-200">Treatment</li>
                                     <li class="ripple px-4 py-2 cursor-pointer hover:bg-gray-200">Dealers-Mahindra</li>
                                     <li class="ripple px-4 py-2 cursor-pointer hover:bg-gray-200">Dealers-John Deere
@@ -47,13 +53,13 @@
                                     <li class="ripple px-4 py-2 cursor-pointer hover:bg-gray-200">Dealers-Massey Ferguson</li>
                                     <li class="ripple px-4 py-2 cursor-pointer hover:bg-gray-200">Dealers-John Deere  (Authorised)</li>
                                     <li class="ripple px-4 py-2 cursor-pointer hover:bg-gray-200">Tyre Dealers-BKT</li>
-                                </ul>
-                                <p class="color111 mt-4 font-semibold text-gray-900">Selected Categories</p>
+                                </ul> -->
+                                <!-- <p class="color111 mt-4 font-semibold text-gray-900">Selected Categories</p> -->
                             </div>
                         </div>
 
                         <!-- Selected Categories List -->
-                        <div class="mt-4 space-y-2">
+                        <!-- <div class="mt-4 space-y-2">
                             <label
                                 class="block bg-gray-100 text-gray-900 font-semibold rounded-md p-2 flex items-center justify-between">
                                 <span>Salons</span>
@@ -63,10 +69,9 @@
                                         src="//akam.cdn.jdmagicbox.com/images/icontent/listingbusiness/closeblue.svg" />
                                 </span>
                             </label>
-                            <!-- Repeat the above label for other selected categories -->
-                        </div>
+                        </div> -->
                     </div>
-                    <button type="submit" class="primarybutton fw500 ripple mt-5 bg-main-green-600 text-white  px-4 py-2 rounded hover:bg-main-green-700 focus:outline-none w-full lg:w-auto" href="{{ route('category.home') }}">Save and Continue</button>
+                    <button type="submit" class="primarybutton fw500 ripple mt-5 bg-main-green-600 text-white  px-4 py-2 rounded hover:bg-main-green-700 focus:outline-none w-full lg:w-auto" href="{{ route('category.home', 'business_id') }}">Save and Continue</button>
                 </form>
 
             </div>

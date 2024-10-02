@@ -94,6 +94,21 @@ Route::group(['middleware' => ['auth']], function () {
    Route::get('/raitan_admin/sprayers-add', [App\Http\Controllers\SprayersController::class, 'sprayersaddview'])->name('sprayers.addview');
    Route::get('/raitan_admin/sprayers-update', [App\Http\Controllers\SprayersController::class, 'sprayersedit'])->name('sprayers.edit');
    Route::post('/raitan_admin/sprayers-update', [App\Http\Controllers\SprayersController::class, 'sprayersUpdate'])->name('sprayers.update');
+
+
+   Route::get('/raitan_admin/service-providers', [App\Http\Controllers\ServiceproviderController::class, 'index'])->name('service_providers');
+   Route::post('/raitan_admin/service-providers-add', [App\Http\Controllers\ServiceproviderController::class, 'add'])->name('service_providers.add');
+   Route::get('raitan_admin/service-providers/view/{id}', [App\Http\Controllers\ServiceproviderController::class, 'view'])->name('service_providers.view');
+   Route::get('/raitan_admin/service-providers-update', [App\Http\Controllers\ServiceproviderController::class, 'edit'])->name('service_providers.edit');
+   Route::post('/raitan_admin/service-providers-update', [App\Http\Controllers\ServiceproviderController::class, 'update'])->name('service_providers.update');
+
+   Route::get('/raitan_admin/Business-contact', [App\Http\Controllers\BusinesscontactController::class, 'index'])->name('Business_contact');
+   Route::post('/raitan_admin/Business-contact-add', [App\Http\Controllers\BusinesscontactController::class, 'add'])->name('Business_contact.add');
+   Route::get('raitan_admin/Business-contact/view/{id}', [App\Http\Controllers\BusinesscontactController::class, 'view'])->name('Business_contact.view');
+   Route::get('/raitan_admin/Business-contact-update', [App\Http\Controllers\BusinesscontactController::class, 'edit'])->name('Business_contact.edit');
+   Route::post('/raitan_admin/Business-contact-update', [App\Http\Controllers\BusinesscontactController::class, 'update'])->name('Business_contact.update');
+
+
 });
 
 Route::get('verify-email/{pass_code}/{id}', [App\Http\Controllers\Auth\RegisterController::class, 'verifyEmail'])->name('verify.email');
@@ -126,9 +141,9 @@ Route::get('business-contact', [App\Http\Controllers\BusinessController::class, 
 Route::post('free-listing/login', [App\Http\Controllers\BusinessController::class, 'login'])->name('addcontact.login');
 Route::post('business-contact', [App\Http\Controllers\BusinessController::class, 'businessContact'])->name('addcontact.home1');
 Route::post('business-contact/add', [App\Http\Controllers\BusinessController::class, 'business_Contact_register'])->name('addcontact.add');
-Route::get('business-timings', [App\Http\Controllers\CommonController::class, 'businessTimings'])->name('timings.home');
+Route::get('business-timings/{business_id}', [App\Http\Controllers\CommonController::class, 'businessTimings'])->name('timings.home');
 Route::post('business-timings/add', [App\Http\Controllers\BusinessController::class, 'Timings'])->name('timings.add');
-Route::get('business-category', [App\Http\Controllers\CommonController::class, 'businessCategory'])->name('category.home');
+Route::get('business-category/{business_id}', [App\Http\Controllers\CommonController::class, 'businessCategory'])->name('category.home');
 Route::post('business-category/add', [App\Http\Controllers\BusinessController::class, 'businessCategoryadd'])->name('category.add');
 Route::get('business-profile', [App\Http\Controllers\CommonController::class, 'businessProfile'])->name('businessProfile.home');
 Route::get('mybusiness', [App\Http\Controllers\CommonController::class, 'mybusiness'])->name('mybusiness.home');

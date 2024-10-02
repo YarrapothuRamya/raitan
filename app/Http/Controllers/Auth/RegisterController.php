@@ -64,7 +64,7 @@ class RegisterController extends Controller
     {
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
-            'mobile' => ['required', 'digits:10', 'unique:users'],
+            'mobile' => ['required', 'digits:10', 'unique:customer'],
             //'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
             'role_id' => ['required'],
@@ -99,7 +99,7 @@ class RegisterController extends Controller
 
         $confirmation_link = env('APP_URL').'/verify-email/'.$pass_code.'/'.$id;
 
-        Mail::to("balajivallabhapuram07@gmail.com")->send(new RegistrationMail(['confirmation_link' => $confirmation_link, 'pass_code' => $pass_code, 'id' => $id]));
+        Mail::to("ramyayerrapothu@gmail.com")->send(new RegistrationMail(['confirmation_link' => $confirmation_link, 'pass_code' => $pass_code, 'id' => $id]));
         return view('auth.registerthankyou',compact('pass_code', 'id'));
 
     }
