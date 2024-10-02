@@ -631,7 +631,7 @@ class CommonController extends Controller
 
     public function businessCategory()
     {
-        return view('business.category');
+        return view('business.Category');
     }
 
     public function businessContact()
