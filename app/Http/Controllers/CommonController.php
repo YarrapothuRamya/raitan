@@ -632,14 +632,10 @@ class CommonController extends Controller
 
     public function businessCategory($business_id)
     {
-<<<<<<< HEAD
     //    echo  $business_id;
     //    exit;
         $services = Services::all();
         return view('business.Category', compact('services', 'business_id'));
-=======
-        return view('business.Category');
->>>>>>> 7b2229dd572149ff9793bc4e6a3213cbb935fd96
     }
 
     public function businessContact()
