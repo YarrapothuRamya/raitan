@@ -13,8 +13,13 @@
           </div>
         </div>
         <div class="flex items-center">
+<<<<<<< HEAD
           <a href="tel:8888888888" class="text-gray-900 inline-flex items-center">
             <img class="h-4 w-4 mr-2" src="../images/icons/call.svg" alt="Call icon">
+=======
+          <a href="tel: 82323269" class="text-gray-900 inline-flex items-center">
+            <img class="h-4 w-4 mr-2" src="images/icons/call.svg" alt="Call icon">
+>>>>>>> 7b2229dd572149ff9793bc4e6a3213cbb935fd96
             <a id="navbarDropdown" class="headnav_item_text font14 fw500 colorFFF dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>Hello&nbsp;&nbsp;</a>
             @if(Auth::guard('customer')->check())
                 <span>{{ Auth::guard('customer')->user()->name }}</span>
