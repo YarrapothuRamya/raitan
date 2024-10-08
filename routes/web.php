@@ -108,7 +108,8 @@ Route::group(['middleware' => ['auth']], function () {
    Route::get('/raitan_admin/Business-contact-update', [App\Http\Controllers\BusinesscontactController::class, 'edit'])->name('Business_contact.edit');
    Route::post('/raitan_admin/Business-contact-update', [App\Http\Controllers\BusinesscontactController::class, 'update'])->name('Business_contact.update');
 
-
+   Route::get('/raitan_admin/service-seeker', [App\Http\Controllers\ServiceseekerController::class, 'index'])->name('service-seeker');
+   
 });
 
 Route::get('verify-email/{pass_code}/{id}', [App\Http\Controllers\Auth\RegisterController::class, 'verifyEmail'])->name('verify.email');

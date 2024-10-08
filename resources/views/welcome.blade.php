@@ -50,22 +50,23 @@
 
             </ul>
             <div class="slide_pagination_bullets" aria-label="slider">
-                <span class="slide_pagination_bullet "
+              <span class="slide_pagination_bullet "
                 role="banner" aria-label="Banner_ipl"></span>
-                <span class="slide_pagination_bullet " role="banner"
+              <span class="slide_pagination_bullet " role="banner"
                 aria-label="Banner_Ramdan"></span>
-                <span class="slide_pagination_bullet " role="banner"
+              <span class="slide_pagination_bullet " role="banner"
                 aria-label="Hotels"></span>
-                <span class="slide_pagination_bullet " role="banner"
+              <span class="slide_pagination_bullet " role="banner"
                 aria-label="Packers Movers"></span>
-                <span class="slide_pagination_bullet " role="banner"
+              <span class="slide_pagination_bullet " role="banner"
                 aria-label="Interior Designer"></span>
-                <span class="slide_pagination_bullet active" role="banner"
+              <span class="slide_pagination_bullet active" role="banner"
                 aria-label="CCTV"></span>
-                <!--<span class="slide_pagination_bullet " role="banner"
+              <!--<span class="slide_pagination_bullet " role="banner"
                 aria-label="Bills"></span>
                 <span class="slide_pagination_bullet " role="banner"
-                aria-label="Flight"></span>--></div>
+                aria-label="Flight"></span>-->
+            </div>
             <div class="slide_control control"><button class="swiper-button swiper-button-prev" id="previous"
                 aria-label="swiperprevious"></button><button class="swiper-button swiper-button-next" id="next"
                 aria-label="swipernext"></button>
@@ -147,33 +148,33 @@
 
       <div class="home_rowbox home_row_2 home_hotkeybox mb-50" data-tracker-id="hotkey">
         @foreach($services as $service)
-      <a href="<?php  echo env('APP_URL') . '/' . $service->route; ?>"
-      class="home_hotkeybox_li imageZoom text_center " title="{{ $service->service_name }}">
-      <div class="home_hotkeyimg mb-10" style="background-image:url();"><span
-        style="box-sizing:border-box;display:inline-block;overflow:hidden;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;position:relative;max-width:100%"><span
-          style="box-sizing:border-box;display:block;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;max-width:100%"><img
-          style="display:block;max-width:100%;width:200px;height:auto;background:none;opacity:1;border:0;margin:0;padding:0"
-          alt="" aria-hidden="true"
-          src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%2745%27%20height=%2745%27/%3e"></span><img
-          alt="{{ $service->service_name }}" title="{{ $service->service_name }}"
-          src="{{ asset('service_images') . '/' . $service->image }}?w=96&amp;q=75" decoding="async"
-          data-nimg="intrinsic"
-          style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 200px; height: auto;"
-          srcset="{{ asset('service_images') . '/' . $service->image }}?w=48&amp;q=75 1x, {{ asset('service_images') . '/' . $service->image }}?w=96&amp;q=75 2x"><noscript><img
-          alt="Implements and Machines" title="Implements and Machines"
-          srcSet="{{ asset('service_images') . '/' . $service->image }}?w=48&amp;q=75 1x, {{ asset('service_images') . '/' . $service->image }}?w=96&amp;q=75 2x"
-          src="{{ asset('service_images') . '/' . $service->image }}?w=96&amp;q=75" decoding="async"
-          data-nimg="intrinsic"
-          style="position:absolute;top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width: 200px; height: auto;"
-          loading="lazy" /></noscript></span></div>
-      <div class="font14 color111 fw400">{{ $service->service_name }}</div>
-      </a>
-    @endforeach
+        <a href="<?php echo env('APP_URL') . '/' . $service->route; ?>"
+          class="home_hotkeybox_li imageZoom text_center " title="{{ $service->service_name }}">
+          <div class="home_hotkeyimg mb-10" style="background-image:url();"><span
+              style="box-sizing:border-box;display:inline-block;overflow:hidden;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;position:relative;max-width:100%"><span
+                style="box-sizing:border-box;display:block;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;max-width:100%"><img
+                  style="display:block;max-width:100%;width:200px;height:auto;background:none;opacity:1;border:0;margin:0;padding:0"
+                  alt="" aria-hidden="true"
+                  src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%2745%27%20height=%2745%27/%3e"></span><img
+                alt="{{ $service->service_name }}" title="{{ $service->service_name }}"
+                src="{{ asset('service_images') . '/' . $service->image }}?w=96&amp;q=75" decoding="async"
+                data-nimg="intrinsic"
+                style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 200px; height: auto;"
+                srcset="{{ asset('service_images') . '/' . $service->image }}?w=48&amp;q=75 1x, {{ asset('service_images') . '/' . $service->image }}?w=96&amp;q=75 2x"><noscript><img
+                  alt="Implements and Machines" title="Implements and Machines"
+                  srcSet="{{ asset('service_images') . '/' . $service->image }}?w=48&amp;q=75 1x, {{ asset('service_images') . '/' . $service->image }}?w=96&amp;q=75 2x"
+                  src="{{ asset('service_images') . '/' . $service->image }}?w=96&amp;q=75" decoding="async"
+                  data-nimg="intrinsic"
+                  style="position:absolute;top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width: 200px; height: auto;"
+                  loading="lazy" /></noscript></span></div>
+          <div class="font14 color111 fw400">{{ $service->service_name }}</div>
+        </a>
+        @endforeach
 
-        
+
       </div>
 
-     
+
 
       <div class="home_rowbox home_row_3 home_card_hotkey mb-50" data-tracker-id="cat">
         <div class="cardhotkey__wrap p-30 pt-15 pb-15 pointer"><a href="#" class="cat_Wedding Requisites"
@@ -219,7 +220,8 @@
                       style="position:absolute;top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width:0;height:0;min-width:100%;max-width:100%;min-height:100%;max-height:100%"
                       loading="lazy" /></noscript></span></div>
               <figcaption class="color111 font14 pt-10">Boom-Sprayer<!-- -- </figcaption>
-            </a>--></div>
+            </a>-->
+          </div>
         </div>
         <div class="cardhotkey__wrap p-30 pt-15 pb-15 pointer"><a href="" class="cat_Beauty &amp; Spa"
             title="Man Power Services">
@@ -280,8 +282,9 @@
                       src="images/man_power/sack_picker.jpg?w=640&amp;q=75" decoding="async" data-nimg="intrinsic"
                       style="position:absolute;top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width:0;height:0;min-width:100%;max-width:100%;min-height:100%;max-height:100%"
                       loading="lazy" /></noscript></span></div>
-              <figcaption class="color111 font14 pt-10">Sack Picker<!-- -- </figcaption>
-            </a>--></div>
+              <figcaption class="color111 font14 pt-10">Sack Picker </figcaption>
+            </a>-->
+          </div>
         </div>
         <div class="cardhotkey__wrap p-30 pt-15 pb-15 pointer"><a href="#" class="cat_Repairs &amp; Services"
             title="Repairs &amp; Services in Hyderabad">
@@ -348,7 +351,8 @@
                       style="position:absolute;top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width:0;height:0;min-width:100%;max-width:100%;min-height:100%;max-height:100%"
                       loading="lazy" /></noscript></span></div>
               <figcaption class="color111 font14 pt-10">Solar pump set mechanic <!-- -- </figcaption>
-            </a>--></div>
+            </a>-->
+          </div>
         </div>
         <div class="cardhotkey__wrap p-30 pt-15 pb-15 pointer"><a href="#" class="cat_Daily Needs" title="Sprayers">
             <h2 class="cardhotkey__title fw500 font18 color111">Sprayers</h2>
@@ -407,8 +411,9 @@
                       src="images/man_power/fuel_sprayer.jpg?w=640&amp;q=75" decoding="async" data-nimg="intrinsic"
                       style="position:absolute;top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width:0;height:0;min-width:100%;max-width:100%;min-height:100%;max-height:100%"
                       loading="lazy" /></noscript></span></div>
-              <figcaption class="color111 font14 pt-10">Fuel Sparyer<!-- -- </figcaption>
-            </a>--></div>
+              <figcaption class="color111 font14 pt-10">Fuel Sparyer </figcaption>
+            </a>-->
+          </div>
         </div>
       </div>
 
@@ -722,7 +727,7 @@
   </div>
 </section>
 <script>
-  window.addEventListener('scroll', function () {
+  window.addEventListener('scroll', function() {
     var header = document.querySelector('.jdheader');
 
 
@@ -734,49 +739,47 @@
       header.classList.remove('header_fixed');
     }
   });
-
 </script>
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-  const slides = document.querySelectorAll('.slide');
-  const bullets = document.querySelectorAll('.slide_pagination_bullet');
-  let currentIndex = 0;
+    const slides = document.querySelectorAll('.slide');
+    const bullets = document.querySelectorAll('.slide_pagination_bullet');
+    let currentIndex = 0;
 
-  const goToSlide = (index) => {
-    slides[currentIndex].classList.remove('active-slide');
-    bullets[currentIndex].classList.remove('active');
-    slides[index].classList.add('active-slide');
-    bullets[index].classList.add('active');
-    currentIndex = index;
-  };
+    const goToSlide = (index) => {
+      slides[currentIndex].classList.remove('active-slide');
+      bullets[currentIndex].classList.remove('active');
+      slides[index].classList.add('active-slide');
+      bullets[index].classList.add('active');
+      currentIndex = index;
+    };
 
-  const nextSlide = () => {
-    let nextIndex = currentIndex + 1;
-    if (nextIndex >= slides.length) {
-      nextIndex = 0;
-    }
-    goToSlide(nextIndex);
-  };
+    const nextSlide = () => {
+      let nextIndex = currentIndex + 1;
+      if (nextIndex >= slides.length) {
+        nextIndex = 0;
+      }
+      goToSlide(nextIndex);
+    };
 
-  const prevSlide = () => {
-    let prevIndex = currentIndex - 1;
-    if (prevIndex < 0) {
-      prevIndex = slides.length - 1;
-    }
-    goToSlide(prevIndex);
-  };
+    const prevSlide = () => {
+      let prevIndex = currentIndex - 1;
+      if (prevIndex < 0) {
+        prevIndex = slides.length - 1;
+      }
+      goToSlide(prevIndex);
+    };
 
-  document.getElementById('next').addEventListener('click', nextSlide);
-  document.getElementById('previous').addEventListener('click', prevSlide);
+    document.getElementById('next').addEventListener('click', nextSlide);
+    document.getElementById('previous').addEventListener('click', prevSlide);
 
-  bullets.forEach((bullet, index) => {
-    bullet.addEventListener('click', () => {
-      goToSlide(index);
+    bullets.forEach((bullet, index) => {
+      bullet.addEventListener('click', () => {
+        goToSlide(index);
+      });
     });
+
+    setInterval(nextSlide, 3000); // Change slide every 3 seconds
   });
-
-  setInterval(nextSlide, 3000); // Change slide every 3 seconds
-});
-
 </script>
 @endsection

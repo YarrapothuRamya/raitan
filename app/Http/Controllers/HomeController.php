@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Auth;
+use App\Models\Business_contact;
+use App\Models\Customer;
+use App\Models\Services;
 
 class HomeController extends Controller
 {
@@ -29,9 +32,13 @@ class HomeController extends Controller
 
     public function masterHome()
     {
+         $business_contact = Business_contact::count();
+        $customer =  Customer::count();
+        $services = Services::count();
+       
         $role = \Auth::user()->role;
         if($role == 1){
-            return view('master.home');
+            return view('master.home', compact('business_contact', 'customer', 'services'));
         }else{
             return redirect()->back()->with('error','You have no access to this page'); 
         }

@@ -9,7 +9,7 @@
     <div class="w-full overflow-hidden rounded-lg shadow-md">
         <div class="flex flex-wrap items-center px-4 py-2 bg-gray-50 dark:bg-gray-800">
             <div class="relative w-full max-w-full flex-grow flex-1">
-                <h3 class="font-semibold text-base text-gray-900 dark:text-gray-50">Service Providers</h3>
+                <h3 class="font-semibold text-base text-gray-900 dark:text-gray-50">Service Seekers</h3>
             </div>
             <div class="relative w-full max-w-full flex-grow flex-1 text-right">
                 <a href="#" class="action-btn py-1.5 font-light text-sm px-4 inline-block mt-2 rounded-lg text-center shadow-md bg-blue-500 text-white  transition duration-200 repairsandservicesadd" type="button" data-toggle="modal" data-target="#repairsandservicesModal">Add Service Providers</a>
@@ -44,7 +44,7 @@
                 @endif
             </div>
             <div class="px-1 py-1 mb-2 float-right">
-            <input type="text" id="searchInput" onkeyup="filterTable()" placeholder="Search..." class="px-4 py-2   bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-md">
+            <input type="text" id="searchInput" onkeyup="filterTable()" placeholder="Search .." class="px-4 py-2   bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-md">
         </div>
             <table class="w-full divide-y divide-gray-200" id="repair_service">
                 <thead>
@@ -59,28 +59,20 @@
                 </thead>
                 <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800">
                     <?php $i = 0; ?>
-                    @foreach($customer as $customers)
+                    @foreach($users as $userss)
                         <tr class="text-sm bg-white dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-900 text-gray-700 dark:text-gray-400 transition duration-200">
-                            <td class="px-4 py-3">{{ $customers->id }}</td>
-                            <td class="px-4 py-3">{{ $customers->name }}</td>
+                            <td class="px-4 py-3">{{ $userss->id }}</td>
+                            <td class="px-4 py-3">{{ $userss->name }}</td>
                             
-                            <td class="px-4 py-3">{{ $customers->email }}</td>
-                            <td class="px-4 py-3">{{ $customers->mobile }}</td>
+                            <td class="px-4 py-3">{{ $userss->email }}</td>
+                            <td class="px-4 py-3">{{ $userss->mobile }}</td>
                             <!-- <td class="px-4 py-3">
-                                @if($customers->status == 1)
+                                @if($userss->status == 1)
                                     Active
-                                @elseif($customers->status == 0)
+                                @elseif($userss->status == 0)
                                     Inactive
                                 @endif
                             </td> -->
-                            <?php
-                            $id = $customers->id;
-                            ?>
-                                <td class="px-4 py-3">
-        <a href="{{ route('service_providers.view', $id) }}">
-            <i class="fa fa-eye"></i>
-        </a>
-    </td>
 </tr>
                     @endforeach
                 </tbody>
