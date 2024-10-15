@@ -44,3 +44,12 @@
     transform: scale(1.05);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
+.h-full .session {
+    color: green;
+    background: #f5f3f3;
+    padding: 10px;
+    border-left: 2px solid red;
+}
+.alert-danger {
+    color:red;
+}

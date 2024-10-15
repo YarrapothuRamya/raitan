@@ -113,6 +113,11 @@
                      </svg>
                  </a>
                  <ul id="dropdown-example" class="hidden py-2 space-y-2">
+                 
+                 <li>
+                         <a href="{{ route('master.service') }}"
+                             class="flex items-center w-full p-2 text-base font-normal text-white-600 hover:text-white-800  pl-11 text-sm">Services</a>
+                     </li>
                      <li>
                          <a href="{{ url('/raitan_admin/machines') }}"
                              class="flex items-center w-full p-2 text-base font-normal text-white-600 hover:text-white-800  pl-11 text-sm">Machines</a>
@@ -131,9 +136,10 @@
                              class="flex items-center w-full p-2 text-base font-normal text-white-600 hover:text-white-800  pl-11 text-sm">Sprayers</a>
                      </li>
                      <li>
-                         <a href="{{ url('/raitan_admin/implements') }}"
-                             class="flex items-center w-full p-2 text-base font-normal text-white-600 hover:text-white-800  pl-11 text-sm">Implements</a>
+                         <a href="{{ url('/raitan_admin/implementors') }}"
+                             class="flex items-center w-full p-2 text-base font-normal text-white-600 hover:text-white-800  pl-11 text-sm">Implementors</a>
                      </li>
+                     
                  </ul>
              </li>
              <li>
@@ -147,9 +153,9 @@
                      </svg>
                  </a>
                  <ul id="manage-services-dropdown" class="hidden py-2 space-y-2">
-                     <li>
-                         <a href="{{ url('/raitan_admin/implementors') }}"
-                             class="flex items-center w-full p-2 text-base font-normal text-white-600 hover:text-white-800  pl-11 text-sm">Implementors</a>
+                 <li>
+                         <a href="{{ url('/raitan_admin/implements') }}"
+                             class="flex items-center w-full p-2 text-base font-normal text-white-600 hover:text-white-800  pl-11 text-sm">Implements</a>
                      </li>
                  </ul>
              </li>

@@ -9,16 +9,16 @@
     <div class="w-full overflow-hidden rounded-lg shadow-md">
         <div class="flex flex-wrap items-center px-4 py-2 bg-gray-50 dark:bg-gray-800">
             <div class="relative w-full max-w-full flex-grow flex-1">
-                <h3 class="font-semibold text-base text-gray-900 dark:text-gray-50">Service Seekers</h3>
+                <h3 class="font-semibold text-base text-gray-900 dark:text-gray-50">Service Details</h3>
             </div>
             <div class="relative w-full max-w-full flex-grow flex-1 text-right">
-                <!-- <a href="#" class="action-btn py-1.5 font-light text-sm px-4 inline-block mt-2 rounded-lg text-center shadow-md bg-blue-500 text-white  transition duration-200 repairsandservicesadd" type="button" data-toggle="modal" data-target="#repairsandservicesModal">Add Service Providers</a> -->
+                <!-- <a href="{{ route('master.service.add') }}" class="action-btn py-1.5 font-light text-sm px-4 inline-block mt-2 rounded-lg text-center shadow-md bg-blue-500 text-white  transition duration-200 repairsandservicesadd" type="button" data-toggle="modal" data-target="#repairsandservicesModal">Add Service</a> -->
             </div>
         </div>
         <div class="w-full overflow-x-auto">
-            <div class="px-4 py-3">
+            <div class="px-4 py-3 ">
                 @if (session('status'))
-                    <div class="alert alert-success" role="alert">
+                    <div class="alert alert-success session" role="alert">
                         {{ session('status') }}
                     </div>
                 @endif
@@ -44,35 +44,43 @@
                 @endif
             </div>
             <div class="px-1 py-1 mb-2 float-right">
-            <input type="text" id="searchInput" onkeyup="filterTable()" placeholder="Search .." class="px-4 py-2   bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-md">
+            <input type="text" id="searchInput" onkeyup="filterTable()" placeholder="Search..." class="px-4 py-2   bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-md">
         </div>
             <table class="w-full divide-y divide-gray-200" id="repair_service">
                 <thead>
                     <tr class="text-sm font-semibold tracking-wide text-left text-white uppercase border-b dark:border-gray-700 bg-custom-green-light dark:text-gray-400 dark:bg-gray-800">
                         <th class="px-4 py-3">S No</th>
-                        <th class="px-4 py-3">Name</th>
-                        <th class="px-4 py-3">Email</th>
-                        <th class="px-4 py-3">Mobile</th>
+                        <th class="px-4 py-3">Service Name</th>
+                        <th class="px-4 py-3">Image</th>
+                        <!-- <th class="px-4 py-3">Mobile</th> -->
                         <!-- <th class="px-4 py-3">Status</th> -->
                         <th class="px-4 py-3">Action</th>
                     </tr>
                 </thead>
                 <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800">
                     <?php $i = 0; ?>
-                    @foreach($users as $userss)
+                    @foreach($services as $servicess)
                         <tr class="text-sm bg-white dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-900 text-gray-700 dark:text-gray-400 transition duration-200">
-                            <td class="px-4 py-3">{{ $userss->id }}</td>
-                            <td class="px-4 py-3">{{ $userss->name }}</td>
+                            <td class="px-4 py-3">{{ $servicess->id }}</td>
+                            <td class="px-4 py-3">{{ $servicess->service_name }}</td>
                             
-                            <td class="px-4 py-3">{{ $userss->email }}</td>
-                            <td class="px-4 py-3">{{ $userss->mobile }}</td>
+                            <td class="px-4 py-3"><img src="/service_images/{{ $servicess->image }}" alt="" width="100px"></td>
+                            <!-- <td class="px-4 py-3">{{ $servicess->mobile }}</td> -->
                             <!-- <td class="px-4 py-3">
-                                @if($userss->status == 1)
+                                @if($servicess->status == 1)
                                     Active
-                                @elseif($userss->status == 0)
+                                @elseif($servicess->status == 0)
                                     Inactive
                                 @endif
                             </td> -->
+                            <?php
+                            $id = $servicess->id;
+                            ?>
+                                <td class="px-4 py-3">
+                                    <a href="{{ route('master.service.edit', $id) }}">
+                                    <i class="fas fa-edit"></i>
+                                    </a>
+                                </td>
 </tr>
                     @endforeach
                 </tbody>

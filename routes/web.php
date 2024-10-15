@@ -99,7 +99,7 @@ Route::group(['middleware' => ['auth']], function () {
    Route::get('/raitan_admin/service-providers', [App\Http\Controllers\ServiceproviderController::class, 'index'])->name('service_providers');
    Route::post('/raitan_admin/service-providers-add', [App\Http\Controllers\ServiceproviderController::class, 'add'])->name('service_providers.add');
    Route::get('raitan_admin/service-providers/view/{id}', [App\Http\Controllers\ServiceproviderController::class, 'view'])->name('service_providers.view');
-   Route::get('/raitan_admin/service-providers-update', [App\Http\Controllers\ServiceproviderController::class, 'edit'])->name('service_providers.edit');
+   Route::get('/raitan_admin/service-providers/edit', [App\Http\Controllers\ServiceproviderController::class, 'edit'])->name('service_providers.edit');
    Route::post('/raitan_admin/service-providers-update', [App\Http\Controllers\ServiceproviderController::class, 'update'])->name('service_providers.update');
 
    Route::get('/raitan_admin/Business-contact', [App\Http\Controllers\BusinesscontactController::class, 'index'])->name('Business_contact');
@@ -109,7 +109,13 @@ Route::group(['middleware' => ['auth']], function () {
    Route::post('/raitan_admin/Business-contact-update', [App\Http\Controllers\BusinesscontactController::class, 'update'])->name('Business_contact.update');
 
    Route::get('/raitan_admin/service-seeker', [App\Http\Controllers\ServiceseekerController::class, 'index'])->name('service-seeker');
-   
+  
+   Route::get('/raitan_admin/service', [App\Http\Controllers\ServiceController::class, 'index'])->name('master.service');
+   Route::get('/raitan_admin/service/add', [App\Http\Controllers\ServiceController::class, 'Add'])->name('master.service.add');
+   Route::post('/raitan_admin/service/store', [App\Http\Controllers\ServiceController::class, 'store'])->name('master.service.store');
+   Route::get('/raitan_admin/service/edit/{id}', [App\Http\Controllers\ServiceController::class, 'edit'])->name('master.service.edit');
+   Route::post('/raitan_admin/service/update/{id}', [App\Http\Controllers\ServiceController::class, 'update'])->name('master.service.update');
+
 });
 
 Route::get('verify-email/{pass_code}/{id}', [App\Http\Controllers\Auth\RegisterController::class, 'verifyEmail'])->name('verify.email');

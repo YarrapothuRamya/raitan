@@ -59,7 +59,7 @@
                     </div>
                     <div class="col-sm-3 card" style="background:#9aafaf;">
                         <i class='fa fa-user-circle-o icon'></i>
-                        <a href="#" class="card-link">
+                        <a href="{{route('service-seeker')}}" class="card-link">
                             <div class="business">
                                 {{$customer}}
                             </div>
@@ -70,7 +70,7 @@
                     </div>
                     <div class="col-sm-3 card" style="background:#7272b1;">
                         <i class='fa fa-cogs icon'></i>
-                        <a href="#" class="card-link">
+                        <a href="{{route('master.service')}}" class="card-link">
                             <div class="business">
                                 {{$services}}
                             </div>
@@ -86,7 +86,7 @@
                                 {{$services}}
                             </div>
                             <div class="text">
-                                Services
+                                Earth Movers
                             </div>
                         </a>
                     </div>
