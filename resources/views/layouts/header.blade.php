@@ -258,7 +258,7 @@
           <div class="my-2">
             <div class="relative mb-2">
               <input  name="lmobile" id="lmobile"
-                class="common-input input-focus text-sm py-3 rounded-xl" placeholder="Enter Your Mobile Number*"
+                class="common-input input-focus text-sm py-3 rounded-xl"   onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))"  placeholder="Enter Your Mobile Number*"
                  value="" style="padding-left: 46.8px;">
 
               <!-- <div class="absolute left-0 top-0 bottom-0 bg-gray-50 text-black smooth-animate rounded-lg rounded-r-none p-2 flex items-center border border-r-0 justify-center"

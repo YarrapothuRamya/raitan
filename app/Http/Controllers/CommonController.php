@@ -643,9 +643,14 @@ class CommonController extends Controller
         return view('business.addcontact');
     }
 
-    public function businessProfile()
+    public function businessProfile(Request $request)
     {
-        return view('business.businessProfile');
+         $user_id = $request->input('user_id');
+         $business_name = $request->input('business_name');
+          $business_id = $request->input('business_id');
+          $category = $request->input('category');
+        // exit;   
+        return view('business.businessProfile', compact('user_id', 'business_name', 'business_id','category'));
     }
 
     public function mybusiness()

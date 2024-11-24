@@ -46,6 +46,21 @@
                                 class="quickLinks_quicklink_image__8Yn1D"></div>
                         <div class="quickLinks_leads__section__text__GN0a_">Edit Profile</div>
                     </div>
+                    <form action="{{ route('kycverify') }}" method="POST" style="display: inline;">
+    @csrf
+    <input type="hidden" name="user_id" value="{{ $user_id }}"> <!-- Pass the actual user_id here -->
+    <input type="hidden" name="business_name" value="{{ $business_name }}">
+    <input type="hidden" name="business_id" value="{{ $business_id  }}">
+    <input type="hidden" name="category" value="{{ $category }}"> <!-- Pass the user_id dynamically -->
+
+    <!-- Link that triggers the form submission -->
+    <a class="quickLinks_leads__section__inner__P3_dE" tabindex="0" href="javascript:void(0)" onclick="this.closest('form').submit()">
+        <div class="quickLinks_leads__section__count__oUx_V undefined" style="background-color: rgb(231, 217, 255);">
+            <img src="{{ asset('images/kyc.webp') }}" class="quickLinks_quicklink_image__8Yn1D kyc">
+        </div>
+        <div class="quickLinks_leads__section__text__GN0a_">KYC</div>
+    </a>
+</form>
                     <a class="quickLinks_leads__section__inner__P3_dE" tabindex="0"  href="{{ route('advertiseplans.home') }}">
                         <div class="quickLinks_leads__section__count__oUx_V undefined "
                             style="background-color: rgb(231, 217, 255);"><img

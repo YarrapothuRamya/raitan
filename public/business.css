@@ -17812,9 +17812,13 @@ button.swiper-pagination-bullet {
 }
 
 @media(min-width: 1024px) {
+    .kyc {
+        width:40px !important;
+    }
     .quickLinks_quicklink_image__8Yn1D {
         width:30px
     }
+    
 }
 
 .videoTutorials_font0__V0d1O {

@@ -102,6 +102,11 @@ Route::group(['middleware' => ['auth']], function () {
    Route::get('/raitan_admin/service-providers/edit', [App\Http\Controllers\ServiceproviderController::class, 'edit'])->name('service_providers.edit');
    Route::post('/raitan_admin/service-providers-update', [App\Http\Controllers\ServiceproviderController::class, 'update'])->name('service_providers.update');
 
+
+   Route::get('/raitan_admin/change-password', [App\Http\Controllers\ChangepasswordController::class, 'edit'])->name('master.password');
+   Route::post('/raitan_admin/change-password-update', [App\Http\Controllers\ChangepasswordController::class, 'update'])->name('master.password.update');
+
+
    Route::get('/raitan_admin/Business-contact', [App\Http\Controllers\BusinesscontactController::class, 'index'])->name('Business_contact');
    Route::post('/raitan_admin/Business-contact-add', [App\Http\Controllers\BusinesscontactController::class, 'add'])->name('Business_contact.add');
    Route::get('raitan_admin/Business-contact/view/{id}', [App\Http\Controllers\BusinesscontactController::class, 'view'])->name('Business_contact.view');
@@ -152,7 +157,7 @@ Route::get('business-timings/{business_id}', [App\Http\Controllers\CommonControl
 Route::post('business-timings/add', [App\Http\Controllers\BusinessController::class, 'Timings'])->name('timings.add');
 Route::get('business-category/{business_id}', [App\Http\Controllers\CommonController::class, 'businessCategory'])->name('category.home');
 Route::post('business-category/add', [App\Http\Controllers\BusinessController::class, 'businessCategoryadd'])->name('category.add');
-Route::get('business-profile', [App\Http\Controllers\CommonController::class, 'businessProfile'])->name('businessProfile.home');
+Route::post('business-profile', [App\Http\Controllers\CommonController::class, 'businessProfile'])->name('businessProfile.home');
 Route::get('mybusiness', [App\Http\Controllers\CommonController::class, 'mybusiness'])->name('mybusiness.home');
 Route::get('advertiseplans', [App\Http\Controllers\CommonController::class, 'advertiseplans'])->name('advertiseplans.home');
 Route::get('choose-payment', [App\Http\Controllers\CommonController::class, 'choosepayment'])->name('choosepayment.home');
@@ -160,7 +165,9 @@ Route::get('addphoto', [App\Http\Controllers\CommonController::class, 'addphoto'
 Route::get('additionalcontact', [App\Http\Controllers\CommonController::class, 'additionalcontact'])->name('additionalcontact.home');
 Route::get('edit-timings', [App\Http\Controllers\CommonController::class, 'edittimings'])->name('edittimings.home');
 Route::get('add-socila-links', [App\Http\Controllers\CommonController::class, 'addSocialLinks'])->name('addsociallinks.home');
-Route::post('/check-mobile-exists', [BusinessController::class, 'checkMobileExists'])->name('check.mobile.exists');
+Route::post('/check-mobile-exists', [App\Http\Controllers\BusinessController::class, 'checkMobileExists'])->name('check.mobile.exists');
+Route::post('/kycverify', [App\Http\Controllers\KycController::class, 'kycverify'])->name('kycverify');
+Route::post('/kycback', [App\Http\Controllers\KYCController::class, 'store'])->name('kycback');
 
 
 Route::get('/user_dashboard', [App\Http\Controllers\CommonController::class, 'user_dashboard'])->name('user_dashboard');

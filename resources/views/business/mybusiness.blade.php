@@ -30,6 +30,7 @@
                 <div class="flex-1">
                     <a href="#">
                         <div class="text-2xl font-bold text-gray-900 mb-2">{{$busines->business_name}}</div>
+                        <!-- <div class="text-base text-gray-700 mb-4">{{$busines->landmark}}</div> -->
                         <div class="text-base text-gray-700 mb-4">{{$busines->landmark}}</div>
                     </a>
                     <div class="flex flex-wrap space-x-4">
@@ -61,12 +62,29 @@
                 <div class="flex-1">
                     <a href="#">
                         <div class="text-2xl font-bold text-gray-900 mb-2">{{$busines->business_name}}</div>
+                        <div class="text-base text-gray-700 mb-4"><b>{{$busines->category}}</b></div>
                         <div class="text-base text-gray-700 mb-4">{{$busines->landmark}}</div>
                     </a>
                     <div class="flex flex-wrap space-x-4">
                         <a class="bg-main-green-600 text-white font-medium py-2 px-4 rounded hover:bg-main-green-700" href="{{ route('advertiseplans.home') }}">Advertise Now</a>
-                        <a class="border border-main-green text-main-green-600 font-medium py-2 px-4 rounded hover:bg-blue-100" href="{{ route('businessProfile.home') }}">Edit Business Profile</a>
-                        
+                        <form action="{{ route('businessProfile.home') }}" method="POST">
+    @csrf
+
+    <!-- Hidden input for user_id -->
+    <input type="hidden" name="user_id" value="{{ $busines->user_id }}"> <!-- Pass the actual user_id here -->
+    <input type="hidden" name="business_name" value="{{ $busines->business_name }}">
+    <input type="hidden" name="business_id" value="{{ $busines->id  }}">
+    <input type="hidden" name="category" value="{{ $busines->category }}">
+    <!-- Submit button -->
+    <button type="submit" class="border border-main-green text-main-green-600 font-medium py-2 px-4 rounded hover:bg-blue-100">
+        Edit Business Profile
+    </button>
+</form>
+
+    <!-- <a class="border border-main-green text-main-green-600 font-medium py-2 px-4 rounded hover:bg-blue-100"
+       href="{{ route('businessProfile.home') }}">
+        Edit Business Profile
+    </a> -->
                     </div>
                 </div>
                 <div class="mt-6 md:mt-0 ml-auto text-center">

@@ -3,8 +3,8 @@
      <div
          class="flex items-center justify-start md:justify-center pl-3 w-14 md:w-64 h-14 bg-custom-green-main dark:bg-gray-800 border-none">
          <img class="w-7 h-7 md:w-10 md:h-10 mr-2 rounded-md overflow-hidden"
-             src="https://therminic2018.eu/wp-content/uploads/2018/07/dummy-avatar.jpg" />
-         <span class="hidden md:block">ADMIN</span>
+             src="{{url('/images/raitanlogo.png')}}" />
+         <span class="hidden md:block">{{ Auth::guard('web')->user()->name}}</span>
 
      </div>
      <div class="flex justify-between items-center h-14 bg-custom-green-main dark:bg-gray-800 header-right">
@@ -68,7 +68,20 @@
          <ul class="flex flex-col py-4 space-y-1">
              <li class="px-5 hidden md:block">
                  <div class="flex flex-row items-center h-8">
-                     <div class="text-sm font-light tracking-wide text-gray-400 uppercase">Main</div>
+                    <?php
+                    use Illuminate\Support\Facades\Auth;
+                    if(Auth::guard('web')->check()){
+                        $role = Illuminate\Support\Facades\Auth::guard('web')->user()->role;
+                        $roles =  App\Models\Roles::where('id', $role)->get();
+                        ?>
+                    @foreach($roles as $role)
+                     <div class="text-sm font-light tracking-wide text-gray-400 uppercase">{{$role->name}}</div>
+                     @endforeach
+                     <?php
+                    }
+                    ?>
+                    
+
                  </div>
              </li>
              <li>
@@ -180,6 +193,14 @@
                          <a href="{{ url('/raitan_admin/Business-contact') }}" class="flex items-center w-full p-2 text-base font-normal text-white-600 hover:text-white-800 pl-11 text-sm">Business Contact</a>
                      </li>
                  </ul>
+             </li>
+             <li>
+                 <a href="{{ route('master.password') }}" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-custom-green-main dark:hover:bg-gray-600 text-white-600 hover:text-white-800 border-l-4 border-transparent hover:border-blue-500 dark:hover:border-gray-800 pr-6">
+                     <span class="inline-flex justify-center items-center ml-4">
+                     <i class="fa fa-key" aria-hidden="true"></i>
+                     </span>
+                     <span class="ml-2 text-sm tracking-wide truncate">Change Password</span>
+                 </a>
              </li>
          </ul>
          <!-- <p class="mb-14 px-5 py-3 hidden md:block text-center text-xs">Copyright @2021</p> -->
