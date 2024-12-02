@@ -8,7 +8,7 @@
                 <div class="card-header">Master Home</div>
 
                 <div class="card-body">
-                  Welcome to master dashboard
+                  Welcome to Master dashboard
                 </div>
             </div>
         </div>
