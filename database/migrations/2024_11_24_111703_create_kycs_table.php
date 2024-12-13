@@ -13,13 +13,17 @@ return new class extends Migration
     {
         Schema::create('kycs', function (Blueprint $table) {
             $table->id();
-            $table->string('operator_name');  // Store the operator name
+            $table->string('driver_name');  // Store the operator name
             $table->string('aadhar_card');    // Store the path to the uploaded Aadhar card
             $table->string('pan_card');       // Store the path to the uploaded PAN card
-            $table->string('machine_rc');     // Store the path to the uploaded Machine RC
-            $table->string('driving_licence'); // Store the path to the uploaded Driving License
+            $table->string('vehicle_rc');  
+            $table->string('vehicle_number');     // Store the path to the uploaded Machine RC
+            $table->string('driving_licence');
+            $table->string('status'); // Store the path to the uploaded Driving License
             $table->string('business_id');
-        $table->string('user_id');
+            $table->string('business_name');
+            $table->string('business_id');
+        $table->string('category');
             $table->timestamps();            // Timestamps for created_at and updated_at
         });
     }

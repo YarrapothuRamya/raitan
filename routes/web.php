@@ -121,6 +121,19 @@ Route::group(['middleware' => ['auth']], function () {
    Route::get('/raitan_admin/service/edit/{id}', [App\Http\Controllers\ServiceController::class, 'edit'])->name('master.service.edit');
    Route::post('/raitan_admin/service/update/{id}', [App\Http\Controllers\ServiceController::class, 'update'])->name('master.service.update');
 
+   Route::get('/raitan_admin/kycstatus', [App\Http\Controllers\KycstatusController::class, 'index'])->name('master.kycstatus');
+   Route::get('/raitan_admin/kycstatus/form', [App\Http\Controllers\KycstatusController::class, 'form'])->name('master.kycstatus.form');
+   Route::post('/raitan_admin/kycstatus/store', [App\Http\Controllers\KycstatusController::class, 'store'])->name('master.kycstatus.store');
+   Route::get('/raitan_admin/kycstatus/edit/{id}', [App\Http\Controllers\KycstatusController::class, 'edit'])->name('master.kycstatus.edit');
+   Route::post('/raitan_admin/kycstatus/update/{id}', [App\Http\Controllers\KycstatusController::class, 'update'])->name('master.kycstatus.update');
+
+   Route::get('/raitan_admin/kycstatusupdate', [App\Http\Controllers\KycstatusupdateController::class, 'index'])->name('master.kycstatusupdate');
+   Route::get('/raitan_admin/kycstatusupdate/form', [App\Http\Controllers\KycstatusupdateController::class, 'form'])->name('master.kycstatusupdate.form');
+   Route::post('/raitan_admin/kycstatusupdate/store', [App\Http\Controllers\KycstatusupdateController::class, 'store'])->name('master.kycstatusupdate.store');
+   Route::get('/raitan_admin/kycstatusupdate/edit/{id}', [App\Http\Controllers\KycstatusupdateController::class, 'edit'])->name('master.kycstatusupdate.edit');
+   Route::post('/raitan_admin/kycstatusupdate/update/{id}', [App\Http\Controllers\KycstatusupdateController::class, 'update'])->name('master.kycstatusupdate.update');
+
+   
 });
 
 Route::get('verify-email/{pass_code}/{id}', [App\Http\Controllers\Auth\RegisterController::class, 'verifyEmail'])->name('verify.email');
@@ -166,10 +179,14 @@ Route::get('additionalcontact', [App\Http\Controllers\CommonController::class, '
 Route::get('edit-timings', [App\Http\Controllers\CommonController::class, 'edittimings'])->name('edittimings.home');
 Route::get('add-socila-links', [App\Http\Controllers\CommonController::class, 'addSocialLinks'])->name('addsociallinks.home');
 Route::post('/check-mobile-exists', [App\Http\Controllers\BusinessController::class, 'checkMobileExists'])->name('check.mobile.exists');
-Route::post('/kycverify', [App\Http\Controllers\KycController::class, 'kycverify'])->name('kycverify');
+Route::post ('/kycverify', [App\Http\Controllers\KycController::class, 'kycverify'])->name('kycverify');
 Route::post('/kycback', [App\Http\Controllers\KYCController::class, 'store'])->name('kycback');
+Route::post('/kycdetails', [App\Http\Controllers\KYCController::class, 'view'])->name('kycdetails');
+Route::post('/kycedit', [App\Http\Controllers\KYCController::class, 'edit'])->name('kycedit');
+Route::post('/kycupdate', [App\Http\Controllers\KYCController::class, 'update'])->name('kycupdate');
 
 
+// kycedit
 Route::get('/user_dashboard', [App\Http\Controllers\CommonController::class, 'user_dashboard'])->name('user_dashboard');
 Route::post('/add_role_request', [App\Http\Controllers\CommonController::class, 'add_role_request'])->name('add_role_request');
 Route::post('/cancel_role_request_user', [App\Http\Controllers\CommonController::class, 'cancel_role_request_user'])->name('cancel_role_request_user');

@@ -17,5 +17,9 @@ class Kycs extends Model
         'user_id',
         'business_name',
         'category',
+        'aadhar_status',
+        'pan_status',
+        'vehicle_status',
+        'driving_status',
     ];
 }

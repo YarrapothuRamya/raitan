@@ -68,19 +68,21 @@
          <ul class="flex flex-col py-4 space-y-1">
              <li class="px-5 hidden md:block">
                  <div class="flex flex-row items-center h-8">
-                    <?php
-                    use Illuminate\Support\Facades\Auth;
-                    if(Auth::guard('web')->check()){
-                        $role = Illuminate\Support\Facades\Auth::guard('web')->user()->role;
-                        $roles =  App\Models\Roles::where('id', $role)->get();
-                        ?>
-                    @foreach($roles as $role)
-                     <div class="text-sm font-light tracking-wide text-gray-400 uppercase">{{$role->name}}</div>
-                     @endforeach
                      <?php
-                    }
-                    ?>
-                    
+
+                        use Illuminate\Support\Facades\Auth;
+
+                        if (Auth::guard('web')->check()) {
+                            $role = Illuminate\Support\Facades\Auth::guard('web')->user()->role;
+                            $roles =  App\Models\Roles::where('id', $role)->get();
+                        ?>
+                         @foreach($roles as $role)
+                         <div class="text-sm font-light tracking-wide text-gray-400 uppercase">{{$role->name}}</div>
+                         @endforeach
+                     <?php
+                        }
+                        ?>
+
 
                  </div>
              </li>
@@ -94,27 +96,63 @@
              </li>
 
              <li>
-                 <a href="#" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-custom-green-main text-white-600 hover:text-white-800 border-l-4 border-transparent hover:border-blue-500 pr-6" aria-controls="user-management-dropdown" data-collapse-toggle="user-management-dropdown">
-                     <span class="inline-flex justify-center items-center ml-4">
-                         <i class="fas fa-book"></i>
-                     </span>
-                     <span class="flex-1 ml-3 text-left whitespace-nowrap text-sm" sidebar-toggle-item>Master Pages</span>
-                     <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                         <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
-                     </svg>
-                 </a>
-                 <ul id="user-management-dropdown" class="hidden py-2 space-y-2">
-                     <li>
-                         <a href="{{ url('/raitan_admin/roles-home') }}" class="flex items-center w-full p-2 text-base font-normal text-white-600 hover:text-white-800 pl-11 text-sm">Roles</a>
-                     </li>
-                     <li>
-                         <a href="{{ url('/raitan_admin/admin_register') }}" class="flex items-center w-full p-2 text-base font-normal text-white-600 hover:text-white-800 pl-11 text-sm">Registration</a>
-                     </li>
-                     <li>
-                         <a href="{{ url('/raitan_admin/approve_permissions') }}" class="flex items-center w-full p-2 text-base font-normal text-white-600 hover:text-white-800 pl-11 text-sm">Approve Permissions</a>
-                     </li>
-                 </ul>
-             </li>
+    <a href="#" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-custom-green-main text-white-600 hover:text-white-800 border-l-4 border-transparent hover:border-blue-500 pr-6" aria-controls="master-pages-dropdown" data-collapse-toggle="master-pages-dropdown">
+        <span class="inline-flex justify-center items-center ml-4">
+            <i class="fas fa-book"></i>
+        </span>
+        <span class="flex-1 ml-3 text-left whitespace-nowrap text-sm" sidebar-toggle-item>Master Pages</span>
+        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+        </svg>
+    </a>
+    <ul id="master-pages-dropdown" class="hidden py-2 space-y-2">
+        <li>
+            <a href="{{ url('/raitan_admin/roles-home') }}" class="flex items-center w-full p-2 text-base font-normal text-white-600 hover:text-white-800 pl-11 text-sm">Roles</a>
+        </li>
+        <li>
+            <!-- <a href="#" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-custom-green-main text-white-600 hover:text-white-800 border-l-4 border-transparent hover:border-blue-500 pr-6" aria-controls="kyc-status-dropdown" data-collapse-toggle="kyc-status-dropdown">
+                <span class="flex-1 ml-3 text-left whitespace-nowrap text-sm ml-10">KYC Status</span>
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                </svg>
+            </a>
+            <ul id="kyc-status-dropdown" class="hidden py-2 space-y-2">
+                <li> -->
+                    <a href="{{ url('/raitan_admin/kycstatus') }}" class="flex items-center w-full p-2 text-base font-normal text-white-600 hover:text-white-800 pl-11 text-sm">KYC Status</a>
+                <!-- </li>
+                <li>
+                    <a href="{{ url('/raitan_admin/kycstatus/form') }}" class="flex items-center w-full p-2 text-base font-normal text-white-600 hover:text-white-800 pl-11 text-sm ml-4">Add KYC Status </a>
+                </li>
+            </ul> -->
+        </li>
+        <li>
+            <!-- <a href="#" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-custom-green-main text-white-600 hover:text-white-800 border-l-4 border-transparent hover:border-blue-500 pr-6" aria-controls="user-management-dropdown" data-collapse-toggle="user-management-dropdown">
+                <span class="flex-1 ml-3 text-left whitespace-nowrap text-sm ml-10">KYC</span>
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                </svg>
+            </a>
+            <ul id="user-management-dropdown" class="hidden py-2 space-y-2">
+                <li> -->
+                    <a href="{{ url('/raitan_admin/kycstatusupdate') }}" class="flex items-center w-full p-2 text-base font-normal text-white-600 hover:text-white-800 pl-11 text-sm">KYC View</a>
+                <!-- </li>
+                <li>
+                    <a href="{{ url('/raitan_admin/kycstatusupdate/add') }}" class="flex items-center w-full p-2 text-base font-normal text-white-600 hover:text-white-800 pl-11 text-sm ml-4">KYC Status Update</a>
+                </li>
+            </ul> -->
+        </li>
+        <li>
+            <a href="{{ url('/raitan_admin/admin_register') }}" class="flex items-center w-full p-2 text-base font-normal text-white-600 hover:text-white-800 pl-11 text-sm">Registration</a>
+        </li>
+        <li>
+            <a href="{{ url('/raitan_admin/approve_permissions') }}" class="flex items-center w-full p-2 text-base font-normal text-white-600 hover:text-white-800 pl-11 text-sm">Approve Permissions</a>
+        </li>
+    </ul>
+</li>
+
+
+
+
              <li>
                  <a href="#" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-custom-green-main dark:hover:bg-gray-600 text-white-600 hover:text-white-800 border-l-4 border-transparent hover:border-blue-500 dark:hover:border-gray-800 pr-6" aria-controls="dropdown-example" data-collapse-toggle="dropdown-example">
                      <span class="inline-flex justify-center items-center ml-4">
@@ -126,8 +164,8 @@
                      </svg>
                  </a>
                  <ul id="dropdown-example" class="hidden py-2 space-y-2">
-                 
-                 <li>
+
+                     <li>
                          <a href="{{ route('master.service') }}"
                              class="flex items-center w-full p-2 text-base font-normal text-white-600 hover:text-white-800  pl-11 text-sm">Services</a>
                      </li>
@@ -152,7 +190,7 @@
                          <a href="{{ url('/raitan_admin/implementors') }}"
                              class="flex items-center w-full p-2 text-base font-normal text-white-600 hover:text-white-800  pl-11 text-sm">Implementors</a>
                      </li>
-                     
+
                  </ul>
              </li>
              <li>
@@ -166,7 +204,7 @@
                      </svg>
                  </a>
                  <ul id="manage-services-dropdown" class="hidden py-2 space-y-2">
-                 <li>
+                     <li>
                          <a href="{{ url('/raitan_admin/implements') }}"
                              class="flex items-center w-full p-2 text-base font-normal text-white-600 hover:text-white-800  pl-11 text-sm">Implements</a>
                      </li>
@@ -197,7 +235,7 @@
              <li>
                  <a href="{{ route('master.password') }}" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-custom-green-main dark:hover:bg-gray-600 text-white-600 hover:text-white-800 border-l-4 border-transparent hover:border-blue-500 dark:hover:border-gray-800 pr-6">
                      <span class="inline-flex justify-center items-center ml-4">
-                     <i class="fa fa-key" aria-hidden="true"></i>
+                         <i class="fa fa-key" aria-hidden="true"></i>
                      </span>
                      <span class="ml-2 text-sm tracking-wide truncate">Change Password</span>
                  </a>

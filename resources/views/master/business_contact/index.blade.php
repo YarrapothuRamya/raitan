@@ -65,10 +65,15 @@
                     @foreach($businesscontact as $businesscontacts)
                     <?php
                     $user = App\Models\Customer::where('id', $businesscontacts->user_id)->get();
+                    $Services = App\Models\Services::where('id', $businesscontacts->category)->get();
                     ?>
                         <tr class="text-sm bg-white dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-900 text-gray-700 dark:text-gray-400 transition duration-200">
                             <td class="px-4 py-3"><?php echo ++$i; ?></td>
-                            <td class="px-4 py-3">{{ $businesscontacts->category }}</td>
+                            <td class="px-4 py-3">
+                                @foreach($Services as $categories)
+                                {{ $categories->service_name  }}
+                                @endforeach
+                            </td>
                             <td class="px-4 py-3">{{ $businesscontacts->business_name }}</td>
                             <td class="px-4 py-3">{{ $businesscontacts->mobile }}</td>
                             <td class="px-4 py-3">{{ $businesscontacts->email }}</td>

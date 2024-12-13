@@ -26,7 +26,7 @@
                                 <span class="iconwrap styles_searchicon__xRQmH absolute top-3 left-3"></span>
                                 <select name="searchInput" id="searchInput" class="input styles_textsearch__hxEo7 border-gray-300 border-2 px-4 py-2 rounded-md focus:outline-none focus:border-main-green w-full pl-10">
                                 @foreach($services as $service)
-                                    <option value="{{ $service->service_name }}" {{ old('searchInput') == $service->service_name ? 'selected' : '' }}>
+                                    <option value="{{ $service->id }}" {{ old('searchInput') == $service->service_name ? 'selected' : '' }}>
                                         {{ $service->service_name }}
                                     </option>
                                 @endforeach
