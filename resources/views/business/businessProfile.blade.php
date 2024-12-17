@@ -52,41 +52,53 @@
                 ->where('business_id', $business_id)
                 ->first();
             ?>
-            @if(!empty($kyc->status) && !empty($kyc->aadhar_status) && !empty($kyc->pan_status) && !empty($kyc->vehicle_status) && !empty($kyc->driving_status))
-            @if($kyc->aadhar_status == '3' || $kyc->pan_status == '3' || $kyc->vehicle_status == '3' || $kyc->driving_status == '3')
+            @switch(true)
+            @case(!empty($kyc->status) && !empty($kyc->aadhar_status) && !empty($kyc->pan_status) && !empty($kyc->vehicle_status) && !empty($kyc->driving_status))
+                @if($kyc->aadhar_status == '3' || $kyc->pan_status == '3' || $kyc->vehicle_status == '3' || $kyc->driving_status == '3')
 
-            <form action="{{ route('kycdetails') }}" method="POST" style="display: inline;">
-                @csrf
-                <input type="hidden" name="user_id" value="{{ $user_id }}"> <!-- Pass the actual user_id here -->
-                <input type="hidden" name="business_name" value="{{ $business_name }}">
-                <input type="hidden" name="business_id" value="{{ $business_id }}">
-                <input type="hidden" name="category" value="{{ $category }}"> <!-- Pass the user_id dynamically -->
+                <form action="{{ route('kycdetails') }}" method="POST" style="display: inline;">
+                    @csrf
+                    <input type="hidden" name="user_id" value="{{ $user_id }}"> <!-- Pass the actual user_id here -->
+                    <input type="hidden" name="business_name" value="{{ $business_name }}">
+                    <input type="hidden" name="business_id" value="{{ $business_id }}">
+                    <input type="hidden" name="category" value="{{ $category }}"> <!-- Pass the user_id dynamically -->
 
-                <!-- Link that triggers the form submission -->
+                    <!-- Link that triggers the form submission -->
+                    <a class="quickLinks_leads__section__inner__P3_dE" tabindex="0" href="javascript:void(0)" onclick="this.closest('form').submit();" style="cursor: pointer;">
+                        <div class="quickLinks_leads__section__count__oUx_V undefined" style="background-color: rgb(231, 217, 255);">
+                            <img src="{{ asset('images/kyc.jpg') }}" class="quickLinks_quicklink_image__8Yn1D kyc" alt="KYC">
+                        </div>
+                        <div class="quickLinks_leads__section__text__GN0a_">KYC</div>
+                    </a>
+                </form>
+                @elseif($kyc->aadhar_status == '4' && $kyc->pan_status == '4' && $kyc->vehicle_status == '4' && $kyc->driving_status == '4')
+
+                <a class="quickLinks_leads__section__inner__P3_dE" tabindex="0" href="javascript:void(0)" onclick="this.closest('form').submit();" style="cursor: pointer;">
+                        <div class="quickLinks_leads__section__count__oUx_V undefined" style="background-color: rgb(231, 217, 255);">
+                            <img src="{{ asset('images/kyc.jpg') }}" class="quickLinks_quicklink_image__8Yn1D kyc" alt="KYC">
+                        </div>
+                        <div class="quickLinks_leads__section__text__GN0a_">KYC</div>
+                    </a>
+                @endif
+                @break
+            @case(!empty($kyc->status))
+                @if(empty($kyc->aadhar_status) && empty($kyc->pan_status) && empty($kyc->vehicle_status) && empty($kyc->driving_status))
                 <a class="quickLinks_leads__section__inner__P3_dE" tabindex="0" href="javascript:void(0)" onclick="this.closest('form').submit();" style="cursor: pointer;">
                     <div class="quickLinks_leads__section__count__oUx_V undefined" style="background-color: rgb(231, 217, 255);">
-                        <img src="{{ asset('images/kyc.webp') }}" class="quickLinks_quicklink_image__8Yn1D kyc" alt="KYC">
+                        <img src="{{ asset('images/kyc.jpg') }}" class="quickLinks_quicklink_image__8Yn1D kyc" alt="KYC">
                     </div>
                     <div class="quickLinks_leads__section__text__GN0a_">KYC</div>
                 </a>
-            </form>
-            @elseif($kyc->aadhar_status == '4' && $kyc->pan_status == '4' && $kyc->vehicle_status == '4' && $kyc->driving_status == '4')
-
-            <a class="quickLinks_leads__section__inner__P3_dE" tabindex="0" href="javascript:void(0)" onclick="this.closest('form').submit();" style="cursor: pointer;">
+                @elseif(empty($kyc->aadhar_status) || empty($kyc->pan_status) || empty($kyc->vehicle_status) || empty($kyc->driving_status))
+                <a class="quickLinks_leads__section__inner__P3_dE" tabindex="0" href="javascript:void(0)" onclick="this.closest('form').submit();" style="cursor: pointer;">
                     <div class="quickLinks_leads__section__count__oUx_V undefined" style="background-color: rgb(231, 217, 255);">
-                        <img src="{{ asset('images/kyc.webp') }}" class="quickLinks_quicklink_image__8Yn1D kyc" alt="KYC">
+                        <img src="{{ asset('images/kyc.jpg') }}" class="quickLinks_quicklink_image__8Yn1D kyc" alt="KYC">
                     </div>
                     <div class="quickLinks_leads__section__text__GN0a_">KYC</div>
                 </a>
-            @endif
-            @elseif(!empty($kyc->status) && empty($kyc->aadhar_status) && empty($kyc->pan_status) && empty($kyc->vehicle_status) && empty($kyc->driving_status))
-            <a class="quickLinks_leads__section__inner__P3_dE" tabindex="0" href="javascript:void(0)" onclick="this.closest('form').submit();" style="cursor: pointer;">
-                    <div class="quickLinks_leads__section__count__oUx_V undefined" style="background-color: rgb(231, 217, 255);">
-                        <img src="{{ asset('images/kyc.webp') }}" class="quickLinks_quicklink_image__8Yn1D kyc" alt="KYC">
-                    </div>
-                    <div class="quickLinks_leads__section__text__GN0a_">KYC</div>
-                </a>
-            @else
+                @endif
+                @break
+                @default
             <form action="{{ route('kycverify') }}" method="POST" style="display: inline;">
                 @csrf
                 <input type="hidden" name="user_id" value="{{ $user_id }}"> <!-- Pass the actual user_id here -->
@@ -97,12 +109,12 @@
                 <!-- Link that triggers the form submission -->
                 <a class="quickLinks_leads__section__inner__P3_dE" tabindex="0" href="javascript:void(0)" onclick="this.closest('form').submit()">
                     <div class="quickLinks_leads__section__count__oUx_V undefined" style="background-color: rgb(231, 217, 255);">
-                        <img src="{{ asset('images/kyc.webp') }}" class="quickLinks_quicklink_image__8Yn1D kyc">
+                        <img src="{{ asset('images/kyc.jpg') }}" class="quickLinks_quicklink_image__8Yn1D kyc">
                     </div>
                     <div class="quickLinks_leads__section__text__GN0a_">KYC</div>
                 </a>
             </form>
-            @endif
+            @endswitch
             <a class="quickLinks_leads__section__inner__P3_dE" tabindex="0" href="{{ route('advertiseplans.home') }}">
                 <div class="quickLinks_leads__section__count__oUx_V undefined "
                     style="background-color: rgb(231, 217, 255);"><img

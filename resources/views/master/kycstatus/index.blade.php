@@ -66,10 +66,10 @@
                             <?php
                             $id = $kycstatuss->id;
                             ?>
-                                <td class="px-4 py-3">
-                                    <a href="{{ route('master.kycstatus.edit', $id) }}">
-                                    <i class="fas fa-edit"></i>
-                                    </a>
+                                    <td class="px-4 py-3">
+                                        <a href="{{ route('master.kycstatus.edit', $id) }}">
+                                        <i class="fas fa-edit"></i>
+                                        </a>
                                 </td>
 </tr>
                     @endforeach

@@ -46,9 +46,22 @@
 
 
 
-            <form novalidate="novalidate" action="{{url('kycupdate' )}}" id="kycForm" method="POST" enctype="multipart/form-data">
+            <form novalidate="novalidate" id="kycForm" method="POST" enctype="multipart/form-data">
                 @csrf
                 <p class="addcontact_title___IxGV text-xl font-semibold text-gray-900">KYC Details</p>
+                <!-- Success Message -->
+                @if (session('success'))
+                <div id="success-message" class="alert alert-success mt-4 text-green-600 p-4 border border-green-400 rounded">
+                    {{ session('success') }}
+                </div>
+                @endif
+
+                <!-- Error Message -->
+                @if (session('error'))
+                <div id="error-message" class="alert alert-danger mt-4 text-red-600 p-4 border border-red-400 rounded">
+                    {{ session('error') }}
+                </div>
+                @endif
                 <?php
                 $category = App\Models\Services::where('id', $kycs->category)->first();
                 ?>
@@ -57,59 +70,83 @@
 
                 </div>
                 <div class="relative mb-6">
-                    <input type="text"readonly value="{{$business->business_name}}" name="business_id" class="input border-gray-300 border-2 px-4 py-2 rounded-md focus:outline-none focus:border-main-green w-full" placeholder="Aadhar " required>
+                    <input type="text" readonly value="{{$business->business_name}}" name="business_id" class="input border-gray-300 border-2 px-4 py-2 rounded-md focus:outline-none focus:border-main-green w-full" placeholder="Aadhar " required>
                 </div>
                 <div class="relative mb-6">
-                    <input type="text"readonly value="{{$category->service_name  }}" name="category" class="input border-gray-300 border-2 px-4 py-2 rounded-md focus:outline-none focus:border-main-green w-full" placeholder="Aadhar " required>
+                    <input type="text" readonly value="{{$category->service_name  }}" name="category" class="input border-gray-300 border-2 px-4 py-2 rounded-md focus:outline-none focus:border-main-green w-full" placeholder="Aadhar " required>
                 </div>
-                <button><a href="{{$kycs->aadhar_card}}"><i class="fa-solid fa-file-pdf"></i> View</a> </button>
+                @switch(true)
+                @case($kycs->aadhar_status == '3')
+                <button><a href="{{url('kyc/' .$kycs->aadhar_card)}}"><i class="fa-solid fa-file-pdf"></i> View</a> </button>
                 <div class="relative mb-6">
-                    
-                    <label class=" bg-white">Aadhar Card (front, back) <span class="" style="color:red;">*</span></label>
-
-                    <input type="file" id="aadhar" name="aadhar" class="input border-gray-300 border-2 px-4 py-2 rounded-md focus:outline-none focus:border-main-green w-full" placeholder="Aadhar " >
+                    <label class="bg-white">Aadhar Card (front, back) <span class="" style="color:red;">*</span></label>
+                    <input required type="file" id="aadhar" name="aadhar" class="input border-gray-300 border-2 px-4 py-2 rounded-md focus:outline-none focus:border-main-green w-full" placeholder="Aadhar ">
                     <div id="aadhar" class="error__message mt-2 hidden text-red-500">Please enter a mobile number</div>
-
+                    <div id="aadhar_error" class="error__message mt-2 text-red-500 hidden"></div>
+   
                 </div>
-                <button><a href="{{$kycs->pan_card}}"><i class="fa-solid fa-file-pdf"></i> View</a> </button>
+                @break
+                @endswitch
+                @switch(true)
+                @case($kycs->pan_status == '3')
+                <button><a href="{{url('kyc/' .$kycs->pan_card)}}"><i class="fa-solid fa-file-pdf"></i> View</a> </button>
                 <div class="relative mb-6">
                     <label class="bg-white">Pan Card <span class="" style="color:red;">*</span></label>
-
-                    <input type="file" id="pan" name="pan" class="input border-gray-300 border-2 px-4 py-2 rounded-md focus:outline-none focus:border-main-green w-full" placeholder=" " >
+                    <input required type="file" id="pan" name="pan" class="input border-gray-300 border-2 px-4 py-2 rounded-md focus:outline-none focus:border-main-green w-full" placeholder=" ">
                     <div id="pan" class="error__message mt-2 hidden text-red-500">Please enter a mobile number</div>
-
+                    <div id="pan_error" class="error__message mt-2 text-red-500 hidden"></div>
+   
                 </div>
-                <button><a href="{{$kycs->vehicle_status}}"><i class="fa-solid fa-file-pdf"></i> View</a> </button>
+                @break
+                @endswitch
+                @switch(true)
+                @case($kycs->vehicle_status == '3')
+                <button><a href="{{url('kyc/' .$kycs->vehicle_status)}}"><i class="fa-solid fa-file-pdf"></i> View</a> </button>
                 <div class="relative mb-6">
                     <label class=" bg-white">Vehicle RC <span class="" style="color:red;">*</span></label>
 
-                    <input type="file" id="vehicle_rc" name="vehicle_rc" class="input border-gray-300 border-2 px-4 py-2 rounded-md focus:outline-none focus:border-main-green w-full" placeholder=" " >
+                    <input required type="file" id="vehicle_rc" name="vehicle_rc" class="input border-gray-300 border-2 px-4 py-2 rounded-md focus:outline-none focus:border-main-green w-full" placeholder=" ">
                     <div id="vehicle_rc" class="error__message mt-2 hidden text-red-500">Please enter a mobile number</div>
-
+                    <div id="vehicle_rc_error" class="error__message mt-2 text-red-500 hidden"></div>
+   
                 </div>
-                <button><a href="{{$kycs->driving_licence}}"><i class="fa-solid fa-file-pdf"></i> View</a> </button>
+                <button><a href="{{url('kyc/' .$kycs->driving_licence)}}"><i class="fa-solid fa-file-pdf"></i> View</a> </button>
                 <div class="relative mb-6">
                     <label class=" bg-white">Vehicle Number <span class="" style="color:red;">*</span></label>
 
-                    <input type="text" value="{{$kycs->vehicle_number}}" id="vehicle_number" name="vehicle_number" class="input border-gray-300 border-2 px-4 py-2 rounded-md focus:outline-none focus:border-main-green w-full" placeholder=" " >
+                    <input required type="text" value="{{$kycs->vehicle_number}}" id="vehicle_number" name="vehicle_number" class="input border-gray-300 border-2 px-4 py-2 rounded-md focus:outline-none focus:border-main-green w-full" placeholder=" ">
                     <div id="vehicle_number" class="error__message mt-2 hidden text-red-500">Please enter a mobile number d</div>
-
+                    <div id="vehicle_number_error" class="error__message mt-2 text-red-500 hidden"></div>
+   
                 </div>
+                @break
+                @endswitch
+                @switch(true)
+                @case($kycs->driving_status == '3')
                 <div class="relative mb-6 mt-5">
                     <label class="">Driver Name <span class="" style="color:red;">*</span></label>
 
                     <input type="text" value="{{$kycs->driver_name}}" id="driver_name" name="driver_name" class="input border-gray-300 border-2 px-4 py-2 rounded-md focus:outline-none focus:border-main-green w-full" placeholder=" " required>
                     <div id="driver_name" class="error__message mt-2 hidden text-red-500">Please enter a mobile number</div>
-
+                    <div id="driver_name_error" class="error__message mt-2 text-red-500 hidden"></div>
+   
                 </div>
 
                 <div class="relative mb-6 mt-5">
                     <label class=" bg-white">Driving Licence (front, back)<span class="" style="color:red;">*</span></label>
 
                     <input type="file" id="licence" name="licence" class="input border-gray-300 border-2 px-4 py-2 rounded-md focus:outline-none focus:border-main-green w-full" placeholder=" " required>
+                    <div id="licence_error" class="error__message mt-2 text-red-500 hidden"></div>
+   
                     <div id="licence" class="error__message mt-2 hidden text-red-500">Please enter a mobile number</div>
-
+                    
                 </div>
+                @break
+                @default
+                @endswitch
+
+
+
                 <div id="success-message" style="display: none;" class="alert alert-success">KYC details saved successfully!</div>
                 <div id="error-message" style="display: none;" class="alert alert-danger">Error saving KYC details. Please try again.</div>
                 <div id="errorall"></div>
@@ -125,11 +162,11 @@
             </form>
         </div>
 
-        <div id="errorMessages"></div>
+        <div id="error-message" style="color:red;"></div>
 
 
 
-        @if ($errors->any())
+        <!-- @if ($errors->any())
         <div class="alert alert-danger">
             <ul>
                 @foreach ($errors->all() as $error)
@@ -137,7 +174,7 @@
                 @endforeach
             </ul>
         </div>
-        @endif
+        @endif -->
     </div>
 
 </div>
@@ -159,122 +196,60 @@
 </div>
 
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 
 <script>
-//     $(document).ready(function() {
-//     $('#kycForm').on('submit', function(e) {
-//         e.preventDefault(); // Prevent the default form submission
+    $('#kycForm').submit(function(event) {
+    event.preventDefault();
+     $('#error-message').hide();
+        $('#success-message').hide();
+        $('.error__message').hide();
+    var formData = new FormData(this); // Create FormData from the form
+    
+    $.ajax({
+        url: '{{ route('kycupdate') }}',
+        type: 'POST',
+        data: formData,
+        processData: false,   // Don't process the data
+        contentType: false,   // Don't set content type
+        success: function(response) {
+            window.location.href = "mybusiness"; 
+                // if(response.success) {
+                //     // Show success message
+                //     $('#success-message').show().text(response.success);
+                // }
+            },
+            error: function(xhr) {
+                // Show error message
+                $('#error-message').show().text('Error saving KYC details. Please try again.');
 
-//         // Clear previous error messages and success messages
-//         $('.error-message').remove();
-//         $('.success-message').remove();
+                // Handle validation errors
+                if (xhr.status === 422) {
+                    var errors = xhr.responseJSON.errors;
+                    if (errors.aadhar) {
+                        $('#aadhar_error').text(errors.aadhar[0]).show();
+                    }
+                    if (errors.pan) {
+                        $('#pan_error').text(errors.pan[0]).show();
+                    }
+                    if (errors.vehicle_rc) {
+                        $('#vehicle_rc_error').text(errors.vehicle_rc[0]).show();
+                    }
+                    if (errors.vehicle_number) {
+                        $('#vehicle_number_error').text(errors.vehicle_number[0]).show();
+                    }
+                    if (errors.driver_name) {
+                        $('#driver_name_error').text(errors.driver_name[0]).show();
+                    }
+                    if (errors.licence) {
+                        $('#licence_error').text(errors.licence[0]).show();
+                    }
+                }
+            }
+    });
+});
 
-//         var isValid = true; // Flag to track validation
-
-//         // Get form fields
-//         var user_id = $('#user_id').val();
-//         var business_id = $('#business_id').val();
-//         var category = $('#category').val();
-//         var aadhar = $('#aadhar').val();
-//         var pan = $('#pan').val();
-//         var vehicleRc = $('#vehicle_rc').val();
-//         var licence = $('#licence').val();
-//         var driver_name = $('#driver_name').val();
-//         var vehicleNumber = $('#vehicle_number').val();
-
-//         var aadharFile = $('#aadhar')[0].files[0];
-//         var panFile = $('#pan')[0].files[0];
-//         var vehicleRcFile = $('#vehicle_rc')[0].files[0];
-//         var licenceFile = $('#licence')[0].files[0];
-
-//         // File validation criteria
-//         var validFileTypes = ['image/jpeg', 'image/png', 'image/jpg', 'application/pdf'];
-//         var maxSize = 10240 * 1024; // 10MB in bytes
-
-//         // 1. Validate file types and sizes for Aadhar
-//         if (aadharFile) {
-//             if (!validFileTypes.includes(aadharFile.type) || aadharFile.size > maxSize) {
-//                 isValid = false;
-//                 if ($('#aadhar').next('.error-message').length === 0) {
-//                     $('#aadhar').after('<div class="error-message" style="color: red;">Aadhar file must be JPEG, PNG, JPG, or PDF and under 10MB.</div>');
-//                 }
-//             }
-//         }
-//         // 2. Validate file types and sizes for PAN
-//         if (panFile) {
-//             if (!validFileTypes.includes(panFile.type) || panFile.size > maxSize) {
-//                 isValid = false;
-//                 if ($('#pan').next('.error-message').length === 0) {
-//                     $('#pan').after('<div class="error-message" style="color: red;">PAN file must be JPEG, PNG, JPG, or PDF and under 10MB.</div>');
-//                 }
-//             }
-//         }
-//         // 3. Validate file types and sizes for Vehicle RC
-//         if (vehicleRcFile) {
-//             if (!validFileTypes.includes(vehicleRcFile.type) || vehicleRcFile.size > maxSize) {
-//                 isValid = false;
-//                 if ($('#vehicle_rc').next('.error-message').length === 0) {
-//                     $('#vehicle_rc').after('<div class="error-message" style="color: red;">Vehicle RC file must be JPEG, PNG, JPG, or PDF and under 10MB.</div>');
-//                 }
-//             }
-//         }
-//         // 4. Validate file types and sizes for Licence
-//         if (licenceFile) {
-//             if (!validFileTypes.includes(licenceFile.type) || licenceFile.size > maxSize) {
-//                 isValid = false;
-//                 if ($('#licence').next('.error-message').length === 0) {
-//                     $('#licence').after('<div class="error-message" style="color: red;">Licence file must be JPEG, PNG, JPG, or PDF and under 10MB.</div>');
-//                 }
-//             }
-//         }
-
-//         // 5. Validate vehicle number (it should be a string and not empty)
-//         if (!vehicleNumber) {
-//             isValid = false;
-//             if ($('#vehicle_number').next('.error-message').length === 0) {
-//                 $('#vehicle_number').after('<div class="error-message" style="color: red;">Vehicle number is required.</div>');
-//             }
-//         }
-
-//         // 6. If validation is successful, submit the form using AJAX
-//         if (isValid) {
-//             var formData = new FormData(this); // Collect form data
-
-//             $.ajax({
-//                 url: $(this).attr('action'), // The form's action URL
-//                 type: 'POST',
-//                 data: formData,
-//                 processData: false, // Don't process the data
-//                 contentType: false, // Set content type to false
-//                 success: function(response) {
-//                     console.log(response.success);
-//                     if (response.success) {
-//                         $('#kycForm')[0].reset(); // Reset the form
-//                         $('#kycForm').prepend('<div class="success-message" style="color: green;">KYC details saved successfully!</div>');
-//                         setTimeout(function() {
-//                             $('.success-message').fadeOut();
-//                         }, 3000); // Fade out the success message after 3 seconds
-//                         window.location.href = 'mybusiness'; // Redirect after success
-//                     } else {
-//                         $('#kycForm').prepend('<div class="error-message" style="color: red;">Error: ' + response.message + '</div>');
-//                     }
-//                 },
-//                 error: function(xhr, status, error) {
-//                     // Handle AJAX error
-//                     var errorMessage = 'An error occurred. Please try again.';
-//                     if (xhr.responseJSON && xhr.responseJSON.message) {
-//                         errorMessage = xhr.responseJSON.message; // Server error message
-//                     }
-//                     $('#kycForm').prepend('<div class="error-message" style="color: red;">' + errorMessage + '</div>');
-//                     console.log('Error:', error);
-//                     console.log('Status:', status);
-//                     console.log('Response:', xhr.responseJSON);
-//                 }
-//             });
-//         }
-//     });
-// });
 
 </script>
 

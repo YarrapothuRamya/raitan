@@ -77,92 +77,104 @@
                         $kyc = App\Models\Kycs::where('user_id', $busines->user_id)
                             ->where('business_id', $busines->id)
                             ->first();
-                        ?>
 
-@if(!empty($kyc->status) && !empty($kyc->aadhar_status) && !empty($kyc->pan_status) && !empty($kyc->vehicle_status) && !empty($kyc->driving_status))
-    @if($kyc->aadhar_status =='3' || $kyc->pan_status == '3' || $kyc->vehicle_status == '3' || $kyc->driving_status == '3')
-        <!-- If any KYC status is '3' (rejected) -->
-        <?php
-        $user_id = $busines->user_id;
-        $business_id = $busines->id;
-        $status = $kyc->status;
-        $kycstatus = App\Models\Kycstatus::where('id', $status)->get();
-        ?>
-        @foreach($kycstatus as $kycstatuss)
-        <form action="{{ route('kycdetails') }}" method="POST">
-            @csrf
-            <input type="hidden" name="user_id" value="{{ $user_id }}">
-            <input type="hidden" name="business_id" value="{{ $business_id }}">
-            <button type="submit" class="bg-main-green-600 text-white font-medium py-2 px-4 rounded hover:bg-main-green-700">
-                KYC Rejected
-            </button>
-        </form>
-        @endforeach
-    @elseif($kyc->aadhar_status == '4' && $kyc->pan_status == '4' && $kyc->vehicle_status == '4' && $kyc->driving_status == '4')
-     
-        <!-- If no KYC status is '3', show Success -->
-        <?php
-        $user_id = $busines->user_id;
-        $business_id = $busines->id;
-        $status = $kyc->status;
-        $kycstatus = App\Models\Kycstatus::where('id', $status)->get();
-        ?>
-        @foreach($kycstatus as $kycstatuss)
-        <!-- <form action="{{ route('kycdetails') }}" method="POST">
-            @csrf -->
-            <!-- <input type="hidden" name="user_id" value="{{ $user_id }}">
-            <input type="hidden" name="business_id" value="{{ $business_id }}"> -->
-            <button type="submit" class="bg-main-green-600 text-white font-medium py-2 px-4 rounded hover:bg-main-green-700">
-                Success
-             </button>
-       <!-- </form> -->
-        @endforeach
-        @else
-        <?php
-        $user_id = $busines->user_id;
-        $business_id = $busines->id;
-        $status = $kyc->status;
-        $kycstatus = App\Models\Kycstatus::where('id', $status)->get();
-        ?>
-        @foreach($kycstatus as $kycstatuss)
-        <form action="{{ route('kycdetails') }}" method="POST">
-            @csrf
-            <input type="hidden" name="user_id" value="{{ $user_id }}">
-            <input type="hidden" name="business_id" value="{{ $business_id }}">
-            <button type="submit" class="bg-main-green-600 text-white font-medium py-2 px-4 rounded hover:bg-main-green-700">
-                KYC Rejected
-            </button>
-        </form>
-        @endforeach
-    @endif
-@elseif(!empty($kyc->status) && empty($kyc->aadhar_status) && empty($kyc->pan_status) && empty($kyc->vehicle_status) && empty($kyc->driving_status))
-    <!-- If status is present but no KYC statuses are filled -->
-    <?php
-    $user_id = $busines->user_id;
-    $business_id = $busines->id;
-    $status = $kyc->status;
-    $kycstatus = App\Models\Kycstatus::where('id', $status)->get();
-    ?>
-    @foreach($kycstatus as $kycstatuss)
-    <button type="submit" class="bg-main-green-600 text-white font-medium py-2 px-4 rounded hover:bg-main-green-700">
-        {{$kycstatuss->status}}
-    </button>
-    @endforeach
-@else
-    <!-- If none of the above conditions are met, allow KYC upload -->
-    <form action="{{ route('kycverify') }}" method="POST">
-        @csrf
-        <input type="hidden" name="user_id" value="{{ $busines->user_id }}">
-        <input type="hidden" name="business_name" value="{{ $busines->business_name }}">
-        <input type="hidden" name="business_id" value="{{ $busines->id }}">
-        @foreach($Services as $categories)
-        <input type="hidden" name="category" value="{{ $categories->id }}">
-        @endforeach
-        <button type="submit" class="bg-main-green-600 text-white font-medium py-2 px-4 rounded hover:bg-main-green-700">
-            KYC Uploading
-        </button>
-    </form>
-@endif
+                        ?>
+                        @switch(true)
+                        @case(!empty($kyc->status) && !empty($kyc->aadhar_status) && !empty($kyc->pan_status) && !empty($kyc->vehicle_status) && !empty($kyc->driving_status))
+                        @if($kyc->aadhar_status == '3' || $kyc->pan_status == '3' || $kyc->vehicle_status == '3' || $kyc->driving_status == '3')
+                        <?php
+                        $user_id = $busines->user_id;
+                        $business_id = $busines->id;
+                        $status = $kyc->status;
+                        $kycstatus = App\Models\Kycstatus::where('id', $status)->get();
+                        ?>
+                        @foreach($kycstatus as $kycstatuss)
+                        <form action="{{ route('kycdetails') }}" method="POST">
+                            @csrf
+                            <input type="hidden" name="user_id" value="{{ $user_id }}">
+                            <input type="hidden" name="business_id" value="{{ $business_id }}">
+                            <button type="submit" class="bg-main-green-600 text-white font-medium py-2 px-4 rounded hover:bg-main-green-700">
+                                KYC Rejected
+                            </button>
+                        </form>
+                        @endforeach
+                        @elseif($kyc->aadhar_status == '4' && $kyc->pan_status == '4' && $kyc->vehicle_status == '4' && $kyc->driving_status == '4')
+                        <?php
+                        $user_id = $busines->user_id;
+                        $business_id = $busines->id;
+                        $status = $kyc->status;
+                        $kycstatus = App\Models\Kycstatus::where('id', $status)->get();
+                        ?>
+                        @foreach($kycstatus as $kycstatuss)
+                        <button type="submit" class="bg-main-green-600 text-white font-medium py-2 px-4 rounded hover:bg-main-green-700">
+                            Success
+                        </button>
+                        @endforeach
+                        @else
+                        <?php
+                        $user_id = $busines->user_id;
+                        $business_id = $busines->id;
+                        $status = $kyc->status;
+                        $kycstatus = App\Models\Kycstatus::where('id', $status)->get();
+                        ?>
+                        @foreach($kycstatus as $kycstatuss)
+                        <form action="{{ route('kycdetails') }}" method="POST">
+                            @csrf
+                            <input type="hidden" name="user_id" value="{{ $user_id }}">
+                            <input type="hidden" name="business_id" value="{{ $business_id }}">
+                            <button type="submit" class="bg-main-green-600 text-white font-medium py-2 px-4 rounded hover:bg-main-green-700">
+                                KYC Rejected
+                            </button>
+                        </form>
+                        @endforeach
+                        @endif
+                        @break
+
+                        @case(!empty($kyc->status))
+                        @if(empty($kyc->aadhar_status) && empty($kyc->pan_status) && empty($kyc->vehicle_status) && empty($kyc->driving_status))
+                        <?php
+                        $user_id = $busines->user_id;
+                        $business_id = $busines->id;
+                        $status = $kyc->status;
+                        $kycstatus = App\Models\Kycstatus::where('id', $status)->get();
+                        ?>
+                        @foreach($kycstatus as $kycstatuss)
+                        <button type="submit" class="bg-main-green-600 text-white font-medium py-2 px-4 rounded hover:bg-main-green-700">
+                            {{$kycstatuss->status}}
+                        </button>
+                        @endforeach
+                        @break
+
+                        @elseif(empty($kyc->aadhar_status) || empty($kyc->pan_status) || empty($kyc->vehicle_status) || empty($kyc->driving_status))
+                        <?php
+                        $user_id = $busines->user_id;
+                        $business_id = $busines->id;
+                        $status = $kyc->status;
+                        $kycstatus = App\Models\Kycstatus::where('id', $status)->get();
+                        ?>
+                        @foreach($kycstatus as $kycstatuss)
+                        <button type="submit" class="bg-main-green-600 text-white font-medium py-2 px-4 rounded hover:bg-main-green-700">
+                            {{$kycstatuss->status}}
+                        </button>
+                        @endforeach
+                        @endif
+                        @break
+
+                        @default
+                        <!-- If none of the above conditions are met, allow KYC upload -->
+                        <form action="{{ route('kycverify') }}" method="POST">
+                            @csrf
+                            <input type="hidden" name="user_id" value="{{ $busines->user_id }}">
+                            <input type="hidden" name="business_name" value="{{ $busines->business_name }}">
+                            <input type="hidden" name="business_id" value="{{ $busines->id }}">
+                            @foreach($Services as $categories)
+                            <input type="hidden" name="category" value="{{ $categories->id }}">
+                            @endforeach
+                            <button type="submit" class="bg-main-green-600 text-white font-medium py-2 px-4 rounded hover:bg-main-green-700">
+                                KYC Uploading
+                            </button>
+                        </form>
+                        @endswitch
 
 
 
@@ -187,7 +199,26 @@
                             </button>
                         </form>
                     </div>
+                    <div>
+                        @switch(true)
+                        @case(!empty($kyc->status) && !empty($kyc->aadhar_status) && !empty($kyc->pan_status) && !empty($kyc->vehicle_status) && !empty($kyc->driving_status))
+                        @if($kyc->aadhar_status == '3')
+                        <div style="color:red;">{{$kyc->aadhar_reason}}</div>
+                        @endif
+                        @if($kyc->pan_status == '3' )
+                        <div style="color:red;">{{$kyc->pan_reason}}</div>
+                        @endif
+                        @if($kyc->vehicle_status == '3')
+                        <div style="color:red;">{{$kyc->vehicle_reason}}</div>
+                        @endif
+                        @if($kyc->driving_status == '3')
+                        <div style="color:red;">{{$kyc->driving_reason}}</div>
+                        @endif
+                        @break
 
+                        @default
+                        @endswitch
+                    </div>
                 </div>
                 <div class="mt-6 md:mt-0 ml-auto text-center">
                     <svg height="80" width="80" xmlns="http://www.w3.org/2000/svg">

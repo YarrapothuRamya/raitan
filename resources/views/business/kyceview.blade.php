@@ -49,7 +49,7 @@
                         <th>Name</th>
                         <th>Details</th>
                         <th>Status</th>
-                        <!-- <th>Action</th> -->
+                        <th>Reason</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -58,13 +58,13 @@
 
                         <td>{{$customer->name}}</td>
                         <td></td>
-                        <!-- <td></td> -->
+                        <td></td>
                     </tr>
                     <tr>
                         <td>Business</td>
                         <td>{{$business->business_name}}</td>
                         <td></td>
-                        <!-- <td></td> -->
+                        <td></td>
                     </tr>
                     <?php
                     $service = App\Models\Services::where('id', $kycs->category)->first();
@@ -77,42 +77,47 @@
                         <td>Category</td>
                         <td>{{$service->service_name}}</td>
                         <td></td>
+                        <td></td>
                     </tr>
                     <tr>
                         <td>Aadhar Card</td>
                         <td><a href="{{url('kyc/'.$kycs->aadhar_card)}}" target="_blank"><i class="fa-solid fa-file-pdf"></i> View</a></td>
                         <td><button>{{$aadharstatus->status}}</button></td>
+                        <td>{{$kycs->aadhar_reason}}</td>
                     </tr>
                     <tr>
                         <td>Pan Card</td>
                         <td><a href="{{url('kyc/'.$kycs->pan_card)}}" target="_blank"><i class="fa-solid fa-file-pdf"></i> View</a></td>
                         <td><button>{{$pan_status->status}}</button></td>
+                        <td>{{$kycs->pan_reason}}</td>
                     </tr>
                     <tr>
                         <td>Vehicle Rc</td>
                         <td><a href="{{url('kyc/'.$kycs->vehicle_rc)}}" target="_blank"><i class="fa-solid fa-file-pdf"></i> View</a></td>
                         <td><button>{{$vehicle_status->status}}</button></td>
+                        <td>{{$kycs->vehicle_reason}}</td>
                     </tr>
                     <tr>
                         <td>Driving Licence</td>
                         <td><a href="{{url('kyc/'.$kycs->driving_licence)}}" target="_blank"><i class="fa-solid fa-file-pdf"></i> View</a></td>
                         <td><button>{{$driving_status->status}}</button></td>
+                        <td>{{$kycs->driving_reason}}</td>
                     </tr>
-                        
+
                 </tbody>
             </table>
             <form action="{{route('kycedit')}}" method="POST">
-                            @csrf   
-                            <input type="hidden" name="name" value ="{{$customer->id}}" id="">
-                            <input type="hidden" name="business_name" value ="{{$business->id}}" id="">
-                            <div class="bottom-0 left-0 right-0 bg-white p-4 ">
-                                <div class="flex justify-center">
-                                    <button type="submit" class="submit font-semibold text-white bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-lg transition duration-300">
-                                        Edit
-                                    </button>
-                                </div>
-                            </div>
-                        </form>
+                @csrf
+                <input type="hidden" name="name" value="{{$customer->id}}" id="">
+                <input type="hidden" name="business_name" value="{{$business->id}}" id="">
+                <div class="bottom-0 left-0 right-0 bg-white p-4 ">
+                    <div class="flex justify-center">
+                        <button type="submit" class="submit font-semibold text-white bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-lg transition duration-300">
+                            Edit
+                        </button>
+                    </div>
+                </div>
+            </form>
 
         </div>
 

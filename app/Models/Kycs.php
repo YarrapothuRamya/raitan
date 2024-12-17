@@ -14,6 +14,10 @@ class Kycs extends Model
         'machine_rc',        // The path to the Machine RC file
         'driving_licence',   // The path to the Driving License file
         'business_id',
+        'aadhar_reason',
+        'pan_reason',
+        'vehicle_reason',
+        'driving_reason',
         'user_id',
         'business_name',
         'category',

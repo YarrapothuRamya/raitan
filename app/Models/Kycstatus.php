@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Kycstatus extends Model
 {
-    protected $table = 'kycstatuses';
+    protected $table = 'kycstatus';
     protected $fillable = [
         'status',
         'slug',      

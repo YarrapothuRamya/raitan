@@ -37,6 +37,8 @@
     </div> -->
 
     <!-- Main Content -->
+    @switch(true)
+    @case($category == '2')
     <div class="mt-4 bg-white p-6 rounded-lg shadow-lg max-w-4xl mx-auto">
 
 
@@ -45,10 +47,10 @@
 
 
 
-
+            
             <form novalidate="novalidate" action="{{route('kycback')}}" id="kycForm" method="POST">
                 @csrf
-                <p class="addcontact_title___IxGV text-xl font-semibold text-gray-900">KYC1 Details</p>
+                <p class="addcontact_title___IxGV text-xl font-semibold text-gray-900">KYC Details</p>
                 <div class="relative mb-6">
                     <input type="hidden" value="{{$user_id}}" name="user_id" class="input border-gray-300 border-2 px-4 py-2 rounded-md focus:outline-none focus:border-main-green w-full" placeholder="Aadhar " required>
 
@@ -121,23 +123,14 @@
                     </div>
                 </div>
             </form>
+           
         </div>
-
+       
         <div id="errorMessages"></div>
-        </form>
-
-
-        @if ($errors->any())
-        <div class="alert alert-danger">
-            <ul>
-                @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-        @endif
     </div>
-
+    @break
+            @default
+            @endswitch
 </div>
 
 <!-- Popup Modal (If needed) -->
