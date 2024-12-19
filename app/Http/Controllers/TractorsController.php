@@ -16,7 +16,8 @@ class TractorsController extends Controller
 
     {
         $horse_power_implements=Horse_power_implements::select('horse_power_implements.*', 'machines.name as machine_name')
-        ->leftJoin('machines','machines.id','=','horse_power_implements.machine_id')->get();
+        ->leftJoin('machines','machines.id','=','horse_power_implements.machine_id')
+        ->where('horse_power_implements.status', 1)->get();
 $machines=Machines::select('*')->get();
 // return view('tractors.home', compact('machines', 'impls'));
 

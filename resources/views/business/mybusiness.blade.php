@@ -63,6 +63,7 @@
                     <a href="#">
                         <div class="text-2xl font-bold text-gray-900 mb-2">{{$busines->business_name}}</div>
                         <?php
+                        // echo $busines->category;
                         $Services = App\Models\Services::where('id', $busines->category)->get();
                         ?>
                         @foreach($Services as $categories)
@@ -88,28 +89,40 @@
                         $status = $kyc->status;
                         $kycstatus = App\Models\Kycstatus::where('id', $status)->get();
                         ?>
+                        <?php
+                        $kycstatus1 = App\Models\Kycstatus::where('id', 3)->first();
+
+                        ?>
                         @foreach($kycstatus as $kycstatuss)
                         <form action="{{ route('kycdetails') }}" method="POST">
                             @csrf
                             <input type="hidden" name="user_id" value="{{ $user_id }}">
                             <input type="hidden" name="business_id" value="{{ $business_id }}">
                             <button type="submit" class="bg-main-green-600 text-white font-medium py-2 px-4 rounded hover:bg-main-green-700">
-                                KYC Rejected
+                                {{$kycstatus1->status}}
                             </button>
                         </form>
                         @endforeach
                         @elseif($kyc->aadhar_status == '4' && $kyc->pan_status == '4' && $kyc->vehicle_status == '4' && $kyc->driving_status == '4')
                         <?php
-                        $user_id = $busines->user_id;
-                        $business_id = $busines->id;
-                        $status = $kyc->status;
-                        $kycstatus = App\Models\Kycstatus::where('id', $status)->get();
+                        $kycstatus1 = App\Models\Kycstatus::where('id', 4)->first();
+
                         ?>
-                        @foreach($kycstatus as $kycstatuss)
                         <button type="submit" class="bg-main-green-600 text-white font-medium py-2 px-4 rounded hover:bg-main-green-700">
-                            Success
+                            {{$kycstatus1->status}}
                         </button>
-                        @endforeach
+                        <?php
+                        // echo $busines->category;
+                        //  $Services = App\Models\Services::where('id', $busines->category)->get();
+                        ?>
+                        <form action="{{route('products.add')}}" method="POST">
+                        @csrf
+                            <input type="hidden" name="user_id" value="{{ $user_id }}">
+                            <input type="hidden" name="business_id" value="{{ $business_id }}">
+                            <input type="hidden" name="category" id="category" value="{{$busines->category}}">
+                            <button type="submit" class="bg-main-green-600 text-white font-medium py-2 px-4 rounded hover:bg-main-green-700">
+                            Products/Services
+                            </button>
                         @else
                         <?php
                         $user_id = $busines->user_id;
@@ -119,12 +132,12 @@
                         ?>
                         @foreach($kycstatus as $kycstatuss)
                         <form action="{{ route('kycdetails') }}" method="POST">
-                            @csrf
-                            <input type="hidden" name="user_id" value="{{ $user_id }}">
-                            <input type="hidden" name="business_id" value="{{ $business_id }}">
-                            <button type="submit" class="bg-main-green-600 text-white font-medium py-2 px-4 rounded hover:bg-main-green-700">
-                                KYC Rejected
-                            </button>
+                                @csrf
+                                <input type="hidden" name="user_id" value="{{ $user_id }}">
+                                <input type="hidden" name="business_id" value="{{ $business_id }}">
+                                <button type="submit" class="bg-main-green-600 text-white font-medium py-2 px-4 rounded hover:bg-main-green-700">
+                                    KYC Rejected
+                                </button>
                         </form>
                         @endforeach
                         @endif

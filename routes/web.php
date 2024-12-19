@@ -184,6 +184,8 @@ Route::post('/kycback', [App\Http\Controllers\KYCController::class, 'store'])->n
 Route::post('/kycdetails', [App\Http\Controllers\KYCController::class, 'view'])->name('kycdetails');
 Route::post('/kycedit', [App\Http\Controllers\KYCController::class, 'edit'])->name('kycedit');
 Route::post('/kycupdate', [App\Http\Controllers\KYCController::class, 'update'])->name('kycupdate');
+Route::post('/products', [App\Http\Controllers\ProductController::class, 'add'])->name('products.add');
+
 
 
 // kycedit
